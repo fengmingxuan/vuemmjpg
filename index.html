@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Weex Preview</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-touch-fullscreen" content="yes">
-  <meta name="format-detection" content="telephone=no, email=no">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./config.js"></script>
-  <script src="./assets/url.js"></script>
-  <script src="./assets/qrcode.js"></script>
-  <script src="./node_modules/vue/dist/vue.js"></script>
+<meta charset="utf-8">
+<title>Weex HTML5</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no, email=no" />
+<meta name="viewport" content="width=750, user-scalable=no">
+<style>
+  html, body, #weex {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script src="./dist/browser.js"></script>
 </head>
 <body>
-  <h1>Weex Preview</h1>
-  <div id="app"></div>
-  <template id="app-template">
-    <div id="app">
-      <div class="mock-phone">
-        <div class="inner">
-          <iframe id="preview" src="./weex.html"></iframe>
-        </div>
-        <div class="camera"></div>
-        <div class="earpiece"></div>
-        <div class="home-btn"></div>
-      </div>
-      <div id="qrcode">
-        <h2>QRCode</h2>
-        <a :href="val" target="_blank"><canvas ref="canvas" width="200" height="200"></canvas></a>
-        <p class="bundle-url"><a :href="val" target="_blank">{{val}}</a></p>
-      </div>
-    </div>
-  </template>
-  <script>
-    console.log('QR CODE URL: ' + url)
-    new Vue({
-      el: '#app',
-      template: '#app-template',
-      data: { val: url },
-      mounted: function () {
-        var qrcodedraw = new QRCodeLib.QRCodeDraw()
-        qrcodedraw.draw(this.$refs.canvas, this.val, function () {})
-      }
-    })
-  </script>
+<div id="weex"></div>
+<!-- entry -->
+<script>
+/**
+ * init weex instance depending on the url params.
+ * There are three ways to load weex bundles, depends on the
+ * parameter 'loader' in the url:
+ *
+ *   + xhr:   use XMLHttpRequest. Parameter 'page' should be
+ *   the bundle's url.
+ *   + jsonp: use jsonp. Parameter 'page' should be the request
+ *   url and jsonpCallback should be specified during calling
+ *   weex.init.
+ *   + source: use the transformed code itself. 'page' should
+ *   be the transformed weex bundle.
+ *
+ * @param {String}  bundle  It has different meaning depends on
+ *   the type of loader.
+ */
+(function () {
+  function getUrlParam (key) {
+    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
+    var match = location.search.match(reg)
+    return match && match[1]
+  }
+
+  var loader = getUrlParam('loader') || 'xhr'
+  var page = getUrlParam('page') || 'mmjpg/build/src/mainlist.js'
+
+  // jsonp callback name should be specified or be the default
+  // value 'weexJsonpCallback' if the 'jsonp' loader is used.
+  var JSONP_CALLBACK_NAME = 'weexJsonpCallback'
+
+  window.weex.init({
+    jsonpCallback: JSONP_CALLBACK_NAME,
+    appId: location.href,
+    loader: loader,
+    source: page,
+    rootId: 'weex',
+    // downgrade: ['root']  // 'root', 'list', 'scroller'
+  })
+})();
+</script>
 </body>
 </html>

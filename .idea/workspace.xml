@@ -1,0 +1,1654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67e1b20d-eaeb-43e8-a016-60cf29119b87" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/browser.min.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/native.min.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/flow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut-cli-qrcode.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut-first.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut-second.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/images/tut4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/Artboard.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/coding_weex_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/css-boxmodel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/css-flexbox-align.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/css-flexbox-sample.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/div_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/div_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/div_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/div_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/image_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/image_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/list_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/list_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/list_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/nav.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/nav.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/scroller_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/style_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/style_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/images/how-arch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/images/how-render.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/Artboard.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/coding_weex_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/css-boxmodel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/css-flexbox-align.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/div_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/div_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/div_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/div_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/image_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/image_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/list_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/list_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/list_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/nav.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/scroller_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/style_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/style_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/flow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut-cli-qrcode.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut-first.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut-second.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/images/tut4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/images/css-boxmodel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/images/css-flexbox-align.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/images/css-flexbox-sample.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/images/nav.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/images/how-arch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/images/how-render.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut-cli-qrcode.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut-first.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut-second.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/images/tut4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/images/css-boxmodel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/images/css-flexbox-align.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/images/css-flexbox-sample.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/images/nav.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/_slide1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/ali-open-source.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/alibaba.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/aliyun.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/android.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/avatar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/cainiao.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/ding.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/feature.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/feizhu.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/flow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/ios.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/level1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/level2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/level3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/level4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/playground.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/qr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/slide1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/taobao.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/tmall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/vue-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/vue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/web.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/xiami.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/youku.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vuemmjpg.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.wwprc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/dist-browser.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/dist-js-framework.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/install-hooks.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/pre-commit.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/pre-push.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/release.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/welcome.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/karma.vue.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/nightwatch.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/rollup.browser.common.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.macacatest.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.mmjpg.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.mmjpg.web.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.test.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/webpack.vue.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/circle.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/browser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/browser.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/native.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/native.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/_config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/advanced/extend-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scaffolds/draft.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scaffolds/page.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scaffolds/post.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/_posts/cn/hello.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/_posts/hello_world.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/blog/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/blog/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/download.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/faq.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/dev-with-weexpack.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/integrate-to-your-app.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/app-architecture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/devtools.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/how-it-works.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/page-architecture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/using-vue.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/web-dev-experience.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/guide/intro/write-once.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/playground.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/extend-jsfm.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/extend-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/extend-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/extend-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/integrate-devtool-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/advanced/integrate-devtool-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/android-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/color-names.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/common-event.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/common-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/a.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/cell.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/div.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/image.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/indicator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/input.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/list.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/loading.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/refresh.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/scroller.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/slider.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/switch.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/text.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/textarea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/video.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/components/web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/gesture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/html5-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/images/css-flexbox-justify.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/ios-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/js-service/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/jsfm-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/migration/difference.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/migration/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/migration/migration-from-weex.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/animation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/clipboard.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/dom.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/globalevent.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/modal.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/navigator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/picker.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/storage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/stream.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/websocket.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/modules/webview.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/native-dom-api.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/path.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/platform-difference.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/text-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/unit.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/vue/difference-of-vuex.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/vue/difference-with-web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/vue/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/web-standards.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/references/weex-variable.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/create-a-weex-project.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/customize-a-native-component.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/cuszomize-native-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/extend-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/extend-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/extend-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/how-data-binding-works.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/integrate-devtools-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/integrate-devtools-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/integrate-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/integrate-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/advanced/integrate-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/blog/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/develop-on-your-local-machine.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/how-to/debug-with-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/how-to/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/how-to/require-3rd-party-libs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/comm.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/composed-component.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/config-n-data.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/data-binding.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/display-logic.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/events.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/id.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/render-logic.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/guide/syntax/style-n-class.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/api.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/cheatsheet.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/color-names.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/common-attrs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/common-event.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/common-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/component-defs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/a.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/cell.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/div.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/image.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/indicator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/input.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/list.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/loading.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/refresh.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/scroller.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/slider.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/switch.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/text.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/textarea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/video.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/components/web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/gesture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/images/css-flexbox-justify.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/animation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/clipboard.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/dom.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/globalevent.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/modal.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/navigator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/storage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/stream.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/modules/webview.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/replace.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/special-element.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/specs/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/specs/js-framework-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/specs/virtual-dom-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/text-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/units.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/wxc/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/wxc/wxc-navpage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/references/wxc/wxc-tabbar.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/devtools-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/devtools-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/devtools.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/playground.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/cn/v-0.10/tools/transformer.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/download.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/a.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/animation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/clipboard.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/div.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/dom-rect.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/dom-scroll.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/image.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/indicator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/input.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/list.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/modal.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/navigator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/refresh.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/scroller.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/slider.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/storage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/stream.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/switch.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/text.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/textarea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/video.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/examples/web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/faq.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/dev-with-weexpack.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/integrate-to-your-app.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/app-architecture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/devtools.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/how-it-works.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/page-architecture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/using-vue.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/web-dev-experience.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/guide/intro/write-once.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/playground.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/extend-jsfm.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/extend-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/extend-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/extend-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/integrate-devtool-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/advanced/integrate-devtool-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/android-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/color-names.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/common-event.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/common-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/a.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/cell.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/div.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/image.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/indicator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/input.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/list.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/refresh.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/scroller.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/slider.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/switch.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/text.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/textarea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/video.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/components/web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/gesture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/html5-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/images/css-flexbox-justify.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/ios-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/js-service/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/jsfm-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/migration/difference.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/migration/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/migration/migration-from-weex.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/animation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/clipboard.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/dom.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/globalevent.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/modal.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/navigator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/picker.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/storage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/stream.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/websocket.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/modules/webview.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/native-dom-api.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/path.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/platfrom-difference.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/text-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/unit.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/vue/difference-of-vuex.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/vue/difference-with-web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/vue/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/web-standards.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/references/weex-variable.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/extend-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/extend-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/extend-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/how-data-binding-works.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/integrate-to-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/integrate-to-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/advanced/integrate-to-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/customize-a-native-component.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/cuszomize-native-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/debug-with-html5.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/preview-in-playground-app.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/require-3rd-party-libs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/how-to/transform-code-into-js-bundle.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/comm.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/composed-component.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/config-n-data.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/data-binding.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/display-logic.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/events.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/id.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/render-logic.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/guide/syntax/style-n-class.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/api.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/cheatsheet.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/color-names.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/common-attrs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/common-event.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/common-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/component-defs.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/a.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/cell.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/div.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/image.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/indicator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/input.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/list.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/refresh-loading.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/scroller.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/slider.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/switch.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/text.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/textarea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/video.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/web.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/wxc-navpage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/components/wxc-tabbar.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/gesture.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/images/css-flexbox-justify.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/animation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/clipboard.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/dom.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/globalevent.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/modal.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/navigator.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/storage.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/stream.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/timer.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/modules/webview.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/special-element.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/specs/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/specs/js-bundle-format.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/specs/js-framework-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/specs/virtual-dom-apis.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/references/text-style.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/devtools-android.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/devtools-ios.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/devtools.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/playground.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/source/v-0.10/tools/transformer.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/_config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/languages/cn.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/languages/en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/after-footer.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/archive-post.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/archive.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/article.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/footer.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/head.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/header.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/post/category.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/post/nav.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/post/summary.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/post/title.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/search-form.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/sidebar.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/_partial/slider.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/archive.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/blog.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/category.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/download.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/example.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/index.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/layout.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/page.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/playground.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/post.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/layout/tag.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/scripts/helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/animation.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/atom-one-dark.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/blog.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/common.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/example.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/index.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/media-queries.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/article-title.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/article.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/footer.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/header.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/highlight.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/search-form.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/sidebar.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/partial/summary.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/playground.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/post.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/style.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/swiper.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/css/variable.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/extendable.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/galaxy_1.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/galaxy_2.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/lightweight.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/logo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/images/performance.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/example.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/a.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/a.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/animation.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/animation.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/clipboard.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/clipboard.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/div.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/div.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/dom-rect.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/dom-rect.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/dom-scroll.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/dom-scroll.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/image.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/image.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/indicator.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/indicator.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/input.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/input.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/list.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/list.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/modal.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/modal.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/navigator.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/navigator.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/refresh.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/refresh.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/scroller.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/scroller.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/slider.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/slider.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/storage.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/storage.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/stream.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/stream.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/switch.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/switch.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/text.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/text.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/textarea.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/textarea.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/video.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/video.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/web.web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/examples/web.weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/highlight.pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/mobile-detect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/reqwest.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/swiper.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/velocity.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/news.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/api/methods.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/api/modules.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/bundle/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/bundle/define.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/bundle/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/ctrl/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/ctrl/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/ctrl/misc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/differ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/downgrade.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/instance.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/app/viewport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/array.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/dep.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/object.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/observer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/state.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/core/watcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/bridge.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/create.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/life.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/misc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/static/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/util/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/util/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/util/shared.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/vm/compiler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/vm/directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/vm/dom-helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/vm/events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/legacy/vm/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/frameworks/vanilla/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/atomic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/flexbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/lazyload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/operate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/position.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/sticky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/component/valueFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/div.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/droot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/moduleEvent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/base/root.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/bridge/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/bridge/protocol.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/bridge/receiver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/bridge/sender.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/dom/appearWatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/dom/componentManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/dom/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/animation/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/animation/lib.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/clipboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/dom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/geolocation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/globalEvent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/meta.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/navigator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/pageInfo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/storage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/stream.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/timer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/webSocket.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/api/webview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/a.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/countdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/datepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/embed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/image/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/image/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/indicator/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/indicator/indicator.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/input.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/marquee.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/neighbor/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/neighbor/neighbor.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/richtext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/list/hlist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/list/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/list/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/list/vlist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/loading/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/loading/loading.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/motion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/refresh/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/refresh/refresh.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/scroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/scrollable.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/scrollable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/scrollable/scroller/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/select.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/slider/carrousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/slider/carrousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/slider/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/slider/slider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/slider/timer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/spinner/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/spinner/spinner.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/switch/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/switch/switch.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/tabheader/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/tabheader/tabheader.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/text.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/textarea.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/timepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/video/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/video/video.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/components/web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/extend/packer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/gesture.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/loader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/render/style/base.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/utils/array.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/utils/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/browser/utils/logger.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/native/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/a.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/div.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/input.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/header.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/list/cell.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/list/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/list/listMixin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/loading-indicator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/loading.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/refresh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/scroller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/scrollable/shared.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/slider/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/slider/indicator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/slider/slideMixin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/switch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/text.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/textarea.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/warning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/components/web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/env/WXEnvironment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/env/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/env/viewport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/env/weex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/mixins/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/mixins/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/mixins/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/mixins/scrollable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/mixins/style.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/animation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/dom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/confirm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/prompt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/modal/toast.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/navigator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/modules/webview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/styles/components.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/styles/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/utils/component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/utils/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/utils/func.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/utils/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/validator/check.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/validator/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/validator/prop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/render/vue/validator/style.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/callback-manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/handler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/listener.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/task-center.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/comment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/document.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/element-types.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/element.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/runtime/vdom/operation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/services/amd/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/services/broadcast-channel/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/services/broadcast-channel/message-event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/services/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/arrayFrom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/console.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/freeze.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/objectAssign.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/objectSetPrototypeOf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/promise.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/shared/setTimeout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/append-root.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/append-root.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/append.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/append.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/backward1.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/backward1.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/backward2.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/backward2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/components.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/components.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/computed-in-repeat.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/computed-in-repeat.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/created.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/created.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-id.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-id.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-property.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-property.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-type.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/dynamic-type.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo2.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo3.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo3.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo4.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo4.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo5.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo5.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo6.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo6.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo7.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo7.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo8.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo8.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo9.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/foo9.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/global-weex-object.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/global-weex-object.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/id.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/id.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if-repeat.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if-repeat.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if-root.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if-root.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/if.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/promise.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/promise.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/ready.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/ready.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-kv.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-kv.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-no-kv.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-no-kv.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-non-obj.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-non-obj.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-v.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-array-v.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-index.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-index.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-root.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-root.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-watch.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/repeat-watch.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/require.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/require.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/reset-style.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/reset-style.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static1.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static1.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static2.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static3.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static3.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static4.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/static4.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/subvm.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/subvm.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/transformer1.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/basic/transformer1.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/append-root-event.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/append-root-event.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/click.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/click.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/computed.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/computed.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/if-refresh.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/if-refresh.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/if-repeat-refresh.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/if-repeat-refresh.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/inline-click.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/inline-click.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/input-binding.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/input-binding.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/refresh2.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/refresh2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/repeat-track-by.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/repeat-track-by.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/transformer2.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/transformer2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/transformer3.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/complex/transformer3.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-dep-target-error.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-dep-target-fine.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-dep-target-fine.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-moduleA.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-moduleA.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-moduleB.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/multi/clear-moduleB.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/prepare.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/modal.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/modal.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/signals-long.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/signals.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/timer.output.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/signals/timer.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/tester.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/throws/global-variable1.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/throws/global-variable2.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/case/throws/global-variable3.source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/e2e/runner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/e2e/specs/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/components/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/components/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/components/switch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/components/text.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/components/web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/examples/list-cell.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/validator/check.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/validator/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/validator/prop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/validator/style.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/vender/vue-2.0.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/render/vue/vender/vue-2.1.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/api/methods.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/api/modules.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/bundle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/downgrade.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/app/viewport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/helper/document.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/runtime.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/util/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/util/shared.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/vm/compiler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/vm/directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/vm/dom-helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/vm/events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/default/vm/vm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/BroadcastChannel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/arrayFrom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/console.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/objectAssign.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/shared/objectSetPrototypeOf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/vanilla/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/vdom/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/vdom/listener.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/test/unit/vdom/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/a.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/cell.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/div.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/indicator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/input.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/list.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/loading.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/navigator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/refresh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/scroller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/slider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/switch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/text.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/textarea.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/vedio.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/components/web.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/list-demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/mainlist.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/build/src/mainlist2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/src/list-demo.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/src/mainlist.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mmjpg/src/mainlist2.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/demo/build/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/demo/index.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-html5/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-loader/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-loader/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-loader/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-render/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-render/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/weex-vue-render/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/start" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ci-funcs.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/mocha.opts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/pages/dom-operation.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/pages/index.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/pages/list-scroll.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/pages/scroller-scroll.we" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/run.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scripts/components/scroll-event.test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scripts/dom.test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scripts/index.test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/scripts/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/serve.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/update-cli.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/phantom-limb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/qrcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/url.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/a.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/app.web.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/app.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/cell.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/div.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/image.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/indicator.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/input.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/list.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/loading.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/navigator.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/refresh.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scroller.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/slider.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/switch.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/text.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/textarea.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/vedio.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/web.weex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mainlist.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/weex.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/qrcode.min.js" afterPath="$PROJECT_DIR$/doc/themes/weex/source/js/qrcode.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/a.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/a.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/cell.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/cell.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/div.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/div.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/image.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/image.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/indicator.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/indicator.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/input.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/input.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/list.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/list.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/loading.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/loading.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/navigator.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/navigator.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/refresh.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/refresh.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/scroller.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/scroller.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/slider.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/slider.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/switch.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/switch.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/text.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/text.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/textarea.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/textarea.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/vedio.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/vedio.vue" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/web.vue" afterPath="$PROJECT_DIR$/mmjpg/src/components/web.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>storm</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mmjpg</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/start" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/build/webpack.mmjpg.config.js" />
+        <option value="$PROJECT_DIR$/build/webpack.mmjpg.web.config.js" />
+        <option value="$PROJECT_DIR$/vue.html" />
+        <option value="$PROJECT_DIR$/mmjpg/src/mainlist.we" />
+        <option value="$PROJECT_DIR$/mmjpg/src/mainlist.vue" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="864" />
+    <option name="y" value="802" />
+    <option name="width" value="1241" />
+    <option name="height" value="797" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vuemmjpg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vuemmjpg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vuemmjpg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vuemmjpg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mmjpg/src" />
+      <recent name="$PROJECT_DIR$/packages/weex-vue-loader" />
+      <recent name="$PROJECT_DIR$/packages/weex-vue-render" />
+      <recent name="$PROJECT_DIR$/dist" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="false" name="serve" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="npm.serve" />
+      <item index="1" class="java.lang.String" itemvalue="npm.dev" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="npm.dev" />
+        <item index="1" class="java.lang.String" itemvalue="npm.serve" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67e1b20d-eaeb-43e8-a016-60cf29119b87" name="Default" comment="" />
+      <created>1498629280774</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498629280774</updated>
+      <workItem from="1498629282888" duration="4926000" />
+      <workItem from="1498635675000" duration="742000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5668000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="864" y="802" width="1241" height="797" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26393443" sideWeight="0.8573574" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Weex Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05531915" sideWeight="0.5032787" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26393443" sideWeight="0.14264265" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05531915" sideWeight="0.4967213" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.032670453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="vue" />
+    <MESSAGE value="vue mmjpg" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue mmjpg" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/qrcode.js" />
+    <entry file="file://$PROJECT_DIR$/app.js" />
+    <entry file="file://$PROJECT_DIR$/weex.html" />
+    <entry file="file://$PROJECT_DIR$/config.js" />
+    <entry file="file://$PROJECT_DIR$/build/init.js" />
+    <entry file="file://$PROJECT_DIR$/src/mainlist.vue" />
+    <entry file="file://$PROJECT_DIR$/web/js/init.js" />
+    <entry file="file://$PROJECT_DIR$/src/index.we" />
+    <entry file="file://$PROJECT_DIR$/config.xml" />
+    <entry file="file://$PROJECT_DIR$/android.config.json" />
+    <entry file="file://$PROJECT_DIR$/ios.config.json" />
+    <entry file="file://$PROJECT_DIR$/webpack.config.js" />
+    <entry file="file://$PROJECT_DIR$/web/index.html" />
+    <entry file="file://$PROJECT_DIR$/web/index.js" />
+    <entry file="file://$PROJECT_DIR$/start">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.mmjpg.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.mmjpg.web.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-html5/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-vue-render/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-html5/demo/index.we">
+      <provider selected="true" editor-type-id="WeexFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-vue-render/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-html5/demo/build/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-vue-loader/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/weex-vue-loader/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="143" column="25" lean-forward="false" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmjpg/src/components/a.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmjpg/src/components/input.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmjpg/src/mainlist2.we">
+      <provider selected="true" editor-type-id="WeexFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmjpg/src/mainlist.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="58" column="78" lean-forward="false" selection-start-line="58" selection-start-column="78" selection-end-line="58" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CONTRIBUTING.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.wwprc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1650">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/circle.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dangerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCRIPTS.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.welcome">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/dist-browser.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/pre-commit.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/pre-push.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/release.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/welcome.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/commit-msg.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
