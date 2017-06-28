@@ -1,6 +1,6 @@
 <template>
     <div>
-        <list>
+        <list class="list" @loadmore="fetch" loadmoreoffset="10">
             <cell v-for="stockitem in stockArray">
                 <pc_main_item_v :stockitem="stockitem"></pc_main_item_v>
             </cell>
@@ -25,6 +25,7 @@
                 stockArray:[],
                 taghref:mmjpg.getm_mmjpg(),
                 pageNo: 1,
+                refreshing: false,
             }
         },
         created: function(){
@@ -33,23 +34,35 @@
 
         },
         methods:{
+            fetch(event){
+                this.pageNo = this.pageNo+1;
+                this.refresh();
+            },
+            onpullingdown (event) {
+            },
+            onrefresh (event) {
+                this.refreshing = true;
+                this.pageNo = 1;
+                setTimeout(() => {
+                    this.refreshing = false
+                }, 2000)
+                this.refresh();
+            },
             refresh:function(){
                 var self = this;
                 var url = self.taghref;
-//                if(self.pageNo==1){
-//                    url = self.taghref;
-//                }else{
-//                    url = self.taghref+"home/"+self.pageNo;
-//                }
+                if(self.pageNo==1){
+                    url = self.taghref;
+                }else{
+                    url = self.taghref+"home/"+self.pageNo;
+                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
                 weexJsoupModule.pcmainlist(params,function(e){
-                    console.log('e==='+e);
                     var json = JSON.parse(e);
-                    console.log('json==='+json);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
                     }
@@ -77,10 +90,10 @@
         width:750;
         align-items:center;
     }
-
-    .indicator{
-        width:60;
-        height:60;
-        color:#889967;
+    .indicator {
+        color: #888888;
+        font-size: 42px;
+        text-align: center;
     }
+
 </style>
