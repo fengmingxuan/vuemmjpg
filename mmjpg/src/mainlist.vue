@@ -26,6 +26,7 @@
         },
         created () {
             this.rows.push('pc/main/pc_main')
+            this.rows.push('pc/main/pc_main_v')
             this.rows.push('stocknews/stocknews')
             this.rows.push('components/a')
             this.rows.push('components/slider')
