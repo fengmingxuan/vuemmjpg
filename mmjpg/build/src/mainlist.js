@@ -58,7 +58,7 @@
 	__vue_exports__ = __webpack_require__(136)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(137)
+	var __vue_template__ = __webpack_require__(138)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -120,7 +120,7 @@
 /***/ }),
 
 /***/ 136:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -146,6 +146,7 @@
 	var weexModule = weex.requireModule('weexModule');
 	var dom = weex.requireModule('dom');
 	var modal = weex.requireModule('modal');
+	var mmjpg = __webpack_require__(137);
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -153,23 +154,24 @@
 	        };
 	    },
 	    created: function created() {
-
-	        this.rows.push('a');
-	        this.rows.push('slider');
-	        this.rows.push('indicator');
-	        this.rows.push('switch');
-	        this.rows.push('text');
-	        this.rows.push('textarea');
-	        this.rows.push('vedio');
-	        this.rows.push('web');
-	        this.rows.push('div');
-	        this.rows.push('image');
-	        this.rows.push('list');
-	        this.rows.push('input');
-	        this.rows.push('cell');
-	        this.rows.push('loading');
-	        this.rows.push('refresh');
-	        this.rows.push('scroller');
+	        this.rows.push('pc/main/pc_main');
+	        this.rows.push('stocknews/stocknews');
+	        this.rows.push('components/a');
+	        this.rows.push('components/slider');
+	        this.rows.push('components/indicator');
+	        this.rows.push('components/switch');
+	        this.rows.push('components/text');
+	        this.rows.push('components/textarea');
+	        this.rows.push('components/vedio');
+	        this.rows.push('components/web');
+	        this.rows.push('components/div');
+	        this.rows.push('components/image');
+	        this.rows.push('components/list');
+	        this.rows.push('components/input');
+	        this.rows.push('components/cell');
+	        this.rows.push('components/loading');
+	        this.rows.push('components/refresh');
+	        this.rows.push('components/scroller');
 	    },
 
 	    methods: {
@@ -179,13 +181,13 @@
 	            // tasks:[{"module":"modal","method":"toast","args":[{"message":{"position":{"height":52.77778,"width":713.19446,"x":33.333332,"y":191.66667},"type":"click",
 	            // "target":{"ref":"186","type":"text","attr":{"value":"a"},"style":{"fontSize":45,"color":"#666666"},"event":["click"]},"timestamp":1488878471697}}]}]
 	            var name = event.target.attr.value;
-	            modal.toast({ message: name.toString() });
+	            //                modal.toast({ message:  name.toString()})
 	            //http://localhost:8080/index.html?page=./mmjpg/build/mainlilst.js
 	            //                 weexModule.openUrl('http://192.168.1.15:8080/dist/'+name+'.weex.js', function(err){
 	            //                   console.log(err);
 	            //                  });
 	            weexNavigatorModule.push({
-	                url: 'http://192.168.1.15:8080/mmjpg/build/src/components/' + name + '.js',
+	                url: mmjpg.getDefaultUrl(name),
 	                animated: "true"
 	            }, function (event) {
 	                // modal.toast({ message: 'callback: ' + event })
@@ -197,6 +199,121 @@
 /***/ }),
 
 /***/ 137:
+/***/ (function(module, exports) {
+
+	var BASE_URL = {
+	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
+	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
+	    IP: '192.168.1.15:8080',
+	    HTTP: 'http://',//https:// http://
+
+	};
+
+	var MMJPG = {
+	    m_mmjpg:"http://www.mmjpg.com/",
+	};
+
+	exports.getm_mmjpg = function () {
+	    var url = MMJPG.m_mmjpg;
+	    console.log('m_mmjpg==' + url);
+	    return url;
+	};
+
+
+	exports.getDefaultUrl = function (name) {
+	    var url;
+	    url = getBaseUrl(name, true) + name + ".js";
+	    console.log('getDefaultUrl==' + url);
+	    return url;
+	};
+
+	exports.getDefaultPathUrl = function (path) {
+	    var url;
+	    url = getBaseUrl(path, true) + path;
+	    console.log('getPathUrl==' + url);
+	    return url;
+	};
+
+	exports.getPathUrl = function (path, isnative) {
+	    var url;
+	    url = getBaseUrl(path, isnative) + path;
+	    console.log('getPathUrl==' + url);
+	    return url;
+	};
+
+	//获取线上资源文件地址
+	exports.getImageUrl = function (path) {
+	    var url;
+	    if (typeof window === 'object') {
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	    } else {
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+
+	    }
+	    console.log('getImageUrl=='+url);
+	    return url;
+	};
+
+	exports.getUrl = function (path) {
+	    var url;
+	    url = BASE_URL.HTTP+BASE_URL.IP+'/'+path;
+	    console.log('getUrl==' + url);
+	    return url;
+	};
+
+	function getBaseUrl(bundleUrl, isnav) {
+	    bundleUrl = new String(bundleUrl);
+	    var nativeBase;
+	    var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+
+	    var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+	    if (isAndroidAssets) {
+	        nativeBase = 'file://assets/build/';
+	    }
+	    else if (isiOSAssets) {
+	        nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+	    }
+	    else {
+	        //'localhost:8080';
+	        var host = BASE_URL.IP;
+	        // var matches = /\/\/([^\/]+?)\//.exec(bundleUrl);
+	        // if (matches && matches.length >= 2) {
+	        //     host = matches[1];
+	        // }
+
+	        if (typeof window === 'object') {
+	            if (host.endsWith(':8080/mmjpg') || host.endsWith(':12580/mmjpg')) {
+	                host = host.replace('/mmjpg', '');
+	                // console.log('replace local test storm name');
+	            }
+	        }
+
+	        //此处需注意一下,tabbar 用的直接是jsbundle 的路径,但是navigator是直接跳转到新页面上的.
+	        //网页 http://localhost:8080/index.html?page=./dist/weexbar/stocknews.js
+	        //android 原生 http://192.168.1.15:12580/dist/mainlist.js
+	        if (typeof window === 'object') {
+	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	        } else {
+	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
+	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
+	        }
+	    }
+
+	    return nativeBase;
+	};
+
+
+	exports.getUrlParam = function getUrlParam(key) {
+	    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
+	    var match = location.search.match(reg)
+	    return match && match[1]
+	}
+
+
+/***/ }),
+
+/***/ 138:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
