@@ -1,6 +1,9 @@
 <template>
     <div>
         <list class="list" @loadmore="fetch" loadmoreoffset="10">
+            <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+                <text class="indicator">下拉刷新...</text>
+            </refresh>
             <cell v-for="stockitem in stockArray">
                 <pc_main_item_v :stockitem="stockitem"></pc_main_item_v>
             </cell>
