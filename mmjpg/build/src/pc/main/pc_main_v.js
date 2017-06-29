@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(205)
+	__vue_styles__.push(__webpack_require__(274)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(206)
+	__vue_exports__ = __webpack_require__(275)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(208)
+	var __vue_template__ = __webpack_require__(276)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,14 +91,15 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 140:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -138,9 +139,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -206,7 +207,7 @@
 
 /***/ }),
 
-/***/ 202:
+/***/ 247:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -252,7 +253,7 @@
 
 /***/ }),
 
-/***/ 203:
+/***/ 248:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -289,7 +290,7 @@
 
 /***/ }),
 
-/***/ 204:
+/***/ 249:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -315,7 +316,52 @@
 
 /***/ }),
 
-/***/ 205:
+/***/ 252:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(247)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(248)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(249)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-10f49458"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 274:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -333,7 +379,7 @@
 
 /***/ }),
 
-/***/ 206:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -342,7 +388,7 @@
 	    value: true
 	});
 
-	var _pc_main_item_v = __webpack_require__(207);
+	var _pc_main_item_v = __webpack_require__(252);
 
 	var _pc_main_item_v2 = _interopRequireDefault(_pc_main_item_v);
 
@@ -364,7 +410,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 
 	exports.default = {
 	    components: {
@@ -436,52 +482,7 @@
 
 /***/ }),
 
-/***/ 207:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(202)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(203)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(204)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-10f49458"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 208:
+/***/ 276:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

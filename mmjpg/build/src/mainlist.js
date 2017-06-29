@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(135)
+	__vue_styles__.push(__webpack_require__(138)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(136)
+	__vue_exports__ = __webpack_require__(139)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(138)
+	var __vue_template__ = __webpack_require__(141)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,7 +91,7 @@
 
 /***/ }),
 
-/***/ 135:
+/***/ 138:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -119,7 +119,7 @@
 
 /***/ }),
 
-/***/ 136:
+/***/ 139:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -146,7 +146,7 @@
 	var weexModule = weex.requireModule('weexModule');
 	var dom = weex.requireModule('dom');
 	var modal = weex.requireModule('modal');
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -154,8 +154,17 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('pc/menu/pcslideoutmenu-tabbar');
+	        this.rows.push('pc/menu/pcslideoutmenu-pager');
+	        this.rows.push('pc/tabbar/pcmenu-scroller-tabbar');
+	        this.rows.push('list-demo-horizontal');
+	        this.rows.push('scroller-demo-horizontal');
+	        this.rows.push('pc/mainpager/pcmainnav-pager');
+	        this.rows.push('pc/main/pc_main_head_foot_nobar');
 	        this.rows.push('pc/main/pc_main');
 	        this.rows.push('pc/main/pc_main_v');
+	        this.rows.push('pc/main/pc_main_head_foot');
+	        this.rows.push('pc/main/pc_main_load_refresh_v');
 	        this.rows.push('pc/mainpager/pcmaintoppager');
 	        this.rows.push('pc/mainpager/pcmaintopslider');
 	        this.rows.push('pc/mainhot/pcmainhotlist');
@@ -166,6 +175,11 @@
 	        this.rows.push('pc/mainmm/pcmainmmlist_v');
 	        this.rows.push('pc/friendlink/friendlinklist');
 	        this.rows.push('pc/friendlink/friendlinklist_v');
+	        this.rows.push('pc/nav/subnav');
+	        this.rows.push('pc/nav/subnav_v');
+	        this.rows.push('pc/mainmm/pcmainmmgrid');
+	        this.rows.push('pc/tabbar/pcmenu-tabbar');
+	        this.rows.push('pc/menu/pcslideoutmenu');
 	        this.rows.push('stocknews/stocknews');
 	        this.rows.push('components/a');
 	        this.rows.push('components/slider');
@@ -209,14 +223,15 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 140:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -256,9 +271,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -324,7 +339,7 @@
 
 /***/ }),
 
-/***/ 138:
+/***/ 141:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(234)
+	__vue_styles__.push(__webpack_require__(322)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(235)
+	__vue_exports__ = __webpack_require__(323)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(240)
+	var __vue_template__ = __webpack_require__(328)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/friendlink/friendlinklist_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/nav/subnav_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-06c61e84"
+	__vue_options__._scopeId = "data-v-44d0c97c"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -207,7 +207,7 @@
 
 /***/ }),
 
-/***/ 234:
+/***/ 322:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -225,7 +225,7 @@
 
 /***/ }),
 
-/***/ 235:
+/***/ 323:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -234,9 +234,9 @@
 	    value: true
 	});
 
-	var _pcmainhotlistitem_v = __webpack_require__(236);
+	var _subnavitem_v = __webpack_require__(324);
 
-	var _pcmainhotlistitem_v2 = _interopRequireDefault(_pcmainhotlistitem_v);
+	var _subnavitem_v2 = _interopRequireDefault(_subnavitem_v);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -260,7 +260,7 @@
 
 	exports.default = {
 	    components: {
-	        pcmainhotlistitem_v: _pcmainhotlistitem_v2.default
+	        subnavitem_v: _subnavitem_v2.default
 	    },
 
 	    data: function data() {
@@ -296,7 +296,7 @@
 	        refresh: function refresh() {
 	            var self = this;
 	            var url = self.taghref;
-	            weexJsoupModule.pcmainfriendlink(url, function (e) {
+	            weexJsoupModule.pcsubnav(url, function (e) {
 	                var json = JSON.parse(e);
 	                if (self.pageNo == 1) {
 	                    self.stockArray.splice(0, self.stockArray.length);
@@ -318,21 +318,21 @@
 
 /***/ }),
 
-/***/ 236:
+/***/ 324:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(237)
+	__vue_styles__.push(__webpack_require__(325)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(238)
+	__vue_exports__ = __webpack_require__(326)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(239)
+	var __vue_template__ = __webpack_require__(327)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -344,10 +344,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlistitem_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/nav/subnavitem_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-78a91aa8"
+	__vue_options__._scopeId = "data-v-27316bcf"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -363,7 +363,7 @@
 
 /***/ }),
 
-/***/ 237:
+/***/ 325:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -389,7 +389,7 @@
 
 /***/ }),
 
-/***/ 238:
+/***/ 326:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -424,7 +424,7 @@
 
 /***/ }),
 
-/***/ 239:
+/***/ 327:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -445,7 +445,7 @@
 
 /***/ }),
 
-/***/ 240:
+/***/ 328:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -474,7 +474,7 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pcmainhotlistitem_v', {
+	    }, [_c('subnavitem_v', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }

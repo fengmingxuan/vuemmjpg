@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(278)
-	var __weex_style__ = __webpack_require__(279)
-	var __weex_script__ = __webpack_require__(280)
+	var __weex_template__ = __webpack_require__(135)
+	var __weex_style__ = __webpack_require__(136)
+	var __weex_script__ = __webpack_require__(137)
 
-	__weex_define__('@weex-component/34a813e390fea666bad07ab3c5153ed4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/249f65b9035e539b7476302f53339879', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/34a813e390fea666bad07ab3c5153ed4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/249f65b9035e539b7476302f53339879',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2076,375 +2076,101 @@
 
 
 /***/ }),
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */
-/***/ (function(module, exports) {
-
-	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
-
-	};
-
-	var MMJPG = {
-	    m_mmjpg:"http://www.mmjpg.com/",
-	};
-
-	exports.getm_mmjpg = function () {
-	    var url = MMJPG.m_mmjpg;
-	    console.log('m_mmjpg==' + url);
-	    return url;
-	};
-
-
-	exports.getDefaultUrl = function (name) {
-	    var url;
-	    url = getBaseUrl(name, true) + name + ".js";
-	    console.log('getDefaultUrl==' + url);
-	    return url;
-	};
-
-	exports.getDefaultPathUrl = function (path) {
-	    var url;
-	    url = getBaseUrl(path, true) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	exports.getPathUrl = function (path, isnative) {
-	    var url;
-	    url = getBaseUrl(path, isnative) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	//获取线上资源文件地址
-	exports.getImageUrl = function (path) {
-	    var url;
-	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-
-	    }
-	    console.log('getImageUrl=='+url);
-	    return url;
-	};
-
-	exports.getUrl = function (path) {
-	    var url;
-	    url = BASE_URL.HTTP+BASE_URL.IP+'/'+path;
-	    console.log('getUrl==' + url);
-	    return url;
-	};
-
-	function getBaseUrl(bundleUrl, isnav) {
-	    bundleUrl = new String(bundleUrl);
-	    var nativeBase;
-	    var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
-
-	    var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
-	    if (isAndroidAssets) {
-	        nativeBase = 'file://assets/build/';
-	    }
-	    else if (isiOSAssets) {
-	        nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
-	    }
-	    else {
-	        //'localhost:8080';
-	        var host = BASE_URL.IP;
-	        // var matches = /\/\/([^\/]+?)\//.exec(bundleUrl);
-	        // if (matches && matches.length >= 2) {
-	        //     host = matches[1];
-	        // }
-
-	        if (typeof window === 'object') {
-	            if (host.endsWith(':8080/mmjpg') || host.endsWith(':12580/mmjpg')) {
-	                host = host.replace('/mmjpg', '');
-	                // console.log('replace local test storm name');
-	            }
-	        }
-
-	        //此处需注意一下,tabbar 用的直接是jsbundle 的路径,但是navigator是直接跳转到新页面上的.
-	        //网页 http://localhost:8080/index.html?page=./dist/weexbar/stocknews.js
-	        //android 原生 http://192.168.1.15:12580/dist/mainlist.js
-	        if (typeof window === 'object') {
-	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
-	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
-	        }
-	    }
-
-	    return nativeBase;
-	};
-
-
-	exports.getUrlParam = function getUrlParam(key) {
-	    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
-	    var match = location.search.match(reg)
-	    return match && match[1]
-	}
-
-
-/***/ }),
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */
+/* 135 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
-	  "events": {
-	    "click": function ($event) {this.towebdetail(this.tag.href,$event)}
-	  },
 	  "children": [
 	    {
-	      "type": "div",
+	      "type": "hlist",
 	      "classList": [
-	        "news-bottom"
+	        "scroller"
 	      ],
+	      "attr": {
+	        "scrollDirection": "horizontal"
+	      },
 	      "children": [
 	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
-	          "attr": {
-	            "src": function () {return this.tag.src}
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
-	          "attr": {
-	            "value": function () {return this.tag.alt}
-	          }
+	          "type": "cell",
+	          "append": "tree",
+	          "repeat": {
+	            "expression": function () {return this.items},
+	            "value": "item"
+	          },
+	          "children": [
+	            {
+	              "type": "div",
+	              "classList": [
+	                "item"
+	              ],
+	              "id": function () {return this.item.i},
+	              "children": [
+	                {
+	                  "type": "text",
+	                  "classList": [
+	                    "item-title"
+	                  ],
+	                  "attr": {
+	                    "value": function () {return 'row ' + (this.item.id) + ' ' + (this.item.i)}
+	                  }
+	                }
+	              ]
+	            }
+	          ]
 	        }
 	      ]
-	    },
-	    {
-	      "type": "div",
-	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
 	    }
 	  ]
 	}
 
 /***/ }),
-/* 279 */
+/* 136 */
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "itemClass": {
-	    "margin": 5
+	  "item": {
+	    "justifyContent": "center",
+	    "borderBottomWidth": 2,
+	    "borderBottomColor": "#c0c0c0",
+	    "height": 100,
+	    "width": 100,
+	    "backgroundColor": "#00BDFF",
+	    "margin": 2
 	  },
-	  "news-bottom": {
-	    "flex": 1,
-	    "alignItems": "center",
-	    "flexDirection": "row",
-	    "margin": 5
-	  },
-	  "tucao_numClass": {
-	    "fontSize": "12wx",
-	    "marginLeft": "4wx",
-	    "flex": 1,
-	    "alignItems": "flex-start",
-	    "padding": 10
-	  },
-	  "img": {
-	    "width": 200,
-	    "height": 200
-	  },
-	  "textClass-0": {
-	    "color:active": "#666666",
-	    "backgroundColor:active": "#dddddd"
-	  },
-	  "textClass-1": {
-	    "color:active": "#666666",
-	    "backgroundColor:active": "#132237"
-	  },
-	  "lineClass": {
-	    "height": 2
-	  },
-	  "lineClass-0": {
-	    "backgroundColor": "#eeeeee"
-	  },
-	  "lineClass-1": {
-	    "backgroundColor": "#0e1929"
+	  "scroller": {
+	    "width": 700,
+	    "height": 500,
+	    "borderWidth": 3,
+	    "borderStyle": "solid",
+	    "borderColor": "rgb(162,217,192)",
+	    "margin": 25,
+	    "flexDirection": "row"
 	  }
 	}
 
 /***/ }),
-/* 280 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
+	var dom = __weex_require__('@weex-module/dom');
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
-	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
-
 	module.exports = {
-	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	    },
+	    methods: {},
 	    data: function () {return {
-	        platform: '',
-	        tag: {
-	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": ""
-	        },
-
-	        skinType: 0
+	        items: []
 	    }},
-	    methods: {
-	        towebdetail: function towebdetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	    created: function created() {
+	        for (var i = 0; i < 10; i++) {
+	            var id = i;
+	            var item = {
+	                id: id,
+	                i: 'i' + id
+	            };
+
+	            this.items.push(item);
 	        }
 	    }
 	};}

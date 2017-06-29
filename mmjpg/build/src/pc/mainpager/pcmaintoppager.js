@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(243)
-	var __weex_template__ = __webpack_require__(247)
-	var __weex_style__ = __webpack_require__(248)
-	var __weex_script__ = __webpack_require__(249)
+	__webpack_require__(196)
+	var __weex_template__ = __webpack_require__(200)
+	var __weex_style__ = __webpack_require__(201)
+	var __weex_script__ = __webpack_require__(202)
 
 	__weex_define__('@weex-component/6bdbd5741806ba565710b9250fbe9bbd', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2079,14 +2079,18 @@
 /***/ }),
 /* 135 */,
 /* 136 */,
-/* 137 */
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -2126,9 +2130,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -2193,9 +2197,6 @@
 
 
 /***/ }),
-/* 138 */,
-/* 139 */,
-/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -2251,59 +2252,12 @@
 /* 193 */,
 /* 194 */,
 /* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(244)
-	var __weex_style__ = __webpack_require__(245)
-	var __weex_script__ = __webpack_require__(246)
+	var __weex_template__ = __webpack_require__(197)
+	var __weex_style__ = __webpack_require__(198)
+	var __weex_script__ = __webpack_require__(199)
 
 	__weex_define__('@weex-component/slider-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2320,7 +2274,7 @@
 
 
 /***/ }),
-/* 244 */
+/* 197 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2337,7 +2291,7 @@
 	}
 
 /***/ }),
-/* 245 */
+/* 198 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2348,7 +2302,7 @@
 	}
 
 /***/ }),
-/* 246 */
+/* 199 */
 /***/ (function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2374,7 +2328,7 @@
 
 
 /***/ }),
-/* 247 */
+/* 200 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2412,7 +2366,7 @@
 	}
 
 /***/ }),
-/* 248 */
+/* 201 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2434,14 +2388,14 @@
 	}
 
 /***/ }),
-/* 249 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(53);
-	__webpack_require__(243);
-	var mmjpg = __webpack_require__(137);
+	__webpack_require__(196);
+	var mmjpg = __webpack_require__(140);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	module.exports = {
 	    data: function () {return {

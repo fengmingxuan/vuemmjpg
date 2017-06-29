@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(278)
-	var __weex_style__ = __webpack_require__(279)
-	var __weex_script__ = __webpack_require__(280)
+	var __weex_template__ = __webpack_require__(221)
+	var __weex_style__ = __webpack_require__(222)
+	var __weex_script__ = __webpack_require__(223)
 
-	__weex_define__('@weex-component/34a813e390fea666bad07ab3c5153ed4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/09cfb66b6e93646178ef9ed3b056dbc8', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/34a813e390fea666bad07ab3c5153ed4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/09cfb66b6e93646178ef9ed3b056dbc8',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2276,64 +2276,7 @@
 /* 218 */,
 /* 219 */,
 /* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */
+/* 221 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2369,23 +2312,48 @@
 	    },
 	    {
 	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.tag.src2}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.tag.alt2}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
 	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
 	    }
 	  ]
 	}
 
 /***/ }),
-/* 279 */
+/* 222 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
-	    "margin": 5
+	    "margin": 5,
+	    "flexDirection": "row"
 	  },
 	  "news-bottom": {
 	    "flex": 1,
 	    "alignItems": "center",
-	    "flexDirection": "row",
+	    "flexDirection": "column",
 	    "margin": 5
 	  },
 	  "tucao_numClass": {
@@ -2419,7 +2387,7 @@
 	}
 
 /***/ }),
-/* 280 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2437,7 +2405,10 @@
 	        tag: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
 	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": ""
+	            "src": "",
+	            "href2": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt2": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src2": ""
 	        },
 
 	        skinType: 0

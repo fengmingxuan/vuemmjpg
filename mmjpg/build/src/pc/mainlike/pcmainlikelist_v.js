@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(226)
+	__vue_styles__.push(__webpack_require__(262)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(227)
+	__vue_exports__ = __webpack_require__(263)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(232)
+	var __vue_template__ = __webpack_require__(268)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,14 +91,15 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 140:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -138,9 +139,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -206,7 +207,7 @@
 
 /***/ }),
 
-/***/ 226:
+/***/ 262:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -224,7 +225,7 @@
 
 /***/ }),
 
-/***/ 227:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -233,7 +234,7 @@
 	    value: true
 	});
 
-	var _pcmainlikelistitem_v = __webpack_require__(228);
+	var _pcmainlikelistitem_v = __webpack_require__(264);
 
 	var _pcmainlikelistitem_v2 = _interopRequireDefault(_pcmainlikelistitem_v);
 
@@ -255,7 +256,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 
 	exports.default = {
 	    components: {
@@ -317,21 +318,21 @@
 
 /***/ }),
 
-/***/ 228:
+/***/ 264:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(229)
+	__vue_styles__.push(__webpack_require__(265)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(230)
+	__vue_exports__ = __webpack_require__(266)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(231)
+	var __vue_template__ = __webpack_require__(267)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -362,7 +363,7 @@
 
 /***/ }),
 
-/***/ 229:
+/***/ 265:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -387,7 +388,7 @@
 
 /***/ }),
 
-/***/ 230:
+/***/ 266:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -422,7 +423,7 @@
 
 /***/ }),
 
-/***/ 231:
+/***/ 267:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -446,7 +447,7 @@
 
 /***/ }),
 
-/***/ 232:
+/***/ 268:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

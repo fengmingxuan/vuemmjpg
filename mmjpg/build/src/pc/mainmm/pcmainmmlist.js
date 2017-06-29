@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(233)
-	var __weex_template__ = __webpack_require__(237)
-	var __weex_style__ = __webpack_require__(238)
-	var __weex_script__ = __webpack_require__(239)
+	__webpack_require__(277)
+	var __weex_template__ = __webpack_require__(281)
+	var __weex_style__ = __webpack_require__(282)
+	var __weex_script__ = __webpack_require__(283)
 
 	__weex_define__('@weex-component/3097fa6c762f0204bfd8cbc1376a3509', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2079,14 +2079,18 @@
 /***/ }),
 /* 135 */,
 /* 136 */,
-/* 137 */
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -2126,9 +2130,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -2193,9 +2197,6 @@
 
 
 /***/ }),
-/* 138 */,
-/* 139 */,
-/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -2288,12 +2289,56 @@
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(234)
-	var __weex_style__ = __webpack_require__(235)
-	var __weex_script__ = __webpack_require__(236)
+	var __weex_template__ = __webpack_require__(278)
+	var __weex_style__ = __webpack_require__(279)
+	var __weex_script__ = __webpack_require__(280)
 
 	__weex_define__('@weex-component/pcmainmmlistitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2310,7 +2355,7 @@
 
 
 /***/ }),
-/* 234 */
+/* 278 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2352,7 +2397,7 @@
 	}
 
 /***/ }),
-/* 235 */
+/* 279 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2396,13 +2441,13 @@
 	}
 
 /***/ }),
-/* 236 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 
 	module.exports = {
@@ -2429,7 +2474,7 @@
 
 
 /***/ }),
-/* 237 */
+/* 281 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2489,7 +2534,7 @@
 	}
 
 /***/ }),
-/* 238 */
+/* 282 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2556,14 +2601,14 @@
 	}
 
 /***/ }),
-/* 239 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(233);
+	__webpack_require__(277);
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
 	module.exports = {

@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(278)
-	var __weex_style__ = __webpack_require__(279)
-	var __weex_script__ = __webpack_require__(280)
+	var __weex_template__ = __webpack_require__(329)
+	var __weex_style__ = __webpack_require__(330)
+	var __weex_script__ = __webpack_require__(331)
 
-	__weex_define__('@weex-component/34a813e390fea666bad07ab3c5153ed4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/9704932c114147cc6f127b1f64c398a0', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/34a813e390fea666bad07ab3c5153ed4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/9704932c114147cc6f127b1f64c398a0',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2081,121 +2081,7 @@
 /* 137 */,
 /* 138 */,
 /* 139 */,
-/* 140 */
-/***/ (function(module, exports) {
-
-	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
-
-	};
-
-	var MMJPG = {
-	    m_mmjpg:"http://www.mmjpg.com/",
-	};
-
-	exports.getm_mmjpg = function () {
-	    var url = MMJPG.m_mmjpg;
-	    console.log('m_mmjpg==' + url);
-	    return url;
-	};
-
-
-	exports.getDefaultUrl = function (name) {
-	    var url;
-	    url = getBaseUrl(name, true) + name + ".js";
-	    console.log('getDefaultUrl==' + url);
-	    return url;
-	};
-
-	exports.getDefaultPathUrl = function (path) {
-	    var url;
-	    url = getBaseUrl(path, true) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	exports.getPathUrl = function (path, isnative) {
-	    var url;
-	    url = getBaseUrl(path, isnative) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	//获取线上资源文件地址
-	exports.getImageUrl = function (path) {
-	    var url;
-	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-
-	    }
-	    console.log('getImageUrl=='+url);
-	    return url;
-	};
-
-	exports.getUrl = function (path) {
-	    var url;
-	    url = BASE_URL.HTTP+BASE_URL.IP+'/'+path;
-	    console.log('getUrl==' + url);
-	    return url;
-	};
-
-	function getBaseUrl(bundleUrl, isnav) {
-	    bundleUrl = new String(bundleUrl);
-	    var nativeBase;
-	    var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
-
-	    var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
-	    if (isAndroidAssets) {
-	        nativeBase = 'file://assets/build/';
-	    }
-	    else if (isiOSAssets) {
-	        nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
-	    }
-	    else {
-	        //'localhost:8080';
-	        var host = BASE_URL.IP;
-	        // var matches = /\/\/([^\/]+?)\//.exec(bundleUrl);
-	        // if (matches && matches.length >= 2) {
-	        //     host = matches[1];
-	        // }
-
-	        if (typeof window === 'object') {
-	            if (host.endsWith(':8080/mmjpg') || host.endsWith(':12580/mmjpg')) {
-	                host = host.replace('/mmjpg', '');
-	                // console.log('replace local test storm name');
-	            }
-	        }
-
-	        //此处需注意一下,tabbar 用的直接是jsbundle 的路径,但是navigator是直接跳转到新页面上的.
-	        //网页 http://localhost:8080/index.html?page=./dist/weexbar/stocknews.js
-	        //android 原生 http://192.168.1.15:12580/dist/mainlist.js
-	        if (typeof window === 'object') {
-	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
-	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
-	        }
-	    }
-
-	    return nativeBase;
-	};
-
-
-	exports.getUrlParam = function getUrlParam(key) {
-	    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
-	    var match = location.search.match(reg)
-	    return match && match[1]
-	}
-
-
-/***/ }),
+/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -2333,118 +2219,146 @@
 /* 275 */,
 /* 276 */,
 /* 277 */,
-/* 278 */
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
-	  "events": {
-	    "click": function ($event) {this.towebdetail(this.tag.href,$event)}
-	  },
 	  "children": [
 	    {
-	      "type": "div",
+	      "type": "scroller",
 	      "classList": [
-	        "news-bottom"
+	        "scroller"
 	      ],
+	      "attr": {
+	        "scrollDirection": "horizontal"
+	      },
 	      "children": [
 	        {
-	          "type": "image",
+	          "type": "div",
 	          "classList": [
-	            "img"
+	            "item"
 	          ],
-	          "attr": {
-	            "src": function () {return this.tag.src}
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
-	          "attr": {
-	            "value": function () {return this.tag.alt}
-	          }
+	          "id": function () {return this.item.i},
+	          "repeat": {
+	            "expression": function () {return this.items},
+	            "value": "item"
+	          },
+	          "children": [
+	            {
+	              "type": "text",
+	              "classList": [
+	                "item-title"
+	              ],
+	              "attr": {
+	                "value": function () {return 'row ' + (this.item.id) + ' ' + (this.item.i)}
+	              }
+	            }
+	          ]
 	        }
 	      ]
-	    },
-	    {
-	      "type": "div",
-	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
 	    }
 	  ]
 	}
 
 /***/ }),
-/* 279 */
+/* 330 */
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "itemClass": {
-	    "margin": 5
+	  "item": {
+	    "justifyContent": "center",
+	    "borderBottomWidth": 2,
+	    "borderBottomColor": "#c0c0c0",
+	    "height": 100,
+	    "width": 100,
+	    "backgroundColor": "#00BDFF",
+	    "margin": 2
 	  },
-	  "news-bottom": {
-	    "flex": 1,
-	    "alignItems": "center",
-	    "flexDirection": "row",
-	    "margin": 5
-	  },
-	  "tucao_numClass": {
-	    "fontSize": "12wx",
-	    "marginLeft": "4wx",
-	    "flex": 1,
-	    "alignItems": "flex-start",
-	    "padding": 10
-	  },
-	  "img": {
-	    "width": 200,
-	    "height": 200
-	  },
-	  "textClass-0": {
-	    "color:active": "#666666",
-	    "backgroundColor:active": "#dddddd"
-	  },
-	  "textClass-1": {
-	    "color:active": "#666666",
-	    "backgroundColor:active": "#132237"
-	  },
-	  "lineClass": {
-	    "height": 2
-	  },
-	  "lineClass-0": {
-	    "backgroundColor": "#eeeeee"
-	  },
-	  "lineClass-1": {
-	    "backgroundColor": "#0e1929"
+	  "scroller": {
+	    "width": 700,
+	    "height": 500,
+	    "borderWidth": 3,
+	    "borderStyle": "solid",
+	    "borderColor": "rgb(162,217,192)",
+	    "margin": 25,
+	    "flexDirection": "row"
 	  }
 	}
 
 /***/ }),
-/* 280 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
+	var dom = __weex_require__('@weex-module/dom');
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
-	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
-
 	module.exports = {
-	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	    },
+	    methods: {},
 	    data: function () {return {
-	        platform: '',
-	        tag: {
-	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": ""
-	        },
-
-	        skinType: 0
+	        items: []
 	    }},
-	    methods: {
-	        towebdetail: function towebdetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	    created: function created() {
+	        for (var i = 0; i < 10; i++) {
+	            var id = i;
+	            var item = {
+	                id: id,
+	                i: 'i' + id
+	            };
+
+	            this.items.push(item);
 	        }
 	    }
 	};}

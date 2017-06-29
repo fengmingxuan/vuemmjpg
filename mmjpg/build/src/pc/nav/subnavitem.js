@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(278)
-	var __weex_style__ = __webpack_require__(279)
-	var __weex_script__ = __webpack_require__(280)
+	var __weex_template__ = __webpack_require__(292)
+	var __weex_style__ = __webpack_require__(293)
+	var __weex_script__ = __webpack_require__(294)
 
-	__weex_define__('@weex-component/34a813e390fea666bad07ab3c5153ed4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/66e1230653bf56f6f59dd96149adb8ff', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/34a813e390fea666bad07ab3c5153ed4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/66e1230653bf56f6f59dd96149adb8ff',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2333,7 +2333,21 @@
 /* 275 */,
 /* 276 */,
 /* 277 */,
-/* 278 */
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2349,15 +2363,6 @@
 	        "news-bottom"
 	      ],
 	      "children": [
-	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
-	          "attr": {
-	            "src": function () {return this.tag.src}
-	          }
-	        },
 	        {
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
@@ -2375,7 +2380,7 @@
 	}
 
 /***/ }),
-/* 279 */
+/* 293 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2392,12 +2397,9 @@
 	    "fontSize": "12wx",
 	    "marginLeft": "4wx",
 	    "flex": 1,
-	    "alignItems": "flex-start",
+	    "alignItems": "center",
+	    "textAlign": "center",
 	    "padding": 10
-	  },
-	  "img": {
-	    "width": 200,
-	    "height": 200
 	  },
 	  "textClass-0": {
 	    "color:active": "#666666",
@@ -2419,7 +2421,7 @@
 	}
 
 /***/ }),
-/* 280 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2436,8 +2438,7 @@
 	        platform: '',
 	        tag: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": ""
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
 	        },
 
 	        skinType: 0

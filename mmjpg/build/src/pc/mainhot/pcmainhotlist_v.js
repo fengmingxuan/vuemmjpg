@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(216)
+	__vue_styles__.push(__webpack_require__(258)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(217)
+	__vue_exports__ = __webpack_require__(259)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(218)
+	var __vue_template__ = __webpack_require__(260)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,14 +91,15 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 140:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -138,9 +139,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -206,21 +207,21 @@
 
 /***/ }),
 
-/***/ 151:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(152)
+	__vue_styles__.push(__webpack_require__(237)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(153)
+	__vue_exports__ = __webpack_require__(238)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(154)
+	var __vue_template__ = __webpack_require__(239)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -251,7 +252,7 @@
 
 /***/ }),
 
-/***/ 152:
+/***/ 237:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -277,7 +278,7 @@
 
 /***/ }),
 
-/***/ 153:
+/***/ 238:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -312,7 +313,7 @@
 
 /***/ }),
 
-/***/ 154:
+/***/ 239:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -333,7 +334,7 @@
 
 /***/ }),
 
-/***/ 216:
+/***/ 258:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -351,7 +352,7 @@
 
 /***/ }),
 
-/***/ 217:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -360,7 +361,7 @@
 	    value: true
 	});
 
-	var _pcmainhotlistitem_v = __webpack_require__(151);
+	var _pcmainhotlistitem_v = __webpack_require__(236);
 
 	var _pcmainhotlistitem_v2 = _interopRequireDefault(_pcmainhotlistitem_v);
 
@@ -382,7 +383,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(137);
+	var mmjpg = __webpack_require__(140);
 
 	exports.default = {
 	    components: {
@@ -444,7 +445,7 @@
 
 /***/ }),
 
-/***/ 218:
+/***/ 260:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

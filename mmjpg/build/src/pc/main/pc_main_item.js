@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(157)
-	var __weex_style__ = __webpack_require__(158)
-	var __weex_script__ = __webpack_require__(159)
+	var __weex_template__ = __webpack_require__(189)
+	var __weex_style__ = __webpack_require__(190)
+	var __weex_script__ = __webpack_require__(191)
 
 	__weex_define__('@weex-component/0dc9649721a1cd93ff7cc67a0fafc2df', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2078,14 +2078,18 @@
 /***/ }),
 /* 135 */,
 /* 136 */,
-/* 137 */
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
@@ -2125,9 +2129,9 @@
 	exports.getImageUrl = function (path) {
 	    var url;
 	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -2192,9 +2196,6 @@
 
 
 /***/ }),
-/* 138 */,
-/* 139 */,
-/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -2211,7 +2212,39 @@
 /* 154 */,
 /* 155 */,
 /* 156 */,
-/* 157 */
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2260,7 +2293,7 @@
 	}
 
 /***/ }),
-/* 158 */
+/* 190 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2327,13 +2360,13 @@
 	}
 
 /***/ }),
-/* 159 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(53);
-	var yoka = __webpack_require__(137);
+	var yoka = __webpack_require__(140);
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	var weexNavigatorModule = __weex_require__('@weex-module/weexNavigatorModule');
 	module.exports = {
