@@ -1,0 +1,71 @@
+<template>
+    <slider class="slider"  interval="{{interval}}"   auto-play="false">
+        <indicator class="indicator"></indicator>
+        <div repeat="{{sliderPage in sliderPages}}">
+            <slider-item item="{{sliderPage}}"></slider-item>
+        </div>
+
+    </slider>
+</template>
+
+<script>
+    require('weex-components');
+    require('./slider-item.we')
+    var mmjpg = require('../../mmjpg');
+    var weexJsoupModule = require('@weex-module/weexJsoupModule');
+    module.exports = {
+        data: {
+            interval: 1000,
+            autoPlay: true,
+            sliderPages: [],
+            url:mmjpg.getm_mmjpg(),
+            pageNo:1,
+            index:0
+        },
+        methods: {
+            refresh: function () {
+                var self = this;
+                weexJsoupModule.pcmaintoppage(self.url,function(e){
+                    var json;
+                    json = eval('(' + e + ')');
+                    console.log('json==='+json);
+                    if (json.list) {
+                        if (json.list && json.list.length > 0) {
+                            for (var i = 0; i < json.list.length; i++) {
+                                var stockitem = json.list[i];
+                                self.sliderPages.push(stockitem);
+                            }
+                        }
+                    }
+                });
+            },
+        },
+        created: function () {
+            var self = this;
+            self.refresh();
+        },
+
+    };
+</script>
+
+<style>
+
+    .slider {
+        flex-direction: row;
+        /*margin-left: 18;*/
+        /*margin-right: 18;*/
+        width: 750;
+        flex: 1;
+        height: 500;
+    }
+
+    .indicator {
+        position: absolute;
+        width: 750;
+        height: 500;
+        top: 230;
+        left: 10;
+        itemColor: #dddddd;
+        itemSelectedColor: rgb(40, 96, 144);
+    }
+</style>

@@ -1,0 +1,36 @@
+<template>
+
+        <image class="slider-item" src="{{item.src}}" onclick="towebdetail"></image>
+
+</template>
+
+<script>
+    var weexEventModule = require('@weex-module/weexEventModule');
+  module.exports = {
+    data: {
+        item:{
+            src: '',
+            alt:'',
+            href: ''
+        }
+
+    },
+      created: function () {
+
+      },
+    methods: {
+        towebdetail:function (e) {
+            weexEventModule.startWebViewActivity(this.item.href);
+        },
+    }
+  };
+</script>
+
+<style>
+
+  .slider-item {
+    width: 750;
+    height: 500;
+  }
+
+</style>
