@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('pc/menu/pcslideoutmenu-tabbar')
             this.rows.push('pc/tabbar/pcmenu-scroller-tabbar')
             this.rows.push('list-demo-horizontal')
             this.rows.push('scroller-demo-horizontal')
