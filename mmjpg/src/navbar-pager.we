@@ -1,14 +1,14 @@
 <template>
     <div class="content content-{{skinType}}">
         <navbar if="{{navBar_display}}" title="{{title}}" type="{{skinType}}" shownleft="true" shown="{{shown}}"></navbar>
-        <scroller class="tabclass" scroll-direction="horizontal">
-            <div class="top_tab_item" repeat="{{item in  buttomData}}" onclick="{{setIndex(item.index)}}">
+        <div class="tabclass">
+            <div class="top_tab_item" repeat="{{item in buttomData}}" onclick="{{setIndex(item.index)}}">
                 <div class="pointdiv">
                     <text class="rednum rednum-{{davmargin}}" if="davNum!=0 && item.index==1">{{davNum}}</text>
                 </div>
                 <text class="item_text {{item.itemNameColor}}">{{item.itemName}}</text>
             </div>
-        </scroller>
+        </div>
         <div class="tablineclass">
             <div class="top_item_line" repeat="{{item in buttomData}}">
                 <div class="lineClass {{item.itemLineColor}}">
@@ -19,20 +19,13 @@
                 index="{{indexMetting}}" offScreenPageLimit="3"  style="height: {{screenHeight}}wx">
             <pc_main_head_foot_nobar id="point_sub0" ></pc_main_head_foot_nobar>
             <pc_main_head_foot_nobar id="point_sub1" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub2" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub3" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub4" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub5" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub6" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub7" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub8" ></pc_main_head_foot_nobar>
         </slider>
     </div>
 </template>
 
 <script>
-    require('../../template/navbar.we')
-    require('../main/pc_main_head_foot_nobar.we')
+    require('./template/navbar.we')
+    require('./pc/main/pc_main_head_foot_nobar.we')
     var weexEventModule = require('@weex-module/weexEventModule');
     require('weex-components');
     var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
@@ -61,48 +54,6 @@
                 },
                 {
                     index: 1,
-                    itemName: '性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 2,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 3,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 4,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 5,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 6,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 7,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 8,
                     itemName: '性感',
                     itemNameColor: "tab_unselect_txt_color-0",
                     itemLineColor:"unselect_line_color-0"
@@ -249,8 +200,8 @@
         width: 750;
         height: 80;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         bottom: 0;
         left: 0;
         right: 0;
@@ -274,11 +225,9 @@
     }
 
     .top_tab_item {
-        /*flex: 1;*/
+        flex: 1;
         align-items: center;
         justify-content: center;
-        width: 150px;
-        margin-top: -40;
     }
 
     .img {

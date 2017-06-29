@@ -1,0 +1,65 @@
+<template>
+    <div>
+        <scroller class="scroller" scroll-direction="horizontal">
+            <div class="item" id="{{item.i}}" repeat="{{item in  items}}">
+                <text class="item-title">row {{item.id}} {{item.i}}</text>
+            </div>
+        </scroller>
+    </div>
+</template>
+
+<style>
+
+
+    .item {
+        justify-content: center;
+        border-bottom-width: 2px;
+        border-bottom-color: #c0c0c0;
+        height: 100px;
+        width: 100px;
+        background-color: #00BDFF;
+        margin: 2;
+    }
+
+    .item-title {
+
+    }
+
+    .scroller {
+        width: 700px;
+        height: 500px;
+        border-width: 3px;
+        border-style: solid;
+        border-color: rgb(162, 217, 192);
+        margin: 25px;
+        flex-direction: row;
+
+    }
+
+</style>
+
+<script>
+    var dom = require('@weex-module/dom')
+    require('weex-components');
+    module.exports = {
+        methods: {
+
+        },
+        data: {
+            items: []
+        },
+        created () {
+            for (var i = 0; i < 10; i++) {
+                var id = i;
+                var item = {
+                    id: id,
+                    i: 'i' + id,
+                };
+
+                this.items.push(item);
+            }
+
+        },
+
+    }
+</script>
