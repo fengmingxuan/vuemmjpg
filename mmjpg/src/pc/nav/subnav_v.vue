@@ -1,37 +1,18 @@
 <template>
     <div>
-        <list class="list"  loadmoreoffset="10">
+        <list class="list" @loadmore="fetch" loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <cell>
-                <pcmaintopslider></pcmaintopslider>
-            </cell>
             <cell v-for="stockitem in stockArray">
-                <pc_main_item_v :stockitem="stockitem"></pc_main_item_v>
+                <subnavitem_v :stockitem="stockitem"></subnavitem_v>
             </cell>
-            <cell>
-                <pcmainhotlist_v></pcmainhotlist_v>
-            </cell>
-            <cell>
-                <pcmainlikelist_v></pcmainlikelist_v>
-            </cell>
-            <cell>
-                <pcmainmmlist_v></pcmainmmlist_v>
-            </cell>
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
         </list>
     </div>
 </template>
 
 <script>
-    import  pc_main_item_v from '../main/pc_main_item_v.vue'
-    import  pcmaintopslider from '../mainpager/pcmaintopslider.vue'
-    import pcmainhotlist_v from '../mainhot/pcmainhotlist_v.vue'
-    import pcmainlikelist_v from '../mainlike/pcmainlikelist_v.vue'
-    import pcmainmmlist_v from '../mainmm/pcmainmmlist_v.vue'
+    import  subnavitem_v from '../nav/subnavitem_v.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexJsoupModule = weex.requireModule('weexJsoupModule');
@@ -39,11 +20,7 @@
 
     export default{
         components: {
-            pc_main_item_v,
-            pcmaintopslider,
-            pcmainhotlist_v,
-            pcmainlikelist_v,
-            pcmainmmlist_v
+            subnavitem_v
         },
 
         data(){
@@ -52,7 +29,6 @@
                 taghref:mmjpg.getm_mmjpg(),
                 pageNo: 1,
                 refreshing: false,
-                showLoading: 'hide',
             }
         },
         created: function(){
@@ -61,17 +37,9 @@
 
         },
         methods:{
-            onloading (event) {
-                this.showLoading = 'show'
-                this.pageNo = this.pageNo+1;
-                setTimeout(() => {
-                    this.showLoading = 'hide'
-                }, 2000)
-                this.refresh();
-            },
             fetch(event){
-                this.pageNo = this.pageNo+1;
-                this.refresh();
+//                this.pageNo = this.pageNo+1;
+//                this.refresh();
             },
             onpullingdown (event) {
             },
@@ -86,17 +54,7 @@
             refresh:function(){
                 var self = this;
                 var url = self.taghref;
-                if(self.pageNo==1){
-                    url = self.taghref;
-                }else{
-                    url = self.taghref+"home/"+self.pageNo;
-                }
-                console.log('url==='+url);
-                var params = {
-                    url:url,
-                    pageNo: self.pageNo
-                };
-                weexJsoupModule.pcmainlist(params,function(e){
+                weexJsoupModule.pcsubnav(url,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
@@ -130,14 +88,5 @@
         font-size: 42px;
         text-align: center;
     }
-    .loading {
-        justify-content: center;
-    }
-    .indicator_loading {
-        color: #888888;
-        font-size: 42px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: center;
-    }
+
 </style>

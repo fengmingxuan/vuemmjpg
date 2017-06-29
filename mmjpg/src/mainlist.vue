@@ -27,6 +27,7 @@
         created () {
             this.rows.push('pc/main/pc_main')
             this.rows.push('pc/main/pc_main_v')
+            this.rows.push('pc/main/pc_main_head_foot')
             this.rows.push('pc/main/pc_main_load_refresh_v')
             this.rows.push('pc/mainpager/pcmaintoppager')
             this.rows.push('pc/mainpager/pcmaintopslider')
@@ -38,6 +39,10 @@
             this.rows.push('pc/mainmm/pcmainmmlist_v')
             this.rows.push('pc/friendlink/friendlinklist')
             this.rows.push('pc/friendlink/friendlinklist_v')
+            this.rows.push('pc/nav/subnav')
+            this.rows.push('pc/nav/subnav_v')
+            this.rows.push('pc/mainmm/pcmainmmgrid')
+
             this.rows.push('stocknews/stocknews')
             this.rows.push('components/a')
             this.rows.push('components/slider')

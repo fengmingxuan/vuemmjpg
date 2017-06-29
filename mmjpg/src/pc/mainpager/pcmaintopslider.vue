@@ -10,21 +10,16 @@
 
 <style scoped>
     .image {
-        width: 700px;
-        height: 700px;
+        width: 750px;
+        height: 500px;
     }
     .slider {
-        margin-top: 25px;
-        margin-left: 25px;
-        width: 700px;
-        height: 700px;
-        border-width: 2px;
-        border-style: solid;
-        border-color: #41B883;
+        width: 750px;
+        height: 500px;
     }
     .frame {
-        width: 700px;
-        height: 700px;
+        width: 750px;
+        height: 500px;
         position: relative;
     }
 </style>
