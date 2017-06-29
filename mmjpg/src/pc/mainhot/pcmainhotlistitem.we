@@ -1,0 +1,85 @@
+<template>
+    <div  class="itemClass itemClass_{{platform}}-{{skinType}}" onclick="towebdetail(tag.href)">
+        <div class="news-bottom">
+            <text class="tucao_numClass textClass-{{skinType}}">{{tag.alt}}</text>
+        </div>
+        <div class="lineClass lineClass-{{skinType}}"></div>
+    </div>
+</template>
+
+<script>
+    require('weex-components');
+    var mmjpg = require('../../mmjpg');
+    var weexEventModule = require('@weex-module/weexEventModule');
+
+    module.exports = {
+        created: function () {
+            this.platform = this.$getConfig().env.platform;
+
+        },
+        data: {
+            platform: '',
+            tag:{
+                "href":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+                "alt":"这6个穿搭法则如果记住，时髦一整年没问题！",
+             }
+            ,
+            skinType: 0
+        },
+        methods: {
+            towebdetail:function (e) {
+                weexEventModule.startWebViewActivity(e);
+            },
+        }
+    }
+</script>
+
+<style>
+    .itemClass{
+        margin: 5;
+    }
+
+    .news-bottom {
+        flex: 1;
+        align-items: center;
+        flex-direction: row;
+        margin: 5;
+    }
+
+    .tucao_numClass {
+        font-size: 12wx;
+        margin-left: 4wx;
+        flex: 1;
+        align-items: flex-start;
+        text-align: flex-start;
+        padding: 10;
+
+    }
+
+
+    .textClass-0:active {
+        color: #666666;
+        background-color: #dddddd
+    }
+
+    .textClass-1:active {
+        color: #666666;
+        background-color: #132237
+    }
+
+
+
+    .lineClass {
+        height: 2;
+    }
+
+    .lineClass-0 {
+        background-color: #eeeeee;
+    }
+
+    .lineClass-1 {
+        background-color: #0e1929;
+    }
+
+
+</style>

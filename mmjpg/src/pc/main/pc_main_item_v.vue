@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="news-content">
+        <div class="news-content" @click="todetail(stockitem.href)">
             <image class="img" :src="stockitem.src"></image>
             <text class="txt">{{stockitem.alt}}</text>
             <text class="txt">{{stockitem.other}}</text>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    var weexEventModule = weex.requireModule('weexEventModule');
     module.exports = {
         created:function(){
             console.log('news');
@@ -21,7 +22,9 @@
         },
 
         methods:{
-
+            todetail:function (e) {
+                weexEventModule.startWebViewActivity(e);
+            }
         }
     }
 </script>

@@ -29,6 +29,8 @@
             this.rows.push('pc/main/pc_main_v')
             this.rows.push('pc/mainpager/pcmaintoppager')
             this.rows.push('pc/mainpager/pcmaintopslider')
+            this.rows.push('pc/mainhot/pcmainhotlist')
+            this.rows.push('pc/mainhot/pcmainhotlist_v')
             this.rows.push('stocknews/stocknews')
             this.rows.push('components/a')
             this.rows.push('components/slider')

@@ -2,7 +2,7 @@
     <div>
         <slider class="slider" interval="3000" auto-play="true">
             <div class="frame" v-for="img in imageList">
-                <image class="image" resize="cover" :src="img.src"></image>
+                <image class="image" resize="cover" :src="img.src" @click="todetail(img.href)"></image>
             </div>
         </slider>
     </div>
@@ -35,6 +35,7 @@
     var modal = weex.requireModule('modal');
     var weexJsoupModule = weex.requireModule('weexJsoupModule');
     var mmjpg = require('../../mmjpg');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default {
         data () {
             return {
@@ -47,6 +48,9 @@
             self.refresh();
         },
         methods:{
+            todetail:function (e) {
+                weexEventModule.startWebViewActivity(e);
+            },
             refresh:function(){
                 var self = this;
                 var url = self.taghref;
