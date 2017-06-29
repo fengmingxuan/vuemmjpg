@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(205)
+	__vue_styles__.push(__webpack_require__(216)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(206)
+	__vue_exports__ = __webpack_require__(217)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(208)
+	var __vue_template__ = __webpack_require__(218)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlist_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-38f12248"
+	__vue_options__._scopeId = "data-v-449bccd5"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -206,53 +206,78 @@
 
 /***/ }),
 
-/***/ 202:
+/***/ 151:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(152)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(153)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(154)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlistitem_v.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-78a91aa8"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 152:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-bottom": {
-	    "marginTop": 15,
-	    "marginBottom": 15,
+	    "flex": 1,
+	    "alignItems": "center",
 	    "flexDirection": "row",
-	    "marginLeft": 20,
-	    "marginRight": 20
+	    "margin": 5
 	  },
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column"
-	  },
-	  "news-reply": {
+	  "tucao_numClass": {
+	    "fontSize": "12wx",
+	    "marginLeft": "4wx",
 	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
+	    "alignItems": "flex-start",
+	    "padding": 10,
+	    "margin": 10
 	  },
-	  "news-txt": {
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
-	  },
-	  "news-share": {
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
-	  },
-	  "img": {
-	    "width": 750,
-	    "height": 900
-	  },
-	  "txt": {
-	    "opacity": 0.3,
-	    "fontSize": 30
+	  "lineClass": {
+	    "height": 2,
+	    "backgroundColor": "#eeeeee"
 	  }
 	}
 
 /***/ }),
 
-/***/ 203:
+/***/ 153:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -266,13 +291,11 @@
 	//
 	//
 	//
-	//
 
+	var weexJsoupModule = weex.requireModule('weexJsoupModule');
 	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
-	    created: function created() {
-	        console.log('news');
-	    },
+	    created: function created() {},
 
 	    props: {
 	        stockitem: {
@@ -289,33 +312,28 @@
 
 /***/ }),
 
-/***/ 204:
+/***/ 154:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
-	    staticClass: ["news-content"],
+	    staticClass: ["news-bottom"],
 	    on: {
 	      "click": function($event) {
 	        _vm.todetail(_vm.stockitem.href)
 	      }
 	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src
-	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	  }, [_c('text', {
+	    staticClass: ["tucao_numClass"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])]), _c('div', {
+	    staticClass: ["lineClass"]
+	  })])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 205:
+/***/ 216:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -333,7 +351,7 @@
 
 /***/ }),
 
-/***/ 206:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -342,9 +360,9 @@
 	    value: true
 	});
 
-	var _pc_main_item_v = __webpack_require__(207);
+	var _pcmainhotlistitem_v = __webpack_require__(151);
 
-	var _pc_main_item_v2 = _interopRequireDefault(_pc_main_item_v);
+	var _pcmainhotlistitem_v2 = _interopRequireDefault(_pcmainhotlistitem_v);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -368,7 +386,7 @@
 
 	exports.default = {
 	    components: {
-	        pc_main_item_v: _pc_main_item_v2.default
+	        pcmainhotlistitem_v: _pcmainhotlistitem_v2.default
 	    },
 
 	    data: function data() {
@@ -386,8 +404,8 @@
 	    },
 	    methods: {
 	        fetch: function fetch(event) {
-	            this.pageNo = this.pageNo + 1;
-	            this.refresh();
+	            //                this.pageNo = this.pageNo+1;
+	            //                this.refresh();
 	        },
 	        onpullingdown: function onpullingdown(event) {},
 	        onrefresh: function onrefresh(event) {
@@ -404,17 +422,7 @@
 	        refresh: function refresh() {
 	            var self = this;
 	            var url = self.taghref;
-	            if (self.pageNo == 1) {
-	                url = self.taghref;
-	            } else {
-	                url = self.taghref + "home/" + self.pageNo;
-	            }
-	            console.log('url===' + url);
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            weexJsoupModule.pcmainlist(params, function (e) {
+	            weexJsoupModule.pcmainheadlist(url, function (e) {
 	                var json = JSON.parse(e);
 	                if (self.pageNo == 1) {
 	                    self.stockArray.splice(0, self.stockArray.length);
@@ -436,52 +444,7 @@
 
 /***/ }),
 
-/***/ 207:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(202)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(203)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(204)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-10f49458"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 208:
+/***/ 218:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -510,7 +473,7 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pc_main_item_v', {
+	    }, [_c('pcmainhotlistitem_v', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }

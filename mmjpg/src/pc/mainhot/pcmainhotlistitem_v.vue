@@ -3,6 +3,7 @@
         <div class="news-bottom" @click="todetail(stockitem.href)">
             <text class="tucao_numClass">{{stockitem.alt}}</text>
         </div>
+        <div class="lineClass"></div>
     </div>
 </template>
 
@@ -41,6 +42,11 @@
         align-items: flex-start;
         text-align: flex-start;
         padding: 10;
+        margin: 10;
 
+    }
+    .lineClass {
+        height: 2;
+        background-color: #eeeeee;
     }
 </style>

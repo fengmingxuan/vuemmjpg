@@ -156,6 +156,16 @@
 	    created: function created() {
 	        this.rows.push('pc/main/pc_main');
 	        this.rows.push('pc/main/pc_main_v');
+	        this.rows.push('pc/mainpager/pcmaintoppager');
+	        this.rows.push('pc/mainpager/pcmaintopslider');
+	        this.rows.push('pc/mainhot/pcmainhotlist');
+	        this.rows.push('pc/mainhot/pcmainhotlist_v');
+	        this.rows.push('pc/mainlike/pcmainlikelist');
+	        this.rows.push('pc/mainlike/pcmainlikelist_v');
+	        this.rows.push('pc/mainmm/pcmainmmlist');
+	        this.rows.push('pc/mainmm/pcmainmmlist_v');
+	        this.rows.push('pc/friendlink/friendlinklist');
+	        this.rows.push('pc/friendlink/friendlinklist_v');
 	        this.rows.push('stocknews/stocknews');
 	        this.rows.push('components/a');
 	        this.rows.push('components/slider');

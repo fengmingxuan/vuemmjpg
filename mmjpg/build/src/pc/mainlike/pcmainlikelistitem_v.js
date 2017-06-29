@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(253)
+	__vue_styles__.push(__webpack_require__(229)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(254)
+	__vue_exports__ = __webpack_require__(230)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(255)
+	var __vue_template__ = __webpack_require__(231)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/stocknews/stock_news_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelistitem_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-da52b86c"
+	__vue_options__._scopeId = "data-v-76458544"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -91,52 +91,32 @@
 
 /***/ }),
 
-/***/ 253:
+/***/ 229:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-bottom": {
-	    "marginTop": 15,
-	    "marginBottom": 15,
+	    "flex": 1,
+	    "alignItems": "center",
 	    "flexDirection": "row",
-	    "marginLeft": 20,
-	    "marginRight": 20
+	    "margin": 5
 	  },
-	  "news-content": {
-	    "marginLeft": 20,
-	    "marginRight": 20
-	  },
-	  "news-reply": {
+	  "tucao_numClass": {
+	    "fontSize": "12wx",
+	    "marginLeft": "4wx",
 	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
-	  },
-	  "news-txt": {
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
-	  },
-	  "news-share": {
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "flexDirection": "row"
+	    "alignItems": "flex-start",
+	    "padding": 10
 	  },
 	  "img": {
-	    "width": 40,
-	    "height": 40
-	  },
-	  "txt": {
-	    "opacity": 0.3,
-	    "fontSize": 30
+	    "width": 200,
+	    "height": 200
 	  }
 	}
 
 /***/ }),
 
-/***/ 254:
+/***/ 230:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -150,30 +130,11 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
+	var weexJsoupModule = weex.requireModule('weexJsoupModule');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
-	    created: function created() {
-	        console.log('news');
-	    },
+	    created: function created() {},
 
 	    props: {
 	        stockitem: {
@@ -181,60 +142,34 @@
 	        }
 	    },
 
-	    methods: {}
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
 	};
 
 /***/ }),
 
-/***/ 255:
+/***/ 231:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
-	    staticClass: ["news-content"]
-	  }, [_c('span', {
-	    staticStyle: {
-	      color: "#ff0000",
-	      fontSize: "18"
+	    staticClass: ["news-bottom"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
 	    }
-	  }, [_vm._v(" 12:09 ")]), _c('span', {
-	    staticStyle: {
-	      fontWeight: "bold",
-	      color: "#000000",
-	      fontSize: "22"
-	    }
-	  }, [_vm._v(" " + _vm._s(_vm.stockitem.subject) + " ")]), _c('span', {
-	    staticStyle: {
-	      color: "#000000",
-	      fontSize: "20"
-	    }
-	  }, [_vm._v(" " + _vm._s(_vm.stockitem.subject) + " ")])], 1), _c('div', {
-	    staticClass: ["news-bottom"]
-	  }, [_c('div', {
-	    staticClass: ["news-txt"]
-	  }), _c('div', {
-	    staticClass: ["news-txt"]
-	  }), _c('div', {
-	    staticClass: ["news-txt"]
-	  }), _c('div', {
-	    staticClass: ["news-share"]
 	  }, [_c('image', {
 	    staticClass: ["img"],
 	    attrs: {
-	      "src": "http://ww1.sinaimg.cn/large/0060lm7Tgw1fbbe3xef2oj303h02owec.jpg"
+	      "src": _vm.stockitem.src
 	    }
 	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.usefulNum))])]), _c('div', {
-	    staticClass: ["news-reply"]
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": "http://i1.piimg.com/567571/c046122d57e5da9e.png"
-	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.totalReplyNum))])])])])
+	    staticClass: ["tucao_numClass"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

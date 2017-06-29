@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(188)
+	__vue_styles__.push(__webpack_require__(202)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(189)
+	__vue_exports__ = __webpack_require__(203)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(190)
+	var __vue_template__ = __webpack_require__(204)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,7 +91,7 @@
 
 /***/ }),
 
-/***/ 188:
+/***/ 202:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -137,7 +137,7 @@
 
 /***/ }),
 
-/***/ 189:
+/***/ 203:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -153,6 +153,7 @@
 	//
 	//
 
+	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
 	    created: function created() {
 	        console.log('news');
@@ -164,17 +165,26 @@
 	        }
 	    },
 
-	    methods: {}
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
 	};
 
 /***/ }),
 
-/***/ 190:
+/***/ 204:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
-	    staticClass: ["news-content"]
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
+	    }
 	  }, [_c('image', {
 	    staticClass: ["img"],
 	    attrs: {
