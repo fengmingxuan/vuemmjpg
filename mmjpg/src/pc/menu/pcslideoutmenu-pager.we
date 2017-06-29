@@ -6,10 +6,9 @@
         </div>
     </div>
     <div id="main" class="panel panel-{{showmenu}}" style="height: {{deviceHeight}}" onclick="toggle">
-        <!--<div class="btn-hamburger" >-->
-            <!--<pcmenu-tabbar></pcmenu-tabbar>-->
-        <!--</div>-->
-        <pcmenu-tabbar></pcmenu-tabbar>
+        <div class="btn-hamburger" >
+            <pcmainnav-pager></pcmainnav-pager>
+        </div>
     </div>
    </div>
 
