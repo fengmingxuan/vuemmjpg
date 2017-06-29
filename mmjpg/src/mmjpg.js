@@ -42,9 +42,9 @@ exports.getPathUrl = function (path, isnative) {
 exports.getImageUrl = function (path) {
     var url;
     if (typeof window === 'object') {
-        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
     } else {
-        url = BASE_URL.HTTP + BASE_URL.IP + '/mm' + path.substring(1, path.length);
+        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 
     }
     console.log('getImageUrl=='+url);

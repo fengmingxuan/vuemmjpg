@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('pc/mainpager/pcmainnav-pager')
+            this.rows.push('pc/main/pc_main_head_foot_nobar')
             this.rows.push('pc/main/pc_main')
             this.rows.push('pc/main/pc_main_v')
             this.rows.push('pc/main/pc_main_head_foot')
@@ -42,7 +44,8 @@
             this.rows.push('pc/nav/subnav')
             this.rows.push('pc/nav/subnav_v')
             this.rows.push('pc/mainmm/pcmainmmgrid')
-
+            this.rows.push('pc/tabbar/pcmenu-tabbar')
+            this.rows.push('pc/menu/pcslideoutmenu')
             this.rows.push('stocknews/stocknews')
             this.rows.push('components/a')
             this.rows.push('components/slider')

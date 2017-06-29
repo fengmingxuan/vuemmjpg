@@ -4,10 +4,11 @@
         <div class="nav_bar nav_bar-{{type}}">
             <div class="nav_back nav_back-{{type}}" onclick="nativeback">
                 <image class="img" src="{{getImgUrl(leftsrc)}}" if="{{shownleft}}"></image>
+                <!--http://192.168.1.15:8080/mmjpg/images/search.png-->
             </div>
             <div class="nav_title">
                 <text class="nav_text nav_text-{{type}} nav_text_top-{{nav_text_top}}">{{title}}</text>
-                <!--<image class="imglogo" src="{{getImgUrl('./images/logo.png')}}" if="{{shownleft}}"></image>-->
+                <!--<image class="imglogo" src="{{getImgUrl('../images/logo.png')}}" if="{{shownleft}}"></image>-->
             </div>
             <div class="nav_right_menu">
                 <div class="nav_right_menu nav_back-{{type}}" if="{{shown}}" onclick="onright">

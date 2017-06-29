@@ -1,0 +1,87 @@
+<template>
+    <div style="flex-direction: column;height: {{deviceHeight}}">
+        <wxc-tabbar tab-items={{tabItems}}></wxc-tabbar>
+    </div>
+</template>
+
+<script>
+    require('weex-components');
+    var mmjpg = require('../../mmjpg');
+    var weexJsoupModule = require('@weex-module/weexJsoupModule');
+    var storage = require('@weex-module/storage');
+    module.exports = {
+        data: {
+            deviceHeight:0,
+            tabItems: [
+//                {
+//                    index: 0,
+//                    title: 'list',
+//                    titleColor: '#000000',
+//                    icon: '',
+//                    image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+//                    selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+//                    src: yoka.getPathUrl('list-demo.js', false),
+//                    visibility: 'visible',
+//                }
+
+            ],
+        },
+        created: function () {
+            var self = this;
+//            self.deviceHeight = self.$getConfig().env.deviceHeight;
+            self.deviceHeight = 1300;
+            console.log('deviceHeight=='+self.deviceHeight);
+            self.refresh();
+        },
+        methods: {
+            refresh: function () {
+                var self = this;
+                weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(),function(e){
+                    var json;
+                    json = eval('(' + e + ')');
+                    console.log('json==='+json);
+                    self.tabItems.splice(0, self.tabItems.length);
+                    if (json.list) {
+                        if (json.list && json.list.length > 0) {
+                            for (var i = 0; i < json.list.length; i++) {
+                                var  tag = json.list[i];
+                                var tab = {
+                                    index: i,
+                                    title: tag.title,
+                                    titleColor: '#000000',
+                                    icon: '',
+                                    image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+                                    selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+                                    src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
+                                    visibility: 'visible',
+                                    taghref:tag.href
+                                };
+                                if(i==0){
+                                    tab.visibility = 'visible';
+                                }else{
+                                    tab.visibility = 'hidden';
+                                }
+                                self.tabItems.push(tab);
+                            }
+                        }
+                    }
+                });
+            },
+            ready: function (e) {
+                var vm = this;
+                vm.$on('tabBar.onClick', function (e) {
+                    var detail = e.detail;
+                    nativeLog('$dispatch tabBar.onClick ' + detail.index);
+
+                    var taghref = vm.tabItems[detail.index].taghref;
+                    storage.setItem('taghref',taghref,function(s){
+                        console.log('set [taghref]:'+JSON.stringify(s));
+                    });
+
+
+
+                });
+            },
+        }
+    }
+</script>
