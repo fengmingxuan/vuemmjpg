@@ -9,6 +9,13 @@ var BASE_URL = {
 
 var MMJPG = {
     m_mmjpg:"http://www.mmjpg.com/",
+    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+};
+
+exports.getm_mmjpg_article = function () {
+    var url = MMJPG.m_mmjpg_article;
+    console.log('m_mmjpg_article==' + url);
+    return url;
 };
 
 exports.getm_mmjpg = function () {

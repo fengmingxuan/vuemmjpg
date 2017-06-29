@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('pc/article/pcarticle')
             this.rows.push('pc/menu/pcslideoutmenu-tabbar')
             this.rows.push('pc/menu/pcslideoutmenu-pager')
             this.rows.push('pc/tabbar/pcmenu-scroller-tabbar')
