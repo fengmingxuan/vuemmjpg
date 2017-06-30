@@ -9,8 +9,20 @@
                     下拉刷新
                 </text>
             </refresh>
+            <cell>
+                <pcmaintoppager id="pcmaintoppagerid" url="{{url}}"></pcmaintoppager>
+            </cell>
             <cell repeat="{{stockitem in stockArray}}">
                 <pcarticleitem stockitem="{{stockitem}}"></pcarticleitem>
+            </cell>
+            <cell>
+                <pcmainhotlist id="pcmainhotlistid" href="{{url}}"></pcmainhotlist>
+            </cell>
+            <cell>
+                <pcmainlikelist id="pcmainlikelistid"  href="{{url}}"></pcmainlikelist>
+            </cell>
+            <cell>
+                <pcmainmmgrid id="pcmainmmgridid"  href="{{url}}"></pcmainmmgrid>
             </cell>
             <loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">
                 <text class="refresh-arrow refresh-arrow-{{skinType}}">
@@ -25,6 +37,10 @@
 <script>
     require('../../template/navbar.we')
     require('weex-components');
+    require('../mainpager/pcmaintoppager.we')
+    require('../mainhot/pcmainhotlist.we')
+    require('../mainlike/pcmainlikelist.we')
+    require('../mainmm/pcmainmmgrid.we')
     require('./pcarticleitem.we')
     var mmjpg = require('../../mmjpg');
     var stream = require('@weex-module/stream');
@@ -48,6 +64,7 @@
             shown:true,
             taghref:mmjpg.getm_mmjpg_article(),
             deviceHeight:1334,
+            url:''
         },
         created: function () {
             var self = this;
@@ -63,6 +80,14 @@
 //                            console.log('taghref=='+self.taghref);
 //                            self.refresh();
 //                        });
+        },
+        ready:function () {
+            var self = this;
+            self.url = self.taghref+self.pageNo;
+            self.$vm('pcmaintoppagerid').autoRefresh();
+            self.$vm('pcmainhotlistid').autoRefresh();
+            self.$vm('pcmainlikelistid').autoRefresh();
+            self.$vm('pcmainmmgridid').autoRefresh();
         },
         methods: {
             togglemenu:function () {
