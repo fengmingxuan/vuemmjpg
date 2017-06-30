@@ -25,6 +25,11 @@
             }
         },
         created () {
+            this.rows.push('m/hot/mhotnav-pager')
+            this.rows.push('m/more/m_more')
+            this.rows.push('m/menu/mmenu-tabbar')
+            this.rows.push('m/menu/mmenu')
+            this.rows.push('m/main/m_main')
             this.rows.push('pc/search/pc_search')
             this.rows.push('pc/more/pc_more_head_foot_nobar')
             this.rows.push('pc/top/pc_top_head_foot_nobar')

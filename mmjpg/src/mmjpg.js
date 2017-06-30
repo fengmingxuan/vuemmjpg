@@ -14,7 +14,25 @@ var MMJPG = {
     m_mmjpg_top:"http://www.mmjpg.com/top/",
     m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
     m_mmjpg_more:"http://www.mmjpg.com/more/",
-    m_mmjpg_search:"http://www.mmjpg.com/search.php"
+    m_mmjpg_search:"http://www.mmjpg.com/search.php",
+    m_mmjpg_m:"http://m.mmjpg.com/",
+    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
+    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+};
+exports.getm_mmjpg_m_hot = function () {
+    var url = MMJPG.m_mmjpg_m_hot;
+    console.log('m_mmjpg_m_hot==' + url);
+    return url;
+};
+exports.getm_mmjpg_m_more = function () {
+    var url = MMJPG.m_mmjpg_m_more;
+    console.log('m_mmjpg_m_more==' + url);
+    return url;
+};
+exports.getm_mmjpg_m = function () {
+    var url = MMJPG.m_mmjpg_m;
+    console.log('m_mmjpg_m==' + url);
+    return url;
 };
 exports.getm_mmjpg_search = function () {
     var url = MMJPG.m_mmjpg_search;
