@@ -30,7 +30,10 @@
             href:mmjpg.getm_mmjpg(),
         },
         methods: {
+            autoRefresh:function () {
+                this.refresh();
 
+            },
             onrefresh: function (e) {
                 var self = this;
                 self.refresh_display = 'show';
@@ -70,11 +73,11 @@
 //                console.log('taghref=='+self.taghref);
 //                self.refresh();
 //            });
-var shref = this.$getConfig().href;
-            if(shref!=undefined){
-             self.href = shref;
-            }
-             self.refresh();
+//var shref = this.$getConfig().href;
+//            if(shref!=undefined){
+//             self.href = shref;
+//            }
+////             self.refresh();
 
         },
         ready: function () {

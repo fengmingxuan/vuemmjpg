@@ -10,19 +10,19 @@
                 </text>
             </refresh>
             <cell>
-                <pcmaintoppager></pcmaintoppager>
+                <pcmaintoppager id="pcmaintoppagerid" url="{{taghref}}"></pcmaintoppager>
             </cell>
             <cell repeat="{{stockitem in stockArray}}">
                 <pc_main_item stockitem="{{stockitem}}"></pc_main_item>
             </cell>
             <cell>
-                <pcmainhotlist></pcmainhotlist>
+                <pcmainhotlist id="pcmainhotlistid" href="{{taghref}}"></pcmainhotlist>
             </cell>
             <cell>
-                <pcmainlikelist></pcmainlikelist>
+                <pcmainlikelist id="pcmainlikelistid"  href="{{taghref}}"></pcmainlikelist>
             </cell>
             <cell>
-                <pcmainmmgrid></pcmainmmgrid>
+                <pcmainmmgrid id="pcmainmmgridid"  href="{{taghref}}"></pcmainmmgrid>
             </cell>
             <loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">
                 <text class="refresh-arrow refresh-arrow-{{skinType}}">
@@ -62,13 +62,13 @@
             title:'MMJPG',
             showleft:true,
             shown:true,
-            taghref:mmjpg.getm_mmjpg()
+            taghref:mmjpg.getm_mmjpg(),
+            isFirst:1
         },
         created: function () {
             var self = this;
             this.platform = this.$getConfig().env.platform;
-            self.refresh();
-
+            console.log('isFirst==='+self.isFirst+';taghref=='+self.taghref);
 //            storage.getItem('taghref',function(s){
 //                            console.log('get taghref result:'+JSON.stringify(s));
 //                            var staghref = s.data;
@@ -80,6 +80,14 @@
 //                        });
         },
         methods: {
+            autoRefresh:function () {
+                this.refresh();
+                this.$vm('pcmaintoppagerid').autoRefresh();
+                this.$vm('pcmainhotlistid').autoRefresh();
+                this.$vm('pcmainlikelistid').autoRefresh();
+                this.$vm('pcmainmmgridid').autoRefresh();
+
+            },
             togglemenu:function () {
                 this._parent.toggle();
             },
@@ -103,6 +111,7 @@
 
             refresh: function () {
                 var self = this;
+                self.isFirst==0;
                 var url = self.taghref;
                 if(self.pageNo==1){
                     url = self.taghref;

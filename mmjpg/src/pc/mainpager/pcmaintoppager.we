@@ -20,7 +20,7 @@
             sliderPages: [],
             url:mmjpg.getm_mmjpg(),
             pageNo:1,
-            index:0
+            index:0,
         },
         methods: {
             refresh: function () {
@@ -39,10 +39,14 @@
                     }
                 });
             },
+            autoRefresh:function () {
+                this.refresh();
+
+            }
         },
         created: function () {
             var self = this;
-            self.refresh();
+
         },
 
     };

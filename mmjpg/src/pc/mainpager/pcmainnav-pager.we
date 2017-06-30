@@ -17,15 +17,9 @@
         </div>
         <slider class="slider" append="tree" interval="1000" needloop="false" auto-play="false" onchange="onchange"
                 index="{{indexMetting}}" offScreenPageLimit="3"  style="height: {{screenHeight}}wx">
-            <pc_main_head_foot_nobar id="point_sub0" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub1" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub2" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub3" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub4" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub5" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub6" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub7" ></pc_main_head_foot_nobar>
-            <pc_main_head_foot_nobar id="point_sub8" ></pc_main_head_foot_nobar>
+            <div repeat="{{item in buttomData}}">
+                <pc_main_head_foot_nobar id="{{item.id}}" taghref = "{{item.href}}" isFirst="{{item.isFirst}}"></pc_main_head_foot_nobar>
+            </div
         </slider>
     </div>
 </template>
@@ -33,6 +27,8 @@
 <script>
     require('../../template/navbar.we')
     require('../main/pc_main_head_foot_nobar.we')
+    var mmjpg = require('../../mmjpg');
+    var weexJsoupModule = require('@weex-module/weexJsoupModule');
     var weexEventModule = require('@weex-module/weexEventModule');
     require('weex-components');
     var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
@@ -47,68 +43,10 @@
             navBar_display: true,
             shown:false,
             screenHeight:0,
-            isFirst: 0,
             platform: 'unknown',
 //            left_line_color: 'select_line_color-0',
 //            right_line_color: 'unselect_line_color-0',
-            buttomData: [
-                {
-                    index: 0,
-                    itemName: '所有',
-                    itemNameColor: "item_text-select-0",
-                    itemLineColor:"select_line_color-0"
-                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-                },
-                {
-                    index: 1,
-                    itemName: '性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 2,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 3,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 4,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 5,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 6,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 7,
-                    itemName: '性感性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                },
-                {
-                    index: 8,
-                    itemName: '性感',
-                    itemNameColor: "tab_unselect_txt_color-0",
-                    itemLineColor:"unselect_line_color-0"
-                }
-
-            ],
+            buttomData: [],
             davNum:0,//我的观点数
             davmargin:0
         },
@@ -121,6 +59,7 @@
                 var event_ios = require('@weex-module/event');
                 event_ios.setNavbarTitle(this.title);
             }
+            this.refresh();
 //            if (this.platform == 'iOS') {
 //
 //            } else if (this.platform == 'android') {
@@ -137,6 +76,35 @@
 //            this.setdavNum(cdavNum);
         },
         methods: {
+            refresh: function () {
+                var self = this;
+                weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
+                    var json;
+                    json = eval('(' + e + ')');
+                    console.log('json===' + json);
+                    self.buttomData.splice(0, self.buttomData.length);
+                    if (json.list) {
+                        if (json.list && json.list.length > 0) {
+                            for (var i = 0; i < json.list.length; i++) {
+                                var tag = json.list[i];
+
+                                var tab = {
+                                    index: i,
+                                    itemName: tag.alt,
+                                    itemNameColor: "item_text-select-0",
+                                    itemLineColor:"select_line_color-0",
+                                    id:"point_sub"+i,
+                                    href:tag.href,
+                                    isFirst:1
+                                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+                                };
+                                console.log('tab==='+JSON.stringify(tab));
+                                self.buttomData.push(tab);
+                            }
+                        }
+                    }
+                });
+            },
             onchange: function (params) {
                 var index = params.index;
                 this.setIndex(index);
@@ -192,7 +160,6 @@
         ready(){
             this.indexMetting = 0;
             this.setIndex(this.indexMetting);
-            this.isFirst = 0;
         },
     };
 </script>
