@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(149)
-	var __weex_style__ = __webpack_require__(150)
-	var __weex_script__ = __webpack_require__(151)
+	var __weex_template__ = __webpack_require__(142)
+	var __weex_style__ = __webpack_require__(143)
+	var __weex_script__ = __webpack_require__(144)
 
 	__weex_define__('@weex-component/2a135c908717f5a1c61736d02cda666a', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2081,160 +2081,9 @@
 /* 137 */,
 /* 138 */,
 /* 139 */,
-/* 140 */
-/***/ (function(module, exports) {
-
-	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
-
-	};
-
-	var MMJPG = {
-	    m_mmjpg:"http://www.mmjpg.com/",
-	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
-	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
-	    m_mmjpg_top:"http://www.mmjpg.com/top/",
-	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
-	    m_mmjpg_more:"http://www.mmjpg.com/more/"
-	};
-	exports.getm_mmjpg_more = function () {
-	    var url = MMJPG.m_mmjpg_more;
-	    console.log('m_mmjpg_more==' + url);
-	    return url;
-	};
-	exports.getm_mmjpg_top_page = function () {
-	    var url = MMJPG.m_mmjpg_top_page;
-	    console.log('m_mmjpg_top_page==' + url);
-	    return url;
-	};
-	exports.getm_mmjpg_top = function () {
-	    var url = MMJPG.m_mmjpg_top;
-	    console.log('m_mmjpg_top==' + url);
-	    return url;
-	};
-	exports.getm_mmjpg_hot = function () {
-	    var url = MMJPG.m_mmjpg_hot;
-	    console.log('m_mmjpg_hot==' + url);
-	    return url;
-	};
-	exports.getm_mmjpg_article = function () {
-	    var url = MMJPG.m_mmjpg_article;
-	    console.log('m_mmjpg_article==' + url);
-	    return url;
-	};
-
-	exports.getm_mmjpg = function () {
-	    var url = MMJPG.m_mmjpg;
-	    console.log('m_mmjpg==' + url);
-	    return url;
-	};
-
-
-	exports.getDefaultUrl = function (name) {
-	    var url;
-	    url = getBaseUrl(name, true) + name + ".js";
-	    console.log('getDefaultUrl==' + url);
-	    return url;
-	};
-
-	exports.getDefaultPathUrl = function (path) {
-	    var url;
-	    url = getBaseUrl(path, true) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	exports.getPathUrl = function (path, isnative) {
-	    var url;
-	    url = getBaseUrl(path, isnative) + path;
-	    console.log('getPathUrl==' + url);
-	    return url;
-	};
-
-	//获取线上资源文件地址
-	exports.getImageUrl = function (path) {
-	    var url;
-	    if (typeof window === 'object') {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
-
-	    }
-	    console.log('getImageUrl=='+url);
-	    return url;
-	};
-
-	exports.getUrl = function (path) {
-	    var url;
-	    url = BASE_URL.HTTP+BASE_URL.IP+'/'+path;
-	    console.log('getUrl==' + url);
-	    return url;
-	};
-
-	function getBaseUrl(bundleUrl, isnav) {
-	    bundleUrl = new String(bundleUrl);
-	    var nativeBase;
-	    var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
-
-	    var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
-	    if (isAndroidAssets) {
-	        nativeBase = 'file://assets/build/';
-	    }
-	    else if (isiOSAssets) {
-	        nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
-	    }
-	    else {
-	        //'localhost:8080';
-	        var host = BASE_URL.IP;
-	        // var matches = /\/\/([^\/]+?)\//.exec(bundleUrl);
-	        // if (matches && matches.length >= 2) {
-	        //     host = matches[1];
-	        // }
-
-	        if (typeof window === 'object') {
-	            if (host.endsWith(':8080/mmjpg') || host.endsWith(':12580/mmjpg')) {
-	                host = host.replace('/mmjpg', '');
-	                // console.log('replace local test storm name');
-	            }
-	        }
-
-	        //此处需注意一下,tabbar 用的直接是jsbundle 的路径,但是navigator是直接跳转到新页面上的.
-	        //网页 http://localhost:8080/index.html?page=./dist/weexbar/stocknews.js
-	        //android 原生 http://192.168.1.15:12580/dist/mainlist.js
-	        if (typeof window === 'object') {
-	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
-	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
-	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
-	        }
-	    }
-
-	    return nativeBase;
-	};
-
-
-	exports.getUrlParam = function getUrlParam(key) {
-	    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
-	    var match = location.search.match(reg)
-	    return match && match[1]
-	}
-
-
-/***/ }),
+/* 140 */,
 /* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */
+/* 142 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2320,7 +2169,7 @@
 	}
 
 /***/ }),
-/* 150 */
+/* 143 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2425,19 +2274,19 @@
 	}
 
 /***/ }),
-/* 151 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _typeof2 = __webpack_require__(152);
+	var _typeof2 = __webpack_require__(145);
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(53);
-	var yoka = __webpack_require__(140);
+	var yoka = __webpack_require__(180);
 	var navigator = __weex_require__('@weex-module/navigator');
 	module.exports = {
 	    data: function () {return {
@@ -2490,18 +2339,18 @@
 
 
 /***/ }),
-/* 152 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _iterator = __webpack_require__(153);
+	var _iterator = __webpack_require__(146);
 
 	var _iterator2 = _interopRequireDefault(_iterator);
 
-	var _symbol = __webpack_require__(173);
+	var _symbol = __webpack_require__(166);
 
 	var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -2516,28 +2365,28 @@
 	};
 
 /***/ }),
-/* 153 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(154), __esModule: true };
+	module.exports = { "default": __webpack_require__(147), __esModule: true };
 
 /***/ }),
-/* 154 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(155);
-	__webpack_require__(168);
-	module.exports = __webpack_require__(172).f('iterator');
+	__webpack_require__(148);
+	__webpack_require__(161);
+	module.exports = __webpack_require__(165).f('iterator');
 
 /***/ }),
-/* 155 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $at  = __webpack_require__(156)(true);
+	var $at  = __webpack_require__(149)(true);
 
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(157)(String, 'String', function(iterated){
+	__webpack_require__(150)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -2552,7 +2401,7 @@
 	});
 
 /***/ }),
-/* 156 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var toInteger = __webpack_require__(106)
@@ -2574,20 +2423,20 @@
 	};
 
 /***/ }),
-/* 157 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(158)
+	var LIBRARY        = __webpack_require__(151)
 	  , $export        = __webpack_require__(81)
-	  , redefine       = __webpack_require__(159)
+	  , redefine       = __webpack_require__(152)
 	  , hide           = __webpack_require__(86)
 	  , has            = __webpack_require__(99)
-	  , Iterators      = __webpack_require__(160)
-	  , $iterCreate    = __webpack_require__(161)
-	  , setToStringTag = __webpack_require__(165)
-	  , getPrototypeOf = __webpack_require__(167)
-	  , ITERATOR       = __webpack_require__(166)('iterator')
+	  , Iterators      = __webpack_require__(153)
+	  , $iterCreate    = __webpack_require__(154)
+	  , setToStringTag = __webpack_require__(158)
+	  , getPrototypeOf = __webpack_require__(160)
+	  , ITERATOR       = __webpack_require__(159)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -2649,35 +2498,35 @@
 	};
 
 /***/ }),
-/* 158 */
+/* 151 */
 /***/ (function(module, exports) {
 
 	module.exports = true;
 
 /***/ }),
-/* 159 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(86);
 
 /***/ }),
-/* 160 */
+/* 153 */
 /***/ (function(module, exports) {
 
 	module.exports = {};
 
 /***/ }),
-/* 161 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create         = __webpack_require__(162)
+	var create         = __webpack_require__(155)
 	  , descriptor     = __webpack_require__(95)
-	  , setToStringTag = __webpack_require__(165)
+	  , setToStringTag = __webpack_require__(158)
 	  , IteratorPrototype = {};
 
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(86)(IteratorPrototype, __webpack_require__(166)('iterator'), function(){ return this; });
+	__webpack_require__(86)(IteratorPrototype, __webpack_require__(159)('iterator'), function(){ return this; });
 
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
@@ -2685,12 +2534,12 @@
 	};
 
 /***/ }),
-/* 162 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 	var anObject    = __webpack_require__(88)
-	  , dPs         = __webpack_require__(163)
+	  , dPs         = __webpack_require__(156)
 	  , enumBugKeys = __webpack_require__(111)
 	  , IE_PROTO    = __webpack_require__(108)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
@@ -2705,7 +2554,7 @@
 	    , gt     = '>'
 	    , iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(164).appendChild(iframe);
+	  __webpack_require__(157).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -2732,7 +2581,7 @@
 
 
 /***/ }),
-/* 163 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var dP       = __webpack_require__(87)
@@ -2750,25 +2599,25 @@
 	};
 
 /***/ }),
-/* 164 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(82).document && document.documentElement;
 
 /***/ }),
-/* 165 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var def = __webpack_require__(87).f
 	  , has = __webpack_require__(99)
-	  , TAG = __webpack_require__(166)('toStringTag');
+	  , TAG = __webpack_require__(159)('toStringTag');
 
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ }),
-/* 166 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var store      = __webpack_require__(109)('wks')
@@ -2784,7 +2633,7 @@
 	$exports.store = store;
 
 /***/ }),
-/* 167 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -2802,14 +2651,14 @@
 	};
 
 /***/ }),
-/* 168 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(169);
+	__webpack_require__(162);
 	var global        = __webpack_require__(82)
 	  , hide          = __webpack_require__(86)
-	  , Iterators     = __webpack_require__(160)
-	  , TO_STRING_TAG = __webpack_require__(166)('toStringTag');
+	  , Iterators     = __webpack_require__(153)
+	  , TO_STRING_TAG = __webpack_require__(159)('toStringTag');
 
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
@@ -2820,20 +2669,20 @@
 	}
 
 /***/ }),
-/* 169 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(170)
-	  , step             = __webpack_require__(171)
-	  , Iterators        = __webpack_require__(160)
+	var addToUnscopables = __webpack_require__(163)
+	  , step             = __webpack_require__(164)
+	  , Iterators        = __webpack_require__(153)
 	  , toIObject        = __webpack_require__(100);
 
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(157)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(150)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -2859,13 +2708,13 @@
 	addToUnscopables('entries');
 
 /***/ }),
-/* 170 */
+/* 163 */
 /***/ (function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ }),
-/* 171 */
+/* 164 */
 /***/ (function(module, exports) {
 
 	module.exports = function(done, value){
@@ -2873,29 +2722,29 @@
 	};
 
 /***/ }),
-/* 172 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports.f = __webpack_require__(166);
+	exports.f = __webpack_require__(159);
 
 /***/ }),
-/* 173 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(174), __esModule: true };
+	module.exports = { "default": __webpack_require__(167), __esModule: true };
 
 /***/ }),
-/* 174 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(175);
-	__webpack_require__(184);
-	__webpack_require__(185);
-	__webpack_require__(186);
+	__webpack_require__(168);
+	__webpack_require__(177);
+	__webpack_require__(178);
+	__webpack_require__(179);
 	module.exports = __webpack_require__(83).Symbol;
 
 /***/ }),
-/* 175 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2904,25 +2753,25 @@
 	  , has            = __webpack_require__(99)
 	  , DESCRIPTORS    = __webpack_require__(91)
 	  , $export        = __webpack_require__(81)
-	  , redefine       = __webpack_require__(159)
-	  , META           = __webpack_require__(176).KEY
+	  , redefine       = __webpack_require__(152)
+	  , META           = __webpack_require__(169).KEY
 	  , $fails         = __webpack_require__(92)
 	  , shared         = __webpack_require__(109)
-	  , setToStringTag = __webpack_require__(165)
+	  , setToStringTag = __webpack_require__(158)
 	  , uid            = __webpack_require__(110)
-	  , wks            = __webpack_require__(166)
-	  , wksExt         = __webpack_require__(172)
-	  , wksDefine      = __webpack_require__(177)
-	  , keyOf          = __webpack_require__(178)
-	  , enumKeys       = __webpack_require__(179)
-	  , isArray        = __webpack_require__(180)
+	  , wks            = __webpack_require__(159)
+	  , wksExt         = __webpack_require__(165)
+	  , wksDefine      = __webpack_require__(170)
+	  , keyOf          = __webpack_require__(171)
+	  , enumKeys       = __webpack_require__(172)
+	  , isArray        = __webpack_require__(173)
 	  , anObject       = __webpack_require__(88)
 	  , toIObject      = __webpack_require__(100)
 	  , toPrimitive    = __webpack_require__(94)
 	  , createDesc     = __webpack_require__(95)
-	  , _create        = __webpack_require__(162)
-	  , gOPNExt        = __webpack_require__(181)
-	  , $GOPD          = __webpack_require__(183)
+	  , _create        = __webpack_require__(155)
+	  , gOPNExt        = __webpack_require__(174)
+	  , $GOPD          = __webpack_require__(176)
 	  , $DP            = __webpack_require__(87)
 	  , $keys          = __webpack_require__(97)
 	  , gOPD           = $GOPD.f
@@ -3047,11 +2896,11 @@
 
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
-	  __webpack_require__(182).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(175).f = gOPNExt.f = $getOwnPropertyNames;
 	  __webpack_require__(113).f  = $propertyIsEnumerable;
 	  __webpack_require__(112).f = $getOwnPropertySymbols;
 
-	  if(DESCRIPTORS && !__webpack_require__(158)){
+	  if(DESCRIPTORS && !__webpack_require__(151)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
 	  }
 
@@ -3135,7 +2984,7 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
-/* 176 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(110)('meta')
@@ -3193,13 +3042,13 @@
 	};
 
 /***/ }),
-/* 177 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(82)
 	  , core           = __webpack_require__(83)
-	  , LIBRARY        = __webpack_require__(158)
-	  , wksExt         = __webpack_require__(172)
+	  , LIBRARY        = __webpack_require__(151)
+	  , wksExt         = __webpack_require__(165)
 	  , defineProperty = __webpack_require__(87).f;
 	module.exports = function(name){
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -3207,7 +3056,7 @@
 	};
 
 /***/ }),
-/* 178 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(97)
@@ -3222,7 +3071,7 @@
 	};
 
 /***/ }),
-/* 179 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
@@ -3242,7 +3091,7 @@
 	};
 
 /***/ }),
-/* 180 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -3252,12 +3101,12 @@
 	};
 
 /***/ }),
-/* 181 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(100)
-	  , gOPN      = __webpack_require__(182).f
+	  , gOPN      = __webpack_require__(175).f
 	  , toString  = {}.toString;
 
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -3277,7 +3126,7 @@
 
 
 /***/ }),
-/* 182 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -3289,7 +3138,7 @@
 	};
 
 /***/ }),
-/* 183 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var pIE            = __webpack_require__(113)
@@ -3310,22 +3159,191 @@
 	};
 
 /***/ }),
-/* 184 */
+/* 177 */
 /***/ (function(module, exports) {
 
 	
 
 /***/ }),
-/* 185 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(177)('asyncIterator');
+	__webpack_require__(170)('asyncIterator');
 
 /***/ }),
-/* 186 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(177)('observable');
+	__webpack_require__(170)('observable');
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports) {
+
+	var BASE_URL = {
+	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
+	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
+	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
+
+	};
+
+	var MMJPG = {
+	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/",
+	    m_mmjpg_search:"http://www.mmjpg.com/search.php",
+	    m_mmjpg_m:"http://m.mmjpg.com/",
+	    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
+	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+	};
+	exports.getm_mmjpg_m_hot = function () {
+	    var url = MMJPG.m_mmjpg_m_hot;
+	    console.log('m_mmjpg_m_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m_more = function () {
+	    var url = MMJPG.m_mmjpg_m_more;
+	    console.log('m_mmjpg_m_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m = function () {
+	    var url = MMJPG.m_mmjpg_m;
+	    console.log('m_mmjpg_m==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_search = function () {
+	    var url = MMJPG.m_mmjpg_search;
+	    console.log('m_mmjpg_search==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
+	};
+
+	exports.getm_mmjpg = function () {
+	    var url = MMJPG.m_mmjpg;
+	    console.log('m_mmjpg==' + url);
+	    return url;
+	};
+
+
+	exports.getDefaultUrl = function (name) {
+	    var url;
+	    url = getBaseUrl(name, true) + name + ".js";
+	    console.log('getDefaultUrl==' + url);
+	    return url;
+	};
+
+	exports.getDefaultPathUrl = function (path) {
+	    var url;
+	    url = getBaseUrl(path, true) + path;
+	    console.log('getPathUrl==' + url);
+	    return url;
+	};
+
+	exports.getPathUrl = function (path, isnative) {
+	    var url;
+	    url = getBaseUrl(path, isnative) + path;
+	    console.log('getPathUrl==' + url);
+	    return url;
+	};
+
+	//获取线上资源文件地址
+	exports.getImageUrl = function (path) {
+	    var url;
+	    if (typeof window === 'object') {
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	    } else {
+	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+
+	    }
+	    console.log('getImageUrl=='+url);
+	    return url;
+	};
+
+	exports.getUrl = function (path) {
+	    var url;
+	    url = BASE_URL.HTTP+BASE_URL.IP+'/'+path;
+	    console.log('getUrl==' + url);
+	    return url;
+	};
+
+	function getBaseUrl(bundleUrl, isnav) {
+	    bundleUrl = new String(bundleUrl);
+	    var nativeBase;
+	    var isAndroidAssets = bundleUrl.indexOf('file://assets/') >= 0;
+
+	    var isiOSAssets = bundleUrl.indexOf('file:///') >= 0 && bundleUrl.indexOf('WeexDemo.app') > 0;
+	    if (isAndroidAssets) {
+	        nativeBase = 'file://assets/build/';
+	    }
+	    else if (isiOSAssets) {
+	        nativeBase = bundleUrl.substring(0, bundleUrl.lastIndexOf('/') + 1);
+	    }
+	    else {
+	        //'localhost:8080';
+	        var host = BASE_URL.IP;
+	        // var matches = /\/\/([^\/]+?)\//.exec(bundleUrl);
+	        // if (matches && matches.length >= 2) {
+	        //     host = matches[1];
+	        // }
+
+	        if (typeof window === 'object') {
+	            if (host.endsWith(':8080/mmjpg') || host.endsWith(':12580/mmjpg')) {
+	                host = host.replace('/mmjpg', '');
+	                // console.log('replace local test storm name');
+	            }
+	        }
+
+	        //此处需注意一下,tabbar 用的直接是jsbundle 的路径,但是navigator是直接跳转到新页面上的.
+	        //网页 http://localhost:8080/index.html?page=./dist/weexbar/stocknews.js
+	        //android 原生 http://192.168.1.15:12580/dist/mainlist.js
+	        if (typeof window === 'object') {
+	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	        } else {
+	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
+	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
+	        }
+	    }
+
+	    return nativeBase;
+	};
+
+
+	exports.getUrlParam = function getUrlParam(key) {
+	    var reg = new RegExp('[?|&]' + key + '=([^&]+)')
+	    var match = location.search.match(reg)
+	    return match && match[1]
+	}
+
 
 /***/ })
 /******/ ]);

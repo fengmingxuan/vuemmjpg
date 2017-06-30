@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(285)
+	__vue_styles__.push(__webpack_require__(315)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(286)
+	__vue_exports__ = __webpack_require__(316)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(287)
+	var __vue_template__ = __webpack_require__(317)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,7 +91,7 @@
 
 /***/ }),
 
-/***/ 140:
+/***/ 180:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -109,7 +109,31 @@
 	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
 	    m_mmjpg_top:"http://www.mmjpg.com/top/",
 	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
-	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	    m_mmjpg_more:"http://www.mmjpg.com/more/",
+	    m_mmjpg_search:"http://www.mmjpg.com/search.php",
+	    m_mmjpg_m:"http://m.mmjpg.com/",
+	    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
+	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+	};
+	exports.getm_mmjpg_m_hot = function () {
+	    var url = MMJPG.m_mmjpg_m_hot;
+	    console.log('m_mmjpg_m_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m_more = function () {
+	    var url = MMJPG.m_mmjpg_m_more;
+	    console.log('m_mmjpg_m_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m = function () {
+	    var url = MMJPG.m_mmjpg_m;
+	    console.log('m_mmjpg_m==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_search = function () {
+	    var url = MMJPG.m_mmjpg_search;
+	    console.log('m_mmjpg_search==' + url);
+	    return url;
 	};
 	exports.getm_mmjpg_more = function () {
 	    var url = MMJPG.m_mmjpg_more;
@@ -237,21 +261,21 @@
 
 /***/ }),
 
-/***/ 243:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(244)
+	__vue_styles__.push(__webpack_require__(276)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(245)
+	__vue_exports__ = __webpack_require__(277)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(246)
+	var __vue_template__ = __webpack_require__(278)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -282,7 +306,7 @@
 
 /***/ }),
 
-/***/ 244:
+/***/ 276:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -308,7 +332,7 @@
 
 /***/ }),
 
-/***/ 245:
+/***/ 277:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -343,7 +367,7 @@
 
 /***/ }),
 
-/***/ 246:
+/***/ 278:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -364,7 +388,7 @@
 
 /***/ }),
 
-/***/ 285:
+/***/ 315:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -382,7 +406,7 @@
 
 /***/ }),
 
-/***/ 286:
+/***/ 316:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -391,7 +415,7 @@
 	    value: true
 	});
 
-	var _pcmainhotlistitem_v = __webpack_require__(243);
+	var _pcmainhotlistitem_v = __webpack_require__(275);
 
 	var _pcmainhotlistitem_v2 = _interopRequireDefault(_pcmainhotlistitem_v);
 
@@ -413,7 +437,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(140);
+	var mmjpg = __webpack_require__(180);
 
 	exports.default = {
 	    components: {
@@ -475,7 +499,7 @@
 
 /***/ }),
 
-/***/ 287:
+/***/ 317:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

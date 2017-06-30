@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(326)
-	var __weex_style__ = __webpack_require__(327)
-	var __weex_script__ = __webpack_require__(328)
+	var __weex_template__ = __webpack_require__(356)
+	var __weex_style__ = __webpack_require__(357)
+	var __weex_script__ = __webpack_require__(358)
 
 	__weex_define__('@weex-component/2173894bcdf3505e30b67554138c6b8d', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2081,7 +2081,47 @@
 /* 137 */,
 /* 138 */,
 /* 139 */,
-/* 140 */
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -2099,7 +2139,31 @@
 	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
 	    m_mmjpg_top:"http://www.mmjpg.com/top/",
 	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
-	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	    m_mmjpg_more:"http://www.mmjpg.com/more/",
+	    m_mmjpg_search:"http://www.mmjpg.com/search.php",
+	    m_mmjpg_m:"http://m.mmjpg.com/",
+	    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
+	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+	};
+	exports.getm_mmjpg_m_hot = function () {
+	    var url = MMJPG.m_mmjpg_m_hot;
+	    console.log('m_mmjpg_m_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m_more = function () {
+	    var url = MMJPG.m_mmjpg_m_more;
+	    console.log('m_mmjpg_m_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_m = function () {
+	    var url = MMJPG.m_mmjpg_m;
+	    console.log('m_mmjpg_m==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_search = function () {
+	    var url = MMJPG.m_mmjpg_search;
+	    console.log('m_mmjpg_search==' + url);
+	    return url;
 	};
 	exports.getm_mmjpg_more = function () {
 	    var url = MMJPG.m_mmjpg_more;
@@ -2226,52 +2290,26 @@
 
 
 /***/ }),
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
 /* 181 */,
 /* 182 */,
 /* 183 */,
 /* 184 */,
-/* 185 */,
-/* 186 */,
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(186), __esModule: true };
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(83)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ }),
 /* 187 */,
 /* 188 */,
 /* 189 */,
@@ -2354,22 +2392,8 @@
 /* 266 */,
 /* 267 */,
 /* 268 */,
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(270), __esModule: true };
-
-/***/ }),
-/* 270 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(83)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ }),
+/* 269 */,
+/* 270 */,
 /* 271 */,
 /* 272 */,
 /* 273 */,
@@ -2416,13 +2440,43 @@
 /* 314 */,
 /* 315 */,
 /* 316 */,
-/* 317 */
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(318)
-	var __weex_template__ = __webpack_require__(322)
-	var __weex_style__ = __webpack_require__(323)
-	var __weex_script__ = __webpack_require__(324)
+	__webpack_require__(348)
+	var __weex_template__ = __webpack_require__(352)
+	var __weex_style__ = __webpack_require__(353)
+	var __weex_script__ = __webpack_require__(354)
 
 	__weex_define__('@weex-component/subnav', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2439,12 +2493,12 @@
 
 
 /***/ }),
-/* 318 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(319)
-	var __weex_style__ = __webpack_require__(320)
-	var __weex_script__ = __webpack_require__(321)
+	var __weex_template__ = __webpack_require__(349)
+	var __weex_style__ = __webpack_require__(350)
+	var __weex_script__ = __webpack_require__(351)
 
 	__weex_define__('@weex-component/subnavitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2461,7 +2515,7 @@
 
 
 /***/ }),
-/* 319 */
+/* 349 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2494,7 +2548,7 @@
 	}
 
 /***/ }),
-/* 320 */
+/* 350 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2535,13 +2589,13 @@
 	}
 
 /***/ }),
-/* 321 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
+	var mmjpg = __webpack_require__(180);
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 
 	module.exports = {
@@ -2567,7 +2621,7 @@
 
 
 /***/ }),
-/* 322 */
+/* 352 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2627,7 +2681,7 @@
 	}
 
 /***/ }),
-/* 323 */
+/* 353 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2694,14 +2748,14 @@
 	}
 
 /***/ }),
-/* 324 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(318);
+	__webpack_require__(348);
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
+	var mmjpg = __webpack_require__(180);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
 	module.exports = {
@@ -2757,8 +2811,8 @@
 
 
 /***/ }),
-/* 325 */,
-/* 326 */
+/* 355 */,
+/* 356 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2809,7 +2863,7 @@
 	}
 
 /***/ }),
-/* 327 */
+/* 357 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2862,14 +2916,14 @@
 	}
 
 /***/ }),
-/* 328 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var mmjpg = __webpack_require__(140);
-	__webpack_require__(317);
-	__webpack_require__(329);
+	var mmjpg = __webpack_require__(180);
+	__webpack_require__(347);
+	__webpack_require__(359);
 	__webpack_require__(53);
 	var weexNavigatorModule = __weex_require__('@weex-module/weexNavigatorModule');
 	module.exports = {
@@ -2908,11 +2962,11 @@
 
 
 /***/ }),
-/* 329 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(330)
-	var __weex_script__ = __webpack_require__(331)
+	var __weex_template__ = __webpack_require__(360)
+	var __weex_script__ = __webpack_require__(361)
 
 	__weex_define__('@weex-component/pcmainnav-scroller-tabbar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2927,7 +2981,7 @@
 
 
 /***/ }),
-/* 330 */
+/* 360 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2947,19 +3001,19 @@
 	}
 
 /***/ }),
-/* 331 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(269);
+	var _stringify = __webpack_require__(185);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
+	var mmjpg = __webpack_require__(180);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
 	module.exports = {
