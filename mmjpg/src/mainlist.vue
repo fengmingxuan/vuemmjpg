@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('pc/search/pc_search')
             this.rows.push('pc/more/pc_more_head_foot_nobar')
             this.rows.push('pc/top/pc_top_head_foot_nobar')
             this.rows.push('pc/hot/pchot-head-foot')

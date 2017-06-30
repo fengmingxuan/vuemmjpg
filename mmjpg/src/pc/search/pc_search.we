@@ -1,0 +1,109 @@
+<template>
+    <div>
+        <navbar style="width: 750;" title="{{title}}" type="{{skinType}}" leftsrc="{{leftsrc}}" shownleft="{{showleft}}" shown="{{shown}}"></navbar>
+        <div style="flex: 1;flex-direction: row">
+            <textarea
+                    type="text"
+                    class="input"
+                    autofocus="false"
+                    value="{{searchcontent}}"
+                    onchange="onchange"
+                    oninput="oninput"
+            ></textarea>
+            <div class="search" onclick="tosearch">
+                <text style="font-size: 20;color: #ffffff">搜索</text>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script>
+    var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
+    require('../../template/navbar.we')
+    require('weex-components');
+    var mmjpg = require('../../mmjpg');
+    var stream = require('@weex-module/stream');
+    var modal = require('@weex-module/modal');
+    var weexJsoupModule = require('@weex-module/weexJsoupModule');
+    module.exports = {
+        data: {
+            msg: '下拉刷新',
+            skinType: 0,
+            showLoading: 'hide',
+            screenHeight: 0,
+            platform: '',
+            title:'MMJPG搜索',
+            showleft:true,
+            shown:false,
+            searchcontent:'',
+            leftsrc:'./images/back.png'
+        },
+        created: function () {
+            var self = this;
+            this.platform = this.$getConfig().env.platform;
+        },
+        methods: {
+            onchange:function (e) {
+                console.log('change'+e.value);
+                this.searchcontent = e.value;
+
+            },
+            oninput:function (e) {
+                console.log('input'+e.value);
+                this.searchcontent = e.value;
+            },
+            tosearch:function (e) {
+                //处理搜索
+                var self = this;
+                var name = "pc/search/pc_search_head_foot";
+                var url = mmjpg.getDefaultUrl(name);
+                var taghref = mmjpg.getm_mmjpg_search();
+                console.log('taghref=='+taghref+';title=='+self.searchcontent);
+                weexNavigatorModule.push({
+                    url:url,
+                    animated: "true",
+                    options:{
+                        taghref: taghref,
+                        title:self.searchcontent,
+                    }
+                }, event => {
+
+                });
+            },
+            togglemenu:function (e) {
+                var params = {
+                    'animated': 'true'
+                };
+                weexNavigatorModule.pop(params, event => {
+
+                });
+            }
+        }
+    }
+</script>
+
+<style>
+    .input{
+        flex: 1;
+        height: 100;
+        background-color: #ffffff;
+        border-color: #ddd92e;
+        border-width: 1;
+        font-size: 30;
+        margin: 10;
+        padding: 20;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        lines:1;
+    }
+    .search{
+        justify-content: center;
+        align-items: center;
+        height: 100;
+        width: 100;
+        background-color: #fc5677;
+        margin: 10;
+    }
+</style>

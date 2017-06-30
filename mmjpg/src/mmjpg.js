@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
@@ -13,7 +13,13 @@ var MMJPG = {
     m_mmjpg_hot:"http://www.mmjpg.com/hot/",
     m_mmjpg_top:"http://www.mmjpg.com/top/",
     m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
-    m_mmjpg_more:"http://www.mmjpg.com/more/"
+    m_mmjpg_more:"http://www.mmjpg.com/more/",
+    m_mmjpg_search:"http://www.mmjpg.com/search.php"
+};
+exports.getm_mmjpg_search = function () {
+    var url = MMJPG.m_mmjpg_search;
+    console.log('m_mmjpg_search==' + url);
+    return url;
 };
 exports.getm_mmjpg_more = function () {
     var url = MMJPG.m_mmjpg_more;
