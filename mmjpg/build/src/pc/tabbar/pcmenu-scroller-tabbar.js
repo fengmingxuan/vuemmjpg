@@ -45,8 +45,8 @@
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(303)
-	var __weex_script__ = __webpack_require__(304)
+	var __weex_template__ = __webpack_require__(336)
+	var __weex_script__ = __webpack_require__(337)
 
 	__weex_define__('@weex-component/4785127464d843f8e91186bbb6d30571', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -85,6 +85,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -187,7 +217,25 @@
 
 /***/ }),
 
-/***/ 303:
+/***/ 269:
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(270), __esModule: true };
+
+/***/ }),
+
+/***/ 270:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(83)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ }),
+
+/***/ 336:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -208,18 +256,18 @@
 
 /***/ }),
 
-/***/ 304:
+/***/ 337:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(305);
+	var _stringify = __webpack_require__(269);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(307);
+	__webpack_require__(338);
 	var mmjpg = __webpack_require__(140);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
@@ -288,31 +336,13 @@
 
 /***/ }),
 
-/***/ 305:
+/***/ 338:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(306), __esModule: true };
-
-/***/ }),
-
-/***/ 306:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(83)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ }),
-
-/***/ 307:
-/***/ (function(module, exports, __webpack_require__) {
-
-	__webpack_require__(308)
-	var __weex_template__ = __webpack_require__(312)
-	var __weex_style__ = __webpack_require__(313)
-	var __weex_script__ = __webpack_require__(314)
+	__webpack_require__(339)
+	var __weex_template__ = __webpack_require__(343)
+	var __weex_style__ = __webpack_require__(344)
+	var __weex_script__ = __webpack_require__(345)
 
 	__weex_define__('@weex-component/wxc-scroller-tabbar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -330,12 +360,12 @@
 
 /***/ }),
 
-/***/ 308:
+/***/ 339:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(309)
-	var __weex_style__ = __webpack_require__(310)
-	var __weex_script__ = __webpack_require__(311)
+	var __weex_template__ = __webpack_require__(340)
+	var __weex_style__ = __webpack_require__(341)
+	var __weex_script__ = __webpack_require__(342)
 
 	__weex_define__('@weex-component/wxc-scroller-tabitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -353,7 +383,7 @@
 
 /***/ }),
 
-/***/ 309:
+/***/ 340:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -403,7 +433,7 @@
 
 /***/ }),
 
-/***/ 310:
+/***/ 341:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -435,7 +465,7 @@
 
 /***/ }),
 
-/***/ 311:
+/***/ 342:
 /***/ (function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -463,7 +493,7 @@
 
 /***/ }),
 
-/***/ 312:
+/***/ 343:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -520,7 +550,7 @@
 
 /***/ }),
 
-/***/ 313:
+/***/ 344:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -567,12 +597,12 @@
 
 /***/ }),
 
-/***/ 314:
+/***/ 345:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(308);
+	__webpack_require__(339);
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [],

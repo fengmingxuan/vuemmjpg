@@ -44,10 +44,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(347)
-	var __weex_script__ = __webpack_require__(348)
+	__webpack_require__(318)
+	var __weex_template__ = __webpack_require__(360)
+	var __weex_style__ = __webpack_require__(361)
+	var __weex_script__ = __webpack_require__(362)
 
-	__weex_define__('@weex-component/32594531bb80e26cdb8d135489ac54d4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/ed11d2466d96663ca594d39ddb67a2ab', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -56,9 +58,11 @@
 
 	    __weex_module__.exports.template = __weex_template__
 
+	    __weex_module__.exports.style = __weex_style__
+
 	})
 
-	__weex_bootstrap__('@weex-component/32594531bb80e26cdb8d135489ac54d4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/ed11d2466d96663ca594d39ddb67a2ab',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2351,22 +2355,8 @@
 /* 266 */,
 /* 267 */,
 /* 268 */,
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(270), __esModule: true };
-
-/***/ }),
-/* 270 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(83)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ }),
+/* 269 */,
+/* 270 */,
 /* 271 */,
 /* 272 */,
 /* 273 */,
@@ -2414,10 +2404,134 @@
 /* 315 */,
 /* 316 */,
 /* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __weex_template__ = __webpack_require__(319)
+	var __weex_style__ = __webpack_require__(320)
+	var __weex_script__ = __webpack_require__(321)
+
+	__weex_define__('@weex-component/subnavitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+
+	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
+	    if (__weex_exports__.__esModule && __weex_exports__.default) {
+	      __weex_module__.exports = __weex_exports__.default
+	    }
+
+	    __weex_module__.exports.template = __weex_template__
+
+	    __weex_module__.exports.style = __weex_style__
+
+	})
+
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
+	  "events": {
+	    "click": function ($event) {this.towebdetail(this.tag.href,$event)}
+	  },
+	  "children": [
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.tag.alt}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
+	    }
+	  ]
+	}
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "itemClass": {
+	    "margin": 5
+	  },
+	  "news-bottom": {
+	    "flex": 1,
+	    "alignItems": "center",
+	    "flexDirection": "row",
+	    "margin": 5
+	  },
+	  "tucao_numClass": {
+	    "fontSize": "12wx",
+	    "marginLeft": "4wx",
+	    "flex": 1,
+	    "alignItems": "center",
+	    "textAlign": "center",
+	    "padding": 10
+	  },
+	  "textClass-0": {
+	    "color:active": "#666666",
+	    "backgroundColor:active": "#dddddd"
+	  },
+	  "textClass-1": {
+	    "color:active": "#666666",
+	    "backgroundColor:active": "#132237"
+	  },
+	  "lineClass": {
+	    "height": 2
+	  },
+	  "lineClass-0": {
+	    "backgroundColor": "#eeeeee"
+	  },
+	  "lineClass-1": {
+	    "backgroundColor": "#0e1929"
+	  }
+	}
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	__webpack_require__(53);
+	var mmjpg = __webpack_require__(140);
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
+
+	module.exports = {
+	    created: function created() {
+	        this.platform = this.$getConfig().env.platform;
+	    },
+	    data: function () {return {
+	        platform: '',
+	        tag: {
+	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
+	        },
+
+	        skinType: 0
+	    }},
+	    methods: {
+	        towebdetail: function towebdetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
+	};}
+	/* generated by weex-loader */
+
+
+/***/ }),
 /* 322 */,
 /* 323 */,
 /* 324 */,
@@ -2443,100 +2557,204 @@
 /* 344 */,
 /* 345 */,
 /* 346 */,
-/* 347 */
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "flexDirection": "column",
-	    "height": function () {return this.deviceHeight}
-	  },
 	  "children": [
 	    {
-	      "type": "wxc-tabbar",
-	      "attr": {
-	        "tabItems": function () {return this.tabItems}
-	      }
+	      "type": "list",
+	      "classList": [
+	        "list"
+	      ],
+	      "children": [
+	        {
+	          "type": "refresh",
+	          "classList": function () {return ['refresh-view', 'refresh-view-' + (this.skinType)]},
+	          "attr": {
+	            "display": function () {return this.refresh_display},
+	            "refreshing": function () {return this.refreshing}
+	          },
+	          "events": {
+	            "refresh": "onrefresh"
+	          },
+	          "children": [
+	            {
+	              "type": "loading-indicator",
+	              "classList": [
+	                "indicator"
+	              ]
+	            },
+	            {
+	              "type": "text",
+	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
+	              "attr": {
+	                "value": "下拉刷新"
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "repeat": {
+	            "expression": function () {return this.tags},
+	            "value": "tag"
+	          },
+	          "children": [
+	            {
+	              "type": "subnavitem",
+	              "attr": {
+	                "tag": function () {return this.tag}
+	              }
+	            }
+	          ]
+	        }
+	      ]
 	    }
 	  ]
 	}
 
 /***/ }),
-/* 348 */
+/* 361 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "list": {
+	    "width": 750
+	  },
+	  "content_class-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "content_class-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view": {
+	    "width": 750,
+	    "height": "50wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "loading-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-arrow": {
+	    "marginTop": "3wx",
+	    "height": "12wx",
+	    "width": "200wx",
+	    "fontSize": "12wx",
+	    "textAlign": "center",
+	    "alignItems": "center"
+	  },
+	  "refresh-arrow-0": {
+	    "color": "#BBBBBB"
+	  },
+	  "refresh-arrow-1": {
+	    "color": "#666666"
+	  },
+	  "refresh-view": {
+	    "width": 750,
+	    "height": "40wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "refresh-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "indicator": {
+	    "height": "25wx",
+	    "width": "25wx",
+	    "color": "#889967"
+	  }
+	}
+
+/***/ }),
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(269);
-
-	var _stringify2 = _interopRequireDefault(_stringify);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	__webpack_require__(318);
 	__webpack_require__(53);
 	var mmjpg = __webpack_require__(140);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
 	module.exports = {
 	    data: function () {return {
-	        deviceHeight: 0,
-	        tabItems: []
+	        tags: [],
+	        refreshing: 'false',
+	        refresh_display: 'show',
+	        skinType: 0,
+	        showLoading: 'hide',
+	        href: mmjpg.getm_mmjpg()
 	    }},
-	    created: function created() {
-	        var self = this;
-
-	        self.deviceHeight = 1300;
-	        console.log('deviceHeight==' + self.deviceHeight);
-	        self.refresh();
-	    },
 	    methods: {
+
+	        onrefresh: function onrefresh(e) {
+	            var self = this;
+	            self.refresh_display = 'show';
+	            self.refresh();
+	        },
 	        refresh: function refresh() {
 	            var self = this;
-	            weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
+	            weexJsoupModule.pcmainnav(self.href, function (e) {
+	                self.refresh_display = 'hide';
+	                self.showLoading = 'hide';
+	                self.refreshing = "false";
 	                var json;
 	                json = eval('(' + e + ')');
 	                console.log('json===' + json);
-	                self.tabItems.splice(0, self.tabItems.length);
+	                self.tags.splice(0, self.tags.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
 	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
-	                                visibility: 'visible',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tab.visibility = 'visible';
-	                            } else {
-	                                tab.visibility = 'hidden';
-	                            }
-	                            self.tabItems.push(tab);
+	                            self.tags.push(tag);
 	                        }
 	                    }
 	                }
 	            });
-	        },
-	        ready: function ready(e) {
-	            var vm = this;
-	            vm.$on('tabBar.onClick', function (e) {
-	                var detail = e.detail;
-	                nativeLog('$dispatch tabBar.onClick ' + detail.index);
-
-	                var taghref = vm.tabItems[detail.index].taghref;
-	                storage.setItem('taghref', taghref, function (s) {
-	                    console.log('set [taghref]:' + (0, _stringify2.default)(s));
-	                });
-	            });
 	        }
-	    }
+	    },
+	    created: function created() {
+	        var self = this;
+
+	        var shref = this.$getConfig().href;
+	        if (shref != undefined) {
+	            self.href = shref;
+	        }
+	        self.refresh();
+	    },
+	    ready: function ready() {}
+
 	};}
 	/* generated by weex-loader */
 

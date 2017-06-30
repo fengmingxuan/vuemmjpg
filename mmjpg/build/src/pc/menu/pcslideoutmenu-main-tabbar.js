@@ -44,10 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(347)
-	var __weex_script__ = __webpack_require__(348)
+	var __weex_template__ = __webpack_require__(326)
+	var __weex_style__ = __webpack_require__(327)
+	var __weex_script__ = __webpack_require__(328)
 
-	__weex_define__('@weex-component/32594531bb80e26cdb8d135489ac54d4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/2173894bcdf3505e30b67554138c6b8d', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -56,9 +57,11 @@
 
 	    __weex_module__.exports.template = __weex_template__
 
+	    __weex_module__.exports.style = __weex_style__
+
 	})
 
-	__weex_bootstrap__('@weex-component/32594531bb80e26cdb8d135489ac54d4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/2173894bcdf3505e30b67554138c6b8d',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2413,37 +2416,518 @@
 /* 314 */,
 /* 315 */,
 /* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(318)
+	var __weex_template__ = __webpack_require__(322)
+	var __weex_style__ = __webpack_require__(323)
+	var __weex_script__ = __webpack_require__(324)
+
+	__weex_define__('@weex-component/subnav', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+
+	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
+	    if (__weex_exports__.__esModule && __weex_exports__.default) {
+	      __weex_module__.exports = __weex_exports__.default
+	    }
+
+	    __weex_module__.exports.template = __weex_template__
+
+	    __weex_module__.exports.style = __weex_style__
+
+	})
+
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __weex_template__ = __webpack_require__(319)
+	var __weex_style__ = __webpack_require__(320)
+	var __weex_script__ = __webpack_require__(321)
+
+	__weex_define__('@weex-component/subnavitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+
+	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
+	    if (__weex_exports__.__esModule && __weex_exports__.default) {
+	      __weex_module__.exports = __weex_exports__.default
+	    }
+
+	    __weex_module__.exports.template = __weex_template__
+
+	    __weex_module__.exports.style = __weex_style__
+
+	})
+
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
+	  "events": {
+	    "click": function ($event) {this.towebdetail(this.tag.href,$event)}
+	  },
+	  "children": [
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.tag.alt}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
+	    }
+	  ]
+	}
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "itemClass": {
+	    "margin": 5
+	  },
+	  "news-bottom": {
+	    "flex": 1,
+	    "alignItems": "center",
+	    "flexDirection": "row",
+	    "margin": 5
+	  },
+	  "tucao_numClass": {
+	    "fontSize": "12wx",
+	    "marginLeft": "4wx",
+	    "flex": 1,
+	    "alignItems": "center",
+	    "textAlign": "center",
+	    "padding": 10
+	  },
+	  "textClass-0": {
+	    "color:active": "#666666",
+	    "backgroundColor:active": "#dddddd"
+	  },
+	  "textClass-1": {
+	    "color:active": "#666666",
+	    "backgroundColor:active": "#132237"
+	  },
+	  "lineClass": {
+	    "height": 2
+	  },
+	  "lineClass-0": {
+	    "backgroundColor": "#eeeeee"
+	  },
+	  "lineClass-1": {
+	    "backgroundColor": "#0e1929"
+	  }
+	}
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	__webpack_require__(53);
+	var mmjpg = __webpack_require__(140);
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
+
+	module.exports = {
+	    created: function created() {
+	        this.platform = this.$getConfig().env.platform;
+	    },
+	    data: function () {return {
+	        platform: '',
+	        tag: {
+	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
+	        },
+
+	        skinType: 0
+	    }},
+	    methods: {
+	        towebdetail: function towebdetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
+	};}
+	/* generated by weex-loader */
+
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "children": [
+	    {
+	      "type": "list",
+	      "classList": [
+	        "list"
+	      ],
+	      "children": [
+	        {
+	          "type": "refresh",
+	          "classList": function () {return ['refresh-view', 'refresh-view-' + (this.skinType)]},
+	          "attr": {
+	            "display": function () {return this.refresh_display},
+	            "refreshing": function () {return this.refreshing}
+	          },
+	          "events": {
+	            "refresh": "onrefresh"
+	          },
+	          "children": [
+	            {
+	              "type": "loading-indicator",
+	              "classList": [
+	                "indicator"
+	              ]
+	            },
+	            {
+	              "type": "text",
+	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
+	              "attr": {
+	                "value": "下拉刷新"
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "repeat": {
+	            "expression": function () {return this.tags},
+	            "value": "tag"
+	          },
+	          "children": [
+	            {
+	              "type": "subnavitem",
+	              "attr": {
+	                "tag": function () {return this.tag}
+	              }
+	            }
+	          ]
+	        }
+	      ]
+	    }
+	  ]
+	}
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "list": {
+	    "width": 750
+	  },
+	  "content_class-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "content_class-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view": {
+	    "width": 750,
+	    "height": "50wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "loading-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-arrow": {
+	    "marginTop": "3wx",
+	    "height": "12wx",
+	    "width": "200wx",
+	    "fontSize": "12wx",
+	    "textAlign": "center",
+	    "alignItems": "center"
+	  },
+	  "refresh-arrow-0": {
+	    "color": "#BBBBBB"
+	  },
+	  "refresh-arrow-1": {
+	    "color": "#666666"
+	  },
+	  "refresh-view": {
+	    "width": 750,
+	    "height": "40wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "refresh-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "indicator": {
+	    "height": "25wx",
+	    "width": "25wx",
+	    "color": "#889967"
+	  }
+	}
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	__webpack_require__(318);
+	__webpack_require__(53);
+	var mmjpg = __webpack_require__(140);
+	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
+	var storage = __weex_require__('@weex-module/storage');
+	module.exports = {
+	    data: function () {return {
+	        tags: [],
+	        refreshing: 'false',
+	        refresh_display: 'show',
+	        skinType: 0,
+	        showLoading: 'hide',
+	        href: mmjpg.getm_mmjpg()
+	    }},
+	    methods: {
+
+	        onrefresh: function onrefresh(e) {
+	            var self = this;
+	            self.refresh_display = 'show';
+	            self.refresh();
+	        },
+	        refresh: function refresh() {
+	            var self = this;
+	            weexJsoupModule.pcsubnav(self.href, function (e) {
+	                self.refresh_display = 'hide';
+	                self.showLoading = 'hide';
+	                self.refreshing = "false";
+	                var json;
+	                json = eval('(' + e + ')');
+	                console.log('json===' + json);
+	                self.tags.splice(0, self.tags.length);
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.tags.push(tag);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+	    },
+	    created: function created() {
+	        var self = this;
+
+	        var shref = this.$getConfig().href;
+	        if (shref != undefined) {
+	            self.href = shref;
+	        }
+	        self.refresh();
+	    },
+	    ready: function ready() {}
+
+	};}
+	/* generated by weex-loader */
+
+
+/***/ }),
 /* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */
+/* 326 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "classList": [
+	    "wrapper"
+	  ],
+	  "children": [
+	    {
+	      "type": "div",
+	      "id": "menu",
+	      "classList": function () {return ['menu', 'menu-' + (this.showmenu)]},
+	      "style": {
+	        "height": function () {return this.deviceHeight}
+	      },
+	      "events": {
+	        "click": "close"
+	      },
+	      "children": [
+	        {
+	          "type": "div",
+	          "classList": function () {return ['menu-header', 'menu-header-' + (this.showmenu)]},
+	          "children": [
+	            {
+	              "type": "subnav"
+	            }
+	          ]
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "id": "main",
+	      "classList": function () {return ['panel', 'panel-' + (this.showmenu)]},
+	      "style": {
+	        "height": function () {return this.deviceHeight}
+	      },
+	      "events": {
+	        "click": "toggle"
+	      },
+	      "children": [
+	        {
+	          "type": "pcmainnav-scroller-tabbar"
+	        }
+	      ]
+	    }
+	  ]
+	}
+
+/***/ }),
+/* 327 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "wrapper": {
+	    "flexDirection": "row"
+	  },
+	  "panel": {
+	    "width": 750
+	  },
+	  "panel-0": {
+	    "left": 0
+	  },
+	  "panel-1": {
+	    "left": 500
+	  },
+	  "menu": {
+	    "backgroundColor": "#dddddd",
+	    "right": -750,
+	    "position": "absolute",
+	    "width": 750,
+	    "alignItems": "flex-start",
+	    "justifyContent": "flex-start"
+	  },
+	  "menu-0": {
+	    "right": -750
+	  },
+	  "menu-1": {
+	    "right": 150
+	  },
+	  "btn-hamburger": {
+	    "top": 0,
+	    "right": 0,
+	    "bottom": 0,
+	    "left": 0,
+	    "flexDirection": "row"
+	  },
+	  "tooltip": {
+	    "fontSize": 30,
+	    "color": "#000000"
+	  },
+	  "menu-header": {
+	    "padding": 20,
+	    "alignItems": "flex-start",
+	    "justifyContent": "flex-start",
+	    "position": "absolute"
+	  },
+	  "menu-header-0": {
+	    "right": 0
+	  }
+	}
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	var mmjpg = __webpack_require__(140);
+	__webpack_require__(317);
+	__webpack_require__(329);
+	__webpack_require__(53);
+	var weexNavigatorModule = __weex_require__('@weex-module/weexNavigatorModule');
+	module.exports = {
+	    data: function () {return {
+	        srcmenu: mmjpg.getUrl('html/images/menu.png'),
+	        showmenu: 0,
+	        deviceHeight: 0,
+	        platform: ''
+
+	    }},
+	    created: function created() {
+	        var self = this;
+	        self.platform = self.$getConfig().env.platform;
+	        self.deviceHeight = self.$getConfig().env.deviceHeight;
+	    },
+	    ready: function ready() {
+	        var self = this;
+	    },
+
+	    methods: {
+	        toggle: function toggle(e) {
+	            if (this.showmenu == 0) {
+	                this.showmenu = 1;
+	            } else {
+	                this.showmenu = 0;
+	            }
+	        },
+	        close: function close(e) {
+	            this.showmenu = 0;
+	        },
+	        onright: function onright(e) {}
+
+	    }
+	};}
+	/* generated by weex-loader */
+
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __weex_template__ = __webpack_require__(330)
+	var __weex_script__ = __webpack_require__(331)
+
+	__weex_define__('@weex-component/pcmainnav-scroller-tabbar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+
+	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
+	    if (__weex_exports__.__esModule && __weex_exports__.default) {
+	      __weex_module__.exports = __weex_exports__.default
+	    }
+
+	    __weex_module__.exports.template = __weex_template__
+
+	})
+
+
+/***/ }),
+/* 330 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2463,7 +2947,7 @@
 	}
 
 /***/ }),
-/* 348 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2493,7 +2977,7 @@
 	    methods: {
 	        refresh: function refresh() {
 	            var self = this;
-	            weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
+	            weexJsoupModule.pcmainnav(mmjpg.getm_mmjpg(), function (e) {
 	                var json;
 	                json = eval('(' + e + ')');
 	                console.log('json===' + json);
@@ -2506,10 +2990,10 @@
 	                                index: i,
 	                                title: tag.alt,
 	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
+	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+	                                src: mmjpg.getPathUrl('pc/main/pc_main.js', false),
 	                                visibility: 'visible',
 	                                taghref: tag.href
 	                            };
@@ -2517,6 +3001,15 @@
 	                                tab.visibility = 'visible';
 	                            } else {
 	                                tab.visibility = 'hidden';
+	                            }
+	                            if (i == 0) {
+	                                tab.src = mmjpg.getPathUrl('pc/menu/pcslideoutmenu-pager.js', false);
+	                            } else if (i == 1) {
+	                                tab.src = mmjpg.getPathUrl('pc/hot/pchot-head-foot.js', false);
+	                            } else if (i == 2) {
+	                                tab.src = mmjpg.getPathUrl('pc/top/pc_top_head_foot_nobar.js', false);
+	                            } else if (i == 3) {
+	                                tab.src = mmjpg.getPathUrl('pc/more/pc_more_head_foot_nobar.js', false);
 	                            }
 	                            self.tabItems.push(tab);
 	                        }

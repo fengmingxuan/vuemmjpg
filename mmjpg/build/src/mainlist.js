@@ -154,6 +154,16 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('pc/more/pc_more_head_foot_nobar');
+	        this.rows.push('pc/top/pc_top_head_foot_nobar');
+	        this.rows.push('pc/hot/pchot-head-foot');
+	        this.rows.push('pc/hot/pchotscan');
+	        this.rows.push('pc/hot/pchotzan');
+	        this.rows.push('pc/hot/pchot');
+	        this.rows.push('pc/menu/pcslideoutmenu-main-tabbar');
+	        this.rows.push('pc/tabbar/pcmainnav-scroller-tabbar');
+	        this.rows.push('pc/nav/mainnav');
+	        this.rows.push('pc/article/pcarticle');
 	        this.rows.push('pc/menu/pcslideoutmenu-tabbar');
 	        this.rows.push('pc/menu/pcslideoutmenu-pager');
 	        this.rows.push('pc/tabbar/pcmenu-scroller-tabbar');
@@ -237,6 +247,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {

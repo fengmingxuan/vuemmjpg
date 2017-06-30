@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!--<navbar style="width: 750;" title="{{title}}" type="{{skinType}}" shownleft="{{showleft}}" shown="{{shown}}"></navbar>-->
+        <navbar style="width: 750;" title="{{title}}" type="{{skinType}}" shownleft="{{showleft}}" shown="{{shown}}"></navbar>
         <list class="list">
             <refresh class="refresh-view refresh-view-{{skinType}}" display="{{refresh_display}}" onrefresh="onrefresh"
                      refreshing="{{refreshing}}">
@@ -56,7 +56,7 @@
             showLoading: 'hide',
             screenHeight: 0,
             platform: '',
-            title:'MMJPG',
+            title:'妹子图>美女标签',
             showleft:true,
             shown:true,
             taghref:mmjpg.getm_mmjpg_more(),

@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(228)
-	var __weex_style__ = __webpack_require__(229)
-	var __weex_script__ = __webpack_require__(230)
+	var __weex_template__ = __webpack_require__(235)
+	var __weex_style__ = __webpack_require__(236)
+	var __weex_script__ = __webpack_require__(237)
 
 	__weex_define__('@weex-component/73e346c85f13c6f17b3a025c7dda6d92', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2095,6 +2095,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -2283,7 +2313,14 @@
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2316,7 +2353,7 @@
 	}
 
 /***/ }),
-/* 229 */
+/* 236 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2356,7 +2393,7 @@
 	}
 
 /***/ }),
-/* 230 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';

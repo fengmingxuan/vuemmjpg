@@ -44,10 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(347)
-	var __weex_script__ = __webpack_require__(348)
+	var __weex_template__ = __webpack_require__(354)
+	var __weex_style__ = __webpack_require__(355)
+	var __weex_script__ = __webpack_require__(356)
 
-	__weex_define__('@weex-component/32594531bb80e26cdb8d135489ac54d4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/92eccafcc8515f8284b55b4438bf0437', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -56,9 +57,11 @@
 
 	    __weex_module__.exports.template = __weex_template__
 
+	    __weex_module__.exports.style = __weex_style__
+
 	})
 
-	__weex_bootstrap__('@weex-component/32594531bb80e26cdb8d135489ac54d4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/92eccafcc8515f8284b55b4438bf0437',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2351,22 +2354,8 @@
 /* 266 */,
 /* 267 */,
 /* 268 */,
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(270), __esModule: true };
-
-/***/ }),
-/* 270 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(83)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ }),
+/* 269 */,
+/* 270 */,
 /* 271 */,
 /* 272 */,
 /* 273 */,
@@ -2443,98 +2432,233 @@
 /* 344 */,
 /* 345 */,
 /* 346 */,
-/* 347 */
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "flexDirection": "column",
-	    "height": function () {return this.deviceHeight}
+	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
+	  "events": {
+	    "click": "towebdetail"
 	  },
 	  "children": [
 	    {
-	      "type": "wxc-tabbar",
-	      "attr": {
-	        "tabItems": function () {return this.tabItems}
-	      }
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.alt}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.other}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src2}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.alt2}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.other2}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "children": [
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src3}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.alt3}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.other3}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": function () {return ['lineClass', 'lineClass-' + (this.skinType)]}
 	    }
 	  ]
 	}
 
 /***/ }),
-/* 348 */
+/* 355 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "itemClass": {
+	    "marginTop": "5wx",
+	    "flex": 1,
+	    "flexDirection": "row",
+	    "padding": 10
+	  },
+	  "itemClass_android-0": {
+	    "backgroundColor:active": "#dddddd"
+	  },
+	  "itemClass_android-1": {
+	    "backgroundColor:active": "#132237"
+	  },
+	  "news-bottom": {
+	    "flex": 1,
+	    "alignItems": "center"
+	  },
+	  "news-content": {
+	    "marginTop": "5wx",
+	    "marginLeft": "10wx",
+	    "marginRight": "10wx"
+	  },
+	  "numClass": {
+	    "fontSize": "11wx",
+	    "marginLeft": "3wx"
+	  },
+	  "tucao_numClass": {
+	    "fontSize": "12wx",
+	    "marginLeft": "4wx"
+	  },
+	  "textClass-0": {
+	    "color": "#BBBBBB"
+	  },
+	  "textClass-1": {
+	    "color": "#666666"
+	  },
+	  "img": {
+	    "width": 200,
+	    "height": 200
+	  },
+	  "lineClass": {
+	    "height": "2wx"
+	  },
+	  "lineClass-0": {
+	    "backgroundColor": "#eeeeee"
+	  },
+	  "lineClass-1": {
+	    "backgroundColor": "#0e1929"
+	  },
+	  "time": {
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "height": "20wx",
+	    "marginTop": "10wx"
+	  },
+	  "createdt": {
+	    "fontSize": "18wx"
+	  },
+	  "createdt-0": {
+	    "color": "#666666"
+	  },
+	  "createdt-1": {
+	    "color": "#999999"
+	  }
+	}
+
+/***/ }),
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(269);
-
-	var _stringify2 = _interopRequireDefault(_stringify);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	__webpack_require__(53);
-	var mmjpg = __webpack_require__(140);
-	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
-	var storage = __weex_require__('@weex-module/storage');
+	var yoka = __webpack_require__(140);
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
+	var weexNavigatorModule = __weex_require__('@weex-module/weexNavigatorModule');
 	module.exports = {
-	    data: function () {return {
-	        deviceHeight: 0,
-	        tabItems: []
-	    }},
 	    created: function created() {
-	        var self = this;
-
-	        self.deviceHeight = 1300;
-	        console.log('deviceHeight==' + self.deviceHeight);
-	        self.refresh();
+	        this.platform = this.$getConfig().env.platform;
+	        console.log(this.stockitem.picture);
 	    },
-	    methods: {
-	        refresh: function refresh() {
-	            var self = this;
-	            weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
-	                var json;
-	                json = eval('(' + e + ')');
-	                console.log('json===' + json);
-	                self.tabItems.splice(0, self.tabItems.length);
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
-	                                visibility: 'visible',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tab.visibility = 'visible';
-	                            } else {
-	                                tab.visibility = 'hidden';
-	                            }
-	                            self.tabItems.push(tab);
-	                        }
-	                    }
-	                }
-	            });
-	        },
-	        ready: function ready(e) {
-	            var vm = this;
-	            vm.$on('tabBar.onClick', function (e) {
-	                var detail = e.detail;
-	                nativeLog('$dispatch tabBar.onClick ' + detail.index);
+	    data: function () {return {
+	        is_ios_text: 0,
+	        platform: '',
+	        stockitem: {
+	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+	            other: "",
 
-	                var taghref = vm.tabItems[detail.index].taghref;
-	                storage.setItem('taghref', taghref, function (s) {
-	                    console.log('set [taghref]:' + (0, _stringify2.default)(s));
-	                });
-	            });
+	            "href2": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt2": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src2": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+	            other2: "",
+
+	            "href3": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt3": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src3": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+	            other3: ""
+
+	        },
+	        skinType: 0
+	    }},
+	    methods: {
+	        towebdetail: function towebdetail(e) {
+	            weexEventModule.startWebViewActivity(this.stockitem.href);
 	        }
 	    }
 	};}

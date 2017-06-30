@@ -61,6 +61,15 @@ require('weex-components');
                                 }else{
                                     tab.visibility = 'hidden';
                                 }
+                                if(i==0){
+                                    tab.src = mmjpg.getPathUrl('pc/menu/pcslideoutmenu-pager.js', false);
+                                }else  if(i==1){
+                                    tab.src = mmjpg.getPathUrl('pc/hot/pchot-head-foot.js', false);
+                                }else  if(i==2){
+                                    tab.src = mmjpg.getPathUrl('pc/top/pc_top_head_foot_nobar.js', false);
+                                }else  if(i==3){
+                                    tab.src = mmjpg.getPathUrl('pc/more/pc_more_head_foot_nobar.js', false);
+                                }
                                 self.tabItems.push(tab);
                             }
                         }

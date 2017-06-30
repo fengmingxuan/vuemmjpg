@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(193)
 	var __weex_script__ = __webpack_require__(194)
 
-	__weex_define__('@weex-component/7af6bacb6357f4a23be2fe3cae8982b5', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/fbe9850ef45c04eefbce9844f4952168', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/7af6bacb6357f4a23be2fe3cae8982b5',undefined,undefined)
+	__weex_bootstrap__('@weex-component/fbe9850ef45c04eefbce9844f4952168',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2096,6 +2096,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -3539,7 +3569,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmaintoppager"
+	              "type": "pcmaintoppager",
+	              "id": "pcmaintoppagerid",
+	              "attr": {
+	                "url": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3564,7 +3598,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainhotlist"
+	              "type": "pcmainhotlist",
+	              "id": "pcmainhotlistid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3573,7 +3611,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainlikelist"
+	              "type": "pcmainlikelist",
+	              "id": "pcmainlikelistid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3582,7 +3624,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainmmgrid"
+	              "type": "pcmainmmgrid",
+	              "id": "pcmainmmgridid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3754,14 +3800,22 @@
 	        title: 'MMJPG',
 	        showleft: true,
 	        shown: true,
-	        taghref: mmjpg.getm_mmjpg()
+	        taghref: mmjpg.getm_mmjpg(),
+	        isFirst: 1
 	    }},
 	    created: function created() {
 	        var self = this;
 	        this.platform = this.$getConfig().env.platform;
-	        self.refresh();
+	        console.log('isFirst===' + self.isFirst + ';taghref==' + self.taghref);
 	    },
 	    methods: {
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	            this.$vm('pcmaintoppagerid').autoRefresh();
+	            this.$vm('pcmainhotlistid').autoRefresh();
+	            this.$vm('pcmainlikelistid').autoRefresh();
+	            this.$vm('pcmainmmgridid').autoRefresh();
+	        },
 	        togglemenu: function togglemenu() {
 	            this._parent.toggle();
 	        },
@@ -3785,6 +3839,7 @@
 
 	        refresh: function refresh() {
 	            var self = this;
+	            self.isFirst == 0;
 	            var url = self.taghref;
 	            if (self.pageNo == 1) {
 	                url = self.taghref;
@@ -4017,11 +4072,13 @@
 	                    }
 	                }
 	            });
+	        },
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
 	        }
 	    },
 	    created: function created() {
 	        var self = this;
-	        self.refresh();
 	    }
 
 	};}
@@ -4326,7 +4383,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4355,12 +4414,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -4680,7 +4733,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4709,12 +4764,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -5062,7 +5111,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -5103,12 +5154,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 

@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(347)
-	var __weex_script__ = __webpack_require__(348)
+	var __weex_template__ = __webpack_require__(330)
+	var __weex_script__ = __webpack_require__(331)
 
-	__weex_define__('@weex-component/32594531bb80e26cdb8d135489ac54d4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/139857b6906a623df1fa11db9c60a498', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -58,7 +58,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/32594531bb80e26cdb8d135489ac54d4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/139857b6906a623df1fa11db9c60a498',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2426,24 +2426,7 @@
 /* 327 */,
 /* 328 */,
 /* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */
+/* 330 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2463,7 +2446,7 @@
 	}
 
 /***/ }),
-/* 348 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2493,7 +2476,7 @@
 	    methods: {
 	        refresh: function refresh() {
 	            var self = this;
-	            weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
+	            weexJsoupModule.pcmainnav(mmjpg.getm_mmjpg(), function (e) {
 	                var json;
 	                json = eval('(' + e + ')');
 	                console.log('json===' + json);
@@ -2506,10 +2489,10 @@
 	                                index: i,
 	                                title: tag.alt,
 	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
+	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+	                                src: mmjpg.getPathUrl('pc/main/pc_main.js', false),
 	                                visibility: 'visible',
 	                                taghref: tag.href
 	                            };
@@ -2517,6 +2500,15 @@
 	                                tab.visibility = 'visible';
 	                            } else {
 	                                tab.visibility = 'hidden';
+	                            }
+	                            if (i == 0) {
+	                                tab.src = mmjpg.getPathUrl('pc/menu/pcslideoutmenu-pager.js', false);
+	                            } else if (i == 1) {
+	                                tab.src = mmjpg.getPathUrl('pc/hot/pchot-head-foot.js', false);
+	                            } else if (i == 2) {
+	                                tab.src = mmjpg.getPathUrl('pc/top/pc_top_head_foot_nobar.js', false);
+	                            } else if (i == 3) {
+	                                tab.src = mmjpg.getPathUrl('pc/more/pc_more_head_foot_nobar.js', false);
 	                            }
 	                            self.tabItems.push(tab);
 	                        }

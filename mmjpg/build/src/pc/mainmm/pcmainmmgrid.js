@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(225)
 	var __weex_script__ = __webpack_require__(226)
 
-	__weex_define__('@weex-component/357d09a5c71f2266cbc4949756ed2fd9', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/28941d8c4b7923c5b8bc8b131a89acaa', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/357d09a5c71f2266cbc4949756ed2fd9',undefined,undefined)
+	__weex_bootstrap__('@weex-component/28941d8c4b7923c5b8bc8b131a89acaa',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2096,6 +2096,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -2592,7 +2622,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -2633,12 +2665,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 

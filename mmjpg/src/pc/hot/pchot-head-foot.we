@@ -72,7 +72,7 @@
             showLoading: 'hide',
             screenHeight: 0,
             platform: '',
-            title:'MMJPG',
+            title:'浏览排行榜',
             showleft:true,
             shown:true,
             taghref:mmjpg.getm_mmjpg_hot(),

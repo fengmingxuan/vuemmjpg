@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(284)
-	var __weex_style__ = __webpack_require__(285)
-	var __weex_script__ = __webpack_require__(286)
+	var __weex_template__ = __webpack_require__(311)
+	var __weex_style__ = __webpack_require__(312)
+	var __weex_script__ = __webpack_require__(313)
 
-	__weex_define__('@weex-component/1bce1cb80a6a2a6bf67c56d31979c089', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/3a269c1d77f15086a45965aec3be403e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/1bce1cb80a6a2a6bf67c56d31979c089',undefined,undefined)
+	__weex_bootstrap__('@weex-component/3a269c1d77f15086a45965aec3be403e',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2095,6 +2095,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -3560,7 +3590,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmaintoppager"
+	              "type": "pcmaintoppager",
+	              "id": "pcmaintoppagerid",
+	              "attr": {
+	                "url": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3585,7 +3619,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainhotlist"
+	              "type": "pcmainhotlist",
+	              "id": "pcmainhotlistid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3594,7 +3632,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainlikelist"
+	              "type": "pcmainlikelist",
+	              "id": "pcmainlikelistid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3603,7 +3645,11 @@
 	          "append": "tree",
 	          "children": [
 	            {
-	              "type": "pcmainmmgrid"
+	              "type": "pcmainmmgrid",
+	              "id": "pcmainmmgridid",
+	              "attr": {
+	                "href": function () {return this.taghref}
+	              }
 	            }
 	          ]
 	        },
@@ -3775,14 +3821,22 @@
 	        title: 'MMJPG',
 	        showleft: true,
 	        shown: true,
-	        taghref: mmjpg.getm_mmjpg()
+	        taghref: mmjpg.getm_mmjpg(),
+	        isFirst: 1
 	    }},
 	    created: function created() {
 	        var self = this;
 	        this.platform = this.$getConfig().env.platform;
-	        self.refresh();
+	        console.log('isFirst===' + self.isFirst + ';taghref==' + self.taghref);
 	    },
 	    methods: {
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	            this.$vm('pcmaintoppagerid').autoRefresh();
+	            this.$vm('pcmainhotlistid').autoRefresh();
+	            this.$vm('pcmainlikelistid').autoRefresh();
+	            this.$vm('pcmainmmgridid').autoRefresh();
+	        },
 	        togglemenu: function togglemenu() {
 	            this._parent.toggle();
 	        },
@@ -3806,6 +3860,7 @@
 
 	        refresh: function refresh() {
 	            var self = this;
+	            self.isFirst == 0;
 	            var url = self.taghref;
 	            if (self.pageNo == 1) {
 	                url = self.taghref;
@@ -4038,11 +4093,13 @@
 	                    }
 	                }
 	            });
+	        },
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
 	        }
 	    },
 	    created: function created() {
 	        var self = this;
-	        self.refresh();
 	    }
 
 	};}
@@ -4347,7 +4404,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4376,12 +4435,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -4701,7 +4754,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4730,12 +4785,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -5083,7 +5132,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -5124,12 +5175,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -5180,8 +5225,22 @@
 /* 266 */,
 /* 267 */,
 /* 268 */,
-/* 269 */,
-/* 270 */,
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(270), __esModule: true };
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(83)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ }),
 /* 271 */,
 /* 272 */,
 /* 273 */,
@@ -5195,7 +5254,34 @@
 /* 281 */,
 /* 282 */,
 /* 283 */,
-/* 284 */
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5306,40 +5392,21 @@
 	      },
 	      "children": [
 	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub0"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub1"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub2"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub3"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub4"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub5"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub6"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub7"
-	        },
-	        {
-	          "type": "pc_main_head_foot_nobar",
-	          "id": "point_sub8"
+	          "type": "div",
+	          "repeat": {
+	            "expression": function () {return this.buttomData},
+	            "value": "item"
+	          },
+	          "children": [
+	            {
+	              "type": "pc_main_head_foot_nobar",
+	              "id": function () {return this.item.id},
+	              "attr": {
+	                "taghref": function () {return this.item.href},
+	                "isfirst": function () {return this.item.isFirst}
+	              }
+	            }
+	          ]
 	        }
 	      ]
 	    }
@@ -5347,7 +5414,7 @@
 	}
 
 /***/ }),
-/* 285 */
+/* 312 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5474,13 +5541,21 @@
 	}
 
 /***/ }),
-/* 286 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
+	var _stringify = __webpack_require__(269);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	__webpack_require__(148);
 	__webpack_require__(187);
+	var mmjpg = __webpack_require__(140);
+	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	__webpack_require__(53);
 	var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
@@ -5495,55 +5570,9 @@
 	        navBar_display: true,
 	        shown: false,
 	        screenHeight: 0,
-	        isFirst: 0,
 	        platform: 'unknown',
 
-	        buttomData: [{
-	            index: 0,
-	            itemName: '所有',
-	            itemNameColor: "item_text-select-0",
-	            itemLineColor: "select_line_color-0"
-	        }, {
-	            index: 1,
-	            itemName: '性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 2,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 3,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 4,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 5,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 6,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 7,
-	            itemName: '性感性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }, {
-	            index: 8,
-	            itemName: '性感',
-	            itemNameColor: "tab_unselect_txt_color-0",
-	            itemLineColor: "unselect_line_color-0"
-	        }],
+	        buttomData: [],
 	        davNum: 0,
 	        davmargin: 0
 	    }},
@@ -5556,9 +5585,38 @@
 	            var event_ios = __weex_require__('@weex-module/event');
 	            event_ios.setNavbarTitle(this.title);
 	        }
+	        this.refresh();
 	    },
 
 	    methods: {
+	        refresh: function refresh() {
+	            var self = this;
+	            weexJsoupModule.pcsubnav(mmjpg.getm_mmjpg(), function (e) {
+	                var json;
+	                json = eval('(' + e + ')');
+	                console.log('json===' + json);
+	                self.buttomData.splice(0, self.buttomData.length);
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+
+	                            var tab = {
+	                                index: i,
+	                                itemName: tag.alt,
+	                                itemNameColor: "item_text-select-0",
+	                                itemLineColor: "select_line_color-0",
+	                                id: "point_sub" + i,
+	                                href: tag.href,
+	                                isFirst: 1
+	                            };
+	                            console.log('tab===' + (0, _stringify2.default)(tab));
+	                            self.buttomData.push(tab);
+	                        }
+	                    }
+	                }
+	            });
+	        },
 	        onchange: function onchange(params) {
 	            var index = params.index;
 	            this.setIndex(index);
@@ -5587,7 +5645,6 @@
 	    ready: function ready() {
 	        this.indexMetting = 0;
 	        this.setIndex(this.indexMetting);
-	        this.isFirst = 0;
 	    }
 	};}
 	/* generated by weex-loader */

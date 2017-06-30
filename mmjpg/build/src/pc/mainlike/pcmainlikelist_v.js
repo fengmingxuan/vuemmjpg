@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(262)
+	__vue_styles__.push(__webpack_require__(289)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(263)
+	__vue_exports__ = __webpack_require__(290)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(268)
+	var __vue_template__ = __webpack_require__(295)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -105,6 +105,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -207,7 +237,7 @@
 
 /***/ }),
 
-/***/ 262:
+/***/ 289:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -225,7 +255,7 @@
 
 /***/ }),
 
-/***/ 263:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -234,7 +264,7 @@
 	    value: true
 	});
 
-	var _pcmainlikelistitem_v = __webpack_require__(264);
+	var _pcmainlikelistitem_v = __webpack_require__(291);
 
 	var _pcmainlikelistitem_v2 = _interopRequireDefault(_pcmainlikelistitem_v);
 
@@ -318,21 +348,21 @@
 
 /***/ }),
 
-/***/ 264:
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(265)
+	__vue_styles__.push(__webpack_require__(292)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(266)
+	__vue_exports__ = __webpack_require__(293)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(267)
+	var __vue_template__ = __webpack_require__(294)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -363,7 +393,7 @@
 
 /***/ }),
 
-/***/ 265:
+/***/ 292:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -388,7 +418,7 @@
 
 /***/ }),
 
-/***/ 266:
+/***/ 293:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -423,7 +453,7 @@
 
 /***/ }),
 
-/***/ 267:
+/***/ 294:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -447,7 +477,7 @@
 
 /***/ }),
 
-/***/ 268:
+/***/ 295:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

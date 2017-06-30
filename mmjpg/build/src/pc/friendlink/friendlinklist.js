@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(227)
-	var __weex_template__ = __webpack_require__(231)
-	var __weex_style__ = __webpack_require__(232)
-	var __weex_script__ = __webpack_require__(233)
+	__webpack_require__(234)
+	var __weex_template__ = __webpack_require__(238)
+	var __weex_style__ = __webpack_require__(239)
+	var __weex_script__ = __webpack_require__(240)
 
 	__weex_define__('@weex-component/ce1668e622ad2ae7f1bce667749cdfcf', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2096,6 +2096,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -2283,12 +2313,19 @@
 /* 224 */,
 /* 225 */,
 /* 226 */,
-/* 227 */
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(228)
-	var __weex_style__ = __webpack_require__(229)
-	var __weex_script__ = __webpack_require__(230)
+	var __weex_template__ = __webpack_require__(235)
+	var __weex_style__ = __webpack_require__(236)
+	var __weex_script__ = __webpack_require__(237)
 
 	__weex_define__('@weex-component/friendlinklistitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2305,7 +2342,7 @@
 
 
 /***/ }),
-/* 228 */
+/* 235 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2338,7 +2375,7 @@
 	}
 
 /***/ }),
-/* 229 */
+/* 236 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2378,7 +2415,7 @@
 	}
 
 /***/ }),
-/* 230 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2410,7 +2447,7 @@
 
 
 /***/ }),
-/* 231 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2470,7 +2507,7 @@
 	}
 
 /***/ }),
-/* 232 */
+/* 239 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2537,12 +2574,12 @@
 	}
 
 /***/ }),
-/* 233 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(227);
+	__webpack_require__(234);
 	__webpack_require__(53);
 	var mmjpg = __webpack_require__(140);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(335)
+	__vue_styles__.push(__webpack_require__(379)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(336)
+	__vue_exports__ = __webpack_require__(380)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(338)
+	var __vue_template__ = __webpack_require__(382)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,7 +91,7 @@
 
 /***/ }),
 
-/***/ 332:
+/***/ 376:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -136,7 +136,7 @@
 
 /***/ }),
 
-/***/ 333:
+/***/ 377:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -186,7 +186,7 @@
 
 /***/ }),
 
-/***/ 334:
+/***/ 378:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -240,7 +240,7 @@
 
 /***/ }),
 
-/***/ 335:
+/***/ 379:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -258,7 +258,7 @@
 
 /***/ }),
 
-/***/ 336:
+/***/ 380:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -267,7 +267,7 @@
 	    value: true
 	});
 
-	var _stock_news_item = __webpack_require__(337);
+	var _stock_news_item = __webpack_require__(381);
 
 	var _stock_news_item2 = _interopRequireDefault(_stock_news_item);
 
@@ -329,21 +329,21 @@
 
 /***/ }),
 
-/***/ 337:
+/***/ 381:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(332)
+	__vue_styles__.push(__webpack_require__(376)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(333)
+	__vue_exports__ = __webpack_require__(377)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(334)
+	var __vue_template__ = __webpack_require__(378)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -374,7 +374,7 @@
 
 /***/ }),
 
-/***/ 338:
+/***/ 382:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

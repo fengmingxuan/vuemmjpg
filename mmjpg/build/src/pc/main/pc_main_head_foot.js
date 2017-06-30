@@ -45,11 +45,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(188)
-	var __weex_template__ = __webpack_require__(244)
-	var __weex_style__ = __webpack_require__(245)
-	var __weex_script__ = __webpack_require__(246)
+	var __weex_template__ = __webpack_require__(271)
+	var __weex_style__ = __webpack_require__(272)
+	var __weex_script__ = __webpack_require__(273)
 
-	__weex_define__('@weex-component/a5a990d1bad72af1edb2cef6a5530c1e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/05151ab84550e5e7a1aad516b37dd8b8', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/a5a990d1bad72af1edb2cef6a5530c1e',undefined,undefined)
+	__weex_bootstrap__('@weex-component/05151ab84550e5e7a1aad516b37dd8b8',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2096,6 +2096,36 @@
 
 	var MMJPG = {
 	    m_mmjpg:"http://www.mmjpg.com/",
+	    m_mmjpg_article:"http://www.mmjpg.com/mm/1030/",
+	    m_mmjpg_hot:"http://www.mmjpg.com/hot/",
+	    m_mmjpg_top:"http://www.mmjpg.com/top/",
+	    m_mmjpg_top_page:"http://www.mmjpg.com/getmore.php?page=",
+	    m_mmjpg_more:"http://www.mmjpg.com/more/"
+	};
+	exports.getm_mmjpg_more = function () {
+	    var url = MMJPG.m_mmjpg_more;
+	    console.log('m_mmjpg_more==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top_page = function () {
+	    var url = MMJPG.m_mmjpg_top_page;
+	    console.log('m_mmjpg_top_page==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_top = function () {
+	    var url = MMJPG.m_mmjpg_top;
+	    console.log('m_mmjpg_top==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_hot = function () {
+	    var url = MMJPG.m_mmjpg_hot;
+	    console.log('m_mmjpg_hot==' + url);
+	    return url;
+	};
+	exports.getm_mmjpg_article = function () {
+	    var url = MMJPG.m_mmjpg_article;
+	    console.log('m_mmjpg_article==' + url);
+	    return url;
 	};
 
 	exports.getm_mmjpg = function () {
@@ -3692,11 +3722,13 @@
 	                    }
 	                }
 	            });
+	        },
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
 	        }
 	    },
 	    created: function created() {
 	        var self = this;
-	        self.refresh();
 	    }
 
 	};}
@@ -4001,7 +4033,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4030,12 +4064,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -4355,7 +4383,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4384,12 +4414,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -4737,7 +4761,9 @@
 	        href: mmjpg.getm_mmjpg()
 	    }},
 	    methods: {
-
+	        autoRefresh: function autoRefresh() {
+	            this.refresh();
+	        },
 	        onrefresh: function onrefresh(e) {
 	            var self = this;
 	            self.refresh_display = 'show';
@@ -4778,12 +4804,6 @@
 	    },
 	    created: function created() {
 	        var self = this;
-
-	        var shref = this.$getConfig().href;
-	        if (shref != undefined) {
-	            self.href = shref;
-	        }
-	        self.refresh();
 	    },
 	    ready: function ready() {}
 
@@ -4809,7 +4829,48 @@
 /* 241 */,
 /* 242 */,
 /* 243 */,
-/* 244 */
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(270), __esModule: true };
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(83)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ }),
+/* 271 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4942,7 +5003,7 @@
 	}
 
 /***/ }),
-/* 245 */
+/* 272 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5047,10 +5108,16 @@
 	}
 
 /***/ }),
-/* 246 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	var _stringify = __webpack_require__(269);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(148);
 	__webpack_require__(195);
@@ -5084,7 +5151,17 @@
 	    created: function created() {
 	        var self = this;
 	        this.platform = this.$getConfig().env.platform;
-	        self.refresh();
+
+
+	        storage.getItem('taghref', function (s) {
+	            console.log('get taghref result:' + (0, _stringify2.default)(s));
+	            var staghref = s.data;
+	            if (staghref != undefined) {
+	                self.taghref = staghref;
+	            }
+	            console.log('taghref==' + self.taghref);
+	            self.refresh();
+	        });
 	    },
 	    methods: {
 	        togglemenu: function togglemenu() {
