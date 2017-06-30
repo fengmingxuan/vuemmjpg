@@ -25,6 +25,13 @@
             }
         },
         created () {
+            this.rows.push('pc/hot/pchot-head-foot')
+            this.rows.push('pc/hot/pchotscan')
+            this.rows.push('pc/hot/pchotzan')
+            this.rows.push('pc/hot/pchot')
+            this.rows.push('pc/menu/pcslideoutmenu-main-tabbar')
+            this.rows.push('pc/tabbar/pcmainnav-scroller-tabbar')
+            this.rows.push('pc/nav/mainnav')
             this.rows.push('pc/article/pcarticle')
             this.rows.push('pc/menu/pcslideoutmenu-tabbar')
             this.rows.push('pc/menu/pcslideoutmenu-pager')

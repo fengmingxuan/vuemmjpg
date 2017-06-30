@@ -1,0 +1,135 @@
+<template>
+   <div class="wrapper">
+    <div id="menu" class="menu menu-{{showmenu}}" style="height: {{deviceHeight}}" onclick="close">
+        <div class="menu-header menu-header-{{showmenu}}">
+            <subnav></subnav>
+        </div>
+    </div>
+    <div id="main" class="panel panel-{{showmenu}}" style="height: {{deviceHeight}}" onclick="toggle">
+        <!--<div class="btn-hamburger" >-->
+            <!--<pcmenu-tabbar></pcmenu-tabbar>-->
+        <!--</div>-->
+        <pcmainnav-scroller-tabbar></pcmainnav-scroller-tabbar>
+    </div>
+   </div>
+
+</template>
+
+<script>
+    var mmjpg = require('../../mmjpg');
+    require('../nav/subnav.we')
+    require('../tabbar/pcmainnav-scroller-tabbar.we')
+    require('weex-components');
+    var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
+    module.exports = {
+        data: {
+            srcmenu: mmjpg.getUrl('html/images/menu.png'),
+            showmenu:0,
+            deviceHeight:0,
+            platform:''
+
+        },
+        created () {
+            var self = this;
+            self.platform = self.$getConfig().env.platform;
+            self.deviceHeight = self.$getConfig().env.deviceHeight;
+        },
+
+        ready(){
+            var self = this;
+
+        },
+        methods: {
+            toggle: function (e) {
+                if(this.showmenu==0){
+                    this.showmenu = 1;
+                }else{
+                    this.showmenu = 0;
+                }
+            },
+            close: function (e) {
+                this.showmenu = 0;
+            },
+            onright:function (e) {
+//                var name = "search/m_search";
+//                var url = yoka.getDefaultUrl(name);
+//                weexNavigatorModule.push({
+//                    url:url,
+//                    animated: "true"
+//                }, e => {
+//
+//                });
+            },
+
+        }
+    }
+</script>
+
+<style>
+    .wrapper{
+      flex-direction: row;
+    }
+
+    .panel {
+        width: 750;
+    }
+
+    .panel-0 {
+        left:0
+    }
+
+    .panel-1 {
+        left:500
+    }
+
+    .menu {
+        background-color: #dddddd;
+        right: -750;
+        position: absolute;
+        width: 750;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+    }
+    .menu-0{
+        right: -750;
+    }
+
+    .menu-1{
+        right: 150;
+    }
+
+    .btn-hamburger {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
+    }
+
+    .tooltip {
+        font-size: 30;
+        color: #000;
+    }
+
+    .menu-header {
+        padding: 20px 0 20px 60px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: absolute;
+    }
+
+    .menu-header-0{
+        right: 0;
+    }
+
+    .menu-header-0{
+        right: 0;
+    }
+
+    .menu-header-title {
+
+    }
+
+
+</style>
