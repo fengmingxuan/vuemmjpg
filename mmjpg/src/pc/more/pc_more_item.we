@@ -1,0 +1,161 @@
+<template>
+    <div  class="itemClass itemClass_{{platform}}-{{skinType}}" onclick="towebdetail">
+        <div class="news-bottom" >
+            <image class="img" src="{{stockitem.src}}"></image>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.other}}</text>
+        </div>
+        <div class="news-bottom" >
+            <image class="img" src="{{stockitem.src2}}"></image>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt2}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.other2}}</text>
+        </div>
+        <div class="news-bottom" >
+            <image class="img" src="{{stockitem.src3}}"></image>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt3}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.other3}}</text>
+        </div>
+        <div class="lineClass lineClass-{{skinType}}"></div>
+    </div>
+</template>
+
+<script>
+    require('weex-components');
+    var yoka = require('../../mmjpg');
+    var weexEventModule = require('@weex-module/weexEventModule');
+var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
+    module.exports = {
+        created: function () {
+            this.platform = this.$getConfig().env.platform;
+            console.log(this.stockitem.picture);
+        },
+        data: {
+            is_ios_text: 0,
+            platform: '',
+            stockitem: {
+                "href":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+                "alt":"这6个穿搭法则如果记住，时髦一整年没问题！",
+                "src":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+                other:"",
+
+                "href2":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+                "alt2":"这6个穿搭法则如果记住，时髦一整年没问题！",
+                "src2":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+                other2:"",
+
+                "href3":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+                "alt3":"这6个穿搭法则如果记住，时髦一整年没问题！",
+                "src3":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+                other3:"",
+
+            },
+            skinType: 0
+        },
+        methods: {
+            towebdetail:function (e) {
+//                var optionJson={
+//                    URL:this.stockitem.href
+//                };
+//                console.log(JSON.stringify(optionJson));
+//               weexEventModule.startNativeActivity("com.open.mm.activity.m.MImagePullListActivity",JSON.stringify(optionJson));
+             weexEventModule.startWebViewActivity(this.stockitem.href);
+
+//            var self = this;
+//                var name = "image/m_image_list";
+//                var url = yoka.getDefaultUrl(name);
+//                var taghref = self.stockitem.href;
+//                weexNavigatorModule.push({
+//                    url:url,
+//                    animated: "true",
+//                    options:{
+//                        href: taghref,
+//                        title:self.stockitem.alt,
+//                    }
+//                }, event => {
+//
+//                });
+            },
+        }
+    }
+</script>
+
+<style>
+    .itemClass{
+        margin-top: 5wx;
+        flex: 1;
+        flex-direction: row;
+        padding: 10;
+    }
+    .itemClass_android-0:active {
+        background-color: #dddddd
+    }
+    .itemClass_android-1:active {
+        background-color: #132237
+    }
+    .news-bottom {
+        flex: 1;
+        align-items: center;
+    }
+
+    .news-content {
+        margin-top: 5wx;
+        margin-left: 10wx;
+        margin-right: 10wx;
+    }
+
+    .numClass {
+        font-size: 11wx;
+        margin-left: 3wx;
+        /*margin-top: 3wx;*/
+    }
+
+    .tucao_numClass {
+        font-size: 12wx;
+        margin-left: 4wx;
+        /*margin-top: 3wx;*/
+    }
+
+    .textClass-0 {
+        color: #BBBBBB;
+    }
+
+    .textClass-1 {
+        color: #666666;
+    }
+
+    .img {
+        width: 200;
+        height: 200;
+    }
+
+    .lineClass {
+        height: 2wx;
+    }
+
+    .lineClass-0 {
+        background-color: #eeeeee;
+    }
+
+    .lineClass-1 {
+        background-color: #0e1929;
+    }
+
+    .time {
+        align-items: center;
+        justify-content: center;
+        height: 20wx;
+        margin-top: 10wx;
+    }
+
+    .createdt {
+        font-size: 18wx;
+    }
+
+    .createdt-0 {
+        color: #666666;
+    }
+
+    .createdt-1 {
+        color: #999999;
+    }
+</style>
