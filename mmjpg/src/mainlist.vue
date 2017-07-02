@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('m/foot/m_foot')
+            this.rows.push('m/good/mgood')
             this.rows.push('m/article/marticle')
             this.rows.push('m/hot/mhotnav-pager')
             this.rows.push('m/more/m_more')
