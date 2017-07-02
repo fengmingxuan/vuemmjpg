@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('m/article/marticle')
             this.rows.push('m/hot/mhotnav-pager')
             this.rows.push('m/more/m_more')
             this.rows.push('m/menu/mmenu-tabbar')

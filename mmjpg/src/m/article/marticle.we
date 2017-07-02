@@ -1,0 +1,272 @@
+<template>
+    <div style="height: {{deviceHeight}}">
+        <navbar style="width: 750;" title="{{title}}" type="{{skinType}}" shownleft="{{showleft}}" shown="{{shown}}"></navbar>
+        <list class="list">
+            <refresh class="refresh-view refresh-view-{{skinType}}" display="{{refresh_display}}" onrefresh="onrefresh"
+                     refreshing="{{refreshing}}">
+                <loading-indicator class="indicator"></loading-indicator>
+                <text class="refresh-arrow refresh-arrow-{{skinType}}">
+                    下拉刷新
+                </text>
+            </refresh>
+            <!--<cell>-->
+                <!--<pcmaintoppager id="pcmaintoppagerid" url="{{url}}"></pcmaintoppager>-->
+            <!--</cell>-->
+            <cell repeat="{{stockitem in stockArray}}">
+                <marticleitem stockitem="{{stockitem}}"></marticleitem>
+            </cell>
+            <!--<cell>-->
+                <!--<pcmainhotlist id="pcmainhotlistid" href="{{url}}"></pcmainhotlist>-->
+            <!--</cell>-->
+            <!--<cell>-->
+                <!--<pcmainlikelist id="pcmainlikelistid"  href="{{url}}"></pcmainlikelist>-->
+            <!--</cell>-->
+            <!--<cell>-->
+                <!--<pcmainmmgrid id="pcmainmmgridid"  href="{{url}}"></pcmainmmgrid>-->
+            <!--</cell>-->
+            <loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">
+                <text class="refresh-arrow refresh-arrow-{{skinType}}">
+                    加载更多
+                </text>
+                <loading-indicator class="indicator"></loading-indicator>
+            </loading>
+        </list>
+    </div>
+</template>
+
+<script>
+    require('../../template/navbar.we')
+    require('weex-components');
+    require('./marticleitem.we')
+    var mmjpg = require('../../mmjpg');
+    var stream = require('@weex-module/stream');
+    var modal = require('@weex-module/modal');
+    var weexJsoupModule = require('@weex-module/weexJsoupModule');
+     var storage = require('@weex-module/storage');
+    module.exports = {
+
+        data: {
+            refreshing: 'false',
+            refresh_display: 'show',
+            stockArray: [],
+            msg: '下拉刷新',
+            pageNo: 1,
+            skinType: 0,
+            showLoading: 'hide',
+            screenHeight: 0,
+            platform: '',
+            title:'MMJPG',
+            showleft:true,
+            shown:true,
+            taghref:mmjpg.getm_mmjpg_article_m(),
+            deviceHeight:1334,
+            url:''
+        },
+        created: function () {
+            var self = this;
+            this.platform = this.$getConfig().env.platform;
+            self.refresh();
+
+//            storage.getItem('taghref',function(s){
+//                            console.log('get taghref result:'+JSON.stringify(s));
+//                            var staghref = s.data;
+//                            if(staghref!=undefined){
+//                                self.taghref = staghref;
+//                            }
+//                            console.log('taghref=='+self.taghref);
+//                            self.refresh();
+//                        });
+        },
+        ready:function () {
+            var self = this;
+            self.url = self.taghref+self.pageNo;
+//            self.$vm('pcmaintoppagerid').autoRefresh();
+//            self.$vm('pcmainhotlistid').autoRefresh();
+//            self.$vm('pcmainlikelistid').autoRefresh();
+//            self.$vm('pcmainmmgridid').autoRefresh();
+        },
+        methods: {
+            togglemenu:function () {
+                this._parent.toggle();
+            },
+            onright:function () {
+                this._parent.onright();
+            },
+            onloading: function (e) {
+                console.log('onloading');
+                var self = this;
+                self.showLoading = 'show';
+                self.pageNo = self.pageNo + 1;
+                self.refresh();
+            },
+
+            onrefresh: function (e) {
+                var self = this;
+                self.msg = '下拉刷新';
+                self.refresh_display = 'show';
+                self.refresh();
+            },
+
+            refresh: function () {
+                var self = this;
+                var url = self.taghref;
+                url = self.taghref+self.pageNo;
+                var params = {
+                    url:url,
+                    pageNo: self.pageNo
+                };
+                weexJsoupModule.mimagelist(params,function(e){
+                    self.refresh_display = 'hide';
+                    self.showLoading = 'hide';
+                    self.refreshing = "false";
+                    var json;
+                    json = eval('(' + e + ')');
+                    console.log('json==='+json);
+                    if(self.pageNo==1){
+                        self.stockArray.splice(0, self.stockArray.length);
+                    }
+                    if (json.list) {
+                        if (json.list && json.list.length > 0) {
+                            for (var i = 0; i < json.list.length; i++) {
+                                var tag = json.list[i];
+                                self.stockArray.push(tag);
+                            }
+                        }
+                    }
+
+
+                });
+
+            }
+
+        }
+
+    }
+</script>
+
+<style>
+    .redNum {
+        height: 120;
+        width: 720;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+
+    .list {
+        width: 750;
+    }
+
+    .content_class-0 {
+        background-color: #f5f5f5;
+    }
+
+    .content_class-1 {
+        background-color: #15253d;
+    }
+
+    .loading-view {
+        width: 750;
+        height: 50wx;
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loading-view-1 {
+        background-color: #15253d;
+    }
+
+    .loading-view-0 {
+        background-color: #f5f5f5;
+    }
+
+    .refresh-arrow {
+        margin-top: 3wx;
+        height: 12wx;
+        width: 200wx;
+        font-size: 12wx;
+        text-align: center;
+        align-items: center;
+    }
+
+    .refresh-arrow-0 {
+        color: #BBBBBB;
+    }
+
+    .refresh-arrow-1 {
+        color: #666666;
+    }
+
+    .refresh-view {
+        width: 750;
+        height: 40wx;
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .refresh-view-0 {
+        background-color: #f5f5f5;
+    }
+
+    .refresh-view-1 {
+        background-color: #15253d;
+    }
+
+    .indicator {
+        height: 25wx;
+        width: 25wx;
+        color: #889967;
+    }
+
+    .divUnReadClass {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        padding-top: 20wx;
+    }
+
+    .unReadtextlass {
+        font-size: 14wx;
+    }
+
+    .unReadtextlass-0 {
+        color: #666666;
+        font-size: 14wx;
+    }
+
+    .unReadtextlass-1 {
+        color: #999999;
+        font-size: 14wx;
+    }
+
+    .unReadNumclass {
+        margin-left: 5wx;
+        margin-right: 5wx;
+        font-size: 14wx;
+    }
+
+    .unReadNumclass-0 {
+        color: #1191f6;
+        font-size: 14wx;
+
+    }
+
+    .unReadNumclass-1 {
+        color: #005e91;
+        font-size: 14wx;
+    }
+</style>
