@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(210)
+	__vue_styles__.push(__webpack_require__(231)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(211)
+	__vue_exports__ = __webpack_require__(232)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(212)
+	var __vue_template__ = __webpack_require__(233)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/mainlist.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\mmjpg\\src\\mainlist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-653ad126"
+	__vue_options__._scopeId = "data-v-1159f0cc"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,17 +89,17 @@
 	new Vue(module.exports)
 
 
-/***/ }),
+/***/ },
 
-/***/ 180:
-/***/ (function(module, exports) {
+/***/ 142:
+/***/ function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
+	    IP: '192.168.1.6:8080',
+	    HTTP: 'http://',//https:// http://
 
 	};
 
@@ -113,7 +113,13 @@
 	    m_mmjpg_search:"http://www.mmjpg.com/search.php",
 	    m_mmjpg_m:"http://m.mmjpg.com/",
 	    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
-	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/",
+	    m_mmjpg_article_m:"http://m.mmjpg.com/mm/1033/",
+	};
+	exports.getm_mmjpg_article_m = function () {
+	    var url = MMJPG.m_mmjpg_article_m;
+	    console.log('m_mmjpg_article_m==' + url);
+	    return url;
 	};
 	exports.getm_mmjpg_m_hot = function () {
 	    var url = MMJPG.m_mmjpg_m_hot;
@@ -259,10 +265,10 @@
 	}
 
 
-/***/ }),
+/***/ },
 
-/***/ 210:
-/***/ (function(module, exports) {
+/***/ 231:
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "scroller": {
@@ -287,10 +293,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
-/***/ 211:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 232:
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -316,7 +322,7 @@
 	var weexModule = weex.requireModule('weexModule');
 	var dom = weex.requireModule('dom');
 	var modal = weex.requireModule('modal');
-	var mmjpg = __webpack_require__(180);
+	var mmjpg = __webpack_require__(142);
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -324,6 +330,9 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('m/foot/m_foot');
+	        this.rows.push('m/good/mgood');
+	        this.rows.push('m/article/marticle');
 	        this.rows.push('m/hot/mhotnav-pager');
 	        this.rows.push('m/more/m_more');
 	        this.rows.push('m/menu/mmenu-tabbar');
@@ -407,10 +416,10 @@
 	    }
 	};
 
-/***/ }),
+/***/ },
 
-/***/ 212:
-/***/ (function(module, exports) {
+/***/ 233:
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -434,6 +443,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ })
+/***/ }
 
 /******/ });

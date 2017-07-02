@@ -15,12 +15,12 @@
             <cell repeat="{{stockitem in stockArray}}">
                 <marticleitem stockitem="{{stockitem}}"></marticleitem>
             </cell>
-            <!--<cell>-->
-                <!--<pcmainhotlist id="pcmainhotlistid" href="{{url}}"></pcmainhotlist>-->
-            <!--</cell>-->
-            <!--<cell>-->
-                <!--<pcmainlikelist id="pcmainlikelistid"  href="{{url}}"></pcmainlikelist>-->
-            <!--</cell>-->
+            <cell>
+                <mgood  href="{{url}}"></mgood>
+            </cell>
+            <cell>
+                <m_foot   taghref="{{url}}"></m_foot>
+            </cell>
             <!--<cell>-->
                 <!--<pcmainmmgrid id="pcmainmmgridid"  href="{{url}}"></pcmainmmgrid>-->
             <!--</cell>-->
@@ -38,6 +38,8 @@
     require('../../template/navbar.we')
     require('weex-components');
     require('./marticleitem.we')
+     require('../good/mgood.we')
+      require('../foot/m_foot.we')
     var mmjpg = require('../../mmjpg');
     var stream = require('@weex-module/stream');
     var modal = require('@weex-module/modal');
@@ -65,6 +67,7 @@
         created: function () {
             var self = this;
             this.platform = this.$getConfig().env.platform;
+            self.url =  self.taghref+self.pageNo;
             self.refresh();
 
 //            storage.getItem('taghref',function(s){

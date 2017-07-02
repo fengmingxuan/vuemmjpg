@@ -45,7 +45,7 @@
 /******/ ({
 
 /***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/components/loading.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\mmjpg\\src\\components\\loading.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6f057559"
+	__vue_options__._scopeId = "data-v-fcd13a0e"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ }),
+/***/ },
 
 /***/ 21:
-/***/ (function(module, exports) {
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "panel": {
@@ -125,10 +125,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
 /***/ 22:
-/***/ (function(module, exports) {
+/***/ function(module, exports) {
 
 	'use strict';
 
@@ -177,10 +177,10 @@
 	    }
 	};
 
-/***/ }),
+/***/ },
 
 /***/ 23:
-/***/ (function(module, exports) {
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('scroller', {
@@ -207,6 +207,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ })
+/***/ }
 
 /******/ });

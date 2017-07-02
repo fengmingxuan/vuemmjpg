@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(331)
+	__vue_styles__.push(__webpack_require__(352)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(332)
+	__vue_exports__ = __webpack_require__(353)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(333)
+	var __vue_template__ = __webpack_require__(354)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_v.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\mmjpg\\src\\pc\\main\\pc_main_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-38f12248"
+	__vue_options__._scopeId = "data-v-5624fda2"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,17 +89,17 @@
 	new Vue(module.exports)
 
 
-/***/ }),
+/***/ },
 
-/***/ 180:
-/***/ (function(module, exports) {
+/***/ 142:
+/***/ function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
+	    IP: '192.168.1.6:8080',
+	    HTTP: 'http://',//https:// http://
 
 	};
 
@@ -113,7 +113,13 @@
 	    m_mmjpg_search:"http://www.mmjpg.com/search.php",
 	    m_mmjpg_m:"http://m.mmjpg.com/",
 	    m_mmjpg_m_more:"http://m.mmjpg.com/more/",
-	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/"
+	    m_mmjpg_m_hot:"http://m.mmjpg.com/hot/",
+	    m_mmjpg_article_m:"http://m.mmjpg.com/mm/1033/",
+	};
+	exports.getm_mmjpg_article_m = function () {
+	    var url = MMJPG.m_mmjpg_article_m;
+	    console.log('m_mmjpg_article_m==' + url);
+	    return url;
 	};
 	exports.getm_mmjpg_m_hot = function () {
 	    var url = MMJPG.m_mmjpg_m_hot;
@@ -259,10 +265,10 @@
 	}
 
 
-/***/ }),
+/***/ },
 
-/***/ 304:
-/***/ (function(module, exports) {
+/***/ 325:
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "news-bottom": {
@@ -305,10 +311,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
-/***/ 305:
-/***/ (function(module, exports) {
+/***/ 326:
+/***/ function(module, exports) {
 
 	'use strict';
 
@@ -342,10 +348,10 @@
 	    }
 	};
 
-/***/ }),
+/***/ },
 
-/***/ 306:
-/***/ (function(module, exports) {
+/***/ 327:
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
@@ -368,23 +374,23 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }),
+/***/ },
 
-/***/ 309:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 330:
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(304)
+	__vue_styles__.push(__webpack_require__(325)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(305)
+	__vue_exports__ = __webpack_require__(326)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(306)
+	var __vue_template__ = __webpack_require__(327)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -396,10 +402,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\mmjpg\\src\\pc\\main\\pc_main_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-10f49458"
+	__vue_options__._scopeId = "data-v-3abd1f61"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -413,10 +419,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ }),
+/***/ },
 
-/***/ 331:
-/***/ (function(module, exports) {
+/***/ 352:
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "refresh-view": {
@@ -431,10 +437,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
-/***/ 332:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 353:
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -442,7 +448,7 @@
 	    value: true
 	});
 
-	var _pc_main_item_v = __webpack_require__(309);
+	var _pc_main_item_v = __webpack_require__(330);
 
 	var _pc_main_item_v2 = _interopRequireDefault(_pc_main_item_v);
 
@@ -464,7 +470,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(180);
+	var mmjpg = __webpack_require__(142);
 
 	exports.default = {
 	    components: {
@@ -534,10 +540,10 @@
 
 	};
 
-/***/ }),
+/***/ },
 
-/***/ 333:
-/***/ (function(module, exports) {
+/***/ 354:
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('list', {
@@ -574,6 +580,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ })
+/***/ }
 
 /******/ });
