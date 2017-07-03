@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('subnav/pcsubnav')
             this.rows.push('text')
         },
         methods: {
