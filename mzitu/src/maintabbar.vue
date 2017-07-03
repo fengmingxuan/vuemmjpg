@@ -37,7 +37,7 @@
             icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
             image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
             selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-            src: mzitu.getPathUrl('subnav/pcsubnav.js'),
+            src: mzitu.getPathUrl('zhuanti/pczhuanti.js'),
             visibility: 'hidden',
           }
         ],

@@ -18,8 +18,9 @@
         <slider class="slider" append="tree" interval="1000" needloop="false" auto-play="false" onchange="onchange"
                 index="{{indexMetting}}" offScreenPageLimit="3"  style="height: {{screenHeight}}wx">
             <div repeat="{{item in buttomData}}">
-                <pcpost-notitlebar id="{{item.id}}" taghref = "{{item.href}}" isFirst="{{item.isFirst}}"></pcpost-notitlebar>
-            </div
+                <pcpost-notitlebar id="{{item.id}}"   taghref = "{{item.href}}" isFirst="{{item.isFirst}}"></pcpost-notitlebar>
+            </div>
+
         </slider>
     </div>
 </template>
@@ -27,6 +28,7 @@
 <script>
     require('../template/navbar.we')
     require('../post/pcpost-notitlebar.we')
+    require('../zhuanti/pczhuanti.we')
     var mzitu = require('../mzitu');
     var weexMzituJsoupModule = require('@weex-module/weexMzituJsoupModule');
     var weexEventModule = require('@weex-module/weexEventModule');
@@ -101,6 +103,7 @@
                                 console.log('tab==='+JSON.stringify(tab));
                                 self.buttomData.push(tab);
                             }
+
                         }
                     }
                 });
@@ -158,8 +161,11 @@
 //            }
         },
         ready(){
+
             this.indexMetting = 0;
             this.setIndex(this.indexMetting);
+
+
         },
     };
 </script>

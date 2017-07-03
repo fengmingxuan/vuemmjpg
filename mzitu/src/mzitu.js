@@ -8,9 +8,14 @@ var BASE_URL = {
 };
 
 var MZITU = {
-    mzitu_pc:"http://www.mzitu.com/"
+    mzitu_pc:"http://www.mzitu.com/",
+    mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/"
 };
-
+exports.getmzitu_pc_zhuanti = function () {
+    var url = MZITU.mzitu_pc_zhuanti;
+    console.log('mzitu_pc_zhuanti==' + url);
+    return url;
+};
 exports.getmzitu_pc = function () {
     var url = MZITU.mzitu_pc;
     console.log('mzitu_pc==' + url);

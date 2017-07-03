@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('zhuanti/pczhuanti')
             this.rows.push('subnav/pcsubnav-pager')
             this.rows.push('post/pcpost')
             this.rows.push('maintabbar')
