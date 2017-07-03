@@ -9,21 +9,21 @@
                     下拉刷新
                 </text>
             </refresh>
-            <cell>
-                <pctop taghref="{{url}}"></pctop>
-            </cell>
+            <!--<cell>-->
+                <!--<pctop taghref="{{url}}"></pctop>-->
+            <!--</cell>-->
             <cell repeat="{{stockitem in stockArray}}">
-                <pcpost-item stockitem="{{stockitem}}"></pcpost-item>
+                <pcmenunav-item stockitem="{{stockitem}}"></pcmenunav-item>
             </cell>
-            <cell>
-                <pclike taghref="{{url}}"></pclike>
-            </cell>
-            <loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">
-                <text class="refresh-arrow refresh-arrow-{{skinType}}">
-                    加载更多
-                </text>
-                <loading-indicator class="indicator"></loading-indicator>
-            </loading>
+            <!--<cell>-->
+                <!--<pclike taghref="{{url}}"></pclike>-->
+            <!--</cell>-->
+            <!--<loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">-->
+                <!--<text class="refresh-arrow refresh-arrow-{{skinType}}">-->
+                    <!--加载更多-->
+                <!--</text>-->
+                <!--<loading-indicator class="indicator"></loading-indicator>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
@@ -31,9 +31,7 @@
 <script>
     require('../template/navbar.we')
     require('weex-components');
-    require('./pcpost-item.we')
-    require('../top/pctop.we')
-    require('../like/pclike.we')
+    require('./pcmenunav-item.we')
     var mzitu = require('../mzitu');
     var stream = require('@weex-module/stream');
     var modal = require('@weex-module/modal');
@@ -62,17 +60,17 @@
             var self = this;
             this.platform = this.$getConfig().env.platform;
             self.url = self.taghref;
-//            self.refresh();
+            self.refresh();
 
-            storage.getItem('taghref',function(s){
-                            console.log('get taghref result:'+JSON.stringify(s));
-                            var staghref = s.data;
-                            if(staghref!=undefined){
-                                self.taghref = staghref;
-                            }
-                            console.log('taghref=='+self.taghref);
-                            self.refresh();
-                        });
+//            storage.getItem('taghref',function(s){
+//                            console.log('get taghref result:'+JSON.stringify(s));
+//                            var staghref = s.data;
+//                            if(staghref!=undefined){
+//                                self.taghref = staghref;
+//                            }
+//                            console.log('taghref=='+self.taghref);
+//                            self.refresh();
+//                        });
         },
         methods: {
             togglemenu:function () {
@@ -99,15 +97,12 @@
             refresh: function () {
                 var self = this;
                 var url = self.taghref;
-                if(self.pageNo>1){
-                    url = self.taghref+'page='+self.pageNo;
-                }
                 self.url = url;
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMzituJsoupModule.pcpostlist(params,function(e){
+                weexMzituJsoupModule.pcmenunav(url,function(e){
                     self.refresh_display = 'hide';
                     self.showLoading = 'hide';
                     self.refreshing = "false";

@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('menunav/pcmenunav-scroller-tabbar')
+            this.rows.push('menunav/pcmenunav')
             this.rows.push('zhuanti/pczhuanti')
             this.rows.push('subnav/pcsubnav-pager')
             this.rows.push('post/pcpost')
