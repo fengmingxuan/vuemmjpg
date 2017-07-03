@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('subnav/pcsubnav-pager')
+            this.rows.push('post/pcpost')
             this.rows.push('maintabbar')
             this.rows.push('like/pclike')
             this.rows.push('top/pctop')
