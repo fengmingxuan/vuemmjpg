@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(1)
+	__vue_styles__.push(__webpack_require__(145)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(2)
+	__vue_exports__ = __webpack_require__(146)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(4)
+	var __vue_template__ = __webpack_require__(147)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,110 +90,40 @@
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
 
-	module.exports = {
-	  "scroller": {
-	    "borderWidth": 3,
-	    "borderStyle": "solid",
-	    "borderColor": "rgb(162,217,192)",
-	    "marginLeft": 1,
-	    "marginRight": 1
-	  },
-	  "row": {
-	    "height": 150,
-	    "flexDirection": "column",
-	    "justifyContent": "center",
-	    "paddingLeft": 30,
-	    "borderBottomWidth": 2,
-	    "borderBottomStyle": "solid",
-	    "borderBottomColor": "#DDDDDD"
-	  },
-	  "text": {
-	    "fontSize": 45,
-	    "color": "#666666"
-	  }
-	}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var navigator = weex.requireModule('navigator');
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var weexModule = weex.requireModule('weexModule');
-	var dom = weex.requireModule('dom');
-	var modal = weex.requireModule('modal');
-	var mzitu = __webpack_require__(3);
-	exports.default = {
-	    data: function data() {
-	        return {
-	            rows: []
-	        };
-	    },
-	    created: function created() {
-	        this.rows.push('text');
-	    },
-
-	    methods: {
-	        openitem: function openitem(event) {
-
-	            //callJS tasks:[{"data":"14","type":2},{"data":"[{\"args\":[\"150\",\"click\",{\"position\":{\"height\":52.77778,\"width\":713.19446,\"x\":33.333332,\"y\":191.66667}},null],\"method\":\"fireEvent\"}]","type":3}]
-	            // tasks:[{"module":"modal","method":"toast","args":[{"message":{"position":{"height":52.77778,"width":713.19446,"x":33.333332,"y":191.66667},"type":"click",
-	            // "target":{"ref":"186","type":"text","attr":{"value":"a"},"style":{"fontSize":45,"color":"#666666"},"event":["click"]},"timestamp":1488878471697}}]}]
-	            var name = event.target.attr.value;
-	            //                modal.toast({ message:  name.toString()})
-	            //http://localhost:8080/index.html?page=./mmjpg/build/mainlilst.js
-	            //                 weexModule.openUrl('http://192.168.1.15:8080/dist/'+name+'.weex.js', function(err){
-	            //                   console.log(err);
-	            //                  });
-	            weexNavigatorModule.push({
-	                url: mzitu.getDefaultUrl(name),
-	                animated: "true"
-	            }, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
-	        }
-	    }
-	};
-
-/***/ }),
-/* 3 */
+/***/ 86:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: '192.168.1.15:8080',
-	    HTTP: 'http://',//https:// http://
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    HTTP: 'https://',//https:// http://
 
 	};
 
 	var MZITU = {
-	    mzitu_pc:"http://www.mzitu.com/"
+	    mzitu_pc:"http://www.mzitu.com/",
+	    mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
+	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
+	    mzitu_pc_all:"http://www.mzitu.com/all/"
 	};
-
+	exports.getmzitu_pc_all = function () {
+	    var url = MZITU.mzitu_pc_all;
+	    console.log('mzitu_pc_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_pc_zipai = function () {
+	    var url = MZITU.mzitu_pc_zipai;
+	    console.log('mzitu_pc_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_pc_zhuanti = function () {
+	    var url = MZITU.mzitu_pc_zhuanti;
+	    console.log('mzitu_pc_zhuanti==' + url);
+	    return url;
+	};
 	exports.getmzitu_pc = function () {
 	    var url = MZITU.mzitu_pc;
 	    console.log('mzitu_pc==' + url);
@@ -292,7 +223,109 @@
 
 
 /***/ }),
-/* 4 */
+
+/***/ 145:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "scroller": {
+	    "borderWidth": 3,
+	    "borderStyle": "solid",
+	    "borderColor": "rgb(162,217,192)",
+	    "marginLeft": 1,
+	    "marginRight": 1
+	  },
+	  "row": {
+	    "height": 150,
+	    "flexDirection": "column",
+	    "justifyContent": "center",
+	    "paddingLeft": 30,
+	    "borderBottomWidth": 2,
+	    "borderBottomStyle": "solid",
+	    "borderBottomColor": "#DDDDDD"
+	  },
+	  "text": {
+	    "fontSize": 45,
+	    "color": "#666666"
+	  }
+	}
+
+/***/ }),
+
+/***/ 146:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var navigator = weex.requireModule('navigator');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var weexModule = weex.requireModule('weexModule');
+	var dom = weex.requireModule('dom');
+	var modal = weex.requireModule('modal');
+	var mzitu = __webpack_require__(86);
+	exports.default = {
+	    data: function data() {
+	        return {
+	            rows: []
+	        };
+	    },
+	    created: function created() {
+	        this.rows.push('all/pcyear');
+	        this.rows.push('zipai/pczipai');
+	        this.rows.push('menunav/pcmenunav-scroller-tabbar');
+	        this.rows.push('menunav/pcmenunav');
+	        this.rows.push('zhuanti/pczhuanti');
+	        this.rows.push('subnav/pcsubnav-pager');
+	        this.rows.push('post/pcpost');
+	        this.rows.push('maintabbar');
+	        this.rows.push('like/pclike');
+	        this.rows.push('top/pctop');
+	        this.rows.push('subnav/pcsubnav');
+	        this.rows.push('text');
+	    },
+
+	    methods: {
+	        openitem: function openitem(event) {
+
+	            //callJS tasks:[{"data":"14","type":2},{"data":"[{\"args\":[\"150\",\"click\",{\"position\":{\"height\":52.77778,\"width\":713.19446,\"x\":33.333332,\"y\":191.66667}},null],\"method\":\"fireEvent\"}]","type":3}]
+	            // tasks:[{"module":"modal","method":"toast","args":[{"message":{"position":{"height":52.77778,"width":713.19446,"x":33.333332,"y":191.66667},"type":"click",
+	            // "target":{"ref":"186","type":"text","attr":{"value":"a"},"style":{"fontSize":45,"color":"#666666"},"event":["click"]},"timestamp":1488878471697}}]}]
+	            var name = event.target.attr.value;
+	            //                modal.toast({ message:  name.toString()})
+	            //http://localhost:8080/index.html?page=./mmjpg/build/mainlilst.js
+	            //                 weexModule.openUrl('http://192.168.1.15:8080/dist/'+name+'.weex.js', function(err){
+	            //                   console.log(err);
+	            //                  });
+	            weexNavigatorModule.push({
+	                url: mzitu.getDefaultUrl(name),
+	                animated: "true"
+	            }, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 147:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -318,4 +351,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

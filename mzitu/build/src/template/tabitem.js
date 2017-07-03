@@ -51,11 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(218)
+	__vue_styles__.push(__webpack_require__(153)
 	)
 
+	/* script */
+	__vue_exports__ = __webpack_require__(154)
+
 	/* template */
-	var __vue_template__ = __webpack_require__(219)
+	var __vue_template__ = __webpack_require__(155)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -67,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mzitu/src/text.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mzitu/src/template/tabitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-831dd2b2"
+	__vue_options__._scopeId = "data-v-c832f9e6"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -88,59 +91,137 @@
 
 /***/ }),
 
-/***/ 218:
+/***/ 153:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "wrapper": {
+	  "container": {
+	    "flex": 1,
 	    "flexDirection": "column",
-	    "justifyContent": "center"
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "height": 88
 	  },
-	  "panel": {
-	    "width": 600,
-	    "marginLeft": 75,
-	    "borderWidth": 2,
-	    "borderStyle": "solid",
-	    "borderColor": "#BBBBBB",
-	    "paddingTop": 15,
-	    "paddingBottom": 15,
-	    "paddingLeft": 15,
-	    "paddingRight": 15,
-	    "marginBottom": 30
+	  "top-line": {
+	    "position": "absolute",
+	    "top": 0,
+	    "left": 0,
+	    "right": 0,
+	    "height": 2
 	  },
-	  "text": {
-	    "lines": 3,
-	    "color": "#666666",
-	    "fontSize": 32
+	  "tab-icon": {
+	    "marginTop": 5,
+	    "width": 40,
+	    "height": 40
+	  },
+	  "tab-text": {
+	    "marginTop": 5,
+	    "textAlign": "center",
+	    "fontSize": 20
 	  }
 	}
 
 /***/ }),
 
-/***/ 219:
+/***/ 154:
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	module.exports = {
+	  props: {
+	    index: { default: 0 },
+	    title: { default: '' },
+	    titleColor: { default: '#000000' },
+	    icon: { default: '' },
+	    backgroundColor: { default: '#ffffff' }
+	  },
+	  methods: {
+	    onclickitem: function onclickitem(e) {
+	      var params = {
+	        index: this.index
+	      };
+	      this.$emit('tabItemOnClick', params);
+	    }
+	  }
+	};
+
+/***/ }),
+
+/***/ 155:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _vm._m(0)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["wrapper"]
-	  }, [_c('div', {
-	    staticClass: ["panel"]
-	  }, [_c('text', {
-	    staticClass: ["text"],
-	    attrs: {
-	      "lines": "3"
+	    staticClass: ["container"],
+	    style: {
+	      backgroundColor: _vm.backgroundColor
+	    },
+	    on: {
+	      "click": _vm.onclickitem
 	    }
-	  }, [_vm._v("Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。")])]), _c('div', {
-	    staticClass: ["panel"]
-	  }, [_c('text', {
-	    staticClass: ["text"],
+	  }, [_c('image', {
+	    staticClass: ["top-line"],
 	    attrs: {
-	      "lines": "3"
+	      "src": "http://gtms03.alicdn.com/tps/i3/TB1mdsiMpXXXXXpXXXXNw4JIXXX-640-4.png"
 	    }
-	  }, [_vm._v("Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. ")])])])
-	}]}
+	  }), _c('image', {
+	    staticClass: ["tab-icon"],
+	    attrs: {
+	      "src": _vm.icon
+	    }
+	  }), _c('text', {
+	    staticClass: ["tab-text"],
+	    style: {
+	      color: _vm.titleColor
+	    }
+	  }, [_vm._v(_vm._s(_vm.title))])])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })
