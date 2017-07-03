@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('maintabbar')
             this.rows.push('like/pclike')
             this.rows.push('top/pctop')
             this.rows.push('subnav/pcsubnav')
