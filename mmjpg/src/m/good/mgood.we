@@ -10,7 +10,7 @@
             </refresh>
             <cell>
               <div style="flex: 1;align-items: flex-start;margin-left: 20">
-               <text style="font-size: 30">热辣美女</text>
+               <text style="font-size: 30;margin: 10">热辣美女</text>
               </div>
             </cell>
             <cell repeat="{{tag in tags}}">
