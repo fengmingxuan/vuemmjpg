@@ -10,7 +10,13 @@ var BASE_URL = {
 var MZITU = {
     mzitu_pc:"http://www.mzitu.com/",
     mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
-    mzitu_pc_zipai:"http://www.mzitu.com/zipai/"
+    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
+    mzitu_pc_all:"http://www.mzitu.com/all/"
+};
+exports.getmzitu_pc_all = function () {
+    var url = MZITU.mzitu_pc_all;
+    console.log('mzitu_pc_all==' + url);
+    return url;
 };
 exports.getmzitu_pc_zipai = function () {
     var url = MZITU.mzitu_pc_zipai;

@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('all/pcyear')
             this.rows.push('zipai/pczipai')
             this.rows.push('menunav/pcmenunav-scroller-tabbar')
             this.rows.push('menunav/pcmenunav')
