@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmnegchang/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
@@ -13,7 +13,31 @@ var MZITU = {
     mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
     mzitu_pc_all:"http://www.mzitu.com/all/",
     mzitu_pc_search:"http://www.mzitu.com/search/",
-    mzitu_pc_image:"http://www.mzitu.com/96554"
+    mzitu_pc_image:"http://www.mzitu.com/96554",
+    mzitu_m:"http://m.mzitu.com/",
+    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+    mzitu_m_all:"http://m.mzitu.com/all/",
+};
+exports.getmzitu_m_all = function () {
+    var url = MZITU.mzitu_m_all;
+    console.log('mzitu_m_all==' + url);
+    return url;
+};
+exports.getmzitu_m_zhuanti = function () {
+    var url = MZITU.mzitu_m_zhuanti;
+    console.log('mzitu_m_zhuanti==' + url);
+    return url;
+};
+exports.getmzitu_m_zipai = function () {
+    var url = MZITU.mzitu_m_zipai;
+    console.log('mzitu_m_zipai==' + url);
+    return url;
+};
+exports.getmzitu_m = function () {
+    var url = MZITU.mzitu_m;
+    console.log('mzitu_m==' + url);
+    return url;
 };
 exports.getmzitu_pc_image = function () {
     var url = MZITU.mzitu_pc_image;

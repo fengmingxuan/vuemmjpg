@@ -1,8 +1,10 @@
 <template>
-    <div  class="itemClass itemClass_{{platform}}-{{skinType}}" onclick="towebdetail">
+    <div  class="itemClass itemClass_{{platform}}-{{skinType}}"  >
         <div class="news-bottom" >
-            <image class="img" src="{{stockitem.src}}"></image>
-            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.month}}</text>
+            <div repeat="{{dayitem in stockitem.list}}">
+                <mday-item dayitem="{{dayitem}}"></mday-item>
+            </div>
         </div>
         <div class="lineClass lineClass-{{skinType}}"></div>
     </div>
@@ -10,6 +12,7 @@
 
 <script>
     require('weex-components');
+    require('./mday-item.we');
     var mzitu = require('../mzitu');
     var weexEventModule = require('@weex-module/weexEventModule');
 var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
@@ -21,12 +24,8 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
             is_ios_text: 0,
             platform: '',
             stockitem: {
-                "href":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-                "alt":"这6个穿搭法则如果记住，时髦一整年没问题！",
-                "src":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
-                title:"",
-                other:"",
-                pagenumbers:""
+                month:"",
+                list:[]
 
             },
             skinType: 0
@@ -62,7 +61,6 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
 <style>
     .itemClass{
         margin-top: 5wx;
-        flex-direction: column;
     }
     .itemClass_android-0:active {
         background-color: #dddddd
@@ -72,7 +70,8 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
     }
     .news-bottom {
         flex: 1;
-        align-items: center;
+        align-items: flex-start;
+        margin: 20;
     }
 
     .news-content {

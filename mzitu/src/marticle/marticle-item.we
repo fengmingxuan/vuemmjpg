@@ -1,8 +1,9 @@
 <template>
     <div  class="itemClass itemClass_{{platform}}-{{skinType}}" onclick="towebdetail">
         <div class="news-bottom" >
-            <image class="img" src="{{stockitem.src}}"></image>
             <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.other}}</text>
+            <image class="img" src="{{stockitem.src}}"></image>
         </div>
         <div class="lineClass lineClass-{{skinType}}"></div>
     </div>
@@ -26,7 +27,6 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
                 "src":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
                 title:"",
                 other:"",
-                pagenumbers:""
 
             },
             skinType: 0
@@ -62,7 +62,6 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
 <style>
     .itemClass{
         margin-top: 5wx;
-        flex-direction: column;
     }
     .itemClass_android-0:active {
         background-color: #dddddd

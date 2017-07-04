@@ -1,7 +1,6 @@
 <template>
-    <div  class="itemClass itemClass_{{platform}}-{{skinType}}" onclick="towebdetail">
-        <div class="news-bottom" >
-            <image class="img" src="{{stockitem.src}}"></image>
+    <div  class="itemClass itemClass_{{platform}}-{{skinType}}" >
+        <div class="news-bottom" onclick="towebdetail(stockitem.href)">
             <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt}}</text>
         </div>
         <div class="lineClass lineClass-{{skinType}}"></div>
@@ -23,10 +22,6 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
             stockitem: {
                 "href":"http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
                 "alt":"这6个穿搭法则如果记住，时髦一整年没问题！",
-                "src":"http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
-                title:"",
-                other:"",
-                pagenumbers:""
 
             },
             skinType: 0
@@ -38,7 +33,7 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
 //                };
 //                console.log(JSON.stringify(optionJson));
 //               weexEventModule.startNativeActivity("com.open.mm.activity.m.MImagePullListActivity",JSON.stringify(optionJson));
-             weexEventModule.startWebViewActivity(this.stockitem.href);
+             weexEventModule.startWebViewActivity(e);
 
 //            var self = this;
 //                var name = "image/m_image_list";
@@ -62,7 +57,8 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
 <style>
     .itemClass{
         margin-top: 5wx;
-        flex-direction: column;
+        padding: 10;
+        flex-direction: row;
     }
     .itemClass_android-0:active {
         background-color: #dddddd
@@ -72,7 +68,7 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
     }
     .news-bottom {
         flex: 1;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .news-content {
@@ -102,8 +98,8 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
     }
 
     .img {
-        width: 750;
-        height: 900;
+        width: 300;
+        height: 300;
     }
 
     .lineClass {

@@ -1,7 +1,7 @@
 <template>
     <div  class="itemClass itemClass_{{platform}}-{{skinType}}" >
         <div class="news-bottom" onclick="towebdetail(stockitem.href)">
-            <text class="tucao_numClass textClass-{{skinType}}">{{stockitem.alt}}</text>
+            <text class="tucao_numClass textClass-{{skinType}}">>{{stockitem.alt}}</text>
         </div>
         <div class="lineClass lineClass-{{skinType}}"></div>
     </div>
@@ -91,11 +91,11 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
     }
 
     .textClass-0 {
-        color: #BBBBBB;
+        color: #ff88af;
     }
 
     .textClass-1 {
-        color: #666666;
+        color: #ff88af;
     }
 
     .img {

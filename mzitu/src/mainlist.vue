@@ -25,6 +25,13 @@
             }
         },
         created () {
+            this.rows.push('mall/mmonth')
+            this.rows.push('zhuanti/mzhuanti')
+            this.rows.push('zipai/mzipai')
+            this.rows.push('mmenu/mslideoutmenu')
+            this.rows.push('like/mlike')
+            this.rows.push('marticle/marticle')
+            this.rows.push('mmenu/mmenu')
             this.rows.push('tags/pctags')
             this.rows.push('imagehot/pcimagehot')
             this.rows.push('image/pcimagelist')
