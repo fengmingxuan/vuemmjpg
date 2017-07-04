@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('imagehot/pcimagehot')
+            this.rows.push('image/pcimagelist')
             this.rows.push('search/pcsearch')
             this.rows.push('all/pcyear')
             this.rows.push('zipai/pczipai')

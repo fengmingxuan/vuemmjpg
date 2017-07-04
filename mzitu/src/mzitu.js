@@ -12,7 +12,13 @@ var MZITU = {
     mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
     mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
     mzitu_pc_all:"http://www.mzitu.com/all/",
-    mzitu_pc_search:"http://www.mzitu.com/search/"
+    mzitu_pc_search:"http://www.mzitu.com/search/",
+    mzitu_pc_image:"http://www.mzitu.com/96554"
+};
+exports.getmzitu_pc_image = function () {
+    var url = MZITU.mzitu_pc_image;
+    console.log('mzitu_pc_image==' + url);
+    return url;
 };
 exports.getmzitu_pc_search = function () {
     var url = MZITU.mzitu_pc_search;
