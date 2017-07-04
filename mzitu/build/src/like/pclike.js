@@ -2046,7 +2046,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -3351,7 +3375,7 @@
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return this.stockitem.alt}
+	            "value": function () {return '>' + (this.stockitem.alt)}
 	          }
 	        }
 	      ]
@@ -3397,10 +3421,10 @@
 	    "marginLeft": "4wx"
 	  },
 	  "textClass-0": {
-	    "color": "#BBBBBB"
+	    "color": "#ff88af"
 	  },
 	  "textClass-1": {
-	    "color": "#666666"
+	    "color": "#ff88af"
 	  },
 	  "img": {
 	    "width": 300,

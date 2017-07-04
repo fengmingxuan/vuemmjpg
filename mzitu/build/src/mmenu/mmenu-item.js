@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(148)
-	var __weex_style__ = __webpack_require__(149)
-	var __weex_script__ = __webpack_require__(150)
+	var __weex_template__ = __webpack_require__(232)
+	var __weex_style__ = __webpack_require__(233)
+	var __weex_script__ = __webpack_require__(234)
 
-	__weex_define__('@weex-component/68b3ce7d3853d5562552ee511e378889', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/81604263e495f56f8d29404c10f216db', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/68b3ce7d3853d5562552ee511e378889',undefined,undefined)
+	__weex_bootstrap__('@weex-component/81604263e495f56f8d29404c10f216db',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2256,12 +2256,96 @@
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
+	  "classList": function () {return ['itemClass', 'itemClass-' + (this.skinType)]},
 	  "children": [
 	    {
 	      "type": "div",
@@ -2276,7 +2360,7 @@
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return '>' + (this.stockitem.alt)}
+	            "value": function () {return this.stockitem.alt}
 	          }
 	        }
 	      ]
@@ -2289,24 +2373,24 @@
 	}
 
 /***/ }),
-/* 149 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
 	    "marginTop": "5wx",
-	    "padding": 10,
-	    "flexDirection": "row"
+	    "padding": 20
 	  },
-	  "itemClass_android-0": {
+	  "itemClass-0": {
 	    "backgroundColor:active": "#dddddd"
 	  },
-	  "itemClass_android-1": {
+	  "itemClass-1": {
 	    "backgroundColor:active": "#132237"
 	  },
 	  "news-bottom": {
 	    "flex": 1,
-	    "alignItems": "flex-start"
+	    "alignItems": "center",
+	    "marginBottom": 10
 	  },
 	  "news-content": {
 	    "marginTop": "5wx",
@@ -2319,20 +2403,22 @@
 	  },
 	  "tucao_numClass": {
 	    "fontSize": "12wx",
-	    "marginLeft": "4wx"
+	    "marginLeft": "4wx",
+	    "marginBottom": 10
 	  },
 	  "textClass-0": {
-	    "color": "#ff88af"
+	    "color": "#666666"
 	  },
 	  "textClass-1": {
-	    "color": "#ff88af"
+	    "color": "#666666"
 	  },
 	  "img": {
 	    "width": 300,
 	    "height": 300
 	  },
 	  "lineClass": {
-	    "height": "2wx"
+	    "height": 2,
+	    "backgroundColor": "#eeeeee"
 	  },
 	  "lineClass-0": {
 	    "backgroundColor": "#eeeeee"
@@ -2358,7 +2444,7 @@
 	}
 
 /***/ }),
-/* 150 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2376,15 +2462,34 @@
 	        platform: '',
 	        stockitem: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg"
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
 
 	        },
 	        skinType: 0
 	    }},
 	    methods: {
 	        towebdetail: function towebdetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+
+	            var self = this;
+	            var name = "marticle/marticle";
+	            var taghref = self.stockitem.href;
+	            if (taghref == 'http://m.mzitu.com/zipai/') {
+	                name = "zipai/mzipai";
+	            } else if (taghref == 'http://m.mzitu.com/zhuanti/') {
+	                name = "zhuanti/mzhuanti";
+	            } else if (taghref == 'http://m.mzitu.com/all/') {
+	                name = "mall/mmonth";
+	            }
+	            var url = mzitu.getDefaultUrl(name);
+
+	            weexNavigatorModule.push({
+	                url: url,
+	                animated: "true",
+	                options: {
+	                    href: taghref,
+	                    title: self.stockitem.alt
+	                }
+	            }, function (event) {});
 	        }
 	    }
 	};}

@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(162)
-	var __weex_template__ = __webpack_require__(166)
-	var __weex_style__ = __webpack_require__(167)
-	var __weex_script__ = __webpack_require__(168)
+	__webpack_require__(170)
+	var __weex_template__ = __webpack_require__(174)
+	var __weex_style__ = __webpack_require__(175)
+	var __weex_script__ = __webpack_require__(176)
 
 	__weex_define__('@weex-component/fe40588430e6d31d035153052e317675', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2035,7 +2035,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'aw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -2046,7 +2046,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -3324,12 +3348,20 @@
 /* 159 */,
 /* 160 */,
 /* 161 */,
-/* 162 */
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(163)
-	var __weex_style__ = __webpack_require__(164)
-	var __weex_script__ = __webpack_require__(165)
+	var __weex_template__ = __webpack_require__(171)
+	var __weex_style__ = __webpack_require__(172)
+	var __weex_script__ = __webpack_require__(173)
 
 	__weex_define__('@weex-component/pcimagehot-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3346,7 +3378,7 @@
 
 
 /***/ }),
-/* 163 */
+/* 171 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3415,7 +3447,7 @@
 	}
 
 /***/ }),
-/* 164 */
+/* 172 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3484,7 +3516,7 @@
 	}
 
 /***/ }),
-/* 165 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3521,7 +3553,7 @@
 
 
 /***/ }),
-/* 166 */
+/* 174 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3581,7 +3613,7 @@
 	}
 
 /***/ }),
-/* 167 */
+/* 175 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3686,14 +3718,14 @@
 	}
 
 /***/ }),
-/* 168 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(162);
+	__webpack_require__(170);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');

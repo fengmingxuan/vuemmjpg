@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(229)
-	var __weex_template__ = __webpack_require__(233)
-	var __weex_style__ = __webpack_require__(234)
-	var __weex_script__ = __webpack_require__(235)
+	__webpack_require__(271)
+	var __weex_template__ = __webpack_require__(275)
+	var __weex_style__ = __webpack_require__(276)
+	var __weex_script__ = __webpack_require__(277)
 
 	__weex_define__('@weex-component/c390a10f926b5d63e25ed9854034835e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2035,7 +2035,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'aw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -2046,7 +2046,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -3391,12 +3415,54 @@
 /* 226 */,
 /* 227 */,
 /* 228 */,
-/* 229 */
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(230)
-	var __weex_style__ = __webpack_require__(231)
-	var __weex_script__ = __webpack_require__(232)
+	var __weex_template__ = __webpack_require__(272)
+	var __weex_style__ = __webpack_require__(273)
+	var __weex_script__ = __webpack_require__(274)
 
 	__weex_define__('@weex-component/pczhuanti-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3413,7 +3479,7 @@
 
 
 /***/ }),
-/* 230 */
+/* 272 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3482,7 +3548,7 @@
 	}
 
 /***/ }),
-/* 231 */
+/* 273 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3551,7 +3617,7 @@
 	}
 
 /***/ }),
-/* 232 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3588,7 +3654,7 @@
 
 
 /***/ }),
-/* 233 */
+/* 275 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3648,7 +3714,7 @@
 	}
 
 /***/ }),
-/* 234 */
+/* 276 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3753,14 +3819,14 @@
 	}
 
 /***/ }),
-/* 235 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(229);
+	__webpack_require__(271);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');

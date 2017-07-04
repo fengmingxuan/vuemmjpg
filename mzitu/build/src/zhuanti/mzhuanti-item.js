@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(148)
-	var __weex_style__ = __webpack_require__(149)
-	var __weex_script__ = __webpack_require__(150)
+	var __weex_template__ = __webpack_require__(284)
+	var __weex_style__ = __webpack_require__(285)
+	var __weex_script__ = __webpack_require__(286)
 
-	__weex_define__('@weex-component/68b3ce7d3853d5562552ee511e378889', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/fb0a43155d26b224765cf9576b0b13bb', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/68b3ce7d3853d5562552ee511e378889',undefined,undefined)
+	__weex_bootstrap__('@weex-component/fb0a43155d26b224765cf9576b0b13bb',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2256,7 +2256,143 @@
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2276,7 +2412,25 @@
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return '>' + (this.stockitem.alt)}
+	            "value": function () {return this.stockitem.alt}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "events": {
+	        "click": function ($event) {this.towebdetail(this.stockitem.href2,$event)}
+	      },
+	      "children": [
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.alt2}
 	          }
 	        }
 	      ]
@@ -2289,24 +2443,25 @@
 	}
 
 /***/ }),
-/* 149 */
+/* 285 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
 	    "marginTop": "5wx",
-	    "padding": 10,
-	    "flexDirection": "row"
+	    "flexDirection": "row",
+	    "padding": 10
 	  },
 	  "itemClass_android-0": {
-	    "backgroundColor:active": "#dddddd"
+	    "backgroundColor:active": "#ffffff"
 	  },
 	  "itemClass_android-1": {
 	    "backgroundColor:active": "#132237"
 	  },
 	  "news-bottom": {
 	    "flex": 1,
-	    "alignItems": "flex-start"
+	    "alignItems": "center",
+	    "padding": 15
 	  },
 	  "news-content": {
 	    "marginTop": "5wx",
@@ -2325,7 +2480,7 @@
 	    "color": "#ff88af"
 	  },
 	  "textClass-1": {
-	    "color": "#ff88af"
+	    "color": "#666666"
 	  },
 	  "img": {
 	    "width": 300,
@@ -2358,7 +2513,7 @@
 	}
 
 /***/ }),
-/* 150 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2377,7 +2532,8 @@
 	        stockitem: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
 	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg"
+	            "href2": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "alt2": "这6个穿搭法则如果记住，时髦一整年没问题！"
 
 	        },
 	        skinType: 0

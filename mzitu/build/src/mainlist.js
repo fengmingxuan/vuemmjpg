@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(169)
+	__vue_styles__.push(__webpack_require__(180)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(170)
+	__vue_exports__ = __webpack_require__(181)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(171)
+	var __vue_template__ = __webpack_require__(182)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -109,7 +109,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -236,7 +260,7 @@
 
 /***/ }),
 
-/***/ 169:
+/***/ 180:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -264,7 +288,7 @@
 
 /***/ }),
 
-/***/ 170:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -299,6 +323,13 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('mall/mmonth');
+	        this.rows.push('zhuanti/mzhuanti');
+	        this.rows.push('zipai/mzipai');
+	        this.rows.push('mmenu/mslideoutmenu');
+	        this.rows.push('like/mlike');
+	        this.rows.push('marticle/marticle');
+	        this.rows.push('mmenu/mmenu');
 	        this.rows.push('tags/pctags');
 	        this.rows.push('imagehot/pcimagehot');
 	        this.rows.push('image/pcimagelist');
@@ -341,7 +372,7 @@
 
 /***/ }),
 
-/***/ 171:
+/***/ 182:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -51,10 +51,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(172)
+	__vue_exports__ = __webpack_require__(183)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(181)
+	var __vue_template__ = __webpack_require__(192)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -104,7 +104,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -231,7 +255,7 @@
 
 /***/ }),
 
-/***/ 172:
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -278,7 +302,7 @@
 	    };
 	  },
 	  components: {
-	    tabbar: __webpack_require__(173)
+	    tabbar: __webpack_require__(184)
 	  },
 	  created: function created() {},
 	  methods: {
@@ -290,21 +314,21 @@
 
 /***/ }),
 
-/***/ 173:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(174)
+	__vue_styles__.push(__webpack_require__(185)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(175)
+	__vue_exports__ = __webpack_require__(186)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(180)
+	var __vue_template__ = __webpack_require__(191)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -335,7 +359,7 @@
 
 /***/ }),
 
-/***/ 174:
+/***/ 185:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -368,7 +392,7 @@
 
 /***/ }),
 
-/***/ 175:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -438,7 +462,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(176)
+	    tabitem: __webpack_require__(187)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -468,21 +492,21 @@
 
 /***/ }),
 
-/***/ 176:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(177)
+	__vue_styles__.push(__webpack_require__(188)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(178)
+	__vue_exports__ = __webpack_require__(189)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(179)
+	var __vue_template__ = __webpack_require__(190)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -513,7 +537,7 @@
 
 /***/ }),
 
-/***/ 177:
+/***/ 188:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -545,7 +569,7 @@
 
 /***/ }),
 
-/***/ 178:
+/***/ 189:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -615,7 +639,7 @@
 
 /***/ }),
 
-/***/ 179:
+/***/ 190:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -648,7 +672,7 @@
 
 /***/ }),
 
-/***/ 180:
+/***/ 191:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -691,7 +715,7 @@
 
 /***/ }),
 
-/***/ 181:
+/***/ 192:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

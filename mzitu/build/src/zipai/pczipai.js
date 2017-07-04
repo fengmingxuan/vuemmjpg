@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(248)
-	var __weex_template__ = __webpack_require__(252)
-	var __weex_style__ = __webpack_require__(253)
-	var __weex_script__ = __webpack_require__(254)
+	__webpack_require__(290)
+	var __weex_template__ = __webpack_require__(297)
+	var __weex_style__ = __webpack_require__(298)
+	var __weex_script__ = __webpack_require__(299)
 
 	__weex_define__('@weex-component/d082538a028f626fca63d911d96306be', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2035,7 +2035,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'aw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -2046,7 +2046,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -3854,7 +3878,7 @@
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return this.stockitem.alt}
+	            "value": function () {return '>' + (this.stockitem.alt)}
 	          }
 	        }
 	      ]
@@ -3900,10 +3924,10 @@
 	    "marginLeft": "4wx"
 	  },
 	  "textClass-0": {
-	    "color": "#BBBBBB"
+	    "color": "#ff88af"
 	  },
 	  "textClass-1": {
-	    "color": "#666666"
+	    "color": "#ff88af"
 	  },
 	  "img": {
 	    "width": 300,
@@ -4326,12 +4350,54 @@
 /* 245 */,
 /* 246 */,
 /* 247 */,
-/* 248 */
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(249)
-	var __weex_style__ = __webpack_require__(250)
-	var __weex_script__ = __webpack_require__(251)
+	var __weex_template__ = __webpack_require__(291)
+	var __weex_style__ = __webpack_require__(292)
+	var __weex_script__ = __webpack_require__(293)
 
 	__weex_define__('@weex-component/pczipai-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -4348,7 +4414,7 @@
 
 
 /***/ }),
-/* 249 */
+/* 291 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4390,12 +4456,13 @@
 	}
 
 /***/ }),
-/* 250 */
+/* 292 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
-	    "marginTop": "5wx"
+	    "marginTop": "5wx",
+	    "flexDirection": "column"
 	  },
 	  "itemClass_android-0": {
 	    "backgroundColor:active": "#dddddd"
@@ -4457,7 +4524,7 @@
 	}
 
 /***/ }),
-/* 251 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -4494,7 +4561,10 @@
 
 
 /***/ }),
-/* 252 */
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4618,7 +4688,7 @@
 	}
 
 /***/ }),
-/* 253 */
+/* 298 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4723,14 +4793,14 @@
 	}
 
 /***/ }),
-/* 254 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(248);
+	__webpack_require__(290);
 	__webpack_require__(138);
 	__webpack_require__(146);
 	var mzitu = __webpack_require__(86);

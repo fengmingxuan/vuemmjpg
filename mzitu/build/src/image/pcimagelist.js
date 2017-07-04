@@ -2046,7 +2046,31 @@
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
 	    mzitu_pc_all:"http://www.mzitu.com/all/",
 	    mzitu_pc_search:"http://www.mzitu.com/search/",
-	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	    mzitu_pc_image:"http://www.mzitu.com/96554",
+	    mzitu_m:"http://m.mzitu.com/",
+	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
+	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
+	    mzitu_m_all:"http://m.mzitu.com/all/",
+	};
+	exports.getmzitu_m_all = function () {
+	    var url = MZITU.mzitu_m_all;
+	    console.log('mzitu_m_all==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zhuanti = function () {
+	    var url = MZITU.mzitu_m_zhuanti;
+	    console.log('mzitu_m_zhuanti==' + url);
+	    return url;
+	};
+	exports.getmzitu_m_zipai = function () {
+	    var url = MZITU.mzitu_m_zipai;
+	    console.log('mzitu_m_zipai==' + url);
+	    return url;
+	};
+	exports.getmzitu_m = function () {
+	    var url = MZITU.mzitu_m;
+	    console.log('mzitu_m==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_image = function () {
 	    var url = MZITU.mzitu_pc_image;
@@ -3854,7 +3878,7 @@
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return this.stockitem.alt}
+	            "value": function () {return '>' + (this.stockitem.alt)}
 	          }
 	        }
 	      ]
@@ -3900,10 +3924,10 @@
 	    "marginLeft": "4wx"
 	  },
 	  "textClass-0": {
-	    "color": "#BBBBBB"
+	    "color": "#ff88af"
 	  },
 	  "textClass-1": {
-	    "color": "#666666"
+	    "color": "#ff88af"
 	  },
 	  "img": {
 	    "width": 300,
@@ -4676,8 +4700,8 @@
 	__webpack_require__(154);
 	__webpack_require__(138);
 	__webpack_require__(146);
-	__webpack_require__(255);
 	__webpack_require__(161);
+	__webpack_require__(169);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
@@ -4777,7 +4801,7 @@
 	var __weex_style__ = __webpack_require__(167)
 	var __weex_script__ = __webpack_require__(168)
 
-	__weex_define__('@weex-component/pcimagehot', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/pctags', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -4799,7 +4823,7 @@
 	var __weex_style__ = __webpack_require__(164)
 	var __weex_script__ = __webpack_require__(165)
 
-	__weex_define__('@weex-component/pcimagehot-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/pctags-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -4831,46 +4855,10 @@
 	      },
 	      "children": [
 	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
-	          "attr": {
-	            "src": function () {return this.stockitem.src}
-	          }
-	        },
-	        {
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return this.stockitem.other}
-	          }
-	        }
-	      ]
-	    },
-	    {
-	      "type": "div",
-	      "classList": [
-	        "news-bottom"
-	      ],
-	      "events": {
-	        "click": function ($event) {this.towebdetail(this.stockitem.href2,$event)}
-	      },
-	      "children": [
-	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
-	          "attr": {
-	            "src": function () {return this.stockitem.src2}
-	          }
-	        },
-	        {
-	          "type": "text",
-	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
-	          "attr": {
-	            "value": function () {return this.stockitem.other2}
+	            "value": function () {return this.stockitem.alt}
 	          }
 	        }
 	      ]
@@ -4889,8 +4877,8 @@
 	module.exports = {
 	  "itemClass": {
 	    "marginTop": "5wx",
-	    "flexDirection": "row",
-	    "padding": 10
+	    "padding": 10,
+	    "flexDirection": "row"
 	  },
 	  "itemClass_android-0": {
 	    "backgroundColor:active": "#dddddd"
@@ -4900,7 +4888,7 @@
 	  },
 	  "news-bottom": {
 	    "flex": 1,
-	    "alignItems": "center"
+	    "alignItems": "flex-start"
 	  },
 	  "news-content": {
 	    "marginTop": "5wx",
@@ -4970,11 +4958,7 @@
 	        platform: '',
 	        stockitem: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "other": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
-	            "href2": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "other2": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src2": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg"
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
 
 	        },
 	        skinType: 0
@@ -4994,6 +4978,9 @@
 
 	module.exports = {
 	  "type": "div",
+	  "style": {
+	    "height": function () {return this.deviceHeight}
+	  },
 	  "children": [
 	    {
 	      "type": "list",
@@ -5036,7 +5023,7 @@
 	          },
 	          "children": [
 	            {
-	              "type": "pcimagehot-item",
+	              "type": "pctags-item",
 	              "attr": {
 	                "stockitem": function () {return this.stockitem}
 	              }
@@ -5220,7 +5207,7 @@
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMzituJsoupModule.pcimagehotfoot(url, function (e) {
+	            weexMzituJsoupModule.pcmaintags(url, function (e) {
 	                self.refresh_display = 'hide';
 	                self.showLoading = 'hide';
 	                self.refreshing = "false";
@@ -5232,19 +5219,9 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
+	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                src: tag.src,
-	                                other: tag.other,
-	                                href2: tag2.href,
-	                                src2: tag2.src,
-	                                other2: tag2.other
-
-	                            };
-	                            self.stockArray.push(item);
+	                            self.stockArray.push(tag);
 	                        }
 	                    }
 	                }
@@ -5258,81 +5235,15 @@
 
 
 /***/ }),
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(237)
-	var __weex_style__ = __webpack_require__(238)
-	var __weex_script__ = __webpack_require__(239)
+	__webpack_require__(170)
+	var __weex_template__ = __webpack_require__(174)
+	var __weex_style__ = __webpack_require__(175)
+	var __weex_script__ = __webpack_require__(176)
 
-	__weex_define__('@weex-component/pctags-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/pcimagehot', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -5347,7 +5258,29 @@
 
 
 /***/ }),
-/* 237 */
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __weex_template__ = __webpack_require__(171)
+	var __weex_style__ = __webpack_require__(172)
+	var __weex_script__ = __webpack_require__(173)
+
+	__weex_define__('@weex-component/pcimagehot-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+
+	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
+	    if (__weex_exports__.__esModule && __weex_exports__.default) {
+	      __weex_module__.exports = __weex_exports__.default
+	    }
+
+	    __weex_module__.exports.template = __weex_template__
+
+	    __weex_module__.exports.style = __weex_style__
+
+	})
+
+
+/***/ }),
+/* 171 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5364,10 +5297,46 @@
 	      },
 	      "children": [
 	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src}
+	          }
+	        },
+	        {
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "value": function () {return this.stockitem.alt}
+	            "value": function () {return this.stockitem.other}
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "classList": [
+	        "news-bottom"
+	      ],
+	      "events": {
+	        "click": function ($event) {this.towebdetail(this.stockitem.href2,$event)}
+	      },
+	      "children": [
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src2}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.other2}
 	          }
 	        }
 	      ]
@@ -5380,14 +5349,14 @@
 	}
 
 /***/ }),
-/* 238 */
+/* 172 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
 	    "marginTop": "5wx",
-	    "padding": 10,
-	    "flexDirection": "row"
+	    "flexDirection": "row",
+	    "padding": 10
 	  },
 	  "itemClass_android-0": {
 	    "backgroundColor:active": "#dddddd"
@@ -5397,7 +5366,7 @@
 	  },
 	  "news-bottom": {
 	    "flex": 1,
-	    "alignItems": "flex-start"
+	    "alignItems": "center"
 	  },
 	  "news-content": {
 	    "marginTop": "5wx",
@@ -5449,7 +5418,7 @@
 	}
 
 /***/ }),
-/* 239 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -5467,7 +5436,11 @@
 	        platform: '',
 	        stockitem: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
+	            "other": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
+	            "href2": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
+	            "other2": "这6个穿搭法则如果记住，时髦一整年没问题！",
+	            "src2": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg"
 
 	        },
 	        skinType: 0
@@ -5482,14 +5455,11 @@
 
 
 /***/ }),
-/* 240 */
+/* 174 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "height": function () {return this.deviceHeight}
-	  },
 	  "children": [
 	    {
 	      "type": "list",
@@ -5532,7 +5502,7 @@
 	          },
 	          "children": [
 	            {
-	              "type": "pctags-item",
+	              "type": "pcimagehot-item",
 	              "attr": {
 	                "stockitem": function () {return this.stockitem}
 	              }
@@ -5545,7 +5515,7 @@
 	}
 
 /***/ }),
-/* 241 */
+/* 175 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5650,14 +5620,14 @@
 	}
 
 /***/ }),
-/* 242 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(236);
+	__webpack_require__(170);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
@@ -5716,7 +5686,7 @@
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMzituJsoupModule.pcmaintags(url, function (e) {
+	            weexMzituJsoupModule.pcimagehotfoot(url, function (e) {
 	                self.refresh_display = 'hide';
 	                self.showLoading = 'hide';
 	                self.refreshing = "false";
@@ -5728,9 +5698,19 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
+	                        for (var i = 0; i < json.list.length; i += 2) {
 	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
+	                            var tag2 = json.list[i + 1];
+	                            var item = {
+	                                href: tag.href,
+	                                src: tag.src,
+	                                other: tag.other,
+	                                href2: tag2.href,
+	                                src2: tag2.src,
+	                                other2: tag2.other
+
+	                            };
+	                            self.stockArray.push(item);
 	                        }
 	                    }
 	                }
@@ -5741,41 +5721,6 @@
 
 	};}
 	/* generated by weex-loader */
-
-
-/***/ }),
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	__webpack_require__(236)
-	var __weex_template__ = __webpack_require__(240)
-	var __weex_style__ = __webpack_require__(241)
-	var __weex_script__ = __webpack_require__(242)
-
-	__weex_define__('@weex-component/pctags', [], function(__weex_require__, __weex_exports__, __weex_module__) {
-
-	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
-	    if (__weex_exports__.__esModule && __weex_exports__.default) {
-	      __weex_module__.exports = __weex_exports__.default
-	    }
-
-	    __weex_module__.exports.template = __weex_template__
-
-	    __weex_module__.exports.style = __weex_style__
-
-	})
 
 
 /***/ })
