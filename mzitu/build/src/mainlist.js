@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(145)
+	__vue_styles__.push(__webpack_require__(169)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(146)
+	__vue_exports__ = __webpack_require__(170)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(147)
+	var __vue_template__ = __webpack_require__(171)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -98,7 +98,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmnegchang/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -107,7 +107,19 @@
 	    mzitu_pc:"http://www.mzitu.com/",
 	    mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
-	    mzitu_pc_all:"http://www.mzitu.com/all/"
+	    mzitu_pc_all:"http://www.mzitu.com/all/",
+	    mzitu_pc_search:"http://www.mzitu.com/search/",
+	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	};
+	exports.getmzitu_pc_image = function () {
+	    var url = MZITU.mzitu_pc_image;
+	    console.log('mzitu_pc_image==' + url);
+	    return url;
+	};
+	exports.getmzitu_pc_search = function () {
+	    var url = MZITU.mzitu_pc_search;
+	    console.log('mzitu_pc_search==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_all = function () {
 	    var url = MZITU.mzitu_pc_all;
@@ -224,7 +236,7 @@
 
 /***/ }),
 
-/***/ 145:
+/***/ 169:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -252,7 +264,7 @@
 
 /***/ }),
 
-/***/ 146:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -287,6 +299,10 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('tags/pctags');
+	        this.rows.push('imagehot/pcimagehot');
+	        this.rows.push('image/pcimagelist');
+	        this.rows.push('search/pcsearch');
 	        this.rows.push('all/pcyear');
 	        this.rows.push('zipai/pczipai');
 	        this.rows.push('menunav/pcmenunav-scroller-tabbar');
@@ -325,7 +341,7 @@
 
 /***/ }),
 
-/***/ 147:
+/***/ 171:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

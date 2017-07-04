@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('tags/pctags')
             this.rows.push('imagehot/pcimagehot')
             this.rows.push('image/pcimagelist')
             this.rows.push('search/pcsearch')

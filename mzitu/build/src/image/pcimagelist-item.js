@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(249)
-	var __weex_style__ = __webpack_require__(250)
-	var __weex_script__ = __webpack_require__(251)
+	var __weex_template__ = __webpack_require__(155)
+	var __weex_style__ = __webpack_require__(156)
+	var __weex_script__ = __webpack_require__(157)
 
-	__weex_define__('@weex-component/16b47abd08754665bf8730c1f35b8f65', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/9086b5ec658b8cc6f9fd13177671cf57', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/16b47abd08754665bf8730c1f35b8f65',undefined,undefined)
+	__weex_bootstrap__('@weex-component/9086b5ec658b8cc6f9fd13177671cf57',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2239,101 +2239,7 @@
 /* 152 */,
 /* 153 */,
 /* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */
+/* 155 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2350,12 +2256,10 @@
 	      ],
 	      "children": [
 	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
-	            "src": function () {return this.stockitem.src}
+	            "value": function () {return this.stockitem.title}
 	          }
 	        },
 	        {
@@ -2363,6 +2267,22 @@
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
 	          "attr": {
 	            "value": function () {return this.stockitem.alt}
+	          }
+	        },
+	        {
+	          "type": "text",
+	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
+	          "attr": {
+	            "value": function () {return this.stockitem.other}
+	          }
+	        },
+	        {
+	          "type": "image",
+	          "classList": [
+	            "img"
+	          ],
+	          "attr": {
+	            "src": function () {return this.stockitem.src}
 	          }
 	        }
 	      ]
@@ -2375,7 +2295,7 @@
 	}
 
 /***/ }),
-/* 250 */
+/* 156 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2442,7 +2362,7 @@
 	}
 
 /***/ }),
-/* 251 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2463,8 +2383,7 @@
 	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
 	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
 	            title: "",
-	            other: "",
-	            pagenumbers: ""
+	            other: ""
 
 	        },
 	        skinType: 0

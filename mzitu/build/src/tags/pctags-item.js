@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(249)
-	var __weex_style__ = __webpack_require__(250)
-	var __weex_script__ = __webpack_require__(251)
+	var __weex_template__ = __webpack_require__(237)
+	var __weex_style__ = __webpack_require__(238)
+	var __weex_script__ = __webpack_require__(239)
 
-	__weex_define__('@weex-component/16b47abd08754665bf8730c1f35b8f65', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/85b703565a0cb8849a8fcdb709a50839', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/16b47abd08754665bf8730c1f35b8f65',undefined,undefined)
+	__weex_bootstrap__('@weex-component/85b703565a0cb8849a8fcdb709a50839',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2321,43 +2321,22 @@
 /* 234 */,
 /* 235 */,
 /* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */
+/* 237 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
 	  "classList": function () {return ['itemClass', 'itemClass_' + (this.platform) + '-' + (this.skinType)]},
-	  "events": {
-	    "click": "towebdetail"
-	  },
 	  "children": [
 	    {
 	      "type": "div",
 	      "classList": [
 	        "news-bottom"
 	      ],
+	      "events": {
+	        "click": function ($event) {this.towebdetail(this.stockitem.href,$event)}
+	      },
 	      "children": [
-	        {
-	          "type": "image",
-	          "classList": [
-	            "img"
-	          ],
-	          "attr": {
-	            "src": function () {return this.stockitem.src}
-	          }
-	        },
 	        {
 	          "type": "text",
 	          "classList": function () {return ['tucao_numClass', 'textClass-' + (this.skinType)]},
@@ -2375,12 +2354,14 @@
 	}
 
 /***/ }),
-/* 250 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "itemClass": {
-	    "marginTop": "5wx"
+	    "marginTop": "5wx",
+	    "padding": 10,
+	    "flexDirection": "row"
 	  },
 	  "itemClass_android-0": {
 	    "backgroundColor:active": "#dddddd"
@@ -2390,7 +2371,7 @@
 	  },
 	  "news-bottom": {
 	    "flex": 1,
-	    "alignItems": "center"
+	    "alignItems": "flex-start"
 	  },
 	  "news-content": {
 	    "marginTop": "5wx",
@@ -2412,8 +2393,8 @@
 	    "color": "#666666"
 	  },
 	  "img": {
-	    "width": 750,
-	    "height": 900
+	    "width": 300,
+	    "height": 300
 	  },
 	  "lineClass": {
 	    "height": "2wx"
@@ -2442,7 +2423,7 @@
 	}
 
 /***/ }),
-/* 251 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -2460,18 +2441,14 @@
 	        platform: '',
 	        stockitem: {
 	            "href": "http://www.yoka.com/fashion/edittj/2017/0410/50473001074747.shtml",
-	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！",
-	            "src": "http://p7.yokacdn.com/pic/YOKA/2017-04-11/U15P1TS1491893036_67597.jpg",
-	            title: "",
-	            other: "",
-	            pagenumbers: ""
+	            "alt": "这6个穿搭法则如果记住，时髦一整年没问题！"
 
 	        },
 	        skinType: 0
 	    }},
 	    methods: {
 	        towebdetail: function towebdetail(e) {
-	            weexEventModule.startWebViewActivity(this.stockitem.href);
+	            weexEventModule.startWebViewActivity(e);
 	        }
 	    }
 	};}

@@ -19,6 +19,9 @@
                 <pclike taghref="{{url}}"></pclike>
             </cell>
             <cell>
+                <pctags taghref="{{url}}"></pctags>
+            </cell>
+            <cell>
                 <pcimagehot taghref="{{url}}"></pcimagehot>
             </cell>
             <loading class="loading-view loading-view-{{skinType}}" display="{{showLoading}}" onloading="onloading">
@@ -37,6 +40,7 @@
     require('./pcimagelist-item.we')
     require('../top/pctop.we')
     require('../like/pclike.we')
+    require('../tags/pctags.we')
     require('../imagehot/pcimagehot.we')
     var mzitu = require('../mzitu');
     var stream = require('@weex-module/stream');

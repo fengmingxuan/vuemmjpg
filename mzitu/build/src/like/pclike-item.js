@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(139)
-	var __weex_style__ = __webpack_require__(140)
-	var __weex_script__ = __webpack_require__(141)
+	var __weex_template__ = __webpack_require__(148)
+	var __weex_style__ = __webpack_require__(149)
+	var __weex_script__ = __webpack_require__(150)
 
 	__weex_define__('@weex-component/bc615dad51f91c805a57159e6eb50c7e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2034,7 +2034,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmnegchang/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -2043,7 +2043,19 @@
 	    mzitu_pc:"http://www.mzitu.com/",
 	    mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
-	    mzitu_pc_all:"http://www.mzitu.com/all/"
+	    mzitu_pc_all:"http://www.mzitu.com/all/",
+	    mzitu_pc_search:"http://www.mzitu.com/search/",
+	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	};
+	exports.getmzitu_pc_image = function () {
+	    var url = MZITU.mzitu_pc_image;
+	    console.log('mzitu_pc_image==' + url);
+	    return url;
+	};
+	exports.getmzitu_pc_search = function () {
+	    var url = MZITU.mzitu_pc_search;
+	    console.log('mzitu_pc_search==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_all = function () {
 	    var url = MZITU.mzitu_pc_all;
@@ -2211,7 +2223,16 @@
 /* 136 */,
 /* 137 */,
 /* 138 */,
-/* 139 */
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2244,7 +2265,7 @@
 	}
 
 /***/ }),
-/* 140 */
+/* 149 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2313,7 +2334,7 @@
 	}
 
 /***/ }),
-/* 141 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';

@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(208)
-	var __weex_template__ = __webpack_require__(212)
-	var __weex_style__ = __webpack_require__(213)
-	var __weex_script__ = __webpack_require__(214)
+	__webpack_require__(229)
+	var __weex_template__ = __webpack_require__(233)
+	var __weex_style__ = __webpack_require__(234)
+	var __weex_script__ = __webpack_require__(235)
 
 	__weex_define__('@weex-component/c390a10f926b5d63e25ed9854034835e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2035,7 +2035,7 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmnegchang/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
@@ -2044,7 +2044,19 @@
 	    mzitu_pc:"http://www.mzitu.com/",
 	    mzitu_pc_zhuanti:"http://www.mzitu.com/zhuanti/",
 	    mzitu_pc_zipai:"http://www.mzitu.com/zipai/",
-	    mzitu_pc_all:"http://www.mzitu.com/all/"
+	    mzitu_pc_all:"http://www.mzitu.com/all/",
+	    mzitu_pc_search:"http://www.mzitu.com/search/",
+	    mzitu_pc_image:"http://www.mzitu.com/96554"
+	};
+	exports.getmzitu_pc_image = function () {
+	    var url = MZITU.mzitu_pc_image;
+	    console.log('mzitu_pc_image==' + url);
+	    return url;
+	};
+	exports.getmzitu_pc_search = function () {
+	    var url = MZITU.mzitu_pc_search;
+	    console.log('mzitu_pc_search==' + url);
+	    return url;
 	};
 	exports.getmzitu_pc_all = function () {
 	    var url = MZITU.mzitu_pc_all;
@@ -3358,12 +3370,33 @@
 /* 205 */,
 /* 206 */,
 /* 207 */,
-/* 208 */
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(209)
-	var __weex_style__ = __webpack_require__(210)
-	var __weex_script__ = __webpack_require__(211)
+	var __weex_template__ = __webpack_require__(230)
+	var __weex_style__ = __webpack_require__(231)
+	var __weex_script__ = __webpack_require__(232)
 
 	__weex_define__('@weex-component/pczhuanti-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3380,7 +3413,7 @@
 
 
 /***/ }),
-/* 209 */
+/* 230 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3449,7 +3482,7 @@
 	}
 
 /***/ }),
-/* 210 */
+/* 231 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3518,7 +3551,7 @@
 	}
 
 /***/ }),
-/* 211 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3555,7 +3588,7 @@
 
 
 /***/ }),
-/* 212 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3615,7 +3648,7 @@
 	}
 
 /***/ }),
-/* 213 */
+/* 234 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3720,14 +3753,14 @@
 	}
 
 /***/ }),
-/* 214 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(208);
+	__webpack_require__(229);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
