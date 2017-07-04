@@ -9,11 +9,15 @@
                     下拉刷新
                 </text>
             </refresh>
-
+            <cell>
+                <pctop taghref="{{url}}"></pctop>
+            </cell>
             <cell repeat="{{stockitem in stockArray}}">
                 <pcyear-item stockitem="{{stockitem}}"></pcyear-item>
             </cell>
-
+            <cell>
+                <pclike taghref="{{url}}"></pclike>
+            </cell>
         </list>
     </div>
 </template>
@@ -22,6 +26,8 @@
     require('../template/navbar.we')
     require('weex-components');
     require('./pcyear-item.we')
+    require('../top/pctop.we')
+    require('../like/pclike.we')
     var mzitu = require('../mzitu');
     var stream = require('@weex-module/stream');
     var modal = require('@weex-module/modal');

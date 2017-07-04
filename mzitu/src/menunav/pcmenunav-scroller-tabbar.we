@@ -1,5 +1,5 @@
 <template>
-    <div style="flex-direction: column;height: {{deviceHeight}}">
+    <div style="flex-direction: column;">
         <wxc-scroller-tabbar tab-items={{tabItems}}></wxc-scroller-tabbar>
     </div>
 </template>
@@ -66,9 +66,9 @@
                                 }else if(i<=4){
                                     tab.src= mzitu.getPathUrl('post/pcpost.js', false);
                                 }else if(i==5){
-                                    tab.src= mzitu.getPathUrl('post/pcpost.js', false);
+                                    tab.src= mzitu.getPathUrl('zipai/pczipai.js', false);
                                 }else if(i==6){
-                                    tab.src= mzitu.getPathUrl('post/pcpost.js', false);
+                                    tab.src= mzitu.getPathUrl('all/pcyear.js', false);
                                 }
                                 self.tabItems.push(tab);
                             }
