@@ -101,6 +101,7 @@
                         if (json.list && json.list.length > 0) {
                             for (var i = 0; i < json.list.length; i++) {
                                 var tag = json.list[i];
+                                self.title = tag.title;
                                 self.stockArray.push(tag);
                             }
                         }

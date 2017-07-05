@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('content/pccontentslider')
+            this.rows.push('content/pccontentlist')
             this.rows.push('search/pcsearchimglist')
             this.rows.push('search/pcsearch')
             this.rows.push('template/navbar_v')
