@@ -17,12 +17,12 @@
 
 <style>
   .container {
-    flex: 1;
+    /*flex: 1;*/
     flex-direction: column; 
     align-items:center; 
     justify-content:center; 
     height: 88;
-    /*width: 150px;*/
+    width: 150px;
   }
   .top-line {
     position: absolute; 

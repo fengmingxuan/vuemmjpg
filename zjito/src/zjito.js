@@ -10,8 +10,14 @@ var BASE_URL = {
 var ZJITO = {
     pc_search:"http://www.zjito.com/search/result?Query=",
     pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
-    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml"
+    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
+    pc_cat:"http://www.zjito.com/dqfl/"
 
+};
+exports.getpc_cat = function () {
+    var url = ZJITO.pc_cat;
+    console.log('pc_cat==' + url);
+    return url;
 };
 exports.getpc_content = function () {
     var url = ZJITO.pc_content;

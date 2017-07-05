@@ -18,7 +18,7 @@
       }
     },
     components: {
-      tabbar: require('../template/tabbar.vue')
+      tabbar: require('../template/wxc_tabbar.vue')
     },
     created: function() {
         var self = this;

@@ -9,7 +9,7 @@
       class="content"
       ></embed>
     <div class="tabbar" append="tree" >
-      <!--<scroller class="scroller" scroll-direction="horizontal" >-->
+      <scroller class="scroller" scroll-direction="horizontal" >
       <tabitem
          v-for="item in tabItems"
          :key="item.index"
@@ -19,7 +19,7 @@
         :titleColor="item.titleColor"
         @tabItemOnClick="tabItemOnClick"
         ></tabitem>
-      <!--</scroller>-->
+      </scroller>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@
     left: 0;
     right: 0;
     height: 88;
-    /*width: 750;*/
+    width: 750;
   }
   .scroller {
     flex-direction: row;
@@ -70,7 +70,7 @@
       }
     },
     components: {
-        tabitem: require('./tabitem.vue')
+        tabitem: require('./wxc_tabitem.vue')
     },
     created: function () {
       this.select(this.selectedIndex);
