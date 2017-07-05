@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('search/pcimglist_notitlebar')
+            this.rows.push('linkhot/pclinkhot')
             this.rows.push('content/pccontentslider')
             this.rows.push('content/pccontentlist')
             this.rows.push('search/pcsearchimglist')
