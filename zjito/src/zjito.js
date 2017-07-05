@@ -9,9 +9,14 @@ var BASE_URL = {
 
 var ZJITO = {
     pc_search:"http://www.zjito.com/search/result?Query=",
+    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3"
 
 };
-
+exports.getpc_search_meinv = function () {
+    var url = ZJITO.pc_search_meinv;
+    console.log('pc_search_meinv==' + url);
+    return url;
+};
 exports.getpc_search = function () {
     var url = ZJITO.pc_search;
     console.log('pc_search==' + url);

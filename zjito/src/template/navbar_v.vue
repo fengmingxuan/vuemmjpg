@@ -36,6 +36,7 @@
             }
 
         },
+        props: ['title'],
         created: function () {
             this.platform = this.$getConfig().env.platform;
             if (this.platform == 'iOS') {

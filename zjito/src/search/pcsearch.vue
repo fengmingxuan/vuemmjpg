@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <navbar_v></navbar_v>
+            <navbar_v :title="title"></navbar_v>
         </div>
         <div class="wrapper">
             <input ref="input" class="input" type="text" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur"/>
@@ -11,7 +11,8 @@
             <text class="text">热门搜索：</text>
         </div>
         <div class="row" v-for="hotitem in hotkeys">
-            <text class="text" @click="todetail(hotitem.href)">{{hotitem.alt}}</text>
+            <text class="text" @click="todetail(hotitem.alt)">{{hotitem.alt}}</text>
+            <text class="text" @click="todetail(hotitem.alt2)">{{hotitem.alt2}}</text>
         </div>
     </div>
 </template>
@@ -22,6 +23,7 @@
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
     var weexEventModule = weex.requireModule('weexEventModule');
     var zjito = require('../zjito');
+    var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
     export default {
         components: {
             navbar_v,
@@ -31,7 +33,8 @@
                  key:"",
                  taghref:zjito.getpc_search(),
                  pageNo:1,
-                 hotkeys:[]
+                 hotkeys:[],
+                title:"搜索"
             }
         },
         created: function(){
@@ -57,6 +60,19 @@
             },
             tosearch(event){
                 console.log('tosearch:', this.key)
+                var name = "search/pcsearchimglist";
+                var params={
+                    url: zjito.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: zjito.getpc_search()+encodeURIComponent(this.key),
+                        title:this.key,
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             },
             refresh(event){
                 var self = this;
@@ -68,16 +84,37 @@
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
+                            for (var i = 0; i < json.list.length; i+=2) {
                                 var tag = json.list[i];
-                                self.hotkeys.push(tag);
+                                var tag2 = json.list[i+1];
+                                var keyitem={
+                                    href:tag.href,
+                                    alt:tag.alt,
+                                    href2:tag2.href,
+                                    alt2:tag2.alt,
+                                };
+                                self.hotkeys.push(keyitem);
                             }
                         }
                     }
                 });
             },
             todetail:function (e) {
-                weexEventModule.startWebViewActivity(e);
+//                weexEventModule.startWebViewActivity(e);
+                console.log('tosearch:', e)
+                var name = "search/pcsearchimglist";
+                var params={
+                    url: zjito.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: zjito.getpc_search()+encodeURIComponent(e),
+                        title:e,
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }
@@ -113,15 +150,14 @@
     }
     .row {
         height: 100px;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 30px;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: #DDDDDD;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 20px;
+        margin-top: 10px;
     }
     .text {
         font-size: 45px;
         color: #666666;
+        flex: 1;
     }
 </style>
