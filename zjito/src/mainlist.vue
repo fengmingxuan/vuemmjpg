@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('pager/pccat_pager')
             this.rows.push('cat/pcmult_cattabbar')
             this.rows.push('cat/pccattabbar')
             this.rows.push('cat/pccat')

@@ -31,7 +31,7 @@
             navbar_v,
 
         },
-
+        props: ['ref'],
         data(){
             return{
                 stockArray:[],
@@ -39,7 +39,9 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"搜索"
+                title:"搜索",
+                isFirst:1,
+                ref:''
             }
         },
         created: function(){
@@ -53,10 +55,13 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
-            self.refresh();
+
 
         },
         methods:{
+            autoRefresh(event){
+                this.refresh();
+            },
             onloading (event) {
                 this.showLoading = 'show'
                 this.pageNo = this.pageNo+1;
@@ -81,6 +86,7 @@
             },
             refresh:function(){
                 var self = this;
+                self.isFirst=0;
                 var url = self.taghref;
 //                if(self.pageNo==1){
 //                    url = self.taghref;

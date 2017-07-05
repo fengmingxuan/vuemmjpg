@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(15)
+	__vue_styles__.push(__webpack_require__(25)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(16)
+	__vue_exports__ = __webpack_require__(26)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(21)
+	var __vue_template__ = __webpack_require__(31)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/tabbar.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/wxc_tabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1baa6ec0"
+	__vue_options__._scopeId = "data-v-540d725d"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,21 +90,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */
+
+/***/ 25:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -130,7 +118,8 @@
 	    "bottom": 0,
 	    "left": 0,
 	    "right": 0,
-	    "height": 88
+	    "height": 88,
+	    "width": 750
 	  },
 	  "scroller": {
 	    "flexDirection": "row",
@@ -139,7 +128,8 @@
 	}
 
 /***/ }),
-/* 16 */
+
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -216,7 +206,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(17)
+	    tabitem: __webpack_require__(27)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -245,21 +235,22 @@
 	};
 
 /***/ }),
-/* 17 */
+
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(18)
+	__vue_styles__.push(__webpack_require__(28)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(19)
+	__vue_exports__ = __webpack_require__(29)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(20)
+	var __vue_template__ = __webpack_require__(30)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -271,10 +262,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/tabitem.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/wxc_tabitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0494ff56"
+	__vue_options__._scopeId = "data-v-41f0e58e"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -289,16 +280,17 @@
 
 
 /***/ }),
-/* 18 */
+
+/***/ 28:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "container": {
-	    "flex": 1,
 	    "flexDirection": "column",
 	    "alignItems": "center",
 	    "justifyContent": "center",
-	    "height": 88
+	    "height": 88,
+	    "width": 150
 	  },
 	  "top-line": {
 	    "position": "absolute",
@@ -320,7 +312,8 @@
 	}
 
 /***/ }),
-/* 19 */
+
+/***/ 29:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -390,7 +383,8 @@
 	};
 
 /***/ }),
-/* 20 */
+
+/***/ 30:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -422,7 +416,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 21 */
+
+/***/ 31:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -446,6 +441,11 @@
 	    attrs: {
 	      "append": "tree"
 	    }
+	  }, [_c('scroller', {
+	    staticClass: ["scroller"],
+	    attrs: {
+	      "scrollDirection": "horizontal"
+	    }
 	  }, _vm._l((_vm.tabItems), function(item) {
 	    return _c('tabitem', {
 	      key: item.index,
@@ -459,9 +459,10 @@
 	        "tabItemOnClick": _vm.tabItemOnClick
 	      }
 	    })
-	  }))], 2)
+	  }))])], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

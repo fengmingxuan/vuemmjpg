@@ -51,11 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(201)
+	__vue_styles__.push(__webpack_require__(59)
 	)
 
+	/* script */
+	__vue_exports__ = __webpack_require__(60)
+
 	/* template */
-	var __vue_template__ = __webpack_require__(202)
+	var __vue_template__ = __webpack_require__(61)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -67,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/text.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcimglist_notitlebar_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6408f870"
+	__vue_options__._scopeId = "data-v-e91bbbd0"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -88,59 +91,108 @@
 
 /***/ }),
 
-/***/ 201:
+/***/ 59:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "wrapper": {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
 	    "flexDirection": "column",
-	    "justifyContent": "center"
+	    "flex": 1
 	  },
-	  "panel": {
-	    "width": 600,
-	    "marginLeft": 75,
-	    "borderWidth": 2,
-	    "borderStyle": "solid",
-	    "borderColor": "#BBBBBB",
-	    "paddingTop": 15,
-	    "paddingBottom": 15,
-	    "paddingLeft": 15,
-	    "paddingRight": 15,
-	    "marginBottom": 30
+	  "img": {
+	    "width": 350,
+	    "height": 450
 	  },
-	  "text": {
-	    "lines": 3,
-	    "color": "#666666",
-	    "fontSize": 32
+	  "txt": {
+	    "opacity": 0.3,
+	    "fontSize": 30
 	  }
 	}
 
 /***/ }),
 
-/***/ 202:
+/***/ 60:
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	module.exports = {
+	    created: function created() {
+	        console.log('news');
+	    },
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 61:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _vm._m(0)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["wrapper"]
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
+	      margin: "10px"
+	    }
 	  }, [_c('div', {
-	    staticClass: ["panel"]
-	  }, [_c('text', {
-	    staticClass: ["text"],
-	    attrs: {
-	      "lines": "3"
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
 	    }
-	  }, [_vm._v("Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。")])]), _c('div', {
-	    staticClass: ["panel"]
-	  }, [_c('text', {
-	    staticClass: ["text"],
+	  }, [_c('image', {
+	    staticClass: ["img"],
 	    attrs: {
-	      "lines": "3"
+	      "src": _vm.stockitem.src
 	    }
-	  }, [_vm._v("Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. ")])])])
-	}]}
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])]), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))])])])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })

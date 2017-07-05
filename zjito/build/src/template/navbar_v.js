@@ -42,23 +42,22 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(50)
+	__vue_styles__.push(__webpack_require__(4)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(51)
+	__vue_exports__ = __webpack_require__(5)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(52)
+	var __vue_template__ = __webpack_require__(7)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/mainlist.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/navbar_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-200e1acc"
+	__vue_options__._scopeId = "data-v-4dab9549"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -90,8 +89,212 @@
 
 
 /***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports) {
 
-/***/ 6:
+	module.exports = {
+	  "nav_bar": {
+	    "display": "flex",
+	    "flexDirection": "row",
+	    "height": 100,
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "backgroundColor": "#ca5e54"
+	  },
+	  "nav_bar-0": {
+	    "backgroundColor": "#ca5e54"
+	  },
+	  "nav_bar-1": {
+	    "backgroundColor": "#ca5e54"
+	  },
+	  "nav_text": {
+	    "fontSize": "20wx",
+	    "flex": 1,
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "marginTop": 1,
+	    "color": "#ffffff"
+	  },
+	  "nav_text_top-0": {
+	    "marginTop": 1
+	  },
+	  "nav_text_top-1": {
+	    "marginTop": 1
+	  },
+	  "nav_text-0": {
+	    "color": "#FFFFFF"
+	  },
+	  "nav_text-1": {
+	    "color": "#ffffff"
+	  },
+	  "nav_title": {
+	    "flex": 1,
+	    "marginLeft": 10,
+	    "marginRight": 10,
+	    "justifyContent": "center",
+	    "alignItems": "center"
+	  },
+	  "nav_back": {
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "width": "45wx",
+	    "height": 80
+	  },
+	  "nav_right_menu": {
+	    "width": "45wx",
+	    "height": 80,
+	    "justifyContent": "center",
+	    "alignItems": "center"
+	  },
+	  "img": {
+	    "width": 70,
+	    "height": 70,
+	    "marginLeft": 20,
+	    "padding": 10
+	  },
+	  "nav_back-0": {
+	    "backgroundColor:active": "#000000"
+	  },
+	  "nav_back-1": {
+	    "backgroundColor:active": "#000000"
+	  },
+	  "nav_right_menu-0": {
+	    "backgroundColor": "#000000"
+	  },
+	  "nav_right_menu-1": {
+	    "backgroundColor": "#000000"
+	  },
+	  "img_menu": {
+	    "width": 50,
+	    "height": 50,
+	    "marginRight": 20
+	  },
+	  "imglogo": {
+	    "width": 240,
+	    "flex": 1,
+	    "height": 50
+	  },
+	  "nav_line": {
+	    "height": 1
+	  },
+	  "nav_line-0": {
+	    "backgroundColor": "#D8D8D8"
+	  },
+	  "nav_line-1": {
+	    "backgroundColor": "#192c46"
+	  },
+	  "status_bar_ios": {
+	    "height": "20wx"
+	  },
+	  "status_bar-0": {
+	    "backgroundColor": "#000000"
+	  },
+	  "status_bar-1": {
+	    "backgroundColor": "#000000"
+	  }
+	}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var zjito = __webpack_require__(6);
+	var navigator = weex.requireModule('navigator');
+
+	exports.default = {
+	    data: function data() {
+	        return {
+	            title: 'ZJITO',
+	            type: 0,
+	            shown: true,
+	            showStatusBar: 0,
+	            nav_text_top: 0,
+	            shownleft: true,
+	            leftsrc: './images/menu.png'
+	        };
+	    },
+
+	    props: ['title'],
+	    created: function created() {
+	        this.platform = this.$getConfig().env.platform;
+	        if (this.platform == 'iOS') {
+	            this.showStatusBar = 1;
+	        }
+	        if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
+	            this.nav_text_top = 1;
+	        } else {
+	            this.nav_text_top = 0;
+	        }
+	    },
+	    ready: function ready() {},
+
+	    methods: {
+	        nativeback: function nativeback(e) {
+	            //                var params = {
+	            //                    'animated': 'true'
+	            //                };
+	            //                navigator.pop(params, event => {
+	            //
+	            //                });
+	            this._parent.togglemenu();
+	        },
+	        onright: function onright(e) {
+	            console.log('navbar == onright');
+	            this._parent.onright();
+	        },
+
+	        getImgUrl: function getImgUrl(url) {
+	            return zjito.getImageUrl(url);
+	        },
+
+	        setLeftImage: function setLeftImage(res) {
+	            this.leftImage = res;
+	            //                console.log('navbar == res'+res);
+	        },
+
+	        setRightImage: function setRightImage(res) {
+	            this.rightImage = res;
+	            //                    console.log('navbar == res'+res);
+	        }
+
+	    }
+	};
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -224,133 +427,43 @@
 
 
 /***/ }),
-
-/***/ 50:
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "scroller": {
-	    "borderWidth": 3,
-	    "borderStyle": "solid",
-	    "borderColor": "rgb(162,217,192)",
-	    "marginLeft": 1,
-	    "marginRight": 1
-	  },
-	  "row": {
-	    "height": 150,
-	    "flexDirection": "column",
-	    "justifyContent": "center",
-	    "paddingLeft": 30,
-	    "borderBottomWidth": 2,
-	    "borderBottomStyle": "solid",
-	    "borderBottomColor": "#DDDDDD"
-	  },
-	  "text": {
-	    "fontSize": 45,
-	    "color": "#666666"
-	  }
-	}
-
-/***/ }),
-
-/***/ 51:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var navigator = weex.requireModule('navigator');
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var weexModule = weex.requireModule('weexModule');
-	var dom = weex.requireModule('dom');
-	var modal = weex.requireModule('modal');
-	var zjito = __webpack_require__(6);
-	exports.default = {
-	    data: function data() {
-	        return {
-	            rows: []
-	        };
-	    },
-	    created: function created() {
-	        this.rows.push('pager/pccat_pager');
-	        this.rows.push('cat/pcmult_cattabbar');
-	        this.rows.push('cat/pccattabbar');
-	        this.rows.push('cat/pccat');
-	        this.rows.push('search/pcimglist_notitlebar');
-	        this.rows.push('linkhot/pclinkhot');
-	        this.rows.push('content/pccontentslider');
-	        this.rows.push('content/pccontentlist');
-	        this.rows.push('search/pcsearchimglist');
-	        this.rows.push('search/pcsearch');
-	        this.rows.push('template/navbar_v');
-	        this.rows.push('text');
-	    },
-
-	    methods: {
-	        openitem: function openitem(event) {
-
-	            //callJS tasks:[{"data":"14","type":2},{"data":"[{\"args\":[\"150\",\"click\",{\"position\":{\"height\":52.77778,\"width\":713.19446,\"x\":33.333332,\"y\":191.66667}},null],\"method\":\"fireEvent\"}]","type":3}]
-	            // tasks:[{"module":"modal","method":"toast","args":[{"message":{"position":{"height":52.77778,"width":713.19446,"x":33.333332,"y":191.66667},"type":"click",
-	            // "target":{"ref":"186","type":"text","attr":{"value":"a"},"style":{"fontSize":45,"color":"#666666"},"event":["click"]},"timestamp":1488878471697}}]}]
-	            var name = event.target.attr.value;
-	            //                modal.toast({ message:  name.toString()})
-	            //http://localhost:8080/index.html?page=./mmjpg/build/mainlilst.js
-	            //                 weexModule.openUrl('http://192.168.1.15:8080/dist/'+name+'.weex.js', function(err){
-	            //                   console.log(err);
-	            //                  });
-	            weexNavigatorModule.push({
-	                url: zjito.getDefaultUrl(name),
-	                animated: "true"
-	            }, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
-	        }
-	    }
-	};
-
-/***/ }),
-
-/***/ 52:
+/* 7 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: ["wrapper"]
-	  }, [_c('scroller', {
-	    staticClass: ["scroller"]
-	  }, _vm._l((_vm.rows), function(name, index) {
-	    return _c('div', {
-	      ref: 'item' + index,
-	      refInFor: true,
-	      staticClass: ["row"]
-	    }, [_c('text', {
-	      ref: 'text' + index,
-	      refInFor: true,
-	      staticClass: ["text"],
-	      on: {
-	        "click": _vm.openitem
-	      }
-	    }, [_vm._v(_vm._s(name))])])
-	  }))])
+	  return _c('div', [_c('div', {
+	    staticClass: ["nav_bar"]
+	  }, [_c('div', {
+	    staticClass: ["nav_back"],
+	    on: {
+	      "onclick": _vm.nativeback
+	    }
+	  }, [(_vm.shownleft) ? _c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.getImgUrl(_vm.leftsrc)
+	    }
+	  }) : _vm._e()]), _c('div', {
+	    staticClass: ["nav_title"]
+	  }, [_c('text', {
+	    staticClass: ["nav_text"]
+	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
+	    staticClass: ["nav_right_menu"]
+	  }, [(_vm.shown) ? _c('div', {
+	    staticClass: ["nav_right_menu"],
+	    on: {
+	      "onclick": _vm.onright
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img_menu"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/search.png')
+	    }
+	  })]) : _vm._e()])]), _c('div', {
+	    staticClass: ["nav_line"]
+	  })])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })
-
-/******/ });
+/******/ ]);
