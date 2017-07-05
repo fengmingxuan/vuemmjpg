@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(243)
-	var __weex_template__ = __webpack_require__(247)
-	var __weex_style__ = __webpack_require__(248)
-	var __weex_script__ = __webpack_require__(249)
+	__webpack_require__(249)
+	var __weex_template__ = __webpack_require__(253)
+	var __weex_style__ = __webpack_require__(254)
+	var __weex_script__ = __webpack_require__(255)
 
 	__weex_define__('@weex-component/8099f74c5a99711914ece15e46648a3d', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2051,6 +2051,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -4323,13 +4329,19 @@
 /* 218 */,
 /* 219 */,
 /* 220 */,
-/* 221 */
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(222), __esModule: true };
+	module.exports = { "default": __webpack_require__(228), __esModule: true };
 
 /***/ }),
-/* 222 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var core  = __webpack_require__(34)
@@ -4339,12 +4351,6 @@
 	};
 
 /***/ }),
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
 /* 229 */,
 /* 230 */,
 /* 231 */,
@@ -4359,12 +4365,18 @@
 /* 240 */,
 /* 241 */,
 /* 242 */,
-/* 243 */
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(244)
-	var __weex_style__ = __webpack_require__(245)
-	var __weex_script__ = __webpack_require__(246)
+	var __weex_template__ = __webpack_require__(250)
+	var __weex_style__ = __webpack_require__(251)
+	var __weex_script__ = __webpack_require__(252)
 
 	__weex_define__('@weex-component/pcpost-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -4381,7 +4393,7 @@
 
 
 /***/ }),
-/* 244 */
+/* 250 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4423,7 +4435,7 @@
 	}
 
 /***/ }),
-/* 245 */
+/* 251 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4490,7 +4502,7 @@
 	}
 
 /***/ }),
-/* 246 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -4526,7 +4538,7 @@
 
 
 /***/ }),
-/* 247 */
+/* 253 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4650,7 +4662,7 @@
 	}
 
 /***/ }),
-/* 248 */
+/* 254 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4755,12 +4767,12 @@
 	}
 
 /***/ }),
-/* 249 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(221);
+	var _stringify = __webpack_require__(227);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -4768,7 +4780,7 @@
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(243);
+	__webpack_require__(249);
 	__webpack_require__(138);
 	__webpack_require__(146);
 	var mzitu = __webpack_require__(86);

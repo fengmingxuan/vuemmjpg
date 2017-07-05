@@ -45,11 +45,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(147)
-	var __weex_template__ = __webpack_require__(177)
-	var __weex_style__ = __webpack_require__(178)
-	var __weex_script__ = __webpack_require__(179)
+	var __weex_template__ = __webpack_require__(183)
+	var __weex_style__ = __webpack_require__(184)
+	var __weex_script__ = __webpack_require__(185)
 
-	__weex_define__('@weex-component/cd63a5dc4e41044cb42ba598bfacc16f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/0e409c22033b0ae52ff6abb127f842d1', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/cd63a5dc4e41044cb42ba598bfacc16f',undefined,undefined)
+	__weex_bootstrap__('@weex-component/0e409c22033b0ae52ff6abb127f842d1',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2051,6 +2051,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -3517,14 +3523,17 @@
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "height": function () {return this.deviceHeight}
-	  },
 	  "children": [
 	    {
 	      "type": "list",
@@ -3580,7 +3589,7 @@
 	}
 
 /***/ }),
-/* 178 */
+/* 184 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3685,7 +3694,7 @@
 	}
 
 /***/ }),
-/* 179 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';

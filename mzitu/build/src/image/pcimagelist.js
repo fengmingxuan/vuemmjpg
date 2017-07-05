@@ -45,9 +45,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(154)
-	var __weex_template__ = __webpack_require__(158)
-	var __weex_style__ = __webpack_require__(159)
-	var __weex_script__ = __webpack_require__(160)
+	var __weex_template__ = __webpack_require__(177)
+	var __weex_style__ = __webpack_require__(178)
+	var __weex_script__ = __webpack_require__(179)
 
 	__weex_define__('@weex-component/61f9c0d8617fa58d5010b843f0bb576b', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2051,6 +2051,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -4437,362 +4443,9 @@
 
 
 /***/ }),
-/* 158 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "type": "div",
-	  "style": {
-	    "height": function () {return this.deviceHeight}
-	  },
-	  "children": [
-	    {
-	      "type": "navbar",
-	      "style": {
-	        "width": 750
-	      },
-	      "attr": {
-	        "title": function () {return this.title},
-	        "type": function () {return this.skinType},
-	        "shownleft": function () {return this.showleft},
-	        "shown": function () {return this.shown}
-	      }
-	    },
-	    {
-	      "type": "list",
-	      "classList": [
-	        "list"
-	      ],
-	      "children": [
-	        {
-	          "type": "refresh",
-	          "classList": function () {return ['refresh-view', 'refresh-view-' + (this.skinType)]},
-	          "attr": {
-	            "display": function () {return this.refresh_display},
-	            "refreshing": function () {return this.refreshing}
-	          },
-	          "events": {
-	            "refresh": "onrefresh"
-	          },
-	          "children": [
-	            {
-	              "type": "loading-indicator",
-	              "classList": [
-	                "indicator"
-	              ]
-	            },
-	            {
-	              "type": "text",
-	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
-	              "attr": {
-	                "value": "下拉刷新"
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "cell",
-	          "append": "tree",
-	          "children": [
-	            {
-	              "type": "pctop",
-	              "attr": {
-	                "taghref": function () {return this.url}
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "cell",
-	          "append": "tree",
-	          "repeat": {
-	            "expression": function () {return this.stockArray},
-	            "value": "stockitem"
-	          },
-	          "children": [
-	            {
-	              "type": "pcimagelist-item",
-	              "attr": {
-	                "stockitem": function () {return this.stockitem}
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "cell",
-	          "append": "tree",
-	          "children": [
-	            {
-	              "type": "pclike",
-	              "attr": {
-	                "taghref": function () {return this.url}
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "cell",
-	          "append": "tree",
-	          "children": [
-	            {
-	              "type": "pctags",
-	              "attr": {
-	                "taghref": function () {return this.url}
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "cell",
-	          "append": "tree",
-	          "children": [
-	            {
-	              "type": "pcimagehot",
-	              "attr": {
-	                "taghref": function () {return this.url}
-	              }
-	            }
-	          ]
-	        },
-	        {
-	          "type": "loading",
-	          "classList": function () {return ['loading-view', 'loading-view-' + (this.skinType)]},
-	          "attr": {
-	            "display": function () {return this.showLoading}
-	          },
-	          "events": {
-	            "loading": "onloading"
-	          },
-	          "children": [
-	            {
-	              "type": "text",
-	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
-	              "attr": {
-	                "value": "加载更多"
-	              }
-	            },
-	            {
-	              "type": "loading-indicator",
-	              "classList": [
-	                "indicator"
-	              ]
-	            }
-	          ]
-	        }
-	      ]
-	    }
-	  ]
-	}
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "redNum": {
-	    "height": 120,
-	    "width": 720,
-	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "flex": 1
-	  },
-	  "list": {
-	    "width": 750
-	  },
-	  "content_class-0": {
-	    "backgroundColor": "#f5f5f5"
-	  },
-	  "content_class-1": {
-	    "backgroundColor": "#15253d"
-	  },
-	  "loading-view": {
-	    "width": 750,
-	    "height": "50wx",
-	    "display": "flex",
-	    "MsFlexAlign": "center",
-	    "WebkitAlignItems": "center",
-	    "WebkitBoxAlign": "center",
-	    "alignItems": "center",
-	    "justifyContent": "center"
-	  },
-	  "loading-view-1": {
-	    "backgroundColor": "#15253d"
-	  },
-	  "loading-view-0": {
-	    "backgroundColor": "#f5f5f5"
-	  },
-	  "refresh-arrow": {
-	    "marginTop": "3wx",
-	    "height": "12wx",
-	    "width": "200wx",
-	    "fontSize": "12wx",
-	    "textAlign": "center",
-	    "alignItems": "center"
-	  },
-	  "refresh-arrow-0": {
-	    "color": "#BBBBBB"
-	  },
-	  "refresh-arrow-1": {
-	    "color": "#666666"
-	  },
-	  "refresh-view": {
-	    "width": 750,
-	    "height": "40wx",
-	    "display": "flex",
-	    "MsFlexAlign": "center",
-	    "WebkitAlignItems": "center",
-	    "WebkitBoxAlign": "center",
-	    "alignItems": "center",
-	    "justifyContent": "center"
-	  },
-	  "refresh-view-0": {
-	    "backgroundColor": "#f5f5f5"
-	  },
-	  "refresh-view-1": {
-	    "backgroundColor": "#15253d"
-	  },
-	  "indicator": {
-	    "height": "25wx",
-	    "width": "25wx",
-	    "color": "#889967"
-	  },
-	  "divUnReadClass": {
-	    "flex": 1,
-	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "flexDirection": "row",
-	    "paddingTop": "20wx"
-	  },
-	  "unReadtextlass": {
-	    "fontSize": "14wx"
-	  },
-	  "unReadtextlass-0": {
-	    "color": "#666666",
-	    "fontSize": "14wx"
-	  },
-	  "unReadtextlass-1": {
-	    "color": "#999999",
-	    "fontSize": "14wx"
-	  },
-	  "unReadNumclass": {
-	    "marginLeft": "5wx",
-	    "marginRight": "5wx",
-	    "fontSize": "14wx"
-	  },
-	  "unReadNumclass-0": {
-	    "color": "#1191f6",
-	    "fontSize": "14wx"
-	  },
-	  "unReadNumclass-1": {
-	    "color": "#005e91",
-	    "fontSize": "14wx"
-	  }
-	}
-
-/***/ }),
-/* 160 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = function(module, exports, __weex_require__){'use strict';
-
-	__webpack_require__(99);
-	__webpack_require__(4);
-	__webpack_require__(154);
-	__webpack_require__(138);
-	__webpack_require__(146);
-	__webpack_require__(161);
-	__webpack_require__(169);
-	var mzitu = __webpack_require__(86);
-	var stream = __weex_require__('@weex-module/stream');
-	var modal = __weex_require__('@weex-module/modal');
-	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
-	var storage = __weex_require__('@weex-module/storage');
-	module.exports = {
-
-	    data: function () {return {
-	        refreshing: 'false',
-	        refresh_display: 'show',
-	        stockArray: [],
-	        msg: '下拉刷新',
-	        pageNo: 1,
-	        skinType: 0,
-	        showLoading: 'hide',
-	        screenHeight: 0,
-	        platform: '',
-	        title: '妹子图',
-	        showleft: true,
-	        shown: true,
-	        taghref: mzitu.getmzitu_pc_image(),
-	        deviceHeight: 1334,
-	        url: mzitu.getmzitu_pc_image()
-	    }},
-	    created: function created() {
-	        var self = this;
-	        this.platform = this.$getConfig().env.platform;
-	        self.url = self.taghref;
-	        self.refresh();
-	    },
-	    methods: {
-	        togglemenu: function togglemenu() {
-	            this._parent.toggle();
-	        },
-	        onright: function onright() {
-	            this._parent.onright();
-	        },
-	        onloading: function onloading(e) {
-	            console.log('onloading');
-	            var self = this;
-	            self.showLoading = 'show';
-	            self.pageNo = self.pageNo + 1;
-	            self.refresh();
-	        },
-
-	        onrefresh: function onrefresh(e) {
-	            var self = this;
-	            self.msg = '下拉刷新';
-	            self.refresh_display = 'show';
-	            self.refresh();
-	        },
-
-	        refresh: function refresh() {
-	            var self = this;
-	            var url = self.taghref;
-	            if (self.pageNo > 1) {
-	                url = self.taghref + '/' + self.pageNo;
-	            }
-	            self.url = url;
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            weexMzituJsoupModule.pcimagelist(params, function (e) {
-	                self.refresh_display = 'hide';
-	                self.showLoading = 'hide';
-	                self.refreshing = "false";
-	                var json;
-	                json = eval('(' + e + ')');
-	                console.log('json===' + json);
-	                if (self.pageNo == 1) {
-	                    self.stockArray.splice(0, self.stockArray.length);
-	                }
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
-	                    }
-	                }
-	            });
-	        }
-
-	    }
-
-	};}
-	/* generated by weex-loader */
-
-
-/***/ }),
+/* 158 */,
+/* 159 */,
+/* 160 */,
 /* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5711,6 +5364,362 @@
 
 	                            };
 	                            self.stockArray.push(item);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+
+	};}
+	/* generated by weex-loader */
+
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "type": "div",
+	  "style": {
+	    "height": function () {return this.deviceHeight}
+	  },
+	  "children": [
+	    {
+	      "type": "navbar",
+	      "style": {
+	        "width": 750
+	      },
+	      "attr": {
+	        "title": function () {return this.title},
+	        "type": function () {return this.skinType},
+	        "shownleft": function () {return this.showleft},
+	        "shown": function () {return this.shown}
+	      }
+	    },
+	    {
+	      "type": "list",
+	      "classList": [
+	        "list"
+	      ],
+	      "children": [
+	        {
+	          "type": "refresh",
+	          "classList": function () {return ['refresh-view', 'refresh-view-' + (this.skinType)]},
+	          "attr": {
+	            "display": function () {return this.refresh_display},
+	            "refreshing": function () {return this.refreshing}
+	          },
+	          "events": {
+	            "refresh": "onrefresh"
+	          },
+	          "children": [
+	            {
+	              "type": "loading-indicator",
+	              "classList": [
+	                "indicator"
+	              ]
+	            },
+	            {
+	              "type": "text",
+	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
+	              "attr": {
+	                "value": "下拉刷新"
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "children": [
+	            {
+	              "type": "pctop",
+	              "attr": {
+	                "taghref": function () {return this.url}
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "repeat": {
+	            "expression": function () {return this.stockArray},
+	            "value": "stockitem"
+	          },
+	          "children": [
+	            {
+	              "type": "pcimagelist-item",
+	              "attr": {
+	                "stockitem": function () {return this.stockitem}
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "children": [
+	            {
+	              "type": "pclike",
+	              "attr": {
+	                "taghref": function () {return this.url}
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "children": [
+	            {
+	              "type": "pctags",
+	              "attr": {
+	                "taghref": function () {return this.url}
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "cell",
+	          "append": "tree",
+	          "children": [
+	            {
+	              "type": "pcimagehot",
+	              "attr": {
+	                "taghref": function () {return this.url}
+	              }
+	            }
+	          ]
+	        },
+	        {
+	          "type": "loading",
+	          "classList": function () {return ['loading-view', 'loading-view-' + (this.skinType)]},
+	          "attr": {
+	            "display": function () {return this.showLoading}
+	          },
+	          "events": {
+	            "loading": "onloading"
+	          },
+	          "children": [
+	            {
+	              "type": "text",
+	              "classList": function () {return ['refresh-arrow', 'refresh-arrow-' + (this.skinType)]},
+	              "attr": {
+	                "value": "加载更多"
+	              }
+	            },
+	            {
+	              "type": "loading-indicator",
+	              "classList": [
+	                "indicator"
+	              ]
+	            }
+	          ]
+	        }
+	      ]
+	    }
+	  ]
+	}
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "redNum": {
+	    "height": 120,
+	    "width": 720,
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "flex": 1
+	  },
+	  "list": {
+	    "width": 750
+	  },
+	  "content_class-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "content_class-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view": {
+	    "width": 750,
+	    "height": "50wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "loading-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "loading-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-arrow": {
+	    "marginTop": "3wx",
+	    "height": "12wx",
+	    "width": "200wx",
+	    "fontSize": "12wx",
+	    "textAlign": "center",
+	    "alignItems": "center"
+	  },
+	  "refresh-arrow-0": {
+	    "color": "#BBBBBB"
+	  },
+	  "refresh-arrow-1": {
+	    "color": "#666666"
+	  },
+	  "refresh-view": {
+	    "width": 750,
+	    "height": "40wx",
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "justifyContent": "center"
+	  },
+	  "refresh-view-0": {
+	    "backgroundColor": "#f5f5f5"
+	  },
+	  "refresh-view-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "indicator": {
+	    "height": "25wx",
+	    "width": "25wx",
+	    "color": "#889967"
+	  },
+	  "divUnReadClass": {
+	    "flex": 1,
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "flexDirection": "row",
+	    "paddingTop": "20wx"
+	  },
+	  "unReadtextlass": {
+	    "fontSize": "14wx"
+	  },
+	  "unReadtextlass-0": {
+	    "color": "#666666",
+	    "fontSize": "14wx"
+	  },
+	  "unReadtextlass-1": {
+	    "color": "#999999",
+	    "fontSize": "14wx"
+	  },
+	  "unReadNumclass": {
+	    "marginLeft": "5wx",
+	    "marginRight": "5wx",
+	    "fontSize": "14wx"
+	  },
+	  "unReadNumclass-0": {
+	    "color": "#1191f6",
+	    "fontSize": "14wx"
+	  },
+	  "unReadNumclass-1": {
+	    "color": "#005e91",
+	    "fontSize": "14wx"
+	  }
+	}
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = function(module, exports, __weex_require__){'use strict';
+
+	__webpack_require__(99);
+	__webpack_require__(4);
+	__webpack_require__(154);
+	__webpack_require__(138);
+	__webpack_require__(146);
+	__webpack_require__(161);
+	__webpack_require__(169);
+	var mzitu = __webpack_require__(86);
+	var stream = __weex_require__('@weex-module/stream');
+	var modal = __weex_require__('@weex-module/modal');
+	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
+	var storage = __weex_require__('@weex-module/storage');
+	module.exports = {
+
+	    data: function () {return {
+	        refreshing: 'false',
+	        refresh_display: 'show',
+	        stockArray: [],
+	        msg: '下拉刷新',
+	        pageNo: 1,
+	        skinType: 0,
+	        showLoading: 'hide',
+	        screenHeight: 0,
+	        platform: '',
+	        title: '妹子图',
+	        showleft: true,
+	        shown: true,
+	        taghref: mzitu.getmzitu_pc_image(),
+	        deviceHeight: 1334,
+	        url: mzitu.getmzitu_pc_image()
+	    }},
+	    created: function created() {
+	        var self = this;
+	        this.platform = this.$getConfig().env.platform;
+	        self.url = self.taghref;
+	        self.refresh();
+	    },
+	    methods: {
+	        togglemenu: function togglemenu() {
+	            this._parent.toggle();
+	        },
+	        onright: function onright() {
+	            this._parent.onright();
+	        },
+	        onloading: function onloading(e) {
+	            console.log('onloading');
+	            var self = this;
+	            self.showLoading = 'show';
+	            self.pageNo = self.pageNo + 1;
+	            self.refresh();
+	        },
+
+	        onrefresh: function onrefresh(e) {
+	            var self = this;
+	            self.msg = '下拉刷新';
+	            self.refresh_display = 'show';
+	            self.refresh();
+	        },
+
+	        refresh: function refresh() {
+	            var self = this;
+	            var url = self.taghref;
+	            if (self.pageNo > 1) {
+	                url = self.taghref + '/' + self.pageNo;
+	            }
+	            self.url = url;
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMzituJsoupModule.pcimagelist(params, function (e) {
+	                self.refresh_display = 'hide';
+	                self.showLoading = 'hide';
+	                self.refreshing = "false";
+	                var json;
+	                json = eval('(' + e + ')');
+	                console.log('json===' + json);
+	                if (self.pageNo == 1) {
+	                    self.stockArray.splice(0, self.stockArray.length);
+	                }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.stockArray.push(tag);
 	                        }
 	                    }
 	                }

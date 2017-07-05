@@ -15,9 +15,9 @@
             <cell repeat="{{stockitem in stockArray}}">
                 <pcimagelist-item stockitem="{{stockitem}}"></pcimagelist-item>
             </cell>
-            <!--<cell>-->
-                <!--<pclike taghref="{{url}}"></pclike>-->
-            <!--</cell>-->
+            <cell>
+                <mlike taghref="{{url}}"></mlike>
+            </cell>
             <cell>
                 <mtags taghref="{{url}}"></mtags>
             </cell>
@@ -39,7 +39,7 @@
     require('weex-components');
     require('./pcimagelist-item.we')
 //    require('../top/pctop.we')
-//    require('../like/pclike.we')
+    require('../like/mlike.we')
     require('../tags/mtags.we')
     require('../imagehot/mimagehot.we')
     var mzitu = require('../mzitu');

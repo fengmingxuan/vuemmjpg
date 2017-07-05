@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(180)
+	__vue_styles__.push(__webpack_require__(186)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(181)
+	__vue_exports__ = __webpack_require__(187)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(182)
+	var __vue_template__ = __webpack_require__(188)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -114,6 +114,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -260,7 +266,7 @@
 
 /***/ }),
 
-/***/ 180:
+/***/ 186:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -288,7 +294,7 @@
 
 /***/ }),
 
-/***/ 181:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -323,6 +329,9 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('imagehot/mimagehot');
+	        this.rows.push('tags/mtags');
+	        this.rows.push('image/mimagelist');
 	        this.rows.push('mall/mmonth');
 	        this.rows.push('zhuanti/mzhuanti');
 	        this.rows.push('zipai/mzipai');
@@ -372,7 +381,7 @@
 
 /***/ }),
 
-/***/ 182:
+/***/ 188:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

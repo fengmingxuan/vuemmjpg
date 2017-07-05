@@ -51,10 +51,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(183)
+	__vue_exports__ = __webpack_require__(189)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(192)
+	var __vue_template__ = __webpack_require__(198)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -109,6 +109,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -255,7 +261,7 @@
 
 /***/ }),
 
-/***/ 183:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -302,7 +308,7 @@
 	    };
 	  },
 	  components: {
-	    tabbar: __webpack_require__(184)
+	    tabbar: __webpack_require__(190)
 	  },
 	  created: function created() {},
 	  methods: {
@@ -314,21 +320,21 @@
 
 /***/ }),
 
-/***/ 184:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(185)
+	__vue_styles__.push(__webpack_require__(191)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(186)
+	__vue_exports__ = __webpack_require__(192)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(191)
+	var __vue_template__ = __webpack_require__(197)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -359,7 +365,7 @@
 
 /***/ }),
 
-/***/ 185:
+/***/ 191:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -392,7 +398,7 @@
 
 /***/ }),
 
-/***/ 186:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -462,7 +468,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(187)
+	    tabitem: __webpack_require__(193)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -492,21 +498,21 @@
 
 /***/ }),
 
-/***/ 187:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(188)
+	__vue_styles__.push(__webpack_require__(194)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(189)
+	__vue_exports__ = __webpack_require__(195)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(190)
+	var __vue_template__ = __webpack_require__(196)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -537,7 +543,7 @@
 
 /***/ }),
 
-/***/ 188:
+/***/ 194:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -569,7 +575,7 @@
 
 /***/ }),
 
-/***/ 189:
+/***/ 195:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -639,7 +645,7 @@
 
 /***/ }),
 
-/***/ 190:
+/***/ 196:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -672,7 +678,7 @@
 
 /***/ }),
 
-/***/ 191:
+/***/ 197:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -715,7 +721,7 @@
 
 /***/ }),
 
-/***/ 192:
+/***/ 198:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

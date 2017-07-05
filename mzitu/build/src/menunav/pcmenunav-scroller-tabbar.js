@@ -45,8 +45,8 @@
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(219)
-	var __weex_script__ = __webpack_require__(220)
+	var __weex_template__ = __webpack_require__(225)
+	var __weex_script__ = __webpack_require__(226)
 
 	__weex_define__('@weex-component/8fba8db5ccbc007985f71d3bd4de1f3e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -94,6 +94,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -240,7 +246,7 @@
 
 /***/ }),
 
-/***/ 219:
+/***/ 225:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -260,18 +266,18 @@
 
 /***/ }),
 
-/***/ 220:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(221);
+	var _stringify = __webpack_require__(227);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(223);
+	__webpack_require__(229);
 	var mzitu = __webpack_require__(86);
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
@@ -349,14 +355,14 @@
 
 /***/ }),
 
-/***/ 221:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(222), __esModule: true };
+	module.exports = { "default": __webpack_require__(228), __esModule: true };
 
 /***/ }),
 
-/***/ 222:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var core  = __webpack_require__(34)
@@ -367,13 +373,13 @@
 
 /***/ }),
 
-/***/ 223:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(224)
-	var __weex_template__ = __webpack_require__(228)
-	var __weex_style__ = __webpack_require__(229)
-	var __weex_script__ = __webpack_require__(230)
+	__webpack_require__(230)
+	var __weex_template__ = __webpack_require__(234)
+	var __weex_style__ = __webpack_require__(235)
+	var __weex_script__ = __webpack_require__(236)
 
 	__weex_define__('@weex-component/wxc-scroller-tabbar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -391,12 +397,12 @@
 
 /***/ }),
 
-/***/ 224:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(225)
-	var __weex_style__ = __webpack_require__(226)
-	var __weex_script__ = __webpack_require__(227)
+	var __weex_template__ = __webpack_require__(231)
+	var __weex_style__ = __webpack_require__(232)
+	var __weex_script__ = __webpack_require__(233)
 
 	__weex_define__('@weex-component/wxc-scroller-tabitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -414,7 +420,7 @@
 
 /***/ }),
 
-/***/ 225:
+/***/ 231:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -464,7 +470,7 @@
 
 /***/ }),
 
-/***/ 226:
+/***/ 232:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -496,7 +502,7 @@
 
 /***/ }),
 
-/***/ 227:
+/***/ 233:
 /***/ (function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -524,7 +530,7 @@
 
 /***/ }),
 
-/***/ 228:
+/***/ 234:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -581,7 +587,7 @@
 
 /***/ }),
 
-/***/ 229:
+/***/ 235:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -628,12 +634,12 @@
 
 /***/ }),
 
-/***/ 230:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(224);
+	__webpack_require__(230);
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [],

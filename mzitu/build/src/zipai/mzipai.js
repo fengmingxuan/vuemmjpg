@@ -44,10 +44,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(290)
-	var __weex_template__ = __webpack_require__(294)
-	var __weex_style__ = __webpack_require__(295)
-	var __weex_script__ = __webpack_require__(296)
+	__webpack_require__(299)
+	var __weex_template__ = __webpack_require__(303)
+	var __weex_style__ = __webpack_require__(304)
+	var __weex_script__ = __webpack_require__(305)
 
 	__weex_define__('@weex-component/b7e9a215304c3d9c7959d043fd39102f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2051,6 +2051,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -3517,14 +3523,17 @@
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "height": function () {return this.deviceHeight}
-	  },
 	  "children": [
 	    {
 	      "type": "list",
@@ -3580,7 +3589,7 @@
 	}
 
 /***/ }),
-/* 178 */
+/* 184 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3685,7 +3694,7 @@
 	}
 
 /***/ }),
-/* 179 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3779,12 +3788,6 @@
 
 
 /***/ }),
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
 /* 186 */,
 /* 187 */,
 /* 188 */,
@@ -3810,13 +3813,19 @@
 /* 208 */,
 /* 209 */,
 /* 210 */,
-/* 211 */
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(147)
-	var __weex_template__ = __webpack_require__(177)
-	var __weex_style__ = __webpack_require__(178)
-	var __weex_script__ = __webpack_require__(179)
+	var __weex_template__ = __webpack_require__(183)
+	var __weex_style__ = __webpack_require__(184)
+	var __weex_script__ = __webpack_require__(185)
 
 	__weex_define__('@weex-component/mlike', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3833,12 +3842,6 @@
 
 
 /***/ }),
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
 /* 218 */,
 /* 219 */,
 /* 220 */,
@@ -3911,12 +3914,21 @@
 /* 287 */,
 /* 288 */,
 /* 289 */,
-/* 290 */
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(291)
-	var __weex_style__ = __webpack_require__(292)
-	var __weex_script__ = __webpack_require__(293)
+	var __weex_template__ = __webpack_require__(300)
+	var __weex_style__ = __webpack_require__(301)
+	var __weex_script__ = __webpack_require__(302)
 
 	__weex_define__('@weex-component/pczipai-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3933,7 +3945,7 @@
 
 
 /***/ }),
-/* 291 */
+/* 300 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3975,7 +3987,7 @@
 	}
 
 /***/ }),
-/* 292 */
+/* 301 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4043,7 +4055,7 @@
 	}
 
 /***/ }),
-/* 293 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -4080,7 +4092,7 @@
 
 
 /***/ }),
-/* 294 */
+/* 303 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4192,7 +4204,7 @@
 	}
 
 /***/ }),
-/* 295 */
+/* 304 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4297,15 +4309,15 @@
 	}
 
 /***/ }),
-/* 296 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(290);
-	__webpack_require__(211);
+	__webpack_require__(299);
+	__webpack_require__(217);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');

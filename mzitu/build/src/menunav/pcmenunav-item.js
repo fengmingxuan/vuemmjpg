@@ -44,9 +44,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(213)
-	var __weex_style__ = __webpack_require__(214)
-	var __weex_script__ = __webpack_require__(215)
+	var __weex_template__ = __webpack_require__(219)
+	var __weex_style__ = __webpack_require__(220)
+	var __weex_script__ = __webpack_require__(221)
 
 	__weex_define__('@weex-component/467117f73141c7f8a8a26b495a0e7ed4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -2050,6 +2050,12 @@
 	    mzitu_m_zipai:"http://m.mzitu.com/zipai/",
 	    mzitu_m_zhuanti:"http://m.mzitu.com/zhuanti/",
 	    mzitu_m_all:"http://m.mzitu.com/all/",
+	    mzitu_m_image:"http://m.mzitu.com/96554",
+	};
+	exports.getmzitu_m_image = function () {
+	    var url = MZITU.mzitu_m_image;
+	    console.log('mzitu_m_image==' + url);
+	    return url;
 	};
 	exports.getmzitu_m_all = function () {
 	    var url = MZITU.mzitu_m_all;
@@ -2321,7 +2327,13 @@
 /* 210 */,
 /* 211 */,
 /* 212 */,
-/* 213 */
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2354,7 +2366,7 @@
 	}
 
 /***/ }),
-/* 214 */
+/* 220 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2421,7 +2433,7 @@
 	}
 
 /***/ }),
-/* 215 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
