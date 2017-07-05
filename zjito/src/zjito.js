@@ -8,13 +8,13 @@ var BASE_URL = {
 };
 
 var ZJITO = {
-    mzitu_pc:"http://www.mzitu.com/",
+    pc_search:"http://www.zjito.com/search/result?Query=",
 
 };
 
-exports.getmzitu_pc = function () {
-    var url = ZJITO.mzitu_pc;
-    console.log('mzitu_pc==' + url);
+exports.getpc_search = function () {
+    var url = ZJITO.pc_search;
+    console.log('pc_search==' + url);
     return url;
 };
 
