@@ -25,6 +25,9 @@
             }
         },
         created () {
+            this.rows.push('imagehot/mimagehot')
+            this.rows.push('tags/mtags')
+            this.rows.push('image/mimagelist')
             this.rows.push('mall/mmonth')
             this.rows.push('zhuanti/mzhuanti')
             this.rows.push('zipai/mzipai')
