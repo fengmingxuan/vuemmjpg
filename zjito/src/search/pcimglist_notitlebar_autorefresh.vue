@@ -7,7 +7,7 @@
             </refresh>
 
             <cell v-for="stockitem in stockArray">
-                <pclinkhot_item_v :stockitem="stockitem"></pclinkhot_item_v>
+                <pcimglist_notitlebar_item_v :stockitem="stockitem"></pcimglist_notitlebar_item_v>
             </cell>
 
             <loading class="loading" @loading="onloading" :display="showLoading">
@@ -19,15 +19,15 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pclinkhot_item_v from '../linkhot/pclinkhot_item_v.vue'
+    import  pcimglist_notitlebar_item_v from '../search/pcimglist_notitlebar_item_v.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
     var zjito = require('../zjito');
-
+    var storage = weex.requireModule('storage');
     export default{
         components: {
-            pclinkhot_item_v,
+            pcimglist_notitlebar_item_v,
             navbar_v,
 
         },
@@ -39,7 +39,9 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"看图"
+                title:"搜索",
+                isFirst:1,
+                 
             }
         },
         created: function(){
@@ -53,13 +55,31 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
+
             self.refresh();
 
         },
         methods:{
+            autoRefresh(event){
+                var self = this;
+                storage.getItem('taghref',function(s){
+                    console.log('get taghref result:'+JSON.stringify(s));
+                    var staghref = s.data;
+                    if(staghref!=undefined){
+                        self.taghref = staghref;
+                    }
+                    console.log('taghref=='+self.taghref);
+                    self.refresh();
+                });
+            },
             onloading (event) {
                 this.showLoading = 'show'
-                this.pageNo = this.pageNo+1;
+                if(this.taghref.indexOf(".shtml") != -1){
+                    this.pageNo = 1;
+                }else{
+                    this.pageNo = this.pageNo+1;
+                }
+//                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
@@ -81,28 +101,41 @@
             },
             refresh:function(){
                 var self = this;
+                self.isFirst=0;
+                if(self.taghref==undefined){
+                    self.taghref = zjito.getpc_content();
+                }
                 var url = self.taghref;
-//                if(self.pageNo==1){
-//                    url = self.taghref;
-//                }else{
-//                    url = self.taghref+"?idx="+self.pageNo;
-//                }
+                if(self.pageNo==1){
+                    url = self.taghref;
+                }else{
+                    //index_2.shtml
+                    url = self.taghref+"index_"+self.pageNo+".shtml";
+                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexZjitoJsoupModule.pccontenthot(url,function(e){
+                weexZjitoJsoupModule.pcsearchimglist(params,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
+                            for (var i = 0; i < json.list.length; i+=2) {
                                 var tag = json.list[i];
-                                self.title = tag.title;
-                                self.stockArray.push(tag);
+                                var tag2 = json.list[i+1];
+                                var item={
+                                    href:tag.href,
+                                    alt:tag.alt,
+                                    src:tag.src,
+                                    href2:tag2.href,
+                                    alt2:tag2.alt,
+                                    src2:tag2.src,
+                                };
+                                self.stockArray.push(item);
                             }
                         }
                     }

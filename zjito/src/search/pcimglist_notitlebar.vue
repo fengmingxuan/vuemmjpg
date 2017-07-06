@@ -31,7 +31,7 @@
             navbar_v,
 
         },
-        props: ['ref'],
+        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
@@ -41,7 +41,7 @@
                 showLoading: 'hide',
                 title:"搜索",
                 isFirst:1,
-                ref:''
+
             }
         },
         created: function(){

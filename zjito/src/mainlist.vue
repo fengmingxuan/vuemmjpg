@@ -32,6 +32,7 @@
             this.rows.push('cat/pccattabbar')
             this.rows.push('cat/pccat')
             this.rows.push('search/pcimglist_notitlebar')
+            this.rows.push('search/pcimglist_notitlebar_autorefresh')
             this.rows.push('linkhot/pclinkhot')
             this.rows.push('content/pccontentslider')
             this.rows.push('content/pccontentlist')

@@ -9,7 +9,22 @@
             <cell v-for="stockitem in stockArray">
                 <pccontentlist_item_v :stockitem="stockitem"></pccontentlist_item_v>
             </cell>
-
+            <cell>
+                <div style="flex: 1;align-content: flex-start;align-items: flex-start">
+                    <text style="font-size: 40;margin: 20">热门推荐</text>
+                </div>
+            </cell>
+            <cell>
+                <pclinkhot :taghref="taghref"></pclinkhot>
+            </cell>
+            <cell>
+                <div style="flex: 1;align-content: flex-start;align-items: flex-start">
+                    <text style="font-size: 40;margin: 20">小编推荐</text>
+                </div>
+            </cell>
+            <cell>
+                <pcimglist_notitlebar_autorefresh :taghref="taghref"></pcimglist_notitlebar_autorefresh>
+            </cell>
             <loading class="loading" @loading="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
             </loading>
@@ -20,6 +35,8 @@
 <script>
     import  navbar_v from '../template/navbar_v.vue'
     import  pccontentlist_item_v from '../content/pccontentlist_item_v.vue'
+    import  pclinkhot from '../linkhot/pclinkhot.vue'
+    import  pcimglist_notitlebar_autorefresh from '../search/pcimglist_notitlebar_autorefresh.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
@@ -29,6 +46,8 @@
         components: {
             pccontentlist_item_v,
             navbar_v,
+            pclinkhot,
+            pcimglist_notitlebar_autorefresh
 
         },
 
