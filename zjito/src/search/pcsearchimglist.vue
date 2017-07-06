@@ -94,7 +94,7 @@
                 if(self.pageNo==1){
                     url = self.taghref;
                 }else{
-                    url = self.taghref+"&PageIndex="+self.pageNo;
+                    url = self.taghref+"index_"+self.pageNo+".shtml";
                 }
                 console.log('url==='+url);
                 var params = {

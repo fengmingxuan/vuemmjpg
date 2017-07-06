@@ -9,7 +9,7 @@
                 <text class="item_text" v-bind:style="{ color: item.item_text_select}">{{item.itemName}}</text>
             </div>
         </scroller>
-        <scroller class="tabclass" scroll-direction="horizontal">
+        <scroller class="tabclass_line" scroll-direction="horizontal">
            <div class="top_item_line" v-for="item in buttomData" :ref="item.indexline">
                 <text class="item_text" v-bind:style="{ backgroundColor: item.item_text_select}">
                 </text>
@@ -336,6 +336,17 @@
     .tabclass {
         width: 750;
         height: 80;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+    .tabclass_line {
+        width: 750;
+        height: 2;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;

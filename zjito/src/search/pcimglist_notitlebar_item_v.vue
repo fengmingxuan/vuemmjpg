@@ -38,13 +38,14 @@
         margin-right:1;
         flex-direction:column;
         flex: 1;
+        padding: 10;
     }
     .img{
         width: 350;
         height: 450;
     }
     .txt{
-        opacity:0.3;
         font-size:30;
+        width: 350;
     }
 </style>

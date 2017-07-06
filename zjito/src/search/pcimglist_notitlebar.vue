@@ -10,9 +10,9 @@
                 <pcimglist_notitlebar_item_v :stockitem="stockitem"></pcimglist_notitlebar_item_v>
             </cell>
 
-            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
-                <!--<text class="indicator_loading">加载更多...</text>-->
-            <!--</loading>-->
+            <loading class="loading" @loading="onloading" :display="showLoading">
+                <text class="indicator_loading">加载更多...</text>
+            </loading>
         </list>
     </div>
 </template>
@@ -56,6 +56,7 @@
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 
+//            self.refresh();
 
         },
         methods:{
@@ -73,7 +74,12 @@
             },
             onloading (event) {
                 this.showLoading = 'show'
-                this.pageNo = this.pageNo+1;
+                if(this.taghref.indexOf(".shtml") != -1){
+                    this.pageNo = 1;
+                }else{
+                    this.pageNo = this.pageNo+1;
+                }
+//                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
@@ -97,11 +103,12 @@
                 var self = this;
                 self.isFirst=0;
                 var url = self.taghref;
-//                if(self.pageNo==1){
-//                    url = self.taghref;
-//                }else{
-//                    url = self.taghref+"&PageIndex="+self.pageNo;
-//                }
+                if(self.pageNo==1){
+                    url = self.taghref;
+                }else{
+                    //index_2.shtml
+                    url = self.taghref+"index_"+self.pageNo+".shtml";
+                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
