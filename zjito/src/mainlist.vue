@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('cat/mtabtags')
+            this.rows.push('mtabimg/mtabimglist')
             this.rows.push('main/pcmaintabs')
             this.rows.push('main/pcmainimglist')
             this.rows.push('main/pcmainslider')

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(86)
+	__vue_styles__.push(__webpack_require__(100)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(87)
+	__vue_exports__ = __webpack_require__(101)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(92)
+	var __vue_template__ = __webpack_require__(106)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -357,8 +357,14 @@
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
 	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/"
+	    pc_zjito:"http://www.zjito.com/",
+	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/"
 
+	};
+	exports.getm_tab_img = function () {
+	    var url = ZJITO.m_tab_img;
+	    console.log('m_tab_img==' + url);
+	    return url;
 	};
 	exports.getpc_zjito = function () {
 	    var url = ZJITO.pc_zjito;
@@ -520,21 +526,21 @@
 
 /***/ }),
 
-/***/ 61:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(62)
+	__vue_styles__.push(__webpack_require__(69)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(63)
+	__vue_exports__ = __webpack_require__(70)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(64)
+	var __vue_template__ = __webpack_require__(71)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -565,7 +571,7 @@
 
 /***/ }),
 
-/***/ 62:
+/***/ 69:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -589,7 +595,7 @@
 
 /***/ }),
 
-/***/ 63:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -649,7 +655,7 @@
 
 /***/ }),
 
-/***/ 64:
+/***/ 71:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -693,7 +699,7 @@
 
 /***/ }),
 
-/***/ 86:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -826,7 +832,7 @@
 
 /***/ }),
 
-/***/ 87:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -839,7 +845,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcimglist_notitlebar = __webpack_require__(88);
+	var _pcimglist_notitlebar = __webpack_require__(102);
 
 	var _pcimglist_notitlebar2 = _interopRequireDefault(_pcimglist_notitlebar);
 
@@ -1129,21 +1135,21 @@
 
 /***/ }),
 
-/***/ 88:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(89)
+	__vue_styles__.push(__webpack_require__(103)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(90)
+	__vue_exports__ = __webpack_require__(104)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(91)
+	var __vue_template__ = __webpack_require__(105)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1174,7 +1180,7 @@
 
 /***/ }),
 
-/***/ 89:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1202,7 +1208,7 @@
 
 /***/ }),
 
-/***/ 90:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1215,7 +1221,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcimglist_notitlebar_item_v = __webpack_require__(61);
+	var _pcimglist_notitlebar_item_v = __webpack_require__(68);
 
 	var _pcimglist_notitlebar_item_v2 = _interopRequireDefault(_pcimglist_notitlebar_item_v);
 
@@ -1370,7 +1376,7 @@
 
 /***/ }),
 
-/***/ 91:
+/***/ 105:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1417,7 +1423,7 @@
 
 /***/ }),
 
-/***/ 92:
+/***/ 106:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

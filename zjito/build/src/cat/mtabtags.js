@@ -42,23 +42,22 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(107)
+	__vue_styles__.push(__webpack_require__(1)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(108)
+	__vue_exports__ = __webpack_require__(2)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(109)
+	var __vue_template__ = __webpack_require__(12)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcsearch.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-98167922"
+	__vue_options__._scopeId = "data-v-e318d006"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -90,8 +89,174 @@
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports) {
 
-/***/ 3:
+	module.exports = {
+	  "refresh-view": {
+	    "height": 100,
+	    "width": 750,
+	    "alignItems": "center"
+	  },
+	  "indicator": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "textAlign": "center"
+	  },
+	  "loading": {
+	    "justifyContent": "center"
+	  },
+	  "indicator_loading": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "paddingTop": 20,
+	    "paddingBottom": 20,
+	    "textAlign": "center"
+	  }
+	}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _navbar_v = __webpack_require__(3);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	var _mtabtags_item_v = __webpack_require__(8);
+
+	var _mtabtags_item_v2 = _interopRequireDefault(_mtabtags_item_v);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
+	var zjito = __webpack_require__(6);
+
+	exports.default = {
+	    components: {
+	        mtabtags_item_v: _mtabtags_item_v2.default,
+	        navbar_v: _navbar_v2.default
+
+	    },
+
+	    data: function data() {
+	        return {
+	            stockArray: [],
+	            taghref: zjito.getm_tab_img(),
+	            pageNo: 0,
+	            refreshing: false,
+	            showLoading: 'hide',
+	            title: "看图"
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+	        self.refresh();
+	    },
+	    methods: {
+	        onloading: function onloading(event) {
+	            var _this = this;
+
+	            this.showLoading = 'show';
+	            //                this.pageNo = this.pageNo+1;
+	            setTimeout(function () {
+	                _this.showLoading = 'hide';
+	            }, 2000);
+	            this.refresh();
+	        },
+	        fetch: function fetch(event) {
+	            //                this.pageNo = this.pageNo+1;
+	            this.refresh();
+	        },
+	        onpullingdown: function onpullingdown(event) {},
+	        onrefresh: function onrefresh(event) {
+	            var _this2 = this;
+
+	            this.refreshing = true;
+	            //                this.pageNo = 1;
+	            setTimeout(function () {
+	                _this2.refreshing = false;
+	            }, 2000);
+	            this.refresh();
+	        },
+
+	        refresh: function refresh() {
+	            var self = this;
+	            var url = self.taghref;
+	            //                if(self.pageNo==1){
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    url = self.taghref+"?idx="+self.pageNo;
+	            //                }
+	            console.log('url===' + url);
+	            //                var params = {
+	            //                    url:url,
+	            //                    pageNo: self.pageNo
+	            //                };
+	            weexZjitoJsoupModule.mimgtags(url, function (e) {
+	                var json = JSON.parse(e);
+	                //                    if(self.pageNo==1){
+	                self.stockArray.splice(0, self.stockArray.length);
+	                //                    }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.title = tag.title;
+	                            self.stockArray.push(tag);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+
+	};
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -135,8 +300,7 @@
 
 
 /***/ }),
-
-/***/ 4:
+/* 4 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -242,8 +406,7 @@
 	}
 
 /***/ }),
-
-/***/ 5:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -339,8 +502,7 @@
 	};
 
 /***/ }),
-
-/***/ 6:
+/* 6 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -485,8 +647,7 @@
 
 
 /***/ }),
-
-/***/ 7:
+/* 7 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -525,79 +686,82 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 107:
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(9)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(10)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(11)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags_item_v.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-07ae107c"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "wrapper": {
-	    "flexDirection": "row",
-	    "height": 100
-	  },
-	  "input": {
-	    "fontSize": 40,
-	    "flex": 1,
-	    "marginTop": 10,
-	    "marginLeft": 10,
-	    "paddingTop": 10,
-	    "paddingBottom": 10,
-	    "paddingLeft": 20,
-	    "paddingRight": 20,
-	    "color": "#030303",
-	    "borderWidth": 2,
-	    "borderStyle": "solid",
-	    "borderColor": "#ca5e54"
-	  },
-	  "search": {
-	    "width": 120,
-	    "padding": 18,
-	    "fontSize": 40,
-	    "marginTop": 10,
-	    "marginRight": 10,
+	  "news-content": {
+	    "flexDirection": "column",
+	    "width": 100,
+	    "height": 80,
+	    "borderColor": "#ca5e54",
+	    "borderWidth": 1,
+	    "borderRadius": 20,
 	    "backgroundColor": "#ca5e54",
-	    "color": "#ffffff"
+	    "alignItems": "center",
+	    "alignContent": "center",
+	    "margin": 10,
+	    "padding": 10
 	  },
-	  "row": {
-	    "height": 100,
-	    "flexDirection": "row",
-	    "justifyContent": "flex-start",
-	    "paddingLeft": 20,
-	    "marginTop": 10
-	  },
-	  "text": {
-	    "fontSize": 45,
-	    "color": "#666666",
-	    "flex": 1
+	  "txt": {
+	    "fontSize": 23,
+	    "flexDirection": "column",
+	    "color": "#ffffff",
+	    "alignItems": "center",
+	    "alignContent": "center"
 	  }
 	}
 
 /***/ }),
-
-/***/ 108:
-/***/ (function(module, exports, __webpack_require__) {
+/* 10 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _navbar_v = __webpack_require__(3);
-
-	var _navbar_v2 = _interopRequireDefault(_navbar_v);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var modal = weex.requireModule('modal'); //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -608,162 +772,91 @@
 	//
 	//
 
-	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
 	var weexEventModule = weex.requireModule('weexEventModule');
-	var zjito = __webpack_require__(6);
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	exports.default = {
-	    components: {
-	        navbar_v: _navbar_v2.default
-	    },
-	    data: function data() {
-	        return {
-	            key: "",
-	            taghref: zjito.getpc_search(),
-	            pageNo: 1,
-	            hotkeys: [],
-	            title: "搜索"
-	        };
-	    },
-
+	module.exports = {
 	    created: function created() {
-	        var self = this;
-	        self.refresh();
+	        console.log('news');
 	    },
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
 	    methods: {
-	        oninput: function oninput(event) {
-	            console.log('oninput:', event.value);
-	            this.key = event.value;
-	        },
-	        onchange: function onchange(event) {
-	            console.log('onchange:', event.value);
-	            this.key = event.value;
-	        },
-	        onfocus: function onfocus(event) {
-	            console.log('onfocus:', event.value);
-	        },
-	        onblur: function onblur(event) {
-	            console.log('onblur:', event.value);
-	        },
-	        tosearch: function tosearch(event) {
-	            console.log('tosearch:', this.key);
-	            var name = "search/pcsearchimglist";
-	            var params = {
-	                url: zjito.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: zjito.getpc_search() + encodeURIComponent(this.key),
-	                    title: this.key
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
-	        },
-	        refresh: function refresh(event) {
-	            var self = this;
-	            var url = self.taghref;
-	            weexZjitoJsoupModule.pchotsearch(url, function (e) {
-	                var json = JSON.parse(e);
-	                if (self.pageNo == 1) {
-	                    self.hotkeys.splice(0, self.hotkeys.length);
-	                }
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var keyitem = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt
-	                            };
-	                            self.hotkeys.push(keyitem);
-	                        }
-	                    }
-	                }
-	            });
-	        },
-
 	        todetail: function todetail(e) {
-	            //                weexEventModule.startWebViewActivity(e);
-	            console.log('tosearch:', e);
-	            var name = "search/pcsearchimglist";
-	            var params = {
-	                url: zjito.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: zjito.getpc_search() + encodeURIComponent(e),
-	                    title: e
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
+	            weexEventModule.startWebViewActivity(e);
 	        }
 	    }
 	};
 
 /***/ }),
-
-/***/ 109:
+/* 11 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', [_c('navbar_v', {
-	    attrs: {
-	      "title": _vm.title
-	    }
-	  })], 1), _c('div', {
-	    staticClass: ["wrapper"]
-	  }, [_c('input', {
-	    ref: "input",
-	    staticClass: ["input"],
-	    attrs: {
-	      "type": "text"
-	    },
-	    on: {
-	      "input": _vm.oninput,
-	      "change": _vm.onchange,
-	      "focus": _vm.onfocus,
-	      "blur": _vm.onblur
-	    }
-	  }), _c('text', {
-	    staticClass: ["search"],
-	    on: {
-	      "click": _vm.tosearch
-	    }
-	  }, [_vm._v("搜索")])]), _vm._m(0), _vm._l((_vm.hotkeys), function(hotitem) {
-	    return _c('div', {
-	      staticClass: ["row"]
-	    }, [_c('text', {
-	      staticClass: ["text"],
-	      on: {
-	        "click": function($event) {
-	          _vm.todetail(hotitem.alt)
-	        }
-	      }
-	    }, [_vm._v(_vm._s(hotitem.alt))]), _c('text', {
-	      staticClass: ["text"],
-	      on: {
-	        "click": function($event) {
-	          _vm.todetail(hotitem.alt2)
-	        }
-	      }
-	    }, [_vm._v(_vm._s(hotitem.alt2))])])
-	  })], 2)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["row"]
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"]
 	  }, [_c('text', {
-	    staticClass: ["text"]
-	  }, [_vm._v("热门搜索：")])])
-	}]}
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      height: "180px"
+	    }
+	  }, [_c('div', {
+	    staticStyle: {
+	      flex: "1",
+	      alignContent: "flex-start",
+	      alignItems: "flex-start"
+	    }
+	  }, [_c('text', {
+	    staticStyle: {
+	      fontSize: "30",
+	      marginTop: "30",
+	      marginLeft: "20"
+	    }
+	  }, [_vm._v(_vm._s(_vm.title))])]), _c('hlist', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      width: "750px",
+	      height: "100px",
+	      flex: "1"
+	    },
+	    attrs: {
+	      "loadmoreoffset": "10",
+	      "scrollDirection": "horizontal"
+	    }
+	  }, _vm._l((_vm.stockArray), function(stockitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('mtabtags_item_v', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  }))], 1)
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })
-
-/******/ });
+/******/ ]);

@@ -42,18 +42,19 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(34)
+	__vue_exports__ = __webpack_require__(41)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(43)
+	var __vue_template__ = __webpack_require__(50)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -84,12 +85,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -106,8 +103,14 @@
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
 	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/"
+	    pc_zjito:"http://www.zjito.com/",
+	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/"
 
+	};
+	exports.getm_tab_img = function () {
+	    var url = ZJITO.m_tab_img;
+	    console.log('m_tab_img==' + url);
+	    return url;
 	};
 	exports.getpc_zjito = function () {
 	    var url = ZJITO.pc_zjito;
@@ -228,34 +231,8 @@
 
 
 /***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */
+
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -282,7 +259,7 @@
 	        };
 	    },
 	    components: {
-	        tabbar: __webpack_require__(35)
+	        tabbar: __webpack_require__(42)
 	    },
 	    created: function created() {
 	        var self = this;
@@ -362,21 +339,22 @@
 	};
 
 /***/ }),
-/* 35 */
+
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(36)
+	__vue_styles__.push(__webpack_require__(43)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(37)
+	__vue_exports__ = __webpack_require__(44)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(42)
+	var __vue_template__ = __webpack_require__(49)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -406,7 +384,8 @@
 
 
 /***/ }),
-/* 36 */
+
+/***/ 43:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -443,7 +422,8 @@
 	}
 
 /***/ }),
-/* 37 */
+
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -520,7 +500,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(38)
+	    tabitem: __webpack_require__(45)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -549,21 +529,22 @@
 	};
 
 /***/ }),
-/* 38 */
+
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(39)
+	__vue_styles__.push(__webpack_require__(46)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(40)
+	__vue_exports__ = __webpack_require__(47)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(41)
+	var __vue_template__ = __webpack_require__(48)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -593,7 +574,8 @@
 
 
 /***/ }),
-/* 39 */
+
+/***/ 46:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -624,7 +606,8 @@
 	}
 
 /***/ }),
-/* 40 */
+
+/***/ 47:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -694,7 +677,8 @@
 	};
 
 /***/ }),
-/* 41 */
+
+/***/ 48:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -726,7 +710,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 42 */
+
+/***/ 49:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -773,7 +758,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 43 */
+
+/***/ 50:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -793,4 +779,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

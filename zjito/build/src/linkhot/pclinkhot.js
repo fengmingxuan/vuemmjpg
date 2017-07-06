@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(51)
+	__vue_styles__.push(__webpack_require__(58)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(52)
+	__vue_exports__ = __webpack_require__(59)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(57)
+	var __vue_template__ = __webpack_require__(64)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -357,8 +357,14 @@
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
 	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/"
+	    pc_zjito:"http://www.zjito.com/",
+	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/"
 
+	};
+	exports.getm_tab_img = function () {
+	    var url = ZJITO.m_tab_img;
+	    console.log('m_tab_img==' + url);
+	    return url;
 	};
 	exports.getpc_zjito = function () {
 	    var url = ZJITO.pc_zjito;
@@ -520,7 +526,7 @@
 
 /***/ }),
 
-/***/ 51:
+/***/ 58:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -548,7 +554,7 @@
 
 /***/ }),
 
-/***/ 52:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -561,7 +567,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pclinkhot_item_v = __webpack_require__(53);
+	var _pclinkhot_item_v = __webpack_require__(60);
 
 	var _pclinkhot_item_v2 = _interopRequireDefault(_pclinkhot_item_v);
 
@@ -686,21 +692,21 @@
 
 /***/ }),
 
-/***/ 53:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(54)
+	__vue_styles__.push(__webpack_require__(61)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(55)
+	__vue_exports__ = __webpack_require__(62)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(56)
+	var __vue_template__ = __webpack_require__(63)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -731,7 +737,7 @@
 
 /***/ }),
 
-/***/ 54:
+/***/ 61:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -756,7 +762,7 @@
 
 /***/ }),
 
-/***/ 55:
+/***/ 62:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -789,7 +795,7 @@
 
 /***/ }),
 
-/***/ 56:
+/***/ 63:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -808,7 +814,7 @@
 
 /***/ }),
 
-/***/ 57:
+/***/ 64:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
