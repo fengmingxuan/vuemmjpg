@@ -50,7 +50,7 @@
             pcimglist_notitlebar_autorefresh
 
         },
-
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],

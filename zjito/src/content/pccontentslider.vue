@@ -59,6 +59,10 @@
         },
         created: function(){
             var self = this;
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
             self.refresh();
         },
         methods:{

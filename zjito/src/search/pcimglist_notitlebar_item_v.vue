@@ -13,6 +13,8 @@
 
 <script>
     var weexEventModule = weex.requireModule('weexEventModule');
+    var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
+    var zjito = require('../zjito');
     module.exports = {
         created:function(){
             console.log('news');
@@ -26,7 +28,19 @@
 
         methods:{
             todetail:function (e) {
-                weexEventModule.startWebViewActivity(e);
+//                weexEventModule.startWebViewActivity(e);
+                var name = "content/pccontentlist";
+                var params={
+                    url: zjito.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }
