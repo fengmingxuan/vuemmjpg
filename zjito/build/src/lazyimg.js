@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/linkhot/pclinkhot_item_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/lazyimg.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1dce72e8"
+	__vue_options__._scopeId = "data-v-0861dfdc"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -94,25 +94,7 @@
 /***/ 54:
 /***/ (function(module, exports) {
 
-	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "marginBottom": 15,
-	    "flexDirection": "column",
-	    "padding": 10,
-	    "borderBottomWidth": 1,
-	    "borderColor": "#ca5e54"
-	  },
-	  "img": {
-	    "width": 750,
-	    "height": 900
-	  },
-	  "txt": {
-	    "fontSize": 30,
-	    "color": "#000000"
-	  }
-	}
+	module.exports = {}
 
 /***/ }),
 
@@ -121,6 +103,17 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -128,21 +121,32 @@
 	//
 	//
 
-	var weexEventModule = weex.requireModule('weexEventModule');
-	module.exports = {
-	    created: function created() {
-	        console.log('news');
+	exports.default = {
+	    data: function data() {
+	        return {
+	            imgs: ['http://192.168.1.15:8080/zjito/images/menu.png', 'http://192.168.1.15:8080/zjito/images/menu.png', 'http://192.168.1.15:8080/zjito/images/menu.png', 'http://192.168.1.15:8080/zjito/images/menu.png', 'http://192.168.1.15:8080/zjito/images/menu.png']
+	        };
 	    },
 
-	    props: {
-	        stockitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        todetail: function todetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	    directives: {
+	        lazy: {
+	            bind: function bind(el, bingding) {
+	                el.src = 'http://192.168.1.15:8080/zjito/images/search.png';
+	            },
+	            inserted: function inserted(el, bingding) {
+	                var seeHeight, scrollTop;
+	                function init() {
+	                    seeHeight = document.documentElement.clientHeight;
+	                    scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+	                    if (el.offsetTop < seeHeight + scrollTop) {
+	                        if (/\/static\/img\/loading\.gif/.test(el.src)) {
+	                            el.src = bingding.value;
+	                        }
+	                    }
+	                }
+	                init();
+	                window.addEventListener('scroll', init);
+	            }
 	        }
 	    }
 	};
@@ -152,19 +156,7 @@
 /***/ 56:
 /***/ (function(module, exports) {
 
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
+	module.exports={render:function(){},staticRenderFns:[]}
 
 /***/ })
 

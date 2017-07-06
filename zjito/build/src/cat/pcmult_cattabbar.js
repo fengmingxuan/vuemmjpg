@@ -50,10 +50,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(23)
+	__vue_exports__ = __webpack_require__(34)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(32)
+	var __vue_template__ = __webpack_require__(43)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -105,8 +105,14 @@
 	    pc_search:"http://www.zjito.com/search/result?Query=",
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/"
+	    pc_cat:"http://www.zjito.com/dqfl/",
+	    pc_zjito:"http://www.zjito.com/"
 
+	};
+	exports.getpc_zjito = function () {
+	    var url = ZJITO.pc_zjito;
+	    console.log('pc_zjito==' + url);
+	    return url;
 	};
 	exports.getpc_cat = function () {
 	    var url = ZJITO.pc_cat;
@@ -238,7 +244,18 @@
 /* 20 */,
 /* 21 */,
 /* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -251,9 +268,11 @@
 	//
 
 	var stream = weex.requireModule('stream');
+	var storage = weex.requireModule('storage');
 	var modal = weex.requireModule('modal');
 	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
 	var zjito = __webpack_require__(6);
+
 	module.exports = {
 	    data: function data() {
 	        return {
@@ -263,7 +282,7 @@
 	        };
 	    },
 	    components: {
-	        tabbar: __webpack_require__(24)
+	        tabbar: __webpack_require__(35)
 	    },
 	    created: function created() {
 	        var self = this;
@@ -273,9 +292,29 @@
 	        }
 	        self.refresh();
 	    },
+	    ready: function ready() {
+	        //          var vm = this;
+	        //          vm.$on('tabBarOnClick', function (e) {
+	        //              var detail = e.detail;
+	        //              nativeLog('$dispatch tabBarOnClick ' + detail.index);
+	        //
+	        //              var taghref = vm.tabItems[detail.index].taghref;
+	        //              storage.setItem('taghref',taghref,function(s){
+	        //                  console.log('set [taghref]:'+JSON.stringify(s));
+	        //              });
+	        //
+	        //
+	        //
+	        //          });
+	    },
 	    methods: {
 	        tabBarOnClick: function tabBarOnClick(e) {
 	            console.log('tabBarOnClick', e.index);
+	            var vm = this;
+	            var taghref = vm.tabItems[e.index].taghref;
+	            storage.setItem('taghref', taghref, function (s) {
+	                console.log('set [taghref]:' + JSON.stringify(s));
+	            });
 	        },
 	        refresh: function refresh() {
 	            var self = this;
@@ -307,7 +346,8 @@
 	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
 	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
 	                                src: zjito.getPathUrl('search/pcsearchimglist.js'),
-	                                visibility: 'hidden'
+	                                visibility: 'hidden',
+	                                taghref: tag.href
 	                            };
 	                            if (i == 0) {
 	                                tabitem.visibility = 'visible';
@@ -322,21 +362,21 @@
 	};
 
 /***/ }),
-/* 24 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(25)
+	__vue_styles__.push(__webpack_require__(36)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(26)
+	__vue_exports__ = __webpack_require__(37)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(31)
+	var __vue_template__ = __webpack_require__(42)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -366,7 +406,7 @@
 
 
 /***/ }),
-/* 25 */
+/* 36 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -403,7 +443,7 @@
 	}
 
 /***/ }),
-/* 26 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -480,7 +520,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(27)
+	    tabitem: __webpack_require__(38)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -509,21 +549,21 @@
 	};
 
 /***/ }),
-/* 27 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(28)
+	__vue_styles__.push(__webpack_require__(39)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(29)
+	__vue_exports__ = __webpack_require__(40)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(30)
+	var __vue_template__ = __webpack_require__(41)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -553,7 +593,7 @@
 
 
 /***/ }),
-/* 28 */
+/* 39 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -584,7 +624,7 @@
 	}
 
 /***/ }),
-/* 29 */
+/* 40 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -654,7 +694,7 @@
 	};
 
 /***/ }),
-/* 30 */
+/* 41 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -686,7 +726,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 31 */
+/* 42 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -733,7 +773,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 32 */
+/* 43 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

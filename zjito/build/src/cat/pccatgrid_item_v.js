@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(54)
+	__vue_styles__.push(__webpack_require__(16)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(55)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(56)
+	var __vue_template__ = __webpack_require__(18)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/linkhot/pclinkhot_item_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/pccatgrid_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1dce72e8"
+	__vue_options__._scopeId = "data-v-878e0648"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -91,22 +91,16 @@
 
 /***/ }),
 
-/***/ 54:
+/***/ 16:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "marginBottom": 15,
-	    "flexDirection": "column",
+	    "marginLeft": 10,
+	    "marginRight": 10,
+	    "marginBottom": 10,
 	    "padding": 10,
-	    "borderBottomWidth": 1,
-	    "borderColor": "#ca5e54"
-	  },
-	  "img": {
-	    "width": 750,
-	    "height": 900
+	    "flex": 1
 	  },
 	  "txt": {
 	    "fontSize": 30,
@@ -116,7 +110,7 @@
 
 /***/ }),
 
-/***/ 55:
+/***/ 17:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -127,12 +121,22 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
-	    created: function created() {
-	        console.log('news');
-	    },
+	    created: function created() {},
 
 	    props: {
 	        stockitem: {
@@ -149,11 +153,17 @@
 
 /***/ }),
 
-/***/ 56:
+/***/ 18:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
+	    staticStyle: {
+	      flex: "1",
+	      flexDirection: "row",
+	      padding: "10"
+	    }
+	  }, [_c('div', {
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
@@ -162,7 +172,34 @@
 	    }
 	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])]), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))])]), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href3)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt3))])]), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href4)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt4))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

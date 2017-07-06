@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(93)
+	__vue_styles__.push(__webpack_require__(76)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(94)
+	__vue_exports__ = __webpack_require__(77)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(95)
+	var __vue_template__ = __webpack_require__(78)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcsearch.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/main/pcmainslider.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-98167922"
+	__vue_options__._scopeId = "data-v-02ccdb20"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -520,54 +520,42 @@
 
 /***/ }),
 
-/***/ 93:
+/***/ 76:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "wrapper": {
-	    "flexDirection": "row",
-	    "height": 100
+	  "image": {
+	    "width": 750,
+	    "height": 550
 	  },
-	  "input": {
-	    "fontSize": 40,
-	    "flex": 1,
-	    "marginTop": 10,
-	    "marginLeft": 10,
-	    "paddingTop": 10,
-	    "paddingBottom": 10,
-	    "paddingLeft": 20,
-	    "paddingRight": 20,
-	    "color": "#030303",
-	    "borderWidth": 2,
-	    "borderStyle": "solid",
-	    "borderColor": "#ca5e54"
+	  "slider": {
+	    "width": 750,
+	    "height": 550
 	  },
-	  "search": {
-	    "width": 120,
-	    "padding": 18,
-	    "fontSize": 40,
+	  "frame": {
+	    "width": 750,
+	    "flexDirection": "column",
+	    "height": 550
+	  },
+	  "txt": {
 	    "marginTop": 10,
-	    "marginRight": 10,
-	    "backgroundColor": "#ca5e54",
+	    "fontSize": 30,
 	    "color": "#ffffff"
 	  },
-	  "row": {
-	    "height": 100,
-	    "flexDirection": "row",
-	    "justifyContent": "flex-start",
-	    "paddingLeft": 20,
-	    "marginTop": 10
-	  },
-	  "text": {
-	    "fontSize": 45,
-	    "color": "#666666",
-	    "flex": 1
+	  "indicator": {
+	    "position": "absolute",
+	    "width": 750,
+	    "height": 550,
+	    "top": 250,
+	    "left": 10,
+	    "itemColor": "#dddddd",
+	    "itemSelectedColor": "rgb(40, 96, 144)"
 	  }
 	}
 
 /***/ }),
 
-/***/ 94:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -582,7 +570,32 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var modal = weex.requireModule('modal'); //
+	var stream = weex.requireModule('stream'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -602,160 +615,91 @@
 	//
 	//
 
+	var modal = weex.requireModule('modal');
 	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
-	var weexEventModule = weex.requireModule('weexEventModule');
 	var zjito = __webpack_require__(6);
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        navbar_v: _navbar_v2.default
+
 	    },
 	    data: function data() {
 	        return {
-	            key: "",
-	            taghref: zjito.getpc_search(),
+	            imageList: [],
+	            taghref: zjito.getpc_zjito(),
 	            pageNo: 1,
-	            hotkeys: [],
-	            title: "搜索"
+	            title: ""
 	        };
 	    },
 
 	    created: function created() {
 	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
 	        self.refresh();
 	    },
 	    methods: {
-	        oninput: function oninput(event) {
-	            console.log('oninput:', event.value);
-	            this.key = event.value;
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
 	        },
-	        onchange: function onchange(event) {
-	            console.log('onchange:', event.value);
-	            this.key = event.value;
-	        },
-	        onfocus: function onfocus(event) {
-	            console.log('onfocus:', event.value);
-	        },
-	        onblur: function onblur(event) {
-	            console.log('onblur:', event.value);
-	        },
-	        tosearch: function tosearch(event) {
-	            console.log('tosearch:', this.key);
-	            var name = "search/pcsearchimglist";
-	            var params = {
-	                url: zjito.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: zjito.getpc_search() + encodeURIComponent(this.key),
-	                    title: this.key
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
-	        },
-	        refresh: function refresh(event) {
+	        refresh: function refresh() {
 	            var self = this;
 	            var url = self.taghref;
-	            weexZjitoJsoupModule.pchotsearch(url, function (e) {
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexZjitoJsoupModule.pcmainslider(url, function (e) {
 	                var json = JSON.parse(e);
-	                if (self.pageNo == 1) {
-	                    self.hotkeys.splice(0, self.hotkeys.length);
-	                }
+	                self.imageList.splice(0, self.imageList.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
+	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var keyitem = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt
-	                            };
-	                            self.hotkeys.push(keyitem);
+	                            self.imageList.push(tag);
 	                        }
 	                    }
 	                }
 	            });
-	        },
-
-	        todetail: function todetail(e) {
-	            //                weexEventModule.startWebViewActivity(e);
-	            console.log('tosearch:', e);
-	            var name = "search/pcsearchimglist";
-	            var params = {
-	                url: zjito.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: zjito.getpc_search() + encodeURIComponent(e),
-	                    title: e
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
 	        }
+
 	    }
 	};
 
 /***/ }),
 
-/***/ 95:
+/***/ 78:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', [_c('navbar_v', {
+	  return _c('div', [_c('slider', {
+	    staticClass: ["slider"],
 	    attrs: {
-	      "title": _vm.title
+	      "interval": "3000",
+	      "autoPlay": "true"
 	    }
-	  })], 1), _c('div', {
-	    staticClass: ["wrapper"]
-	  }, [_c('input', {
-	    ref: "input",
-	    staticClass: ["input"],
-	    attrs: {
-	      "type": "text"
-	    },
-	    on: {
-	      "input": _vm.oninput,
-	      "change": _vm.onchange,
-	      "focus": _vm.onfocus,
-	      "blur": _vm.onblur
-	    }
-	  }), _c('text', {
-	    staticClass: ["search"],
-	    on: {
-	      "click": _vm.tosearch
-	    }
-	  }, [_vm._v("搜索")])]), _vm._m(0), _vm._l((_vm.hotkeys), function(hotitem) {
+	  }, [_c('indicator', {
+	    staticClass: ["indicator"]
+	  }), _vm._l((_vm.imageList), function(img) {
 	    return _c('div', {
-	      staticClass: ["row"]
-	    }, [_c('text', {
-	      staticClass: ["text"],
+	      staticClass: ["frame"]
+	    }, [_c('image', {
+	      staticClass: ["image"],
+	      attrs: {
+	        "resize": "cover",
+	        "src": img.src
+	      },
 	      on: {
 	        "click": function($event) {
-	          _vm.todetail(hotitem.alt)
+	          _vm.todetail(img.href)
 	        }
 	      }
-	    }, [_vm._v(_vm._s(hotitem.alt))]), _c('text', {
-	      staticClass: ["text"],
-	      on: {
-	        "click": function($event) {
-	          _vm.todetail(hotitem.alt2)
-	        }
-	      }
-	    }, [_vm._v(_vm._s(hotitem.alt2))])])
-	  })], 2)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: ["row"]
-	  }, [_c('text', {
-	    staticClass: ["text"]
-	  }, [_vm._v("热门搜索：")])])
-	}]}
+	    })])
+	  })], 2)])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })

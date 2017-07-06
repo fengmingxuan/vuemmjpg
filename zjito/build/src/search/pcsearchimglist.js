@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(67)
+	__vue_styles__.push(__webpack_require__(96)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(68)
+	__vue_exports__ = __webpack_require__(97)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(73)
+	var __vue_template__ = __webpack_require__(102)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -356,8 +356,14 @@
 	    pc_search:"http://www.zjito.com/search/result?Query=",
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/"
+	    pc_cat:"http://www.zjito.com/dqfl/",
+	    pc_zjito:"http://www.zjito.com/"
 
+	};
+	exports.getpc_zjito = function () {
+	    var url = ZJITO.pc_zjito;
+	    console.log('pc_zjito==' + url);
+	    return url;
 	};
 	exports.getpc_cat = function () {
 	    var url = ZJITO.pc_cat;
@@ -514,7 +520,7 @@
 
 /***/ }),
 
-/***/ 67:
+/***/ 96:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -542,7 +548,7 @@
 
 /***/ }),
 
-/***/ 68:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -555,7 +561,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcsearchimglist_item_v = __webpack_require__(69);
+	var _pcsearchimglist_item_v = __webpack_require__(98);
 
 	var _pcsearchimglist_item_v2 = _interopRequireDefault(_pcsearchimglist_item_v);
 
@@ -585,7 +591,7 @@
 	var modal = weex.requireModule('modal');
 	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
 	var zjito = __webpack_require__(6);
-
+	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
 	        pcsearchimglist_item_v: _pcsearchimglist_item_v2.default,
@@ -606,16 +612,25 @@
 
 	    created: function created() {
 	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
-	        console.log('title==' + self.title + ';taghref==' + self.taghref);
-	        self.refresh();
+	        //            var ctaghref = self.$getConfig().taghref;
+	        //            if(ctaghref!=undefined){
+	        //                self.taghref = ctaghref;
+	        //            }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
+	        //            console.log('title=='+self.title+';taghref=='+self.taghref)
+	        storage.getItem('taghref', function (s) {
+	            console.log('get taghref result:' + JSON.stringify(s));
+	            var staghref = s.data;
+	            if (staghref != undefined) {
+	                self.taghref = staghref;
+	            }
+	            console.log('taghref==' + self.taghref);
+	            self.refresh();
+	        });
+	        //            self.refresh();
 	    },
 	    methods: {
 	        onloading: function onloading(event) {
@@ -650,7 +665,7 @@
 	            if (self.pageNo == 1) {
 	                url = self.taghref;
 	            } else {
-	                url = self.taghref + "&PageIndex=" + self.pageNo;
+	                url = self.taghref + "index_" + self.pageNo + ".shtml";
 	            }
 	            console.log('url===' + url);
 	            var params = {
@@ -679,21 +694,21 @@
 
 /***/ }),
 
-/***/ 69:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(70)
+	__vue_styles__.push(__webpack_require__(99)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(71)
+	__vue_exports__ = __webpack_require__(100)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(72)
+	var __vue_template__ = __webpack_require__(101)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -724,7 +739,7 @@
 
 /***/ }),
 
-/***/ 70:
+/***/ 99:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -745,7 +760,7 @@
 
 /***/ }),
 
-/***/ 71:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -779,7 +794,7 @@
 
 /***/ }),
 
-/***/ 72:
+/***/ 101:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -803,7 +818,7 @@
 
 /***/ }),
 
-/***/ 73:
+/***/ 102:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

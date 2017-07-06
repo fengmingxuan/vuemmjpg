@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(50)
+	__vue_styles__.push(__webpack_require__(83)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(51)
+	__vue_exports__ = __webpack_require__(84)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(52)
+	var __vue_template__ = __webpack_require__(85)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,8 +107,14 @@
 	    pc_search:"http://www.zjito.com/search/result?Query=",
 	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/"
+	    pc_cat:"http://www.zjito.com/dqfl/",
+	    pc_zjito:"http://www.zjito.com/"
 
+	};
+	exports.getpc_zjito = function () {
+	    var url = ZJITO.pc_zjito;
+	    console.log('pc_zjito==' + url);
+	    return url;
 	};
 	exports.getpc_cat = function () {
 	    var url = ZJITO.pc_cat;
@@ -225,7 +231,7 @@
 
 /***/ }),
 
-/***/ 50:
+/***/ 83:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -253,7 +259,7 @@
 
 /***/ }),
 
-/***/ 51:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -288,11 +294,17 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('main/pcmaintabs');
+	        this.rows.push('main/pcmainimglist');
+	        this.rows.push('main/pcmainslider');
+	        this.rows.push('cat/pccatgrid_leftmenu');
+	        this.rows.push('cat/pccatgrid');
 	        this.rows.push('pager/pccat_pager');
 	        this.rows.push('cat/pcmult_cattabbar');
 	        this.rows.push('cat/pccattabbar');
 	        this.rows.push('cat/pccat');
 	        this.rows.push('search/pcimglist_notitlebar');
+	        this.rows.push('search/pcimglist_notitlebar_autorefresh');
 	        this.rows.push('linkhot/pclinkhot');
 	        this.rows.push('content/pccontentslider');
 	        this.rows.push('content/pccontentlist');
@@ -326,7 +338,7 @@
 
 /***/ }),
 
-/***/ 52:
+/***/ 85:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
