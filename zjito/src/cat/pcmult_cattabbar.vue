@@ -6,9 +6,11 @@
 
 <script>
     var stream = weex.requireModule('stream');
+    var storage = weex.requireModule('storage');
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
     var zjito = require('../zjito');
+
   module.exports = {
     data: function () {
       return {
@@ -28,9 +30,29 @@
         }
         self.refresh();
     },
+      ready: function () {
+//          var vm = this;
+//          vm.$on('tabBarOnClick', function (e) {
+//              var detail = e.detail;
+//              nativeLog('$dispatch tabBarOnClick ' + detail.index);
+//
+//              var taghref = vm.tabItems[detail.index].taghref;
+//              storage.setItem('taghref',taghref,function(s){
+//                  console.log('set [taghref]:'+JSON.stringify(s));
+//              });
+//
+//
+//
+//          });
+      },
     methods: {
       tabBarOnClick: function (e) {
         console.log('tabBarOnClick', e.index)
+          var vm = this;
+          var taghref = vm.tabItems[e.index].taghref;
+          storage.setItem('taghref',taghref,function(s){
+              console.log('set [taghref]:'+JSON.stringify(s));
+          });
       },
         refresh:function(){
             var self = this;
@@ -63,6 +85,7 @@
                                 selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
                                 src: zjito.getPathUrl('search/pcsearchimglist.js'),
                                 visibility: 'hidden',
+                                taghref:tag.href
                             };
                             if(i==0){
                                 tabitem.visibility = 'visible';

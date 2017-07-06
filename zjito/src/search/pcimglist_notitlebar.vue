@@ -24,7 +24,7 @@
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
     var zjito = require('../zjito');
-
+    var storage = weex.requireModule('storage');
     export default{
         components: {
             pcimglist_notitlebar_item_v,
@@ -60,7 +60,16 @@
         },
         methods:{
             autoRefresh(event){
-                this.refresh();
+                var self = this;
+                storage.getItem('taghref',function(s){
+                    console.log('get taghref result:'+JSON.stringify(s));
+                    var staghref = s.data;
+                    if(staghref!=undefined){
+                        self.taghref = staghref;
+                    }
+                    console.log('taghref=='+self.taghref);
+                    self.refresh();
+                });
             },
             onloading (event) {
                 this.showLoading = 'show'

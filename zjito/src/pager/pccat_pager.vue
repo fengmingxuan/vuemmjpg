@@ -27,6 +27,7 @@
 
 <script>
     const dom = weex.requireModule('dom')
+    var storage = weex.requireModule('storage');
     import  navbar_v from '../template/navbar_v.vue'
     import  pcimglist_notitlebar from '../search/pcimglist_notitlebar.vue'
     var stream = weex.requireModule('stream');
@@ -153,6 +154,13 @@
                         tabItem.itemNameColor = "item_text-select-" + this.skinType;
                         tabItem.itemLineColor= "select_line_color-" + this.skinType;
                         tabItem.item_text_select="#1191f6"
+
+                        var taghref = tabItem.href;
+                        console.log("taghref==="+taghref)
+                        storage.setItem('taghref',taghref,function(s){
+                            console.log('set [taghref]:'+JSON.stringify(s));
+
+                        });
 //                        const el = this.$refs.item10[0];
 //                        if (this.$vm('point_sub' + i).isFirst == 1) {
 //                            this.$vm('point_sub' + i).autoRefresh();
