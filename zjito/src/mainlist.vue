@@ -25,6 +25,9 @@
             }
         },
         created () {
+            this.rows.push('main/pcmaintabs')
+            this.rows.push('main/pcmainimglist')
+            this.rows.push('main/pcmainslider')
             this.rows.push('cat/pccatgrid_leftmenu')
             this.rows.push('cat/pccatgrid')
             this.rows.push('pager/pccat_pager')

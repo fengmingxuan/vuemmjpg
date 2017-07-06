@@ -1,7 +1,7 @@
 <template>
     <div style="flex-direction: row;flex: 1;margin: 10px">
         <div class="news-content" @click="todetail(stockitem.href)">
-            <image class="img" :src="stockitem.src"></image>
+            <image class="img" :src="stockitem.src" ></image>
             <text class="txt">{{stockitem.alt}}</text>
         </div>
         <div class="news-content" @click="todetail(stockitem.href2)">
@@ -57,6 +57,7 @@
     .img{
         width: 350;
         height: 450;
+        background-color: #e06c75;
     }
     .txt{
         font-size:30;
