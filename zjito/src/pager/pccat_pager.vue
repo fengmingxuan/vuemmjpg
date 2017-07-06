@@ -2,19 +2,19 @@
     <div class="content">
         <navbar_v :title="title"></navbar_v>
         <scroller class="tabclass" scroll-direction="horizontal">
-            <div class="top_tab_item" v-for="item in  buttomData" @click="setIndex(item.index)">
+            <div class="top_tab_item" v-for="item in  buttomData" @click="setIndex(item.index)" :ref="item.indextab">
                 <div class="pointdiv">
                     <text class="rednum" v-if="davNum!=0 && item.index==1">{{davNum}}</text>
                 </div>
-                <text class="item_text">{{item.itemName}}</text>
+                <text class="item_text" v-bind:style="{ color: item.item_text_select}">{{item.itemName}}</text>
             </div>
         </scroller>
-        <div class="tablineclass">
-            <div class="top_item_line" repeat="item in buttomData">
-                <div class="lineClass">
-                </div>
-            </div>
-        </div>
+        <scroller class="tabclass" scroll-direction="horizontal">
+           <div class="top_item_line" v-for="item in buttomData" :ref="item.indexline">
+                <text class="item_text" v-bind:style="{ backgroundColor: item.item_text_select}">
+                </text>
+             </div>
+        </scroller>
         <slider class="slider" append="tree" :interval="1000" needloop="false" :auto-play="false" @change="onchange"
                 index="indexMetting" offScreenPageLimit="3"  style="height: 1200">
             <div v-for="item in buttomData">
@@ -59,6 +59,7 @@
                 davNum:0,//我的观点数
                 davmargin:0,
                 taghref:zjito.getpc_cat(),
+
             }
         },
         created(){
@@ -108,9 +109,12 @@
                                     itemName: tag.alt,
                                     itemNameColor: "item_text-select-0",
                                     itemLineColor:"select_line_color-0",
+                                    item_text_select:"#555555",
                                     id:"point_sub"+i,
                                     href:tag.href,
-                                    isFirst:1
+                                    isFirst:1,
+                                    indextab: 'tab'+i,
+                                    indexline: 'line'+i,
                                     // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
                                 };
                                 console.log('tab==='+JSON.stringify(tab));
@@ -148,52 +152,101 @@
                         tabItem.imgUrl = tabItem.imgUrlSelect;
                         tabItem.itemNameColor = "item_text-select-" + this.skinType;
                         tabItem.itemLineColor= "select_line_color-" + this.skinType;
+                        tabItem.item_text_select="#1191f6"
 //                        const el = this.$refs.item10[0];
 //                        if (this.$vm('point_sub' + i).isFirst == 1) {
 //                            this.$vm('point_sub' + i).autoRefresh();
 //                        }
+
+
                         console.log("i==="+i)
                         if(i==0){
                             if(this.$refs.point_sub0[0].isFirst == 1){
                                 this.$refs.point_sub0[0].autoRefresh();
+                                const eltab = this.$refs.tab0[0];
+                                dom.scrollToElement(eltab, { offset: 0 });
+
+                                const elline = this.$refs.line0[0];
+                                dom.scrollToElement(elline, { offset: 0 });
                             }
                         }else if(i==1){
                             if(this.$refs.point_sub1[0].isFirst == 1){
                                 this.$refs.point_sub1[0].autoRefresh();
+                                const eltab = this.$refs.tab1[0];
+                                dom.scrollToElement(eltab, { offset: 1 });
+
+                                const elline = this.$refs.line1[0];
+                                dom.scrollToElement(elline, { offset: 1 });
                             }
                         }else if(i==2){
                             if(this.$refs.point_sub2[0].isFirst == 1){
                                 this.$refs.point_sub2[0].autoRefresh();
+                                const eltab = this.$refs.tab2[0];
+                                dom.scrollToElement(eltab, { offset: 2 });
+
+                                const elline = this.$refs.line2[0];
+                                dom.scrollToElement(elline, { offset: 2 });
                             }
                         }else if(i==3){
                             if(this.$refs.point_sub3[0].isFirst == 1){
                                 this.$refs.point_sub3[0].autoRefresh();
+                                const eltab = this.$refs.tab3[0];
+                                dom.scrollToElement(eltab, { offset: 3 });
+
+                                const elline = this.$refs.line3[0];
+                                dom.scrollToElement(elline, { offset: 3 });
                             }
                         }else if(i==4){
                             if(this.$refs.point_sub4[0].isFirst == 1){
                                 this.$refs.point_sub4[0].autoRefresh();
+                                const eltab = this.$refs.tab4[0];
+                                dom.scrollToElement(eltab, { offset: 4 });
+
+                                const elline = this.$refs.line4[0];
+                                dom.scrollToElement(elline, { offset: 4 });
                             }
                         }else if(i==5){
                             if(this.$refs.point_sub5[0].isFirst == 1){
                                 this.$refs.point_sub5[0].autoRefresh();
+                                const eltab = this.$refs.tab5[0];
+                                dom.scrollToElement(eltab, { offset: 5 });
+
+                                const elline = this.$refs.line5[0];
+                                dom.scrollToElement(elline, { offset: 5 });
                             }
                         }else if(i==6){
                             if(this.$refs.point_sub6[0].isFirst == 1){
                                 this.$refs.point_sub6[0].autoRefresh();
+                                const eltab = this.$refs.tab6[0];
+                                dom.scrollToElement(eltab, { offset: 6 });
+
+                                const elline = this.$refs.line6[0];
+                                dom.scrollToElement(elline, { offset: 6 });
                             }
                         }else if(i==7){
                             if(this.$refs.point_sub7[0].isFirst == 1){
                                 this.$refs.point_sub7[0].autoRefresh();
+                                const eltab = this.$refs.tab7[0];
+                                dom.scrollToElement(eltab, { offset: 7 });
+
+                                const elline = this.$refs.line7[0];
+                                dom.scrollToElement(elline, { offset: 7 });
                             }
                         }else if(i==8){
                             if(this.$refs.point_sub8[0].isFirst == 1){
                                 this.$refs.point_sub8[0].autoRefresh();
+                                const eltab = this.$refs.tab8[0];
+                                dom.scrollToElement(eltab, { offset: 8 });
+
+                                const elline = this.$refs.line8[0];
+                                dom.scrollToElement(elline, { offset: 8 });
                             }
                         }
                     } else {
                         tabItem.imgUrl = tabItem.imgUrlUnSelect;
                         tabItem.itemNameColor = "item_text-" + this.skinType;
                         tabItem.itemLineColor= "unselect_line_color-" + this.skinType;
+                        tabItem.item_text_select="#555555"
                     }
                 }
             },
@@ -316,7 +369,6 @@
 
     .item_text {
         font-size: 15wx;
-        color: #666666;
         flex: 1;
         top:-5wx;
         text-align: center;
@@ -324,16 +376,13 @@
     }
 
     .tablineclass {
-        width: 750;
-        height: 2wx;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        height: 2;
     }
 
     .top_item_line {
-        flex: 1;
-        height: 2wx;
+        /*flex: 1;*/
+        height: 2;
+        width: 150px;
     }
 
     .item_text-0 {
@@ -353,8 +402,9 @@
     }
 
     .lineClass {
-        flex: 1;
-        height: 2wx;
+        /*flex: 1;*/
+        height: 2;
+        width: 150px;
     }
 
     .select_line_color-0 {
