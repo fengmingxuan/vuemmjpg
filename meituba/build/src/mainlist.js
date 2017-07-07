@@ -288,6 +288,7 @@
 	        this.rows.push('webnews');
 	        this.rows.push('template/navbar_v');
 	        this.rows.push('text');
+	        this.rows.push('text');
 	    },
 
 	    methods: {
