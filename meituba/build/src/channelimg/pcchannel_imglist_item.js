@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(4)
+	__vue_styles__.push(__webpack_require__(9)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(5)
+	__vue_exports__ = __webpack_require__(10)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(7)
+	var __vue_template__ = __webpack_require__(11)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pcchannel_imglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7ba190a6"
+	__vue_options__._scopeId = "data-v-5d20b219"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -92,208 +92,8 @@
 /* 1 */,
 /* 2 */,
 /* 3 */,
-/* 4 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "nav_bar": {
-	    "display": "flex",
-	    "flexDirection": "row",
-	    "height": 100,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "backgroundColor": "#1592e5"
-	  },
-	  "nav_bar-0": {
-	    "backgroundColor": "#1592e5"
-	  },
-	  "nav_bar-1": {
-	    "backgroundColor": "#1592e5"
-	  },
-	  "nav_text": {
-	    "fontSize": "20wx",
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "marginTop": 1,
-	    "color": "#ffffff"
-	  },
-	  "nav_text_top-0": {
-	    "marginTop": 1
-	  },
-	  "nav_text_top-1": {
-	    "marginTop": 1
-	  },
-	  "nav_text-0": {
-	    "color": "#FFFFFF"
-	  },
-	  "nav_text-1": {
-	    "color": "#ffffff"
-	  },
-	  "nav_title": {
-	    "flex": 1,
-	    "marginLeft": 10,
-	    "marginRight": 10,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "nav_back": {
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "width": "45wx",
-	    "height": 80
-	  },
-	  "nav_right_menu": {
-	    "width": "45wx",
-	    "height": 80,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "img": {
-	    "width": 70,
-	    "height": 70,
-	    "marginLeft": 20,
-	    "padding": 10
-	  },
-	  "nav_back-0": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_back-1": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_right_menu-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "nav_right_menu-1": {
-	    "backgroundColor": "#000000"
-	  },
-	  "img_menu": {
-	    "width": 50,
-	    "height": 50,
-	    "marginRight": 20
-	  },
-	  "imglogo": {
-	    "width": 240,
-	    "flex": 1,
-	    "height": 50
-	  },
-	  "nav_line": {
-	    "height": 1
-	  },
-	  "nav_line-0": {
-	    "backgroundColor": "#D8D8D8"
-	  },
-	  "nav_line-1": {
-	    "backgroundColor": "#192c46"
-	  },
-	  "status_bar_ios": {
-	    "height": "20wx"
-	  },
-	  "status_bar-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "status_bar-1": {
-	    "backgroundColor": "#000000"
-	  }
-	}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var meituba = __webpack_require__(6);
-	var navigator = weex.requireModule('navigator');
-
-	exports.default = {
-	    data: function data() {
-	        return {
-	            title: 'ZJITO',
-	            type: 0,
-	            shown: true,
-	            showStatusBar: 0,
-	            nav_text_top: 0,
-	            shownleft: true,
-	            leftsrc: './images/menu.png'
-	        };
-	    },
-
-	    props: ['title'],
-	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	        if (this.platform == 'iOS') {
-	            this.showStatusBar = 1;
-	        }
-	        if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
-	            this.nav_text_top = 1;
-	        } else {
-	            this.nav_text_top = 0;
-	        }
-	    },
-	    ready: function ready() {},
-
-	    methods: {
-	        nativeback: function nativeback(e) {
-	            //                var params = {
-	            //                    'animated': 'true'
-	            //                };
-	            //                navigator.pop(params, event => {
-	            //
-	            //                });
-	            this._parent.togglemenu();
-	        },
-	        onright: function onright(e) {
-	            console.log('navbar == onright');
-	            this._parent.onright();
-	        },
-
-	        getImgUrl: function getImgUrl(url) {
-	            return meituba.getImageUrl(url);
-	        },
-
-	        setLeftImage: function setLeftImage(res) {
-	            this.leftImage = res;
-	            //                console.log('navbar == res'+res);
-	        },
-
-	        setRightImage: function setRightImage(res) {
-	            this.rightImage = res;
-	            //                    console.log('navbar == res'+res);
-	        }
-
-	    }
-	};
-
-/***/ }),
+/* 4 */,
+/* 5 */,
 /* 6 */
 /***/ (function(module, exports) {
 
@@ -416,41 +216,142 @@
 
 
 /***/ }),
-/* 7 */
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
+	  },
+	  "img": {
+	    "width": 350,
+	    "height": 400,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "width": 350
+	  }
+	}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meituba = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e, alt) {
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "content/pccontentlist";
+	            //                if(e.indexOf('.shtml')!=-1){
+	            //                    name = "content/pccontentlist";
+	            //                }else{
+	            //                    name = "search/pcimglist_notitlebar_autorefresh";
+	            //                }
+	            //                var params={
+	            //                    url: meituba.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt
+	            //                    }
+	            //                };
+	            //
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                })
+	        }
+	    }
+	};
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', {
-	    staticClass: ["nav_bar"]
+	  return _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
+	      margin: "5px"
+	    }
 	  }, [_c('div', {
-	    staticClass: ["nav_back"],
+	    staticClass: ["news-content"],
 	    on: {
-	      "onclick": _vm.nativeback
-	    }
-	  }, [(_vm.shownleft) ? _c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.getImgUrl(_vm.leftsrc)
-	    }
-	  }) : _vm._e()]), _c('div', {
-	    staticClass: ["nav_title"]
-	  }, [_c('text', {
-	    staticClass: ["nav_text"]
-	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
-	    staticClass: ["nav_right_menu"]
-	  }, [(_vm.shown) ? _c('div', {
-	    staticClass: ["nav_right_menu"],
-	    on: {
-	      "onclick": _vm.onright
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	      }
 	    }
 	  }, [_c('image', {
-	    staticClass: ["img_menu"],
+	    staticClass: ["img"],
 	    attrs: {
-	      "src": _vm.getImgUrl('./images/search.png')
+	      "src": _vm.stockitem.src
 	    }
-	  })]) : _vm._e()])]), _c('div', {
-	    staticClass: ["nav_line"]
-	  })])
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other))])]), _c('div', {
+	    staticStyle: {
+	      width: "5px"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))]), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
