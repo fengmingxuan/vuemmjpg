@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(93)
+	__vue_styles__.push(__webpack_require__(115)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(94)
+	__vue_exports__ = __webpack_require__(116)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(99)
+	var __vue_template__ = __webpack_require__(121)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -172,7 +172,7 @@
 	        navbar_v: _navbar_v2.default
 
 	    },
-
+	    props: ['taghref'],
 	    data: function data() {
 	        return {
 	            stockArray: [],
@@ -226,6 +226,9 @@
 
 	        refresh: function refresh() {
 	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = zjito.getm_tab_img();
+	            }
 	            var url = self.taghref;
 	            //                if(self.pageNo==1){
 	            //                    url = self.taghref;
@@ -527,8 +530,20 @@
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
 	    pc_cat:"http://www.zjito.com/dqfl/",
 	    pc_zjito:"http://www.zjito.com/",
-	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/"
+	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
+	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
+	    m_zjito:"http://m.zjito.com/",
 
+	};
+	exports.getm_zjito = function () {
+	    var url = ZJITO.m_zjito;
+	    console.log('m_zjito==' + url);
+	    return url;
+	};
+	exports.getm_content = function () {
+	    var url = ZJITO.m_content;
+	    console.log('m_content==' + url);
+	    return url;
 	};
 	exports.getm_tab_img = function () {
 	    var url = ZJITO.m_tab_img;
@@ -873,7 +888,52 @@
 
 /***/ }),
 
-/***/ 93:
+/***/ 73:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(1)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(2)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(12)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-e318d006"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -901,7 +961,7 @@
 
 /***/ }),
 
-/***/ 94:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -914,11 +974,11 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _mtabimglist_item_v = __webpack_require__(95);
+	var _mtabimglist_item_v = __webpack_require__(117);
 
 	var _mtabimglist_item_v2 = _interopRequireDefault(_mtabimglist_item_v);
 
-	var _mtabtags = __webpack_require__(246);
+	var _mtabtags = __webpack_require__(73);
 
 	var _mtabtags2 = _interopRequireDefault(_mtabtags);
 
@@ -1078,21 +1138,21 @@
 
 /***/ }),
 
-/***/ 95:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(96)
+	__vue_styles__.push(__webpack_require__(118)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(97)
+	__vue_exports__ = __webpack_require__(119)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(98)
+	var __vue_template__ = __webpack_require__(120)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1123,7 +1183,7 @@
 
 /***/ }),
 
-/***/ 96:
+/***/ 118:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1147,7 +1207,7 @@
 
 /***/ }),
 
-/***/ 97:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1207,7 +1267,7 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 120:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1251,7 +1311,7 @@
 
 /***/ }),
 
-/***/ 99:
+/***/ 121:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1304,51 +1364,6 @@
 	  }, [_vm._v("加载更多...")])])], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 246:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(1)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(2)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(12)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-e318d006"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
 
 /***/ })
 

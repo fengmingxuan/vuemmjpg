@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(96)
+	__vue_styles__.push(__webpack_require__(118)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(97)
+	__vue_exports__ = __webpack_require__(119)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(98)
+	var __vue_template__ = __webpack_require__(120)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -109,8 +109,20 @@
 	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
 	    pc_cat:"http://www.zjito.com/dqfl/",
 	    pc_zjito:"http://www.zjito.com/",
-	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/"
+	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
+	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
+	    m_zjito:"http://m.zjito.com/",
 
+	};
+	exports.getm_zjito = function () {
+	    var url = ZJITO.m_zjito;
+	    console.log('m_zjito==' + url);
+	    return url;
+	};
+	exports.getm_content = function () {
+	    var url = ZJITO.m_content;
+	    console.log('m_content==' + url);
+	    return url;
 	};
 	exports.getm_tab_img = function () {
 	    var url = ZJITO.m_tab_img;
@@ -237,7 +249,7 @@
 
 /***/ }),
 
-/***/ 96:
+/***/ 118:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -261,7 +273,7 @@
 
 /***/ }),
 
-/***/ 97:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -321,7 +333,7 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 120:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

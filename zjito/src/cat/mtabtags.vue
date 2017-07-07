@@ -34,7 +34,7 @@
             navbar_v,
 
         },
-
+        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
@@ -84,6 +84,9 @@
             },
             refresh:function(){
                 var self = this;
+                if(self.taghref==undefined){
+                    self.taghref=zjito.getm_tab_img();
+                }
                 var url = self.taghref;
 //                if(self.pageNo==1){
 //                    url = self.taghref;

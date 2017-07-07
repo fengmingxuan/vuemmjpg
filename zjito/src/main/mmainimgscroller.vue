@@ -1,29 +1,28 @@
 <template>
     <div>
-        <navbar_v :title="title"></navbar_v>
-        <list style="height: 1330" loadmoreoffset="10">
-            <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
-                <text class="indicator">下拉刷新...</text>
-            </refresh>
-
-            <cell>
-                <pcmainslider></pcmainslider>
-            </cell>
-            <cell v-for="stockitem in stockArray">
-                <pcmainimgscroller :taghref="taghref" :pageNo="stockitem.id" :title="stockitem.alt"></pcmainimgscroller>
-            </cell>
+           <navbar_v :title="title"></navbar_v>
+        <scroller>
+            <div>
+                <mmainslider></mmainslider>
+            </div>
+            <div style="flex: 1;align-content: flex-start;align-items: flex-start">
+                <text style="font-size: 40;margin: 20">{{title}}</text>
+            </div>
+            <div>
+                <mimglist_notitlebar_autorefresh :taghref="taghref"></mimglist_notitlebar_autorefresh>
+            </div>
 
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
                 <!--<text class="indicator_loading">加载更多...</text>-->
             <!--</loading>-->
-        </list>
+        </scroller>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcmainimgscroller from '../main/pcmainimgscroller.vue'
-    import  pcmainslider from '../main/pcmainslider.vue'
+    import  mimglist_notitlebar_autorefresh from '../search/mimglist_notitlebar_autorefresh.vue'
+    import  mmainslider from '../main/mmainslider.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
@@ -31,16 +30,16 @@
     var storage = weex.requireModule('storage');
     export default{
         components: {
-            pcmainimgscroller,
+            mimglist_notitlebar_autorefresh,
             navbar_v,
-            pcmainslider
+            mmainslider
 
         },
-//        props: ['taghref'],
+        props: ['taghref','pageNo','title'],
         data(){
             return{
                 stockArray:[],
-                taghref:zjito.getpc_zjito(),
+                taghref:zjito.getm_zjito(),
                 pageNo: 0,
                 refreshing: false,
                 showLoading: 'hide',
@@ -51,15 +50,15 @@
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
-            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
+            console.log('title=='+self.title+';taghref=='+self.taghref+';pageNo=='+self.pageNo)
 
             self.refresh();
 
@@ -107,6 +106,11 @@
             refresh:function(){
                 var self = this;
                 self.isFirst=0;
+                if(self.taghref==undefined){
+                    self.taghref = zjito.getm_zjito();
+//                    self.pageNo=0;
+                }
+
 
                 var url = self.taghref;
 //                if(self.pageNo==1){
@@ -120,23 +124,31 @@
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexZjitoJsoupModule.pcmaintab(url,function(e){
-                    var json = JSON.parse(e);
-//                    if(self.pageNo==1){
-                        self.stockArray.splice(0, self.stockArray.length);
+//                weexZjitoJsoupModule.parsemainimglist(params,function(e){
+//                    var json = JSON.parse(e);
+////                    if(self.pageNo==1){
+//                        self.stockArray.splice(0, self.stockArray.length);
+////                    }
+//                    if (json.list) {
+//                        if (json.list && json.list.length > 0) {
+//                            for (var i = 0; i < json.list.length; i+=2) {
+//                                var tag = json.list[i];
+//                                var tag2 = json.list[i+1];
+//                                var item={
+//                                    href:tag.href,
+//                                    alt:tag.alt,
+//                                    src:tag.src,
+//                                    href2:tag2.href,
+//                                    alt2:tag2.alt,
+//                                    src2:tag2.src,
+//                                };
+//                                self.stockArray.push(item);
+//                            }
+//                        }
 //                    }
-                    if (json.list) {
-                        if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var tag = json.list[i];
-                                tag.id = i;
-                                self.stockArray.push(tag);
-                            }
-                        }
-                    }
-
-
-                });
+//
+//
+//                });
             }
 
         }

@@ -1,18 +1,30 @@
 <template>
     <div>
         <navbar_v :title="title"></navbar_v>
-        <list style="height: 1330" loadmoreoffset="10">
+        <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
 
-            <cell>
-                <pcmainslider></pcmainslider>
-            </cell>
             <cell v-for="stockitem in stockArray">
-                <pcmainimgscroller :taghref="taghref" :pageNo="stockitem.id" :title="stockitem.alt"></pcmainimgscroller>
+                <pccontentlist_item_v :stockitem="stockitem"></pccontentlist_item_v>
             </cell>
-
+            <cell>
+                <div style="flex: 1;align-content: flex-start;align-items: flex-start">
+                    <text style="font-size: 40;margin: 20">热门推荐</text>
+                </div>
+            </cell>
+            <cell>
+                <pclinkhot :taghref="taghref"></pclinkhot>
+            </cell>
+            <cell>
+                <div style="flex: 1;align-content: flex-start;align-items: flex-start">
+                    <text style="font-size: 40;margin: 20">小编推荐</text>
+                </div>
+            </cell>
+            <cell>
+                <pcimglist_notitlebar_autorefresh :taghref="taghref"></pcimglist_notitlebar_autorefresh>
+            </cell>
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
                 <!--<text class="indicator_loading">加载更多...</text>-->
             <!--</loading>-->
@@ -22,31 +34,31 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcmainimgscroller from '../main/pcmainimgscroller.vue'
-    import  pcmainslider from '../main/pcmainslider.vue'
+    import  pccontentlist_item_v from '../content/pccontentlist_item_v.vue'
+    import  pclinkhot from '../linkhot/pclinkhot.vue'
+    import  pcimglist_notitlebar_autorefresh from '../search/pcimglist_notitlebar_autorefresh.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
     var zjito = require('../zjito');
-    var storage = weex.requireModule('storage');
+
     export default{
         components: {
-            pcmainimgscroller,
+            pccontentlist_item_v,
             navbar_v,
-            pcmainslider
+            pclinkhot,
+            pcimglist_notitlebar_autorefresh
 
         },
 //        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:zjito.getpc_zjito(),
-                pageNo: 0,
+                taghref:zjito.getpc_content(),
+                pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"搜索",
-                isFirst:1,
-                 
+                title:"看图"
             }
         },
         created: function(){
@@ -60,45 +72,27 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
-
             self.refresh();
 
         },
         methods:{
-            autoRefresh(event){
-                var self = this;
-                storage.getItem('taghref',function(s){
-                    console.log('get taghref result:'+JSON.stringify(s));
-                    var staghref = s.data;
-                    if(staghref!=undefined){
-                        self.taghref = staghref;
-                    }
-                    console.log('taghref=='+self.taghref);
-                    self.refresh();
-                });
-            },
             onloading (event) {
                 this.showLoading = 'show'
-//                if(this.taghref.indexOf(".shtml") != -1){
-//                    this.pageNo = 1;
-//                }else{
-//                    this.pageNo = this.pageNo+1;
-//                }
-//                this.pageNo = this.pageNo+1;
+                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
                 this.refresh();
             },
             fetch(event){
-//                this.pageNo = this.pageNo+1;
+                this.pageNo = this.pageNo+1;
                 this.refresh();
             },
             onpullingdown (event) {
             },
             onrefresh (event) {
                 this.refreshing = true;
-//                this.pageNo = 1;
+                this.pageNo = 1;
                 setTimeout(() => {
                     this.refreshing = false
                 }, 2000)
@@ -106,30 +100,27 @@
             },
             refresh:function(){
                 var self = this;
-                self.isFirst=0;
-
                 var url = self.taghref;
-//                if(self.pageNo==1){
-//                    url = self.taghref;
-//                }else{
-//                    //index_2.shtml
-//                    url = self.taghref+"index_"+self.pageNo+".shtml";
-//                }
+                if(self.pageNo==1){
+                    url = self.taghref;
+                }else{
+                    url = self.taghref+"?idx="+self.pageNo;
+                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexZjitoJsoupModule.pcmaintab(url,function(e){
+                weexZjitoJsoupModule.pccontentpager(params,function(e){
                     var json = JSON.parse(e);
-//                    if(self.pageNo==1){
+                    if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
-//                    }
+                    }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
                             for (var i = 0; i < json.list.length; i++) {
                                 var tag = json.list[i];
-                                tag.id = i;
+                                self.title = tag.title;
                                 self.stockArray.push(tag);
                             }
                         }

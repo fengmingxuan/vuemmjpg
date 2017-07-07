@@ -25,6 +25,12 @@
             }
         },
         created () {
+            this.rows.push('main/mmainimgscroller')
+            this.rows.push('main/mmainslider')
+            this.rows.push('content/pccontentalllist')
+            this.rows.push('search/mimglist_notitlebar_autorefresh')
+            this.rows.push('linkhot/mlinkhot')
+            this.rows.push('content/mcontentlist')
             this.rows.push('cat/mtabtags')
             this.rows.push('mtabimg/mtabimglist')
             this.rows.push('main/pcmaintabs')
