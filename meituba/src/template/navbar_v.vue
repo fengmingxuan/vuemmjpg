@@ -94,15 +94,15 @@
         height: 100px;
         justify-content: center;
         align-items: center;
-        background-color: #ca5e54;
+        background-color: #1592e5;
     }
 
     .nav_bar-0 {
-        background-color: #ca5e54;
+        background-color: #1592e5;
     }
 
     .nav_bar-1 {
-        background-color: #ca5e54;
+        background-color: #1592e5;
     }
 
     .nav_text {
