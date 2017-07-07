@@ -42,7 +42,7 @@
             navbar_v
 
         },
-
+//        props: ['taghref'],
         data() {
             return{
                 skinType: 0,
@@ -60,19 +60,41 @@
                 davNum:0,//我的观点数
                 davmargin:0,
                 taghref:zjito.getpc_cat(),
+                pageNo:0
 
             }
         },
         created(){
-            this.platform = this.$getConfig().env.platform;
-            var cskinType = this.$getConfig().skinType;
-            if (this.platform == 'iOS') {
-                this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;   
-                this.navBar_display = false;
-                var event_ios = require('@weex-module/event');
-                event_ios.setNavbarTitle(this.title);
-            }
-            this.refresh();
+//            this.platform = this.$getConfig().env.platform;
+//            var cskinType = this.$getConfig().skinType;
+//            if (this.platform == 'iOS') {
+//                this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;
+//                this.navBar_display = false;
+//                var event_ios = require('@weex-module/event');
+//                event_ios.setNavbarTitle(this.title);
+//            }
+            var self = this;
+            storage.getItem('taghref',function(s){
+                console.log('get taghref result:'+JSON.stringify(s));
+                var json  = s.data;
+                console.log('json===' + json);
+
+                json = eval('(' + json + ')');
+
+                var staghref = json.taghref;
+                if(staghref!=undefined){
+                    self.taghref = staghref;
+                }
+                console.log('taghref=='+staghref);
+
+                var spageNo = json.pageNo;
+                if(spageNo!=undefined){
+                    self.pageNo = spageNo;
+                }
+                console.log('pageNo=='+spageNo);
+                self.refresh();
+            });
+//            this.refresh();
 //            if (this.platform == 'iOS') {
 //
 //            } else if (this.platform == 'android') {
@@ -91,11 +113,17 @@
         methods: {
             refresh: function () {
                 var self = this;
+                if(self.taghref==undefined){
+                    self.taghref=zjito.getpc_cat();
+                    self.pageNo = 0;
+                    console.log('not from tabbar');
+                }
                 var url = self.taghref;
                 var params = {
                     url:url,
-                    pageNo: 0
+                    pageNo: self.pageNo
                 };
+                console.log('refresh params== '+JSON.stringify(params));
                 weexZjitoJsoupModule.pccatlist(params, function (e) {
                     var json;
                     json = eval('(' + e + ')');

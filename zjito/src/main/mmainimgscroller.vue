@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 750">
+    <div style="width: 750;height: 1330">
            <navbar_v :title="title"></navbar_v>
         <scroller>
             <div>

@@ -5,10 +5,10 @@
             <pccatgrid_leftmenu></pccatgrid_leftmenu>
         </div>
     </div>
-    <div id="main" class="panel" v-bind:style="{ left: panelleft,height:deviceHeight}" @click="toggle">
-        <div class="btn-hamburger" >
+    <div id="main" class="panel" v-bind:style="{ left: panelleft}" @click="toggle">
+        <!--<div class="btn-hamburger" >-->
             <mmainimgscroller></mmainimgscroller>
-        </div>
+        <!--</div>-->
     </div>
    </div>
 
@@ -37,7 +37,7 @@
                 platform:'',
                 menuright:-750,
                 panelleft:0,
-                deviceHeight:1334
+                deviceHeight:1980
             }
 
         },
@@ -56,7 +56,7 @@
                 if(this.showmenu==0){
                     this.showmenu = 1;
                     this.menuright = 0;
-                    this.panelleft = 750;
+                    this.panelleft = 650;
                 }else{
                     this.showmenu = 0;
                     this.menuright = -750;
@@ -90,6 +90,7 @@
 
     .panel {
         width: 750;
+        height: 1330;
     }
 
     .panel-0 {

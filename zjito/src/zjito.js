@@ -16,7 +16,25 @@ var ZJITO = {
     m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
     m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
     m_zjito:"http://m.zjito.com/",
+    pc_tupian:"http://www.zjito.com/tpfl/",
+    pc_mingzhan:"http://www.zjito.com/mzxz/",
+    pc_taotu:"http://www.zjito.com/rbtt/",
 
+};
+exports.getpc_taotu = function () {
+    var url = ZJITO.pc_taotu;
+    console.log('pc_taotu==' + url);
+    return url;
+};
+exports.getpc_mingzhan = function () {
+    var url = ZJITO.pc_mingzhan;
+    console.log('pc_mingzhan==' + url);
+    return url;
+};
+exports.getpc_tupian = function () {
+    var url = ZJITO.pc_tupian;
+    console.log('pc_tupian==' + url);
+    return url;
 };
 exports.getm_zjito = function () {
     var url = ZJITO.m_zjito;
