@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('menu/mslideoutmenu')
             this.rows.push('main/mmainimgscroller')
             this.rows.push('main/mmainslider')
             this.rows.push('content/pccontentalllist')

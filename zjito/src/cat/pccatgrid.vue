@@ -81,6 +81,10 @@
             },
             refresh:function(){
                 var self = this;
+                if( self.taghref==undefined){
+                    self.taghref = zjito.getpc_cat();
+                    self.pageNo = 0;
+                }
                 var url = self.taghref;
 //                if(self.pageNo==1){
 //                    url = self.taghref;
