@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(134)
+	__vue_styles__.push(__webpack_require__(138)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(135)
+	__vue_exports__ = __webpack_require__(139)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(136)
+	var __vue_template__ = __webpack_require__(140)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcimglist_notitlebar.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/pager/pchot_pager.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-3758443e"
+	__vue_options__._scopeId = "data-v-00231682"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -741,6 +741,51 @@
 
 /***/ }),
 
+/***/ 133:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(134)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(135)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(136)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcimglist_notitlebar.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-3758443e"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
 /***/ 134:
 /***/ (function(module, exports) {
 
@@ -979,6 +1024,549 @@
 	  }, [_c('text', {
 	    staticClass: ["indicator_loading"]
 	  }, [_vm._v("加载更多...")])])], 2)])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 138:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "pointdiv": {
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "height": "15wx",
+	    "width": "18wx",
+	    "flex": 1,
+	    "marginLeft": "75wx",
+	    "marginTop": "2wx",
+	    "flexDirection": "column"
+	  },
+	  "rednum": {
+	    "backgroundColor": "#ff531e",
+	    "width": "15wx",
+	    "height": "12wx",
+	    "borderRadius": 30,
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "color": "#ff531e",
+	    "fontSize": "8wx",
+	    "paddingTop": "2wx",
+	    "paddingBottom": "2wx"
+	  },
+	  "rednum-0": {
+	    "paddingRight": "2wx",
+	    "paddingLeft": "4wx"
+	  },
+	  "rednum-1": {
+	    "paddingRight": "2wx",
+	    "paddingLeft": "2wx"
+	  },
+	  "slider": {
+	    "flexDirection": "row",
+	    "width": 750,
+	    "top": 0,
+	    "left": 0,
+	    "bottom": 0,
+	    "marginBottom": "5wx"
+	  },
+	  "content": {
+	    "flexDirection": "column",
+	    "width": 750
+	  },
+	  "tabclass": {
+	    "width": 750,
+	    "height": 80,
+	    "flexDirection": "row",
+	    "justifyContent": "flex-start",
+	    "alignItems": "flex-start",
+	    "bottom": 0,
+	    "left": 0,
+	    "right": 0
+	  },
+	  "tabclass_line": {
+	    "width": 750,
+	    "height": 2,
+	    "flexDirection": "row",
+	    "justifyContent": "flex-start",
+	    "alignItems": "flex-start",
+	    "bottom": 0,
+	    "left": 0,
+	    "right": 0
+	  },
+	  "content-0": {
+	    "backgroundColor": "#F6F6F6"
+	  },
+	  "content-1": {
+	    "backgroundColor": "#15253d"
+	  },
+	  "tabclass-0": {
+	    "backgroundColor": "#333333"
+	  },
+	  "tabclass-1": {
+	    "backgroundColor": "#132237"
+	  },
+	  "top_tab_item": {
+	    "alignItems": "center",
+	    "justifyContent": "center",
+	    "width": 150,
+	    "marginTop": -40
+	  },
+	  "img": {
+	    "width": "20wx",
+	    "height": "20wx"
+	  },
+	  "item_text": {
+	    "fontSize": "15wx",
+	    "flex": 1,
+	    "top": "-5wx",
+	    "textAlign": "center"
+	  },
+	  "tablineclass": {
+	    "height": 2
+	  },
+	  "top_item_line": {
+	    "height": 2,
+	    "width": 150
+	  },
+	  "item_text-0": {
+	    "color": "#555555"
+	  },
+	  "item_text-1": {
+	    "color": "#999999"
+	  },
+	  "item_text-select-0": {
+	    "color": "#1191f6"
+	  },
+	  "item_text-select-1": {
+	    "color": "#005e91"
+	  },
+	  "lineClass": {
+	    "height": 2,
+	    "width": 150
+	  },
+	  "select_line_color-0": {
+	    "backgroundColor": "#1191f6"
+	  },
+	  "select_line_color-1": {
+	    "backgroundColor": "#005e91"
+	  },
+	  "unselect_line_color-0": {
+	    "backgroundColor": "#DDDDDD"
+	  },
+	  "unselect_line_color-1": {
+	    "backgroundColor": "#0e1929"
+	  }
+	}
+
+/***/ }),
+
+/***/ 139:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _navbar_v = __webpack_require__(3);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	var _pcimglist_notitlebar = __webpack_require__(133);
+
+	var _pcimglist_notitlebar2 = _interopRequireDefault(_pcimglist_notitlebar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var dom = weex.requireModule('dom');
+	var storage = weex.requireModule('storage');
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
+	var zjito = __webpack_require__(6);
+	var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
+	var img1 = '//gw.alicdn.com/tps/i1/TB1M3sQMpXXXXakXXXXApNeJVXX-360-360.png';
+	exports.default = {
+	    components: {
+	        pcimglist_notitlebar: _pcimglist_notitlebar2.default,
+	        navbar_v: _navbar_v2.default
+
+	    },
+	    //        props: ['taghref'],
+	    data: function data() {
+	        return {
+	            skinType: 0,
+	            eventCnt: 0,
+	            togglePlayMsg: 'pause',
+	            indexMetting: 0,
+	            title: '',
+	            navBar_display: true,
+	            shown: false,
+	            screenHeight: 0,
+	            platform: 'unknown',
+	            //            left_line_color: 'select_line_color-0',
+	            //            right_line_color: 'unselect_line_color-0',
+	            buttomData: [],
+	            davNum: 0, //我的观点数
+	            davmargin: 0,
+	            taghref: zjito.getpc_hot(),
+	            pageNo: 0
+
+	        };
+	    },
+	    created: function created() {
+	        //            this.platform = this.$getConfig().env.platform;
+	        //            var cskinType = this.$getConfig().skinType;
+	        //            if (this.platform == 'iOS') {
+	        //                this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;
+	        //                this.navBar_display = false;
+	        //                var event_ios = __weex_require_module__('event');
+	        //                event_ios.setNavbarTitle(this.title);
+	        //            }
+	        //            var self = this;
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var json  = s.data;
+	        //                console.log('json===' + json);
+	        //
+	        //                json = eval('(' + json + ')');
+	        //
+	        //                var staghref = json.taghref;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+staghref);
+	        //
+	        //                var spageNo = json.pageNo;
+	        //                if(spageNo!=undefined){
+	        //                    self.pageNo = spageNo;
+	        //                }
+	        //                console.log('pageNo=='+spageNo);
+	        //                self.refresh();
+	        //            });
+	        this.refresh();
+	        //            if (this.platform == 'iOS') {
+	        //
+	        //            } else if (this.platform == 'android') {
+	        //
+	        //            } else {
+	        //                cskinType = taoguba.getUrlParam('skinType');
+	        //            }
+	        //            if (cskinType == undefined) {
+	        //                cskinType = 0;
+	        //            }
+	        //            this.skinType = cskinType;
+	        //
+	        //            var cdavNum = this.$getConfig().davNum;
+	        //            this.setdavNum(cdavNum);
+	    },
+
+	    methods: {
+	        refresh: function refresh() {
+	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = zjito.getpc_hot();
+	                self.pageNo = 0;
+	                console.log('not from tabbar');
+	            }
+	            var url = self.taghref;
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            console.log('refresh params== ' + JSON.stringify(params));
+	            weexZjitoJsoupModule.pccatlist(params, function (e) {
+	                var json;
+	                json = eval('(' + e + ')');
+	                console.log('json===' + json);
+	                self.buttomData.splice(0, self.buttomData.length);
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            var tab = {
+	                                index: i,
+	                                itemName: tag.alt,
+	                                itemNameColor: "item_text-select-0",
+	                                itemLineColor: "select_line_color-0",
+	                                item_text_select: "#555555",
+	                                id: "point_sub" + i,
+	                                href: tag.href,
+	                                isFirst: 1,
+	                                indextab: 'tab' + i,
+	                                indexline: 'line' + i
+	                                // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                            };
+	                            console.log('tab===' + JSON.stringify(tab));
+	                            self.buttomData.push(tab);
+	                        }
+	                    }
+	                }
+	            });
+	        },
+	        onchange: function onchange(params) {
+	            var index = params.index;
+	            console.log("onchange===" + index);
+	            this.setIndex(index);
+	            //                if ('android' == this.platform) {
+	            //                    weexEventModule.setOnDrawerBackEnabled('' + index);
+	            //                }
+	        },
+	        setIndex: function setIndex(index) {
+	            console.log("setIndex==" + index);
+	            this.indexMetting = index;
+	            this.title = this.buttomData[index].itemName;
+	            //                if (index == 0) {
+	            //                    this.left_line_color = 'select_line_color-' + this.skinType;
+	            //                    this.right_line_color = 'unselect_line_color-' + this.skinType;
+	            //                }
+	            //                else {
+	            //                    this.left_line_color = 'unselect_line_color-' + this.skinType;
+	            //                    this.right_line_color = 'select_line_color-' + this.skinType;
+	            //                }
+	            // console.log('\n======\n'+JSON.stringify(this.buttomData));
+	            for (var i = 0; i < this.buttomData.length; i++) {
+	                var tabItem = this.buttomData[i];
+	                if (i == index) {
+	                    tabItem.imgUrl = tabItem.imgUrlSelect;
+	                    tabItem.itemNameColor = "item_text-select-" + this.skinType;
+	                    tabItem.itemLineColor = "select_line_color-" + this.skinType;
+	                    tabItem.item_text_select = "#1191f6";
+
+	                    var taghref = tabItem.href;
+	                    console.log("taghref===" + taghref);
+	                    storage.setItem('taghref', taghref, function (s) {
+	                        console.log('set [taghref]:' + JSON.stringify(s));
+	                    });
+	                    //                        const el = this.$refs.item10[0];
+	                    //                        if (this.$vm('point_sub' + i).isFirst == 1) {
+	                    //                            this.$vm('point_sub' + i).autoRefresh();
+	                    //                        }
+
+
+	                    console.log("i===" + i);
+	                    if (i == 0) {
+	                        if (this.$refs.point_sub0[0].isFirst == 1) {
+	                            this.$refs.point_sub0[0].autoRefresh();
+	                            var eltab = this.$refs.tab0[0];
+	                            dom.scrollToElement(eltab, { offset: 0 });
+
+	                            var elline = this.$refs.line0[0];
+	                            dom.scrollToElement(elline, { offset: 0 });
+	                        }
+	                    } else if (i == 1) {
+	                        if (this.$refs.point_sub1[0].isFirst == 1) {
+	                            this.$refs.point_sub1[0].autoRefresh();
+	                            var _eltab = this.$refs.tab1[0];
+	                            dom.scrollToElement(_eltab, { offset: 1 });
+
+	                            var _elline = this.$refs.line1[0];
+	                            dom.scrollToElement(_elline, { offset: 1 });
+	                        }
+	                    } else if (i == 2) {
+	                        if (this.$refs.point_sub2[0].isFirst == 1) {
+	                            this.$refs.point_sub2[0].autoRefresh();
+	                            var _eltab2 = this.$refs.tab2[0];
+	                            dom.scrollToElement(_eltab2, { offset: 2 });
+
+	                            var _elline2 = this.$refs.line2[0];
+	                            dom.scrollToElement(_elline2, { offset: 2 });
+	                        }
+	                    } else if (i == 3) {
+	                        if (this.$refs.point_sub3[0].isFirst == 1) {
+	                            this.$refs.point_sub3[0].autoRefresh();
+	                            var _eltab3 = this.$refs.tab3[0];
+	                            dom.scrollToElement(_eltab3, { offset: 3 });
+
+	                            var _elline3 = this.$refs.line3[0];
+	                            dom.scrollToElement(_elline3, { offset: 3 });
+	                        }
+	                    } else if (i == 4) {
+	                        if (this.$refs.point_sub4[0].isFirst == 1) {
+	                            this.$refs.point_sub4[0].autoRefresh();
+	                            var _eltab4 = this.$refs.tab4[0];
+	                            dom.scrollToElement(_eltab4, { offset: 4 });
+
+	                            var _elline4 = this.$refs.line4[0];
+	                            dom.scrollToElement(_elline4, { offset: 4 });
+	                        }
+	                    } else if (i == 5) {
+	                        if (this.$refs.point_sub5[0].isFirst == 1) {
+	                            this.$refs.point_sub5[0].autoRefresh();
+	                            var _eltab5 = this.$refs.tab5[0];
+	                            dom.scrollToElement(_eltab5, { offset: 5 });
+
+	                            var _elline5 = this.$refs.line5[0];
+	                            dom.scrollToElement(_elline5, { offset: 5 });
+	                        }
+	                    } else if (i == 6) {
+	                        if (this.$refs.point_sub6[0].isFirst == 1) {
+	                            this.$refs.point_sub6[0].autoRefresh();
+	                            var _eltab6 = this.$refs.tab6[0];
+	                            dom.scrollToElement(_eltab6, { offset: 6 });
+
+	                            var _elline6 = this.$refs.line6[0];
+	                            dom.scrollToElement(_elline6, { offset: 6 });
+	                        }
+	                    } else if (i == 7) {
+	                        if (this.$refs.point_sub7[0].isFirst == 1) {
+	                            this.$refs.point_sub7[0].autoRefresh();
+	                            var _eltab7 = this.$refs.tab7[0];
+	                            dom.scrollToElement(_eltab7, { offset: 7 });
+
+	                            var _elline7 = this.$refs.line7[0];
+	                            dom.scrollToElement(_elline7, { offset: 7 });
+	                        }
+	                    } else if (i == 8) {
+	                        if (this.$refs.point_sub8[0].isFirst == 1) {
+	                            this.$refs.point_sub8[0].autoRefresh();
+	                            var _eltab8 = this.$refs.tab8[0];
+	                            dom.scrollToElement(_eltab8, { offset: 8 });
+
+	                            var _elline8 = this.$refs.line8[0];
+	                            dom.scrollToElement(_elline8, { offset: 8 });
+	                        }
+	                    }
+	                } else {
+	                    tabItem.imgUrl = tabItem.imgUrlUnSelect;
+	                    tabItem.itemNameColor = "item_text-" + this.skinType;
+	                    tabItem.itemLineColor = "unselect_line_color-" + this.skinType;
+	                    tabItem.item_text_select = "#555555";
+	                }
+	            }
+	        }
+	        //            //设置留言管理数字
+	        //            setdavNum:function (num) {
+	        //                var cdavNum = num;
+	        //                if(cdavNum==undefined){
+	        //                    cdavNum = 0;
+	        //                }
+	        //                if(cdavNum>99){
+	        //                    cdavNum = 99;
+	        //                }
+	        //                if(cdavNum<10){
+	        //                    this.davmargin=0;
+	        //                }else{
+	        //                    this.davmargin=1;
+	        //                }
+	        //                this.davNum = cdavNum;
+	        //            }
+	    },
+	    ready: function ready() {
+
+	        this.indexMetting = 0;
+	        this.setIndex(this.indexMetting);
+	    }
+	};
+
+/***/ }),
+
+/***/ 140:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: ["content"]
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title
+	    }
+	  }), _c('scroller', {
+	    staticClass: ["tabclass"],
+	    attrs: {
+	      "scrollDirection": "horizontal"
+	    }
+	  }, _vm._l((_vm.buttomData), function(item) {
+	    return _c('div', {
+	      ref: item.indextab,
+	      refInFor: true,
+	      staticClass: ["top_tab_item"],
+	      on: {
+	        "click": function($event) {
+	          _vm.setIndex(item.index)
+	        }
+	      }
+	    }, [_c('div', {
+	      staticClass: ["pointdiv"]
+	    }, [(_vm.davNum != 0 && item.index == 1) ? _c('text', {
+	      staticClass: ["rednum"]
+	    }, [_vm._v(_vm._s(_vm.davNum))]) : _vm._e()]), _c('text', {
+	      staticClass: ["item_text"],
+	      style: {
+	        color: item.item_text_select
+	      }
+	    }, [_vm._v(_vm._s(item.itemName))])])
+	  })), _c('scroller', {
+	    staticClass: ["tabclass_line"],
+	    attrs: {
+	      "scrollDirection": "horizontal"
+	    }
+	  }, _vm._l((_vm.buttomData), function(item) {
+	    return _c('div', {
+	      ref: item.indexline,
+	      refInFor: true,
+	      staticClass: ["top_item_line"]
+	    }, [_c('text', {
+	      staticClass: ["item_text"],
+	      style: {
+	        backgroundColor: item.item_text_select
+	      }
+	    })])
+	  })), _c('slider', {
+	    staticClass: ["slider"],
+	    staticStyle: {
+	      height: "1200"
+	    },
+	    appendAsTree: true,
+	    attrs: {
+	      "append": "tree",
+	      "interval": 1000,
+	      "needloop": "false",
+	      "autoPlay": false,
+	      "index": "indexMetting",
+	      "offScreenPageLimit": "3"
+	    },
+	    on: {
+	      "change": _vm.onchange
+	    }
+	  }, _vm._l((_vm.buttomData), function(item) {
+	    return _c('div', [_c('pcimglist_notitlebar', {
+	      ref: item.id,
+	      refInFor: true
+	    })], 1)
+	  }))], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

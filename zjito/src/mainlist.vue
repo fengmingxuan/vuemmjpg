@@ -25,6 +25,8 @@
             }
         },
         created () {
+            this.rows.push('pager/pchot_pager')
+            this.rows.push('hot/mhotimglist')
             this.rows.push('menu/mslideoutmenu')
             this.rows.push('main/mmainimgscroller')
             this.rows.push('main/mmainslider')

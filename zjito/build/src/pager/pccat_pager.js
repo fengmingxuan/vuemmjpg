@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(122)
+	__vue_styles__.push(__webpack_require__(131)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(123)
+	__vue_exports__ = __webpack_require__(132)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(128)
+	var __vue_template__ = __webpack_require__(137)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -361,7 +361,37 @@
 	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
 	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
 	    m_zjito:"http://m.zjito.com/",
+	    pc_tupian:"http://www.zjito.com/tpfl/",
+	    pc_mingzhan:"http://www.zjito.com/mzxz/",
+	    pc_taotu:"http://www.zjito.com/rbtt/",
+	    m_hot:"http://m.zjito.com/hot/",
+	    pc_hot:"http://www.zjito.com/hot/"
 
+	};
+	exports.getpc_hot = function () {
+	    var url = ZJITO.pc_hot;
+	    console.log('pc_hot==' + url);
+	    return url;
+	};
+	exports.getm_hot = function () {
+	    var url = ZJITO.m_hot;
+	    console.log('m_hot==' + url);
+	    return url;
+	};
+	exports.getpc_taotu = function () {
+	    var url = ZJITO.pc_taotu;
+	    console.log('pc_taotu==' + url);
+	    return url;
+	};
+	exports.getpc_mingzhan = function () {
+	    var url = ZJITO.pc_mingzhan;
+	    console.log('pc_mingzhan==' + url);
+	    return url;
+	};
+	exports.getpc_tupian = function () {
+	    var url = ZJITO.pc_tupian;
+	    console.log('pc_tupian==' + url);
+	    return url;
 	};
 	exports.getm_zjito = function () {
 	    var url = ZJITO.m_zjito;
@@ -711,7 +741,7 @@
 
 /***/ }),
 
-/***/ 122:
+/***/ 131:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -844,7 +874,7 @@
 
 /***/ }),
 
-/***/ 123:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -857,7 +887,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcimglist_notitlebar = __webpack_require__(124);
+	var _pcimglist_notitlebar = __webpack_require__(133);
 
 	var _pcimglist_notitlebar2 = _interopRequireDefault(_pcimglist_notitlebar);
 
@@ -906,7 +936,7 @@
 	        navbar_v: _navbar_v2.default
 
 	    },
-
+	    //        props: ['taghref'],
 	    data: function data() {
 	        return {
 	            skinType: 0,
@@ -923,20 +953,42 @@
 	            buttomData: [],
 	            davNum: 0, //我的观点数
 	            davmargin: 0,
-	            taghref: zjito.getpc_cat()
+	            taghref: zjito.getpc_cat(),
+	            pageNo: 0
 
 	        };
 	    },
 	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	        var cskinType = this.$getConfig().skinType;
-	        if (this.platform == 'iOS') {
-	            this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;
-	            this.navBar_display = false;
-	            var event_ios = __weex_require_module__('event');
-	            event_ios.setNavbarTitle(this.title);
-	        }
-	        this.refresh();
+	        //            this.platform = this.$getConfig().env.platform;
+	        //            var cskinType = this.$getConfig().skinType;
+	        //            if (this.platform == 'iOS') {
+	        //                this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;
+	        //                this.navBar_display = false;
+	        //                var event_ios = __weex_require_module__('event');
+	        //                event_ios.setNavbarTitle(this.title);
+	        //            }
+	        var self = this;
+	        storage.getItem('taghref', function (s) {
+	            console.log('get taghref result:' + JSON.stringify(s));
+	            var json = s.data;
+	            console.log('json===' + json);
+
+	            json = eval('(' + json + ')');
+
+	            var staghref = json.taghref;
+	            if (staghref != undefined) {
+	                self.taghref = staghref;
+	            }
+	            console.log('taghref==' + staghref);
+
+	            var spageNo = json.pageNo;
+	            if (spageNo != undefined) {
+	                self.pageNo = spageNo;
+	            }
+	            console.log('pageNo==' + spageNo);
+	            self.refresh();
+	        });
+	        //            this.refresh();
 	        //            if (this.platform == 'iOS') {
 	        //
 	        //            } else if (this.platform == 'android') {
@@ -956,11 +1008,17 @@
 	    methods: {
 	        refresh: function refresh() {
 	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = zjito.getpc_cat();
+	                self.pageNo = 0;
+	                console.log('not from tabbar');
+	            }
 	            var url = self.taghref;
 	            var params = {
 	                url: url,
-	                pageNo: 0
+	                pageNo: self.pageNo
 	            };
+	            console.log('refresh params== ' + JSON.stringify(params));
 	            weexZjitoJsoupModule.pccatlist(params, function (e) {
 	                var json;
 	                json = eval('(' + e + ')');
@@ -1147,21 +1205,21 @@
 
 /***/ }),
 
-/***/ 124:
+/***/ 133:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(125)
+	__vue_styles__.push(__webpack_require__(134)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(126)
+	__vue_exports__ = __webpack_require__(135)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(127)
+	var __vue_template__ = __webpack_require__(136)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1192,7 +1250,7 @@
 
 /***/ }),
 
-/***/ 125:
+/***/ 134:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1220,7 +1278,7 @@
 
 /***/ }),
 
-/***/ 126:
+/***/ 135:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1388,7 +1446,7 @@
 
 /***/ }),
 
-/***/ 127:
+/***/ 136:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1435,7 +1493,7 @@
 
 /***/ }),
 
-/***/ 128:
+/***/ 137:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

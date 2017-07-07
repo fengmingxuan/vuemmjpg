@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(112)
+	__vue_styles__.push(__webpack_require__(120)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(113)
+	__vue_exports__ = __webpack_require__(121)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(114)
+	var __vue_template__ = __webpack_require__(122)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -112,7 +112,37 @@
 	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
 	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
 	    m_zjito:"http://m.zjito.com/",
+	    pc_tupian:"http://www.zjito.com/tpfl/",
+	    pc_mingzhan:"http://www.zjito.com/mzxz/",
+	    pc_taotu:"http://www.zjito.com/rbtt/",
+	    m_hot:"http://m.zjito.com/hot/",
+	    pc_hot:"http://www.zjito.com/hot/"
 
+	};
+	exports.getpc_hot = function () {
+	    var url = ZJITO.pc_hot;
+	    console.log('pc_hot==' + url);
+	    return url;
+	};
+	exports.getm_hot = function () {
+	    var url = ZJITO.m_hot;
+	    console.log('m_hot==' + url);
+	    return url;
+	};
+	exports.getpc_taotu = function () {
+	    var url = ZJITO.pc_taotu;
+	    console.log('pc_taotu==' + url);
+	    return url;
+	};
+	exports.getpc_mingzhan = function () {
+	    var url = ZJITO.pc_mingzhan;
+	    console.log('pc_mingzhan==' + url);
+	    return url;
+	};
+	exports.getpc_tupian = function () {
+	    var url = ZJITO.pc_tupian;
+	    console.log('pc_tupian==' + url);
+	    return url;
 	};
 	exports.getm_zjito = function () {
 	    var url = ZJITO.m_zjito;
@@ -249,7 +279,7 @@
 
 /***/ }),
 
-/***/ 112:
+/***/ 120:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -277,7 +307,7 @@
 
 /***/ }),
 
-/***/ 113:
+/***/ 121:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -312,6 +342,9 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('pager/pchot_pager');
+	        this.rows.push('hot/mhotimglist');
+	        this.rows.push('menu/mslideoutmenu');
 	        this.rows.push('main/mmainimgscroller');
 	        this.rows.push('main/mmainslider');
 	        this.rows.push('content/pccontentalllist');
@@ -364,7 +397,7 @@
 
 /***/ }),
 
-/***/ 114:
+/***/ 122:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

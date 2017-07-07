@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: '192.168.1.15:8080',
-    HTTP: 'http://',//https:// http://
+    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 
 };
 
@@ -19,7 +19,19 @@ var ZJITO = {
     pc_tupian:"http://www.zjito.com/tpfl/",
     pc_mingzhan:"http://www.zjito.com/mzxz/",
     pc_taotu:"http://www.zjito.com/rbtt/",
+    m_hot:"http://m.zjito.com/hot/",
+    pc_hot:"http://www.zjito.com/hot/"
 
+};
+exports.getpc_hot = function () {
+    var url = ZJITO.pc_hot;
+    console.log('pc_hot==' + url);
+    return url;
+};
+exports.getm_hot = function () {
+    var url = ZJITO.m_hot;
+    console.log('m_hot==' + url);
+    return url;
 };
 exports.getpc_taotu = function () {
     var url = ZJITO.pc_taotu;

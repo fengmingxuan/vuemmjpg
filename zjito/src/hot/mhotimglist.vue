@@ -39,7 +39,7 @@
         data(){
             return{
                 stockArray:[],
-                taghref:zjito.getm_tab_img(),
+                taghref:zjito.getm_hot(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -107,7 +107,7 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = zjito.getm_tab_img();
+                    self.taghref = zjito.getm_hot();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){

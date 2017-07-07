@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(129)
+	__vue_styles__.push(__webpack_require__(141)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(130)
+	__vue_exports__ = __webpack_require__(142)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(131)
+	var __vue_template__ = __webpack_require__(143)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -361,7 +361,37 @@
 	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
 	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
 	    m_zjito:"http://m.zjito.com/",
+	    pc_tupian:"http://www.zjito.com/tpfl/",
+	    pc_mingzhan:"http://www.zjito.com/mzxz/",
+	    pc_taotu:"http://www.zjito.com/rbtt/",
+	    m_hot:"http://m.zjito.com/hot/",
+	    pc_hot:"http://www.zjito.com/hot/"
 
+	};
+	exports.getpc_hot = function () {
+	    var url = ZJITO.pc_hot;
+	    console.log('pc_hot==' + url);
+	    return url;
+	};
+	exports.getm_hot = function () {
+	    var url = ZJITO.m_hot;
+	    console.log('m_hot==' + url);
+	    return url;
+	};
+	exports.getpc_taotu = function () {
+	    var url = ZJITO.pc_taotu;
+	    console.log('pc_taotu==' + url);
+	    return url;
+	};
+	exports.getpc_mingzhan = function () {
+	    var url = ZJITO.pc_mingzhan;
+	    console.log('pc_mingzhan==' + url);
+	    return url;
+	};
+	exports.getpc_tupian = function () {
+	    var url = ZJITO.pc_tupian;
+	    console.log('pc_tupian==' + url);
+	    return url;
 	};
 	exports.getm_zjito = function () {
 	    var url = ZJITO.m_zjito;
@@ -538,7 +568,7 @@
 
 /***/ }),
 
-/***/ 129:
+/***/ 141:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -585,7 +615,7 @@
 
 /***/ }),
 
-/***/ 130:
+/***/ 142:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -721,7 +751,7 @@
 
 /***/ }),
 
-/***/ 131:
+/***/ 143:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
