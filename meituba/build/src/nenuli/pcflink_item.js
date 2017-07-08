@@ -51,11 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(198)
+	__vue_styles__.push(__webpack_require__(43)
 	)
 
+	/* script */
+	__vue_exports__ = __webpack_require__(44)
+
 	/* template */
-	var __vue_template__ = __webpack_require__(199)
+	var __vue_template__ = __webpack_require__(45)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -67,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\text.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcflink_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-140fefe0"
+	__vue_options__._scopeId = "data-v-30b4bae3"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -88,59 +91,85 @@
 
 /***/ },
 
-/***/ 198:
+/***/ 43:
 /***/ function(module, exports) {
 
 	module.exports = {
-	  "wrapper": {
+	  "news-content": {
 	    "flexDirection": "column",
-	    "justifyContent": "center"
+	    "width": 90,
+	    "height": 60,
+	    "borderColor": "#1592E5",
+	    "borderWidth": 1,
+	    "borderRadius": 20,
+	    "backgroundColor": "#1592E5",
+	    "alignItems": "center",
+	    "alignContent": "center",
+	    "margin": 5,
+	    "padding": 5
 	  },
-	  "panel": {
-	    "width": 600,
-	    "marginLeft": 75,
-	    "borderWidth": 2,
-	    "borderStyle": "solid",
-	    "borderColor": "#BBBBBB",
-	    "paddingTop": 15,
-	    "paddingBottom": 15,
-	    "paddingLeft": 15,
-	    "paddingRight": 15,
-	    "marginBottom": 30
-	  },
-	  "text": {
-	    "lines": 3,
-	    "color": "#666666",
-	    "fontSize": 32
+	  "txt": {
+	    "fontSize": 18,
+	    "flexDirection": "column",
+	    "color": "#ffffff",
+	    "alignItems": "center",
+	    "alignContent": "center"
 	  }
 	}
 
 /***/ },
 
-/***/ 199:
+/***/ 44:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
+	};
+
+/***/ },
+
+/***/ 45:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _vm._m(0)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["wrapper"]
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
+	    }
 	  }, [_c('div', {
-	    staticClass: ["panel"]
+	    staticClass: ["news-content"]
 	  }, [_c('text', {
-	    staticClass: ["text"],
-	    attrs: {
-	      "lines": "3"
-	    }
-	  }, [_vm._v("Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。")])]), _c('div', {
-	    staticClass: ["panel"]
-	  }, [_c('text', {
-	    staticClass: ["text"],
-	    attrs: {
-	      "lines": "3"
-	    }
-	  }, [_vm._v("Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. ")])])])
-	}]}
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }

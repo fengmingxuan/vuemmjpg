@@ -9,7 +9,7 @@
                 <!--<mtabtags :taghref="taghref"></mtabtags>-->
             <!--</cell>-->
             <cell v-for="stockitem in stockArray">
-                <pcchannel_imglist_item :stockitem="stockitem"></pcchannel_imglist_item>
+                <pcnenuli_item :stockitem="stockitem"></pcnenuli_item>
             </cell>
 
             <loading class="loading" @loading="onloading" :display="showLoading">
@@ -21,7 +21,7 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcchannel_imglist_item from '../channelimg/pcchannel_imglist_item.vue'
+    import  pcnenuli_item from '../nenuli/pcnenuli_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -29,7 +29,7 @@
     var storage = weex.requireModule('storage');
     export default{
         components: {
-            pcchannel_imglist_item,
+            pcnenuli_item,
             navbar_v,
 
         },
@@ -48,26 +48,18 @@
         },
         created: function(){
             var self = this;
-//            var ctaghref = self.$getConfig().taghref;
-//            if(ctaghref!=undefined){
-//                self.taghref = ctaghref;
-//            }
-//            var ctitle = self.$getConfig().title;
-//            if(ctitle!=undefined){
-//                self.title = ctitle;
-//            }
-//            console.log('title=='+self.title+';taghref=='+self.taghref)
-//
-//            self.refresh();
-            storage.getItem('taghref',function(s){
-                console.log('get taghref result:'+JSON.stringify(s));
-                var staghref = s.data;
-                if(staghref!=undefined){
-                    self.taghref = staghref;
-                }
-                console.log('taghref=='+self.taghref);
-                self.refresh();
-            });
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
+            }
+            console.log('title=='+self.title+';taghref=='+self.taghref)
+
+            self.refresh();
+
         },
         methods:{
             autoRefresh(event){
@@ -84,7 +76,7 @@
             },
             onloading (event) {
                 this.showLoading = 'show'
-                 this.pageNo = this.pageNo+1;
+//                 this.pageNo = this.pageNo+1;
 //                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
@@ -92,14 +84,14 @@
                 this.refresh();
             },
             fetch(event){
-                this.pageNo = this.pageNo+1;
+//                this.pageNo = this.pageNo+1;
                 this.refresh();
             },
             onpullingdown (event) {
             },
             onrefresh (event) {
                 this.refreshing = true;
-                this.pageNo = 1;
+//                this.pageNo = 0;
                 setTimeout(() => {
                     this.refreshing = false
                 }, 2000)
@@ -112,38 +104,28 @@
                     self.taghref = meituba.getpc_yijing();
                 }
                 var url = self.taghref;
-                if(self.pageNo==1){
-                    url = self.taghref;
-                }else{
-                    //index_2.shtml
-                    url = self.taghref+"list28"+self.pageNo+".html";
-                }
+//                if(self.pageNo==1){
+//                    url = self.taghref;
+//                }else{
+//                    //index_2.shtml
+//                    url = self.taghref+"list28"+self.pageNo+".html";
+//                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeitubaJsoupModule.pcchannelimglist(params,function(e){
+                weexMeitubaJsoupModule.pcnenuli(params,function(e){
                     var json = JSON.parse(e);
-                    if(self.pageNo==1){
+//                    if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
-                    }
+//                    }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
+                            for (var i = 0; i < json.list.length; i++) {
                                 var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                var item={
-                                    href:tag.href,
-                                    alt:tag.alt,
-                                    src:tag.src,
-                                    other:tag.other,
-                                    href2:tag2.href,
-                                    alt2:tag2.alt,
-                                    src2:tag2.src,
-                                    other2:tag2.other,
-                                };
-                                self.stockArray.push(item);
+                                tag.id = i+1;
+                                self.stockArray.push(tag);
                             }
                         }
                     }

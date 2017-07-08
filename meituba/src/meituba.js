@@ -9,9 +9,15 @@ var BASE_URL = {
 
 var MEITUBA = {
     pc_meituba:"http://www.meituba.com/",
-    pc_yijing:"http://www.meituba.com/yijing/"
+    pc_yijing:"http://www.meituba.com/yijing/",
+    pc_meinv:"http://www.meituba.com/meinv/"
 
 
+};
+exports.getpc_meinv = function () {
+    var url = MEITUBA.pc_meinv;
+    console.log('pc_meinv==' + url);
+    return url;
 };
 exports.getpc_yijing = function () {
     var url = MEITUBA.pc_yijing;

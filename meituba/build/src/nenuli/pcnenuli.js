@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(23)
+	__vue_styles__.push(__webpack_require__(47)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(24)
+	__vue_exports__ = __webpack_require__(48)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(29)
+	var __vue_template__ = __webpack_require__(53)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\channelimg\\pctaglist.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcnenuli.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-4bbf7b9c"
+	__vue_options__._scopeId = "data-v-ef9e3fe8"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,9 +90,8 @@
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */
+
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -135,7 +135,8 @@
 
 
 /***/ },
-/* 4 */
+
+/***/ 4:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -241,7 +242,8 @@
 	}
 
 /***/ },
-/* 5 */
+
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -337,7 +339,8 @@
 	};
 
 /***/ },
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	var BASE_URL = {
@@ -465,7 +468,8 @@
 
 
 /***/ },
-/* 7 */
+
+/***/ 7:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -504,22 +508,8 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+
+/***/ 47:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -546,7 +536,8 @@
 	}
 
 /***/ },
-/* 24 */
+
+/***/ 48:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -559,9 +550,9 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctaglist_item = __webpack_require__(25);
+	var _pcnenuli_item = __webpack_require__(49);
 
-	var _pctaglist_item2 = _interopRequireDefault(_pctaglist_item);
+	var _pcnenuli_item2 = _interopRequireDefault(_pcnenuli_item);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -594,7 +585,7 @@
 	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
-	        pctaglist_item: _pctaglist_item2.default,
+	        pcnenuli_item: _pcnenuli_item2.default,
 	        navbar_v: _navbar_v2.default
 
 	    },
@@ -643,7 +634,7 @@
 	            var _this = this;
 
 	            this.showLoading = 'show';
-	            this.pageNo = this.pageNo + 1;
+	            //                 this.pageNo = this.pageNo+1;
 	            //                this.pageNo = this.pageNo+1;
 	            setTimeout(function () {
 	                _this.showLoading = 'hide';
@@ -651,7 +642,7 @@
 	            this.refresh();
 	        },
 	        fetch: function fetch(event) {
-	            this.pageNo = this.pageNo + 1;
+	            //                this.pageNo = this.pageNo+1;
 	            this.refresh();
 	        },
 	        onpullingdown: function onpullingdown(event) {},
@@ -659,7 +650,7 @@
 	            var _this2 = this;
 
 	            this.refreshing = true;
-	            this.pageNo = 1;
+	            //                this.pageNo = 0;
 	            setTimeout(function () {
 	                _this2.refreshing = false;
 	            }, 2000);
@@ -684,46 +675,17 @@
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMeitubaJsoupModule.pctaglists(url, function (e) {
+	            weexMeitubaJsoupModule.pcnenuli(params, function (e) {
 	                var json = JSON.parse(e);
-	                if (self.pageNo == 1) {
-	                    self.stockArray.splice(0, self.stockArray.length);
-	                }
+	                //                    if(self.pageNo==1){
+	                self.stockArray.splice(0, self.stockArray.length);
+	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 4) {
+	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = {};
-	                            }
-	                            var tag3 = json.list[i + 2];
-	                            if (tag3 == undefined) {
-	                                tag3 = {};
-	                            }
-	                            var tag4 = json.list[i + 3];
-	                            if (tag4 == undefined) {
-	                                tag4 = {};
-	                            }
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                id: i,
-	                                backgroundColor: '#f60',
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                id2: i + 1,
-	                                backgroundColor2: '#09f',
-	                                href3: tag3.href,
-	                                alt3: tag3.alt,
-	                                id3: i + 2,
-	                                backgroundColor3: '#7a7a7a',
-	                                href4: tag4.href,
-	                                alt4: tag4.alt,
-	                                id4: i + 3,
-	                                backgroundColor4: '#393'
-	                            };
-	                            self.stockArray.push(item);
+	                            tag.id = i + 1;
+	                            self.stockArray.push(tag);
 	                        }
 	                    }
 	                }
@@ -735,21 +697,22 @@
 	};
 
 /***/ },
-/* 25 */
+
+/***/ 49:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(26)
+	__vue_styles__.push(__webpack_require__(50)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(27)
+	__vue_exports__ = __webpack_require__(51)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(28)
+	var __vue_template__ = __webpack_require__(52)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -761,10 +724,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\channelimg\\pctaglist_item.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcnenuli_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0dc3d706"
+	__vue_options__._scopeId = "data-v-53afb896"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -779,7 +742,8 @@
 
 
 /***/ },
-/* 26 */
+
+/***/ 50:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -789,34 +753,21 @@
 	    "flexDirection": "column",
 	    "flex": 1,
 	    "padding": 5,
-	    "borderRadius": 5,
-	    "alignContent": "center",
-	    "alignItems": "center"
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
 	  },
 	  "txt": {
-	    "fontSize": 20,
-	    "color": "#ffffff"
+	    "fontSize": 30
 	  }
 	}
 
 /***/ },
-/* 27 */
+
+/***/ 51:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -864,21 +815,17 @@
 	};
 
 /***/ },
-/* 28 */
+
+/***/ 52:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
-	      flex: "1",
-	      margin: "5px",
-	      flexDirection: "row"
+	      margin: "5px"
 	    }
 	  }, [_c('div', {
 	    staticClass: ["news-content"],
-	    style: {
-	      backgroundColor: _vm.stockitem.backgroundColor
-	    },
 	    on: {
 	      "click": function($event) {
 	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
@@ -886,64 +833,21 @@
 	    }
 	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt))])]), _c('div', {
-	    staticStyle: {
-	      width: "20"
-	    }
-	  }), _c('div', {
-	    staticClass: ["news-content"],
-	    style: {
-	      backgroundColor: _vm.stockitem.backgroundColor2
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.al2t)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt2))])]), _c('div', {
-	    staticStyle: {
-	      width: "20"
-	    }
-	  }), _c('div', {
-	    staticClass: ["news-content"],
-	    style: {
-	      backgroundColor: _vm.stockitem.backgroundColor3
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href3, _vm.stockitem.alt3)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(" " + _vm._s(_vm.stockitem.alt3))])]), _c('div', {
-	    staticStyle: {
-	      width: "20"
-	    }
-	  }), _c('div', {
-	    staticClass: ["news-content"],
-	    style: {
-	      backgroundColor: _vm.stockitem.backgroundColor4
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href4, _vm.stockitem.alt4)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt4))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 29 */
+
+/***/ 53:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('navbar_v', {
+	  return _c('div', {
+	    staticStyle: {
+	      backgroundColor: "rgba(0, 0, 0, .25)"
+	    }
+	  }, [_c('navbar_v', {
 	    attrs: {
 	      "title": _vm.title
 	    }
@@ -969,14 +873,25 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pctaglist_item', {
+	    }, [_c('pcnenuli_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }
 	    })], 1)
-	  })], 2)], 1)
+	  }), _c('loading', {
+	    staticClass: ["loading"],
+	    attrs: {
+	      "display": _vm.showLoading
+	    },
+	    on: {
+	      "loading": _vm.onloading
+	    }
+	  }, [_c('text', {
+	    staticClass: ["indicator_loading"]
+	  }, [_vm._v("加载更多...")])])], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }
-/******/ ]);
+
+/******/ });

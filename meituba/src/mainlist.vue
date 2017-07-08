@@ -25,6 +25,10 @@
             }
         },
         created () {
+            this.rows.push('mainnenu/pcmainnenu_imglist')
+            this.rows.push('nenuli/pcflink')
+            this.rows.push('nenuli/pcnenuli_tabbar')
+            this.rows.push('nenuli/pcnenuli')
             this.rows.push('channelimg/pctaglist')
             this.rows.push('channelimg/pcrecommend')
             this.rows.push('channelimg/pchotclick')

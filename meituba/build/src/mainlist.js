@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(29)
+	__vue_styles__.push(__webpack_require__(30)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(30)
+	__vue_exports__ = __webpack_require__(31)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(31)
+	var __vue_template__ = __webpack_require__(32)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -105,9 +105,15 @@
 
 	var MEITUBA = {
 	    pc_meituba:"http://www.meituba.com/",
-	    pc_yijing:"http://www.meituba.com/yijing/"
+	    pc_yijing:"http://www.meituba.com/yijing/",
+	    pc_meinv:"http://www.meituba.com/meinv/"
 
 
+	};
+	exports.getpc_meinv = function () {
+	    var url = MEITUBA.pc_meinv;
+	    console.log('pc_meinv==' + url);
+	    return url;
 	};
 	exports.getpc_yijing = function () {
 	    var url = MEITUBA.pc_yijing;
@@ -214,7 +220,7 @@
 
 /***/ },
 
-/***/ 29:
+/***/ 30:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -242,7 +248,7 @@
 
 /***/ },
 
-/***/ 30:
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -277,6 +283,10 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('mainnenu/pcmainnenu_imglist');
+	        this.rows.push('nenuli/pcflink');
+	        this.rows.push('nenuli/pcnenuli_tabbar');
+	        this.rows.push('nenuli/pcnenuli');
 	        this.rows.push('channelimg/pctaglist');
 	        this.rows.push('channelimg/pcrecommend');
 	        this.rows.push('channelimg/pchotclick');
@@ -310,7 +320,7 @@
 
 /***/ },
 
-/***/ 31:
+/***/ 32:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(9)
+	__vue_styles__.push(__webpack_require__(50)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(10)
+	__vue_exports__ = __webpack_require__(51)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(11)
+	var __vue_template__ = __webpack_require__(52)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\channelimg\\pcchannel_imglist_item.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcnenuli_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-2ce68139"
+	__vue_options__._scopeId = "data-v-53afb896"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,12 +90,8 @@
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	var BASE_URL = {
@@ -222,9 +219,8 @@
 
 
 /***/ },
-/* 7 */,
-/* 8 */,
-/* 9 */
+
+/***/ 50:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -237,33 +233,18 @@
 	    "backgroundColor": "#ffffff",
 	    "borderRadius": 5
 	  },
-	  "img": {
-	    "width": 350,
-	    "height": 400,
-	    "borderRadius": 5
-	  },
 	  "txt": {
-	    "fontSize": 30,
-	    "width": 350
+	    "fontSize": 30
 	  }
 	}
 
 /***/ },
-/* 10 */
+
+/***/ 51:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -311,14 +292,13 @@
 	};
 
 /***/ },
-/* 11 */
+
+/***/ 52:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
-	      flexDirection: "row",
-	      flex: "1",
 	      margin: "5px"
 	    }
 	  }, [_c('div', {
@@ -328,38 +308,12 @@
 	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src
-	    }
-	  }), _c('text', {
+	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])]), _c('div', {
-	    staticStyle: {
-	      width: "5px"
-	    }
-	  }), _c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
-	      }
-	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src2
-	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))]), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }
-/******/ ]);
+
+/******/ });
