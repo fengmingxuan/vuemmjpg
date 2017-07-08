@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(150)
+	__vue_styles__.push(__webpack_require__(166)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(151)
+	__vue_exports__ = __webpack_require__(167)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(156)
+	var __vue_template__ = __webpack_require__(172)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/template/wxc_tabbar.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\template\\wxc_tabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-471beb0c"
+	__vue_options__._scopeId = "data-v-0fbc5a5a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ }),
+/***/ },
 
-/***/ 150:
-/***/ (function(module, exports) {
+/***/ 166:
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "wrapper": {
@@ -127,10 +127,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
-/***/ 151:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 167:
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -206,7 +206,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(152)
+	    tabitem: __webpack_require__(168)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -234,23 +234,23 @@
 	  }
 	};
 
-/***/ }),
+/***/ },
 
-/***/ 152:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 168:
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(153)
+	__vue_styles__.push(__webpack_require__(169)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(154)
+	__vue_exports__ = __webpack_require__(170)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(155)
+	var __vue_template__ = __webpack_require__(171)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -262,10 +262,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/template/wxc_tabitem.vue"
+	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\template\\wxc_tabitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6335f8bc"
+	__vue_options__._scopeId = "data-v-cd94b648"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -279,10 +279,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ }),
+/***/ },
 
-/***/ 153:
-/***/ (function(module, exports) {
+/***/ 169:
+/***/ function(module, exports) {
 
 	module.exports = {
 	  "container": {
@@ -311,10 +311,10 @@
 	  }
 	}
 
-/***/ }),
+/***/ },
 
-/***/ 154:
-/***/ (function(module, exports) {
+/***/ 170:
+/***/ function(module, exports) {
 
 	'use strict';
 
@@ -382,10 +382,10 @@
 	  }
 	};
 
-/***/ }),
+/***/ },
 
-/***/ 155:
-/***/ (function(module, exports) {
+/***/ 171:
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -415,10 +415,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }),
+/***/ },
 
-/***/ 156:
-/***/ (function(module, exports) {
+/***/ 172:
+/***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -463,6 +463,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ })
+/***/ }
 
 /******/ });

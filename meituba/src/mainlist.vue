@@ -25,6 +25,9 @@
             }
         },
         created () {
+            this.rows.push('channelimg/pctaglist')
+            this.rows.push('channelimg/pcrecommend')
+            this.rows.push('channelimg/pchotclick')
             this.rows.push('channelimg/pcchannel_imglist')
             this.rows.push('webnews')
             this.rows.push('template/navbar_v')
