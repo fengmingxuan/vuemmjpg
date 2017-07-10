@@ -5,11 +5,14 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <!--<cell>-->
-                <!--<mtabtags :taghref="taghref"></mtabtags>-->
-            <!--</cell>-->
+            <cell>
+                <pcflink :taghref="taghref"></pcflink>
+            </cell>
             <cell v-for="tpicNitem in tpicNArray">
                 <pcmainnenu_imglist_item :tpicNitem="tpicNitem"></pcmainnenu_imglist_item>
+            </cell>
+            <cell>
+                <pctaglist :taghref="taghref"></pctaglist>
             </cell>
 
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
@@ -22,6 +25,8 @@
 <script>
     import  navbar_v from '../template/navbar_v.vue'
     import  pcmainnenu_imglist_item from '../mainnenu/pcmainnenu_imglist_item.vue'
+    import  pcflink from '../nenuli/pcflink.vue'
+    import  pctaglist from '../channelimg/pctaglist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -31,6 +36,8 @@
         components: {
             pcmainnenu_imglist_item,
             navbar_v,
+            pcflink,
+            pctaglist
 
         },
         props: ['taghref'],

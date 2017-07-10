@@ -5,13 +5,15 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <!--<cell>-->
-                <!--<mtabtags :taghref="taghref"></mtabtags>-->
-            <!--</cell>-->
+            <cell>
+                <pchotclick :taghref="taghref"></pchotclick>
+            </cell>
             <cell v-for="stockitem in stockArray">
                 <pcchannel_imglist_item :stockitem="stockitem"></pcchannel_imglist_item>
             </cell>
-
+            <cell>
+                <pcrecommend :taghref="taghref"></pcrecommend>
+            </cell>
             <loading class="loading" @loading="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
             </loading>
@@ -22,6 +24,8 @@
 <script>
     import  navbar_v from '../template/navbar_v.vue'
     import  pcchannel_imglist_item from '../channelimg/pcchannel_imglist_item.vue'
+    import  pcrecommend from '../channelimg/pcrecommend.vue'
+    import  pchotclick from '../channelimg/pchotclick.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -31,6 +35,8 @@
         components: {
             pcchannel_imglist_item,
             navbar_v,
+            pchotclick,
+            pcrecommend
 
         },
         props: ['taghref'],

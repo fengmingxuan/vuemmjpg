@@ -89,6 +89,9 @@
                             };
                             if(i==0){
                                 tabitem.visibility = 'visible';
+                                tabitem.src= meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+                            }else{
+                                tabitem.src= meituba.getPathUrl('channelimg/pcchannel_imglist.js');
                             }
                             self.tabItems.push(tabitem);
                         }
