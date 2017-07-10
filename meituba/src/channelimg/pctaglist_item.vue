@@ -65,7 +65,8 @@
         flex-direction:column;
         flex: 1;
         padding: 5;
-        border-radius: 5;
+        border-radius: 10;
+        height: 50px;
         align-content: center;
         align-items: center;
     }
@@ -73,5 +74,8 @@
     .txt{
         font-size:20;
         color:#fff ;
+        align-content: center;
+        align-items: center;
+        margin-top: 10px;
     }
 </style>

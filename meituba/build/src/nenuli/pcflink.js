@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(40)
+	__vue_styles__.push(__webpack_require__(58)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(41)
+	__vue_exports__ = __webpack_require__(59)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(46)
+	var __vue_template__ = __webpack_require__(64)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcflink.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcflink.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-565ce19f"
+	__vue_options__._scopeId = "data-v-03506e3f"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
 /***/ 3:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
@@ -117,10 +117,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\template\\navbar_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/template/navbar_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-12fe5886"
+	__vue_options__._scopeId = "data-v-7ba190a6"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -134,10 +134,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
 /***/ 4:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "nav_bar": {
@@ -241,10 +241,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
 /***/ 5:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -338,10 +338,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
 /***/ 6:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
@@ -355,9 +355,14 @@
 	var MEITUBA = {
 	    pc_meituba:"http://www.meituba.com/",
 	    pc_yijing:"http://www.meituba.com/yijing/",
-	    pc_meinv:"http://www.meituba.com/meinv/"
+	    pc_meinv:"http://www.meituba.com/meinv/",
+	    pc_other:"http://www.meituba.com/tstx/ylbg/",
 
-
+	};
+	exports.getpc_other = function () {
+	    var url = MEITUBA.pc_other;
+	    console.log('pc_other==' + url);
+	    return url;
 	};
 	exports.getpc_meinv = function () {
 	    var url = MEITUBA.pc_meinv;
@@ -467,10 +472,10 @@
 	}
 
 
-/***/ },
+/***/ }),
 
 /***/ 7:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
@@ -507,10 +512,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
-/***/ 40:
-/***/ function(module, exports) {
+/***/ 58:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "refresh-view": {
@@ -535,10 +540,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 41:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 59:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -550,7 +555,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcflink_item = __webpack_require__(42);
+	var _pcflink_item = __webpack_require__(60);
 
 	var _pcflink_item2 = _interopRequireDefault(_pcflink_item);
 
@@ -679,23 +684,23 @@
 
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 42:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 60:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(43)
+	__vue_styles__.push(__webpack_require__(61)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(44)
+	__vue_exports__ = __webpack_require__(62)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(45)
+	var __vue_template__ = __webpack_require__(63)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -707,10 +712,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\nenuli\\pcflink_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcflink_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-30b4bae3"
+	__vue_options__._scopeId = "data-v-c9bfdb7a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -724,10 +729,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
-/***/ 43:
-/***/ function(module, exports) {
+/***/ 61:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
@@ -752,10 +757,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 44:
-/***/ function(module, exports) {
+/***/ 62:
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -786,10 +791,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 45:
-/***/ function(module, exports) {
+/***/ 63:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -807,10 +812,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
-/***/ 46:
-/***/ function(module, exports) {
+/***/ 64:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -855,6 +860,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

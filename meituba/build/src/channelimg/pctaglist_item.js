@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(26)
+	__vue_styles__.push(__webpack_require__(28)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(27)
+	__vue_exports__ = __webpack_require__(29)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(28)
+	var __vue_template__ = __webpack_require__(30)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\github\\vuemmjpg\\meituba\\src\\channelimg\\pctaglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pctaglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0dc3d706"
+	__vue_options__._scopeId = "data-v-97a63034"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
 /***/ 6:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
@@ -106,9 +106,14 @@
 	var MEITUBA = {
 	    pc_meituba:"http://www.meituba.com/",
 	    pc_yijing:"http://www.meituba.com/yijing/",
-	    pc_meinv:"http://www.meituba.com/meinv/"
+	    pc_meinv:"http://www.meituba.com/meinv/",
+	    pc_other:"http://www.meituba.com/tstx/ylbg/",
 
-
+	};
+	exports.getpc_other = function () {
+	    var url = MEITUBA.pc_other;
+	    console.log('pc_other==' + url);
+	    return url;
 	};
 	exports.getpc_meinv = function () {
 	    var url = MEITUBA.pc_meinv;
@@ -218,10 +223,10 @@
 	}
 
 
-/***/ },
+/***/ }),
 
-/***/ 26:
-/***/ function(module, exports) {
+/***/ 28:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
@@ -230,20 +235,24 @@
 	    "flexDirection": "column",
 	    "flex": 1,
 	    "padding": 5,
-	    "borderRadius": 5,
+	    "borderRadius": 10,
+	    "height": 50,
 	    "alignContent": "center",
 	    "alignItems": "center"
 	  },
 	  "txt": {
 	    "fontSize": 20,
-	    "color": "#ffffff"
+	    "color": "#ffffff",
+	    "alignContent": "center",
+	    "alignItems": "center",
+	    "marginTop": 10
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 27:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 29:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -305,10 +314,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 28:
-/***/ function(module, exports) {
+/***/ 30:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -381,6 +390,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

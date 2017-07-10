@@ -38,7 +38,6 @@
             this.rows.push('channelimg/pcchannel_imglist')
             this.rows.push('webnews')
             this.rows.push('template/navbar_v')
-            this.rows.push('text')
         },
         methods: {
             openitem:function (event) {

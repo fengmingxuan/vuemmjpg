@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(17)
+	__vue_styles__.push(__webpack_require__(39)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(18)
+	__vue_exports__ = __webpack_require__(40)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(23)
+	var __vue_template__ = __webpack_require__(41)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pchotclick.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelother/pcothernew.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0ae30f07"
+	__vue_options__._scopeId = "data-v-7681d0e2"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -509,16 +509,216 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(9)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(10)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(11)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pcchannel_imglist_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-5d20b219"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
+	  },
+	  "img": {
+	    "width": 350,
+	    "height": 400,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "width": 350
+	  }
+	}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meituba = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e, alt) {
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "content/pccontentlist";
+	            //                if(e.indexOf('.shtml')!=-1){
+	            //                    name = "content/pccontentlist";
+	            //                }else{
+	            //                    name = "search/pcimglist_notitlebar_autorefresh";
+	            //                }
+	            //                var params={
+	            //                    url: meituba.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt
+	            //                    }
+	            //                };
+	            //
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                })
+	        }
+	    }
+	};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other))])]), _c('div', {
+	    staticStyle: {
+	      width: "5px"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))]), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
 /* 12 */,
 /* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
-/* 17 */
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -545,7 +745,7 @@
 	}
 
 /***/ }),
-/* 18 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -558,9 +758,9 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pchotclick_item = __webpack_require__(19);
+	var _pcchannel_imglist_item = __webpack_require__(8);
 
-	var _pchotclick_item2 = _interopRequireDefault(_pchotclick_item);
+	var _pcchannel_imglist_item2 = _interopRequireDefault(_pcchannel_imglist_item);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -593,7 +793,7 @@
 	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
-	        pchotclick_item: _pchotclick_item2.default,
+	        pcchannel_imglist_item: _pcchannel_imglist_item2.default,
 	        navbar_v: _navbar_v2.default
 
 	    },
@@ -601,7 +801,7 @@
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: meituba.getpc_yijing(),
+	            taghref: meituba.getpc_other(),
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
@@ -669,31 +869,41 @@
 	            var self = this;
 	            self.isFirst = 0;
 	            if (self.taghref == undefined) {
-	                self.taghref = meituba.getpc_yijing();
+	                self.taghref = meituba.getpc_other();
 	            }
 	            var url = self.taghref;
-	            if (self.pageNo == 1) {
-	                url = self.taghref;
-	            } else {
-	                //index_2.shtml
-	                url = self.taghref + "list28" + self.pageNo + ".html";
-	            }
+	            //                if(self.pageNo==1){
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    //index_2.shtml
+	            //                    url = self.taghref+"list28"+self.pageNo+".html";
+	            //                }
 	            console.log('url===' + url);
 	            var params = {
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMeitubaJsoupModule.pchotclick(url, function (e) {
+	            weexMeitubaJsoupModule.pcothernew(url, function (e) {
 	                var json = JSON.parse(e);
 	                if (self.pageNo == 1) {
 	                    self.stockArray.splice(0, self.stockArray.length);
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
+	                        for (var i = 0; i < json.list.length; i += 2) {
 	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
+	                            var tag2 = json.list[i + 1];
+	                            var item = {
+	                                href: tag.href,
+	                                alt: tag.alt,
+	                                src: tag.src,
+	                                other: tag.other,
+	                                href2: tag2.href,
+	                                alt2: tag2.alt,
+	                                src2: tag2.src,
+	                                other2: tag2.other
+	                            };
+	                            self.stockArray.push(item);
 	                        }
 	                    }
 	                }
@@ -705,148 +915,15 @@
 	};
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(20)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(21)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(22)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pchotclick_item.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-490aa30a"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column",
-	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
-	  },
-	  "txt": {
-	    "fontSize": 30
-	  }
-	}
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var weexEventModule = weex.requireModule('weexEventModule');
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meituba = __webpack_require__(6);
-	module.exports = {
-	    created: function created() {},
-
-	    props: {
-	        stockitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
-	            //                if(e.indexOf('.shtml')!=-1){
-	            //                    name = "content/pccontentlist";
-	            //                }else{
-	            //                    name = "search/pcimglist_notitlebar_autorefresh";
-	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
-	        }
-	    }
-	};
-
-/***/ }),
-/* 22 */
+/* 41 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
-	      margin: "5px"
+	      height: "1334"
 	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('list', {
+	  }, [_c('list', {
 	    staticClass: ["list"],
 	    attrs: {
 	      "loadmoreoffset": "10"
@@ -868,7 +945,7 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pchotclick_item', {
+	    }, [_c('pcchannel_imglist_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }

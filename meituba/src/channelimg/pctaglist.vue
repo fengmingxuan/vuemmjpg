@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--<navbar_v :title="title"></navbar_v>-->
-        <list class="list"  loadmoreoffset="10">
+        <list class="list"  loadmoreoffset="10" style="background-color: #f5f5f5">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
