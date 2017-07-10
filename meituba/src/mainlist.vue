@@ -25,6 +25,9 @@
             }
         },
         created () {
+            this.rows.push('channelother/pcotherclick')
+            this.rows.push('channelother/pcothernew')
+            this.rows.push('channelother/pcchannel_other_imglist')
             this.rows.push('mainnenu/pcmainnenu_imglist')
             this.rows.push('nenuli/pcflink')
             this.rows.push('nenuli/pcnenuli_tabbar')
