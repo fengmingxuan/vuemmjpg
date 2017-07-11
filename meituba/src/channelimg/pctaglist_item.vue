@@ -60,22 +60,19 @@
 
 <style>
     .news-content{
-        margin-left:1;
-        margin-right:1;
+        margin:10;
         flex-direction:column;
-        flex: 1;
-        padding: 5;
         border-radius: 10;
         height: 50px;
         align-content: center;
         align-items: center;
+        padding: 10;
     }
 
     .txt{
-        font-size:20;
+        font-size:25;
         color:#fff ;
         align-content: center;
         align-items: center;
-        margin-top: 10px;
     }
 </style>

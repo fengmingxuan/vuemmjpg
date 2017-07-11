@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('channelother/pcchannel_other_main')
             this.rows.push('channelother/pcotherclick')
             this.rows.push('channelother/pcothernew')
             this.rows.push('channelother/pcchannel_other_imglist')
