@@ -25,6 +25,14 @@
             }
         },
         created () {
+            this.rows.push('article/pcarticle_foot')
+            this.rows.push('article/pcarticle_channel_pager')
+            this.rows.push('article/pcarticle_channel_tabbar')
+            this.rows.push('article/pcarticle_channelupdate')
+            this.rows.push('article/pcarticle_showtag')
+            this.rows.push('article/pcarticlenew_slider')
+            this.rows.push('article/pcarticlenew')
+            this.rows.push('article/pcarticlelist')
             this.rows.push('channelother/pcchannel_other_main')
             this.rows.push('channelother/pcotherclick')
             this.rows.push('channelother/pcothernew')

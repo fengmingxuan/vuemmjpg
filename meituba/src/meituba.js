@@ -13,7 +13,13 @@ var MEITUBA = {
     pc_meinv:"http://www.meituba.com/meinv/",
     pc_other:"http://www.meituba.com/tstx/ylbg/",
     pc_other_main:"http://www.meituba.com/tstx/",
+    pc_article:"http://www.meituba.com/yijing/35141.html",
 
+};
+exports.getpc_article = function () {
+    var url = MEITUBA.pc_article;
+    console.log('pc_article==' + url);
+    return url;
 };
 exports.getpc_other_main = function () {
     var url = MEITUBA.pc_other_main;
