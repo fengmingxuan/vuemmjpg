@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(101)
+	__vue_styles__.push(__webpack_require__(290)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(102)
+	__vue_exports__ = __webpack_require__(291)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(103)
+	var __vue_template__ = __webpack_require__(292)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelother/pcchannel_other_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/zhuanti/pctag_imglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-a3843f0a"
+	__vue_options__._scopeId = "data-v-7ad34455"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -255,7 +255,7 @@
 
 /***/ }),
 
-/***/ 101:
+/***/ 290:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -269,8 +269,8 @@
 	    "borderRadius": 5
 	  },
 	  "img": {
+	    "height": 600,
 	    "flex": 1,
-	    "height": 400,
 	    "borderRadius": 5
 	  },
 	  "txt": {
@@ -281,11 +281,12 @@
 
 /***/ }),
 
-/***/ 102:
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	//
 	//
 	//
 	//
@@ -311,13 +312,34 @@
 
 	    methods: {
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
+	            //                weexEventModule.startWebViewActivity(e);
+	            var name = "article/pcarticlelist";
 	            //                if(e.indexOf('.shtml')!=-1){
 	            //                    name = "content/pccontentlist";
 	            //                }else{
 	            //                    name = "search/pcimglist_notitlebar_autorefresh";
 	            //                }
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	        },
+	        todetail2: function todetail2(e, alt) {
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "article/pcarticlelist";
+	            ////                if(e.indexOf('.shtml')!=-1){
+	            ////                    name = "content/pccontentlist";
+	            ////                }else{
+	            ////                    name = "search/pcimglist_notitlebar_autorefresh";
+	            ////                }
 	            //                var params={
 	            //                    url: meituba.getDefaultUrl(name),
 	            //                    animated: "true",
@@ -336,7 +358,7 @@
 
 /***/ }),
 
-/***/ 103:
+/***/ 292:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -358,9 +380,16 @@
 	    }
 	  }), _c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	    staticClass: ["txt"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail2(_vm.stockitem.href2, _vm.stockitem.alt2)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

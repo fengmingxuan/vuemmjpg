@@ -32,25 +32,25 @@
 
         methods:{
             todetail:function (e,alt) {
-                weexEventModule.startWebViewActivity(e);
-//                var name = "content/pccontentlist";
+//                weexEventModule.startWebViewActivity(e);
+                var name = "article/pcarticlelist";
 //                if(e.indexOf('.shtml')!=-1){
 //                    name = "content/pccontentlist";
 //                }else{
 //                    name = "search/pcimglist_notitlebar_autorefresh";
 //                }
-//                var params={
-//                    url: meituba.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                })
+                var params={
+                    url: meituba.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }

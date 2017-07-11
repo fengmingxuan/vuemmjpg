@@ -45,10 +45,10 @@
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(210)
-	var __weex_template__ = __webpack_require__(214)
-	var __weex_style__ = __webpack_require__(215)
-	var __weex_script__ = __webpack_require__(216)
+	__webpack_require__(275)
+	var __weex_template__ = __webpack_require__(279)
+	var __weex_style__ = __webpack_require__(280)
+	var __weex_script__ = __webpack_require__(281)
 
 	__weex_define__('@weex-component/6b47ed03eadce21bedd577ab14a4301b', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -67,12 +67,12 @@
 
 /***/ }),
 
-/***/ 210:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(211)
-	var __weex_style__ = __webpack_require__(212)
-	var __weex_script__ = __webpack_require__(213)
+	var __weex_template__ = __webpack_require__(276)
+	var __weex_style__ = __webpack_require__(277)
+	var __weex_script__ = __webpack_require__(278)
 
 	__weex_define__('@weex-component/wxc-scroller-tabitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -90,7 +90,7 @@
 
 /***/ }),
 
-/***/ 211:
+/***/ 276:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -140,7 +140,7 @@
 
 /***/ }),
 
-/***/ 212:
+/***/ 277:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -172,7 +172,7 @@
 
 /***/ }),
 
-/***/ 213:
+/***/ 278:
 /***/ (function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -200,7 +200,7 @@
 
 /***/ }),
 
-/***/ 214:
+/***/ 279:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -257,7 +257,7 @@
 
 /***/ }),
 
-/***/ 215:
+/***/ 280:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -304,12 +304,12 @@
 
 /***/ }),
 
-/***/ 216:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(210);
+	__webpack_require__(275);
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [],

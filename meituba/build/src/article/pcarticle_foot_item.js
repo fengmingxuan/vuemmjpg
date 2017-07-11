@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(101)
+	__vue_styles__.push(__webpack_require__(34)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(102)
+	__vue_exports__ = __webpack_require__(35)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(103)
+	var __vue_template__ = __webpack_require__(36)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelother/pcchannel_other_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/article/pcarticle_foot_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-a3843f0a"
+	__vue_options__._scopeId = "data-v-48148eb9"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -255,38 +255,37 @@
 
 /***/ }),
 
-/***/ 101:
+/***/ 34:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
 	    "marginLeft": 1,
 	    "marginRight": 1,
-	    "flexDirection": "column",
+	    "flexDirection": "row",
 	    "flex": 1,
 	    "padding": 5,
 	    "backgroundColor": "#ffffff",
 	    "borderRadius": 5
 	  },
-	  "img": {
-	    "flex": 1,
-	    "height": 400,
-	    "borderRadius": 5
-	  },
 	  "txt": {
 	    "fontSize": 30,
-	    "flex": 1
+	    "margin": 5,
+	    "color": "#007aff"
+	  },
+	  "txt2": {
+	    "fontSize": 30,
+	    "margin": 5
 	  }
 	}
 
 /***/ }),
 
-/***/ 102:
+/***/ 35:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
 	//
 	//
 	//
@@ -336,7 +335,7 @@
 
 /***/ }),
 
-/***/ 103:
+/***/ 36:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -345,22 +344,22 @@
 	      margin: "5px"
 	    }
 	  }, [_c('div', {
-	    staticClass: ["news-content"],
+	    staticClass: ["news-content"]
+	  }, [_c('text', {
+	    staticClass: ["txt"],
 	    on: {
 	      "click": function($event) {
 	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src
-	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
 	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	    staticClass: ["txt2"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

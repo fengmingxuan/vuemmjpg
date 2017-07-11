@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(101)
+	__vue_styles__.push(__webpack_require__(297)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(102)
+	__vue_exports__ = __webpack_require__(298)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(103)
+	var __vue_template__ = __webpack_require__(299)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelother/pcchannel_other_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/zhuanti/pczhuanti_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-a3843f0a"
+	__vue_options__._scopeId = "data-v-29f98ec8"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -255,37 +255,89 @@
 
 /***/ }),
 
-/***/ 101:
+/***/ 40:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(41)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(42)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(43)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelimg/pctaglist_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-97a63034"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 41:
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
+	    "margin": 10,
 	    "flexDirection": "column",
-	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
-	  },
-	  "img": {
-	    "flex": 1,
-	    "height": 400,
-	    "borderRadius": 5
+	    "borderRadius": 10,
+	    "height": 50,
+	    "alignContent": "center",
+	    "alignItems": "center",
+	    "padding": 10
 	  },
 	  "txt": {
-	    "fontSize": 30,
-	    "flex": 1
+	    "fontSize": 25,
+	    "color": "#ffffff",
+	    "alignContent": "center",
+	    "alignItems": "center"
 	  }
 	}
 
 /***/ }),
 
-/***/ 102:
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -336,31 +388,239 @@
 
 /***/ }),
 
-/***/ 103:
+/***/ 43:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
-	      margin: "5px"
+	      flex: "1",
+	      margin: "5px",
+	      flexDirection: "row"
 	    }
 	  }, [_c('div', {
 	    staticClass: ["news-content"],
+	    style: {
+	      backgroundColor: _vm.stockitem.backgroundColor
+	    },
 	    on: {
 	      "click": function($event) {
 	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt))])]), _c('div', {
+	    staticStyle: {
+	      width: "20"
 	    }
-	  }), _c('text', {
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    style: {
+	      backgroundColor: _vm.stockitem.backgroundColor2
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.al2t)
+	      }
+	    }
+	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt2))])]), _c('div', {
+	    staticStyle: {
+	      width: "20"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    style: {
+	      backgroundColor: _vm.stockitem.backgroundColor3
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href3, _vm.stockitem.alt3)
+	      }
+	    }
+	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	  }, [_vm._v(" " + _vm._s(_vm.stockitem.alt3))])]), _c('div', {
+	    staticStyle: {
+	      width: "20"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    style: {
+	      backgroundColor: _vm.stockitem.backgroundColor4
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href4, _vm.stockitem.alt4)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v("  " + _vm._s(_vm.stockitem.alt4))])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 297:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "row",
+	    "padding": 5,
+	    "backgroundColor": "#ffffff"
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "color": "#1592E5",
+	    "flex": 1
+	  }
+	}
+
+/***/ }),
+
+/***/ 298:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _pctaglist_item = __webpack_require__(40);
+
+	var _pctaglist_item2 = _interopRequireDefault(_pctaglist_item);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var weexEventModule = weex.requireModule('weexEventModule'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meituba = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+	    components: {
+	        pctaglist_item: _pctaglist_item2.default
+
+	    },
+	    props: {
+	        tpicNitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        totagitem: function totagitem(json) {
+	            var stockArray = [];
+	            if (json.list) {
+	                if (json.list && json.list.length > 0) {
+	                    for (var i = 0; i < json.list.length; i += 4) {
+	                        var tag = json.list[i];
+	                        var tag2 = json.list[i + 1];
+	                        if (tag2 == undefined) {
+	                            tag2 = {};
+	                        }
+	                        var tag3 = json.list[i + 2];
+	                        if (tag3 == undefined) {
+	                            tag3 = {};
+	                        }
+	                        var tag4 = json.list[i + 3];
+	                        if (tag4 == undefined) {
+	                            tag4 = {};
+	                        }
+	                        var item = {
+	                            href: tag.href,
+	                            alt: tag.alt,
+	                            id: i,
+	                            backgroundColor: '#f60',
+	                            href2: tag2.href,
+	                            alt2: tag2.alt,
+	                            id2: i + 1,
+	                            backgroundColor2: '#09f',
+	                            href3: tag3.href,
+	                            alt3: tag3.alt,
+	                            id3: i + 2,
+	                            backgroundColor3: '#7a7a7a',
+	                            href4: tag4.href,
+	                            alt4: tag4.alt,
+	                            id4: i + 3,
+	                            backgroundColor4: '#393'
+	                        };
+	                        stockArray.push(item);
+	                    }
+	                }
+	            }
+	            return stockArray;
+	        },
+	        todetail: function todetail(e, alt) {
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "content/pccontentlist";
+	            //                if(e.indexOf('.shtml')!=-1){
+	            //                    name = "content/pccontentlist";
+	            //                }else{
+	            //                    name = "search/pcimglist_notitlebar_autorefresh";
+	            //                }
+	            //                var params={
+	            //                    url: meituba.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt
+	            //                    }
+	            //                };
+	            //
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                })
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 299:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      margin: "5px",
+	      flexDirection: "column"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.tpicNitem.href, _vm.tpicNitem.title)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))])]), _c('div', {
+	    staticStyle: {
+	      backgroundColor: "#1592E5",
+	      height: "50px"
+	    }
+	  }), _vm._l((_vm.totagitem(_vm.tpicNitem)), function(stockitem) {
+	    return _c('div', [_c('pctaglist_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  })], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

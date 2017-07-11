@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: '192.168.1.15:8080',
-    HTTP: 'http://',//https:// http://
+    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 
 };
 
@@ -14,7 +14,25 @@ var MEITUBA = {
     pc_other:"http://www.meituba.com/tstx/ylbg/",
     pc_other_main:"http://www.meituba.com/tstx/",
     pc_article:"http://www.meituba.com/yijing/35141.html",
+    pc_other_article:"http://www.meituba.com/tstx/ylbg/62425.html",
+    pc_tag:"http://www.meituba.com/tag/",
+    pc_tag_img:"http://www.meituba.com/tag/DGC.html"
 
+};
+exports.getpc_tag_img = function () {
+    var url = MEITUBA.pc_tag_img;
+    console.log('pc_tag_img==' + url);
+    return url;
+};
+exports.getpc_tag = function () {
+    var url = MEITUBA.pc_tag;
+    console.log('pc_tag==' + url);
+    return url;
+};
+exports.getpc_other_article = function () {
+    var url = MEITUBA.pc_other_article;
+    console.log('pc_other_article==' + url);
+    return url;
 };
 exports.getpc_article = function () {
     var url = MEITUBA.pc_article;

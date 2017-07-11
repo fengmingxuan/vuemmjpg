@@ -42,19 +42,18 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(146)
+	__vue_exports__ = __webpack_require__(18)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(147)
+	var __vue_template__ = __webpack_require__(27)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -66,7 +65,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcnenuli_tabbar.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/article/pcarticle_channel_tabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	__vue_options__.style = __vue_options__.style || {}
@@ -85,8 +84,12 @@
 
 
 /***/ }),
-
-/***/ 6:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -249,8 +252,126 @@
 
 
 /***/ }),
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 19:
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var storage = weex.requireModule('storage');
+	var modal = weex.requireModule('modal');
+	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
+	var meituba = __webpack_require__(6);
+
+	module.exports = {
+	    data: function data() {
+	        return {
+	            tabItems: [],
+	            taghref: meituba.getpc_article(),
+	            pageNo: '0'
+	        };
+	    },
+	    components: {
+	        tabbar: __webpack_require__(19)
+	    },
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        self.refresh();
+	    },
+	    ready: function ready() {
+	        //          var vm = this;
+	        //          vm.$on('tabBarOnClick', function (e) {
+	        //              var detail = e.detail;
+	        //              nativeLog('$dispatch tabBarOnClick ' + detail.index);
+	        //
+	        //              var taghref = vm.tabItems[detail.index].taghref;
+	        //              storage.setItem('taghref',taghref,function(s){
+	        //                  console.log('set [taghref]:'+JSON.stringify(s));
+	        //              });
+	        //
+	        //
+	        //
+	        //          });
+	    },
+	    methods: {
+	        tabBarOnClick: function tabBarOnClick(e) {
+	            console.log('tabBarOnClick', e.index);
+	            var vm = this;
+	            var pageNo = vm.tabItems[e.index].pageNo;
+	            storage.setItem('pageNo', pageNo + '', function (s) {
+	                console.log('set [pageNo]:' + JSON.stringify(s));
+	            });
+	        },
+	        refresh: function refresh() {
+	            var self = this;
+	            var url = self.taghref;
+	            //                if(self.pageNo==1){
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    url = self.taghref+"?idx="+self.pageNo;
+	            //                }
+	            console.log('url===' + url);
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeitubaJsoupModule.pcarticleschannel(url, function (e) {
+	                var json = JSON.parse(e);
+	                //                    if(self.pageNo==1){
+	                self.tabItems.splice(0, self.tabItems.length);
+	                //                    }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            var tabitem = {
+	                                index: i,
+	                                title: tag.alt,
+	                                titleColor: '#000000',
+	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
+	                                src: meituba.getPathUrl('article/pcarticle_channelupdate.js'),
+	                                visibility: 'hidden',
+	                                taghref: tag.href,
+	                                pageNo: i + ''
+	                            };
+	                            if (i == 0) {
+	                                tabitem.visibility = 'visible';
+	                            } else {}
+	                            self.tabItems.push(tabitem);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+	    }
+	};
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -294,8 +415,7 @@
 
 
 /***/ }),
-
-/***/ 20:
+/* 20 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -332,8 +452,7 @@
 	}
 
 /***/ }),
-
-/***/ 21:
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -439,8 +558,7 @@
 	};
 
 /***/ }),
-
-/***/ 22:
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -484,8 +602,7 @@
 
 
 /***/ }),
-
-/***/ 23:
+/* 23 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -516,8 +633,7 @@
 	}
 
 /***/ }),
-
-/***/ 24:
+/* 24 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -587,8 +703,7 @@
 	};
 
 /***/ }),
-
-/***/ 25:
+/* 25 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -620,8 +735,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-
-/***/ 26:
+/* 26 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -668,119 +782,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-
-/***/ 146:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var stream = weex.requireModule('stream');
-	var storage = weex.requireModule('storage');
-	var modal = weex.requireModule('modal');
-	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
-	var meituba = __webpack_require__(6);
-
-	module.exports = {
-	    data: function data() {
-	        return {
-	            tabItems: [],
-	            taghref: meituba.getpc_yijing(),
-	            pageNo: 1
-	        };
-	    },
-	    components: {
-	        tabbar: __webpack_require__(19)
-	    },
-	    created: function created() {
-	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        self.refresh();
-	    },
-	    ready: function ready() {
-	        //          var vm = this;
-	        //          vm.$on('tabBarOnClick', function (e) {
-	        //              var detail = e.detail;
-	        //              nativeLog('$dispatch tabBarOnClick ' + detail.index);
-	        //
-	        //              var taghref = vm.tabItems[detail.index].taghref;
-	        //              storage.setItem('taghref',taghref,function(s){
-	        //                  console.log('set [taghref]:'+JSON.stringify(s));
-	        //              });
-	        //
-	        //
-	        //
-	        //          });
-	    },
-	    methods: {
-	        tabBarOnClick: function tabBarOnClick(e) {
-	            console.log('tabBarOnClick', e.index);
-	            var vm = this;
-	            var taghref = vm.tabItems[e.index].taghref;
-	            storage.setItem('taghref', taghref, function (s) {
-	                console.log('set [taghref]:' + JSON.stringify(s));
-	            });
-	        },
-	        refresh: function refresh() {
-	            var self = this;
-	            var url = self.taghref;
-	            //                if(self.pageNo==1){
-	            //                    url = self.taghref;
-	            //                }else{
-	            //                    url = self.taghref+"?idx="+self.pageNo;
-	            //                }
-	            console.log('url===' + url);
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            weexMeitubaJsoupModule.pcnenuli(params, function (e) {
-	                var json = JSON.parse(e);
-	                //                    if(self.pageNo==1){
-	                self.tabItems.splice(0, self.tabItems.length);
-	                //                    }
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tabitem = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-	                                src: meituba.getPathUrl('channelimg/pcchannel_imglist.js'),
-	                                visibility: 'hidden',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tabitem.visibility = 'visible';
-	                                tabitem.src = meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
-	                            } else {
-	                                tabitem.src = meituba.getPathUrl('channelimg/pcchannel_imglist.js');
-	                            }
-	                            self.tabItems.push(tabitem);
-	                        }
-	                    }
-	                }
-	            });
-	        }
-	    }
-	};
-
-/***/ }),
-
-/***/ 147:
+/* 27 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -800,5 +802,4 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-
-/******/ });
+/******/ ]);

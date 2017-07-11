@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(101)
+	__vue_styles__.push(__webpack_require__(48)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(102)
+	__vue_exports__ = __webpack_require__(49)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(103)
+	var __vue_template__ = __webpack_require__(50)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/channelother/pcchannel_other_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/article/pcarticlelist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-a3843f0a"
+	__vue_options__._scopeId = "data-v-25777960"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -255,7 +255,7 @@
 
 /***/ }),
 
-/***/ 101:
+/***/ 48:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -269,23 +269,23 @@
 	    "borderRadius": 5
 	  },
 	  "img": {
-	    "flex": 1,
-	    "height": 400,
+	    "height": 600,
 	    "borderRadius": 5
 	  },
 	  "txt": {
-	    "fontSize": 30,
-	    "flex": 1
+	    "fontSize": 30
 	  }
 	}
 
 /***/ }),
 
-/***/ 102:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	//
+	//
 	//
 	//
 	//
@@ -336,7 +336,7 @@
 
 /***/ }),
 
-/***/ 103:
+/***/ 50:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -351,14 +351,18 @@
 	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
-	  }, [_c('image', {
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('image', {
 	    staticClass: ["img"],
 	    attrs: {
 	      "src": _vm.stockitem.src
 	    }
 	  }), _c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	  }, [_vm._v(_vm._s(_vm.stockitem.pagenumbers))]), _c('text', {
 	    staticClass: ["txt"]
 	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
 	},staticRenderFns: []}

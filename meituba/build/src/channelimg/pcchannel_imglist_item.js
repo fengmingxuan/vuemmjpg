@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(9)
+	__vue_styles__.push(__webpack_require__(79)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(10)
+	__vue_exports__ = __webpack_require__(80)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(11)
+	var __vue_template__ = __webpack_require__(81)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,12 +90,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -111,7 +108,37 @@
 	    pc_yijing:"http://www.meituba.com/yijing/",
 	    pc_meinv:"http://www.meituba.com/meinv/",
 	    pc_other:"http://www.meituba.com/tstx/ylbg/",
+	    pc_other_main:"http://www.meituba.com/tstx/",
+	    pc_article:"http://www.meituba.com/yijing/35141.html",
+	    pc_other_article:"http://www.meituba.com/tstx/ylbg/62425.html",
+	    pc_tag:"http://www.meituba.com/tag/",
+	    pc_tag_img:"http://www.meituba.com/tag/DGC.html"
 
+	};
+	exports.getpc_tag_img = function () {
+	    var url = MEITUBA.pc_tag_img;
+	    console.log('pc_tag_img==' + url);
+	    return url;
+	};
+	exports.getpc_tag = function () {
+	    var url = MEITUBA.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
+	};
+	exports.getpc_other_article = function () {
+	    var url = MEITUBA.pc_other_article;
+	    console.log('pc_other_article==' + url);
+	    return url;
+	};
+	exports.getpc_article = function () {
+	    var url = MEITUBA.pc_article;
+	    console.log('pc_article==' + url);
+	    return url;
+	};
+	exports.getpc_other_main = function () {
+	    var url = MEITUBA.pc_other_main;
+	    console.log('pc_other_main==' + url);
+	    return url;
 	};
 	exports.getpc_other = function () {
 	    var url = MEITUBA.pc_other;
@@ -227,9 +254,8 @@
 
 
 /***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */
+
+/***/ 79:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -254,7 +280,8 @@
 	}
 
 /***/ }),
-/* 10 */
+
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -292,31 +319,32 @@
 
 	    methods: {
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
+	            //                weexEventModule.startWebViewActivity(e);
+	            var name = "article/pcarticlelist";
 	            //                if(e.indexOf('.shtml')!=-1){
 	            //                    name = "content/pccontentlist";
 	            //                }else{
 	            //                    name = "search/pcimglist_notitlebar_autorefresh";
 	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
 
 /***/ }),
-/* 11 */
+
+/***/ 81:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -367,4 +395,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

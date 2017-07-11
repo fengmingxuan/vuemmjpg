@@ -25,6 +25,10 @@
             }
         },
         created () {
+            this.rows.push('zhuanti/pctag_imglist')
+            this.rows.push('zhuanti/pczhuanti')
+            this.rows.push('article/pcarticlenewlike')
+            this.rows.push('articleother/pcother_articlelist')
             this.rows.push('article/pcarticle_foot')
             this.rows.push('article/pcarticle_channel_pager')
             this.rows.push('article/pcarticle_channel_tabbar')

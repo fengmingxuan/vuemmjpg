@@ -18,6 +18,9 @@
                 <pcarticle_foot :taghref="taghref"></pcarticle_foot>
             </cell>
             <cell>
+                <pcarticlenewlike :taghref="taghref"></pcarticlenewlike>
+            </cell>
+            <cell>
                 <pcarticle_channel_pager :taghref="taghref"></pcarticle_channel_pager>
             </cell>
             <loading class="loading" @loading="onloading" :display="showLoading">
@@ -34,6 +37,7 @@
     import  pcarticle_showtag from '../article/pcarticle_showtag.vue'
     import  pcarticle_foot from '../article/pcarticle_foot.vue'
     import  pcarticle_channel_pager from '../article/pcarticle_channel_pager.vue'
+    import  pcarticlenewlike from '../article/pcarticlenewlike.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -47,7 +51,8 @@
              pcarticlenew_slider,
             pcarticle_showtag,
             pcarticle_foot,
-            pcarticle_channel_pager
+            pcarticle_channel_pager,
+            pcarticlenewlike
 
         },
         props: ['taghref'],
@@ -65,15 +70,15 @@
         },
         created: function(){
             var self = this;
-//            var ctaghref = self.$getConfig().taghref;
-//            if(ctaghref!=undefined){
-//                self.taghref = ctaghref;
-//            }
-//            var ctitle = self.$getConfig().title;
-//            if(ctitle!=undefined){
-//                self.title = ctitle;
-//            }
-//            console.log('title=='+self.title+';taghref=='+self.taghref)
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
+            }
+            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
 //            storage.getItem('taghref',function(s){
