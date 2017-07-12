@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(287)
+	__vue_styles__.push(__webpack_require__(330)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(288)
+	__vue_exports__ = __webpack_require__(331)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(293)
+	var __vue_template__ = __webpack_require__(336)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -361,8 +361,26 @@
 	    pc_article:"http://www.meituba.com/yijing/35141.html",
 	    pc_other_article:"http://www.meituba.com/tstx/ylbg/62425.html",
 	    pc_tag:"http://www.meituba.com/tag/",
-	    pc_tag_img:"http://www.meituba.com/tag/DGC.html"
+	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
+	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
+	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
+	    pc_new:"http://www.meituba.com/new/"
 
+	};
+	exports.getpc_new = function () {
+	    var url = MEITUBA.pc_new;
+	    console.log('pc_new==' + url);
+	    return url;
+	};
+	exports.getpc_search_url = function () {
+	    var url = MEITUBA.pc_search_url;
+	    console.log('pc_search_url==' + url);
+	    return url;
+	};
+	exports.getpc_search = function () {
+	    var url = MEITUBA.pc_search;
+	    console.log('pc_search==' + url);
+	    return url;
 	};
 	exports.getpc_tag_img = function () {
 	    var url = MEITUBA.pc_tag_img;
@@ -1105,7 +1123,7 @@
 
 /***/ }),
 
-/***/ 287:
+/***/ 330:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1133,7 +1151,7 @@
 
 /***/ }),
 
-/***/ 288:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1146,7 +1164,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctag_imglist_item = __webpack_require__(289);
+	var _pctag_imglist_item = __webpack_require__(332);
 
 	var _pctag_imglist_item2 = _interopRequireDefault(_pctag_imglist_item);
 
@@ -1206,15 +1224,15 @@
 
 	    created: function created() {
 	        var self = this;
-	        //            var ctaghref = self.$getConfig().taghref;
-	        //            if(ctaghref!=undefined){
-	        //                self.taghref = ctaghref;
-	        //            }
-	        //            var ctitle = self.$getConfig().title;
-	        //            if(ctitle!=undefined){
-	        //                self.title = ctitle;
-	        //            }
-	        //            console.log('title=='+self.title+';taghref=='+self.taghref)
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
 	        //            storage.getItem('taghref',function(s){
@@ -1307,21 +1325,21 @@
 
 /***/ }),
 
-/***/ 289:
+/***/ 332:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(290)
+	__vue_styles__.push(__webpack_require__(333)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(291)
+	__vue_exports__ = __webpack_require__(334)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(292)
+	var __vue_template__ = __webpack_require__(335)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1352,7 +1370,7 @@
 
 /***/ }),
 
-/***/ 290:
+/***/ 333:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1378,7 +1396,7 @@
 
 /***/ }),
 
-/***/ 291:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1455,7 +1473,7 @@
 
 /***/ }),
 
-/***/ 292:
+/***/ 335:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1492,7 +1510,7 @@
 
 /***/ }),
 
-/***/ 293:
+/***/ 336:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

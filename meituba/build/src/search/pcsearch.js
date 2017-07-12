@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(169)
+	__vue_styles__.push(__webpack_require__(177)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(170)
+	__vue_exports__ = __webpack_require__(178)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(171)
+	var __vue_template__ = __webpack_require__(179)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcnenuli.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/search/pcsearch.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-79aee76c"
+	__vue_options__._scopeId = "data-v-f2081be8"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -562,176 +562,54 @@
 
 /***/ }),
 
-/***/ 133:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(134)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(135)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(136)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcnenuli_item.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-36af4d36"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 134:
+/***/ 177:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column",
+	  "wrapper": {
+	    "flexDirection": "row",
+	    "height": 100
+	  },
+	  "input": {
+	    "fontSize": 40,
 	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
+	    "marginTop": 10,
+	    "marginLeft": 10,
+	    "paddingTop": 10,
+	    "paddingBottom": 10,
+	    "paddingLeft": 20,
+	    "paddingRight": 20,
+	    "color": "#030303",
+	    "borderWidth": 2,
+	    "borderStyle": "solid",
+	    "borderColor": "#ca5e54"
 	  },
-	  "txt": {
-	    "fontSize": 30
-	  }
-	}
-
-/***/ }),
-
-/***/ 135:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var weexEventModule = weex.requireModule('weexEventModule');
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meituba = __webpack_require__(6);
-	module.exports = {
-	    created: function created() {},
-
-	    props: {
-	        stockitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
-	            //                if(e.indexOf('.shtml')!=-1){
-	            //                    name = "content/pccontentlist";
-	            //                }else{
-	            //                    name = "search/pcimglist_notitlebar_autorefresh";
-	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
-	        }
-	    }
-	};
-
-/***/ }),
-
-/***/ 136:
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      margin: "5px"
-	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
-	      }
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 169:
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "refresh-view": {
+	  "search": {
+	    "width": 120,
+	    "padding": 18,
+	    "fontSize": 40,
+	    "marginTop": 10,
+	    "marginRight": 10,
+	    "backgroundColor": "#ca5e54",
+	    "color": "#ffffff"
+	  },
+	  "row": {
 	    "height": 100,
-	    "width": 750,
-	    "alignItems": "center"
+	    "flexDirection": "row",
+	    "justifyContent": "flex-start",
+	    "paddingLeft": 20,
+	    "marginTop": 10
 	  },
-	  "indicator": {
-	    "color": "#888888",
-	    "fontSize": 42,
-	    "textAlign": "center"
-	  },
-	  "loading": {
-	    "justifyContent": "center"
-	  },
-	  "indicator_loading": {
-	    "color": "#888888",
-	    "fontSize": 42,
-	    "paddingTop": 20,
-	    "paddingBottom": 20,
-	    "textAlign": "center"
+	  "text": {
+	    "fontSize": 45,
+	    "color": "#666666",
+	    "flex": 1
 	  }
 	}
 
 /***/ }),
 
-/***/ 170:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -744,15 +622,9 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcnenuli_item = __webpack_require__(133);
-
-	var _pcnenuli_item2 = _interopRequireDefault(_pcnenuli_item);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
+	var modal = weex.requireModule('modal'); //
 	//
 	//
 	//
@@ -772,177 +644,160 @@
 	//
 	//
 
-	var stream = weex.requireModule('stream');
-	var modal = weex.requireModule('modal');
 	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	var meituba = __webpack_require__(6);
-	var storage = weex.requireModule('storage');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	exports.default = {
 	    components: {
-	        pcnenuli_item: _pcnenuli_item2.default,
 	        navbar_v: _navbar_v2.default
-
 	    },
-	    props: ['taghref'],
 	    data: function data() {
 	        return {
-	            stockArray: [],
-	            taghref: meituba.getpc_yijing(),
+	            key: "",
+	            taghref: meituba.getpc_search(),
 	            pageNo: 1,
-	            refreshing: false,
-	            showLoading: 'hide',
-	            title: "唯美意境",
-	            isFirst: 1
-
+	            hotkeys: [],
+	            title: "搜索"
 	        };
 	    },
 
 	    created: function created() {
 	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
-	        console.log('title==' + self.title + ';taghref==' + self.taghref);
-
 	        self.refresh();
 	    },
 	    methods: {
-	        autoRefresh: function autoRefresh(event) {
-	            var self = this;
-	            storage.getItem('taghref', function (s) {
-	                console.log('get taghref result:' + JSON.stringify(s));
-	                var staghref = s.data;
-	                if (staghref != undefined) {
-	                    self.taghref = staghref;
+	        oninput: function oninput(event) {
+	            console.log('oninput:', event.value);
+	            this.key = event.value;
+	        },
+	        onchange: function onchange(event) {
+	            console.log('onchange:', event.value);
+	            this.key = event.value;
+	        },
+	        onfocus: function onfocus(event) {
+	            console.log('onfocus:', event.value);
+	        },
+	        onblur: function onblur(event) {
+	            console.log('onblur:', event.value);
+	        },
+	        tosearch: function tosearch(event) {
+	            console.log('tosearch:', this.key);
+	            var name = "search/pcsearchlist";
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: meituba.getpc_search_url() + encodeURIComponent(this.key),
+	                    title: this.key
 	                }
-	                console.log('taghref==' + self.taghref);
-	                self.refresh();
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
 	            });
 	        },
-	        onloading: function onloading(event) {
-	            var _this = this;
-
-	            this.showLoading = 'show';
-	            //                 this.pageNo = this.pageNo+1;
-	            //                this.pageNo = this.pageNo+1;
-	            setTimeout(function () {
-	                _this.showLoading = 'hide';
-	            }, 2000);
-	            this.refresh();
-	        },
-	        fetch: function fetch(event) {
-	            //                this.pageNo = this.pageNo+1;
-	            this.refresh();
-	        },
-	        onpullingdown: function onpullingdown(event) {},
-	        onrefresh: function onrefresh(event) {
-	            var _this2 = this;
-
-	            this.refreshing = true;
-	            //                this.pageNo = 0;
-	            setTimeout(function () {
-	                _this2.refreshing = false;
-	            }, 2000);
-	            this.refresh();
-	        },
-
-	        refresh: function refresh() {
+	        refresh: function refresh(event) {
 	            var self = this;
-	            self.isFirst = 0;
-	            if (self.taghref == undefined) {
-	                self.taghref = meituba.getpc_yijing();
-	            }
 	            var url = self.taghref;
-	            //                if(self.pageNo==1){
-	            //                    url = self.taghref;
-	            //                }else{
-	            //                    //index_2.shtml
-	            //                    url = self.taghref+"list28"+self.pageNo+".html";
-	            //                }
-	            console.log('url===' + url);
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            weexMeitubaJsoupModule.pcnenuli(params, function (e) {
+	            weexMeitubaJsoupModule.pchotsearch(url, function (e) {
 	                var json = JSON.parse(e);
-	                //                    if(self.pageNo==1){
-	                self.stockArray.splice(0, self.stockArray.length);
-	                //                    }
+	                if (self.pageNo == 1) {
+	                    self.hotkeys.splice(0, self.hotkeys.length);
+	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
+	                        for (var i = 0; i < json.list.length; i += 2) {
 	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
+	                            var tag2 = json.list[i + 1];
+	                            var keyitem = {
+	                                href: tag.href,
+	                                alt: tag.alt,
+	                                href2: tag2.href,
+	                                alt2: tag2.alt
+	                            };
+	                            self.hotkeys.push(keyitem);
 	                        }
 	                    }
 	                }
 	            });
+	        },
+
+	        todetail: function todetail(url, e) {
+	            //                weexEventModule.startWebViewActivity(e);
+	            console.log('tosearch:', e);
+	            var name = "zhuanti/pctag_imglist";
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: url,
+	                    title: e
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
-
 	    }
-
 	};
 
 /***/ }),
 
-/***/ 171:
+/***/ 179:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      backgroundColor: "rgba(0, 0, 0, .25)"
-	    }
-	  }, [_c('navbar_v', {
+	  return _c('div', [_c('div', [_c('navbar_v', {
 	    attrs: {
 	      "title": _vm.title
 	    }
-	  }), _c('list', {
-	    staticClass: ["list"],
+	  })], 1), _c('div', {
+	    staticClass: ["wrapper"]
+	  }, [_c('input', {
+	    ref: "input",
+	    staticClass: ["input"],
 	    attrs: {
-	      "loadmoreoffset": "10"
-	    }
-	  }, [_c('refresh', {
-	    staticClass: ["refresh"],
-	    attrs: {
-	      "display": _vm.refreshing ? 'show' : 'hide'
+	      "type": "text"
 	    },
 	    on: {
-	      "refresh": _vm.onrefresh,
-	      "pullingdown": _vm.onpullingdown
+	      "input": _vm.oninput,
+	      "change": _vm.onchange,
+	      "focus": _vm.onfocus,
+	      "blur": _vm.onblur
 	    }
-	  }, [_c('text', {
-	    staticClass: ["indicator"]
-	  }, [_vm._v("下拉刷新...")])]), _vm._l((_vm.stockArray), function(stockitem) {
-	    return _c('cell', {
-	      appendAsTree: true,
-	      attrs: {
-	        "append": "tree"
-	      }
-	    }, [_c('pcnenuli_item', {
-	      attrs: {
-	        "stockitem": stockitem
-	      }
-	    })], 1)
-	  }), _c('loading', {
-	    staticClass: ["loading"],
-	    attrs: {
-	      "display": _vm.showLoading
-	    },
+	  }), _c('text', {
+	    staticClass: ["search"],
 	    on: {
-	      "loading": _vm.onloading
+	      "click": _vm.tosearch
 	    }
+	  }, [_vm._v("搜索")])]), _vm._m(0), _vm._l((_vm.hotkeys), function(hotitem) {
+	    return _c('div', {
+	      staticClass: ["row"]
+	    }, [_c('text', {
+	      staticClass: ["text"],
+	      on: {
+	        "click": function($event) {
+	          _vm.todetail(hotitem.href, hotitem.alt)
+	        }
+	      }
+	    }, [_vm._v(_vm._s(hotitem.alt))]), _c('text', {
+	      staticClass: ["text"],
+	      on: {
+	        "click": function($event) {
+	          _vm.todetail(hotitem.href2, hotitem.alt2)
+	        }
+	      }
+	    }, [_vm._v(_vm._s(hotitem.alt2))])])
+	  })], 2)
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: ["row"]
 	  }, [_c('text', {
-	    staticClass: ["indicator_loading"]
-	  }, [_vm._v("加载更多...")])])], 2)], 1)
-	},staticRenderFns: []}
+	    staticClass: ["text"]
+	  }, [_vm._v("热门搜索：")])])
+	}]}
 	module.exports.render._withStripped = true
 
 /***/ })

@@ -51,10 +51,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(146)
+	__vue_exports__ = __webpack_require__(172)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(147)
+	var __vue_template__ = __webpack_require__(173)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,8 +107,26 @@
 	    pc_article:"http://www.meituba.com/yijing/35141.html",
 	    pc_other_article:"http://www.meituba.com/tstx/ylbg/62425.html",
 	    pc_tag:"http://www.meituba.com/tag/",
-	    pc_tag_img:"http://www.meituba.com/tag/DGC.html"
+	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
+	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
+	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
+	    pc_new:"http://www.meituba.com/new/"
 
+	};
+	exports.getpc_new = function () {
+	    var url = MEITUBA.pc_new;
+	    console.log('pc_new==' + url);
+	    return url;
+	};
+	exports.getpc_search_url = function () {
+	    var url = MEITUBA.pc_search_url;
+	    console.log('pc_search_url==' + url);
+	    return url;
+	};
+	exports.getpc_search = function () {
+	    var url = MEITUBA.pc_search;
+	    console.log('pc_search==' + url);
+	    return url;
 	};
 	exports.getpc_tag_img = function () {
 	    var url = MEITUBA.pc_tag_img;
@@ -669,7 +687,7 @@
 
 /***/ }),
 
-/***/ 146:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -780,7 +798,7 @@
 
 /***/ }),
 
-/***/ 147:
+/***/ 173:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

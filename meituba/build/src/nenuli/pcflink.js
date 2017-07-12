@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(131)
+	__vue_styles__.push(__webpack_require__(161)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(132)
+	__vue_exports__ = __webpack_require__(162)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(137)
+	var __vue_template__ = __webpack_require__(167)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -361,8 +361,26 @@
 	    pc_article:"http://www.meituba.com/yijing/35141.html",
 	    pc_other_article:"http://www.meituba.com/tstx/ylbg/62425.html",
 	    pc_tag:"http://www.meituba.com/tag/",
-	    pc_tag_img:"http://www.meituba.com/tag/DGC.html"
+	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
+	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
+	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
+	    pc_new:"http://www.meituba.com/new/"
 
+	};
+	exports.getpc_new = function () {
+	    var url = MEITUBA.pc_new;
+	    console.log('pc_new==' + url);
+	    return url;
+	};
+	exports.getpc_search_url = function () {
+	    var url = MEITUBA.pc_search_url;
+	    console.log('pc_search_url==' + url);
+	    return url;
+	};
+	exports.getpc_search = function () {
+	    var url = MEITUBA.pc_search;
+	    console.log('pc_search==' + url);
+	    return url;
 	};
 	exports.getpc_tag_img = function () {
 	    var url = MEITUBA.pc_tag_img;
@@ -544,7 +562,7 @@
 
 /***/ }),
 
-/***/ 131:
+/***/ 161:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -572,7 +590,7 @@
 
 /***/ }),
 
-/***/ 132:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -585,7 +603,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcflink_item = __webpack_require__(133);
+	var _pcflink_item = __webpack_require__(163);
 
 	var _pcflink_item2 = _interopRequireDefault(_pcflink_item);
 
@@ -716,21 +734,21 @@
 
 /***/ }),
 
-/***/ 133:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(134)
+	__vue_styles__.push(__webpack_require__(164)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(135)
+	__vue_exports__ = __webpack_require__(165)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(136)
+	var __vue_template__ = __webpack_require__(166)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -761,7 +779,7 @@
 
 /***/ }),
 
-/***/ 134:
+/***/ 164:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -789,7 +807,7 @@
 
 /***/ }),
 
-/***/ 135:
+/***/ 165:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -823,7 +841,7 @@
 
 /***/ }),
 
-/***/ 136:
+/***/ 166:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -844,7 +862,7 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 167:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
