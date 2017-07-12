@@ -844,30 +844,42 @@
 
 	    created: function created() {
 	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
-	        console.log('title==' + self.title + ';taghref==' + self.taghref);
-
-	        self.refresh();
-	    },
-	    methods: {
-	        autoRefresh: function autoRefresh(event) {
-	            var self = this;
+	        //            var ctaghref = self.$getConfig().taghref;
+	        //            if(ctaghref!=undefined){
+	        //                self.taghref = ctaghref;
+	        //            }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
+	        //            console.log('title=='+self.title+';taghref=='+self.taghref)
+	        //
+	        //            self.refresh();
+	        setTimeout(function () {
 	            storage.getItem('taghref', function (s) {
 	                console.log('get taghref result:' + JSON.stringify(s));
 	                var staghref = s.data;
 	                if (staghref != undefined) {
 	                    self.taghref = staghref;
 	                }
-	                console.log('taghref==' + self.taghref);
+	                console.log('pre taghref==' + self.taghref);
 	                self.refresh();
 	            });
+	        }, 2000);
+
+	        console.log('pre created');
+	    },
+	    mounted: function mounted() {
+	        console.log('pre mounted');
+	    },
+	    methods: {
+	        autoRefresh2: function autoRefresh2() {
+	            console.log('pre autoRefresh==');
+	            var self = this;
+
+	            //                self.taghref = this._parent.taghref;
+	            //                console.log('pre _parent taghref=='+self.taghref);
+	            //                self.refresh();
 	        },
 	        onloading: function onloading(event) {
 	            var _this = this;

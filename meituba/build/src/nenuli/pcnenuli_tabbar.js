@@ -51,10 +51,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(172)
+	__vue_exports__ = __webpack_require__(181)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(173)
+	var __vue_template__ = __webpack_require__(182)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -687,7 +687,7 @@
 
 /***/ }),
 
-/***/ 172:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -713,11 +713,16 @@
 	            pageNo: 1
 	        };
 	    },
+	    //      props: ['taghref'],
 	    components: {
 	        tabbar: __webpack_require__(19)
 	    },
 	    created: function created() {
 	        var self = this;
+	        var cpageNo = self.$getConfig().pageNo;
+	        if (cpageNo != undefined) {
+	            self.pageNo = cpageNo;
+	        }
 	        var ctaghref = self.$getConfig().taghref;
 	        if (ctaghref != undefined) {
 	            self.taghref = ctaghref;
@@ -725,7 +730,7 @@
 	        self.refresh();
 	    },
 	    ready: function ready() {
-	        //          var vm = this;
+	        var vm = this;
 	        //          vm.$on('tabBarOnClick', function (e) {
 	        //              var detail = e.detail;
 	        //              nativeLog('$dispatch tabBarOnClick ' + detail.index);
@@ -734,10 +739,8 @@
 	        //              storage.setItem('taghref',taghref,function(s){
 	        //                  console.log('set [taghref]:'+JSON.stringify(s));
 	        //              });
-	        //
-	        //
-	        //
 	        //          });
+
 	    },
 	    methods: {
 	        tabBarOnClick: function tabBarOnClick(e) {
@@ -789,6 +792,10 @@
 	                            }
 	                            self.tabItems.push(tabitem);
 	                        }
+	                        var taghref = self.tabItems[0].taghref;
+	                        storage.setItem('taghref', taghref, function (s) {
+	                            console.log('set [taghref]:' + JSON.stringify(s));
+	                        });
 	                    }
 	                }
 	            });
@@ -798,7 +805,7 @@
 
 /***/ }),
 
-/***/ 173:
+/***/ 182:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

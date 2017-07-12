@@ -603,9 +603,9 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcnenuli_item = __webpack_require__(133);
+	var _pcmain_nenu_item = __webpack_require__(133);
 
-	var _pcnenuli_item2 = _interopRequireDefault(_pcnenuli_item);
+	var _pcmain_nenu_item2 = _interopRequireDefault(_pcmain_nenu_item);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -638,7 +638,7 @@
 	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
-	        pcnenuli_item: _pcnenuli_item2.default,
+	        pcmain_nenu_item: _pcmain_nenu_item2.default,
 	        navbar_v: _navbar_v2.default
 
 	    },
@@ -777,10 +777,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/nenuli/pcnenuli_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/main/pcmain_nenu_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-36af4d36"
+	__vue_options__._scopeId = "data-v-960ba73e"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -807,10 +807,13 @@
 	    "flex": 1,
 	    "padding": 5,
 	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
+	    "borderRadius": 5,
+	    "alignContent": "flex-start",
+	    "alignItems": "flex-start"
 	  },
 	  "txt": {
-	    "fontSize": 30
+	    "fontSize": 30,
+	    "padding": 20
 	  }
 	}
 
@@ -843,26 +846,28 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
-	            //                if(e.indexOf('.shtml')!=-1){
-	            //                    name = "content/pccontentlist";
-	            //                }else{
-	            //                    name = "search/pcimglist_notitlebar_autorefresh";
-	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	        todetail: function todetail(id, e, alt) {
+	            var name = "";
+	            if (id == 1) {
+	                name = "main/pcmain_imglist";
+	            } else {
+	                name = "nenuli/pcnenuli_tabbar";
+	            }
+	            //                weexEventModule.startWebViewActivity(e);
+
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt,
+	                    pageNo: id - 1
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
@@ -881,7 +886,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
 	  }, [_c('text', {
@@ -900,11 +905,7 @@
 	    staticStyle: {
 	      backgroundColor: "rgba(0, 0, 0, .25)"
 	    }
-	  }, [_c('navbar_v', {
-	    attrs: {
-	      "title": _vm.title
-	    }
-	  }), _c('list', {
+	  }, [_c('list', {
 	    staticClass: ["list"],
 	    attrs: {
 	      "loadmoreoffset": "10"
@@ -926,12 +927,12 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pcnenuli_item', {
+	    }, [_c('pcmain_nenu_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }
 	    })], 1)
-	  })], 2)], 1)
+	  })], 2)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

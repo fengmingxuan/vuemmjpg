@@ -27,7 +27,7 @@
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
     var meituba = require('../meituba');
-
+    var storage = weex.requireModule('storage');
     export default{
         components: {
             pcflink_item,
@@ -47,17 +47,36 @@
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
-            console.log('title=='+self.title+';taghref=='+self.taghref)
-            self.refresh();
-
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
+//            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            self.refresh();
+//            storage.getItem('taghref',function(s){
+//                console.log('get taghref result:'+JSON.stringify(s));
+//                var staghref = s.data;
+//                if(staghref!=undefined){
+//                    self.taghref = staghref;
+//                }
+//                console.log('taghref=='+self.taghref);
+//                self.refresh();
+//            });
+            setTimeout(() => {
+                storage.getItem('taghref',function(s){
+                console.log('get taghref result:'+JSON.stringify(s));
+                var staghref = s.data;
+                if(staghref!=undefined){
+                    self.taghref = staghref;
+                }
+                console.log('pre taghref=='+self.taghref);
+                self.refresh();
+            });
+        }, 2000)
         },
         methods:{
             onloading (event) {

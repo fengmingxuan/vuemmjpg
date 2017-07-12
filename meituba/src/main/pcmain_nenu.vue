@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title"></navbar_v>
+        <!--<navbar_v :title="title"></navbar_v>-->
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -9,7 +9,7 @@
                 <!--<mtabtags :taghref="taghref"></mtabtags>-->
             <!--</cell>-->
             <cell v-for="stockitem in stockArray">
-                <pcnenuli_item :stockitem="stockitem"></pcnenuli_item>
+                <pcmain_nenu_item :stockitem="stockitem"></pcmain_nenu_item>
             </cell>
 
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
@@ -21,7 +21,7 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcnenuli_item from '../nenuli/pcnenuli_item.vue'
+    import  pcmain_nenu_item from '../main/pcmain_nenu_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -29,7 +29,7 @@
     var storage = weex.requireModule('storage');
     export default{
         components: {
-            pcnenuli_item,
+            pcmain_nenu_item,
             navbar_v,
 
         },

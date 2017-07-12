@@ -49,6 +49,7 @@
                 showLoading: 'hide',
                 title:"唯美意境",
                 isFirst:1,
+
                  
             }
         },
@@ -72,8 +73,13 @@
                     self.taghref = staghref;
                 }
                 console.log('taghref=='+self.taghref);
+
                 self.refresh();
+
             });
+        },
+        mounted: function() {
+            var self = this;
         },
         methods:{
             autoRefresh(event){

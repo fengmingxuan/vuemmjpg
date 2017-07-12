@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(330)
+	__vue_styles__.push(__webpack_require__(339)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(331)
+	__vue_exports__ = __webpack_require__(340)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(336)
+	var __vue_template__ = __webpack_require__(345)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -916,17 +916,37 @@
 
 	    created: function created() {
 	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
-	        console.log('title==' + self.title + ';taghref==' + self.taghref);
-
-	        self.refresh();
+	        //            var ctaghref = self.$getConfig().taghref;
+	        //            if(ctaghref!=undefined){
+	        //                self.taghref = ctaghref;
+	        //            }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
+	        //            console.log('title=='+self.title+';taghref=='+self.taghref)
+	        //
+	        //            self.refresh();
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var staghref = s.data;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+self.taghref);
+	        //                self.refresh();
+	        //            });
+	        setTimeout(function () {
+	            storage.getItem('taghref', function (s) {
+	                console.log('get taghref result:' + JSON.stringify(s));
+	                var staghref = s.data;
+	                if (staghref != undefined) {
+	                    self.taghref = staghref;
+	                }
+	                console.log('pre taghref==' + self.taghref);
+	                self.refresh();
+	            });
+	        }, 2000);
 	    },
 	    methods: {
 	        autoRefresh: function autoRefresh(event) {
@@ -1123,7 +1143,7 @@
 
 /***/ }),
 
-/***/ 330:
+/***/ 339:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1151,7 +1171,7 @@
 
 /***/ }),
 
-/***/ 331:
+/***/ 340:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1164,7 +1184,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctag_imglist_item = __webpack_require__(332);
+	var _pctag_imglist_item = __webpack_require__(341);
 
 	var _pctag_imglist_item2 = _interopRequireDefault(_pctag_imglist_item);
 
@@ -1325,21 +1345,21 @@
 
 /***/ }),
 
-/***/ 332:
+/***/ 341:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(333)
+	__vue_styles__.push(__webpack_require__(342)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(334)
+	__vue_exports__ = __webpack_require__(343)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(335)
+	var __vue_template__ = __webpack_require__(344)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1370,7 +1390,7 @@
 
 /***/ }),
 
-/***/ 333:
+/***/ 342:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1396,7 +1416,7 @@
 
 /***/ }),
 
-/***/ 334:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1473,7 +1493,7 @@
 
 /***/ }),
 
-/***/ 335:
+/***/ 344:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1510,7 +1530,7 @@
 
 /***/ }),
 
-/***/ 336:
+/***/ 345:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

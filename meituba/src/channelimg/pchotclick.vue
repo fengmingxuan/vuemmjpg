@@ -43,26 +43,43 @@
                 showLoading: 'hide',
                 title:"唯美意境",
                 isFirst:1,
-                 
+
             }
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
-            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
+//            console.log('title=='+self.title+';taghref=='+self.taghref)
+//
+//            self.refresh();
+            setTimeout(() => {
+                storage.getItem('taghref',function(s){
+                console.log('get taghref result:'+JSON.stringify(s));
+                var staghref = s.data;
+                if(staghref!=undefined){
+                    self.taghref = staghref;
+                }
+                console.log('pre taghref=='+self.taghref);
+                self.refresh();
+            });
+        }, 2000)
 
-            self.refresh();
+            console.log('hot created')
 
         },
+        mounted: function() {
+            console.log('hot mounted')
+        },
         methods:{
-            autoRefresh(event){
+            autoRefresh2(){
+                console.log('hot autoRefresh==');
                 var self = this;
                 storage.getItem('taghref',function(s){
                     console.log('get taghref result:'+JSON.stringify(s));
@@ -70,9 +87,12 @@
                     if(staghref!=undefined){
                         self.taghref = staghref;
                     }
-                    console.log('taghref=='+self.taghref);
+                    console.log('hot taghref=='+self.taghref);
                     self.refresh();
                 });
+//                self.taghref = this._parent.taghref;
+//                console.log('hot _parent taghref=='+self.taghref);
+//                self.refresh();
             },
             onloading (event) {
                 this.showLoading = 'show'

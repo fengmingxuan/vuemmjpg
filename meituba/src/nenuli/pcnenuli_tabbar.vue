@@ -19,11 +19,16 @@
           pageNo: 1,
       }
     },
+//      props: ['taghref'],
     components: {
       tabbar: require('../template/wxc_tabbar.vue')
     },
     created: function() {
         var self = this;
+        var cpageNo = self.$getConfig().pageNo;
+        if(cpageNo!=undefined){
+            self.pageNo = cpageNo;
+        }
         var ctaghref = self.$getConfig().taghref;
         if(ctaghref!=undefined){
             self.taghref = ctaghref;
@@ -31,7 +36,7 @@
         self.refresh();
     },
       ready: function () {
-//          var vm = this;
+          var vm = this;
 //          vm.$on('tabBarOnClick', function (e) {
 //              var detail = e.detail;
 //              nativeLog('$dispatch tabBarOnClick ' + detail.index);
@@ -40,10 +45,9 @@
 //              storage.setItem('taghref',taghref,function(s){
 //                  console.log('set [taghref]:'+JSON.stringify(s));
 //              });
-//
-//
-//
 //          });
+
+
       },
     methods: {
       tabBarOnClick: function (e) {
@@ -95,6 +99,10 @@
                             }
                             self.tabItems.push(tabitem);
                         }
+                        var taghref = self.tabItems[0].taghref;
+                        storage.setItem('taghref',taghref,function(s){
+                            console.log('set [taghref]:'+JSON.stringify(s));
+                        });
                     }
                 }
 

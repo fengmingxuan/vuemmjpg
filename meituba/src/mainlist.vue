@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('menu/pcslideoutmenu')
             this.rows.push('main/pcmain_nenu')
             this.rows.push('main/pcmain_tags_pager')
             this.rows.push('main/pcmain_box')
