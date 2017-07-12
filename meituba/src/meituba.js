@@ -18,8 +18,14 @@ var MEITUBA = {
     pc_tag:"http://www.meituba.com/tag/",
     pc_tag_img:"http://www.meituba.com/tag/DGC.html",
     pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
-    pc_search_url:"http://www.meituba.com/plus/search.php?q="
+    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
+    pc_new:"http://www.meituba.com/new/"
 
+};
+exports.getpc_new = function () {
+    var url = MEITUBA.pc_new;
+    console.log('pc_new==' + url);
+    return url;
 };
 exports.getpc_search_url = function () {
     var url = MEITUBA.pc_search_url;

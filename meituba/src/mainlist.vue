@@ -25,6 +25,7 @@
             }
         },
         created () {
+            this.rows.push('new/pcnewlist')
             this.rows.push('search/pcslidersearch')
             this.rows.push('search/pcsearchlist')
             this.rows.push('search/pcsearch')
