@@ -25,6 +25,9 @@
             }
         },
         created () {
+            this.rows.push('search/pcslidersearch')
+            this.rows.push('search/pcsearchlist')
+            this.rows.push('search/pcsearch')
             this.rows.push('zhuanti/pctag_imglist')
             this.rows.push('zhuanti/pczhuanti')
             this.rows.push('article/pcarticlenewlike')

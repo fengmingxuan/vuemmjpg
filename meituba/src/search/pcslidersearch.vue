@@ -1,47 +1,43 @@
 <template>
-    <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title"></navbar_v>
-        <list class="list"  loadmoreoffset="10">
+    <div>
+        <!--<navbar_v :title="title"></navbar_v>-->
+        <list class="list"  loadmoreoffset="10" style="background-color: #f5f5f5">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-
+            <!--<cell>-->
+                <!--<mtabtags :taghref="taghref"></mtabtags>-->
+            <!--</cell>-->
             <cell v-for="stockitem in stockArray">
-                <pctag_imglist_item :stockitem="stockitem"></pctag_imglist_item>
+                <pctaglist_item :stockitem="stockitem"></pctaglist_item>
             </cell>
-            <cell>
-                <pctaglist :taghref="taghref"></pctaglist>
-            </cell>
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
+
+            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pctag_imglist_item from '../zhuanti/pctag_imglist_item.vue'
-    import  pctaglist from '../channelimg/pctaglist.vue'
+    import  pctaglist_item from '../channelimg/pctaglist_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
     var meituba = require('../meituba');
     var storage = weex.requireModule('storage');
-    var utils = require('../common/utils');
     export default{
         components: {
-            pctag_imglist_item,
+            pctaglist_item,
             navbar_v,
-            pctaglist,
-
 
         },
         props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meituba.getpc_tag_img(),
+                taghref:meituba.getpc_search(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -61,17 +57,11 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
-//
-            self.refresh();
-//            storage.getItem('taghref',function(s){
-//                console.log('get taghref result:'+JSON.stringify(s));
-//                var staghref = s.data;
-//                if(staghref!=undefined){
-//                    self.taghref = staghref;
-//                }
-//                console.log('taghref=='+self.taghref);
-//                self.refresh();
-//            });
+            setTimeout(() => {
+                self.refresh();
+        }, 4000)
+
+
         },
         methods:{
             autoRefresh(event){
@@ -113,30 +103,66 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meituba.getpc_tag_img();
+                    self.taghref = meituba.getpc_search();
                 }
                 var url = self.taghref;
-                if(self.pageNo==1){
-                    url = self.taghref;
-                }else{
-                    //index_2.shtml
-                    url = self.taghref.replaceAllStr(".html","")+"/"+self.pageNo+".html";
-                }
+//                if(self.pageNo==1){
+//                    url = self.taghref;
+//                }else{
+//                    //index_2.shtml
+//                    url = self.taghref+"list28"+self.pageNo+".html";
+//                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeitubaJsoupModule.pctaglist(params,function(e){
+                weexMeitubaJsoupModule.pcslidersearch(url,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
+                            for (var i = 0; i < json.list.length; i+=4) {
                                 var tag = json.list[i];
-                                self.stockArray.push(tag);
+                                var tag2 = json.list[i+1];
+                                if(tag2==undefined){
+                                    tag2 = {
+
+                                    };
+                                }
+                                var tag3 = json.list[i+2];
+                                if(tag3==undefined){
+                                    tag3 = {
+
+                                    };
+                                }
+                                var tag4 = json.list[i+3];
+                                if(tag4==undefined){
+                                    tag4 = {
+
+                                    };
+                                }
+                                var item={
+                                    href:tag.href,
+                                    alt:tag.alt,
+                                    id:i,
+                                    backgroundColor:'#f60',
+                                    href2:tag2.href,
+                                    alt2:tag2.alt,
+                                    id2:i+1,
+                                    backgroundColor2:'#09f',
+                                    href3:tag3.href,
+                                    alt3:tag3.alt,
+                                    id3:i+2,
+                                    backgroundColor3:'#7a7a7a',
+                                    href4:tag4.href,
+                                    alt4:tag4.alt,
+                                    id4:i+3,
+                                    backgroundColor4:'#393',
+                                };
+                                self.stockArray.push(item);
                             }
                         }
                     }

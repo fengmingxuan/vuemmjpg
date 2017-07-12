@@ -5,24 +5,39 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-
+            <cell>
+                <pcarticlenew_slider :taghref="taghref"></pcarticlenew_slider>
+            </cell>
             <cell v-for="stockitem in stockArray">
-                <pctag_imglist_item :stockitem="stockitem"></pctag_imglist_item>
+                <pcarticlelist_item :stockitem="stockitem"></pcarticlelist_item>
             </cell>
             <cell>
-                <pctaglist :taghref="taghref"></pctaglist>
+                <pcarticle_showtag :taghref="taghref"></pcarticle_showtag>
             </cell>
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
+            <cell>
+                <pcarticle_foot :taghref="taghref"></pcarticle_foot>
+            </cell>
+            <cell>
+                <pcarticlenewlike :taghref="taghref"></pcarticlenewlike>
+            </cell>
+            <cell>
+                <pcarticle_channel_pager :taghref="taghref"></pcarticle_channel_pager>
+            </cell>
+            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pctag_imglist_item from '../zhuanti/pctag_imglist_item.vue'
-    import  pctaglist from '../channelimg/pctaglist.vue'
+    import  pcarticlelist_item from '../article/pcarticlelist_item.vue'
+    import  pcarticlenew_slider from '../article/pcarticlenew_slider.vue'
+    import  pcarticle_showtag from '../article/pcarticle_showtag.vue'
+    import  pcarticle_foot from '../article/pcarticle_foot.vue'
+    import  pcarticle_channel_pager from '../article/pcarticle_channel_pager.vue'
+    import  pcarticlenewlike from '../article/pcarticlenewlike.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -31,17 +46,20 @@
     var utils = require('../common/utils');
     export default{
         components: {
-            pctag_imglist_item,
+            pcarticlelist_item,
             navbar_v,
-            pctaglist,
-
+             pcarticlenew_slider,
+            pcarticle_showtag,
+            pcarticle_foot,
+            pcarticle_channel_pager,
+            pcarticlenewlike
 
         },
         props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meituba.getpc_tag_img(),
+                taghref:meituba.getpc_other_article(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -52,15 +70,15 @@
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
-            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
+//            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
 //            storage.getItem('taghref',function(s){
@@ -113,21 +131,22 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meituba.getpc_tag_img();
+                    self.taghref = meituba.getpc_other_article();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
                     url = self.taghref;
                 }else{
                     //index_2.shtml
-                    url = self.taghref.replaceAllStr(".html","")+"/"+self.pageNo+".html";
+                    var href = self.taghref.replaceAllStr(".html","");
+                    url = href+"_"+self.pageNo+".html";
                 }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeitubaJsoupModule.pctaglist(params,function(e){
+                weexMeitubaJsoupModule.pcotherarticlelist(url,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);

@@ -1,28 +1,31 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title"></navbar_v>
+        <!--<navbar_v :title="title"></navbar_v>-->
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-
+            <!--<cell>-->
+                <!--<pchotclick :taghref="taghref"></pchotclick>-->
+            <!--</cell>-->
             <cell v-for="stockitem in stockArray">
-                <pctag_imglist_item :stockitem="stockitem"></pctag_imglist_item>
+                <pcarticlenew_item :stockitem="stockitem"></pcarticlenew_item>
             </cell>
-            <cell>
-                <pctaglist :taghref="taghref"></pctaglist>
-            </cell>
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
+            <!--<cell>-->
+                <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
+            <!--</cell>-->
+            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pctag_imglist_item from '../zhuanti/pctag_imglist_item.vue'
-    import  pctaglist from '../channelimg/pctaglist.vue'
+    import  pcarticlenew_item from '../article/pcarticlenew_item.vue'
+//    import  pcrecommend from '../channelimg/pcrecommend.vue'
+//    import  pchotclick from '../channelimg/pchotclick.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
@@ -31,17 +34,17 @@
     var utils = require('../common/utils');
     export default{
         components: {
-            pctag_imglist_item,
+            pcarticlenew_item,
             navbar_v,
-            pctaglist,
-
+//            pchotclick,
+//            pcrecommend
 
         },
         props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meituba.getpc_tag_img(),
+                taghref:meituba.getpc_article(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -52,15 +55,15 @@
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
-            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
+//            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
 //            storage.getItem('taghref',function(s){
@@ -113,21 +116,22 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meituba.getpc_tag_img();
+                    self.taghref = meituba.getpc_article();
                 }
                 var url = self.taghref;
-                if(self.pageNo==1){
-                    url = self.taghref;
-                }else{
-                    //index_2.shtml
-                    url = self.taghref.replaceAllStr(".html","")+"/"+self.pageNo+".html";
-                }
+//                if(self.pageNo==1){
+//                    url = self.taghref;
+//                }else{
+//                    //index_2.shtml
+//                    var href = self.taghref.replaceAllStr(".html","");
+//                    url = href+"_"+self.pageNo+".html";
+//                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeitubaJsoupModule.pctaglist(params,function(e){
+                weexMeitubaJsoupModule.pcarticlenewlike(url,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
