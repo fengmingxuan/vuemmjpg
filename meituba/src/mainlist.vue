@@ -25,6 +25,13 @@
             }
         },
         created () {
+            this.rows.push('main/pcmain_nenu')
+            this.rows.push('main/pcmain_tags_pager')
+            this.rows.push('main/pcmain_box')
+            this.rows.push('main/pcmain_imglist')
+            this.rows.push('main/pcmainupdate')
+            this.rows.push('main/pcmaintags')
+            this.rows.push('main/pcmain_slider')
             this.rows.push('new/pcnewlist')
             this.rows.push('search/pcslidersearch')
             this.rows.push('search/pcsearchlist')
