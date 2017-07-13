@@ -4,7 +4,7 @@ var webpack = require('webpack');
 
 var entry = {};
 var bannerExcludeFiles = [];
-var webSrcDirectory = path.join(__dirname, '../mzitu/web-entry');
+var webSrcDirectory = path.join(__dirname, '../meizitu/web-entry');
 
 function getEntryFileContent (entryPath, vueFilePath) {
   const relativePath = path.relative(path.join(entryPath, '../'), vueFilePath);
@@ -15,7 +15,7 @@ function getEntryFileContent (entryPath, vueFilePath) {
 
 function walk(dir) {
   dir = dir || '.';
-  var directory = path.join(__dirname, '../mzitu', dir);
+  var directory = path.join(__dirname, '../meizitu', dir);
   var entryDirectory = path.join(webSrcDirectory, dir);
   fs.readdirSync(directory)
     .forEach(function(file) {
@@ -25,7 +25,7 @@ function walk(dir) {
       if (stat.isFile() && extname === '.vue') {
         var entryFile = path.join(entryDirectory, path.basename(file, extname) + '.js');
         fs.outputFileSync(entryFile, getEntryFileContent(entryFile, fullpath));
-        var name = path.join('mzitu', 'build/vue-web', /*path.relative('vue', dir)*/dir, path.basename(file, extname));
+        var name = path.join('meizitu', 'build/vue-web', /*path.relative('vue', dir)*/dir, path.basename(file, extname));
         entry[name] = entryFile + '?entry=true';
       } else if (stat.isDirectory() && file !== 'build' && file !== 'include') {
         var subdir = path.join(dir, file);
