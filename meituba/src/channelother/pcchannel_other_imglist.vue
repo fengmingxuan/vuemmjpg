@@ -69,7 +69,7 @@
 //            }
 //            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
-            self.refresh();
+//            self.refresh();
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
 //                var staghref = s.data;
@@ -79,6 +79,17 @@
 //                console.log('taghref=='+self.taghref);
 //                self.refresh();
 //            });
+            storage.getItem('taghref',function(s){
+                console.log('get taghref result:'+JSON.stringify(s));
+                var staghref = s.data;
+                if(staghref!=undefined){
+                    self.taghref = staghref;
+                }
+                console.log('taghref=='+self.taghref);
+
+                self.refresh();
+
+            });
         },
         methods:{
             autoRefresh(event){

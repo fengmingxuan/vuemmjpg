@@ -91,12 +91,23 @@
                                 visibility: 'hidden',
                                 taghref:tag.href
                             };
-                            if(i==0){
-                                tabitem.visibility = 'visible';
-                                tabitem.src= meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+                            console.log('pageNo=='+self.pageNo);
+                            if(self.pageNo==7){
+                                if(i==0){
+                                    tabitem.visibility = 'visible';
+                                    tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_main.js');
+                                }else{
+                                    tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_imglist.js');
+                                }
                             }else{
-                                tabitem.src= meituba.getPathUrl('channelimg/pcchannel_imglist.js');
+                                if(i==0){
+                                    tabitem.visibility = 'visible';
+                                    tabitem.src= meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+                                }else{
+                                    tabitem.src= meituba.getPathUrl('channelimg/pcchannel_imglist.js');
+                                }
                             }
+
                             self.tabItems.push(tabitem);
                         }
                         var taghref = self.tabItems[0].taghref;
