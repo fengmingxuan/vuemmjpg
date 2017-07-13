@@ -26,7 +26,7 @@
     export default {
         data() {
             return {
-                title: 'ZJITO',
+                title: '妹子图',
                 type: 0,
                 shown: true,
                 showStatusBar: 0,
@@ -36,7 +36,7 @@
             }
 
         },
-        props: ['title'],
+        props: ['title','shown','leftsrc'],
         created: function () {
             this.platform = this.$getConfig().env.platform;
             if (this.platform == 'iOS') {
@@ -46,6 +46,12 @@
                 this.nav_text_top = 1;
             } else {
                 this.nav_text_top = 0;
+            }
+            if(this.leftsrc==undefined){
+                this.leftsrc= './images/menu.png';
+            }
+            if(this.title==undefined){
+                this.title= '妹子图';
             }
         },
         ready: function () {

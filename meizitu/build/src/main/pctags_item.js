@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(8)
+	__vue_styles__.push(__webpack_require__(12)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(9)
+	__vue_exports__ = __webpack_require__(13)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(10)
+	var __vue_template__ = __webpack_require__(14)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pctags_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0e1297d4"
+	__vue_options__._scopeId = "data-v-0d00e466"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -212,136 +212,37 @@
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "nav_bar": {
-	    "display": "flex",
-	    "flexDirection": "row",
-	    "height": 100,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_bar-0": {
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_bar-1": {
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_text": {
-	    "fontSize": "20wx",
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
 	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "marginTop": 1,
-	    "color": "#ffffff"
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5,
+	    "alignContent": "flex-start",
+	    "alignItems": "flex-start"
 	  },
-	  "nav_text_top-0": {
-	    "marginTop": 1
-	  },
-	  "nav_text_top-1": {
-	    "marginTop": 1
-	  },
-	  "nav_text-0": {
-	    "color": "#FFFFFF"
-	  },
-	  "nav_text-1": {
-	    "color": "#ffffff"
-	  },
-	  "nav_title": {
-	    "flex": 1,
-	    "marginLeft": 10,
-	    "marginRight": 10,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "nav_back": {
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "width": "45wx",
-	    "height": 80
-	  },
-	  "nav_right_menu": {
-	    "width": "45wx",
-	    "height": 80,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "img": {
-	    "width": 70,
-	    "height": 70,
-	    "marginLeft": 20,
-	    "padding": 10
-	  },
-	  "nav_back-0": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_back-1": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_right_menu-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "nav_right_menu-1": {
-	    "backgroundColor": "#000000"
-	  },
-	  "img_menu": {
-	    "width": 50,
-	    "height": 50,
-	    "marginRight": 20
-	  },
-	  "imglogo": {
-	    "width": 240,
-	    "flex": 1,
-	    "height": 50
-	  },
-	  "nav_line": {
-	    "height": 1
-	  },
-	  "nav_line-0": {
-	    "backgroundColor": "#D8D8D8"
-	  },
-	  "nav_line-1": {
-	    "backgroundColor": "#192c46"
-	  },
-	  "status_bar_ios": {
-	    "height": "20wx"
-	  },
-	  "status_bar-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "status_bar-1": {
-	    "backgroundColor": "#000000"
+	  "txt": {
+	    "fontSize": 30,
+	    "padding": 20
 	  }
 	}
 
 /***/ }),
-/* 9 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -351,110 +252,64 @@
 	//
 	//
 
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	var meizitu = __webpack_require__(3);
-	var navigator = weex.requireModule('navigator');
+	module.exports = {
+	    created: function created() {},
 
-	exports.default = {
-	    data: function data() {
-	        return {
-	            title: '妹子图',
-	            type: 0,
-	            shown: true,
-	            showStatusBar: 0,
-	            nav_text_top: 0,
-	            shownleft: true,
-	            leftsrc: './images/menu.png'
-	        };
-	    },
-
-	    props: ['title', 'shown', 'leftsrc'],
-	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	        if (this.platform == 'iOS') {
-	            this.showStatusBar = 1;
-	        }
-	        if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
-	            this.nav_text_top = 1;
-	        } else {
-	            this.nav_text_top = 0;
-	        }
-	        if (this.leftsrc == undefined) {
-	            this.leftsrc = './images/menu.png';
-	        }
-	        if (this.title == undefined) {
-	            this.title = '妹子图';
+	    props: {
+	        stockitem: {
+	            type: Object
 	        }
 	    },
-	    ready: function ready() {},
 
 	    methods: {
-	        nativeback: function nativeback(e) {
-	            //                var params = {
-	            //                    'animated': 'true'
+	        todetail: function todetail(id, e, alt) {
+
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "";
+	            //                if(id==1){
+	            //                    name = "main/pcmain_imglist";
+	            //                }else{
+	            //                    name = "nenuli/pcnenuli_tabbar";
+	            //                }
+	            //                var params={
+	            //                    url: meituba.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt,
+	            //                        pageNo:id-1
+	            //                    }
 	            //                };
-	            //                navigator.pop(params, event => {
 	            //
-	            //                });
-	            this._parent.togglemenu();
-	        },
-	        onright: function onright(e) {
-	            console.log('navbar == onright');
-	            this._parent.onright();
-	        },
-
-	        getImgUrl: function getImgUrl(url) {
-	            return meizitu.getImageUrl(url);
-	        },
-
-	        setLeftImage: function setLeftImage(res) {
-	            this.leftImage = res;
-	            //                console.log('navbar == res'+res);
-	        },
-
-	        setRightImage: function setRightImage(res) {
-	            this.rightImage = res;
-	            //                    console.log('navbar == res'+res);
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                })
 	        }
-
 	    }
 	};
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', {
-	    staticClass: ["nav_bar"]
+	  return _c('div', {
+	    staticStyle: {
+	      margin: "5px"
+	    }
 	  }, [_c('div', {
-	    staticClass: ["nav_back"],
+	    staticClass: ["news-content"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt)
+	      }
 	    }
-	  }, [(_vm.shownleft) ? _c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.getImgUrl(_vm.leftsrc)
-	    }
-	  }) : _vm._e()]), _c('div', {
-	    staticClass: ["nav_title"]
 	  }, [_c('text', {
-	    staticClass: ["nav_text"]
-	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
-	    staticClass: ["nav_right_menu"]
-	  }, [(_vm.shown) ? _c('div', {
-	    staticClass: ["nav_right_menu"],
-	    on: {
-	      "onclick": _vm.onright
-	    }
-	  }, [_c('image', {
-	    staticClass: ["img_menu"],
-	    attrs: {
-	      "src": _vm.getImgUrl('./images/search.png')
-	    }
-	  })]) : _vm._e()])]), _c('div', {
-	    staticClass: ["nav_line"]
-	  })])
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

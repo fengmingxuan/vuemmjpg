@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(8)
+	__vue_styles__.push(__webpack_require__(16)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(9)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(10)
+	var __vue_template__ = __webpack_require__(22)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pctags_hlist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0e1297d4"
+	__vue_options__._scopeId = "data-v-bd44e87a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -211,7 +211,50 @@
 /* 4 */,
 /* 5 */,
 /* 6 */,
-/* 7 */,
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(8)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(9)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(10)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/navbar_v.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-0e1297d4"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
@@ -455,6 +498,375 @@
 	  })]) : _vm._e()])]), _c('div', {
 	    staticClass: ["nav_line"]
 	  })])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "refresh-view": {
+	    "height": 100,
+	    "width": 750,
+	    "alignItems": "center"
+	  },
+	  "indicator": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "textAlign": "center"
+	  },
+	  "loading": {
+	    "justifyContent": "center"
+	  },
+	  "indicator_loading": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "paddingTop": 20,
+	    "paddingBottom": 20,
+	    "textAlign": "center"
+	  }
+	}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _navbar_v = __webpack_require__(7);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	var _pctags_hlist_item = __webpack_require__(18);
+
+	var _pctags_hlist_item2 = _interopRequireDefault(_pctags_hlist_item);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
+	var meizitu = __webpack_require__(3);
+	var storage = weex.requireModule('storage');
+	exports.default = {
+	    components: {
+	        pctags_hlist_item: _pctags_hlist_item2.default,
+	        navbar_v: _navbar_v2.default
+
+	    },
+	    props: ['taghref'],
+	    data: function data() {
+	        return {
+	            stockArray: [],
+	            taghref: meizitu.getpc_meizitu(),
+	            pageNo: 0,
+	            refreshing: false,
+	            showLoading: 'hide',
+	            title: "美女分类",
+	            shown: false,
+	            leftsrc: './images/back.png'
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+	        self.refresh();
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var staghref = s.data;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+self.taghref);
+	        //                self.refresh();
+	        //            });
+	        //            setTimeout(() => {
+	        //                storage.getItem('taghref',function(s){
+	        //                    console.log('get taghref result:'+JSON.stringify(s));
+	        //                    var staghref = s.data;
+	        //                    if(staghref!=undefined){
+	        //                        self.taghref = staghref;
+	        //                    }
+	        //                    console.log('pre taghref=='+self.taghref);
+	        //                    self.refresh();
+	        //                });
+	        //            }, 2000)
+	    },
+	    methods: {
+	        onloading: function onloading(event) {
+	            var _this = this;
+
+	            this.showLoading = 'show';
+	            //                this.pageNo = this.pageNo+1;
+	            setTimeout(function () {
+	                _this.showLoading = 'hide';
+	            }, 2000);
+	            this.refresh();
+	        },
+	        onpullingdown: function onpullingdown(event) {},
+	        onrefresh: function onrefresh(event) {
+	            var _this2 = this;
+
+	            this.refreshing = true;
+	            //                this.pageNo = 1;
+	            setTimeout(function () {
+	                _this2.refreshing = false;
+	            }, 2000);
+	            this.refresh();
+	        },
+
+	        refresh: function refresh() {
+	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = meizitu.getpc_meizitu();
+	            }
+	            var url = self.taghref;
+	            //                if(self.pageNo==1){
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    url = self.taghref+"?idx="+self.pageNo;
+	            //                }
+	            console.log('url===' + url);
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeizituJsoupModule.pctags(params, function (e) {
+	                var json = JSON.parse(e);
+	                //                    if(self.pageNo==1){
+	                self.stockArray.splice(0, self.stockArray.length);
+	                //                    }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.stockArray.push(tag);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+
+	};
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(19)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(20)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(21)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pctags_hlist_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-1afcc73f"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "flexDirection": "column",
+	    "width": 90,
+	    "height": 60,
+	    "borderColor": "#FF6B9C",
+	    "borderWidth": 1,
+	    "borderRadius": 20,
+	    "backgroundColor": "#FF6B9C",
+	    "alignItems": "center",
+	    "alignContent": "center",
+	    "margin": 5,
+	    "padding": 5
+	  },
+	  "txt": {
+	    "fontSize": 18,
+	    "flexDirection": "column",
+	    "color": "#ffffff",
+	    "alignItems": "center",
+	    "alignContent": "center"
+	  }
+	}
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
+	    }
+	};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"]
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      height: "280px"
+	    }
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title,
+	      "shown": _vm.shown,
+	      "leftsrc": _vm.leftsrc
+	    }
+	  }), _c('div', {
+	    staticStyle: {
+	      flex: "1",
+	      alignContent: "flex-start",
+	      alignItems: "flex-start"
+	    }
+	  }, [_c('text', {
+	    staticStyle: {
+	      fontSize: "28",
+	      marginTop: "30",
+	      marginLeft: "20"
+	    }
+	  }, [_vm._v(_vm._s(_vm.title))])]), _c('hlist', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      width: "750px",
+	      height: "100px",
+	      flex: "1"
+	    },
+	    attrs: {
+	      "loadmoreoffset": "10",
+	      "scrollDirection": "horizontal"
+	    }
+	  }, _vm._l((_vm.stockArray), function(stockitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('pctags_hlist_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  }))], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

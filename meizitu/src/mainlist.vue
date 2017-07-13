@@ -23,6 +23,8 @@
             }
         },
         created () {
+            this.rows.push('main/pctags_hlist')
+            this.rows.push('main/pctags')
             this.rows.push('main/pcpicnew_slider')
             this.rows.push('webnews')
             this.rows.push('template/navbar_v')

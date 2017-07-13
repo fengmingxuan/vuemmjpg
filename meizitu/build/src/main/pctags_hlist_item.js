@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(149)
+	__vue_styles__.push(__webpack_require__(19)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(150)
+	__vue_exports__ = __webpack_require__(20)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(151)
+	var __vue_template__ = __webpack_require__(21)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/tabitem.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pctags_hlist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6d3452e9"
+	__vue_options__._scopeId = "data-v-1afcc73f"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -91,39 +91,35 @@
 
 /***/ }),
 
-/***/ 149:
+/***/ 19:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "container": {
-	    "flex": 1,
+	  "news-content": {
 	    "flexDirection": "column",
+	    "width": 90,
+	    "height": 60,
+	    "borderColor": "#FF6B9C",
+	    "borderWidth": 1,
+	    "borderRadius": 20,
+	    "backgroundColor": "#FF6B9C",
 	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "height": 88
+	    "alignContent": "center",
+	    "margin": 5,
+	    "padding": 5
 	  },
-	  "top-line": {
-	    "position": "absolute",
-	    "top": 0,
-	    "left": 0,
-	    "right": 0,
-	    "height": 2
-	  },
-	  "tab-icon": {
-	    "marginTop": 5,
-	    "width": 40,
-	    "height": 40
-	  },
-	  "tab-text": {
-	    "marginTop": 5,
-	    "textAlign": "center",
-	    "fontSize": 20
+	  "txt": {
+	    "fontSize": 18,
+	    "flexDirection": "column",
+	    "color": "#ffffff",
+	    "alignItems": "center",
+	    "alignContent": "center"
 	  }
 	}
 
 /***/ }),
 
-/***/ 150:
+/***/ 20:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -137,91 +133,42 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
+	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
-	  props: {
-	    index: { default: 0 },
-	    title: { default: '' },
-	    titleColor: { default: '#000000' },
-	    icon: { default: '' },
-	    backgroundColor: { default: '#ffffff' }
-	  },
-	  methods: {
-	    onclickitem: function onclickitem(e) {
-	      var params = {
-	        index: this.index
-	      };
-	      this.$emit('tabItemOnClick', params);
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        }
 	    }
-	  }
 	};
 
 /***/ }),
 
-/***/ 151:
+/***/ 21:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["container"],
-	    style: {
-	      backgroundColor: _vm.backgroundColor
-	    },
+	    staticClass: ["news-content"],
 	    on: {
-	      "click": _vm.onclickitem
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href)
+	      }
 	    }
-	  }, [_c('image', {
-	    staticClass: ["top-line"],
-	    attrs: {
-	      "src": "http://gtms03.alicdn.com/tps/i3/TB1mdsiMpXXXXXpXXXXNw4JIXXX-640-4.png"
-	    }
-	  }), _c('image', {
-	    staticClass: ["tab-icon"],
-	    attrs: {
-	      "src": _vm.icon
-	    }
-	  }), _c('text', {
-	    staticClass: ["tab-text"],
-	    style: {
-	      color: _vm.titleColor
-	    }
-	  }, [_vm._v(_vm._s(_vm.title))])])
+	  }, [_c('div', {
+	    staticClass: ["news-content"]
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
