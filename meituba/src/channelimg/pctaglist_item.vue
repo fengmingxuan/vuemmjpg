@@ -34,25 +34,20 @@
 
         methods:{
             todetail:function (e,alt) {
-                weexEventModule.startWebViewActivity(e);
-//                var name = "content/pccontentlist";
-//                if(e.indexOf('.shtml')!=-1){
-//                    name = "content/pccontentlist";
-//                }else{
-//                    name = "search/pcimglist_notitlebar_autorefresh";
-//                }
-//                var params={
-//                    url: meituba.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                })
+//                weexEventModule.startWebViewActivity(e);
+                var name = "zhuanti/pctag_imglist";
+                var params={
+                    url: meituba.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }

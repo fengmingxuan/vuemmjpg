@@ -61,7 +61,7 @@
         border-radius: 5;
     }
     .img{
-        height: 600;
+        height: 1000;
         border-radius: 5;
     }
     .txt{

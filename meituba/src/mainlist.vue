@@ -25,6 +25,10 @@
             }
         },
         created () {
+            this.rows.push('mchannel/mmeinv_nav')
+            this.rows.push('mchannel/mmain_channel_imglist')
+            this.rows.push('marticle/marticlelist')
+            this.rows.push('mchannel/mchannel_imglist')
             this.rows.push('menu/pcslideoutmenu')
             this.rows.push('main/pcmain_nenu')
             this.rows.push('main/pcmain_tags_pager')
