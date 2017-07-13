@@ -45,21 +45,22 @@
                 showLoading: 'hide',
                 title:"性感美女",
                 isFirst:1,
+                pagenumbers:''
 
                  
             }
         },
         created: function(){
             var self = this;
-//            var ctaghref = self.$getConfig().taghref;
-//            if(ctaghref!=undefined){
-//                self.taghref = ctaghref;
-//            }
-//            var ctitle = self.$getConfig().title;
-//            if(ctitle!=undefined){
-//                self.title = ctitle;
-//            }
-//            console.log('title=='+self.title+';taghref=='+self.taghref)
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
+            }
+            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
 //            storage.getItem('taghref',function(s){
@@ -123,8 +124,9 @@
                 if(self.pageNo==1){
                     url = self.taghref;
                 }else{
-                    //index_2.shtml
-                    url = self.taghref+"list8"+self.pageNo+".html";
+                    // http://m.meituba.com/xinggan/
+                    //http://m.meituba.com/xinggan/list82.html
+                    url = self.taghref+ self.pagenumbers;
                 }
                 console.log('url==='+url);
                 var params = {
@@ -151,6 +153,7 @@
                                     src2:tag2.src,
                                     other2:tag2.other,
                                 };
+                                self.pagenumbers = tag.pagenumbers;
                                 self.stockArray.push(item);
                             }
                         }

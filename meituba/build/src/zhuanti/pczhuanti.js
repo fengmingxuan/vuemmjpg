@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(346)
+	__vue_styles__.push(__webpack_require__(405)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(347)
+	__vue_exports__ = __webpack_require__(406)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(352)
+	var __vue_template__ = __webpack_require__(411)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -364,8 +364,50 @@
 	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
 	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
 	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
-	    pc_new:"http://www.meituba.com/new/"
+	    pc_new:"http://www.meituba.com/new/",
+	    m_channel:"http://m.meituba.com/xinggan/",
+	    m_article:"http://m.meituba.com/xinggan/60954.html",
+	    m_meinv:"http://m.meituba.com/meinv/",
+	    m_meituba:"http://m.meituba.com/",
+	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
+	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
+	    m_tags:"http://m.meituba.com/tag/"
 
+	};
+	exports.getm_tags= function () {
+	    var url = MEITUBA.m_tags;
+	    console.log('m_tags==' + url);
+	    return url;
+	};
+	exports.getm_search_url= function () {
+	    var url = MEITUBA.m_search_url;
+	    console.log('m_search_url==' + url);
+	    return url;
+	};
+	exports.getm_search= function () {
+	    var url = MEITUBA.m_search;
+	    console.log('m_search==' + url);
+	    return url;
+	};
+	exports.getm_meituba= function () {
+	    var url = MEITUBA.m_meituba;
+	    console.log('m_meituba==' + url);
+	    return url;
+	};
+	exports.getm_meinv= function () {
+	    var url = MEITUBA.m_meinv;
+	    console.log('m_meinv==' + url);
+	    return url;
+	};
+	exports.getm_article= function () {
+	    var url = MEITUBA.m_article;
+	    console.log('m_article==' + url);
+	    return url;
+	};
+	exports.getm_channel = function () {
+	    var url = MEITUBA.m_channel;
+	    console.log('m_channel==' + url);
+	    return url;
 	};
 	exports.getpc_new = function () {
 	    var url = MEITUBA.pc_new;
@@ -670,25 +712,25 @@
 
 	    methods: {
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "content/pccontentlist";
-	            //                if(e.indexOf('.shtml')!=-1){
-	            //                    name = "content/pccontentlist";
-	            //                }else{
-	            //                    name = "search/pcimglist_notitlebar_autorefresh";
-	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	            //                weexEventModule.startWebViewActivity(e);
+	            var name = "zhuanti/pctag_imglist";
+	            if (e.indexOf('m.meituba.com') != -1) {
+	                name = "mchannel/mchannel_imglist";
+	            } else {
+	                name = "zhuanti/pctag_imglist";
+	            }
+	            var params = {
+	                url: meituba.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
@@ -771,7 +813,7 @@
 
 /***/ }),
 
-/***/ 346:
+/***/ 405:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -799,7 +841,7 @@
 
 /***/ }),
 
-/***/ 347:
+/***/ 406:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -812,7 +854,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pczhuanti_item = __webpack_require__(348);
+	var _pczhuanti_item = __webpack_require__(407);
 
 	var _pczhuanti_item2 = _interopRequireDefault(_pczhuanti_item);
 
@@ -967,21 +1009,21 @@
 
 /***/ }),
 
-/***/ 348:
+/***/ 407:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(349)
+	__vue_styles__.push(__webpack_require__(408)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(350)
+	__vue_exports__ = __webpack_require__(409)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(351)
+	var __vue_template__ = __webpack_require__(410)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1012,7 +1054,7 @@
 
 /***/ }),
 
-/***/ 349:
+/***/ 408:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1032,7 +1074,7 @@
 
 /***/ }),
 
-/***/ 350:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1139,7 +1181,7 @@
 
 /***/ }),
 
-/***/ 351:
+/***/ 410:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1174,7 +1216,7 @@
 
 /***/ }),
 
-/***/ 352:
+/***/ 411:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

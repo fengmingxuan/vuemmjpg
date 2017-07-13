@@ -36,6 +36,11 @@
             todetail:function (e,alt) {
 //                weexEventModule.startWebViewActivity(e);
                 var name = "zhuanti/pctag_imglist";
+                if(e.indexOf('m.meituba.com')!=-1){
+                    name = "mchannel/mchannel_imglist";
+                }else{
+                    name = "zhuanti/pctag_imglist";
+                }
                 var params={
                     url: meituba.getDefaultUrl(name),
                     animated: "true",

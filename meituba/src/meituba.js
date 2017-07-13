@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: '192.168.1.15:8080',
-    HTTP: 'http://',//https:// http://
+    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 
 };
 
@@ -22,8 +22,32 @@ var MEITUBA = {
     pc_new:"http://www.meituba.com/new/",
     m_channel:"http://m.meituba.com/xinggan/",
     m_article:"http://m.meituba.com/xinggan/60954.html",
-    m_meinv:"http://m.meituba.com/meinv/"
+    m_meinv:"http://m.meituba.com/meinv/",
+    m_meituba:"http://m.meituba.com/",
+    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
+    m_search_url:"http://m.meituba.com/plus/search.php?q=",
+    m_tags:"http://m.meituba.com/tag/"
 
+};
+exports.getm_tags= function () {
+    var url = MEITUBA.m_tags;
+    console.log('m_tags==' + url);
+    return url;
+};
+exports.getm_search_url= function () {
+    var url = MEITUBA.m_search_url;
+    console.log('m_search_url==' + url);
+    return url;
+};
+exports.getm_search= function () {
+    var url = MEITUBA.m_search;
+    console.log('m_search==' + url);
+    return url;
+};
+exports.getm_meituba= function () {
+    var url = MEITUBA.m_meituba;
+    console.log('m_meituba==' + url);
+    return url;
 };
 exports.getm_meinv= function () {
     var url = MEITUBA.m_meinv;

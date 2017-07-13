@@ -51,10 +51,10 @@
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(181)
+	__vue_exports__ = __webpack_require__(240)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(182)
+	var __vue_template__ = __webpack_require__(241)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -110,8 +110,50 @@
 	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
 	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
 	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
-	    pc_new:"http://www.meituba.com/new/"
+	    pc_new:"http://www.meituba.com/new/",
+	    m_channel:"http://m.meituba.com/xinggan/",
+	    m_article:"http://m.meituba.com/xinggan/60954.html",
+	    m_meinv:"http://m.meituba.com/meinv/",
+	    m_meituba:"http://m.meituba.com/",
+	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
+	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
+	    m_tags:"http://m.meituba.com/tag/"
 
+	};
+	exports.getm_tags= function () {
+	    var url = MEITUBA.m_tags;
+	    console.log('m_tags==' + url);
+	    return url;
+	};
+	exports.getm_search_url= function () {
+	    var url = MEITUBA.m_search_url;
+	    console.log('m_search_url==' + url);
+	    return url;
+	};
+	exports.getm_search= function () {
+	    var url = MEITUBA.m_search;
+	    console.log('m_search==' + url);
+	    return url;
+	};
+	exports.getm_meituba= function () {
+	    var url = MEITUBA.m_meituba;
+	    console.log('m_meituba==' + url);
+	    return url;
+	};
+	exports.getm_meinv= function () {
+	    var url = MEITUBA.m_meinv;
+	    console.log('m_meinv==' + url);
+	    return url;
+	};
+	exports.getm_article= function () {
+	    var url = MEITUBA.m_article;
+	    console.log('m_article==' + url);
+	    return url;
+	};
+	exports.getm_channel = function () {
+	    var url = MEITUBA.m_channel;
+	    console.log('m_channel==' + url);
+	    return url;
 	};
 	exports.getpc_new = function () {
 	    var url = MEITUBA.pc_new;
@@ -687,7 +729,7 @@
 
 /***/ }),
 
-/***/ 181:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -784,12 +826,23 @@
 	                                visibility: 'hidden',
 	                                taghref: tag.href
 	                            };
-	                            if (i == 0) {
-	                                tabitem.visibility = 'visible';
-	                                tabitem.src = meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+	                            console.log('pageNo==' + self.pageNo);
+	                            if (self.pageNo == 7) {
+	                                if (i == 0) {
+	                                    tabitem.visibility = 'visible';
+	                                    tabitem.src = meituba.getPathUrl('channelother/pcchannel_other_main.js');
+	                                } else {
+	                                    tabitem.src = meituba.getPathUrl('channelother/pcchannel_other_imglist.js');
+	                                }
 	                            } else {
-	                                tabitem.src = meituba.getPathUrl('channelimg/pcchannel_imglist.js');
+	                                if (i == 0) {
+	                                    tabitem.visibility = 'visible';
+	                                    tabitem.src = meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+	                                } else {
+	                                    tabitem.src = meituba.getPathUrl('channelimg/pcchannel_imglist.js');
+	                                }
 	                            }
+
 	                            self.tabItems.push(tabitem);
 	                        }
 	                        var taghref = self.tabItems[0].taghref;
@@ -805,7 +858,7 @@
 
 /***/ }),
 
-/***/ 182:
+/***/ 241:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

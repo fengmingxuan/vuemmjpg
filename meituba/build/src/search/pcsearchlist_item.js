@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(192)
+	__vue_styles__.push(__webpack_require__(251)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(193)
+	__vue_exports__ = __webpack_require__(252)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(194)
+	var __vue_template__ = __webpack_require__(253)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -115,8 +115,50 @@
 	    pc_tag_img:"http://www.meituba.com/tag/DGC.html",
 	    pc_search:"http://www.meituba.com/plus/search.php?q=%E5%A6%B9%E5%A6%B9",
 	    pc_search_url:"http://www.meituba.com/plus/search.php?q=",
-	    pc_new:"http://www.meituba.com/new/"
+	    pc_new:"http://www.meituba.com/new/",
+	    m_channel:"http://m.meituba.com/xinggan/",
+	    m_article:"http://m.meituba.com/xinggan/60954.html",
+	    m_meinv:"http://m.meituba.com/meinv/",
+	    m_meituba:"http://m.meituba.com/",
+	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
+	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
+	    m_tags:"http://m.meituba.com/tag/"
 
+	};
+	exports.getm_tags= function () {
+	    var url = MEITUBA.m_tags;
+	    console.log('m_tags==' + url);
+	    return url;
+	};
+	exports.getm_search_url= function () {
+	    var url = MEITUBA.m_search_url;
+	    console.log('m_search_url==' + url);
+	    return url;
+	};
+	exports.getm_search= function () {
+	    var url = MEITUBA.m_search;
+	    console.log('m_search==' + url);
+	    return url;
+	};
+	exports.getm_meituba= function () {
+	    var url = MEITUBA.m_meituba;
+	    console.log('m_meituba==' + url);
+	    return url;
+	};
+	exports.getm_meinv= function () {
+	    var url = MEITUBA.m_meinv;
+	    console.log('m_meinv==' + url);
+	    return url;
+	};
+	exports.getm_article= function () {
+	    var url = MEITUBA.m_article;
+	    console.log('m_article==' + url);
+	    return url;
+	};
+	exports.getm_channel = function () {
+	    var url = MEITUBA.m_channel;
+	    console.log('m_channel==' + url);
+	    return url;
 	};
 	exports.getpc_new = function () {
 	    var url = MEITUBA.pc_new;
@@ -273,7 +315,7 @@
 
 /***/ }),
 
-/***/ 192:
+/***/ 251:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -299,7 +341,7 @@
 
 /***/ }),
 
-/***/ 193:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -355,7 +397,7 @@
 
 /***/ }),
 
-/***/ 194:
+/***/ 253:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

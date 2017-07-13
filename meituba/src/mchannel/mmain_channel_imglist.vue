@@ -55,15 +55,15 @@
         },
         created: function(){
             var self = this;
-//            var ctaghref = self.$getConfig().taghref;
-//            if(ctaghref!=undefined){
-//                self.taghref = ctaghref;
-//            }
-//            var ctitle = self.$getConfig().title;
-//            if(ctitle!=undefined){
-//                self.title = ctitle;
-//            }
-//            console.log('title=='+self.title+';taghref=='+self.taghref)
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
+            }
+            console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
 //            setTimeout(() => {

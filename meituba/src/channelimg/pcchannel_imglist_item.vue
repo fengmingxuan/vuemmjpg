@@ -34,11 +34,11 @@
             todetail:function (e,alt) {
 //                weexEventModule.startWebViewActivity(e);
                 var name = "article/pcarticlelist";
-//                if(e.indexOf('.shtml')!=-1){
-//                    name = "content/pccontentlist";
-//                }else{
-//                    name = "search/pcimglist_notitlebar_autorefresh";
-//                }
+                if(e.indexOf('m.meituba.com')!=-1){
+                    name = "marticle/marticlelist";
+                }else{
+                    name = "article/pcarticlelist";
+                }
                 var params={
                     url: meituba.getDefaultUrl(name),
                     animated: "true",

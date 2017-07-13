@@ -25,6 +25,13 @@
             }
         },
         created () {
+            this.rows.push('mtags/mtags')
+            this.rows.push('msearch/msearch_imglist')
+            this.rows.push('msearch/msearch')
+            this.rows.push('menu/mslideoutmenu')
+            this.rows.push('mchannel/mmain_slider')
+            this.rows.push('mchannel/mmain_meituba_imglist')
+            this.rows.push('mmenubox/mmenubox')
             this.rows.push('mchannel/mmeinv_nav')
             this.rows.push('mchannel/mmain_channel_imglist')
             this.rows.push('marticle/marticlelist')

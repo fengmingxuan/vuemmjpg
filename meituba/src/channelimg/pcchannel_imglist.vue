@@ -49,7 +49,7 @@
                 showLoading: 'hide',
                 title:"唯美意境",
                 isFirst:1,
-
+                pagenumbers:''
                  
             }
         },
@@ -128,7 +128,7 @@
                     url = self.taghref;
                 }else{
                     //index_2.shtml
-                    url = self.taghref+"list28"+self.pageNo+".html";
+                    url = self.taghref+ self.pagenumbers;
                 }
                 console.log('url==='+url);
                 var params = {
@@ -155,6 +155,7 @@
                                     src2:tag2.src,
                                     other2:tag2.other,
                                 };
+                                self.pagenumbers = tag.pagenumbers;
                                 self.stockArray.push(item);
                             }
                         }
