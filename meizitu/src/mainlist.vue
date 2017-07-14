@@ -23,6 +23,11 @@
             }
         },
         created () {
+            this.rows.push('main/pcmaincontent_imglist')
+            this.rows.push('main/pcflink_pager')
+            this.rows.push('main/pcflink')
+            this.rows.push('main/pclastest')
+            this.rows.push('main/pchotpic_imglist')
             this.rows.push('main/pctags_hlist')
             this.rows.push('main/pctags')
             this.rows.push('main/pcpicnew_slider')
