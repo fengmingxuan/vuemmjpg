@@ -1,15 +1,10 @@
 <template>
-    <div style="flex-direction: row;flex: 1;margin: 5px;">
+    <div style="margin: 5px;">
         <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
+            <text class="title">{{stockitem.title}}</text>
+            <text class="alt">{{stockitem.alt}}</text>
             <image class="img" :src="stockitem.src" ></image>
-            <text class="txt">{{stockitem.alt}}</text>
-        </div>
-        <div style="width: 5px">
-
-        </div>
-        <div class="news-content" @click="todetail(stockitem.href2,stockitem.alt2)">
-            <image class="img" :src="stockitem.src2"></image>
-            <text class="txt">{{stockitem.alt2}}</text>
+            <text class="alt">{{stockitem.other}}</text>
         </div>
     </div>
 </template>
@@ -30,25 +25,25 @@
 
         methods:{
             todetail:function (e,alt) {
-//                weexEventModule.startWebViewActivity(e);
-                var name = "img/pcimage_imglist";
+                weexEventModule.startWebViewActivity(e);
+//                var name = "article/pcarticlelist";
 //                if(e.indexOf('m.meituba.com')!=-1){
 //                    name = "marticle/marticlelist";
 //                }else{
 //                    name = "article/pcarticlelist";
 //                }
-                var params={
-                    url: meizitu.getDefaultUrl(name),
-                    animated: "true",
-                    options:{
-                        taghref: e,
-                        title:alt
-                    }
-                };
-
-                weexNavigatorModule.push(params, event => {
-                    // modal.toast({ message: 'callback: ' + event })
-                });
+//                var params={
+//                    url: meituba.getDefaultUrl(name),
+//                    animated: "true",
+//                    options:{
+//                        taghref: e,
+//                        title:alt
+//                    }
+//                };
+//
+//                weexNavigatorModule.push(params, event => {
+//                    // modal.toast({ message: 'callback: ' + event })
+//                })
             }
         }
     }
@@ -65,12 +60,15 @@
         border-radius: 5;
     }
     .img{
-        width: 350;
-        height: 400;
+        height: 1000;
         border-radius: 5;
     }
-    .txt{
+    .title{
+        font-size:38;
+        padding: 10;
+    }
+    .alt{
         font-size:30;
-        width: 350;
+        padding: 10;
     }
 </style>

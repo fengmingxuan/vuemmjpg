@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(4)
+	__vue_styles__.push(__webpack_require__(33)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(5)
+	__vue_exports__ = __webpack_require__(34)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(7)
+	var __vue_template__ = __webpack_require__(35)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/img/pcimage_slider.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0e1297d4"
+	__vue_options__._scopeId = "data-v-240468da"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,218 +90,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
-/***/ (function(module, exports) {
 
-	module.exports = {
-	  "nav_bar": {
-	    "display": "flex",
-	    "flexDirection": "row",
-	    "height": 100,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_bar-0": {
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_bar-1": {
-	    "backgroundColor": "#FF6B9C"
-	  },
-	  "nav_text": {
-	    "fontSize": "20wx",
-	    "flex": 1,
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "marginTop": 1,
-	    "color": "#ffffff"
-	  },
-	  "nav_text_top-0": {
-	    "marginTop": 1
-	  },
-	  "nav_text_top-1": {
-	    "marginTop": 1
-	  },
-	  "nav_text-0": {
-	    "color": "#FFFFFF"
-	  },
-	  "nav_text-1": {
-	    "color": "#ffffff"
-	  },
-	  "nav_title": {
-	    "flex": 1,
-	    "marginLeft": 10,
-	    "marginRight": 10,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "nav_back": {
-	    "justifyContent": "center",
-	    "alignItems": "center",
-	    "width": "45wx",
-	    "height": 80
-	  },
-	  "nav_right_menu": {
-	    "width": "45wx",
-	    "height": 80,
-	    "justifyContent": "center",
-	    "alignItems": "center"
-	  },
-	  "img": {
-	    "width": 70,
-	    "height": 70,
-	    "marginLeft": 20,
-	    "padding": 10
-	  },
-	  "nav_back-0": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_back-1": {
-	    "backgroundColor:active": "#000000"
-	  },
-	  "nav_right_menu-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "nav_right_menu-1": {
-	    "backgroundColor": "#000000"
-	  },
-	  "img_menu": {
-	    "width": 50,
-	    "height": 50,
-	    "marginRight": 20
-	  },
-	  "imglogo": {
-	    "width": 240,
-	    "flex": 1,
-	    "height": 50
-	  },
-	  "nav_line": {
-	    "height": 1
-	  },
-	  "nav_line-0": {
-	    "backgroundColor": "#D8D8D8"
-	  },
-	  "nav_line-1": {
-	    "backgroundColor": "#192c46"
-	  },
-	  "status_bar_ios": {
-	    "height": "20wx"
-	  },
-	  "status_bar-0": {
-	    "backgroundColor": "#000000"
-	  },
-	  "status_bar-1": {
-	    "backgroundColor": "#000000"
-	  }
-	}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var meizitu = __webpack_require__(6);
-	var navigator = weex.requireModule('navigator');
-
-	exports.default = {
-	    data: function data() {
-	        return {
-	            title: '妹子图',
-	            type: 0,
-	            shown: true,
-	            showStatusBar: 0,
-	            nav_text_top: 0,
-	            shownleft: true,
-	            leftsrc: './images/menu.png'
-	        };
-	    },
-
-	    props: ['title', 'shown', 'leftsrc'],
-	    created: function created() {
-	        this.platform = this.$getConfig().env.platform;
-	        if (this.platform == 'iOS') {
-	            this.showStatusBar = 1;
-	        }
-	        if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
-	            this.nav_text_top = 1;
-	        } else {
-	            this.nav_text_top = 0;
-	        }
-	        if (this.leftsrc == undefined) {
-	            this.leftsrc = './images/menu.png';
-	        }
-	        if (this.title == undefined) {
-	            this.title = '妹子图';
-	        }
-	    },
-	    ready: function ready() {},
-
-	    methods: {
-	        nativeback: function nativeback(e) {
-	            //                var params = {
-	            //                    'animated': 'true'
-	            //                };
-	            //                navigator.pop(params, event => {
-	            //
-	            //                });
-	            this._parent.togglemenu();
-	        },
-	        onright: function onright(e) {
-	            console.log('navbar == onright');
-	            this._parent.onright();
-	        },
-
-	        getImgUrl: function getImgUrl(url) {
-	            return meizitu.getImageUrl(url);
-	        },
-
-	        setLeftImage: function setLeftImage(res) {
-	            this.leftImage = res;
-	            //                console.log('navbar == res'+res);
-	        },
-
-	        setRightImage: function setRightImage(res) {
-	            this.rightImage = res;
-	            //                    console.log('navbar == res'+res);
-	        }
-
-	    }
-	};
-
-/***/ }),
-/* 6 */
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -433,43 +224,183 @@
 
 
 /***/ }),
-/* 7 */
+
+/***/ 33:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "image": {
+	    "width": 750,
+	    "margin": 1,
+	    "height": 1250
+	  },
+	  "slider": {
+	    "flex": 1
+	  },
+	  "frame": {
+	    "width": 750,
+	    "flexDirection": "column",
+	    "alignContent": "center",
+	    "alignItems": "center"
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "margin": 1
+	  }
+	}
+
+/***/ }),
+
+/***/ 34:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
+	var meizitu = __webpack_require__(6);
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	exports.default = {
+	    components: {},
+	    props: ['taghref'],
+	    data: function data() {
+	        return {
+	            imageList: [],
+	            taghref: meizitu.getpc_image(),
+	            pageNo: 1,
+	            title: ""
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        self.refresh();
+	    },
+	    methods: {
+	        todetail: function todetail(e, alt) {
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "img/pcimage_imglist";
+	            ////                if(e.indexOf('m.meituba.com')!=-1){
+	            ////                    name = "marticle/marticlelist";
+	            ////                }else{
+	            ////                    name = "article/pcarticlelist";
+	            ////                }
+	            //                var params={
+	            //                    url: meizitu.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt
+	            //                    }
+	            //                };
+	            //
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                });
+	        },
+	        refresh: function refresh() {
+	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = meizitu.getpc_image();
+	            }
+	            var url = self.taghref;
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeizituJsoupModule.pcimagelist(params, function (e) {
+	                var json = JSON.parse(e);
+	                self.imageList.splice(0, self.imageList.length);
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.imageList.push(tag);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+	};
+
+/***/ }),
+
+/***/ 35:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', {
-	    staticClass: ["nav_bar"]
-	  }, [_c('div', {
-	    staticClass: ["nav_back"],
-	    on: {
-	      "onclick": _vm.nativeback
-	    }
-	  }, [(_vm.shownleft) ? _c('image', {
-	    staticClass: ["img"],
+	  return _c('div', [_c('slider', {
+	    staticClass: ["slider"],
 	    attrs: {
-	      "src": _vm.getImgUrl(_vm.leftsrc)
+	      "interval": "3000",
+	      "autoPlay": "false"
 	    }
-	  }) : _vm._e()]), _c('div', {
-	    staticClass: ["nav_title"]
-	  }, [_c('text', {
-	    staticClass: ["nav_text"]
-	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
-	    staticClass: ["nav_right_menu"]
-	  }, [(_vm.shown) ? _c('div', {
-	    staticClass: ["nav_right_menu"],
-	    on: {
-	      "onclick": _vm.onright
-	    }
-	  }, [_c('image', {
-	    staticClass: ["img_menu"],
-	    attrs: {
-	      "src": _vm.getImgUrl('./images/search.png')
-	    }
-	  })]) : _vm._e()])]), _c('div', {
-	    staticClass: ["nav_line"]
-	  })])
+	  }, _vm._l((_vm.imageList), function(img) {
+	    return _c('div', {
+	      staticClass: ["frame"]
+	    }, [_c('image', {
+	      staticClass: ["image"],
+	      attrs: {
+	        "resize": "cover",
+	        "src": img.src
+	      },
+	      on: {
+	        "click": function($event) {
+	          _vm.todetail(img.href, img.alt)
+	        }
+	      }
+	    }), _c('text', {
+	      staticClass: ["txt"]
+	    }, [_vm._v(_vm._s(img.alt))])])
+	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

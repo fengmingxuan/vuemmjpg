@@ -23,6 +23,9 @@
             }
         },
         created () {
+            this.rows.push('img/pcimage_slider')
+            this.rows.push('img/pcimage_relatedpost')
+            this.rows.push('img/pcimage_imglist')
             this.rows.push('tags/pctagcontent_imglist')
             this.rows.push('main/pcmaincontent_imglist')
             this.rows.push('main/pcflink_pager')

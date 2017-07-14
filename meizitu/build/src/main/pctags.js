@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(45)
+	__vue_styles__.push(__webpack_require__(59)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(46)
+	__vue_exports__ = __webpack_require__(60)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(51)
+	var __vue_template__ = __webpack_require__(65)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -362,7 +362,13 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
+	    pc_image:"http://www.meizitu.com/a/3666.html"
 
+	};
+	exports.getpc_image = function () {
+	    var url = MEIZITU.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
 	};
 	exports.getpc_tag = function () {
 	    var url = MEIZITU.pc_tag;
@@ -514,7 +520,7 @@
 
 /***/ }),
 
-/***/ 45:
+/***/ 59:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -542,7 +548,7 @@
 
 /***/ }),
 
-/***/ 46:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -555,7 +561,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctags_item = __webpack_require__(47);
+	var _pctags_item = __webpack_require__(61);
 
 	var _pctags_item2 = _interopRequireDefault(_pctags_item);
 
@@ -701,21 +707,21 @@
 
 /***/ }),
 
-/***/ 47:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(48)
+	__vue_styles__.push(__webpack_require__(62)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(49)
+	__vue_exports__ = __webpack_require__(63)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(50)
+	var __vue_template__ = __webpack_require__(64)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -746,7 +752,7 @@
 
 /***/ }),
 
-/***/ 48:
+/***/ 62:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -769,7 +775,7 @@
 
 /***/ }),
 
-/***/ 49:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -798,33 +804,32 @@
 	    methods: {
 	        todetail: function todetail(id, e, alt) {
 
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "";
-	            //                if(id==1){
-	            //                    name = "main/pcmain_imglist";
+	            //                 weexEventModule.startWebViewActivity(e);
+	            var name = "tags/pctagcontent_imglist";
+	            //                if(e.indexOf('m.meituba.com')!=-1){
+	            //                    name = "marticle/marticlelist";
 	            //                }else{
-	            //                    name = "nenuli/pcnenuli_tabbar";
+	            //                    name = "article/pcarticlelist";
 	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt,
-	            //                        pageNo:id-1
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	            var params = {
+	                url: meizitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
 
 /***/ }),
 
-/***/ 50:
+/***/ 64:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -847,7 +852,7 @@
 
 /***/ }),
 
-/***/ 51:
+/***/ 65:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

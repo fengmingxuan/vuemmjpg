@@ -25,25 +25,25 @@
 
         methods:{
             todetail:function (e,alt) {
-                weexEventModule.startWebViewActivity(e);
-//                var name = "article/pcarticlelist";
+//                weexEventModule.startWebViewActivity(e);
+                var name = "img/pcimage_imglist";
 //                if(e.indexOf('m.meituba.com')!=-1){
 //                    name = "marticle/marticlelist";
 //                }else{
 //                    name = "article/pcarticlelist";
 //                }
-//                var params={
-//                    url: meituba.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                })
+                var params={
+                    url: meizitu.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                });
             }
         }
     }

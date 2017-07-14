@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(59)
+	__vue_styles__.push(__webpack_require__(73)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(60)
+	__vue_exports__ = __webpack_require__(74)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(61)
+	var __vue_template__ = __webpack_require__(75)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,7 +107,13 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
+	    pc_image:"http://www.meizitu.com/a/3666.html"
 
+	};
+	exports.getpc_image = function () {
+	    var url = MEIZITU.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
 	};
 	exports.getpc_tag = function () {
 	    var url = MEIZITU.pc_tag;
@@ -219,7 +225,7 @@
 
 /***/ }),
 
-/***/ 59:
+/***/ 73:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -247,7 +253,7 @@
 
 /***/ }),
 
-/***/ 60:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -280,6 +286,9 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('img/pcimage_slider');
+	        this.rows.push('img/pcimage_relatedpost');
+	        this.rows.push('img/pcimage_imglist');
 	        this.rows.push('tags/pctagcontent_imglist');
 	        this.rows.push('main/pcmaincontent_imglist');
 	        this.rows.push('main/pcflink_pager');
@@ -317,7 +326,7 @@
 
 /***/ }),
 
-/***/ 61:
+/***/ 75:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

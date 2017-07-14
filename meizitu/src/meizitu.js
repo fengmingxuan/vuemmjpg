@@ -11,7 +11,13 @@ var MEIZITU = {
     pc_meizitu:"http://www.meizitu.com",
     pc_main_more:"http://www.meizitu.com/a/",
     pc_tag:"http://www.meizitu.com/a/pure.html",
+    pc_image:"http://www.meizitu.com/a/3666.html"
 
+};
+exports.getpc_image = function () {
+    var url = MEIZITU.pc_image;
+    console.log('pc_image==' + url);
+    return url;
 };
 exports.getpc_tag = function () {
     var url = MEIZITU.pc_tag;

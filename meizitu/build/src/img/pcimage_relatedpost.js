@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(43)
+	__vue_styles__.push(__webpack_require__(13)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(44)
+	__vue_exports__ = __webpack_require__(14)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(46)
+	var __vue_template__ = __webpack_require__(19)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pcflink_pager.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/img/pcimage_relatedpost.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1e61335e"
+	__vue_options__._scopeId = "data-v-3c5da9bc"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -520,30 +520,7 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */
+/* 13 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -570,7 +547,7 @@
 	}
 
 /***/ }),
-/* 37 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -583,9 +560,9 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcflink_item = __webpack_require__(38);
+	var _pclastest_item = __webpack_require__(15);
 
-	var _pcflink_item2 = _interopRequireDefault(_pcflink_item);
+	var _pclastest_item2 = _interopRequireDefault(_pclastest_item);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -618,19 +595,19 @@
 	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
-	        pcflink_item: _pcflink_item2.default,
+	        pclastest_item: _pclastest_item2.default,
 	        navbar_v: _navbar_v2.default
 
 	    },
-	    props: ['taghref', 'pageNo'],
+	    props: ['taghref'],
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: meizitu.getpc_meizitu(),
-	            pageNo: 0,
+	            taghref: meizitu.getpc_image(),
+	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "美女分类",
+	            title: "推荐妹子图",
 	            isFirst: 1,
 	            shown: false,
 	            leftsrc: './images/back.png'
@@ -650,30 +627,20 @@
 	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 
-	        //            storage.getItem('pageNo',function(s){
-	        //                console.log('get pageNo result:'+JSON.stringify(s));
-	        //                var spageNo = s.data;
-	        //                if(spageNo!=undefined){
-	        //                    self.pageNo = spageNo;
-	        //                }
-	        //                console.log('pageNo=='+self.pageNo);
-	        //                self.refresh();
-	        //            });
 	        self.refresh();
 	    },
 	    methods: {
-	        autoRefresh: function autoRefresh() {
+	        autoRefresh: function autoRefresh(event) {
 	            var self = this;
-	            self.refresh();
-	            //                storage.getItem('pageNo',function(s){
-	            //                    console.log('get pageNo result:'+JSON.stringify(s));
-	            //                    var spageNo = s.data;
-	            //                    if(spageNo!=undefined){
-	            //                        self.pageNo = spageNo;
-	            //                    }
-	            //                    console.log('pageNo=='+self.pageNo);
-	            //                    self.refresh();
-	            //                });
+	            storage.getItem('taghref', function (s) {
+	                console.log('get taghref result:' + JSON.stringify(s));
+	                var staghref = s.data;
+	                if (staghref != undefined) {
+	                    self.taghref = staghref;
+	                }
+	                console.log('taghref==' + self.taghref);
+	                self.refresh();
+	            });
 	        },
 	        onloading: function onloading(event) {
 	            var _this = this;
@@ -702,7 +669,7 @@
 	            var self = this;
 	            self.isFirst = 0;
 	            if (self.taghref == undefined) {
-	                self.taghref = meizitu.getpc_meizitu();
+	                self.taghref = meizitu.getpc_image();
 	            }
 	            var url = self.taghref;
 	            //                if(self.pageNo==1){
@@ -716,7 +683,7 @@
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMeizituJsoupModule.pcflink(params, function (e) {
+	            weexMeizituJsoupModule.pcimagerelatedpost(params, function (e) {
 	                var json = JSON.parse(e);
 	                //                    if(self.pageNo==1){
 	                self.stockArray.splice(0, self.stockArray.length);
@@ -738,21 +705,21 @@
 	};
 
 /***/ }),
-/* 38 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(39)
+	__vue_styles__.push(__webpack_require__(16)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(40)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(41)
+	var __vue_template__ = __webpack_require__(18)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -764,10 +731,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pcflink_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pclastest_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-3e64f016"
+	__vue_options__._scopeId = "data-v-1ae01d36"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -782,7 +749,7 @@
 
 
 /***/ }),
-/* 39 */
+/* 16 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -804,7 +771,7 @@
 	}
 
 /***/ }),
-/* 40 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -833,32 +800,31 @@
 	    methods: {
 	        todetail: function todetail(id, e, alt) {
 
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "";
-	            //                if(id==1){
-	            //                    name = "main/pcmain_imglist";
+	            //                 weexEventModule.startWebViewActivity(e);
+	            var name = "img/pcimage_imglist";
+	            //                if(e.indexOf('m.meituba.com')!=-1){
+	            //                    name = "marticle/marticlelist";
 	            //                }else{
-	            //                    name = "nenuli/pcnenuli_tabbar";
+	            //                    name = "article/pcarticlelist";
 	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt,
-	            //                        pageNo:id-1
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	            var params = {
+	                url: meizitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
 
 /***/ }),
-/* 41 */
+/* 18 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -880,7 +846,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 42 */
+/* 19 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -888,7 +854,13 @@
 	    staticStyle: {
 	      backgroundColor: "rgba(0, 0, 0, .25)"
 	    }
-	  }, [_c('list', {
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title,
+	      "shown": _vm.shown,
+	      "leftsrc": _vm.leftsrc
+	    }
+	  }), _c('list', {
 	    staticClass: ["list"],
 	    attrs: {
 	      "loadmoreoffset": "10"
@@ -910,556 +882,12 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pcflink_item', {
+	    }, [_c('pclastest_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }
 	    })], 1)
-	  })], 2)])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "pointdiv": {
-	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "height": "15wx",
-	    "width": "18wx",
-	    "flex": 1,
-	    "marginLeft": "75wx",
-	    "marginTop": "2wx",
-	    "flexDirection": "column"
-	  },
-	  "rednum": {
-	    "backgroundColor": "#ff531e",
-	    "width": "15wx",
-	    "height": "12wx",
-	    "borderRadius": 30,
-	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "color": "#ff531e",
-	    "fontSize": "8wx",
-	    "paddingTop": "2wx",
-	    "paddingBottom": "2wx"
-	  },
-	  "rednum-0": {
-	    "paddingRight": "2wx",
-	    "paddingLeft": "4wx"
-	  },
-	  "rednum-1": {
-	    "paddingRight": "2wx",
-	    "paddingLeft": "2wx"
-	  },
-	  "slider": {
-	    "flexDirection": "row",
-	    "width": 750,
-	    "top": 0,
-	    "left": 0,
-	    "bottom": 0,
-	    "marginBottom": "5wx"
-	  },
-	  "content": {
-	    "flexDirection": "column",
-	    "width": 750
-	  },
-	  "tabclass": {
-	    "width": 750,
-	    "height": 80,
-	    "flexDirection": "row",
-	    "justifyContent": "flex-start",
-	    "alignItems": "flex-start",
-	    "bottom": 0,
-	    "left": 0,
-	    "right": 0
-	  },
-	  "tabclass_line": {
-	    "width": 750,
-	    "height": 2,
-	    "flexDirection": "row",
-	    "justifyContent": "flex-start",
-	    "alignItems": "flex-start",
-	    "bottom": 0,
-	    "left": 0,
-	    "right": 0
-	  },
-	  "content-0": {
-	    "backgroundColor": "#F6F6F6"
-	  },
-	  "content-1": {
-	    "backgroundColor": "#15253d"
-	  },
-	  "tabclass-0": {
-	    "backgroundColor": "#333333"
-	  },
-	  "tabclass-1": {
-	    "backgroundColor": "#132237"
-	  },
-	  "top_tab_item": {
-	    "alignItems": "center",
-	    "justifyContent": "center",
-	    "width": 150,
-	    "marginTop": -40
-	  },
-	  "img": {
-	    "width": "20wx",
-	    "height": "20wx"
-	  },
-	  "item_text": {
-	    "fontSize": "15wx",
-	    "flex": 1,
-	    "top": "-5wx",
-	    "textAlign": "center"
-	  },
-	  "tablineclass": {
-	    "height": 2
-	  },
-	  "top_item_line": {
-	    "height": 2,
-	    "width": 150
-	  },
-	  "item_text-0": {
-	    "color": "#555555"
-	  },
-	  "item_text-1": {
-	    "color": "#999999"
-	  },
-	  "item_text-select-0": {
-	    "color": "#1191f6"
-	  },
-	  "item_text-select-1": {
-	    "color": "#005e91"
-	  },
-	  "lineClass": {
-	    "height": 2,
-	    "width": 150
-	  },
-	  "select_line_color-0": {
-	    "backgroundColor": "#1191f6"
-	  },
-	  "select_line_color-1": {
-	    "backgroundColor": "#005e91"
-	  },
-	  "unselect_line_color-0": {
-	    "backgroundColor": "#DDDDDD"
-	  },
-	  "unselect_line_color-1": {
-	    "backgroundColor": "#0e1929"
-	  }
-	}
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _navbar_v = __webpack_require__(3);
-
-	var _navbar_v2 = _interopRequireDefault(_navbar_v);
-
-	var _pcflink = __webpack_require__(45);
-
-	var _pcflink2 = _interopRequireDefault(_pcflink);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var dom = weex.requireModule('dom');
-	var storage = weex.requireModule('storage');
-
-	var stream = weex.requireModule('stream');
-	var modal = weex.requireModule('modal');
-	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
-	var meizitu = __webpack_require__(6);
-	var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
-	var img1 = '//gw.alicdn.com/tps/i1/TB1M3sQMpXXXXakXXXXApNeJVXX-360-360.png';
-	exports.default = {
-	    components: {
-	        pcflink: _pcflink2.default,
-	        navbar_v: _navbar_v2.default
-
-	    },
-	    props: ['taghref'],
-	    data: function data() {
-	        var _ref;
-
-	        return _ref = {
-	            skinType: 0,
-	            eventCnt: 0,
-	            togglePlayMsg: 'pause',
-	            indexMetting: 0,
-	            title: '',
-	            navBar_display: true,
-	            shown: false,
-	            screenHeight: 0,
-	            platform: 'unknown',
-	            //            left_line_color: 'select_line_color-0',
-	            //            right_line_color: 'unselect_line_color-0',
-	            buttomData: [],
-	            davNum: 0, //我的观点数
-	            davmargin: 0,
-	            taghref: meizitu.getpc_meizitu(),
-	            pageNo: '0'
-	        }, _defineProperty(_ref, 'shown', false), _defineProperty(_ref, 'leftsrc', './images/back.png'), _ref;
-	    },
-	    created: function created() {
-	        //            this.platform = this.$getConfig().env.platform;
-	        //            var cskinType = this.$getConfig().skinType;
-	        //            if (this.platform == 'iOS') {
-	        //                this.screenHeight = this.$getConfig().env.deviceHeight / this.$getConfig().env.scale - 64;
-	        //                this.navBar_display = false;
-	        //                var event_ios = __weex_require_module__('event');
-	        //                event_ios.setNavbarTitle(this.title);
-	        //            }
-	        var self = this;
-	        this.refresh();
-	        //            storage.getItem('pageNo',function(s){
-	        //                console.log('get pageNo result:'+JSON.stringify(s));
-	        //                var json  = s.data;
-	        //                console.log('json===' + json);
-	        //
-	        //                json = eval('(' + json + ')');
-	        //
-	        //                var staghref = json.taghref;
-	        //                if(staghref!=undefined){
-	        //                    self.taghref = staghref;
-	        //                }
-	        //                console.log('taghref=='+staghref);
-	        //
-	        //                var spageNo = json.pageNo;
-	        //                if(spageNo!=undefined){
-	        //                    self.pageNo = spageNo;
-	        //                }
-	        //                console.log('pageNo=='+spageNo);
-	        //                self.refresh();
-	        //            });
-
-	        //            if (this.platform == 'iOS') {
-	        //
-	        //            } else if (this.platform == 'android') {
-	        //
-	        //            } else {
-	        //                cskinType = taoguba.getUrlParam('skinType');
-	        //            }
-	        //            if (cskinType == undefined) {
-	        //                cskinType = 0;
-	        //            }
-	        //            this.skinType = cskinType;
-	        //
-	        //            var cdavNum = this.$getConfig().davNum;
-	        //            this.setdavNum(cdavNum);
-	    },
-
-	    methods: {
-	        refresh: function refresh() {
-	            var self = this;
-	            if (self.taghref == undefined) {
-	                self.taghref = meizitu.getpc_meizitu();
-	                self.pageNo = '0';
-	                console.log('not from tabbar');
-	            }
-	            var url = self.taghref;
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            console.log('refresh params== ' + JSON.stringify(params));
-	            weexMeizituJsoupModule.pcflinkTag(params, function (e) {
-	                var json;
-	                json = eval('(' + e + ')');
-	                console.log('json===' + json);
-	                self.buttomData.splice(0, self.buttomData.length);
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                itemName: tag.alt,
-	                                itemNameColor: "item_text-select-0",
-	                                itemLineColor: "select_line_color-0",
-	                                item_text_select: "#555555",
-	                                id: "point_sub" + i,
-	                                href: tag.href,
-	                                isFirst: 1,
-	                                indextab: 'tab' + i,
-	                                indexline: 'line' + i,
-	                                pageNo: i + ''
-	                                // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-	                            };
-	                            console.log('tab===' + JSON.stringify(tab));
-	                            self.buttomData.push(tab);
-	                            //                                if(i==0){
-	                            //                                    var pageNo = tab.pageNo;
-	                            //                                    console.log("pageNo==="+pageNo)
-	                            //                                    storage.setItem('pageNo',pageNo,function(s){
-	                            //                                        console.log('set [pageNo]:'+JSON.stringify(s));
-	                            //                                    });
-	                            //                                }
-	                        }
-	                    }
-	                }
-	            });
-	        },
-	        onchange: function onchange(params) {
-	            var index = params.index;
-	            console.log("onchange===" + index);
-	            this.setIndex(index);
-	            //                if ('android' == this.platform) {
-	            //                    weexEventModule.setOnDrawerBackEnabled('' + index);
-	            //                }
-	        },
-	        setIndex: function setIndex(index) {
-	            console.log("setIndex==" + index);
-	            this.indexMetting = index;
-	            this.title = this.buttomData[index].itemName;
-	            //                if (index == 0) {
-	            //                    this.left_line_color = 'select_line_color-' + this.skinType;
-	            //                    this.right_line_color = 'unselect_line_color-' + this.skinType;
-	            //                }
-	            //                else {
-	            //                    this.left_line_color = 'unselect_line_color-' + this.skinType;
-	            //                    this.right_line_color = 'select_line_color-' + this.skinType;
-	            //                }
-	            // console.log('\n======\n'+JSON.stringify(this.buttomData));
-	            for (var i = 0; i < this.buttomData.length; i++) {
-	                var tabItem = this.buttomData[i];
-	                if (i == index) {
-	                    tabItem.imgUrl = tabItem.imgUrlSelect;
-	                    tabItem.itemNameColor = "item_text-select-" + this.skinType;
-	                    tabItem.itemLineColor = "select_line_color-" + this.skinType;
-	                    tabItem.item_text_select = "#1191f6";
-
-	                    //                        var pageNo = tabItem.pageNo;
-	                    //                        console.log("pageNo==="+pageNo)
-	                    //                        storage.setItem('pageNo',pageNo,function(s){
-	                    //                            console.log('set [pageNo]:'+JSON.stringify(s));
-	                    //                        });
-	                    //                        const el = this.$refs.item10[0];
-	                    //                        if (this.$vm('point_sub' + i).isFirst == 1) {
-	                    //                            this.$vm('point_sub' + i).autoRefresh();
-	                    //                        }
-
-
-	                    console.log("i===" + i);
-	                    if (i == 0) {
-	                        if (this.$refs.point_sub0[0].isFirst == 1) {
-	                            this.$refs.point_sub0[0].autoRefresh();
-	                            var eltab = this.$refs.tab0[0];
-	                            dom.scrollToElement(eltab, { offset: 0 });
-
-	                            var elline = this.$refs.line0[0];
-	                            dom.scrollToElement(elline, { offset: 0 });
-	                        }
-	                    } else if (i == 1) {
-	                        if (this.$refs.point_sub1[0].isFirst == 1) {
-	                            this.$refs.point_sub1[0].autoRefresh();
-	                            var _eltab = this.$refs.tab1[0];
-	                            dom.scrollToElement(_eltab, { offset: 1 });
-
-	                            var _elline = this.$refs.line1[0];
-	                            dom.scrollToElement(_elline, { offset: 1 });
-	                        }
-	                    }
-	                } else {
-	                    tabItem.imgUrl = tabItem.imgUrlUnSelect;
-	                    tabItem.itemNameColor = "item_text-" + this.skinType;
-	                    tabItem.itemLineColor = "unselect_line_color-" + this.skinType;
-	                    tabItem.item_text_select = "#555555";
-	                }
-	            }
-	        }
-	        //            //设置留言管理数字
-	        //            setdavNum:function (num) {
-	        //                var cdavNum = num;
-	        //                if(cdavNum==undefined){
-	        //                    cdavNum = 0;
-	        //                }
-	        //                if(cdavNum>99){
-	        //                    cdavNum = 99;
-	        //                }
-	        //                if(cdavNum<10){
-	        //                    this.davmargin=0;
-	        //                }else{
-	        //                    this.davmargin=1;
-	        //                }
-	        //                this.davNum = cdavNum;
-	        //            }
-	    },
-	    ready: function ready() {
-
-	        this.indexMetting = 0;
-	        this.setIndex(this.indexMetting);
-	    }
-	};
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(36)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(37)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(42)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pcflink.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-498e9d66"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: ["content"]
-	  }, [_c('navbar_v', {
-	    attrs: {
-	      "title": _vm.title,
-	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
-	    }
-	  }), _c('scroller', {
-	    staticClass: ["tabclass"],
-	    attrs: {
-	      "scrollDirection": "horizontal"
-	    }
-	  }, _vm._l((_vm.buttomData), function(item) {
-	    return _c('div', {
-	      ref: item.indextab,
-	      refInFor: true,
-	      staticClass: ["top_tab_item"],
-	      on: {
-	        "click": function($event) {
-	          _vm.setIndex(item.index)
-	        }
-	      }
-	    }, [_c('div', {
-	      staticClass: ["pointdiv"]
-	    }, [(_vm.davNum != 0 && item.index == 1) ? _c('text', {
-	      staticClass: ["rednum"]
-	    }, [_vm._v(_vm._s(_vm.davNum))]) : _vm._e()]), _c('text', {
-	      staticClass: ["item_text"],
-	      style: {
-	        color: item.item_text_select
-	      }
-	    }, [_vm._v(_vm._s(item.itemName))])])
-	  })), _c('scroller', {
-	    staticClass: ["tabclass_line"],
-	    attrs: {
-	      "scrollDirection": "horizontal"
-	    }
-	  }, _vm._l((_vm.buttomData), function(item) {
-	    return _c('div', {
-	      ref: item.indexline,
-	      refInFor: true,
-	      staticClass: ["top_item_line"]
-	    }, [_c('text', {
-	      staticClass: ["item_text"],
-	      style: {
-	        backgroundColor: item.item_text_select
-	      }
-	    })])
-	  })), _c('slider', {
-	    staticClass: ["slider"],
-	    staticStyle: {
-	      height: "1200"
-	    },
-	    appendAsTree: true,
-	    attrs: {
-	      "append": "tree",
-	      "interval": 1000,
-	      "needloop": "false",
-	      "autoPlay": false,
-	      "index": "indexMetting",
-	      "offScreenPageLimit": "3"
-	    },
-	    on: {
-	      "change": _vm.onchange
-	    }
-	  }, _vm._l((_vm.buttomData), function(item) {
-	    return _c('div', {
-	      staticStyle: {
-	        width: "750",
-	        height: "1334"
-	      }
-	    }, [_c('pcflink', {
-	      ref: item.id,
-	      refInFor: true,
-	      attrs: {
-	        "taghref": item.href,
-	        "pageNo": item.pageNo
-	      }
-	    })], 1)
-	  }))], 1)
+	  })], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

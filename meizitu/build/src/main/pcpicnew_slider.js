@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(38)
+	__vue_styles__.push(__webpack_require__(54)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(39)
+	__vue_exports__ = __webpack_require__(55)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(40)
+	var __vue_template__ = __webpack_require__(56)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,7 +107,13 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
+	    pc_image:"http://www.meizitu.com/a/3666.html"
 
+	};
+	exports.getpc_image = function () {
+	    var url = MEIZITU.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
 	};
 	exports.getpc_tag = function () {
 	    var url = MEIZITU.pc_tag;
@@ -219,7 +225,7 @@
 
 /***/ }),
 
-/***/ 38:
+/***/ 54:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -246,7 +252,7 @@
 
 /***/ }),
 
-/***/ 39:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -294,6 +300,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	exports.default = {
 	    components: {},
 	    props: ['taghref'],
@@ -315,8 +322,26 @@
 	        self.refresh();
 	    },
 	    methods: {
-	        todetail: function todetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	        todetail: function todetail(e, alt) {
+	            //                weexEventModule.startWebViewActivity(e);
+	            var name = "img/pcimage_imglist";
+	            //                if(e.indexOf('m.meituba.com')!=-1){
+	            //                    name = "marticle/marticlelist";
+	            //                }else{
+	            //                    name = "article/pcarticlelist";
+	            //                }
+	            var params = {
+	                url: meizitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        },
 	        refresh: function refresh() {
 	            var self = this;
@@ -347,7 +372,7 @@
 
 /***/ }),
 
-/***/ 40:
+/***/ 56:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -372,7 +397,7 @@
 	      },
 	      on: {
 	        "click": function($event) {
-	          _vm.todetail(img.href)
+	          _vm.todetail(img.href, img.alt)
 	        }
 	      }
 	    }), _c('text', {

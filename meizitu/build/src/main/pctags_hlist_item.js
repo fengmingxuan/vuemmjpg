@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(55)
+	__vue_styles__.push(__webpack_require__(69)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(56)
+	__vue_exports__ = __webpack_require__(70)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(57)
+	var __vue_template__ = __webpack_require__(71)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,7 +107,13 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
+	    pc_image:"http://www.meizitu.com/a/3666.html"
 
+	};
+	exports.getpc_image = function () {
+	    var url = MEIZITU.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
 	};
 	exports.getpc_tag = function () {
 	    var url = MEIZITU.pc_tag;
@@ -219,7 +225,7 @@
 
 /***/ }),
 
-/***/ 55:
+/***/ 69:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -247,7 +253,7 @@
 
 /***/ }),
 
-/***/ 56:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -275,7 +281,7 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e) {
+	        todetail: function todetail(e, alt) {
 	            //                weexEventModule.startWebViewActivity(e);
 	            var name = "tags/pctagcontent_imglist";
 	            //                if(e.indexOf('m.meituba.com')!=-1){
@@ -284,7 +290,7 @@
 	            //                    name = "article/pcarticlelist";
 	            //                }
 	            var params = {
-	                url: meituba.getDefaultUrl(name),
+	                url: meizitu.getDefaultUrl(name),
 	                animated: "true",
 	                options: {
 	                    taghref: e,
@@ -301,7 +307,7 @@
 
 /***/ }),
 
-/***/ 57:
+/***/ 71:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -309,7 +315,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href)
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
 	  }, [_c('div', {

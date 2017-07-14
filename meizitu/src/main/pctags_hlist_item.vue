@@ -1,5 +1,5 @@
 <template>
-        <div class="news-content" @click="todetail(stockitem.href)">
+        <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
             <div class="news-content">
                 <text class="txt">{{stockitem.alt}}</text>
             </div>
@@ -22,7 +22,7 @@
         },
 
         methods:{
-            todetail:function (e) {
+            todetail:function (e,alt) {
 //                weexEventModule.startWebViewActivity(e);
                 var name = "tags/pctagcontent_imglist";
 //                if(e.indexOf('m.meituba.com')!=-1){
@@ -31,7 +31,7 @@
 //                    name = "article/pcarticlelist";
 //                }
                 var params={
-                    url: meituba.getDefaultUrl(name),
+                    url: meizitu.getDefaultUrl(name),
                     animated: "true",
                     options:{
                         taghref: e,
