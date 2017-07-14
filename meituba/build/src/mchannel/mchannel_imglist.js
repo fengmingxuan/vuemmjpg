@@ -368,7 +368,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -967,7 +967,12 @@
 	            } else {
 	                // http://m.meituba.com/xinggan/
 	                //http://m.meituba.com/xinggan/list82.html
-	                url = self.taghref + self.pagenumbers;
+	                //http://m.meituba.com/tag/DGC.html/tag/DGC/2.html
+	                if (self.taghref.indexOf('.html') != -1) {
+	                    url = meituba.getm_meituba() + self.pagenumbers;
+	                } else {
+	                    url = self.taghref + self.pagenumbers;
+	                }
 	            }
 	            console.log('url===' + url);
 	            var params = {

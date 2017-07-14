@@ -58,7 +58,7 @@
 	__vue_exports__ = __webpack_require__(228)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(229)
+	var __vue_template__ = __webpack_require__(234)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -368,7 +368,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -814,7 +814,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _mtags_item = __webpack_require__(412);
+	var _mtags_item = __webpack_require__(229);
 
 	var _mtags_item2 = _interopRequireDefault(_mtags_item);
 
@@ -971,47 +971,47 @@
 /***/ }),
 
 /***/ 229:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      backgroundColor: "rgba(0, 0, 0, .25)"
-	    }
-	  }, [_c('navbar_v', {
-	    attrs: {
-	      "title": _vm.title
-	    }
-	  }), _c('list', {
-	    staticClass: ["list"],
-	    attrs: {
-	      "loadmoreoffset": "10"
-	    }
-	  }, [_c('refresh', {
-	    staticClass: ["refresh"],
-	    attrs: {
-	      "display": _vm.refreshing ? 'show' : 'hide'
-	    },
-	    on: {
-	      "refresh": _vm.onrefresh,
-	      "pullingdown": _vm.onpullingdown
-	    }
-	  }, [_c('text', {
-	    staticClass: ["indicator"]
-	  }, [_vm._v("下拉刷新...")])]), _vm._l((_vm.tpicNArray), function(tpicNitem) {
-	    return _c('cell', {
-	      appendAsTree: true,
-	      attrs: {
-	        "append": "tree"
-	      }
-	    }, [_c('mtags_item', {
-	      attrs: {
-	        "tpicNitem": tpicNitem
-	      }
-	    })], 1)
-	  })], 2)], 1)
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(230)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(231)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(233)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/mtags/mtags_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-0964291b"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
 
 /***/ }),
 
@@ -1046,7 +1046,7 @@
 
 	'use strict';
 
-	var _mtag_sub_item = __webpack_require__(413);
+	var _mtag_sub_item = __webpack_require__(232);
 
 	var _mtag_sub_item2 = _interopRequireDefault(_mtag_sub_item);
 
@@ -1137,85 +1137,6 @@
 /***/ }),
 
 /***/ 232:
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      margin: "5px",
-	      flexDirection: "column"
-	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"]
-	  }, [_c('div', {
-	    staticStyle: {
-	      flexDirection: "column"
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"],
-	    on: {
-	      "click": function($event) {
-	        _vm.toweb(_vm.tpicNitem.href, _vm.tpicNitem.title)
-	      }
-	    }
-	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))]), _vm._l((_vm.tostock(_vm.tpicNitem)), function(stockitem) {
-	    return _c('div', [_c('mtag_sub_item', {
-	      attrs: {
-	        "stockitem": stockitem
-	      }
-	    })], 1)
-	  })], 2)])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 412:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(230)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(231)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(232)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meituba/src/mtags/mtags_item.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0964291b"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 413:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -1257,6 +1178,85 @@
 
 	module.exports = __vue_exports__
 
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      margin: "5px",
+	      flexDirection: "column"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"]
+	  }, [_c('div', {
+	    staticStyle: {
+	      flexDirection: "column"
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"],
+	    on: {
+	      "click": function($event) {
+	        _vm.toweb(_vm.tpicNitem.href, _vm.tpicNitem.title)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))]), _vm._l((_vm.tostock(_vm.tpicNitem)), function(stockitem) {
+	    return _c('div', [_c('mtag_sub_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  })], 2)])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 234:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      backgroundColor: "rgba(0, 0, 0, .25)"
+	    }
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title
+	    }
+	  }), _c('list', {
+	    staticClass: ["list"],
+	    attrs: {
+	      "loadmoreoffset": "10"
+	    }
+	  }, [_c('refresh', {
+	    staticClass: ["refresh"],
+	    attrs: {
+	      "display": _vm.refreshing ? 'show' : 'hide'
+	    },
+	    on: {
+	      "refresh": _vm.onrefresh,
+	      "pullingdown": _vm.onpullingdown
+	    }
+	  }, [_c('text', {
+	    staticClass: ["indicator"]
+	  }, [_vm._v("下拉刷新...")])]), _vm._l((_vm.tpicNArray), function(tpicNitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('mtags_item', {
+	      attrs: {
+	        "tpicNitem": tpicNitem
+	      }
+	    })], 1)
+	  })], 2)], 1)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
 
 /***/ })
 

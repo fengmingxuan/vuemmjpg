@@ -126,7 +126,12 @@
                 }else{
                     // http://m.meituba.com/xinggan/
                     //http://m.meituba.com/xinggan/list82.html
-                    url = self.taghref+ self.pagenumbers;
+                    //http://m.meituba.com/tag/DGC.html/tag/DGC/2.html
+                    if(self.taghref.indexOf('.html')!=-1){
+                        url = meituba.getm_meituba()+ self.pagenumbers;
+                    }else{
+                        url = self.taghref+ self.pagenumbers;
+                    }
                 }
                 console.log('url==='+url);
                 var params = {

@@ -58,7 +58,7 @@
 	__vue_exports__ = __webpack_require__(231)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(232)
+	var __vue_template__ = __webpack_require__(233)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -119,7 +119,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -515,7 +515,7 @@
 
 	'use strict';
 
-	var _mtag_sub_item = __webpack_require__(413);
+	var _mtag_sub_item = __webpack_require__(232);
 
 	var _mtag_sub_item2 = _interopRequireDefault(_mtag_sub_item);
 
@@ -606,40 +606,6 @@
 /***/ }),
 
 /***/ 232:
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      margin: "5px",
-	      flexDirection: "column"
-	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"]
-	  }, [_c('div', {
-	    staticStyle: {
-	      flexDirection: "column"
-	    }
-	  }, [_c('text', {
-	    staticClass: ["txt"],
-	    on: {
-	      "click": function($event) {
-	        _vm.toweb(_vm.tpicNitem.href, _vm.tpicNitem.title)
-	      }
-	    }
-	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))]), _vm._l((_vm.tostock(_vm.tpicNitem)), function(stockitem) {
-	    return _c('div', [_c('mtag_sub_item', {
-	      attrs: {
-	        "stockitem": stockitem
-	      }
-	    })], 1)
-	  })], 2)])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 413:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -681,6 +647,40 @@
 
 	module.exports = __vue_exports__
 
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      margin: "5px",
+	      flexDirection: "column"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"]
+	  }, [_c('div', {
+	    staticStyle: {
+	      flexDirection: "column"
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"],
+	    on: {
+	      "click": function($event) {
+	        _vm.toweb(_vm.tpicNitem.href, _vm.tpicNitem.title)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))]), _vm._l((_vm.tostock(_vm.tpicNitem)), function(stockitem) {
+	    return _c('div', [_c('mtag_sub_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  })], 2)])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
 
 /***/ })
 

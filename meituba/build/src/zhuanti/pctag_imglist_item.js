@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(401)
+	__vue_styles__.push(__webpack_require__(403)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(402)
+	__vue_exports__ = __webpack_require__(404)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(403)
+	var __vue_template__ = __webpack_require__(405)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -119,7 +119,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -315,7 +315,7 @@
 
 /***/ }),
 
-/***/ 401:
+/***/ 403:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -341,7 +341,7 @@
 
 /***/ }),
 
-/***/ 402:
+/***/ 404:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -418,7 +418,7 @@
 
 /***/ }),
 
-/***/ 403:
+/***/ 405:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

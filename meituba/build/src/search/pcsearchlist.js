@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(248)
+	__vue_styles__.push(__webpack_require__(250)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(249)
+	__vue_exports__ = __webpack_require__(251)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(258)
+	var __vue_template__ = __webpack_require__(260)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -368,7 +368,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -813,7 +813,7 @@
 
 /***/ }),
 
-/***/ 248:
+/***/ 250:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -841,7 +841,7 @@
 
 /***/ }),
 
-/***/ 249:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -854,11 +854,11 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcsearchlist_item = __webpack_require__(250);
+	var _pcsearchlist_item = __webpack_require__(252);
 
 	var _pcsearchlist_item2 = _interopRequireDefault(_pcsearchlist_item);
 
-	var _pcslidersearch = __webpack_require__(254);
+	var _pcslidersearch = __webpack_require__(256);
 
 	var _pcslidersearch2 = _interopRequireDefault(_pcslidersearch);
 
@@ -1015,21 +1015,21 @@
 
 /***/ }),
 
-/***/ 250:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(251)
+	__vue_styles__.push(__webpack_require__(253)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(252)
+	__vue_exports__ = __webpack_require__(254)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(253)
+	var __vue_template__ = __webpack_require__(255)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1060,7 +1060,7 @@
 
 /***/ }),
 
-/***/ 251:
+/***/ 253:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1086,7 +1086,7 @@
 
 /***/ }),
 
-/***/ 252:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1142,7 +1142,7 @@
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1169,21 +1169,21 @@
 
 /***/ }),
 
-/***/ 254:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(255)
+	__vue_styles__.push(__webpack_require__(257)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(256)
+	__vue_exports__ = __webpack_require__(258)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(257)
+	var __vue_template__ = __webpack_require__(259)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1214,7 +1214,7 @@
 
 /***/ }),
 
-/***/ 255:
+/***/ 257:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1242,7 +1242,7 @@
 
 /***/ }),
 
-/***/ 256:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1433,7 +1433,7 @@
 
 /***/ }),
 
-/***/ 257:
+/***/ 259:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1473,7 +1473,7 @@
 
 /***/ }),
 
-/***/ 258:
+/***/ 260:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

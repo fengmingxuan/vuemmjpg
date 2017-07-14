@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(405)
+	__vue_styles__.push(__webpack_require__(407)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(406)
+	__vue_exports__ = __webpack_require__(408)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(411)
+	var __vue_template__ = __webpack_require__(413)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -368,7 +368,7 @@
 	    m_channel:"http://m.meituba.com/xinggan/",
 	    m_article:"http://m.meituba.com/xinggan/60954.html",
 	    m_meinv:"http://m.meituba.com/meinv/",
-	    m_meituba:"http://m.meituba.com/",
+	    m_meituba:"http://m.meituba.com",
 	    m_search:"http://m.meituba.com/plus/search.php?q=%E7%BE%8E%E5%A5%B3",
 	    m_search_url:"http://m.meituba.com/plus/search.php?q=",
 	    m_tags:"http://m.meituba.com/tag/"
@@ -813,7 +813,7 @@
 
 /***/ }),
 
-/***/ 405:
+/***/ 407:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -841,7 +841,7 @@
 
 /***/ }),
 
-/***/ 406:
+/***/ 408:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -854,7 +854,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pczhuanti_item = __webpack_require__(407);
+	var _pczhuanti_item = __webpack_require__(409);
 
 	var _pczhuanti_item2 = _interopRequireDefault(_pczhuanti_item);
 
@@ -1009,21 +1009,21 @@
 
 /***/ }),
 
-/***/ 407:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(408)
+	__vue_styles__.push(__webpack_require__(410)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(409)
+	__vue_exports__ = __webpack_require__(411)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(410)
+	var __vue_template__ = __webpack_require__(412)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1054,7 +1054,7 @@
 
 /***/ }),
 
-/***/ 408:
+/***/ 410:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1074,7 +1074,7 @@
 
 /***/ }),
 
-/***/ 409:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1181,7 +1181,7 @@
 
 /***/ }),
 
-/***/ 410:
+/***/ 412:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1216,7 +1216,7 @@
 
 /***/ }),
 
-/***/ 411:
+/***/ 413:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
