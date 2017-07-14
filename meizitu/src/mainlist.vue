@@ -23,6 +23,10 @@
             }
         },
         created () {
+            this.rows.push('mmain/mmain_imglist')
+            this.rows.push('mmain/mlastest_imglist')
+            this.rows.push('mmain/mtuijian_imglist')
+            this.rows.push('mmenu/mmenulist')
             this.rows.push('img/pcimage_slider')
             this.rows.push('img/pcimage_relatedpost')
             this.rows.push('img/pcimage_imglist')

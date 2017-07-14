@@ -577,8 +577,14 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
-	    pc_image:"http://www.meizitu.com/a/3666.html"
+	    pc_image:"http://www.meizitu.com/a/3666.html",
+	    m_meizitu:"http://m.meizitu.com",
 
+	};
+	exports.getm_meizitu = function () {
+	    var url = MEIZITU.m_meizitu;
+	    console.log('m_meizitu==' + url);
+	    return url;
 	};
 	exports.getpc_image = function () {
 	    var url = MEIZITU.pc_image;

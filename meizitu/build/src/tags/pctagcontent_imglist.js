@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(76)
+	__vue_styles__.push(__webpack_require__(96)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(77)
+	__vue_exports__ = __webpack_require__(97)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(83)
+	var __vue_template__ = __webpack_require__(103)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,9 +90,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -135,7 +135,8 @@
 
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -241,7 +242,8 @@
 	}
 
 /***/ }),
-/* 5 */
+
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -343,7 +345,8 @@
 	};
 
 /***/ }),
-/* 6 */
+
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -359,8 +362,14 @@
 	    pc_meizitu:"http://www.meizitu.com",
 	    pc_main_more:"http://www.meizitu.com/a/",
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
-	    pc_image:"http://www.meizitu.com/a/3666.html"
+	    pc_image:"http://www.meizitu.com/a/3666.html",
+	    m_meizitu:"http://m.meizitu.com",
 
+	};
+	exports.getm_meizitu = function () {
+	    var url = MEIZITU.m_meizitu;
+	    console.log('m_meizitu==' + url);
+	    return url;
 	};
 	exports.getpc_image = function () {
 	    var url = MEIZITU.pc_image;
@@ -476,7 +485,8 @@
 
 
 /***/ }),
-/* 7 */
+
+/***/ 7:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -515,14 +525,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */
+
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -566,7 +570,8 @@
 
 
 /***/ }),
-/* 16 */
+
+/***/ 16:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -588,7 +593,8 @@
 	}
 
 /***/ }),
-/* 17 */
+
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -641,7 +647,8 @@
 	};
 
 /***/ }),
-/* 18 */
+
+/***/ 18:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -663,8 +670,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 19 */,
-/* 20 */
+
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -708,7 +715,8 @@
 
 
 /***/ }),
-/* 21 */
+
+/***/ 21:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -735,7 +743,8 @@
 	}
 
 /***/ }),
-/* 22 */
+
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -893,7 +902,8 @@
 	};
 
 /***/ }),
-/* 23 */
+
+/***/ 23:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -939,36 +949,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */
+
+/***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -1012,7 +994,8 @@
 
 
 /***/ }),
-/* 54 */
+
+/***/ 54:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1038,7 +1021,8 @@
 	}
 
 /***/ }),
-/* 55 */
+
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1157,7 +1141,8 @@
 	};
 
 /***/ }),
-/* 56 */
+
+/***/ 56:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1193,26 +1178,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */
+
+/***/ 96:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1239,7 +1206,8 @@
 	}
 
 /***/ }),
-/* 77 */
+
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1252,7 +1220,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctagcontent_imglist_item = __webpack_require__(78);
+	var _pctagcontent_imglist_item = __webpack_require__(98);
 
 	var _pctagcontent_imglist_item2 = _interopRequireDefault(_pctagcontent_imglist_item);
 
@@ -1295,7 +1263,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
-	var utils = __webpack_require__(82);
+	var utils = __webpack_require__(102);
 	exports.default = {
 	    components: {
 	        pctagcontent_imglist_item: _pctagcontent_imglist_item2.default,
@@ -1444,21 +1412,22 @@
 	};
 
 /***/ }),
-/* 78 */
+
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(79)
+	__vue_styles__.push(__webpack_require__(99)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(80)
+	__vue_exports__ = __webpack_require__(100)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(81)
+	var __vue_template__ = __webpack_require__(101)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1488,7 +1457,8 @@
 
 
 /***/ }),
-/* 79 */
+
+/***/ 99:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1516,7 +1486,8 @@
 	}
 
 /***/ }),
-/* 80 */
+
+/***/ 100:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1576,7 +1547,8 @@
 	};
 
 /***/ }),
-/* 81 */
+
+/***/ 101:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1623,7 +1595,8 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 82 */
+
+/***/ 102:
 /***/ (function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -1671,7 +1644,8 @@
 	}
 
 /***/ }),
-/* 83 */
+
+/***/ 103:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1745,4 +1719,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });
