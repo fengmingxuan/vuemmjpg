@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(1)
+	__vue_styles__.push(__webpack_require__(38)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(2)
+	__vue_exports__ = __webpack_require__(39)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(4)
+	var __vue_template__ = __webpack_require__(40)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,133 +90,8 @@
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
 
-	module.exports = {
-	  "image": {
-	    "width": 730,
-	    "height": 500,
-	    "margin": 10
-	  },
-	  "slider": {
-	    "width": 750
-	  },
-	  "frame": {
-	    "width": 750,
-	    "flexDirection": "column",
-	    "alignContent": "center",
-	    "alignItems": "center",
-	    "height": 600
-	  },
-	  "txt": {
-	    "fontSize": 30,
-	    "margin": 10
-	  }
-	}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var stream = weex.requireModule('stream');
-	var modal = weex.requireModule('modal');
-	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
-	var meizitu = __webpack_require__(3);
-	var weexEventModule = weex.requireModule('weexEventModule');
-	exports.default = {
-	    components: {},
-	    props: ['taghref'],
-	    data: function data() {
-	        return {
-	            imageList: [],
-	            taghref: meizitu.getpc_meizitu(),
-	            pageNo: 1,
-	            title: ""
-	        };
-	    },
-
-	    created: function created() {
-	        var self = this;
-	        var ctaghref = self.$getConfig().taghref;
-	        if (ctaghref != undefined) {
-	            self.taghref = ctaghref;
-	        }
-	        self.refresh();
-	    },
-	    methods: {
-	        todetail: function todetail(e) {
-	            weexEventModule.startWebViewActivity(e);
-	        },
-	        refresh: function refresh() {
-	            var self = this;
-	            if (self.taghref == undefined) {
-	                self.taghref = meizitu.getpc_meizitu();
-	            }
-	            var url = self.taghref;
-	            var params = {
-	                url: url,
-	                pageNo: self.pageNo
-	            };
-	            weexMeizituJsoupModule.pcpicnew(params, function (e) {
-	                var json = JSON.parse(e);
-	                self.imageList.splice(0, self.imageList.length);
-	                if (json.list) {
-	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.imageList.push(tag);
-	                        }
-	                    }
-	                }
-	            });
-	        }
-
-	    }
-	};
-
-/***/ }),
-/* 3 */
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -228,11 +104,21 @@
 	};
 
 	var MEIZITU = {
-	    pc_meizitu:"http://www.meizitu.com/",
-
+	    pc_meizitu:"http://www.meizitu.com",
+	    pc_main_more:"http://www.meizitu.com/a/",
+	    pc_tag:"http://www.meizitu.com/a/pure.html",
 
 	};
-
+	exports.getpc_tag = function () {
+	    var url = MEIZITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
+	};
+	exports.getpc_main_more = function () {
+	    var url = MEIZITU.pc_main_more;
+	    console.log('pc_main_more==' + url);
+	    return url;
+	};
 	exports.getpc_meizitu = function () {
 	    var url = MEIZITU.pc_meizitu;
 	    console.log('pc_meizitu==' + url);
@@ -332,7 +218,136 @@
 
 
 /***/ }),
-/* 4 */
+
+/***/ 38:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "image": {
+	    "width": 730,
+	    "height": 500,
+	    "margin": 10
+	  },
+	  "slider": {
+	    "width": 750
+	  },
+	  "frame": {
+	    "width": 750,
+	    "flexDirection": "column",
+	    "alignContent": "center",
+	    "alignItems": "center",
+	    "height": 600
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "margin": 10
+	  }
+	}
+
+/***/ }),
+
+/***/ 39:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
+	var meizitu = __webpack_require__(6);
+	var weexEventModule = weex.requireModule('weexEventModule');
+	exports.default = {
+	    components: {},
+	    props: ['taghref'],
+	    data: function data() {
+	        return {
+	            imageList: [],
+	            taghref: meizitu.getpc_meizitu(),
+	            pageNo: 1,
+	            title: ""
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        self.refresh();
+	    },
+	    methods: {
+	        todetail: function todetail(e) {
+	            weexEventModule.startWebViewActivity(e);
+	        },
+	        refresh: function refresh() {
+	            var self = this;
+	            if (self.taghref == undefined) {
+	                self.taghref = meizitu.getpc_meizitu();
+	            }
+	            var url = self.taghref;
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeizituJsoupModule.pcpicnew(params, function (e) {
+	                var json = JSON.parse(e);
+	                self.imageList.splice(0, self.imageList.length);
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i++) {
+	                            var tag = json.list[i];
+	                            self.imageList.push(tag);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+	};
+
+/***/ }),
+
+/***/ 40:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -368,4 +383,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

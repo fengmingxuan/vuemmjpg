@@ -23,6 +23,7 @@
             }
         },
         created () {
+            this.rows.push('tags/pctagcontent_imglist')
             this.rows.push('main/pcmaincontent_imglist')
             this.rows.push('main/pcflink_pager')
             this.rows.push('main/pcflink')

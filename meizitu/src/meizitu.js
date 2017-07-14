@@ -2,15 +2,21 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: '192.168.1.15:8080',
-    HTTP: 'http://',//https:// http://
+    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 
 };
 
 var MEIZITU = {
     pc_meizitu:"http://www.meizitu.com",
     pc_main_more:"http://www.meizitu.com/a/",
+    pc_tag:"http://www.meizitu.com/a/pure.html",
 
+};
+exports.getpc_tag = function () {
+    var url = MEIZITU.pc_tag;
+    console.log('pc_tag==' + url);
+    return url;
 };
 exports.getpc_main_more = function () {
     var url = MEIZITU.pc_main_more;

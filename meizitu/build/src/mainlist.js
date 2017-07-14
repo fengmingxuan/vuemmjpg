@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(23)
+	__vue_styles__.push(__webpack_require__(59)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(24)
+	__vue_exports__ = __webpack_require__(60)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(25)
+	var __vue_template__ = __webpack_require__(61)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -91,7 +91,7 @@
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -104,11 +104,21 @@
 	};
 
 	var MEIZITU = {
-	    pc_meizitu:"http://www.meizitu.com/",
-
+	    pc_meizitu:"http://www.meizitu.com",
+	    pc_main_more:"http://www.meizitu.com/a/",
+	    pc_tag:"http://www.meizitu.com/a/pure.html",
 
 	};
-
+	exports.getpc_tag = function () {
+	    var url = MEIZITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
+	};
+	exports.getpc_main_more = function () {
+	    var url = MEIZITU.pc_main_more;
+	    console.log('pc_main_more==' + url);
+	    return url;
+	};
 	exports.getpc_meizitu = function () {
 	    var url = MEIZITU.pc_meizitu;
 	    console.log('pc_meizitu==' + url);
@@ -209,7 +219,7 @@
 
 /***/ }),
 
-/***/ 23:
+/***/ 59:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -237,7 +247,7 @@
 
 /***/ }),
 
-/***/ 24:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -262,7 +272,7 @@
 	var weexModule = weex.requireModule('weexModule');
 	var dom = weex.requireModule('dom');
 	var modal = weex.requireModule('modal');
-	var meizitu = __webpack_require__(3);
+	var meizitu = __webpack_require__(6);
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -270,6 +280,12 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('tags/pctagcontent_imglist');
+	        this.rows.push('main/pcmaincontent_imglist');
+	        this.rows.push('main/pcflink_pager');
+	        this.rows.push('main/pcflink');
+	        this.rows.push('main/pclastest');
+	        this.rows.push('main/pchotpic_imglist');
 	        this.rows.push('main/pctags_hlist');
 	        this.rows.push('main/pctags');
 	        this.rows.push('main/pcpicnew_slider');
@@ -301,7 +317,7 @@
 
 /***/ }),
 
-/***/ 25:
+/***/ 61:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

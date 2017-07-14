@@ -9,6 +9,8 @@
 
 <script>
     var weexEventModule = weex.requireModule('weexEventModule');
+    var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
+    var meizitu = require('../meizitu');
     module.exports = {
         created:function(){
         },
@@ -21,7 +23,25 @@
 
         methods:{
             todetail:function (e) {
-                weexEventModule.startWebViewActivity(e);
+//                weexEventModule.startWebViewActivity(e);
+                var name = "tags/pctagcontent_imglist";
+//                if(e.indexOf('m.meituba.com')!=-1){
+//                    name = "marticle/marticlelist";
+//                }else{
+//                    name = "article/pcarticlelist";
+//                }
+                var params={
+                    url: meituba.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }

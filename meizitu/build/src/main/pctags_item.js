@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(12)
+	__vue_styles__.push(__webpack_require__(48)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(13)
+	__vue_exports__ = __webpack_require__(49)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(14)
+	var __vue_template__ = __webpack_require__(50)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,9 +90,8 @@
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */
+
+/***/ 6:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -104,11 +104,21 @@
 	};
 
 	var MEIZITU = {
-	    pc_meizitu:"http://www.meizitu.com/",
-
+	    pc_meizitu:"http://www.meizitu.com",
+	    pc_main_more:"http://www.meizitu.com/a/",
+	    pc_tag:"http://www.meizitu.com/a/pure.html",
 
 	};
-
+	exports.getpc_tag = function () {
+	    var url = MEIZITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
+	};
+	exports.getpc_main_more = function () {
+	    var url = MEIZITU.pc_main_more;
+	    console.log('pc_main_more==' + url);
+	    return url;
+	};
 	exports.getpc_meizitu = function () {
 	    var url = MEIZITU.pc_meizitu;
 	    console.log('pc_meizitu==' + url);
@@ -208,15 +218,8 @@
 
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
+
+/***/ 48:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -238,7 +241,8 @@
 	}
 
 /***/ }),
-/* 13 */
+
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -254,7 +258,7 @@
 
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meizitu = __webpack_require__(3);
+	var meizitu = __webpack_require__(6);
 	module.exports = {
 	    created: function created() {},
 
@@ -292,7 +296,8 @@
 	};
 
 /***/ }),
-/* 14 */
+
+/***/ 50:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -314,4 +319,5 @@
 	module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });
