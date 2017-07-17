@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <!--<navbar_v :title="title"></navbar_v>-->
+    <div style="flex: 1;flex-direction: column">
+        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
         <slider class="slider" interval="3000" auto-play="false">
             <div class="frame" v-for="img in imageList">
                 <image class="image" resize="cover" :src="img.src" @click="todetail(img.href,img.alt)"></image>
@@ -14,16 +14,14 @@
     .image {
         width: 750px;
         margin:1;
-        height: 1250;
+        height: 1250px;
     }
     .slider {
-        flex: 1;
+
     }
     .frame {
         width: 750px;
         flex-direction: column;
-        align-content: center;
-        align-items: center;
     }
     .txt{
         font-size:30;
@@ -32,6 +30,7 @@
 </style>
 
 <script>
+    import  navbar_v from '../template/navbar_v.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
@@ -40,7 +39,7 @@
     var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
     export default {
         components: {
-
+            navbar_v
         },
         props: ['taghref'],
         data () {
@@ -48,7 +47,9 @@
                 imageList: [],
                 taghref:meizitu.getpc_image(),
                 pageNo:1,
-                title:""
+                title:"",
+                shown:false,
+                leftsrc:'./images/back.png',
             }
         },
         created: function(){
@@ -56,6 +57,11 @@
             var ctaghref = self.$getConfig().taghref;
             if(ctaghref!=undefined){
                 self.taghref = ctaghref;
+            }
+
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
             }
             self.refresh();
         },

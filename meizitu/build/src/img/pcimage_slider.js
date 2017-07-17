@@ -91,6 +91,261 @@
 
 /***/ }),
 
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(4)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(5)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(7)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/template/navbar_v.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-0e1297d4"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "nav_bar": {
+	    "display": "flex",
+	    "flexDirection": "row",
+	    "height": 100,
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "backgroundColor": "#FF6B9C"
+	  },
+	  "nav_bar-0": {
+	    "backgroundColor": "#FF6B9C"
+	  },
+	  "nav_bar-1": {
+	    "backgroundColor": "#FF6B9C"
+	  },
+	  "nav_text": {
+	    "fontSize": "20wx",
+	    "flex": 1,
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "marginTop": 1,
+	    "color": "#ffffff"
+	  },
+	  "nav_text_top-0": {
+	    "marginTop": 1
+	  },
+	  "nav_text_top-1": {
+	    "marginTop": 1
+	  },
+	  "nav_text-0": {
+	    "color": "#FFFFFF"
+	  },
+	  "nav_text-1": {
+	    "color": "#ffffff"
+	  },
+	  "nav_title": {
+	    "flex": 1,
+	    "marginLeft": 10,
+	    "marginRight": 10,
+	    "justifyContent": "center",
+	    "alignItems": "center"
+	  },
+	  "nav_back": {
+	    "justifyContent": "center",
+	    "alignItems": "center",
+	    "width": "45wx",
+	    "height": 80
+	  },
+	  "nav_right_menu": {
+	    "width": "45wx",
+	    "height": 80,
+	    "justifyContent": "center",
+	    "alignItems": "center"
+	  },
+	  "img": {
+	    "width": 70,
+	    "height": 70,
+	    "marginLeft": 20,
+	    "padding": 10
+	  },
+	  "nav_back-0": {
+	    "backgroundColor:active": "#000000"
+	  },
+	  "nav_back-1": {
+	    "backgroundColor:active": "#000000"
+	  },
+	  "nav_right_menu-0": {
+	    "backgroundColor": "#000000"
+	  },
+	  "nav_right_menu-1": {
+	    "backgroundColor": "#000000"
+	  },
+	  "img_menu": {
+	    "width": 50,
+	    "height": 50,
+	    "marginRight": 20
+	  },
+	  "imglogo": {
+	    "width": 240,
+	    "flex": 1,
+	    "height": 50
+	  },
+	  "nav_line": {
+	    "height": 1
+	  },
+	  "nav_line-0": {
+	    "backgroundColor": "#D8D8D8"
+	  },
+	  "nav_line-1": {
+	    "backgroundColor": "#192c46"
+	  },
+	  "status_bar_ios": {
+	    "height": "20wx"
+	  },
+	  "status_bar-0": {
+	    "backgroundColor": "#000000"
+	  },
+	  "status_bar-1": {
+	    "backgroundColor": "#000000"
+	  }
+	}
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var meizitu = __webpack_require__(6);
+	var navigator = weex.requireModule('navigator');
+
+	exports.default = {
+	    data: function data() {
+	        return {
+	            title: '妹子图',
+	            type: 0,
+	            shown: true,
+	            showStatusBar: 0,
+	            nav_text_top: 0,
+	            shownleft: true,
+	            leftsrc: './images/menu.png'
+	        };
+	    },
+
+	    props: ['title', 'shown', 'leftsrc'],
+	    created: function created() {
+	        this.platform = this.$getConfig().env.platform;
+	        if (this.platform == 'iOS') {
+	            this.showStatusBar = 1;
+	        }
+	        if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
+	            this.nav_text_top = 1;
+	        } else {
+	            this.nav_text_top = 0;
+	        }
+	        if (this.leftsrc == undefined) {
+	            this.leftsrc = './images/menu.png';
+	        }
+	        if (this.title == undefined) {
+	            this.title = '妹子图';
+	        }
+	    },
+	    ready: function ready() {},
+
+	    methods: {
+	        nativeback: function nativeback(e) {
+	            //                var params = {
+	            //                    'animated': 'true'
+	            //                };
+	            //                navigator.pop(params, event => {
+	            //
+	            //                });
+	            this._parent.togglemenu();
+	        },
+	        onright: function onright(e) {
+	            console.log('navbar == onright');
+	            this._parent.onright();
+	        },
+
+	        getImgUrl: function getImgUrl(url) {
+	            return meizitu.getImageUrl(url);
+	        },
+
+	        setLeftImage: function setLeftImage(res) {
+	            this.leftImage = res;
+	            //                console.log('navbar == res'+res);
+	        },
+
+	        setRightImage: function setRightImage(res) {
+	            this.rightImage = res;
+	            //                    console.log('navbar == res'+res);
+	        }
+
+	    }
+	};
+
+/***/ }),
+
 /***/ 6:
 /***/ (function(module, exports) {
 
@@ -237,6 +492,46 @@
 
 /***/ }),
 
+/***/ 7:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', [_c('div', {
+	    staticClass: ["nav_bar"]
+	  }, [_c('div', {
+	    staticClass: ["nav_back"],
+	    on: {
+	      "onclick": _vm.nativeback
+	    }
+	  }, [(_vm.shownleft) ? _c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.getImgUrl(_vm.leftsrc)
+	    }
+	  }) : _vm._e()]), _c('div', {
+	    staticClass: ["nav_title"]
+	  }, [_c('text', {
+	    staticClass: ["nav_text"]
+	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
+	    staticClass: ["nav_right_menu"]
+	  }, [(_vm.shown) ? _c('div', {
+	    staticClass: ["nav_right_menu"],
+	    on: {
+	      "onclick": _vm.onright
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img_menu"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/search.png')
+	    }
+	  })]) : _vm._e()])]), _c('div', {
+	    staticClass: ["nav_line"]
+	  })])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
 /***/ 33:
 /***/ (function(module, exports) {
 
@@ -246,14 +541,9 @@
 	    "margin": 1,
 	    "height": 1250
 	  },
-	  "slider": {
-	    "flex": 1
-	  },
 	  "frame": {
 	    "width": 750,
-	    "flexDirection": "column",
-	    "alignContent": "center",
-	    "alignItems": "center"
+	    "flexDirection": "column"
 	  },
 	  "txt": {
 	    "fontSize": 30,
@@ -271,9 +561,14 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	//
-	//
-	//
+
+	var _navbar_v = __webpack_require__(3);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var stream = weex.requireModule('stream'); //
 	//
 	//
 	//
@@ -305,21 +600,24 @@
 	//
 	//
 
-	var stream = weex.requireModule('stream');
 	var modal = weex.requireModule('modal');
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	exports.default = {
-	    components: {},
+	    components: {
+	        navbar_v: _navbar_v2.default
+	    },
 	    props: ['taghref'],
 	    data: function data() {
 	        return {
 	            imageList: [],
 	            taghref: meizitu.getpc_image(),
 	            pageNo: 1,
-	            title: ""
+	            title: "",
+	            shown: false,
+	            leftsrc: './images/back.png'
 	        };
 	    },
 
@@ -328,6 +626,11 @@
 	        var ctaghref = self.$getConfig().taghref;
 	        if (ctaghref != undefined) {
 	            self.taghref = ctaghref;
+	        }
+
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
 	        }
 	        self.refresh();
 	    },
@@ -386,7 +689,12 @@
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('slider', {
+	  return _c('div', {
+	    staticStyle: {
+	      flex: "1",
+	      flexDirection: "column"
+	    }
+	  }, [_c('slider', {
 	    staticClass: ["slider"],
 	    attrs: {
 	      "interval": "3000",

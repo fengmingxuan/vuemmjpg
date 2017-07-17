@@ -8,8 +8,18 @@
             <cell>
             <pclastest :taghref="url"></pclastest>
             </cell>
+            <cell>
+                <div>
+                    <text class="title">{{celltitle}}</text>
+                </div>
+            </cell>
             <cell v-for="stockitem in stockArray">
                 <pcimage_imglist_item :stockitem="stockitem"></pcimage_imglist_item>
+            </cell>
+            <cell>
+                <div>
+                    <text class="alt">{{cellother}}</text>
+                </div>
             </cell>
             <cell>
                 <pchotpic_imglist :taghref="taghref"></pchotpic_imglist>
@@ -58,6 +68,8 @@
                 leftsrc:'./images/back.png',
                 pagenumbers:'',
                 url:meizitu.getpc_image(),
+                celltitle:"",
+                cellother:""
 
                  
             }
@@ -151,6 +163,10 @@
                         if (json.list && json.list.length > 0) {
                             for (var i = 0; i < json.list.length; i++) {
                                 var tag = json.list[i];
+                                if(i==0){
+                                    self.celltitle = tag.title;
+                                    self.cellother = tag.other;
+                                }
                                 self.stockArray.push(tag);
                             }
                         }
@@ -185,5 +201,13 @@
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: center;
+    }
+    .title{
+        font-size:38;
+        padding: 10;
+    }
+    .alt{
+        font-size:30;
+        padding: 10;
     }
 </style>

@@ -255,7 +255,7 @@
 	    "borderRadius": 5
 	  },
 	  "img": {
-	    "height": 1000,
+	    "height": 1100,
 	    "borderRadius": 5
 	  },
 	  "title": {
@@ -300,25 +300,20 @@
 
 	    methods: {
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "article/pcarticlelist";
-	            //                if(e.indexOf('m.meituba.com')!=-1){
-	            //                    name = "marticle/marticlelist";
-	            //                }else{
-	            //                    name = "article/pcarticlelist";
-	            //                }
-	            //                var params={
-	            //                    url: meituba.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	            //                weexEventModule.startWebViewActivity(e);
+	            var name = "img/pcimage_slider";
+	            var params = {
+	                url: meizitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
@@ -340,17 +335,13 @@
 	      }
 	    }
 	  }, [_c('text', {
-	    staticClass: ["title"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('text', {
 	    staticClass: ["alt"]
 	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('image', {
 	    staticClass: ["img"],
 	    attrs: {
 	      "src": _vm.stockitem.src
 	    }
-	  }), _c('text', {
-	    staticClass: ["alt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	  })])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

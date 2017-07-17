@@ -1,10 +1,10 @@
 <template>
     <div style="margin: 5px;">
         <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
-            <text class="title">{{stockitem.title}}</text>
+            <!--<text class="title">{{stockitem.title}}</text>-->
             <text class="alt">{{stockitem.alt}}</text>
             <image class="img" :src="stockitem.src" ></image>
-            <text class="alt">{{stockitem.other}}</text>
+            <!--<text class="alt">{{stockitem.other}}</text>-->
         </div>
     </div>
 </template>
@@ -25,25 +25,20 @@
 
         methods:{
             todetail:function (e,alt) {
-                weexEventModule.startWebViewActivity(e);
-//                var name = "article/pcarticlelist";
-//                if(e.indexOf('m.meituba.com')!=-1){
-//                    name = "marticle/marticlelist";
-//                }else{
-//                    name = "article/pcarticlelist";
-//                }
-//                var params={
-//                    url: meituba.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                })
+//                weexEventModule.startWebViewActivity(e);
+                var name = "img/pcimage_slider";
+                var params={
+                    url: meizitu.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }
@@ -60,7 +55,7 @@
         border-radius: 5;
     }
     .img{
-        height: 1000;
+        height: 1100;
         border-radius: 5;
     }
     .title{
