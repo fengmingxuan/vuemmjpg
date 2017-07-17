@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(86)
+	__vue_styles__.push(__webpack_require__(83)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(87)
+	__vue_exports__ = __webpack_require__(84)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(88)
+	var __vue_template__ = __webpack_require__(85)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -364,7 +364,13 @@
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
 	    pc_image:"http://www.meizitu.com/a/3666.html",
 	    m_meizitu:"http://m.meizitu.com",
+	    tag_meizitu:"http://m.meizitu.com/tag/suxiong_17_1.html",
 
+	};
+	exports.gettag_meizitu = function () {
+	    var url = MEIZITU.tag_meizitu;
+	    console.log('tag_meizitu==' + url);
+	    return url;
 	};
 	exports.getm_meizitu = function () {
 	    var url = MEIZITU.m_meizitu;
@@ -706,7 +712,7 @@
 
 /***/ }),
 
-/***/ 86:
+/***/ 83:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -734,7 +740,7 @@
 
 /***/ }),
 
-/***/ 87:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -921,7 +927,7 @@
 
 /***/ }),
 
-/***/ 88:
+/***/ 85:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(92)
+	__vue_styles__.push(__webpack_require__(105)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(93)
+	__vue_exports__ = __webpack_require__(106)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(94)
+	var __vue_template__ = __webpack_require__(107)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -109,7 +109,13 @@
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
 	    pc_image:"http://www.meizitu.com/a/3666.html",
 	    m_meizitu:"http://m.meizitu.com",
+	    tag_meizitu:"http://m.meizitu.com/tag/suxiong_17_1.html",
 
+	};
+	exports.gettag_meizitu = function () {
+	    var url = MEIZITU.tag_meizitu;
+	    console.log('tag_meizitu==' + url);
+	    return url;
 	};
 	exports.getm_meizitu = function () {
 	    var url = MEIZITU.m_meizitu;
@@ -231,7 +237,7 @@
 
 /***/ }),
 
-/***/ 92:
+/***/ 105:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -254,7 +260,7 @@
 
 /***/ }),
 
-/***/ 93:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -282,33 +288,36 @@
 
 	    methods: {
 	        todetail: function todetail(id, e, alt) {
+	            if (alt == "两性私房网" || alt == "美女写真") {
+	                weexEventModule.startWebViewActivity(e);
+	            } else {
+	                //                 weexEventModule.startWebViewActivity(e);
+	                var name = "mmain/mlastest_imglist";
+	                //                if(e.indexOf('m.meituba.com')!=-1){
+	                //                    name = "marticle/marticlelist";
+	                //                }else{
+	                //                    name = "article/pcarticlelist";
+	                //                }
+	                var params = {
+	                    url: meizitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt
+	                    }
+	                };
 
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "img/pcimage_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meizitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                });
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
 	        }
 	    }
 	};
 
 /***/ }),
 
-/***/ 94:
+/***/ 107:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

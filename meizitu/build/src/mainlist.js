@@ -109,7 +109,13 @@
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
 	    pc_image:"http://www.meizitu.com/a/3666.html",
 	    m_meizitu:"http://m.meizitu.com",
+	    tag_meizitu:"http://m.meizitu.com/tag/suxiong_17_1.html",
 
+	};
+	exports.gettag_meizitu = function () {
+	    var url = MEIZITU.tag_meizitu;
+	    console.log('tag_meizitu==' + url);
+	    return url;
 	};
 	exports.getm_meizitu = function () {
 	    var url = MEIZITU.m_meizitu;
@@ -292,6 +298,10 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('mmenu/pcslideoutmenu');
+	        this.rows.push('mmenu/mslideoutmenu2');
+	        this.rows.push('mmenu/mslideoutmenu');
+	        this.rows.push('mmenu/mmenu_alllist');
 	        this.rows.push('mmain/mmain_imglist');
 	        this.rows.push('mmain/mlastest_imglist');
 	        this.rows.push('mmain/mtuijian_imglist');

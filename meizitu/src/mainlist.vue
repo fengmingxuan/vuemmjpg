@@ -23,6 +23,10 @@
             }
         },
         created () {
+            this.rows.push('mmenu/pcslideoutmenu')
+            this.rows.push('mmenu/mslideoutmenu2')
+            this.rows.push('mmenu/mslideoutmenu')
+            this.rows.push('mmenu/mmenu_alllist')
             this.rows.push('mmain/mmain_imglist')
             this.rows.push('mmain/mlastest_imglist')
             this.rows.push('mmain/mtuijian_imglist')

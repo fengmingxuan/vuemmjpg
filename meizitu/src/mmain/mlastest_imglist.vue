@@ -11,9 +11,9 @@
             <cell v-for="stockitem in stockArray">
                 <mtuijian_imglist_item :stockitem="stockitem"></mtuijian_imglist_item>
             </cell>
-            <!--<cell>-->
-                <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
-            <!--</cell>-->
+            <cell>
+                <mtuijian_imglist :taghref="taghref"></mtuijian_imglist>
+            </cell>
             <loading class="loading" @loading="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
             </loading>
@@ -24,6 +24,7 @@
 <script>
     import  navbar_v from '../template/navbar_v.vue'
     import  mtuijian_imglist_item from '../mmain/mtuijian_imglist_item.vue'
+    import  mtuijian_imglist from '../mmain/mtuijian_imglist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
@@ -32,6 +33,7 @@
     var utils = require('../common/utils');
     export default{
         components: {
+            mtuijian_imglist,
             mtuijian_imglist_item,
             navbar_v,
 
@@ -124,14 +126,45 @@
                 var url = self.taghref;
                 if(self.pageNo==1){
                     //http://m.meizitu.com
+                    //http://m.meizitu.com/a/pure.html
+                    //http://m.meizitu.com/tag/suxiong_17_1.html
+                    //http://m.meizitu.com/a/xinggan.html
                     url = self.taghref;
                 }else if(self.pageNo==2){
-                    //http://m.meizitu.com +  /a/list_1_2.html
-                    url = meizitu.getm_meizitu()+self.pagenumbers;
-                    self.url = url.replaceAllStr('2.html','');
+                    if(self.pagenumbers==undefined){
+                        //http://m.meizitu.com/a/pure.html
+                        //http://m.meizitu.com/a/pure_2.html
+                        //http://m.meizitu.com/tag/suxiong_17_2.html
+                        if(self.taghref.indexOf('tag')!=-1){
+                            self.url = url.replaceAllStr('1.html','');
+                            url = self.url+self.pageNo+'.html';
+                        }else{
+                            self.url = url.replaceAllStr('.html','');
+                            url = self.url+"_"+self.pageNo+'.html';
+                        }
+                    }else{
+                        if(self.pagenumbers.indexOf('list_')!=-1) {
+                            //http://m.meizitu.com +  /a/list_1_2.html
+                            url = meizitu.getm_meizitu() + self.pagenumbers;
+                            self.url = url.replaceAllStr('2.html', '');
+                        }else{
+                            //http://m.meizitu.com/a/xinggan.html
+                            //http://m.meizitu.com/a/ + xinggan_2_2.html
+                            url = meizitu.getm_meizitu()+"/a/" + self.pagenumbers;
+                            self.url = url.replaceAllStr('_2.html', '');;
+                        }
+                    }
                 }else{
-                    //http://m.meizitu.com/a/ +list_1_3.html
-                    url = self.url+self.pageNo+'.html';
+                    //http://m.meizitu.com/a/pure_3.html
+                    //http://m.meizitu.com/tag/suxiong_17_3.html
+                    //http://m.meizitu.com/a/+  list_1_3.html
+                    if(self.pagenumbers.indexOf('list_')!=-1){
+                        url = self.url+self.pageNo+'.html';
+                    }else if(self.pagenumbers.indexOf('tag')!=-1){
+                        url = self.url+self.pageNo+'.html';
+                    }else{
+                        url = self.url+"_"+self.pageNo+'.html';
+                    }
                 }
 
                 console.log('url==='+url);

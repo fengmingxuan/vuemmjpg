@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(96)
+	__vue_styles__.push(__webpack_require__(123)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(97)
+	__vue_exports__ = __webpack_require__(124)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(103)
+	var __vue_template__ = __webpack_require__(129)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -364,7 +364,13 @@
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
 	    pc_image:"http://www.meizitu.com/a/3666.html",
 	    m_meizitu:"http://m.meizitu.com",
+	    tag_meizitu:"http://m.meizitu.com/tag/suxiong_17_1.html",
 
+	};
+	exports.gettag_meizitu = function () {
+	    var url = MEIZITU.tag_meizitu;
+	    console.log('tag_meizitu==' + url);
+	    return url;
 	};
 	exports.getm_meizitu = function () {
 	    var url = MEIZITU.m_meizitu;
@@ -1179,7 +1185,56 @@
 
 /***/ }),
 
-/***/ 96:
+/***/ 86:
+/***/ (function(module, exports) {
+
+	exports.ubball = function ubball(strContent) {
+	    if(strContent ==null){
+	        return;
+	    }
+	    strContent = strContent.replace(/\[gguba\](.+?)\[\/gguba\]/ig,function($1){
+	        $1 = $1.replace("[gguba]","");
+	        $1 = $1.replace("[/gguba]","");
+	        return $1;
+	    });
+	    strContent = strContent.replace(/\[gubar\](.+?)\[\/gubar\]/ig,function($1){
+	        $1 = $1.replace("[gubar]","");
+	        $1 = $1.replace("[/gubar]","");
+	        return $1;});
+	    strContent = strContent.replace(/\[tag\](.+?)\[\/tag\]/ig,function($1){
+	        $1 = $1.replace("[tag]","");
+	        $1 = $1.replace("[/tag]","");
+	        return $1;});
+	    return strContent;
+	}
+
+	//refContent =  utils.replaceAll(refContent,/\[gubar\](.+?)\[\/gubar\]/ig,'','[gubar]','[/gubar]');
+	exports.replaceAll = function replaceAll(sourcestr,regExp,replacestr,tagstr,tagstr2) {
+	    if(sourcestr ==null){
+	        return;
+	    }
+	    sourcestr = sourcestr.replace(regExp,function($1){
+	        if(replacestr==null){
+	            replacestr='';
+	        }
+	        $1 = $1.replace(tagstr,replacestr);
+	        if(tagstr2!=null){
+	            $1 = $1.replace(tagstr2,replacestr);
+	        }
+	        return $1;
+	    });
+
+	    return sourcestr;
+	}
+
+	String.prototype.replaceAllStr = function (FindText, RepText) {
+	    var regExp = new RegExp(FindText, "gm");
+	    return this.replace(regExp, RepText);
+	}
+
+/***/ }),
+
+/***/ 123:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1207,7 +1262,7 @@
 
 /***/ }),
 
-/***/ 97:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1220,7 +1275,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctagcontent_imglist_item = __webpack_require__(98);
+	var _pctagcontent_imglist_item = __webpack_require__(125);
 
 	var _pctagcontent_imglist_item2 = _interopRequireDefault(_pctagcontent_imglist_item);
 
@@ -1263,7 +1318,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
-	var utils = __webpack_require__(102);
+	var utils = __webpack_require__(86);
 	exports.default = {
 	    components: {
 	        pctagcontent_imglist_item: _pctagcontent_imglist_item2.default,
@@ -1413,21 +1468,21 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(99)
+	__vue_styles__.push(__webpack_require__(126)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(100)
+	__vue_exports__ = __webpack_require__(127)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(101)
+	var __vue_template__ = __webpack_require__(128)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1458,7 +1513,7 @@
 
 /***/ }),
 
-/***/ 99:
+/***/ 126:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1487,7 +1542,7 @@
 
 /***/ }),
 
-/***/ 100:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1548,7 +1603,7 @@
 
 /***/ }),
 
-/***/ 101:
+/***/ 128:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1596,56 +1651,7 @@
 
 /***/ }),
 
-/***/ 102:
-/***/ (function(module, exports) {
-
-	exports.ubball = function ubball(strContent) {
-	    if(strContent ==null){
-	        return;
-	    }
-	    strContent = strContent.replace(/\[gguba\](.+?)\[\/gguba\]/ig,function($1){
-	        $1 = $1.replace("[gguba]","");
-	        $1 = $1.replace("[/gguba]","");
-	        return $1;
-	    });
-	    strContent = strContent.replace(/\[gubar\](.+?)\[\/gubar\]/ig,function($1){
-	        $1 = $1.replace("[gubar]","");
-	        $1 = $1.replace("[/gubar]","");
-	        return $1;});
-	    strContent = strContent.replace(/\[tag\](.+?)\[\/tag\]/ig,function($1){
-	        $1 = $1.replace("[tag]","");
-	        $1 = $1.replace("[/tag]","");
-	        return $1;});
-	    return strContent;
-	}
-
-	//refContent =  utils.replaceAll(refContent,/\[gubar\](.+?)\[\/gubar\]/ig,'','[gubar]','[/gubar]');
-	exports.replaceAll = function replaceAll(sourcestr,regExp,replacestr,tagstr,tagstr2) {
-	    if(sourcestr ==null){
-	        return;
-	    }
-	    sourcestr = sourcestr.replace(regExp,function($1){
-	        if(replacestr==null){
-	            replacestr='';
-	        }
-	        $1 = $1.replace(tagstr,replacestr);
-	        if(tagstr2!=null){
-	            $1 = $1.replace(tagstr2,replacestr);
-	        }
-	        return $1;
-	    });
-
-	    return sourcestr;
-	}
-
-	String.prototype.replaceAllStr = function (FindText, RepText) {
-	    var regExp = new RegExp(FindText, "gm");
-	    return this.replace(regExp, RepText);
-	}
-
-/***/ }),
-
-/***/ 103:
+/***/ 129:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

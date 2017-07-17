@@ -1,7 +1,10 @@
 <template>
-    <div style="margin: 5px;">
-        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.alt)">
-            <text class="txt">{{stockitem.id}} {{stockitem.alt}}</text>
+    <div style="flex-direction:row;margin: 5px;">
+        <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
+            <text class="txt"> {{stockitem.alt}}</text>
+        </div>
+        <div class="news-content" @click="todetail(stockitem.href2,stockitem.alt2)">
+            <text class="txt"> {{stockitem.alt2}}</text>
         </div>
     </div>
 </template>
@@ -21,17 +24,17 @@
         },
 
         methods:{
-            todetail:function (id,e,alt) {
+            todetail:function (e,alt) {
                 if(alt=="两性私房网" || alt=="美女写真"){
                     weexEventModule.startWebViewActivity(e);
                 }else{
-    //                 weexEventModule.startWebViewActivity(e);
+                    //                 weexEventModule.startWebViewActivity(e);
                     var name = "mmain/mlastest_imglist";
-    //                if(e.indexOf('m.meituba.com')!=-1){
-    //                    name = "marticle/marticlelist";
-    //                }else{
-    //                    name = "article/pcarticlelist";
-    //                }
+                    //                if(e.indexOf('m.meituba.com')!=-1){
+                    //                    name = "marticle/marticlelist";
+                    //                }else{
+                    //                    name = "article/pcarticlelist";
+                    //                }
                     var params={
                         url: meizitu.getDefaultUrl(name),
                         animated: "true",

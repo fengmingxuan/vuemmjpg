@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(16)
+	__vue_styles__.push(__webpack_require__(94)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(17)
+	__vue_exports__ = __webpack_require__(95)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(18)
+	var __vue_template__ = __webpack_require__(100)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/main/pclastest_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/mmenu/mmenu_alllist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1ae01d36"
+	__vue_options__._scopeId = "data-v-7f467cc2"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -237,7 +237,7 @@
 
 /***/ }),
 
-/***/ 16:
+/***/ 94:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -260,11 +260,176 @@
 
 /***/ }),
 
-/***/ 17:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	var _mmenu_alllist_subitem = __webpack_require__(96);
+
+	var _mmenu_alllist_subitem2 = _interopRequireDefault(_mmenu_alllist_subitem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var weexEventModule = weex.requireModule('weexEventModule'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meizitu = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+	    components: {
+	        mmenu_alllist_subitem: _mmenu_alllist_subitem2.default
+
+	    },
+	    props: {
+	        tpicNitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(id, e, alt) {
+	            if (e == undefined) {
+	                return;
+	            }
+
+	            weexEventModule.startWebViewActivity(e);
+	            //                var name = "img/pcimage_imglist";
+	            ////                if(e.indexOf('m.meituba.com')!=-1){
+	            ////                    name = "marticle/marticlelist";
+	            ////                }else{
+	            ////                    name = "article/pcarticlelist";
+	            ////                }
+	            //                var params={
+	            //                    url: meizitu.getDefaultUrl(name),
+	            //                    animated: "true",
+	            //                    options:{
+	            //                        taghref: e,
+	            //                        title:alt
+	            //                    }
+	            //                };
+	            //
+	            //                weexNavigatorModule.push(params, event => {
+	            //                    // modal.toast({ message: 'callback: ' + event })
+	            //                });
+	        },
+	        tostock: function tostock(json) {
+	            var stockArray = [];
+	            if (json.list) {
+	                if (json.list && json.list.length > 0) {
+	                    for (var i = 0; i < json.list.length; i += 2) {
+	                        var tag = json.list[i];
+	                        var tag2 = json.list[i + 1];
+	                        if (tag2 == undefined) {
+	                            tag2 = {};
+	                        }
+	                        var item = {
+	                            href: tag.href,
+	                            alt: tag.alt,
+	                            src: tag.src,
+	                            other: tag.other,
+	                            href2: tag2.href,
+	                            alt2: tag2.alt,
+	                            src2: tag2.src,
+	                            other2: tag2.other
+	                        };
+	                        stockArray.push(item);
+	                    }
+	                }
+	            }
+	            return stockArray;
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(97)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(98)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(99)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/mmenu/mmenu_alllist_subitem.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-2c783077"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5,
+	    "alignContent": "flex-start",
+	    "alignItems": "flex-start"
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "padding": 20
+	  }
+	}
+
+/***/ }),
+
+/***/ 98:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	//
+	//
+	//
 	//
 	//
 	//
@@ -287,34 +452,70 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(id, e, alt) {
+	        todetail: function todetail(e, alt) {
+	            if (alt == "两性私房网" || alt == "美女写真") {
+	                weexEventModule.startWebViewActivity(e);
+	            } else {
+	                //                 weexEventModule.startWebViewActivity(e);
+	                var name = "mmain/mlastest_imglist";
+	                //                if(e.indexOf('m.meituba.com')!=-1){
+	                //                    name = "marticle/marticlelist";
+	                //                }else{
+	                //                    name = "article/pcarticlelist";
+	                //                }
+	                var params = {
+	                    url: meizitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt
+	                    }
+	                };
 
-	            //                 weexEventModule.startWebViewActivity(e);
-	            var name = "img/pcimage_imglist";
-	            //                if(e.indexOf('m.meituba.com')!=-1){
-	            //                    name = "marticle/marticlelist";
-	            //                }else{
-	            //                    name = "article/pcarticlelist";
-	            //                }
-	            var params = {
-	                url: meizitu.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: e,
-	                    title: alt
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
 	        }
 	    }
 	};
 
 /***/ }),
 
-/***/ 18:
+/***/ 99:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(" " + _vm._s(_vm.stockitem.alt))])]), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	      }
+	    }
+	  }, [_c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(" " + _vm._s(_vm.stockitem.alt2))])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -326,12 +527,18 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.tpicNitem.id, _vm.tpicNitem.href, _vm.tpicNitem.title)
 	      }
 	    }
 	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.alt))])])])
+	  }, [_vm._v(_vm._s(_vm.tpicNitem.id) + " " + _vm._s(_vm.tpicNitem.title))])]), _vm._l((_vm.tostock(_vm.tpicNitem)), function(stockitem) {
+	    return _c('div', [_c('mmenu_alllist_subitem', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  })], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

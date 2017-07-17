@@ -58,7 +58,7 @@
 	__vue_exports__ = __webpack_require__(77)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(82)
+	var __vue_template__ = __webpack_require__(87)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -364,7 +364,13 @@
 	    pc_tag:"http://www.meizitu.com/a/pure.html",
 	    pc_image:"http://www.meizitu.com/a/3666.html",
 	    m_meizitu:"http://m.meizitu.com",
+	    tag_meizitu:"http://m.meizitu.com/tag/suxiong_17_1.html",
 
+	};
+	exports.gettag_meizitu = function () {
+	    var url = MEIZITU.tag_meizitu;
+	    console.log('tag_meizitu==' + url);
+	    return url;
 	};
 	exports.getm_meizitu = function () {
 	    var url = MEIZITU.m_meizitu;
@@ -571,9 +577,13 @@
 
 	var _mtuijian_imglist_item2 = _interopRequireDefault(_mtuijian_imglist_item);
 
+	var _mtuijian_imglist = __webpack_require__(82);
+
+	var _mtuijian_imglist2 = _interopRequireDefault(_mtuijian_imglist);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
+	var stream = weex.requireModule('stream'); //
 	//
 	//
 	//
@@ -597,14 +607,14 @@
 	//
 	//
 
-	var stream = weex.requireModule('stream');
 	var modal = weex.requireModule('modal');
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
-	var utils = __webpack_require__(102);
+	var utils = __webpack_require__(86);
 	exports.default = {
 	    components: {
+	        mtuijian_imglist: _mtuijian_imglist2.default,
 	        mtuijian_imglist_item: _mtuijian_imglist_item2.default,
 	        navbar_v: _navbar_v2.default
 
@@ -700,14 +710,45 @@
 	            var url = self.taghref;
 	            if (self.pageNo == 1) {
 	                //http://m.meizitu.com
+	                //http://m.meizitu.com/a/pure.html
+	                //http://m.meizitu.com/tag/suxiong_17_1.html
+	                //http://m.meizitu.com/a/xinggan.html
 	                url = self.taghref;
 	            } else if (self.pageNo == 2) {
-	                //http://m.meizitu.com +  /a/list_1_2.html
-	                url = meizitu.getm_meizitu() + self.pagenumbers;
-	                self.url = url.replaceAllStr('2.html', '');
+	                if (self.pagenumbers == undefined) {
+	                    //http://m.meizitu.com/a/pure.html
+	                    //http://m.meizitu.com/a/pure_2.html
+	                    //http://m.meizitu.com/tag/suxiong_17_2.html
+	                    if (self.taghref.indexOf('tag') != -1) {
+	                        self.url = url.replaceAllStr('1.html', '');
+	                        url = self.url + self.pageNo + '.html';
+	                    } else {
+	                        self.url = url.replaceAllStr('.html', '');
+	                        url = self.url + "_" + self.pageNo + '.html';
+	                    }
+	                } else {
+	                    if (self.pagenumbers.indexOf('list_') != -1) {
+	                        //http://m.meizitu.com +  /a/list_1_2.html
+	                        url = meizitu.getm_meizitu() + self.pagenumbers;
+	                        self.url = url.replaceAllStr('2.html', '');
+	                    } else {
+	                        //http://m.meizitu.com/a/xinggan.html
+	                        //http://m.meizitu.com/a/ + xinggan_2_2.html
+	                        url = meizitu.getm_meizitu() + "/a/" + self.pagenumbers;
+	                        self.url = url.replaceAllStr('_2.html', '');;
+	                    }
+	                }
 	            } else {
-	                //http://m.meizitu.com/a/ +list_1_3.html
-	                url = self.url + self.pageNo + '.html';
+	                //http://m.meizitu.com/a/pure_3.html
+	                //http://m.meizitu.com/tag/suxiong_17_3.html
+	                //http://m.meizitu.com/a/+  list_1_3.html
+	                if (self.pagenumbers.indexOf('list_') != -1) {
+	                    url = self.url + self.pageNo + '.html';
+	                } else if (self.pagenumbers.indexOf('tag') != -1) {
+	                    url = self.url + self.pageNo + '.html';
+	                } else {
+	                    url = self.url + "_" + self.pageNo + '.html';
+	                }
 	            }
 
 	            console.log('url===' + url);
@@ -930,6 +971,266 @@
 /***/ }),
 
 /***/ 82:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(83)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(84)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(85)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/mmain/mtuijian_imglist.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-100895e8"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 83:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "refresh-view": {
+	    "height": 100,
+	    "width": 750,
+	    "alignItems": "center"
+	  },
+	  "indicator": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "textAlign": "center"
+	  },
+	  "loading": {
+	    "justifyContent": "center"
+	  },
+	  "indicator_loading": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "paddingTop": 20,
+	    "paddingBottom": 20,
+	    "textAlign": "center"
+	  }
+	}
+
+/***/ }),
+
+/***/ 84:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _navbar_v = __webpack_require__(3);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	var _mtuijian_imglist_item = __webpack_require__(78);
+
+	var _mtuijian_imglist_item2 = _interopRequireDefault(_mtuijian_imglist_item);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
+	var meizitu = __webpack_require__(6);
+	var storage = weex.requireModule('storage');
+	exports.default = {
+	    components: {
+	        mtuijian_imglist_item: _mtuijian_imglist_item2.default,
+	        navbar_v: _navbar_v2.default
+
+	    },
+	    props: ['taghref'],
+	    data: function data() {
+	        return {
+	            stockArray: [],
+	            taghref: meizitu.getm_meizitu(),
+	            pageNo: 1,
+	            refreshing: false,
+	            showLoading: 'hide',
+	            title: "热门图片",
+	            isFirst: 1,
+	            shown: false,
+	            leftsrc: './images/back.png'
+	            //                pagenumbers:''
+
+
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+	        //
+	        self.refresh();
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var staghref = s.data;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+self.taghref);
+	        //
+	        //                self.refresh();
+	        //
+	        //            });
+	    },
+	    mounted: function mounted() {
+	        var self = this;
+	    },
+	    methods: {
+	        autoRefresh: function autoRefresh(event) {
+	            var self = this;
+	            storage.getItem('taghref', function (s) {
+	                console.log('get taghref result:' + JSON.stringify(s));
+	                var staghref = s.data;
+	                if (staghref != undefined) {
+	                    self.taghref = staghref;
+	                }
+	                console.log('taghref==' + self.taghref);
+	                self.refresh();
+	            });
+	        },
+	        onloading: function onloading(event) {
+	            var _this = this;
+
+	            this.showLoading = 'show';
+	            this.pageNo = this.pageNo + 1;
+	            //                this.pageNo = this.pageNo+1;
+	            setTimeout(function () {
+	                _this.showLoading = 'hide';
+	            }, 2000);
+	            this.refresh();
+	        },
+	        onpullingdown: function onpullingdown(event) {},
+	        onrefresh: function onrefresh(event) {
+	            var _this2 = this;
+
+	            this.refreshing = true;
+	            this.pageNo = 1;
+	            setTimeout(function () {
+	                _this2.refreshing = false;
+	            }, 2000);
+	            this.refresh();
+	        },
+
+	        refresh: function refresh() {
+	            var self = this;
+	            self.isFirst = 0;
+	            if (self.taghref == undefined) {
+	                self.taghref = meizitu.getm_meizitu();
+	            }
+	            var url = self.taghref;
+	            //                if(self.pageNo==1){
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    url = self.taghref+ "&PageNo="+self.pageNo;
+	            //                }
+	            console.log('url===' + url);
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeizituJsoupModule.mtuijian(params, function (e) {
+	                var json = JSON.parse(e);
+	                if (self.pageNo == 1) {
+	                    self.stockArray.splice(0, self.stockArray.length);
+	                }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        for (var i = 0; i < json.list.length; i += 2) {
+	                            var tag = json.list[i];
+	                            var tag2 = json.list[i + 1];
+	                            var item = {
+	                                href: tag.href,
+	                                alt: tag.alt,
+	                                src: tag.src,
+	                                other: tag.other,
+	                                href2: tag2.href,
+	                                alt2: tag2.alt,
+	                                src2: tag2.src,
+	                                other2: tag2.other
+	                            };
+	                            //                                self.pagenumbers = tag.pagenumbers;
+	                            self.stockArray.push(item);
+	                        }
+	                    }
+	                }
+	            });
+	        }
+
+	    }
+
+	};
+
+/***/ }),
+
+/***/ 85:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -970,23 +1271,13 @@
 	        "stockitem": stockitem
 	      }
 	    })], 1)
-	  }), _c('loading', {
-	    staticClass: ["loading"],
-	    attrs: {
-	      "display": _vm.showLoading
-	    },
-	    on: {
-	      "loading": _vm.onloading
-	    }
-	  }, [_c('text', {
-	    staticClass: ["indicator_loading"]
-	  }, [_vm._v("加载更多...")])])], 2)], 1)
+	  })], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 102:
+/***/ 86:
 /***/ (function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -1032,6 +1323,72 @@
 	    var regExp = new RegExp(FindText, "gm");
 	    return this.replace(regExp, RepText);
 	}
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      backgroundColor: "rgba(0, 0, 0, .25)"
+	    }
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title,
+	      "shown": _vm.shown,
+	      "leftsrc": _vm.leftsrc
+	    }
+	  }), _c('list', {
+	    staticClass: ["list"],
+	    attrs: {
+	      "loadmoreoffset": "10"
+	    }
+	  }, [_c('refresh', {
+	    staticClass: ["refresh"],
+	    attrs: {
+	      "display": _vm.refreshing ? 'show' : 'hide'
+	    },
+	    on: {
+	      "refresh": _vm.onrefresh,
+	      "pullingdown": _vm.onpullingdown
+	    }
+	  }, [_c('text', {
+	    staticClass: ["indicator"]
+	  }, [_vm._v("下拉刷新...")])]), _vm._l((_vm.stockArray), function(stockitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('mtuijian_imglist_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  }), _c('cell', {
+	    appendAsTree: true,
+	    attrs: {
+	      "append": "tree"
+	    }
+	  }, [_c('mtuijian_imglist', {
+	    attrs: {
+	      "taghref": _vm.taghref
+	    }
+	  })], 1), _c('loading', {
+	    staticClass: ["loading"],
+	    attrs: {
+	      "display": _vm.showLoading
+	    },
+	    on: {
+	      "loading": _vm.onloading
+	    }
+	  }, [_c('text', {
+	    staticClass: ["indicator_loading"]
+	  }, [_vm._v("加载更多...")])])], 2)], 1)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
 
 /***/ })
 
