@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(13)
+	__vue_styles__.push(__webpack_require__(28)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(14)
+	__vue_exports__ = __webpack_require__(29)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(19)
+	var __vue_template__ = __webpack_require__(34)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/childnav/pcinterest_hlist.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/image/pcimage_paihang.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1f6eaaf1"
+	__vue_options__._scopeId = "data-v-5f100b64"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -528,7 +528,22 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -555,7 +570,7 @@
 	}
 
 /***/ }),
-/* 14 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -568,16 +583,12 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcinterest_hlist_item = __webpack_require__(15);
+	var _pcimage_paihang_item = __webpack_require__(30);
 
-	var _pcinterest_hlist_item2 = _interopRequireDefault(_pcinterest_hlist_item);
+	var _pcimage_paihang_item2 = _interopRequireDefault(_pcimage_paihang_item);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -607,7 +618,7 @@
 	var storage = weex.requireModule('storage');
 	exports.default = {
 	    components: {
-	        pcinterest_hlist_item: _pcinterest_hlist_item2.default,
+	        pcimage_paihang_item: _pcimage_paihang_item2.default,
 	        navbar_v: _navbar_v2.default
 
 	    },
@@ -615,14 +626,15 @@
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: meitu.getpc_xingganmote(),
-	            pageNo: 0,
+	            taghref: meitu.getpc_xingganmote_image(),
+	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
 	            title: "你可能感兴趣的类型：",
+	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png',
-	            other: ""
+	            leftsrc: './images/back.png'
+
 	        };
 	    },
 
@@ -637,33 +649,27 @@
 	            self.title = ctitle;
 	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+
 	        self.refresh();
-	        //            storage.getItem('taghref',function(s){
-	        //                console.log('get taghref result:'+JSON.stringify(s));
-	        //                var staghref = s.data;
-	        //                if(staghref!=undefined){
-	        //                    self.taghref = staghref;
-	        //                }
-	        //                console.log('taghref=='+self.taghref);
-	        //                self.refresh();
-	        //            });
-	        //            setTimeout(() => {
-	        //                storage.getItem('taghref',function(s){
-	        //                    console.log('get taghref result:'+JSON.stringify(s));
-	        //                    var staghref = s.data;
-	        //                    if(staghref!=undefined){
-	        //                        self.taghref = staghref;
-	        //                    }
-	        //                    console.log('pre taghref=='+self.taghref);
-	        //                    self.refresh();
-	        //                });
-	        //            }, 2000)
 	    },
 	    methods: {
+	        autoRefresh: function autoRefresh(event) {
+	            var self = this;
+	            storage.getItem('taghref', function (s) {
+	                console.log('get taghref result:' + JSON.stringify(s));
+	                var staghref = s.data;
+	                if (staghref != undefined) {
+	                    self.taghref = staghref;
+	                }
+	                console.log('taghref==' + self.taghref);
+	                self.refresh();
+	            });
+	        },
 	        onloading: function onloading(event) {
 	            var _this = this;
 
 	            this.showLoading = 'show';
+	            //                 this.pageNo = this.pageNo+1;
 	            //                this.pageNo = this.pageNo+1;
 	            setTimeout(function () {
 	                _this.showLoading = 'hide';
@@ -675,7 +681,7 @@
 	            var _this2 = this;
 
 	            this.refreshing = true;
-	            //                this.pageNo = 1;
+	            //                this.pageNo = 0;
 	            setTimeout(function () {
 	                _this2.refreshing = false;
 	            }, 2000);
@@ -684,21 +690,23 @@
 
 	        refresh: function refresh() {
 	            var self = this;
+	            self.isFirst = 0;
 	            if (self.taghref == undefined) {
-	                self.taghref = meitu.getpc_xingganmote();
+	                self.taghref = meitu.getpc_xingganmote_image();
 	            }
 	            var url = self.taghref;
 	            //                if(self.pageNo==1){
 	            //                    url = self.taghref;
 	            //                }else{
-	            //                    url = self.taghref+"?idx="+self.pageNo;
+	            //                    //index_2.shtml
+	            //                    url = self.taghref+"list28"+self.pageNo+".html";
 	            //                }
 	            console.log('url===' + url);
 	            var params = {
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMeiu4493JsoupModule.pcinterestline(params, function (e) {
+	            weexMeiu4493JsoupModule.pcimagepaihang(params, function (e) {
 	                var json = JSON.parse(e);
 	                //                    if(self.pageNo==1){
 	                self.stockArray.splice(0, self.stockArray.length);
@@ -707,7 +715,7 @@
 	                    if (json.list && json.list.length > 0) {
 	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
-	                            self.other = tag.other;
+	                            tag.id = i + 1;
 	                            self.stockArray.push(tag);
 	                        }
 	                    }
@@ -720,21 +728,21 @@
 	};
 
 /***/ }),
-/* 15 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(16)
+	__vue_styles__.push(__webpack_require__(31)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(17)
+	__vue_exports__ = __webpack_require__(32)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(18)
+	var __vue_template__ = __webpack_require__(33)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -746,10 +754,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/childnav/pcinterest_hlist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/image/pcimage_paihang_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1774165e"
+	__vue_options__._scopeId = "data-v-32843784"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -764,39 +772,33 @@
 
 
 /***/ }),
-/* 16 */
+/* 31 */
 /***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
 	    "flexDirection": "column",
-	    "width": 130,
-	    "height": 60,
-	    "borderColor": "#FF6B9C",
-	    "borderWidth": 1,
-	    "borderRadius": 20,
-	    "backgroundColor": "#FF6B9C",
-	    "alignItems": "center",
-	    "alignContent": "center",
-	    "margin": 5,
-	    "padding": 5
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5,
+	    "alignContent": "flex-start",
+	    "alignItems": "flex-start"
 	  },
 	  "txt": {
-	    "fontSize": 18,
-	    "flexDirection": "column",
-	    "color": "#ffffff",
-	    "alignItems": "center",
-	    "alignContent": "center"
+	    "fontSize": 30,
+	    "padding": 20
 	  }
 	}
 
 /***/ }),
-/* 17 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
 	//
 	//
 	//
@@ -819,7 +821,8 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
+	        todetail: function todetail(id, e, alt) {
+
 	            weexEventModule.startWebViewActivity(e);
 	            //                var name = "tags/pctagcontent_imglist";
 	            ////                if(e.indexOf('m.meituba.com')!=-1){
@@ -844,81 +847,70 @@
 	};
 
 /***/ }),
-/* 18 */
+/* 33 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
+	    staticStyle: {
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.title)
 	      }
 	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"]
 	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.title))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 19 */
+/* 34 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
-	      height: "280px"
+	      backgroundColor: "rgba(0, 0, 0, .25)"
 	    }
-	  }, [_c('div', {
-	    staticStyle: {
-	      flex: "1",
-	      alignContent: "flex-start",
-	      alignItems: "flex-start"
+	  }, [_c('navbar_v', {
+	    attrs: {
+	      "title": _vm.title,
+	      "shown": _vm.shown,
+	      "leftsrc": _vm.leftsrc
+	    }
+	  }), _c('list', {
+	    staticClass: ["list"],
+	    attrs: {
+	      "loadmoreoffset": "10"
+	    }
+	  }, [_c('refresh', {
+	    staticClass: ["refresh"],
+	    attrs: {
+	      "display": _vm.refreshing ? 'show' : 'hide'
+	    },
+	    on: {
+	      "refresh": _vm.onrefresh,
+	      "pullingdown": _vm.onpullingdown
 	    }
 	  }, [_c('text', {
-	    staticStyle: {
-	      fontSize: "28",
-	      marginTop: "30",
-	      marginLeft: "20"
-	    }
-	  }, [_vm._v(_vm._s(_vm.title))])]), _c('hlist', {
-	    staticStyle: {
-	      flexDirection: "row",
-	      width: "750px",
-	      height: "100px",
-	      flex: "1"
-	    },
-	    attrs: {
-	      "loadmoreoffset": "10",
-	      "scrollDirection": "horizontal"
-	    }
-	  }, _vm._l((_vm.stockArray), function(stockitem) {
+	    staticClass: ["indicator"]
+	  }, [_vm._v("下拉刷新...")])]), _vm._l((_vm.stockArray), function(stockitem) {
 	    return _c('cell', {
 	      appendAsTree: true,
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pcinterest_hlist_item', {
+	    }, [_c('pcimage_paihang_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }
 	    })], 1)
-	  })), _c('div', {
-	    staticStyle: {
-	      flex: "1",
-	      alignContent: "flex-start",
-	      alignItems: "flex-start"
-	    }
-	  }, [_c('text', {
-	    staticStyle: {
-	      fontSize: "28",
-	      marginTop: "30",
-	      marginLeft: "20"
-	    }
-	  }, [_vm._v(_vm._s(_vm.other))])])], 1)
+	  })], 2)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(172)
+	__vue_styles__.push(__webpack_require__(191)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(173)
+	__vue_exports__ = __webpack_require__(192)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(182)
+	var __vue_template__ = __webpack_require__(201)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -360,9 +360,27 @@
 
 	var MEITU = {
 	    pc_meitu:"https://www.4493.com/",
-	    pc_xingganmote:"https://www.4493.com/xingganmote/"
+	    pc_xingganmote:"https://www.4493.com/xingganmote/",
+	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
+	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
 
 
+	};
+	exports.getpc_new4493content = function () {
+	    var url = MEITU.pc_new4493content;
+	    console.log('pc_new4493content==' + url);
+	    return url;
+	};
+	exports.getpc_new4493content1 = function () {
+	    var url = MEITU.pc_new4493content1;
+	    console.log('pc_new4493content1==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image = function () {
+	    var url = MEITU.pc_xingganmote_image;
+	    console.log('pc_xingganmote_image==' + url);
+	    return url;
 	};
 	exports.getpc_xingganmote = function () {
 	    var url = MEITU.pc_xingganmote;
@@ -510,7 +528,7 @@
 
 /***/ }),
 
-/***/ 172:
+/***/ 191:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -538,7 +556,7 @@
 
 /***/ }),
 
-/***/ 173:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -551,7 +569,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctopnav_alllist_item = __webpack_require__(174);
+	var _pctopnav_alllist_item = __webpack_require__(193);
 
 	var _pctopnav_alllist_item2 = _interopRequireDefault(_pctopnav_alllist_item);
 
@@ -697,21 +715,21 @@
 
 /***/ }),
 
-/***/ 174:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(175)
+	__vue_styles__.push(__webpack_require__(194)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(176)
+	__vue_exports__ = __webpack_require__(195)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(181)
+	var __vue_template__ = __webpack_require__(200)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -742,7 +760,7 @@
 
 /***/ }),
 
-/***/ 175:
+/***/ 194:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -765,12 +783,12 @@
 
 /***/ }),
 
-/***/ 176:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _pctopnav_alllist_subitem = __webpack_require__(177);
+	var _pctopnav_alllist_subitem = __webpack_require__(196);
 
 	var _pctopnav_alllist_subitem2 = _interopRequireDefault(_pctopnav_alllist_subitem);
 
@@ -863,21 +881,21 @@
 
 /***/ }),
 
-/***/ 177:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(178)
+	__vue_styles__.push(__webpack_require__(197)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(179)
+	__vue_exports__ = __webpack_require__(198)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(180)
+	var __vue_template__ = __webpack_require__(199)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -908,7 +926,7 @@
 
 /***/ }),
 
-/***/ 178:
+/***/ 197:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -931,7 +949,7 @@
 
 /***/ }),
 
-/***/ 179:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -991,7 +1009,7 @@
 
 /***/ }),
 
-/***/ 180:
+/***/ 199:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1024,7 +1042,7 @@
 
 /***/ }),
 
-/***/ 181:
+/***/ 200:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1053,7 +1071,7 @@
 
 /***/ }),
 
-/***/ 182:
+/***/ 201:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

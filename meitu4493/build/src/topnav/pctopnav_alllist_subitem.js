@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(178)
+	__vue_styles__.push(__webpack_require__(197)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(179)
+	__vue_exports__ = __webpack_require__(198)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(180)
+	var __vue_template__ = __webpack_require__(199)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -105,9 +105,27 @@
 
 	var MEITU = {
 	    pc_meitu:"https://www.4493.com/",
-	    pc_xingganmote:"https://www.4493.com/xingganmote/"
+	    pc_xingganmote:"https://www.4493.com/xingganmote/",
+	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
+	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
 
 
+	};
+	exports.getpc_new4493content = function () {
+	    var url = MEITU.pc_new4493content;
+	    console.log('pc_new4493content==' + url);
+	    return url;
+	};
+	exports.getpc_new4493content1 = function () {
+	    var url = MEITU.pc_new4493content1;
+	    console.log('pc_new4493content1==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image = function () {
+	    var url = MEITU.pc_xingganmote_image;
+	    console.log('pc_xingganmote_image==' + url);
+	    return url;
 	};
 	exports.getpc_xingganmote = function () {
 	    var url = MEITU.pc_xingganmote;
@@ -215,7 +233,7 @@
 
 /***/ }),
 
-/***/ 178:
+/***/ 197:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -238,7 +256,7 @@
 
 /***/ }),
 
-/***/ 179:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -298,7 +316,7 @@
 
 /***/ }),
 
-/***/ 180:
+/***/ 199:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -540,9 +540,27 @@
 
 	var MEITU = {
 	    pc_meitu:"https://www.4493.com/",
-	    pc_xingganmote:"https://www.4493.com/xingganmote/"
+	    pc_xingganmote:"https://www.4493.com/xingganmote/",
+	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
+	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
 
 
+	};
+	exports.getpc_new4493content = function () {
+	    var url = MEITU.pc_new4493content;
+	    console.log('pc_new4493content==' + url);
+	    return url;
+	};
+	exports.getpc_new4493content1 = function () {
+	    var url = MEITU.pc_new4493content1;
+	    console.log('pc_new4493content1==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image = function () {
+	    var url = MEITU.pc_xingganmote_image;
+	    console.log('pc_xingganmote_image==' + url);
+	    return url;
 	};
 	exports.getpc_xingganmote = function () {
 	    var url = MEITU.pc_xingganmote;

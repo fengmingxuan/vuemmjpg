@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(28)
+	__vue_styles__.push(__webpack_require__(47)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(29)
+	__vue_exports__ = __webpack_require__(48)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(30)
+	var __vue_template__ = __webpack_require__(49)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -105,9 +105,27 @@
 
 	var MEITU = {
 	    pc_meitu:"https://www.4493.com/",
-	    pc_xingganmote:"https://www.4493.com/xingganmote/"
+	    pc_xingganmote:"https://www.4493.com/xingganmote/",
+	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
+	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
 
 
+	};
+	exports.getpc_new4493content = function () {
+	    var url = MEITU.pc_new4493content;
+	    console.log('pc_new4493content==' + url);
+	    return url;
+	};
+	exports.getpc_new4493content1 = function () {
+	    var url = MEITU.pc_new4493content1;
+	    console.log('pc_new4493content1==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image = function () {
+	    var url = MEITU.pc_xingganmote_image;
+	    console.log('pc_xingganmote_image==' + url);
+	    return url;
 	};
 	exports.getpc_xingganmote = function () {
 	    var url = MEITU.pc_xingganmote;
@@ -215,7 +233,7 @@
 
 /***/ }),
 
-/***/ 28:
+/***/ 47:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -243,7 +261,7 @@
 
 /***/ }),
 
-/***/ 29:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -276,6 +294,11 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('image/pcimage_paihang');
+	        this.rows.push('image/pcimagejingxuan_imglist');
+	        this.rows.push('image/pcimagehot_imglist');
+	        this.rows.push('image/pcimageright_imglist');
+	        this.rows.push('image/pcimageleft_imglist');
 	        this.rows.push('topnav/pctopnav_alllist');
 	        this.rows.push('childnav/pcpic_imglist');
 	        this.rows.push('childnav/pcinterest_hlist');
@@ -308,7 +331,7 @@
 
 /***/ }),
 
-/***/ 30:
+/***/ 49:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
