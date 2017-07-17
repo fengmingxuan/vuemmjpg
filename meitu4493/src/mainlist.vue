@@ -23,6 +23,10 @@
             }
         },
         created () {
+            this.rows.push('topnav/pctopnav_alllist')
+            this.rows.push('childnav/pcpic_imglist')
+            this.rows.push('childnav/pcinterest_hlist')
+            this.rows.push('childnav/pcinterest')
             this.rows.push('webnews')
             this.rows.push('template/navbar_v')
         },

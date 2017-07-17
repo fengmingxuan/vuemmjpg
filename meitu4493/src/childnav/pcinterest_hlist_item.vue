@@ -1,0 +1,72 @@
+<template>
+        <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
+            <div class="news-content">
+                <text class="txt">{{stockitem.alt}}</text>
+            </div>
+
+        </div>
+</template>
+
+<script>
+    var weexEventModule = weex.requireModule('weexEventModule');
+    var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
+    var meitu = require('../meitu');
+    module.exports = {
+        created:function(){
+        },
+
+        props: {
+            stockitem: {
+                type: Object
+            }
+        },
+
+        methods:{
+            todetail:function (e,alt) {
+                weexEventModule.startWebViewActivity(e);
+//                var name = "tags/pctagcontent_imglist";
+////                if(e.indexOf('m.meituba.com')!=-1){
+////                    name = "marticle/marticlelist";
+////                }else{
+////                    name = "article/pcarticlelist";
+////                }
+//                var params={
+//                    url: meitu.getDefaultUrl(name),
+//                    animated: "true",
+//                    options:{
+//                        taghref: e,
+//                        title:alt
+//                    }
+//                };
+//
+//                weexNavigatorModule.push(params, event => {
+//                    // modal.toast({ message: 'callback: ' + event })
+//                })
+            }
+        }
+    }
+</script>
+
+<style>
+    .news-content{
+        flex-direction:column;
+        width: 130px;
+        height:60px;
+        border-color: #FF6B9C;
+        border-width: 1;
+        border-radius: 20;
+        background-color:#FF6B9C ;
+        align-items: center;
+        align-content: center;
+        margin: 5;
+        padding: 5;
+    }
+
+    .txt{
+        font-size:18;
+        flex-direction:column;
+        color: #ffffff;
+        align-items: center;
+        align-content: center;
+    }
+</style>

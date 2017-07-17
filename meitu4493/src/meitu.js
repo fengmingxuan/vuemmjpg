@@ -9,8 +9,14 @@ var BASE_URL = {
 
 var MEITU = {
     pc_meitu:"https://www.4493.com/",
+    pc_xingganmote:"https://www.4493.com/xingganmote/"
 
 
+};
+exports.getpc_xingganmote = function () {
+    var url = MEITU.pc_xingganmote;
+    console.log('pc_xingganmote==' + url);
+    return url;
 };
 
 exports.getpc_meitu = function () {
