@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc" :shownleft="shownleft"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -27,6 +27,7 @@
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             mmenu_alllist_item,
@@ -41,10 +42,11 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"最新更新",
+                title:"菜单",
                 isFirst:1,
                 shown:false,
-                leftsrc:'./images/back.png'
+                leftsrc:'./images/back.png',
+                shownleft:false,
                  
             }
         },

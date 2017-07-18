@@ -37,6 +37,7 @@
     var meizitu = require('../meizitu');
     var weexEventModule = weex.requireModule('weexEventModule');
     var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default {
         components: {
             navbar_v
@@ -64,9 +65,24 @@
                 self.title = ctitle;
             }
             self.refresh();
+
+            var paramsEvent={
+                event:"8000",
+                label:"看图详细"
+            };
+            weexEventModule.onEvent(paramsEvent,event => {
+
+            });
         },
         methods:{
             todetail:function (e,alt) {
+                var paramsEvent={
+                    event:"9000",
+                    label:"妹子图web"
+                };
+                weexEventModule.onEvent(paramsEvent,event => {
+
+                });
                 weexEventModule.startWebViewActivity(e);
 //                var name = "img/pcimage_imglist";
 ////                if(e.indexOf('m.meituba.com')!=-1){

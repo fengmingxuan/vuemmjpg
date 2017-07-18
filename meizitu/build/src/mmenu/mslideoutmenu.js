@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(109)
+	__vue_styles__.push(__webpack_require__(112)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(110)
+	__vue_exports__ = __webpack_require__(113)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(113)
+	var __vue_template__ = __webpack_require__(116)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -290,7 +290,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -312,13 +312,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -497,7 +499,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -513,7 +515,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -674,6 +676,7 @@
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(86);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist: _mtuijian_imglist2.default,
@@ -689,12 +692,13 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "妹子图",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png',
+	            leftsrc: './images/menu.png',
 	            pagenumbers: '',
-	            url: ''
+	            url: '',
+	            shownleft: true
 
 	        };
 	    },
@@ -709,9 +713,20 @@
 	        if (ctitle != undefined) {
 	            self.title = ctitle;
 	        }
+	        var cleftsrc = self.$getConfig().leftsrc;
+	        if (cleftsrc != undefined) {
+	            self.leftsrc = cleftsrc;
+	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "6000",
+	            label: "妹子图"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
+
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -728,6 +743,10 @@
 	        var self = this;
 	    },
 	    methods: {
+	        nativeback: function nativeback() {
+	            var params = {};
+	            this.$emit('toggle', params);
+	        },
 	        autoRefresh: function autoRefresh(event) {
 	            var self = this;
 	            storage.getItem('taghref', function (s) {
@@ -1146,6 +1165,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist_item: _mtuijian_imglist_item2.default,
@@ -1160,10 +1180,11 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "精彩推荐",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png'
+	            leftsrc: './images/back.png',
+	            shownleft: false
 	            //                pagenumbers:''
 
 
@@ -1183,6 +1204,11 @@
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+	        var paramsEvent = {
+	            event: "6001",
+	            label: "精彩推荐"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -1296,7 +1322,8 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1390,7 +1417,11 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
+	    },
+	    on: {
+	      "nativeback": _vm.nativeback
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1457,7 +1488,10 @@
 /* 99 */,
 /* 100 */,
 /* 101 */,
-/* 102 */
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1484,7 +1518,7 @@
 	}
 
 /***/ }),
-/* 103 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1497,7 +1531,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _mmenulist_item = __webpack_require__(104);
+	var _mmenulist_item = __webpack_require__(107);
 
 	var _mmenulist_item2 = _interopRequireDefault(_mmenulist_item);
 
@@ -1642,21 +1676,21 @@
 	};
 
 /***/ }),
-/* 104 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(105)
+	__vue_styles__.push(__webpack_require__(108)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(106)
+	__vue_exports__ = __webpack_require__(109)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(107)
+	var __vue_template__ = __webpack_require__(110)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1686,7 +1720,7 @@
 
 
 /***/ }),
-/* 105 */
+/* 108 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1708,7 +1742,7 @@
 	}
 
 /***/ }),
-/* 106 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1764,7 +1798,7 @@
 	};
 
 /***/ }),
-/* 107 */
+/* 110 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1786,7 +1820,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 108 */
+/* 111 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1832,7 +1866,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 109 */
+/* 112 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1887,7 +1921,7 @@
 	}
 
 /***/ }),
-/* 110 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1896,11 +1930,11 @@
 	    value: true
 	});
 
-	var _mmenulist = __webpack_require__(111);
+	var _mmenulist = __webpack_require__(114);
 
 	var _mmenulist2 = _interopRequireDefault(_mmenulist);
 
-	var _mlastest_imglist = __webpack_require__(112);
+	var _mlastest_imglist = __webpack_require__(115);
 
 	var _mlastest_imglist2 = _interopRequireDefault(_mlastest_imglist);
 
@@ -1986,21 +2020,21 @@
 	};
 
 /***/ }),
-/* 111 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(102)
+	__vue_styles__.push(__webpack_require__(105)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(103)
+	__vue_exports__ = __webpack_require__(106)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(108)
+	var __vue_template__ = __webpack_require__(111)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -2030,7 +2064,7 @@
 
 
 /***/ }),
-/* 112 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -2074,7 +2108,7 @@
 
 
 /***/ }),
-/* 113 */
+/* 116 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

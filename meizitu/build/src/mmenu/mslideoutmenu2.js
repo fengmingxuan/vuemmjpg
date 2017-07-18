@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(114)
+	__vue_styles__.push(__webpack_require__(117)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(115)
+	__vue_exports__ = __webpack_require__(118)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(117)
+	var __vue_template__ = __webpack_require__(120)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -290,7 +290,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -312,13 +312,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -497,7 +499,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -513,7 +515,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -674,6 +676,7 @@
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(86);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist: _mtuijian_imglist2.default,
@@ -689,12 +692,13 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "妹子图",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png',
+	            leftsrc: './images/menu.png',
 	            pagenumbers: '',
-	            url: ''
+	            url: '',
+	            shownleft: true
 
 	        };
 	    },
@@ -709,9 +713,20 @@
 	        if (ctitle != undefined) {
 	            self.title = ctitle;
 	        }
+	        var cleftsrc = self.$getConfig().leftsrc;
+	        if (cleftsrc != undefined) {
+	            self.leftsrc = cleftsrc;
+	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "6000",
+	            label: "妹子图"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
+
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -728,6 +743,10 @@
 	        var self = this;
 	    },
 	    methods: {
+	        nativeback: function nativeback() {
+	            var params = {};
+	            this.$emit('toggle', params);
+	        },
 	        autoRefresh: function autoRefresh(event) {
 	            var self = this;
 	            storage.getItem('taghref', function (s) {
@@ -1146,6 +1165,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist_item: _mtuijian_imglist_item2.default,
@@ -1160,10 +1180,11 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "精彩推荐",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png'
+	            leftsrc: './images/back.png',
+	            shownleft: false
 	            //                pagenumbers:''
 
 
@@ -1183,6 +1204,11 @@
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+	        var paramsEvent = {
+	            event: "6001",
+	            label: "精彩推荐"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -1296,7 +1322,8 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1390,7 +1417,11 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
+	    },
+	    on: {
+	      "nativeback": _vm.nativeback
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1446,7 +1477,10 @@
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1473,7 +1507,7 @@
 	}
 
 /***/ }),
-/* 92 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1486,7 +1520,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _mmenu_alllist_item = __webpack_require__(93);
+	var _mmenu_alllist_item = __webpack_require__(96);
 
 	var _mmenu_alllist_item2 = _interopRequireDefault(_mmenu_alllist_item);
 
@@ -1519,6 +1553,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mmenu_alllist_item: _mmenu_alllist_item2.default,
@@ -1533,10 +1568,11 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "最新更新",
+	            title: "菜单",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png'
+	            leftsrc: './images/back.png',
+	            shownleft: false
 
 	        };
 	    },
@@ -1631,21 +1667,21 @@
 	};
 
 /***/ }),
-/* 93 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(94)
+	__vue_styles__.push(__webpack_require__(97)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(95)
+	__vue_exports__ = __webpack_require__(98)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(100)
+	var __vue_template__ = __webpack_require__(103)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1661,165 +1697,6 @@
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	__vue_options__._scopeId = "data-v-7f467cc2"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column",
-	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5,
-	    "alignContent": "flex-start",
-	    "alignItems": "flex-start"
-	  },
-	  "txt": {
-	    "fontSize": 30,
-	    "padding": 20
-	  }
-	}
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _mmenu_alllist_subitem = __webpack_require__(96);
-
-	var _mmenu_alllist_subitem2 = _interopRequireDefault(_mmenu_alllist_subitem);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var weexEventModule = weex.requireModule('weexEventModule'); //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meizitu = __webpack_require__(6);
-	module.exports = {
-	    created: function created() {},
-	    components: {
-	        mmenu_alllist_subitem: _mmenu_alllist_subitem2.default
-
-	    },
-	    props: {
-	        tpicNitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        todetail: function todetail(id, e, alt) {
-	            if (e == undefined) {
-	                return;
-	            }
-
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "img/pcimage_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meizitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                });
-	        },
-	        tostock: function tostock(json) {
-	            var stockArray = [];
-	            if (json.list) {
-	                if (json.list && json.list.length > 0) {
-	                    for (var i = 0; i < json.list.length; i += 2) {
-	                        var tag = json.list[i];
-	                        var tag2 = json.list[i + 1];
-	                        if (tag2 == undefined) {
-	                            tag2 = {};
-	                        }
-	                        var item = {
-	                            href: tag.href,
-	                            alt: tag.alt,
-	                            src: tag.src,
-	                            other: tag.other,
-	                            href2: tag2.href,
-	                            alt2: tag2.alt,
-	                            src2: tag2.src,
-	                            other2: tag2.other
-	                        };
-	                        stockArray.push(item);
-	                    }
-	                }
-	            }
-	            return stockArray;
-	        }
-	    }
-	};
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(97)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(98)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(99)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/mmenu/mmenu_alllist_subitem.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-2c783077"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1861,6 +1738,180 @@
 
 	'use strict';
 
+	var _mmenu_alllist_subitem = __webpack_require__(99);
+
+	var _mmenu_alllist_subitem2 = _interopRequireDefault(_mmenu_alllist_subitem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var weexEventModule = weex.requireModule('weexEventModule'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meizitu = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+	    components: {
+	        mmenu_alllist_subitem: _mmenu_alllist_subitem2.default
+
+	    },
+	    props: {
+	        tpicNitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        todetail: function todetail(id, e, alt) {
+	            if (e == undefined) {
+	                return;
+	            }
+	            if (id == 7 || id == 8 || id == 6) {
+	                return;
+	            }
+	            if (id == 5) {
+	                weexEventModule.startWebViewActivity(e);
+	                return;
+	            }
+
+	            if (id == 1) {
+	                var paramsEvent = {
+	                    event: "1000",
+	                    label: alt
+	                };
+
+	                weexEventModule.onEvent(paramsEvent, function (event) {});
+
+	                var name = "mmain/mmain_lastest_imglist";
+	                var params = {
+	                    url: meizitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt,
+	                        leftsrc: './images/back.png'
+	                    }
+	                };
+
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
+	        },
+	        tostock: function tostock(json) {
+	            var stockArray = [];
+	            if (json.list) {
+	                if (json.list && json.list.length > 0) {
+	                    for (var i = 0; i < json.list.length; i += 2) {
+	                        var tag = json.list[i];
+	                        var tag2 = json.list[i + 1];
+	                        if (tag2 == undefined) {
+	                            tag2 = {};
+	                        }
+	                        var item = {
+	                            id: json.id,
+	                            ptitle: json.title,
+	                            href: tag.href,
+	                            alt: tag.alt,
+	                            src: tag.src,
+	                            other: tag.other,
+	                            href2: tag2.href,
+	                            alt2: tag2.alt,
+	                            src2: tag2.src,
+	                            other2: tag2.other,
+	                            id2: json.id,
+	                            ptitle2: json.title
+	                        };
+	                        stockArray.push(item);
+	                    }
+	                }
+	            }
+	            return stockArray;
+	        }
+	    }
+	};
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(100)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(101)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(102)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meizitu/src/mmenu/mmenu_alllist_subitem.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-2c783077"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5,
+	    "alignContent": "flex-start",
+	    "alignItems": "flex-start"
+	  },
+	  "txt": {
+	    "fontSize": 30,
+	    "padding": 20
+	  }
+	}
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	//
 	//
 	//
@@ -1886,12 +1937,27 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
+	        todetail: function todetail(id, e, alt, ptitle) {
+
+	            var paramsEvent = {
+	                event: "2000",
+	                label: ptitle
+	            };
+	            if (id == 2) {
+	                paramsEvent.event = "2000";
+	            } else if (id == 3) {
+	                paramsEvent.event = "3000";
+	            } else if (id == 4) {
+	                paramsEvent.event = "4000";
+	            } else if (id == 5) {
+	                paramsEvent.event = "5000";
+	            }
+	            weexEventModule.onEvent(paramsEvent, function (event) {});
 	            if (alt == "两性私房网" || alt == "美女写真") {
 	                weexEventModule.startWebViewActivity(e);
 	            } else {
 	                //                 weexEventModule.startWebViewActivity(e);
-	                var name = "mmain/mlastest_imglist";
+	                var name = "mmain/mmain_lastest_imglist";
 	                //                if(e.indexOf('m.meituba.com')!=-1){
 	                //                    name = "marticle/marticlelist";
 	                //                }else{
@@ -1915,7 +1981,7 @@
 	};
 
 /***/ }),
-/* 99 */
+/* 102 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1928,7 +1994,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt, _vm.stockitem.ptitle)
 	      }
 	    }
 	  }, [_c('text', {
@@ -1937,7 +2003,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	        _vm.todetail(_vm.stockitem.id2, _vm.stockitem.href2, _vm.stockitem.alt2, _vm.stockitem.ptitle2)
 	      }
 	    }
 	  }, [_c('text', {
@@ -1947,7 +2013,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 100 */
+/* 103 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1975,7 +2041,7 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 101 */
+/* 104 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1987,7 +2053,8 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -2021,9 +2088,6 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-/* 102 */,
-/* 103 */,
-/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -2031,7 +2095,10 @@
 /* 109 */,
 /* 110 */,
 /* 111 */,
-/* 112 */
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -2075,8 +2142,8 @@
 
 
 /***/ }),
-/* 113 */,
-/* 114 */
+/* 116 */,
+/* 117 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -2131,7 +2198,7 @@
 	}
 
 /***/ }),
-/* 115 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2140,11 +2207,11 @@
 	    value: true
 	});
 
-	var _mmenu_alllist = __webpack_require__(116);
+	var _mmenu_alllist = __webpack_require__(119);
 
 	var _mmenu_alllist2 = _interopRequireDefault(_mmenu_alllist);
 
-	var _mlastest_imglist = __webpack_require__(112);
+	var _mlastest_imglist = __webpack_require__(115);
 
 	var _mlastest_imglist2 = _interopRequireDefault(_mlastest_imglist);
 
@@ -2230,21 +2297,21 @@
 	};
 
 /***/ }),
-/* 116 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(91)
+	__vue_styles__.push(__webpack_require__(94)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(92)
+	__vue_exports__ = __webpack_require__(95)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(101)
+	var __vue_template__ = __webpack_require__(104)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -2274,7 +2341,7 @@
 
 
 /***/ }),
-/* 117 */
+/* 120 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2305,7 +2372,11 @@
 	    on: {
 	      "click": _vm.toggle
 	    }
-	  }, [_c('mlastest_imglist')], 1)])
+	  }, [_c('mlastest_imglist', {
+	    on: {
+	      "toggle": _vm.toggle
+	    }
+	  })], 1)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

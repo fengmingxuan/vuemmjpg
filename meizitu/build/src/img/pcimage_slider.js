@@ -292,7 +292,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -314,13 +314,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -501,7 +503,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -517,7 +519,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -605,6 +607,7 @@
 	var meizitu = __webpack_require__(6);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        navbar_v: _navbar_v2.default
@@ -633,9 +636,20 @@
 	            self.title = ctitle;
 	        }
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "8000",
+	            label: "看图详细"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	    },
 	    methods: {
 	        todetail: function todetail(e, alt) {
+	            var paramsEvent = {
+	                event: "9000",
+	                label: "妹子图web"
+	            };
+	            weexEventModule.onEvent(paramsEvent, function (event) {});
 	            weexEventModule.startWebViewActivity(e);
 	            //                var name = "img/pcimage_imglist";
 	            ////                if(e.indexOf('m.meituba.com')!=-1){

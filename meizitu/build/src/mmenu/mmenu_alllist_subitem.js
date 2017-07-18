@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(97)
+	__vue_styles__.push(__webpack_require__(100)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(98)
+	__vue_exports__ = __webpack_require__(101)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(99)
+	var __vue_template__ = __webpack_require__(102)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -237,7 +237,7 @@
 
 /***/ }),
 
-/***/ 97:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -260,7 +260,7 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -290,12 +290,27 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
+	        todetail: function todetail(id, e, alt, ptitle) {
+
+	            var paramsEvent = {
+	                event: "2000",
+	                label: ptitle
+	            };
+	            if (id == 2) {
+	                paramsEvent.event = "2000";
+	            } else if (id == 3) {
+	                paramsEvent.event = "3000";
+	            } else if (id == 4) {
+	                paramsEvent.event = "4000";
+	            } else if (id == 5) {
+	                paramsEvent.event = "5000";
+	            }
+	            weexEventModule.onEvent(paramsEvent, function (event) {});
 	            if (alt == "两性私房网" || alt == "美女写真") {
 	                weexEventModule.startWebViewActivity(e);
 	            } else {
 	                //                 weexEventModule.startWebViewActivity(e);
-	                var name = "mmain/mlastest_imglist";
+	                var name = "mmain/mmain_lastest_imglist";
 	                //                if(e.indexOf('m.meituba.com')!=-1){
 	                //                    name = "marticle/marticlelist";
 	                //                }else{
@@ -320,7 +335,7 @@
 
 /***/ }),
 
-/***/ 99:
+/***/ 102:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -333,7 +348,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt, _vm.stockitem.ptitle)
 	      }
 	    }
 	  }, [_c('text', {
@@ -342,7 +357,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	        _vm.todetail(_vm.stockitem.id2, _vm.stockitem.href2, _vm.stockitem.alt2, _vm.stockitem.ptitle2)
 	      }
 	    }
 	  }, [_c('text', {

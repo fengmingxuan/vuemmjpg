@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc" :shownleft="shownleft"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -29,6 +29,7 @@
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             mtuijian_imglist_item,
@@ -43,10 +44,11 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"热门图片",
+                title:"精彩推荐",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
+                shownleft:false
 //                pagenumbers:''
 
                  
@@ -65,6 +67,13 @@
             console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
+            var paramsEvent={
+                event:"6001",
+                label:"精彩推荐"
+            };
+            weexEventModule.onEvent(paramsEvent,event => {
+
+            });
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
 //                var staghref = s.data;

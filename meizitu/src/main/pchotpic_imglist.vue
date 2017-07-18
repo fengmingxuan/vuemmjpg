@@ -29,6 +29,7 @@
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             pchotpic_imglist_item,
@@ -58,13 +59,20 @@
             if(ctaghref!=undefined){
                 self.taghref = ctaghref;
             }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
+            var paramsEvent={
+                event:"7002",
+                label:"热门图片"
+            };
+            weexEventModule.onEvent(paramsEvent,event => {
+
+            });
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
 //                var staghref = s.data;

@@ -27,6 +27,7 @@
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             pclastest_item,
@@ -54,13 +55,21 @@
             if(ctaghref!=undefined){
                 self.taghref = ctaghref;
             }
-            var ctitle = self.$getConfig().title;
-            if(ctitle!=undefined){
-                self.title = ctitle;
-            }
+//            var ctitle = self.$getConfig().title;
+//            if(ctitle!=undefined){
+//                self.title = ctitle;
+//            }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 
             self.refresh();
+
+            var paramsEvent={
+                event:"7003",
+                label:"推荐妹子图"
+            };
+            weexEventModule.onEvent(paramsEvent,event => {
+
+            });
 
         },
         methods:{

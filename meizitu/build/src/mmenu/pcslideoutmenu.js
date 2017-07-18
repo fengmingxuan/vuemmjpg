@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(118)
+	__vue_styles__.push(__webpack_require__(121)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(119)
+	__vue_exports__ = __webpack_require__(122)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(122)
+	var __vue_template__ = __webpack_require__(125)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -290,7 +290,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -312,13 +312,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -497,7 +499,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -513,7 +515,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -793,6 +795,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pclastest_item: _pclastest_item2.default,
@@ -821,13 +824,19 @@
 	        if (ctaghref != undefined) {
 	            self.taghref = ctaghref;
 	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "7001",
+	            label: "最新更新"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	    },
 	    methods: {
 	        autoRefresh: function autoRefresh(event) {
@@ -1070,6 +1079,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pchotpic_imglist_item: _pchotpic_imglist_item2.default,
@@ -1100,13 +1110,18 @@
 	        if (ctaghref != undefined) {
 	            self.taghref = ctaghref;
 	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+	        var paramsEvent = {
+	            event: "7002",
+	            label: "热门图片"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -3526,7 +3541,10 @@
 /* 115 */,
 /* 116 */,
 /* 117 */,
-/* 118 */
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3581,7 +3599,7 @@
 	}
 
 /***/ }),
-/* 119 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3590,11 +3608,11 @@
 	    value: true
 	});
 
-	var _pctags = __webpack_require__(120);
+	var _pctags = __webpack_require__(123);
 
 	var _pctags2 = _interopRequireDefault(_pctags);
 
-	var _pcmaincontent_imglist = __webpack_require__(121);
+	var _pcmaincontent_imglist = __webpack_require__(124);
 
 	var _pcmaincontent_imglist2 = _interopRequireDefault(_pcmaincontent_imglist);
 
@@ -3680,7 +3698,7 @@
 	};
 
 /***/ }),
-/* 120 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -3724,7 +3742,7 @@
 
 
 /***/ }),
-/* 121 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -3768,7 +3786,7 @@
 
 
 /***/ }),
-/* 122 */
+/* 125 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

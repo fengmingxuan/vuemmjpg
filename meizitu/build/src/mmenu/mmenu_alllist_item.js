@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(94)
+	__vue_styles__.push(__webpack_require__(97)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(95)
+	__vue_exports__ = __webpack_require__(98)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(100)
+	var __vue_template__ = __webpack_require__(103)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -237,7 +237,7 @@
 
 /***/ }),
 
-/***/ 94:
+/***/ 97:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -260,12 +260,12 @@
 
 /***/ }),
 
-/***/ 95:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _mmenu_alllist_subitem = __webpack_require__(96);
+	var _mmenu_alllist_subitem = __webpack_require__(99);
 
 	var _mmenu_alllist_subitem2 = _interopRequireDefault(_mmenu_alllist_subitem);
 
@@ -302,26 +302,37 @@
 	            if (e == undefined) {
 	                return;
 	            }
+	            if (id == 7 || id == 8 || id == 6) {
+	                return;
+	            }
+	            if (id == 5) {
+	                weexEventModule.startWebViewActivity(e);
+	                return;
+	            }
 
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "img/pcimage_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meizitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                });
+	            if (id == 1) {
+	                var paramsEvent = {
+	                    event: "1000",
+	                    label: alt
+	                };
+
+	                weexEventModule.onEvent(paramsEvent, function (event) {});
+
+	                var name = "mmain/mmain_lastest_imglist";
+	                var params = {
+	                    url: meizitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt,
+	                        leftsrc: './images/back.png'
+	                    }
+	                };
+
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
 	        },
 	        tostock: function tostock(json) {
 	            var stockArray = [];
@@ -334,6 +345,8 @@
 	                            tag2 = {};
 	                        }
 	                        var item = {
+	                            id: json.id,
+	                            ptitle: json.title,
 	                            href: tag.href,
 	                            alt: tag.alt,
 	                            src: tag.src,
@@ -341,7 +354,9 @@
 	                            href2: tag2.href,
 	                            alt2: tag2.alt,
 	                            src2: tag2.src,
-	                            other2: tag2.other
+	                            other2: tag2.other,
+	                            id2: json.id,
+	                            ptitle2: json.title
 	                        };
 	                        stockArray.push(item);
 	                    }
@@ -354,21 +369,21 @@
 
 /***/ }),
 
-/***/ 96:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(97)
+	__vue_styles__.push(__webpack_require__(100)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(98)
+	__vue_exports__ = __webpack_require__(101)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(99)
+	var __vue_template__ = __webpack_require__(102)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -399,7 +414,7 @@
 
 /***/ }),
 
-/***/ 97:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -422,7 +437,7 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -452,12 +467,27 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
+	        todetail: function todetail(id, e, alt, ptitle) {
+
+	            var paramsEvent = {
+	                event: "2000",
+	                label: ptitle
+	            };
+	            if (id == 2) {
+	                paramsEvent.event = "2000";
+	            } else if (id == 3) {
+	                paramsEvent.event = "3000";
+	            } else if (id == 4) {
+	                paramsEvent.event = "4000";
+	            } else if (id == 5) {
+	                paramsEvent.event = "5000";
+	            }
+	            weexEventModule.onEvent(paramsEvent, function (event) {});
 	            if (alt == "两性私房网" || alt == "美女写真") {
 	                weexEventModule.startWebViewActivity(e);
 	            } else {
 	                //                 weexEventModule.startWebViewActivity(e);
-	                var name = "mmain/mlastest_imglist";
+	                var name = "mmain/mmain_lastest_imglist";
 	                //                if(e.indexOf('m.meituba.com')!=-1){
 	                //                    name = "marticle/marticlelist";
 	                //                }else{
@@ -482,7 +512,7 @@
 
 /***/ }),
 
-/***/ 99:
+/***/ 102:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -495,7 +525,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt, _vm.stockitem.ptitle)
 	      }
 	    }
 	  }, [_c('text', {
@@ -504,7 +534,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.alt2)
+	        _vm.todetail(_vm.stockitem.id2, _vm.stockitem.href2, _vm.stockitem.alt2, _vm.stockitem.ptitle2)
 	      }
 	    }
 	  }, [_c('text', {
@@ -515,7 +545,7 @@
 
 /***/ }),
 
-/***/ 100:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -292,7 +292,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -314,13 +314,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -501,7 +503,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -517,7 +519,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -612,6 +614,7 @@
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(86);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist: _mtuijian_imglist2.default,
@@ -627,12 +630,13 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "妹子图",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png',
+	            leftsrc: './images/menu.png',
 	            pagenumbers: '',
-	            url: ''
+	            url: '',
+	            shownleft: true
 
 	        };
 	    },
@@ -647,9 +651,20 @@
 	        if (ctitle != undefined) {
 	            self.title = ctitle;
 	        }
+	        var cleftsrc = self.$getConfig().leftsrc;
+	        if (cleftsrc != undefined) {
+	            self.leftsrc = cleftsrc;
+	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "6000",
+	            label: "妹子图"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
+
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -666,6 +681,10 @@
 	        var self = this;
 	    },
 	    methods: {
+	        nativeback: function nativeback() {
+	            var params = {};
+	            this.$emit('toggle', params);
+	        },
 	        autoRefresh: function autoRefresh(event) {
 	            var self = this;
 	            storage.getItem('taghref', function (s) {
@@ -1091,6 +1110,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        mtuijian_imglist_item: _mtuijian_imglist_item2.default,
@@ -1105,10 +1125,11 @@
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "热门图片",
+	            title: "精彩推荐",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png'
+	            leftsrc: './images/back.png',
+	            shownleft: false
 	            //                pagenumbers:''
 
 
@@ -1128,6 +1149,11 @@
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
 	        self.refresh();
+	        var paramsEvent = {
+	            event: "6001",
+	            label: "精彩推荐"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
 	        //                var staghref = s.data;
@@ -1242,7 +1268,8 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1338,7 +1365,11 @@
 	    attrs: {
 	      "title": _vm.title,
 	      "shown": _vm.shown,
-	      "leftsrc": _vm.leftsrc
+	      "leftsrc": _vm.leftsrc,
+	      "shownleft": _vm.shownleft
+	    },
+	    on: {
+	      "nativeback": _vm.nativeback
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],

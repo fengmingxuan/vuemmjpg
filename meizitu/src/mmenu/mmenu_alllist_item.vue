@@ -32,26 +32,40 @@
                 if(e==undefined){
                     return;
                 }
+                if(id==7 || id==8 ||id==6){
+                    return;
+                }
+                if(id==5){
+                    weexEventModule.startWebViewActivity(e);
+                    return;
+                }
 
-                 weexEventModule.startWebViewActivity(e);
-//                var name = "img/pcimage_imglist";
-////                if(e.indexOf('m.meituba.com')!=-1){
-////                    name = "marticle/marticlelist";
-////                }else{
-////                    name = "article/pcarticlelist";
-////                }
-//                var params={
-//                    url: meizitu.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                });
+                if(id==1){
+                    var paramsEvent={
+                        event:"1000",
+                        label:alt
+                    };
+
+                    weexEventModule.onEvent(paramsEvent,event => {
+
+                    });
+
+                 var name = "mmain/mmain_lastest_imglist";
+                var params={
+                    url: meizitu.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt,
+                        leftsrc:'./images/back.png'
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                });
+                }
+
             },
             tostock:function (json) {
                 var stockArray = [];
@@ -66,6 +80,8 @@
                                 };
                             }
                             var item={
+                                id:json.id,
+                                ptitle:json.title,
                                 href:tag.href,
                                 alt:tag.alt,
                                 src:tag.src,
@@ -74,6 +90,8 @@
                                 alt2:tag2.alt,
                                 src2:tag2.src,
                                 other2:tag2.other,
+                                id2:json.id,
+                                ptitle2:json.title,
                             };
                             stockArray.push(item);
                         }

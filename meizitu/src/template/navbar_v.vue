@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="nav_bar">
-            <div class="nav_back" @onclick="nativeback">
+            <div class="nav_back" @click="nativeback">
                 <image class="img" :src="getImgUrl(leftsrc)" v-if="shownleft"></image>
                 <!--http://192.168.1.15:8080/mmjpg/images/search.png-->
             </div>
@@ -10,7 +10,7 @@
                 <!--<image class="imglogo" src="{{getImgUrl('../images/logo.png')}}" if="{{shownleft}}"></image>-->
             </div>
             <div class="nav_right_menu">
-                <div class="nav_right_menu" v-if="shown" @onclick="onright">
+                <div class="nav_right_menu" v-if="shown" @click="onright">
                     <image class="img_menu" :src="getImgUrl('./images/search.png')"></image>
                 </div>
             </div>
@@ -36,7 +36,7 @@
             }
 
         },
-        props: ['title','shown','leftsrc'],
+        props: ['title','shown','leftsrc','shownleft'],
         created: function () {
             this.platform = this.$getConfig().env.platform;
             if (this.platform == 'iOS') {
@@ -61,13 +61,15 @@
 
         methods: {
             nativeback: function (e) {
+                console.log('nativeback');
 //                var params = {
 //                    'animated': 'true'
 //                };
 //                navigator.pop(params, event => {
 //
 //                });
-                this._parent.togglemenu();
+                var params ={};
+                this.$emit('nativeback', params);
             },
             onright: function (e) {
                 console.log('navbar == onright');

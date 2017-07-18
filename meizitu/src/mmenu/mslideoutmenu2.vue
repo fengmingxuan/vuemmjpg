@@ -7,7 +7,7 @@
     </div>
     <div id="main" class="panel" v-bind:style="{ left: panelleft}" @click="toggle">
         <!--<div class="btn-hamburger" >-->
-            <mlastest_imglist></mlastest_imglist>
+            <mlastest_imglist @toggle="toggle"></mlastest_imglist>
         <!--</div>-->
     </div>
    </div>

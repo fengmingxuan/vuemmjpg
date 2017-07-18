@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc" @nativeback="nativeback"  :shownleft="shownleft"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -31,6 +31,7 @@
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
     var utils = require('../common/utils');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             mtuijian_imglist,
@@ -46,12 +47,13 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"热门图片",
+                title:"妹子图",
                 isFirst:1,
                 shown:false,
-                leftsrc:'./images/back.png',
+                leftsrc:'./images/menu.png',
                 pagenumbers:'',
                 url:'',
+                shownleft:true
 
                  
             }
@@ -66,9 +68,22 @@
             if(ctitle!=undefined){
                 self.title = ctitle;
             }
+            var cleftsrc = self.$getConfig().leftsrc;
+            if(cleftsrc!=undefined){
+                self.leftsrc = cleftsrc;
+            }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 //
             self.refresh();
+
+            var paramsEvent={
+                event:"6000",
+                label:"妹子图"
+            };
+            weexEventModule.onEvent(paramsEvent,event => {
+
+            });
+
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
 //                var staghref = s.data;
@@ -85,6 +100,10 @@
             var self = this;
         },
         methods:{
+            nativeback:function(){
+                var params ={};
+                this.$emit('toggle', params);
+            },
             autoRefresh(event){
                 var self = this;
                 storage.getItem('taghref',function(s){

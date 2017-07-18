@@ -1,9 +1,9 @@
 <template>
     <div style="flex-direction:row;margin: 5px;">
-        <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
+        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.alt,stockitem.ptitle)">
             <text class="txt"> {{stockitem.alt}}</text>
         </div>
-        <div class="news-content" @click="todetail(stockitem.href2,stockitem.alt2)">
+        <div class="news-content" @click="todetail(stockitem.id2,stockitem.href2,stockitem.alt2,stockitem.ptitle2)">
             <text class="txt"> {{stockitem.alt2}}</text>
         </div>
     </div>
@@ -24,12 +24,29 @@
         },
 
         methods:{
-            todetail:function (e,alt) {
+            todetail:function (id,e,alt,ptitle) {
+
+                var paramsEvent={
+                    event:"2000",
+                    label:ptitle
+                };
+                if(id==2){
+                    paramsEvent.event = "2000";
+                }else if(id==3){
+                    paramsEvent.event = "3000";
+                }else if(id==4){
+                    paramsEvent.event = "4000";
+                }else if(id==5){
+                    paramsEvent.event = "5000";
+                }
+                weexEventModule.onEvent(paramsEvent,event => {
+
+                });
                 if(alt=="两性私房网" || alt=="美女写真"){
                     weexEventModule.startWebViewActivity(e);
                 }else{
                     //                 weexEventModule.startWebViewActivity(e);
-                    var name = "mmain/mlastest_imglist";
+                    var name = "mmain/mmain_lastest_imglist";
                     //                if(e.indexOf('m.meituba.com')!=-1){
                     //                    name = "marticle/marticlelist";
                     //                }else{

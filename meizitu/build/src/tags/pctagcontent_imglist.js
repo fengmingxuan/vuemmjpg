@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(123)
+	__vue_styles__.push(__webpack_require__(126)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(124)
+	__vue_exports__ = __webpack_require__(127)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(129)
+	var __vue_template__ = __webpack_require__(132)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -292,7 +292,7 @@
 	        };
 	    },
 
-	    props: ['title', 'shown', 'leftsrc'],
+	    props: ['title', 'shown', 'leftsrc', 'shownleft'],
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
 	        if (this.platform == 'iOS') {
@@ -314,13 +314,15 @@
 
 	    methods: {
 	        nativeback: function nativeback(e) {
+	            console.log('nativeback');
 	            //                var params = {
 	            //                    'animated': 'true'
 	            //                };
 	            //                navigator.pop(params, event => {
 	            //
 	            //                });
-	            this._parent.togglemenu();
+	            var params = {};
+	            this.$emit('nativeback', params);
 	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
@@ -501,7 +503,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -517,7 +519,7 @@
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -796,6 +798,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pclastest_item: _pclastest_item2.default,
@@ -824,13 +827,19 @@
 	        if (ctaghref != undefined) {
 	            self.taghref = ctaghref;
 	        }
-	        var ctitle = self.$getConfig().title;
-	        if (ctitle != undefined) {
-	            self.title = ctitle;
-	        }
+	        //            var ctitle = self.$getConfig().title;
+	        //            if(ctitle!=undefined){
+	        //                self.title = ctitle;
+	        //            }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 
 	        self.refresh();
+
+	        var paramsEvent = {
+	            event: "7001",
+	            label: "最新更新"
+	        };
+	        weexEventModule.onEvent(paramsEvent, function (event) {});
 	    },
 	    methods: {
 	        autoRefresh: function autoRefresh(event) {
@@ -1234,7 +1243,7 @@
 
 /***/ }),
 
-/***/ 123:
+/***/ 126:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1262,7 +1271,7 @@
 
 /***/ }),
 
-/***/ 124:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1275,7 +1284,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctagcontent_imglist_item = __webpack_require__(125);
+	var _pctagcontent_imglist_item = __webpack_require__(128);
 
 	var _pctagcontent_imglist_item2 = _interopRequireDefault(_pctagcontent_imglist_item);
 
@@ -1468,21 +1477,21 @@
 
 /***/ }),
 
-/***/ 125:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(126)
+	__vue_styles__.push(__webpack_require__(129)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(127)
+	__vue_exports__ = __webpack_require__(130)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(128)
+	var __vue_template__ = __webpack_require__(131)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1513,7 +1522,7 @@
 
 /***/ }),
 
-/***/ 126:
+/***/ 129:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1542,7 +1551,7 @@
 
 /***/ }),
 
-/***/ 127:
+/***/ 130:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1603,7 +1612,7 @@
 
 /***/ }),
 
-/***/ 128:
+/***/ 131:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1651,7 +1660,7 @@
 
 /***/ }),
 
-/***/ 129:
+/***/ 132:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
