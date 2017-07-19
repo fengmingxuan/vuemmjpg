@@ -1,5 +1,5 @@
 <template>
-        <div class="news-content" @click="todetail(stockitem.href,stockitem.alt)">
+        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.alt)">
             <div class="news-content">
                 <text class="txt">{{stockitem.alt}}</text>
             </div>
@@ -22,26 +22,30 @@
         },
 
         methods:{
-            todetail:function (e,alt) {
-                weexEventModule.startWebViewActivity(e);
-//                var name = "tags/pctagcontent_imglist";
-////                if(e.indexOf('m.meituba.com')!=-1){
-////                    name = "marticle/marticlelist";
-////                }else{
-////                    name = "article/pcarticlelist";
-////                }
-//                var params={
-//                    url: meitu.getDefaultUrl(name),
-//                    animated: "true",
-//                    options:{
-//                        taghref: e,
-//                        title:alt
-//                    }
-//                };
-//
-//                weexNavigatorModule.push(params, event => {
-//                    // modal.toast({ message: 'callback: ' + event })
-//                })
+            todetail:function (id,e,alt) {
+                if(id==5){
+                    weexEventModule.startWebViewActivity(e);
+                    return;
+                }
+
+                var name = "star/pcstar_hot_pager";
+//                if(e.indexOf('m.meituba.com')!=-1){
+//                    name = "marticle/marticlelist";
+//                }else{
+//                    name = "article/pcarticlelist";
+//                }
+                var params={
+                    url: meitu.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                })
             }
         }
     }

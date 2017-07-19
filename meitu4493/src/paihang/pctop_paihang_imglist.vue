@@ -1,54 +1,60 @@
 <template>
-    <div style="height: 280px">
-        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
-        <div style="flex: 1;align-content: flex-start;align-items: flex-start">
-            <text style="font-size: 28;margin-top: 30;margin-left: 20">{{title}}</text>
-        </div>
-        <hlist  style="flex-direction: row;width: 750px;height: 100px;flex: 1"  loadmoreoffset="10" scroll-direction="horizontal">
-            <!--<refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">-->
-            <!--<text class="indicator">下拉刷新...</text>-->
-            <!--</refresh>-->
+    <div style="background-color:rgba(0, 0, 0, .25) ">
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <list class="list"  loadmoreoffset="10">
+            <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+                <text class="indicator">下拉刷新...</text>
+            </refresh>
+            <cell>
+                <div style="flex: 1;padding: 1;">
+                    <image class="imagepager" resize="cover" :src="pagersrc" @click="todetail(taghref)"></image>
+                    <text style="flex: 1;height: 30;font-size: 25;padding: 5">{{pageralt}}</text>
+                </div>
+            </cell>
 
             <cell v-for="stockitem in stockArray">
-                <pcinterest_hlist_item :stockitem="stockitem"></pcinterest_hlist_item>
+                <pctop_paihang_imglist_item :stockitem="stockitem"></pctop_paihang_imglist_item>
             </cell>
 
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
-            <!--<text class="indicator_loading">加载更多...</text>-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
             <!--</loading>-->
-        </hlist>
-        <div style="flex: 1;align-content: flex-start;align-items: flex-start">
-            <text style="font-size: 28;margin-top: 30;margin-left: 20">{{other}}</text>
-        </div>
+        </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcinterest_hlist_item from '../childnav/pcinterest_hlist_item.vue'
+    import  pctop_paihang_imglist_item from '../paihang/pctop_paihang_imglist_item.vue'
+
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
     var storage = weex.requireModule('storage');
+    var utils = require('../common/utils');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
-            pcinterest_hlist_item,
+            pctop_paihang_imglist_item,
             navbar_v,
-
         },
         props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_xingganmote(),
-                pageNo: 0,
+                taghref:meitu.getpc_top_paihang(),
+                pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"你可能感兴趣的类型：",
+                title:"性感美女",
+                isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
-                other:""
+                pagersrc:"",
+                pageralt:""
+
+                 
             }
         },
         created: function(){
@@ -62,6 +68,7 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
+//
             self.refresh();
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
@@ -70,34 +77,45 @@
 //                    self.taghref = staghref;
 //                }
 //                console.log('taghref=='+self.taghref);
+//
 //                self.refresh();
+//
 //            });
-//            setTimeout(() => {
-//                storage.getItem('taghref',function(s){
-//                    console.log('get taghref result:'+JSON.stringify(s));
-//                    var staghref = s.data;
-//                    if(staghref!=undefined){
-//                        self.taghref = staghref;
-//                    }
-//                    console.log('pre taghref=='+self.taghref);
-//                    self.refresh();
-//                });
-//            }, 2000)
+        },
+        mounted: function() {
+            var self = this;
         },
         methods:{
+            todetail(e){
+                weexEventModule.startWebViewActivity(e);
+            },
+            autoRefresh(event){
+                var self = this;
+                storage.getItem('taghref',function(s){
+                    console.log('get taghref result:'+JSON.stringify(s));
+                    var staghref = s.data;
+                    if(staghref!=undefined){
+                        self.taghref = staghref;
+                    }
+                    console.log('taghref=='+self.taghref);
+                    self.refresh();
+                });
+            },
             onloading (event) {
                 this.showLoading = 'show'
+                 this.pageNo = this.pageNo+1;
 //                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
                 this.refresh();
             },
+
             onpullingdown (event) {
             },
             onrefresh (event) {
                 this.refreshing = true;
-//                this.pageNo = 1;
+                this.pageNo = 1;
                 setTimeout(() => {
                     this.refreshing = false
                 }, 2000)
@@ -105,31 +123,34 @@
             },
             refresh:function(){
                 var self = this;
+                self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref=meitu.getpc_xingganmote();
+                    self.taghref = meitu.getpc_top_paihang();
                 }
                 var url = self.taghref;
 //                if(self.pageNo==1){
 //                    url = self.taghref;
 //                }else{
-//                    url = self.taghref+"?idx="+self.pageNo;
+//                    url = self.taghref.replaceAllStr("1.htm","")+self.pageNo+".htm";
 //                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeiu4493JsoupModule.pcinterestline(params,function(e){
+                weexMeiu4493JsoupModule.pctoppaihang(params,function(e){
                     var json = JSON.parse(e);
-//                    if(self.pageNo==1){
-                    self.stockArray.splice(0, self.stockArray.length);
-//                    }
+                    if(self.pageNo==1){
+                        self.stockArray.splice(0, self.stockArray.length);
+                    }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
                             for (var i = 0; i < json.list.length; i++) {
                                 var tag = json.list[i];
-                                self.other = tag.other;
-                                tag.id = i+1;
+                                if(i==0){
+                                    self.pagersrc = tag.src2;
+                                    self.pageralt = tag.alt2;
+                                }
                                 self.stockArray.push(tag);
                             }
                         }
@@ -145,6 +166,11 @@
 </script>
 
 <style>
+    .imagepager {
+        width: 750px;
+        margin:1;
+        height: 350px;
+    }
     .refresh-view{
         height:100;
         width:750;

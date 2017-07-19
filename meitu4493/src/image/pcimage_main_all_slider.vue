@@ -37,7 +37,7 @@
     var meitu = require('../meitu');
     var weexEventModule = weex.requireModule('weexEventModule');
     var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
-    var weexEventModule = weex.requireModule('weexEventModule');
+
     export default {
         components: {
             navbar_v

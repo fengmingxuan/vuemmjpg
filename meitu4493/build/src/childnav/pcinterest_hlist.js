@@ -320,6 +320,11 @@
 	            //                });
 	            this._parent.togglemenu();
 	        },
+	        nativetitle: function nativetitle(e) {
+	            console.log('nativetitle');
+	            var params = {};
+	            this.$emit('nativetitle', params);
+	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
 	            this._parent.onright();
@@ -360,9 +365,33 @@
 	    pc_xingganmote:"https://www.4493.com/xingganmote/",
 	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
 	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
-	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js",
+	    pc_top:"https://www.4493.com/top.html",
+	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
+	    pc_star:"https://www.4493.com/star/yujiekong/",
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
 
 
+	};
+	exports.getpc_top_paihang = function () {
+	    var url = MEITU.pc_top_paihang;
+	    console.log('pc_top_paihang==' + url);
+	    return url;
+	};
+	exports.getpc_star = function () {
+	    var url = MEITU.pc_star;
+	    console.log('pc_star==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image_all = function () {
+	    var url = MEITU.pc_xingganmote_image_all;
+	    console.log('pc_xingganmote_image_all==' + url);
+	    return url;
+	};
+	exports.getpc_top = function () {
+	    var url = MEITU.pc_top;
+	    console.log('pc_top==' + url);
+	    return url;
 	};
 	exports.getpc_new4493content = function () {
 	    var url = MEITU.pc_new4493content;
@@ -493,7 +522,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -503,13 +532,16 @@
 	  }) : _vm._e()]), _c('div', {
 	    staticClass: ["nav_title"]
 	  }, [_c('text', {
-	    staticClass: ["nav_text"]
+	    staticClass: ["nav_text"],
+	    on: {
+	      "click": _vm.nativetitle
+	    }
 	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
 	    staticClass: ["nav_right_menu"]
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -708,6 +740,7 @@
 	                        for (var i = 0; i < json.list.length; i++) {
 	                            var tag = json.list[i];
 	                            self.other = tag.other;
+	                            tag.id = i + 1;
 	                            self.stockArray.push(tag);
 	                        }
 	                    }
@@ -819,26 +852,30 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "tags/pctagcontent_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                })
+	        todetail: function todetail(id, e, alt) {
+	            if (id == 5) {
+	                weexEventModule.startWebViewActivity(e);
+	                return;
+	            }
+
+	            var name = "star/pcstar_hot_pager";
+	            //                if(e.indexOf('m.meituba.com')!=-1){
+	            //                    name = "marticle/marticlelist";
+	            //                }else{
+	            //                    name = "article/pcarticlelist";
+	            //                }
+	            var params = {
+	                url: meitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        }
 	    }
 	};
@@ -852,7 +889,7 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.alt)
 	      }
 	    }
 	  }, [_c('div', {

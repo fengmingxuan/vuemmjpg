@@ -108,9 +108,33 @@
 	    pc_xingganmote:"https://www.4493.com/xingganmote/",
 	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
 	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
-	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js",
+	    pc_top:"https://www.4493.com/top.html",
+	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
+	    pc_star:"https://www.4493.com/star/yujiekong/",
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
 
 
+	};
+	exports.getpc_top_paihang = function () {
+	    var url = MEITU.pc_top_paihang;
+	    console.log('pc_top_paihang==' + url);
+	    return url;
+	};
+	exports.getpc_star = function () {
+	    var url = MEITU.pc_star;
+	    console.log('pc_star==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image_all = function () {
+	    var url = MEITU.pc_xingganmote_image_all;
+	    console.log('pc_xingganmote_image_all==' + url);
+	    return url;
+	};
+	exports.getpc_top = function () {
+	    var url = MEITU.pc_top;
+	    console.log('pc_top==' + url);
+	    return url;
 	};
 	exports.getpc_new4493content = function () {
 	    var url = MEITU.pc_new4493content;
@@ -323,25 +347,23 @@
 	            return meitu.getImageUrl(url);
 	        },
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "img/pcimage_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meizitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                });
+	            if (e.indexOf('http://www.ys8.com') != -1) {
+	                weexEventModule.startWebViewActivity(e);
+	            } else {
+	                var name = "image/pcimage_main_imglist";
+	                var params = {
+	                    url: meitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt
+	                    }
+	                };
+
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
 	        }
 	    }
 	};

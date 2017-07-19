@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(54)
+	__vue_styles__.push(__webpack_require__(87)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(55)
+	__vue_exports__ = __webpack_require__(88)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(56)
+	var __vue_template__ = __webpack_require__(89)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/image/pcimage_paihang_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/paihang/pctop_paihang_imglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-32843784"
+	__vue_options__._scopeId = "data-v-48993b5a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -257,7 +257,56 @@
 
 /***/ }),
 
-/***/ 54:
+/***/ 27:
+/***/ (function(module, exports) {
+
+	exports.ubball = function ubball(strContent) {
+	    if(strContent ==null){
+	        return;
+	    }
+	    strContent = strContent.replace(/\[gguba\](.+?)\[\/gguba\]/ig,function($1){
+	        $1 = $1.replace("[gguba]","");
+	        $1 = $1.replace("[/gguba]","");
+	        return $1;
+	    });
+	    strContent = strContent.replace(/\[gubar\](.+?)\[\/gubar\]/ig,function($1){
+	        $1 = $1.replace("[gubar]","");
+	        $1 = $1.replace("[/gubar]","");
+	        return $1;});
+	    strContent = strContent.replace(/\[tag\](.+?)\[\/tag\]/ig,function($1){
+	        $1 = $1.replace("[tag]","");
+	        $1 = $1.replace("[/tag]","");
+	        return $1;});
+	    return strContent;
+	}
+
+	//refContent =  utils.replaceAll(refContent,/\[gubar\](.+?)\[\/gubar\]/ig,'','[gubar]','[/gubar]');
+	exports.replaceAll = function replaceAll(sourcestr,regExp,replacestr,tagstr,tagstr2) {
+	    if(sourcestr ==null){
+	        return;
+	    }
+	    sourcestr = sourcestr.replace(regExp,function($1){
+	        if(replacestr==null){
+	            replacestr='';
+	        }
+	        $1 = $1.replace(tagstr,replacestr);
+	        if(tagstr2!=null){
+	            $1 = $1.replace(tagstr2,replacestr);
+	        }
+	        return $1;
+	    });
+
+	    return sourcestr;
+	}
+
+	String.prototype.replaceAllStr = function (FindText, RepText) {
+	    var regExp = new RegExp(FindText, "gm");
+	    return this.replace(regExp, RepText);
+	}
+
+/***/ }),
+
+/***/ 87:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -268,19 +317,34 @@
 	    "flex": 1,
 	    "padding": 5,
 	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5,
-	    "alignContent": "flex-start",
-	    "alignItems": "flex-start"
+	    "borderRadius": 5
+	  },
+	  "img": {
+	    "height": 800,
+	    "borderRadius": 25
 	  },
 	  "txt": {
-	    "fontSize": 30,
-	    "padding": 20
+	    "fontSize": 28,
+	    "padding": 5,
+	    "flex": 1,
+	    "fontSize:active": 28,
+	    "flex:active": 1,
+	    "padding:active": 5,
+	    "color:active": "#d42591"
+	  },
+	  "txt2": {
+	    "fontSize": 22,
+	    "flex": 1
+	  },
+	  "icon": {
+	    "width": 30,
+	    "height": 30
 	  }
 	}
 
 /***/ }),
 
-/***/ 55:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -293,10 +357,13 @@
 	//
 	//
 	//
+	//
+	//
 
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	var meitu = __webpack_require__(6);
+	var utils = __webpack_require__(27);
 	module.exports = {
 	    created: function created() {},
 
@@ -307,15 +374,15 @@
 	    },
 
 	    methods: {
-	        todetail: function todetail(id, e, alt) {
-
-	            //                 weexEventModule.startWebViewActivity(e);
+	        getImgUrl: function getImgUrl(url) {
+	            return meitu.getImageUrl(url);
+	        },
+	        todetail: function todetail(e, alt) {
+	            //https://www.4493.com/xingganmote/126139/1.htm
+	            //https://www.4493.com/xingganmote/126139/1.htm
+	            //https://www.4493.com/xingganmote/126139.htm
+	            //                weexEventModule.startWebViewActivity(e);
 	            var name = "image/pcimage_main_imglist";
-	            //                if(e.indexOf('m.meituba.com')!=-1){
-	            //                    name = "marticle/marticlelist";
-	            //                }else{
-	            //                    name = "article/pcarticlelist";
-	            //                }
 	            var params = {
 	                url: meitu.getDefaultUrl(name),
 	                animated: "true",
@@ -334,24 +401,31 @@
 
 /***/ }),
 
-/***/ 56:
+/***/ 89:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
 	      margin: "5px"
 	    }
 	  }, [_c('div', {
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.title)
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.title)
 	      }
 	    }
 	  }, [_c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.id) + " " + _vm._s(_vm.stockitem.title))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt) + " " + _vm._s(_vm.stockitem.title))]), _c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src
+	    }
+	  })])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 

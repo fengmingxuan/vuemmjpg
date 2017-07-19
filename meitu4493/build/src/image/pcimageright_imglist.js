@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(44)
+	__vue_styles__.push(__webpack_require__(47)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(45)
+	__vue_exports__ = __webpack_require__(48)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(46)
+	var __vue_template__ = __webpack_require__(49)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -322,6 +322,11 @@
 	            //                });
 	            this._parent.togglemenu();
 	        },
+	        nativetitle: function nativetitle(e) {
+	            console.log('nativetitle');
+	            var params = {};
+	            this.$emit('nativetitle', params);
+	        },
 	        onright: function onright(e) {
 	            console.log('navbar == onright');
 	            this._parent.onright();
@@ -363,9 +368,33 @@
 	    pc_xingganmote:"https://www.4493.com/xingganmote/",
 	    pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
 	    pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
-	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
+	    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js",
+	    pc_top:"https://www.4493.com/top.html",
+	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
+	    pc_star:"https://www.4493.com/star/yujiekong/",
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
 
 
+	};
+	exports.getpc_top_paihang = function () {
+	    var url = MEITU.pc_top_paihang;
+	    console.log('pc_top_paihang==' + url);
+	    return url;
+	};
+	exports.getpc_star = function () {
+	    var url = MEITU.pc_star;
+	    console.log('pc_star==' + url);
+	    return url;
+	};
+	exports.getpc_xingganmote_image_all = function () {
+	    var url = MEITU.pc_xingganmote_image_all;
+	    console.log('pc_xingganmote_image_all==' + url);
+	    return url;
+	};
+	exports.getpc_top = function () {
+	    var url = MEITU.pc_top;
+	    console.log('pc_top==' + url);
+	    return url;
 	};
 	exports.getpc_new4493content = function () {
 	    var url = MEITU.pc_new4493content;
@@ -497,7 +526,7 @@
 	  }, [_c('div', {
 	    staticClass: ["nav_back"],
 	    on: {
-	      "onclick": _vm.nativeback
+	      "click": _vm.nativeback
 	    }
 	  }, [(_vm.shownleft) ? _c('image', {
 	    staticClass: ["img"],
@@ -507,13 +536,16 @@
 	  }) : _vm._e()]), _c('div', {
 	    staticClass: ["nav_title"]
 	  }, [_c('text', {
-	    staticClass: ["nav_text"]
+	    staticClass: ["nav_text"],
+	    on: {
+	      "click": _vm.nativetitle
+	    }
 	  }, [_vm._v(_vm._s(_vm.title))])]), _c('div', {
 	    staticClass: ["nav_right_menu"]
 	  }, [(_vm.shown) ? _c('div', {
 	    staticClass: ["nav_right_menu"],
 	    on: {
-	      "onclick": _vm.onright
+	      "click": _vm.onright
 	    }
 	  }, [_c('image', {
 	    staticClass: ["img_menu"],
@@ -663,25 +695,23 @@
 	            return meitu.getImageUrl(url);
 	        },
 	        todetail: function todetail(e, alt) {
-	            weexEventModule.startWebViewActivity(e);
-	            //                var name = "img/pcimage_imglist";
-	            ////                if(e.indexOf('m.meituba.com')!=-1){
-	            ////                    name = "marticle/marticlelist";
-	            ////                }else{
-	            ////                    name = "article/pcarticlelist";
-	            ////                }
-	            //                var params={
-	            //                    url: meizitu.getDefaultUrl(name),
-	            //                    animated: "true",
-	            //                    options:{
-	            //                        taghref: e,
-	            //                        title:alt
-	            //                    }
-	            //                };
-	            //
-	            //                weexNavigatorModule.push(params, event => {
-	            //                    // modal.toast({ message: 'callback: ' + event })
-	            //                });
+	            if (e.indexOf('http://www.ys8.com') != -1) {
+	                weexEventModule.startWebViewActivity(e);
+	            } else {
+	                var name = "image/pcimage_main_imglist";
+	                var params = {
+	                    url: meitu.getDefaultUrl(name),
+	                    animated: "true",
+	                    options: {
+	                        taghref: e,
+	                        title: alt
+	                    }
+	                };
+
+	                weexNavigatorModule.push(params, function (event) {
+	                    // modal.toast({ message: 'callback: ' + event })
+	                });
+	            }
 	        }
 	    }
 	};
@@ -774,7 +804,7 @@
 
 /***/ }),
 
-/***/ 44:
+/***/ 47:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -802,7 +832,7 @@
 
 /***/ }),
 
-/***/ 45:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -860,7 +890,7 @@
 	        //            pcinterest_hlist
 
 	    },
-	    props: ['taghref'],
+	    //        props: ['taghref'],
 	    data: function data() {
 	        return {
 	            stockArray: [],
@@ -998,7 +1028,7 @@
 
 /***/ }),
 
-/***/ 46:
+/***/ 49:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1054,7 +1084,7 @@
 	      color: "#fff",
 	      padding: "10"
 	    }
-	  }, [_vm._v("广告")])])])
+	  }, [_vm._v("养生吧")])])])
 	}]}
 	module.exports.render._withStripped = true
 

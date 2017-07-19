@@ -1,23 +1,23 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
-        <list class="list"  loadmoreoffset="10">
-            <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
+        <!--<list class="list"  loadmoreoffset="10">-->
+            <refresh class="refresh" @refresh="onrefresh" @click="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <cell>
-                <pcinterest_hlist :taghref="taghref"></pcinterest_hlist>
-            </cell>
-            <cell v-for="stockitem in stockArray">
+            <!--<cell>-->
+                <!--<pcinterest_hlist :taghref="taghref"></pcinterest_hlist>-->
+            <!--</cell>-->
+            <div v-for="stockitem in stockArray">
                 <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
-            </cell>
+            </div>
             <!--<cell>-->
                 <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
             <!--</cell>-->
-            <loading class="loading" @loading="onloading" :display="showLoading">
+            <loading class="loading" @loading="onloading" @click="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
             </loading>
-        </list>
+        <!--</list>-->
     </div>
 </template>
 
@@ -29,8 +29,8 @@
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
-    var utils = require('../common/utils');
     var storage = weex.requireModule('storage');
+    var utils = require('../common/utils');
     export default{
         components: {
             pcpic_imglist_item,
@@ -42,11 +42,11 @@
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_xingganmote(),
+                taghref:meitu.getpc_star(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"性感美女",
+                title:"御姐系列",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
@@ -84,7 +84,8 @@
             var self = this;
         },
         methods:{
-            autoRefresh(event){
+            autoRefresh(){
+                console.log('autoRefresh');
                 var self = this;
                 storage.getItem('taghref',function(s){
                     console.log('get taghref result:'+JSON.stringify(s));
@@ -120,17 +121,22 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_xingganmote();
+                    self.taghref = meitu.getpc_star();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
                     url = self.taghref;
                 }else{
+                    //https://www.4493.com/star/yujiekong/index-hot-1.htm
+                    //https://www.4493.com/star/yujiekong/index-hot-2.htm
+                    //https://www.4493.com/star/yujiekong/
+                    //https://www.4493.com/star/yujiekong/index-1.htm
                     if(self.taghref.indexOf("index-hot-")!=-1){
                         url = self.taghref.replaceAllStr("1.htm","")+ self.pageNo+".htm";
                     }else{
                         url = self.taghref+ "index-"+self.pageNo+".htm";
                     }
+
                 }
                 console.log('url==='+url);
                 var params = {
