@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc" @nativetitle="nativetitle"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -27,6 +27,7 @@
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             pcimage_paihang_item,
@@ -41,7 +42,7 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"你可能感兴趣的类型：",
+                title:"美图排行  更多》》》",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png'
@@ -64,6 +65,9 @@
 
         },
         methods:{
+            nativetitle:function(){
+                weexEventModule.startWebViewActivity(meitu.getpc_top());
+            },
             autoRefresh(event){
                 var self = this;
                 storage.getItem('taghref',function(s){

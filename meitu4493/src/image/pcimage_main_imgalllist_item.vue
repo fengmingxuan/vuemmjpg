@@ -1,8 +1,11 @@
 <template>
-    <div style="margin: 5px;">
-        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.title)">
-            <text class="txt">{{stockitem.id}} {{stockitem.title}}</text>
+    <div style="flex-direction: row;flex: 1;margin: 5px;">
+        <div class="news-content" @click="todetail(stockitem.href,stockitem.title)">
+            <!--<text class="txt">{{stockitem.title}}</text>-->
+            <image class="img" :src="stockitem.src" ></image>
+            <!--<text class="txt">{{stockitem.alt}}</text>-->
         </div>
+
     </div>
 </template>
 
@@ -21,15 +24,12 @@
         },
 
         methods:{
-            todetail:function (id,e,alt) {
-
-//                 weexEventModule.startWebViewActivity(e);
-                var name = "image/pcimage_main_imglist";
-//                if(e.indexOf('m.meituba.com')!=-1){
-//                    name = "marticle/marticlelist";
-//                }else{
-//                    name = "article/pcarticlelist";
-//                }
+            getImgUrl: function (url) {
+                return meitu.getImageUrl(url);
+            },
+            todetail:function (e,alt) {
+//                weexEventModule.startWebViewActivity(e);
+                var name = "image/pcimage_main_all_slider";
                 var params={
                     url: meitu.getDefaultUrl(name),
                     animated: "true",
@@ -56,12 +56,28 @@
         padding: 5;
         background-color: #fff;
         border-radius: 5;
-        align-content: flex-start;
-        align-items: flex-start;
     }
-
+    .img{
+        height: 1200;
+        border-radius: 5;
+    }
     .txt{
-        font-size:30;
-        padding: 20;
+        font-size:22;
+        padding: 5;
+        flex: 1;
+    }
+    .txt:active{
+        font-size:22;
+        flex: 1;
+        padding: 5;
+        color: #d42591;
+    }
+    .txt2{
+        font-size:22;
+        flex: 1;
+    }
+    .icon{
+        width: 30;
+        height: 30;
     }
 </style>

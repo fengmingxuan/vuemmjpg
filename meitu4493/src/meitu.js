@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
@@ -12,9 +12,21 @@ var MEITU = {
     pc_xingganmote:"https://www.4493.com/xingganmote/",
     pc_xingganmote_image:"https://www.4493.com/xingganmote/126139/1.htm",
     pc_new4493content1:"https://gg.dsxdn.com/4493/new4493content1.js",
-    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js"
+    pc_new4493content:"https://gg.dsxdn.com/4493/new4493content.js",
+    pc_top:"https://www.4493.com/top.html",
+    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm"
 
 
+};
+exports.getpc_xingganmote_image_all = function () {
+    var url = MEITU.pc_xingganmote_image_all;
+    console.log('pc_xingganmote_image_all==' + url);
+    return url;
+};
+exports.getpc_top = function () {
+    var url = MEITU.pc_top;
+    console.log('pc_top==' + url);
+    return url;
 };
 exports.getpc_new4493content = function () {
     var url = MEITU.pc_new4493content;

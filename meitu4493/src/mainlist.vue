@@ -23,6 +23,10 @@
             }
         },
         created () {
+            this.rows.push('image/pcimage_main_all_slider')
+            this.rows.push('image/pcimage_main_imgalllist')
+            this.rows.push('image/pcimage_main_imglist')
+            this.rows.push('image/pcimage_bottomtag_hlist')
             this.rows.push('image/pcimage_paihang')
             this.rows.push('image/pcimagejingxuan_imglist')
             this.rows.push('image/pcimagehot_imglist')

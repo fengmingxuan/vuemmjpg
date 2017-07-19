@@ -39,7 +39,7 @@
 //            pcinterest_hlist
 
         },
-        props: ['taghref'],
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
