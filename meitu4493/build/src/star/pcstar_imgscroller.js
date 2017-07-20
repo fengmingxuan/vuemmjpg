@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(111)
+	__vue_styles__.push(__webpack_require__(156)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(112)
+	__vue_exports__ = __webpack_require__(157)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(113)
+	var __vue_template__ = __webpack_require__(158)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -375,9 +375,27 @@
 	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
 	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
 	    pc_xilie:"https://www.4493.com/xilie.html",
-	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
+	    pc_mingxing:"https://www.4493.com/star/liuyan/",
+	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
+	    pc_mingxing_section:"https://www.4493.com/star/section"
 
 
+	};
+	exports.getpc_mingxing_section = function () {
+	    var url = MEITU.pc_mingxing_section;
+	    console.log('pc_mingxing_section==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing_tag = function () {
+	    var url = MEITU.pc_mingxing_tag;
+	    console.log('pc_mingxing_tag==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing = function () {
+	    var url = MEITU.pc_mingxing;
+	    console.log('pc_mingxing==' + url);
+	    return url;
 	};
 	exports.getpc_xilie_top = function () {
 	    var url = MEITU.pc_xilie_top;
@@ -1319,7 +1337,7 @@
 
 /***/ }),
 
-/***/ 111:
+/***/ 156:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1347,7 +1365,7 @@
 
 /***/ }),
 
-/***/ 112:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1550,7 +1568,7 @@
 
 /***/ }),
 
-/***/ 113:
+/***/ 158:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

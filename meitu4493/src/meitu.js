@@ -19,9 +19,27 @@ var MEITU = {
     pc_top_paihang:"https://www.4493.com/top/xinggan.html",
     pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
     pc_xilie:"https://www.4493.com/xilie.html",
-    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
+    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
+    pc_mingxing:"https://www.4493.com/star/liuyan/",
+    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
+    pc_mingxing_section:"https://www.4493.com/star/section"
 
 
+};
+exports.getpc_mingxing_section = function () {
+    var url = MEITU.pc_mingxing_section;
+    console.log('pc_mingxing_section==' + url);
+    return url;
+};
+exports.getpc_mingxing_tag = function () {
+    var url = MEITU.pc_mingxing_tag;
+    console.log('pc_mingxing_tag==' + url);
+    return url;
+};
+exports.getpc_mingxing = function () {
+    var url = MEITU.pc_mingxing;
+    console.log('pc_mingxing==' + url);
+    return url;
 };
 exports.getpc_xilie_top = function () {
     var url = MEITU.pc_xilie_top;

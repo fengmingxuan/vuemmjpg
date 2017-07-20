@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(85)
+	__vue_styles__.push(__webpack_require__(89)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(86)
+	__vue_exports__ = __webpack_require__(90)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(87)
+	var __vue_template__ = __webpack_require__(91)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -115,9 +115,27 @@
 	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
 	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
 	    pc_xilie:"https://www.4493.com/xilie.html",
-	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
+	    pc_mingxing:"https://www.4493.com/star/liuyan/",
+	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
+	    pc_mingxing_section:"https://www.4493.com/star/section"
 
 
+	};
+	exports.getpc_mingxing_section = function () {
+	    var url = MEITU.pc_mingxing_section;
+	    console.log('pc_mingxing_section==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing_tag = function () {
+	    var url = MEITU.pc_mingxing_tag;
+	    console.log('pc_mingxing_tag==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing = function () {
+	    var url = MEITU.pc_mingxing;
+	    console.log('pc_mingxing==' + url);
+	    return url;
 	};
 	exports.getpc_xilie_top = function () {
 	    var url = MEITU.pc_xilie_top;
@@ -275,7 +293,7 @@
 
 /***/ }),
 
-/***/ 85:
+/***/ 89:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -303,7 +321,7 @@
 
 /***/ }),
 
-/***/ 86:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -336,6 +354,15 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('starsection/pcstar_section_imglist');
+	        this.rows.push('mingxing/pcmingxing_section_xilie_imglist');
+	        this.rows.push('mingxing/pcmingxing_section_xiezhen_imglist');
+	        this.rows.push('mingxing/pcmingxing_section_news_imglist');
+	        this.rows.push('mingxing/pcmingxing_section_hot_imglist');
+	        this.rows.push('mingxing/pcmingxing_head_imglist');
+	        this.rows.push('mingxing/pcmingxing_hot_imglist');
+	        this.rows.push('mingxing/pcmingxing_imglist');
+	        this.rows.push('mingxing/pcmingxing_tag_hlist');
 	        this.rows.push('xilie/pcxilie_big_imglist');
 	        this.rows.push('xilie/pcxilie_imglist');
 	        this.rows.push('paihang/pctop_left_imglist');
@@ -383,7 +410,7 @@
 
 /***/ }),
 
-/***/ 87:
+/***/ 91:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

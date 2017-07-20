@@ -5,15 +5,16 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <!--<cell>-->
-            <!--<pcinterest_hlist :taghref="taghref"></pcinterest_hlist>-->
-            <!--</cell>-->
+
+            <cell>
+                <pcmingxing_head_imglist :taghref="taghref"></pcmingxing_head_imglist>
+            </cell>
             <cell v-for="stockitem in stockArray">
                 <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
             </cell>
-            <!--<cell>-->
-            <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
-            <!--</cell>-->
+            <cell>
+                <pcmingxing_hot_imglist :taghref="taghref"></pcmingxing_hot_imglist>
+            </cell>
             <loading class="loading" @loading="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
             </loading>
@@ -25,6 +26,8 @@
     import  navbar_v from '../template/navbar_v.vue'
     import  pcpic_imglist_item from '../childnav/pcpic_imglist_item.vue'
     import  pcinterest_hlist from '../childnav/pcinterest_hlist.vue'
+    import  pcmingxing_hot_imglist from '../mingxing/pcmingxing_hot_imglist.vue'
+    import  pcmingxing_head_imglist from '../mingxing/pcmingxing_head_imglist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
@@ -35,18 +38,20 @@
         components: {
             pcpic_imglist_item,
             navbar_v,
-            pcinterest_hlist
+            pcinterest_hlist,
+            pcmingxing_hot_imglist,
+            pcmingxing_head_imglist
 
         },
 //        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_tag(),
+                taghref:meitu.getpc_mingxing(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"妖艳",
+                title:"柳岩",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
@@ -118,7 +123,7 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_tag();
+                    self.taghref = meitu.getpc_mingxing();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){

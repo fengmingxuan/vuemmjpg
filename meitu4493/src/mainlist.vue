@@ -23,6 +23,15 @@
             }
         },
         created () {
+            this.rows.push('starsection/pcstar_section_imglist')
+            this.rows.push('mingxing/pcmingxing_section_xilie_imglist')
+            this.rows.push('mingxing/pcmingxing_section_xiezhen_imglist')
+            this.rows.push('mingxing/pcmingxing_section_news_imglist')
+            this.rows.push('mingxing/pcmingxing_section_hot_imglist')
+            this.rows.push('mingxing/pcmingxing_head_imglist')
+            this.rows.push('mingxing/pcmingxing_hot_imglist')
+            this.rows.push('mingxing/pcmingxing_imglist')
+            this.rows.push('mingxing/pcmingxing_tag_hlist')
             this.rows.push('xilie/pcxilie_big_imglist')
             this.rows.push('xilie/pcxilie_imglist')
             this.rows.push('paihang/pctop_left_imglist')

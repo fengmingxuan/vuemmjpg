@@ -42,9 +42,8 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -90,8 +89,9 @@
 
 
 /***/ }),
-
-/***/ 3:
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -135,8 +135,7 @@
 
 
 /***/ }),
-
-/***/ 4:
+/* 4 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -242,8 +241,7 @@
 	}
 
 /***/ }),
-
-/***/ 5:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -350,8 +348,7 @@
 	};
 
 /***/ }),
-
-/***/ 6:
+/* 6 */
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
@@ -375,9 +372,27 @@
 	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
 	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
 	    pc_xilie:"https://www.4493.com/xilie.html",
-	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
+	    pc_mingxing:"https://www.4493.com/star/liuyan/",
+	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
+	    pc_mingxing_section:"https://www.4493.com/star/section"
 
 
+	};
+	exports.getpc_mingxing_section = function () {
+	    var url = MEITU.pc_mingxing_section;
+	    console.log('pc_mingxing_section==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing_tag = function () {
+	    var url = MEITU.pc_mingxing_tag;
+	    console.log('pc_mingxing_tag==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing = function () {
+	    var url = MEITU.pc_mingxing;
+	    console.log('pc_mingxing==' + url);
+	    return url;
 	};
 	exports.getpc_xilie_top = function () {
 	    var url = MEITU.pc_xilie_top;
@@ -534,8 +549,7 @@
 
 
 /***/ }),
-
-/***/ 7:
+/* 7 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -577,8 +591,26 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
-
-/***/ 27:
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -605,8 +637,7 @@
 	}
 
 /***/ }),
-
-/***/ 28:
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -619,7 +650,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcmingxing_tag_hlist_item = __webpack_require__(287);
+	var _pcmingxing_tag_hlist_item = __webpack_require__(29);
 
 	var _pcmingxing_tag_hlist_item2 = _interopRequireDefault(_pcmingxing_tag_hlist_item);
 
@@ -666,7 +697,7 @@
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: meitu.getpc_xingganmote_image(),
+	            taghref: meitu.getpc_mingxing_tag(),
 	            pageNo: 0,
 	            refreshing: false,
 	            showLoading: 'hide',
@@ -736,7 +767,7 @@
 	        refresh: function refresh() {
 	            var self = this;
 	            if (self.taghref == undefined) {
-	                self.taghref = meitu.getpc_xingganmote_image();
+	                self.taghref = meitu.getpc_mingxing_tag();
 	            }
 	            var url = self.taghref;
 	            //                if(self.pageNo==1){
@@ -772,56 +803,51 @@
 	};
 
 /***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 33:
-/***/ (function(module, exports) {
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
 
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      height: "280px"
-	    }
-	  }, [_c('div', {
-	    staticStyle: {
-	      flex: "1",
-	      alignContent: "flex-start",
-	      alignItems: "flex-start"
-	    }
-	  }, [_c('text', {
-	    staticStyle: {
-	      fontSize: "28",
-	      marginTop: "30",
-	      marginLeft: "20"
-	    }
-	  }, [_vm._v(_vm._s(_vm.title))])]), _c('hlist', {
-	    staticStyle: {
-	      flexDirection: "row",
-	      width: "750px",
-	      height: "100px",
-	      flex: "1"
-	    },
-	    attrs: {
-	      "loadmoreoffset": "10",
-	      "scrollDirection": "horizontal"
-	    }
-	  }, _vm._l((_vm.stockArray), function(stockitem) {
-	    return _c('cell', {
-	      appendAsTree: true,
-	      attrs: {
-	        "append": "tree"
-	      }
-	    }, [_c('pcmingxing_tag_hlist_item', {
-	      attrs: {
-	        "stockitem": stockitem
-	      }
-	    })], 1)
-	  }))], 1)
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
+	/* styles */
+	__vue_styles__.push(__webpack_require__(30)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(31)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(32)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mingxing/pcmingxing_tag_hlist_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-0317ea19"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
 
 /***/ }),
-
-/***/ 91:
+/* 30 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -848,8 +874,7 @@
 	}
 
 /***/ }),
-
-/***/ 92:
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -901,8 +926,7 @@
 	};
 
 /***/ }),
-
-/***/ 93:
+/* 32 */
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -922,50 +946,51 @@
 	module.exports.render._withStripped = true
 
 /***/ }),
+/* 33 */
+/***/ (function(module, exports) {
 
-/***/ 287:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(91)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(92)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(93)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mingxing/pcmingxing_tag_hlist_item.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0317ea19"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      height: "280px"
+	    }
+	  }, [_c('div', {
+	    staticStyle: {
+	      flex: "1",
+	      alignContent: "flex-start",
+	      alignItems: "flex-start"
+	    }
+	  }, [_c('text', {
+	    staticStyle: {
+	      fontSize: "28",
+	      marginTop: "30",
+	      marginLeft: "20"
+	    }
+	  }, [_vm._v(_vm._s(_vm.title))])]), _c('hlist', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      width: "750px",
+	      height: "100px",
+	      flex: "1"
+	    },
+	    attrs: {
+	      "loadmoreoffset": "10",
+	      "scrollDirection": "horizontal"
+	    }
+	  }, _vm._l((_vm.stockArray), function(stockitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('pcmingxing_tag_hlist_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  }))], 1)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
 
 /***/ })
-
-/******/ });
+/******/ ]);

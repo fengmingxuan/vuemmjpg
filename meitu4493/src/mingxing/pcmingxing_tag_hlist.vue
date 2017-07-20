@@ -41,7 +41,7 @@
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_xingganmote_image(),
+                taghref:meitu.getpc_mingxing_tag(),
                 pageNo: 0,
                 refreshing: false,
                 showLoading: 'hide',
@@ -106,7 +106,7 @@
             refresh:function(){
                 var self = this;
                 if(self.taghref==undefined){
-                    self.taghref=meitu.getpc_xingganmote_image();
+                    self.taghref=meitu.getpc_mingxing_tag();
                 }
                 var url = self.taghref;
 //                if(self.pageNo==1){

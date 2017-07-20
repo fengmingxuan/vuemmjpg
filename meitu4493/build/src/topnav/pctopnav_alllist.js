@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(262)
+	__vue_styles__.push(__webpack_require__(314)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(263)
+	__vue_exports__ = __webpack_require__(315)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(272)
+	var __vue_template__ = __webpack_require__(324)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -375,9 +375,27 @@
 	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
 	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
 	    pc_xilie:"https://www.4493.com/xilie.html",
-	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
+	    pc_mingxing:"https://www.4493.com/star/liuyan/",
+	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
+	    pc_mingxing_section:"https://www.4493.com/star/section"
 
 
+	};
+	exports.getpc_mingxing_section = function () {
+	    var url = MEITU.pc_mingxing_section;
+	    console.log('pc_mingxing_section==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing_tag = function () {
+	    var url = MEITU.pc_mingxing_tag;
+	    console.log('pc_mingxing_tag==' + url);
+	    return url;
+	};
+	exports.getpc_mingxing = function () {
+	    var url = MEITU.pc_mingxing;
+	    console.log('pc_mingxing==' + url);
+	    return url;
 	};
 	exports.getpc_xilie_top = function () {
 	    var url = MEITU.pc_xilie_top;
@@ -578,7 +596,7 @@
 
 /***/ }),
 
-/***/ 262:
+/***/ 314:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -606,7 +624,7 @@
 
 /***/ }),
 
-/***/ 263:
+/***/ 315:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -619,7 +637,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctopnav_alllist_item = __webpack_require__(264);
+	var _pctopnav_alllist_item = __webpack_require__(316);
 
 	var _pctopnav_alllist_item2 = _interopRequireDefault(_pctopnav_alllist_item);
 
@@ -765,21 +783,21 @@
 
 /***/ }),
 
-/***/ 264:
+/***/ 316:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(265)
+	__vue_styles__.push(__webpack_require__(317)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(266)
+	__vue_exports__ = __webpack_require__(318)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(271)
+	var __vue_template__ = __webpack_require__(323)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -810,7 +828,7 @@
 
 /***/ }),
 
-/***/ 265:
+/***/ 317:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -833,12 +851,12 @@
 
 /***/ }),
 
-/***/ 266:
+/***/ 318:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _pctopnav_alllist_subitem = __webpack_require__(267);
+	var _pctopnav_alllist_subitem = __webpack_require__(319);
 
 	var _pctopnav_alllist_subitem2 = _interopRequireDefault(_pctopnav_alllist_subitem);
 
@@ -931,21 +949,21 @@
 
 /***/ }),
 
-/***/ 267:
+/***/ 319:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(268)
+	__vue_styles__.push(__webpack_require__(320)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(269)
+	__vue_exports__ = __webpack_require__(321)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(270)
+	var __vue_template__ = __webpack_require__(322)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -976,7 +994,7 @@
 
 /***/ }),
 
-/***/ 268:
+/***/ 320:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -999,7 +1017,7 @@
 
 /***/ }),
 
-/***/ 269:
+/***/ 321:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1059,7 +1077,7 @@
 
 /***/ }),
 
-/***/ 270:
+/***/ 322:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1092,7 +1110,7 @@
 
 /***/ }),
 
-/***/ 271:
+/***/ 323:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1121,7 +1139,7 @@
 
 /***/ }),
 
-/***/ 272:
+/***/ 324:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
