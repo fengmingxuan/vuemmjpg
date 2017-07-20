@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -38,21 +38,18 @@
             pcinterest_hlist
 
         },
-        props: ['taghref'],
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_star(),
+                taghref:meitu.getpc_tag(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"御姐系列",
+                title:"妖艳",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
-//                pagenumbers:''
-
-                 
             }
         },
         created: function(){
@@ -121,23 +118,19 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_star();
+                    self.taghref = meitu.getpc_tag();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
+                    //https://www.4493.com/tag/%C4%DA%D2%C2/
                     url = self.taghref;
                 }else{
-                    //https://www.4493.com/star/yujiekong/index-hot-1.htm
-                    //https://www.4493.com/star/yujiekong/index-hot-2.htm
-                    //https://www.4493.com/star/yujiekong/
-                    //https://www.4493.com/star/yujiekong/index-1.htm
-                    if(self.taghref.indexOf("index-hot-")!=-1){
-                        url = self.taghref.replaceAllStr("1.htm","")+ self.pageNo+".htm";
-                    }else{
-                        url = self.taghref+ "index-"+self.pageNo+".htm";
-                    }
+                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+                    //https://www.4493.com/tag/2/%C4%DA%D2%C2
 
-
+                    var newurl = meitu.getpc_meitu()+"tag/";
+                    var key = self.taghref.replaceAllStr(newurl,"").replaceAllStr("/","");
+                    url = newurl+self.pageNo+"/"+key;
                 }
                 console.log('url==='+url);
                 var params = {

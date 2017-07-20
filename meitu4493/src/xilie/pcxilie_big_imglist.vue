@@ -5,54 +5,57 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <!--<cell>-->
-                <!--<pcinterest_hlist :taghref="taghref"></pcinterest_hlist>-->
-            <!--</cell>-->
+            <cell>
+                <div @click="todetail(bighref,bigtitle)">
+                    <image class="img" :src="bigsrc" ></image>
+                    <text class="txt">{{bigtitle}}</text>
+                </div>
+            </cell>
             <cell v-for="stockitem in stockArray">
-                <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
+                <pcxilie_imglist_item :stockitem="stockitem"></pcxilie_imglist_item>
             </cell>
             <!--<cell>-->
                 <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
             <!--</cell>-->
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
+            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcpic_imglist_item from '../childnav/pcpic_imglist_item.vue'
-    import  pcinterest_hlist from '../childnav/pcinterest_hlist.vue'
+    import  pcxilie_imglist_item from '../xilie/pcxilie_imglist_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
     var storage = weex.requireModule('storage');
     var utils = require('../common/utils');
+    var weexEventModule = weex.requireModule('weexEventModule');
+    var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
     export default{
         components: {
-            pcpic_imglist_item,
+            pcxilie_imglist_item,
             navbar_v,
-            pcinterest_hlist
 
         },
-        props: ['taghref'],
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_star(),
+                taghref:meitu.getpc_xilie_top(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"御姐系列",
+                title:"系列",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
-//                pagenumbers:''
-
-                 
+                bigsrc:"",
+                bigtitle:"",
+                bighref:""
             }
         },
         created: function(){
@@ -84,6 +87,22 @@
             var self = this;
         },
         methods:{
+            todetail:function (e,alt) {
+                console.log('main list==='+e)
+                var name = "star/pcstar_hot_pager";
+                var params={
+                    url: meitu.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                });
+            },
             autoRefresh(){
                 console.log('autoRefresh');
                 var self = this;
@@ -121,37 +140,38 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_star();
+                    self.taghref = meitu.getpc_xilie_top();
                 }
                 var url = self.taghref;
-                if(self.pageNo==1){
-                    url = self.taghref;
-                }else{
-                    //https://www.4493.com/star/yujiekong/index-hot-1.htm
-                    //https://www.4493.com/star/yujiekong/index-hot-2.htm
-                    //https://www.4493.com/star/yujiekong/
-                    //https://www.4493.com/star/yujiekong/index-1.htm
-                    if(self.taghref.indexOf("index-hot-")!=-1){
-                        url = self.taghref.replaceAllStr("1.htm","")+ self.pageNo+".htm";
-                    }else{
-                        url = self.taghref+ "index-"+self.pageNo+".htm";
-                    }
-
-
-                }
+//                if(self.pageNo==1){
+//                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+//                    url = self.taghref;
+//                }else{
+//                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+//                    //https://www.4493.com/tag/2/%C4%DA%D2%C2
+//
+//                    var newurl = meitu.getpc_meitu()+"tag/";
+//                    var key = self.taghref.replaceAllStr(newurl,"").replaceAllStr("/","");
+//                    url = newurl+self.pageNo+"/"+key;
+//                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeiu4493JsoupModule.pcpiclist(params,function(e){
+                weexMeiu4493JsoupModule.pcxlimg(params,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
                         self.stockArray.splice(0, self.stockArray.length);
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
+                            var bigtag= json.list[0];
+                            self.bigsrc = bigtag.src;
+                            self.bigtitle = bigtag.title;
+                            self.bighref =  bigtag.href;
+
+                            for (var i = 1; i < json.list.length; i+=2) {
                                 var tag = json.list[i];
                                 var tag2 = json.list[i+1];
                                 var item={
@@ -166,7 +186,6 @@
                                     other2:tag2.other,
                                     title2:tag2.title,
                                 };
-//                                self.pagenumbers = tag.pagenumbers;
                                 self.stockArray.push(item);
                             }
                         }
@@ -182,6 +201,16 @@
 </script>
 
 <style>
+    .img{
+        width: 750;
+        height: 440;
+        border-radius: 5;
+    }
+    .txt{
+        font-size:22;
+        padding: 5;
+        flex: 1;
+    }
     .refresh-view{
         height:100;
         width:750;

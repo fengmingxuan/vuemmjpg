@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
@@ -16,9 +16,27 @@ var MEITU = {
     pc_top:"https://www.4493.com/top.html",
     pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
     pc_star:"https://www.4493.com/star/yujiekong/",
-    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
+    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
+    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
+    pc_xilie:"https://www.4493.com/xilie.html",
+    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
 
 
+};
+exports.getpc_xilie_top = function () {
+    var url = MEITU.pc_xilie_top;
+    console.log('pc_xilie_top==' + url);
+    return url;
+};
+exports.getpc_xilie = function () {
+    var url = MEITU.pc_xilie;
+    console.log('pc_xilie==' + url);
+    return url;
+};
+exports.getpc_tag = function () {
+    var url = MEITU.pc_tag;
+    console.log('pc_tag==' + url);
+    return url;
 };
 exports.getpc_top_paihang = function () {
     var url = MEITU.pc_top_paihang;

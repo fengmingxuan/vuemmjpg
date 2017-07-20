@@ -141,6 +141,8 @@
                 }
                 var url = self.taghref;
 
+                //https://www.4493.com/star/yuhuomeinv/index-hot-1.htm
+                //https://www.4493.com/star/yuhuomeinv/
                 for (var i = 0; i < 2; i++) {
                     var tag={
                         alt:"最新",
@@ -239,25 +241,16 @@
 
 
                         console.log("i==="+i)
-//                        if(i==0){
-//                            if(this.$refs.point_sub0[0].isFirst == 1){
-//                                this.$refs.point_sub0[0].autoRefresh();
-//                                const eltab = this.$refs.tab0[0];
-//                                dom.scrollToElement(eltab, { offset: 0 });
-//
-//                                const elline = this.$refs.line0[0];
-//                                dom.scrollToElement(elline, { offset: 0 });
-//                            }
-//                        }else if(i==1){
-//                            if(this.$refs.point_sub1[0].isFirst == 1){
-//                                this.$refs.point_sub1[0].autoRefresh();
-//                                const eltab = this.$refs.tab1[0];
-//                                dom.scrollToElement(eltab, { offset: 1 });
-//
-//                                const elline = this.$refs.line1[0];
-//                                dom.scrollToElement(elline, { offset: 1 });
-//                            }
-//                        }
+                        if(i==0){
+                            if(this.$refs.point_sub0[0].isFirst == 1){
+                                console.log("autoRefresh i==="+i)
+                                this.$refs.point_sub0[0].autoRefresh();
+                            }
+                        }else if(i==1){
+                            if(this.$refs.point_sub1[0].isFirst == 1){
+                                this.$refs.point_sub1[0].autoRefresh();
+                            }
+                        }
                     } else {
                         tabItem.imgUrl = tabItem.imgUrlUnSelect;
                         tabItem.itemNameColor = "item_text-" + this.skinType;
@@ -283,11 +276,11 @@
 //                this.davNum = cdavNum;
 //            }
         },
-        ready(){
+        mounted(){
 
             this.indexMetting = 0;
             this.setIndex(this.indexMetting);
-
+            console.log("setIndex=="+0)
 
         },
     };

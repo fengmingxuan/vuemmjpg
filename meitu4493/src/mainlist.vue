@@ -23,6 +23,8 @@
             }
         },
         created () {
+            this.rows.push('xilie/pcxilie_big_imglist')
+            this.rows.push('xilie/pcxilie_imglist')
             this.rows.push('paihang/pctop_left_imglist')
             this.rows.push('paihang/pctop_paihang_imglist')
             this.rows.push('star/pcstar_hot_pager')

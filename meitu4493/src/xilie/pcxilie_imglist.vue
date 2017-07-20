@@ -1,54 +1,55 @@
 <template>
-    <div style="height: 280px">
-        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
-        <div style="flex: 1;align-content: flex-start;align-items: flex-start">
-            <text style="font-size: 28;margin-top: 30;margin-left: 20">{{title}}</text>
-        </div>
-        <hlist  style="flex-direction: row;width: 750px;height: 100px;flex: 1"  loadmoreoffset="10" scroll-direction="horizontal">
-            <!--<refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">-->
-            <!--<text class="indicator">下拉刷新...</text>-->
-            <!--</refresh>-->
-
-            <cell v-for="stockitem in stockArray">
-                <pcimage_bottomtag_hlist_item :stockitem="stockitem"></pcimage_bottomtag_hlist_item>
+    <div style="background-color:rgba(0, 0, 0, .25) ">
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
+        <list class="list"  loadmoreoffset="10">
+            <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+                <text class="indicator">下拉刷新...</text>
+            </refresh>
+            <cell>
+                <pcxilie_big_imglist></pcxilie_big_imglist>
             </cell>
-
+            <cell v-for="stockitem in stockArray">
+                <pcxilie_imglist_item :stockitem="stockitem"></pcxilie_imglist_item>
+            </cell>
+            <!--<cell>-->
+                <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
+            <!--</cell>-->
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
-            <!--<text class="indicator_loading">加载更多...</text>-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
             <!--</loading>-->
-        </hlist>
-        <!--<div style="flex: 1;align-content: flex-start;align-items: flex-start">-->
-            <!--<text style="font-size: 28;margin-top: 30;margin-left: 20">{{other}}</text>-->
-        <!--</div>-->
+        </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcimage_bottomtag_hlist_item from '../image/pcimage_bottomtag_hlist_item.vue'
+    import  pcxilie_imglist_item from '../xilie/pcxilie_imglist_item.vue'
+    import  pcxilie_big_imglist from '../xilie/pcxilie_big_imglist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
     var storage = weex.requireModule('storage');
+    var utils = require('../common/utils');
     export default{
         components: {
-            pcimage_bottomtag_hlist_item,
+            pcxilie_imglist_item,
             navbar_v,
+            pcxilie_big_imglist
 
         },
-        props: ['taghref'],
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_xingganmote_image(),
-                pageNo: 0,
+                taghref:meitu.getpc_xilie(),
+                pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"Tags:",
+                title:"系列",
+                isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
-                other:""
             }
         },
         created: function(){
@@ -62,6 +63,7 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
+//
             self.refresh();
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
@@ -70,34 +72,43 @@
 //                    self.taghref = staghref;
 //                }
 //                console.log('taghref=='+self.taghref);
+//
 //                self.refresh();
+//
 //            });
-//            setTimeout(() => {
-//                storage.getItem('taghref',function(s){
-//                    console.log('get taghref result:'+JSON.stringify(s));
-//                    var staghref = s.data;
-//                    if(staghref!=undefined){
-//                        self.taghref = staghref;
-//                    }
-//                    console.log('pre taghref=='+self.taghref);
-//                    self.refresh();
-//                });
-//            }, 2000)
+        },
+        mounted: function() {
+            var self = this;
         },
         methods:{
+            autoRefresh(){
+                console.log('autoRefresh');
+                var self = this;
+                storage.getItem('taghref',function(s){
+                    console.log('get taghref result:'+JSON.stringify(s));
+                    var staghref = s.data;
+                    if(staghref!=undefined){
+                        self.taghref = staghref;
+                    }
+                    console.log('taghref=='+self.taghref);
+                    self.refresh();
+                });
+            },
             onloading (event) {
                 this.showLoading = 'show'
+                 this.pageNo = this.pageNo+1;
 //                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
                 this.refresh();
             },
+
             onpullingdown (event) {
             },
             onrefresh (event) {
                 this.refreshing = true;
-//                this.pageNo = 1;
+                this.pageNo = 1;
                 setTimeout(() => {
                     this.refreshing = false
                 }, 2000)
@@ -105,32 +116,50 @@
             },
             refresh:function(){
                 var self = this;
+                self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref=meitu.getpc_xingganmote_image();
+                    self.taghref = meitu.getpc_xilie();
                 }
                 var url = self.taghref;
 //                if(self.pageNo==1){
+//                    //https://www.4493.com/tag/%C4%DA%D2%C2/
 //                    url = self.taghref;
 //                }else{
-//                    url = self.taghref+"?idx="+self.pageNo;
+//                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+//                    //https://www.4493.com/tag/2/%C4%DA%D2%C2
+//
+//                    var newurl = meitu.getpc_meitu()+"tag/";
+//                    var key = self.taghref.replaceAllStr(newurl,"").replaceAllStr("/","");
+//                    url = newurl+self.pageNo+"/"+key;
 //                }
                 console.log('url==='+url);
                 var params = {
                     url:url,
                     pageNo: self.pageNo
                 };
-                weexMeiu4493JsoupModule.pcpicbottomline(params,function(e){
+                weexMeiu4493JsoupModule.pcxilie(params,function(e){
                     var json = JSON.parse(e);
-//                    if(self.pageNo==1){
-                    self.stockArray.splice(0, self.stockArray.length);
-//                    }
+                    if(self.pageNo==1){
+                        self.stockArray.splice(0, self.stockArray.length);
+                    }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
+                            for (var i = 0; i < json.list.length; i+=2) {
                                 var tag = json.list[i];
-//                                self.other = tag.other;
-                                tag.alt = tag.title;
-                                self.stockArray.push(tag);
+                                var tag2 = json.list[i+1];
+                                var item={
+                                    href:tag.href,
+                                    alt:tag.alt,
+                                    src:tag.src,
+                                    other:tag.other,
+                                    title:tag.title,
+                                    href2:tag2.href,
+                                    alt2:tag2.alt,
+                                    src2:tag2.src,
+                                    other2:tag2.other,
+                                    title2:tag2.title,
+                                };
+                                self.stockArray.push(item);
                             }
                         }
                     }

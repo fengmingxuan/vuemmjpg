@@ -23,24 +23,28 @@
 
         methods:{
             todetail:function (id,e,alt) {
-                var name = "star/pcstar_hot_pager";
-                if(id==5){
-                    name = "paihang/pctop_left_imglist";
-                }else{
-                    name = "star/pcstar_hot_pager";
-                }
-                var params={
-                    url: meitu.getDefaultUrl(name),
-                    animated: "true",
-                    options:{
-                        taghref: e,
-                        title:alt
+                if(e.indexOf('www.4493.com')!=-1){
+                    if(alt.indexOf("赞")!=-1){
+                        return;
                     }
-                };
+                    var name = "star/pctag_imglist";
+                    var params={
+                        url: meitu.getDefaultUrl(name),
+                        animated: "true",
+                        options:{
+                            taghref: e,
+                            title:alt
+                        }
+                    };
 
-                weexNavigatorModule.push(params, event => {
-                    // modal.toast({ message: 'callback: ' + event })
-                })
+                    weexNavigatorModule.push(params, event => {
+                        // modal.toast({ message: 'callback: ' + event })
+                    })
+                }else{
+
+                }
+
+
             }
         }
     }

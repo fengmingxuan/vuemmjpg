@@ -22,18 +22,13 @@
 
         methods:{
             todetail:function (id,e,alt) {
-                if(id==5){
-                    weexEventModule.startWebViewActivity(e);
-                    return;
-                }
 
-//
                 var name = "star/pcstar_hot_pager";
-//                if(e.indexOf('m.meituba.com')!=-1){
-//                    name = "marticle/marticlelist";
-//                }else{
-//                    name = "article/pcarticlelist";
-//                }
+                if(id==5){
+                    name = "paihang/pctop_left_imglist";
+                }else{
+                    name = "star/pcstar_hot_pager";
+                }
                 var params={
                     url: meitu.getDefaultUrl(name),
                     animated: "true",
