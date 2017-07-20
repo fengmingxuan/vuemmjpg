@@ -5,14 +5,14 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <cell>
-                <pcinterest_hlist :taghref="taghref"></pcinterest_hlist>
-            </cell>
+            <!--<cell>-->
+            <!--<pcinterest_hlist :taghref="taghref"></pcinterest_hlist>-->
+            <!--</cell>-->
             <cell v-for="stockitem in stockArray">
                 <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
             </cell>
             <!--<cell>-->
-                <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
+            <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
             <!--</cell>-->
             <loading class="loading" @loading="onloading" :display="showLoading">
                 <text class="indicator_loading">加载更多...</text>
@@ -29,8 +29,8 @@
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
     var meitu = require('../meitu');
-    var utils = require('../common/utils');
     var storage = weex.requireModule('storage');
+    var utils = require('../common/utils');
     export default{
         components: {
             pcpic_imglist_item,
@@ -38,21 +38,18 @@
             pcinterest_hlist
 
         },
-        props: ['taghref'],
+//        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:meitu.getpc_xingganmote(),
+                taghref:meitu.getpc_tag(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"性感美女",
+                title:"妖艳",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
-//                pagenumbers:''
-
-                 
             }
         },
         created: function(){
@@ -84,7 +81,8 @@
             var self = this;
         },
         methods:{
-            autoRefresh(event){
+            autoRefresh(){
+                console.log('autoRefresh');
                 var self = this;
                 storage.getItem('taghref',function(s){
                     console.log('get taghref result:'+JSON.stringify(s));
@@ -98,7 +96,7 @@
             },
             onloading (event) {
                 this.showLoading = 'show'
-                 this.pageNo = this.pageNo+1;
+                this.pageNo = this.pageNo+1;
 //                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
@@ -120,7 +118,7 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_xingganmote();
+                    self.taghref = meitu.getpc_tag();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
@@ -129,8 +127,8 @@
                     if(self.taghref.indexOf("index-hot-")!=-1){
                         url = self.taghref.replaceAllStr("1.htm","")+ self.pageNo+".htm";
                     }else if(self.taghref.indexOf("index")!=-1){
-                        //https://www.4493.com/wenshen/banjia/index.htm
-                        //https://www.4493.com/wenshen/banjia/index-2.htm
+                        //https://www.4493.com/star/liuyan/
+                        //https://www.4493.com/star/liuyan/index-2.htm
                         url = self.taghref.replaceAllStr(".htm","")+ "-"+self.pageNo+".htm";
                     }else{
                         url = self.taghref+ "index-"+self.pageNo+".htm";

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(98)
+	__vue_styles__.push(__webpack_require__(115)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(99)
+	__vue_exports__ = __webpack_require__(116)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(100)
+	var __vue_template__ = __webpack_require__(117)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -372,9 +372,27 @@
 	    pc_top:"https://www.4493.com/top.html",
 	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
 	    pc_star:"https://www.4493.com/star/yujiekong/",
-	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
+	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
+	    pc_xilie:"https://www.4493.com/xilie.html",
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
 
 
+	};
+	exports.getpc_xilie_top = function () {
+	    var url = MEITU.pc_xilie_top;
+	    console.log('pc_xilie_top==' + url);
+	    return url;
+	};
+	exports.getpc_xilie = function () {
+	    var url = MEITU.pc_xilie;
+	    console.log('pc_xilie==' + url);
+	    return url;
+	};
+	exports.getpc_tag = function () {
+	    var url = MEITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
 	};
 	exports.getpc_top_paihang = function () {
 	    var url = MEITU.pc_top_paihang;
@@ -857,17 +875,12 @@
 
 	    methods: {
 	        todetail: function todetail(id, e, alt) {
-	            if (id == 5) {
-	                weexEventModule.startWebViewActivity(e);
-	                return;
-	            }
-
 	            var name = "star/pcstar_hot_pager";
-	            //                if(e.indexOf('m.meituba.com')!=-1){
-	            //                    name = "marticle/marticlelist";
-	            //                }else{
-	            //                    name = "article/pcarticlelist";
-	            //                }
+	            if (id == 5) {
+	                name = "paihang/pctop_left_imglist";
+	            } else {
+	                name = "star/pcstar_hot_pager";
+	            }
 	            var params = {
 	                url: meitu.getDefaultUrl(name),
 	                animated: "true",
@@ -1102,6 +1115,7 @@
 	            return meitu.getImageUrl(url);
 	        },
 	        todetail: function todetail(e, alt) {
+	            console.log('main list===' + e);
 	            if (e.indexOf('http://www.ys8.com') != -1) {
 	                weexEventModule.startWebViewActivity(e);
 	            } else {
@@ -1211,52 +1225,7 @@
 
 /***/ }),
 
-/***/ 26:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(13)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(14)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(19)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/childnav/pcinterest_hlist.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1f6eaaf1"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 27:
+/***/ 34:
 /***/ (function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -1305,7 +1274,52 @@
 
 /***/ }),
 
-/***/ 98:
+/***/ 38:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(13)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(14)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(19)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/childnav/pcinterest_hlist.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-1f6eaaf1"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1333,7 +1347,7 @@
 
 /***/ }),
 
-/***/ 99:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1350,7 +1364,7 @@
 
 	var _pcpic_imglist_item2 = _interopRequireDefault(_pcpic_imglist_item);
 
-	var _pcinterest_hlist = __webpack_require__(26);
+	var _pcinterest_hlist = __webpack_require__(38);
 
 	var _pcinterest_hlist2 = _interopRequireDefault(_pcinterest_hlist);
 
@@ -1384,7 +1398,7 @@
 	var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
 	var meitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
-	var utils = __webpack_require__(27);
+	var utils = __webpack_require__(34);
 	exports.default = {
 	    components: {
 	        pcpic_imglist_item: _pcpic_imglist_item2.default,
@@ -1536,7 +1550,7 @@
 
 /***/ }),
 
-/***/ 100:
+/***/ 117:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

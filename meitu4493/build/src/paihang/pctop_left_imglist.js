@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(77)
+	__vue_styles__.push(__webpack_require__(94)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(78)
+	__vue_exports__ = __webpack_require__(95)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(83)
+	var __vue_template__ = __webpack_require__(100)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -372,9 +372,27 @@
 	    pc_top:"https://www.4493.com/top.html",
 	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
 	    pc_star:"https://www.4493.com/star/yujiekong/",
-	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
+	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
+	    pc_xilie:"https://www.4493.com/xilie.html",
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
 
 
+	};
+	exports.getpc_xilie_top = function () {
+	    var url = MEITU.pc_xilie_top;
+	    console.log('pc_xilie_top==' + url);
+	    return url;
+	};
+	exports.getpc_xilie = function () {
+	    var url = MEITU.pc_xilie;
+	    console.log('pc_xilie==' + url);
+	    return url;
+	};
+	exports.getpc_tag = function () {
+	    var url = MEITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
 	};
 	exports.getpc_top_paihang = function () {
 	    var url = MEITU.pc_top_paihang;
@@ -560,7 +578,7 @@
 
 /***/ }),
 
-/***/ 27:
+/***/ 34:
 /***/ (function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -609,7 +627,7 @@
 
 /***/ }),
 
-/***/ 77:
+/***/ 94:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -642,7 +660,7 @@
 
 /***/ }),
 
-/***/ 78:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -655,7 +673,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctop_left_imglist_item = __webpack_require__(79);
+	var _pctop_left_imglist_item = __webpack_require__(96);
 
 	var _pctop_left_imglist_item2 = _interopRequireDefault(_pctop_left_imglist_item);
 
@@ -692,7 +710,7 @@
 	var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
 	var meitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
-	var utils = __webpack_require__(27);
+	var utils = __webpack_require__(34);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -823,21 +841,21 @@
 
 /***/ }),
 
-/***/ 79:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(80)
+	__vue_styles__.push(__webpack_require__(97)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(81)
+	__vue_exports__ = __webpack_require__(98)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(82)
+	var __vue_template__ = __webpack_require__(99)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -868,7 +886,7 @@
 
 /***/ }),
 
-/***/ 80:
+/***/ 97:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -906,7 +924,7 @@
 
 /***/ }),
 
-/***/ 81:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -926,7 +944,7 @@
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	var meitu = __webpack_require__(6);
-	var utils = __webpack_require__(27);
+	var utils = __webpack_require__(34);
 	module.exports = {
 	    created: function created() {},
 
@@ -964,7 +982,7 @@
 
 /***/ }),
 
-/***/ 82:
+/***/ 99:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -998,7 +1016,7 @@
 
 /***/ }),
 
-/***/ 83:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

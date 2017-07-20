@@ -6,7 +6,7 @@
                 <text class="indicator">下拉刷新...</text>
             </refresh>
             <cell>
-                <pcinterest_hlist :taghref="taghref"></pcinterest_hlist>
+                <pcmingxing_tag_hlist :taghref="taghref"></pcmingxing_tag_hlist>
             </cell>
             <cell v-for="stockitem in stockArray">
                 <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
@@ -24,7 +24,7 @@
 <script>
     import  navbar_v from '../template/navbar_v.vue'
     import  pcpic_imglist_item from '../childnav/pcpic_imglist_item.vue'
-    import  pcinterest_hlist from '../childnav/pcinterest_hlist.vue'
+    import  pcmingxing_tag_hlist from '../mingxing/pcmingxing_tag_hlist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
@@ -35,7 +35,7 @@
         components: {
             pcpic_imglist_item,
             navbar_v,
-            pcinterest_hlist
+            pcmingxing_tag_hlist
 
         },
         props: ['taghref'],

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(87)
+	__vue_styles__.push(__webpack_require__(104)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(88)
+	__vue_exports__ = __webpack_require__(105)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(89)
+	var __vue_template__ = __webpack_require__(106)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -112,9 +112,27 @@
 	    pc_top:"https://www.4493.com/top.html",
 	    pc_xingganmote_image_all:"https://www.4493.com/xingganmote/126139.htm",
 	    pc_star:"https://www.4493.com/star/yujiekong/",
-	    pc_top_paihang:"https://www.4493.com/top/xinggan.html"
+	    pc_top_paihang:"https://www.4493.com/top/xinggan.html",
+	    pc_tag:"https://www.4493.com/tag/%D1%FD%D1%DE/",
+	    pc_xilie:"https://www.4493.com/xilie.html",
+	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js"
 
 
+	};
+	exports.getpc_xilie_top = function () {
+	    var url = MEITU.pc_xilie_top;
+	    console.log('pc_xilie_top==' + url);
+	    return url;
+	};
+	exports.getpc_xilie = function () {
+	    var url = MEITU.pc_xilie;
+	    console.log('pc_xilie==' + url);
+	    return url;
+	};
+	exports.getpc_tag = function () {
+	    var url = MEITU.pc_tag;
+	    console.log('pc_tag==' + url);
+	    return url;
 	};
 	exports.getpc_top_paihang = function () {
 	    var url = MEITU.pc_top_paihang;
@@ -257,7 +275,7 @@
 
 /***/ }),
 
-/***/ 27:
+/***/ 34:
 /***/ (function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -306,7 +324,7 @@
 
 /***/ }),
 
-/***/ 87:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -344,7 +362,7 @@
 
 /***/ }),
 
-/***/ 88:
+/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -363,7 +381,7 @@
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	var meitu = __webpack_require__(6);
-	var utils = __webpack_require__(27);
+	var utils = __webpack_require__(34);
 	module.exports = {
 	    created: function created() {},
 
@@ -401,7 +419,7 @@
 
 /***/ }),
 
-/***/ 89:
+/***/ 106:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

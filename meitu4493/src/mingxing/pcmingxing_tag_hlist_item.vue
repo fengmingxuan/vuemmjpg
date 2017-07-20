@@ -1,12 +1,10 @@
 <template>
-    <div style="flex-direction:row;margin: 5px;">
-        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.title)">
-            <text class="txt"> {{stockitem.title}}</text>
+        <div class="news-content" @click="todetail(stockitem.id,stockitem.href,stockitem.alt)">
+            <div class="news-content">
+                <text class="txt">{{stockitem.alt}}</text>
+            </div>
+
         </div>
-        <div class="news-content" @click="todetail(stockitem.id2,stockitem.href2,stockitem.title2)">
-            <text class="txt"> {{stockitem.title2}}</text>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -25,16 +23,11 @@
 
         methods:{
             todetail:function (id,e,alt) {
-//                weexEventModule.startWebViewActivity(e);
-                if(id>3){
-                    weexEventModule.startWebViewActivity(e);
-                }else{
-                    var name = "childnav/pcpic_imglist";
-                    if(id==2){
-                        name = "childnav/pcnavstar_imglist";
-                    }else{
-                        name = "childnav/pcpic_imglist";
+                if(e.indexOf('www.4493.com')!=-1){
+                    if(alt.indexOf("赞")!=-1){
+                        return;
                     }
+                    var name = "mingxing/pcmingxing_imglist";
                     var params={
                         url: meitu.getDefaultUrl(name),
                         animated: "true",
@@ -46,8 +39,12 @@
 
                     weexNavigatorModule.push(params, event => {
                         // modal.toast({ message: 'callback: ' + event })
-                    });
+                    })
+                }else{
+
                 }
+
+
             }
         }
     }
@@ -55,19 +52,24 @@
 
 <style>
     .news-content{
-        margin-left:1;
-        margin-right:1;
         flex-direction:column;
-        flex: 1;
+        width: 130px;
+        height:60px;
+        border-color: #FF6B9C;
+        border-width: 1;
+        border-radius: 20;
+        background-color:#FF6B9C ;
+        align-items: center;
+        align-content: center;
+        margin: 5;
         padding: 5;
-        background-color: #fff;
-        border-radius: 5;
-        align-content: flex-start;
-        align-items: flex-start;
     }
 
     .txt{
-        font-size:30;
-        padding: 20;
+        font-size:18;
+        flex-direction:column;
+        color: #ffffff;
+        align-items: center;
+        align-content: center;
     }
 </style>
