@@ -606,6 +606,14 @@
 /***/ (function(module, exports) {
 
 	module.exports = {
+	  "save": {
+	    "position": "absolute",
+	    "width": 100,
+	    "height": 80,
+	    "top": 20,
+	    "left": 600,
+	    "backgroundColor": "rgb(40,96,144)"
+	  },
 	  "image": {
 	    "width": 750,
 	    "margin": 1,
@@ -639,6 +647,17 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var stream = weex.requireModule('stream'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -714,6 +733,12 @@
 	        //            });
 	    },
 	    methods: {
+	        saveimage: function saveimage(src) {
+	            var params = {
+	                imgurl: src
+	            };
+	            weexEventModule.saveImage(params, function (event) {});
+	        },
 	        todetail: function todetail(e, alt) {
 	            //                var paramsEvent={
 	            //                    event:"9000",
@@ -824,7 +849,19 @@
 	      }
 	    }), _c('text', {
 	      staticClass: ["txt"]
-	    }, [_vm._v(_vm._s(img.title))])])
+	    }, [_vm._v(_vm._s(img.title))]), _c('div', {
+	      staticClass: ["save"],
+	      on: {
+	        "click": function($event) {
+	          _vm.saveimage(img.src)
+	        }
+	      }
+	    }, [_c('text', {
+	      staticStyle: {
+	        color: "#fff",
+	        padding: "25"
+	      }
+	    }, [_vm._v("保存")])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
