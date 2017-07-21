@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(314)
+	__vue_styles__.push(__webpack_require__(332)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(315)
+	__vue_exports__ = __webpack_require__(333)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(324)
+	var __vue_template__ = __webpack_require__(342)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -378,9 +378,15 @@
 	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
-	    pc_mingxing_section:"https://www.4493.com/star/section"
+	    pc_mingxing_section:"https://www.4493.com/star/section",
+	    pc_star_main:"https://www.4493.com/star/"
 
 
+	};
+	exports.getpc_star_main = function () {
+	    var url = MEITU.pc_star_main;
+	    console.log('pc_star_main==' + url);
+	    return url;
 	};
 	exports.getpc_mingxing_section = function () {
 	    var url = MEITU.pc_mingxing_section;
@@ -596,7 +602,7 @@
 
 /***/ }),
 
-/***/ 314:
+/***/ 332:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -624,7 +630,7 @@
 
 /***/ }),
 
-/***/ 315:
+/***/ 333:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -637,7 +643,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pctopnav_alllist_item = __webpack_require__(316);
+	var _pctopnav_alllist_item = __webpack_require__(334);
 
 	var _pctopnav_alllist_item2 = _interopRequireDefault(_pctopnav_alllist_item);
 
@@ -670,6 +676,7 @@
 	var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
 	var meitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctopnav_alllist_item: _pctopnav_alllist_item2.default,
@@ -767,37 +774,57 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.tpicNArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctopnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常==获取缓存==');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctopnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                tag.id = i + 1;
+	                self.tpicNArray.push(tag);
+	            }
 	        }
-
 	    }
 
 	};
 
 /***/ }),
 
-/***/ 316:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(317)
+	__vue_styles__.push(__webpack_require__(335)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(318)
+	__vue_exports__ = __webpack_require__(336)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(323)
+	var __vue_template__ = __webpack_require__(341)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -828,7 +855,7 @@
 
 /***/ }),
 
-/***/ 317:
+/***/ 335:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -851,12 +878,12 @@
 
 /***/ }),
 
-/***/ 318:
+/***/ 336:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _pctopnav_alllist_subitem = __webpack_require__(319);
+	var _pctopnav_alllist_subitem = __webpack_require__(337);
 
 	var _pctopnav_alllist_subitem2 = _interopRequireDefault(_pctopnav_alllist_subitem);
 
@@ -949,21 +976,21 @@
 
 /***/ }),
 
-/***/ 319:
+/***/ 337:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(320)
+	__vue_styles__.push(__webpack_require__(338)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(321)
+	__vue_exports__ = __webpack_require__(339)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(322)
+	var __vue_template__ = __webpack_require__(340)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -994,7 +1021,7 @@
 
 /***/ }),
 
-/***/ 320:
+/***/ 338:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1017,7 +1044,7 @@
 
 /***/ }),
 
-/***/ 321:
+/***/ 339:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1077,7 +1104,7 @@
 
 /***/ }),
 
-/***/ 322:
+/***/ 340:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1110,7 +1137,7 @@
 
 /***/ }),
 
-/***/ 323:
+/***/ 341:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1139,7 +1166,7 @@
 
 /***/ }),
 
-/***/ 324:
+/***/ 342:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

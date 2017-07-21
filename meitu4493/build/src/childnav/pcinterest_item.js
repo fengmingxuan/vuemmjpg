@@ -121,9 +121,15 @@
 	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
-	    pc_mingxing_section:"https://www.4493.com/star/section"
+	    pc_mingxing_section:"https://www.4493.com/star/section",
+	    pc_star_main:"https://www.4493.com/star/"
 
 
+	};
+	exports.getpc_star_main = function () {
+	    var url = MEITU.pc_star_main;
+	    console.log('pc_star_main==' + url);
+	    return url;
 	};
 	exports.getpc_mingxing_section = function () {
 	    var url = MEITU.pc_mingxing_section;

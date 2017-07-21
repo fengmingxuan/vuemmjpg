@@ -378,9 +378,15 @@
 	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
-	    pc_mingxing_section:"https://www.4493.com/star/section"
+	    pc_mingxing_section:"https://www.4493.com/star/section",
+	    pc_star_main:"https://www.4493.com/star/"
 
 
+	};
+	exports.getpc_star_main = function () {
+	    var url = MEITU.pc_star_main;
+	    console.log('pc_star_main==' + url);
+	    return url;
 	};
 	exports.getpc_mingxing_section = function () {
 	    var url = MEITU.pc_mingxing_section;
@@ -1113,31 +1119,55 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        var bigtag = json.list[0];
-	                        self.bigsrc = bigtag.src;
-	                        self.bigtitle = bigtag.title;
-	                        self.bighref = bigtag.href;
-
-	                        for (var i = 1; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                src: tag.src,
-	                                other: tag.other,
-	                                title: tag.title,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                src2: tag2.src,
-	                                other2: tag2.other,
-	                                title2: tag2.title
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcxlimg"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常==获取缓存==');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcxlimg"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            var bigtag = json.list[0];
+	            self.bigsrc = bigtag.src;
+	            self.bigtitle = bigtag.title;
+	            self.bighref = bigtag.href;
+
+	            for (var i = 1; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {};
+	                }
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+	                    title: tag.title,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other,
+	                    title2: tag2.title
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }

@@ -40,6 +40,7 @@
             this.rows.push('paihang/pctop_left_imglist')
             this.rows.push('paihang/pctop_paihang_imglist')
             this.rows.push('star/pcstar_hot_pager')
+            this.rows.push('star/pcstar_imgscroller')
             this.rows.push('star/pcstar_imglist')
             this.rows.push('image/pcimage_main_all_slider')
             this.rows.push('image/pcimage_main_imgalllist')

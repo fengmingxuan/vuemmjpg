@@ -118,9 +118,15 @@
 	    pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
-	    pc_mingxing_section:"https://www.4493.com/star/section"
+	    pc_mingxing_section:"https://www.4493.com/star/section",
+	    pc_star_main:"https://www.4493.com/star/"
 
 
+	};
+	exports.getpc_star_main = function () {
+	    var url = MEITU.pc_star_main;
+	    console.log('pc_star_main==' + url);
+	    return url;
 	};
 	exports.getpc_mingxing_section = function () {
 	    var url = MEITU.pc_mingxing_section;
@@ -354,6 +360,9 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('starmain/pcstar_main_spnews_imglist');
+	        this.rows.push('starmain/pcstar_maintype_imglist');
+	        this.rows.push('starmain/pcstar_main_slider');
 	        this.rows.push('starsection/pcstar_section_imglist');
 	        this.rows.push('mingxing/pcmingxing_section_xilie_imglist');
 	        this.rows.push('mingxing/pcmingxing_section_xiezhen_imglist');
@@ -368,6 +377,7 @@
 	        this.rows.push('paihang/pctop_left_imglist');
 	        this.rows.push('paihang/pctop_paihang_imglist');
 	        this.rows.push('star/pcstar_hot_pager');
+	        this.rows.push('star/pcstar_imgscroller');
 	        this.rows.push('star/pcstar_imglist');
 	        this.rows.push('image/pcimage_main_all_slider');
 	        this.rows.push('image/pcimage_main_imgalllist');

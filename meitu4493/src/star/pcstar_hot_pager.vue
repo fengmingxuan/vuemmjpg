@@ -188,16 +188,37 @@
                     self.stockArray.splice(0, self.stockArray.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var tag = json.list[i];
-                                self.stockArray.push(tag);
-                            }
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcstarpager",
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else{
+                            console.log('异常==获取缓存==');
+                            //获取缓存
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcstarpager"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
                         }
                     }
-
-
                 });
 
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var tag = json.list[i];
+                    self.stockArray.push(tag);
+                }
             },
             onchange: function (params) {
                 var index = params.index;

@@ -27,6 +27,7 @@
     var meitu = require('../meitu');
     var storage = weex.requireModule('storage');
     var utils = require('../common/utils');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             pcpic_imglist_item,
@@ -141,29 +142,52 @@
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
-                                var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                var item={
-                                    href:tag.href,
-                                    alt:tag.alt,
-                                    src:tag.src,
-                                    other:tag.other,
-                                    title:tag.title,
-                                    href2:tag2.href,
-                                    alt2:tag2.alt,
-                                    src2:tag2.src,
-                                    other2:tag2.other,
-                                    title2:tag2.title,
-                                };
-                                self.stockArray.push(item);
-                            }
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcmingxingsectionxiezhen",
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else{
+                            console.log('异常==获取缓存==');
+                            //获取缓存
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcmingxingsectionxiezhen"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
                         }
                     }
 
 
                 });
-            }
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i+=2) {
+                    var tag = json.list[i];
+                    var tag2 = json.list[i+1];
+                    var item={
+                        href:tag.href,
+                        alt:tag.alt,
+                        src:tag.src,
+                        other:tag.other,
+                        title:tag.title,
+                        href2:tag2.href,
+                        alt2:tag2.alt,
+                        src2:tag2.src,
+                        other2:tag2.other,
+                        title2:tag2.title,
+                    };
+                    self.stockArray.push(item);
+                }
+            },
 
         }
 
