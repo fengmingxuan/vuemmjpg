@@ -23,6 +23,9 @@
             }
         },
         created () {
+            this.rows.push('starmain/pcstar_main_spnews_imglist')
+            this.rows.push('starmain/pcstar_maintype_imglist')
+            this.rows.push('starmain/pcstar_main_slider')
             this.rows.push('starsection/pcstar_section_imglist')
             this.rows.push('mingxing/pcmingxing_section_xilie_imglist')
             this.rows.push('mingxing/pcmingxing_section_xiezhen_imglist')

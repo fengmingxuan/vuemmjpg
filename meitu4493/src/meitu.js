@@ -2,8 +2,8 @@ var BASE_URL = {
     //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
     //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
@@ -22,9 +22,15 @@ var MEITU = {
     pc_xilie_top:"https://gg.dsxdn.com/4493/xilie_top.js",
     pc_mingxing:"https://www.4493.com/star/liuyan/",
     pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
-    pc_mingxing_section:"https://www.4493.com/star/section"
+    pc_mingxing_section:"https://www.4493.com/star/section",
+    pc_star_main:"https://www.4493.com/star/"
 
 
+};
+exports.getpc_star_main = function () {
+    var url = MEITU.pc_star_main;
+    console.log('pc_star_main==' + url);
+    return url;
 };
 exports.getpc_mingxing_section = function () {
     var url = MEITU.pc_mingxing_section;

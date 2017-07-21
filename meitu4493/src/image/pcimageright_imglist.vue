@@ -58,10 +58,10 @@
         },
         created: function(){
             var self = this;
-            var ctaghref = self.$getConfig().taghref;
-            if(ctaghref!=undefined){
-                self.taghref = ctaghref;
-            }
+//            var ctaghref = self.$getConfig().taghref;
+//            if(ctaghref!=undefined){
+//                self.taghref = ctaghref;
+//            }
             var ctitle = self.$getConfig().title;
             if(ctitle!=undefined){
                 self.title = ctitle;
@@ -120,9 +120,9 @@
             refresh:function(){
                 var self = this;
                 self.isFirst=0;
-                if(self.taghref==undefined){
-                    self.taghref = meitu.getpc_new4493content1();
-                }
+//                if(self.taghref==undefined){
+//                    self.taghref = meitu.getpc_new4493content1();
+//                }
                 var url = self.taghref;
 //                if(self.pageNo==1){
 //                    url = self.taghref;

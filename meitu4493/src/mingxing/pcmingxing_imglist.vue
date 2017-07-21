@@ -154,6 +154,15 @@
                             for (var i = 0; i < json.list.length; i+=2) {
                                 var tag = json.list[i];
                                 var tag2 = json.list[i+1];
+                                if(tag2==undefined){
+                                    tag2={
+                                        href:"",
+                                        alt:"",
+                                        src:"",
+                                        other:"",
+                                        title:"",
+                                    };
+                                }
                                 var item={
                                     href:tag.href,
                                     alt:tag.alt,

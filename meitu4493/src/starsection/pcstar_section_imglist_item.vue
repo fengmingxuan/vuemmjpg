@@ -46,7 +46,7 @@
             },
             todetail:function (e,alt) {
                 console.log('main list==='+e)
-                var name = "star/pcstar_hot_pager";
+                var name = "mingxing/pcmingxing_imglist";
                 var params={
                     url: meitu.getDefaultUrl(name),
                     animated: "true",
