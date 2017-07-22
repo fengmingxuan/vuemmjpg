@@ -21,7 +21,6 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
     module.exports = {
         created: function () {
             this.platform = this.$getConfig().env.platform;
-            console.log(this.stockitem.picture);
         },
         data: {
             is_ios_text: 0,
