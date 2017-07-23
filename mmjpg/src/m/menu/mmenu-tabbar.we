@@ -1,5 +1,5 @@
 <template>
-    <div style="flex-direction: column;height: {{deviceHeight}}">
+    <div style="flex-direction: column;">
         <wxc-tabbar tab-items={{tabItems}}></wxc-tabbar>
     </div>
 </template>
@@ -9,6 +9,7 @@
     var mmjpg = require('../../mmjpg');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
     var storage = require('@weex-module/storage');
+    var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
         data: {
             deviceHeight:0,
@@ -34,6 +35,39 @@
             self.refresh();
         },
         methods: {
+            parseJSON:function (json) {
+                 var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var  tag = json.list[i];
+                    var tab = {
+                        index: i,
+                        title: tag.alt,
+                        titleColor: '#000000',
+                        icon: mmjpg.getImageUrl('./images/zoom.png'),
+                        image: mmjpg.getImageUrl('./images/zoom.png'),
+                        selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
+                        src: mmjpg.getPathUrl('m/main/m_main.js', false),
+                        visibility: 'visible',
+                        taghref:tag.href
+                    };
+                    if(i==0){
+                        tab.visibility = 'visible';
+                    }else{
+                        tab.visibility = 'hidden';
+                    }
+
+                    if(i==0){
+                        tab.src= mmjpg.getPathUrl('m/main/m_main.js', false)
+                    }else if(i==1){
+                        tab.src= mmjpg.getPathUrl('m/hot/mhotnav-pager.js', false)
+                    }else if(i==2){
+                        tab.src= mmjpg.getPathUrl('m/main/m_main.js', false)
+                    }else if(i==3){
+                        tab.src= mmjpg.getPathUrl('m/more/m_more.js', false)
+                    }
+                    self.tabItems.push(tab);
+                }
+             },
             refresh: function () {
                 var self = this;
                 weexJsoupModule.mmenu(mmjpg.getm_mmjpg_m(),function(e){
@@ -43,37 +77,28 @@
                     self.tabItems.splice(0, self.tabItems.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var  tag = json.list[i];
-                                var tab = {
-                                    index: i,
-                                    title: tag.alt,
-                                    titleColor: '#000000',
-                                    icon: mmjpg.getImageUrl('./images/zoom.png'),
-                                    image: mmjpg.getImageUrl('./images/zoom.png'),
-                                    selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-                                    src: mmjpg.getPathUrl('m/main/m_main.js', false),
-                                    visibility: 'visible',
-                                    taghref:tag.href
-                                };
-                                if(i==0){
-                                    tab.visibility = 'visible';
-                                }else{
-                                    tab.visibility = 'hidden';
-                                }
+                            self.parseJSON(json);
+                           var paramsCache = {
+                               url:mmjpg.getm_mmjpg_m(),
+                               typename: "mmenu",
+                           };
+                           weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                                if(i==0){
-                                    tab.src= mmjpg.getPathUrl('m/main/m_main.js', false)
-                                }else if(i==1){
-                                    tab.src= mmjpg.getPathUrl('m/hot/mhotnav-pager.js', false)
-                                }else if(i==2){
-                                    tab.src= mmjpg.getPathUrl('m/main/m_main.js', false)
-                                }else if(i==3){
-                                    tab.src= mmjpg.getPathUrl('m/more/m_more.js', false)
-                                }
-                                self.tabItems.push(tab);
-                            }
-                        }
+                           });
+                       }else {
+                          //异常
+                              console.log('异常====');
+                              //获取缓存
+                              var paramsCache = {
+                                  url:mmjpg.getm_mmjpg_m(),
+                                  typename: "mmenu",
+                              };
+                              weexEventModule.queryCache(paramsCache,function(e){
+                                  console.log('queryCache=='+e);
+                                  var json = JSON.parse(e);
+                                  self.parseJSON(json);
+                              });
+                       }
                     }
                 });
             },

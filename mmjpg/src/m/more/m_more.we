@@ -41,6 +41,7 @@
     var modal = require('@weex-module/modal');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
      var storage = require('@weex-module/storage');
+     var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
 
         data: {
@@ -106,7 +107,31 @@
                 self.refresh_display = 'show';
                 self.refresh();
             },
+            parseJSON:function (json) {
+                 var self = this;
+                for (var i = 0; i < json.list.length; i+=2) {
+                    var tag = json.list[i];
+                    var tag2 = json.list[i+1];
+                    if(tag2==undefined){
+                        tag2 = tag;
+                    }
 
+                    var item = {
+                        href:tag.href,
+                        alt:tag.alt,
+                        src:tag.src,
+                        other:tag.other,
+
+                        href2:tag2.href,
+                        alt2:tag2.alt,
+                        src2:tag2.src,
+                        other2:tag2.other,
+
+
+                    };
+                    self.stockArray.push(item);
+                }
+             },
             refresh: function () {
                 var self = this;
                 self.isFirst==0;
@@ -126,29 +151,28 @@
                     self.stockArray.splice(0, self.stockArray.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
-                                var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                if(tag2==undefined){
-                                    tag2 = tag;
-                                }
+                          self.parseJSON(json);
+                             var paramsCache = {
+                                 url:url,
+                                 typename: "mmore"+self.pageNo,
+                             };
+                             weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                                var item = {
-                                    href:tag.href,
-                                    alt:tag.alt,
-                                    src:tag.src,
-                                    other:tag.other,
-
-                                    href2:tag2.href,
-                                    alt2:tag2.alt,
-                                    src2:tag2.src,
-                                    other2:tag2.other,
-
-
+                             });
+                         }else {
+                            //异常
+                                console.log('异常====');
+                                //获取缓存
+                                var paramsCache = {
+                                    url:url,
+                                    typename: "mmore"+self.pageNo,
                                 };
-                                self.stockArray.push(item);
-                            }
-                        }
+                                weexEventModule.queryCache(paramsCache,function(e){
+                                    console.log('queryCache=='+e);
+                                    var json = JSON.parse(e);
+                                    self.parseJSON(json);
+                                });
+                         }
                     }
 
 

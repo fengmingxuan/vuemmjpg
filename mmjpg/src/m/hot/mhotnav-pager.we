@@ -85,26 +85,50 @@
                     self.buttomData.splice(0, self.buttomData.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var tag = json.list[i];
+                            self.parseJSON(json);
+                           var paramsCache = {
+                               url:mmjpg.getm_mmjpg_m_hot(),
+                               typename: "mhotnav",
+                           };
+                           weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                                var tab = {
-                                    index: i,
-                                    itemName: tag.alt,
-                                    itemNameColor: "item_text-select-0",
-                                    itemLineColor:"select_line_color-0",
-                                    id:"point_sub"+i,
-                                    isFirst:1,
-                                    href:mmjpg.getm_mmjpg_m_hot(),
-                                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-                                };
-                                console.log('tab==='+JSON.stringify(tab));
-                                self.buttomData.push(tab);
-                            }
-                        }
+                           });
+                       }else {
+                          //异常
+                              console.log('异常====');
+                              //获取缓存
+                              var paramsCache = {
+                                  url:mmjpg.getm_mmjpg_m_hot(),
+                                  typename: "mhotnav",
+                              };
+                              weexEventModule.queryCache(paramsCache,function(e){
+                                  console.log('queryCache=='+e);
+                                  var json = JSON.parse(e);
+                                  self.parseJSON(json);
+                              });
+                       }
                     }
                 });
             },
+            parseJSON:function (json) {
+                 var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var tag = json.list[i];
+
+                    var tab = {
+                        index: i,
+                        itemName: tag.alt,
+                        itemNameColor: "item_text-select-0",
+                        itemLineColor:"select_line_color-0",
+                        id:"point_sub"+i,
+                        isFirst:1,
+                        href:mmjpg.getm_mmjpg_m_hot(),
+                        // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+                    };
+                    console.log('tab==='+JSON.stringify(tab));
+                    self.buttomData.push(tab);
+                }
+             },
             onchange: function (params) {
                 var index = params.index;
                 this.setIndex(index);
