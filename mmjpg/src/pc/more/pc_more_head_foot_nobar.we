@@ -44,6 +44,7 @@
     var modal = require('@weex-module/modal');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
      var storage = require('@weex-module/storage');
+     var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
 
         data: {
@@ -129,41 +130,65 @@
                     self.stockArray.splice(0, self.stockArray.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=3) {
-                                var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                if(tag2==undefined){
-                                    tag2 = tag;
-                                }
-                                var tag3 = json.list[i+2];
-                                if(tag3==undefined){
-                                    tag3 = tag;
-                                }
-                                var item = {
-                                    href:tag.href,
-                                    alt:tag.alt,
-                                    src:tag.src,
-                                    other:tag.other,
+                            self.parseJSON(json);
+                           var paramsCache = {
+                               url:url,
+                               typename: "pcmorelist"+self.pageNo
+                           };
+                           weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                                    href2:tag2.href,
-                                    alt2:tag2.alt,
-                                    src2:tag2.src,
-                                    other2:tag2.other,
-
-                                    href3:tag3.href,
-                                    alt3:tag3.alt,
-                                    src3:tag3.src,
-                                    other3:tag3.other,
-                                };
-                                self.stockArray.push(item);
-                            }
-                        }
+                           });
+                       }else {
+                          //异常
+                              console.log('异常====');
+                              //获取缓存
+                              var paramsCache = {
+                                  url:url,
+                                  typename: "pcmorelist"+self.pageNo
+                              };
+                              weexEventModule.queryCache(paramsCache,function(e){
+                                  console.log('queryCache=='+e);
+                                  var json = JSON.parse(e);
+                                  self.parseJSON(json);
+                              });
+                       }
                     }
 
 
                 });
 
-            }
+            },
+              parseJSON:function (json) {
+                 var self = this;
+                for (var i = 0; i < json.list.length; i+=3) {
+                    var tag = json.list[i];
+                    var tag2 = json.list[i+1];
+                    if(tag2==undefined){
+                        tag2 = tag;
+                    }
+                    var tag3 = json.list[i+2];
+                    if(tag3==undefined){
+                        tag3 = tag;
+                    }
+                    var item = {
+                        href:tag.href,
+                        alt:tag.alt,
+                        src:tag.src,
+                        other:tag.other,
+
+                        href2:tag2.href,
+                        alt2:tag2.alt,
+                        src2:tag2.src,
+                        other2:tag2.other,
+
+                        href3:tag3.href,
+                        alt3:tag3.alt,
+                        src3:tag3.src,
+                        other3:tag3.other,
+                    };
+                    self.stockArray.push(item);
+                }
+             }
 
         }
 
