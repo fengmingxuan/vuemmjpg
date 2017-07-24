@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(231)
 	var __weex_script__ = __webpack_require__(232)
 
-	__weex_define__('@weex-component/5f17f5582ac21911c70f673b775c1a7f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/594f6934c3cb1fe1300436850c04a261', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/5f17f5582ac21911c70f673b775c1a7f',undefined,undefined)
+	__weex_bootstrap__('@weex-component/594f6934c3cb1fe1300436850c04a261',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3850,6 +3850,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3901,7 +3902,30 @@
 	            self.refresh_display = 'show';
 	            self.refresh();
 	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = tag;
+	                }
 
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other
+
+	                };
+	                self.stockArray.push(item);
+	            }
+	        },
 	        refresh: function refresh() {
 	            var self = this;
 	            self.isFirst == 0;
@@ -3921,27 +3945,24 @@
 	                self.stockArray.splice(0, self.stockArray.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = tag;
-	                            }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mmore" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                src: tag.src,
-	                                other: tag.other,
-
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                src2: tag2.src,
-	                                other2: tag2.other
-
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mmore" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });

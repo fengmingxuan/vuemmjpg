@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(191)
 	var __weex_script__ = __webpack_require__(192)
 
-	__weex_define__('@weex-component/d67ff54ddf1e45de7f0406fcd697f93e', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/4c8d7d6d6b94be77b42f9658a3ca809f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/d67ff54ddf1e45de7f0406fcd697f93e',undefined,undefined)
+	__weex_bootstrap__('@weex-component/4c8d7d6d6b94be77b42f9658a3ca809f',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2592,6 +2592,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        tags: [],
@@ -2620,13 +2621,34 @@
 	                self.tags.splice(0, self.tags.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.tags.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "mgood"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "mgood"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.tags.push(tag);
+	            }
 	        }
 	    },
 	    created: function created() {

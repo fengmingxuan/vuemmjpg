@@ -48,7 +48,7 @@
 	var __weex_style__ = __webpack_require__(196)
 	var __weex_script__ = __webpack_require__(197)
 
-	__weex_define__('@weex-component/e49d3ec5de7b1b5595614a9cd4c5d600', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/148da5a672a533db9e9968afedd6fe3b', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/e49d3ec5de7b1b5595614a9cd4c5d600',undefined,undefined)
+	__weex_bootstrap__('@weex-component/148da5a672a533db9e9968afedd6fe3b',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2462,7 +2462,6 @@
 	module.exports = {
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
-	        console.log(this.stockitem.picture);
 	    },
 	    data: function () {return {
 	        is_ios_text: 0,

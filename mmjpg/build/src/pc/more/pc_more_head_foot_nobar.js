@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(411)
 	var __weex_script__ = __webpack_require__(412)
 
-	__weex_define__('@weex-component/6e6ed702b1f9c5ec0919f318299a1952', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/158b772b76c34e231291bf4ac16b81bd', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/6e6ed702b1f9c5ec0919f318299a1952',undefined,undefined)
+	__weex_bootstrap__('@weex-component/158b772b76c34e231291bf4ac16b81bd',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3611,6 +3611,7 @@
 	__webpack_require__(251);
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        interval: 1000,
@@ -3629,13 +3630,34 @@
 	                console.log('json===' + json);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var stockitem = json.list[i];
-	                            self.sliderPages.push(stockitem);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.url,
+	                            typename: "pcmaintoppage"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.url,
+	                            typename: "pcmaintoppage"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var stockitem = json.list[i];
+	                self.sliderPages.push(stockitem);
+	            }
 	        },
 	        autoRefresh: function autoRefresh() {
 	            this.refresh();
@@ -3937,6 +3959,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        tags: [],
@@ -3967,13 +3990,34 @@
 	                self.tags.splice(0, self.tags.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.tags.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcmainheadlist"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcmainheadlist"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.tags.push(tag);
+	            }
 	        }
 	    },
 	    created: function created() {
@@ -4287,6 +4331,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        tags: [],
@@ -4317,13 +4362,34 @@
 	                self.tags.splice(0, self.tags.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.tags.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcmainlikelist"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcmainlikelist"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.tags.push(tag);
+	            }
 	        }
 	    },
 	    created: function created() {
@@ -4974,6 +5040,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -5048,37 +5115,58 @@
 	                self.stockArray.splice(0, self.stockArray.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 3) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = tag;
-	                            }
-	                            var tag3 = json.list[i + 2];
-	                            if (tag3 == undefined) {
-	                                tag3 = tag;
-	                            }
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                src: tag.src,
-	                                other: tag.other,
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmorelist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                src2: tag2.src,
-	                                other2: tag2.other,
-
-	                                href3: tag3.href,
-	                                alt3: tag3.alt,
-	                                src3: tag3.src,
-	                                other3: tag3.other
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmorelist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 3) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = tag;
+	                }
+	                var tag3 = json.list[i + 2];
+	                if (tag3 == undefined) {
+	                    tag3 = tag;
+	                }
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other,
+
+	                    href3: tag3.href,
+	                    alt3: tag3.alt,
+	                    src3: tag3.src,
+	                    other3: tag3.other
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }

@@ -285,7 +285,7 @@
 	//
 
 	var modal = weex.requireModule('modal');
-
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        stock_news_item: _stock_news_item2.default

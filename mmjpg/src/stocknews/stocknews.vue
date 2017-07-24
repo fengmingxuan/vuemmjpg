@@ -12,7 +12,7 @@
     import  stock_news_item from '../stocknews/stock_news_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
-
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             stock_news_item
@@ -47,7 +47,9 @@
                                 self.stockArray.push(json.dto[i]);
                             }
                         } },
-                    function(res){  }
+                    function(res){
+
+                      }
                 );
 
             }

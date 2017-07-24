@@ -35,8 +35,8 @@
     var stream = require('@weex-module/stream');
     var modal = require('@weex-module/modal');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
-     var storage = require('@weex-module/storage');
-      var weexEventModule = require('@weex-module/weexEventModule');
+    var storage = require('@weex-module/storage');
+    var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
 
         data: {
@@ -105,7 +105,7 @@
                     self.stockArray.splice(0, self.stockArray.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                          self.parseJSON(json);
+                             self.parseJSON(json);
                              var paramsCache = {
                                  url:url,
                                  typename: "pchotnewest"

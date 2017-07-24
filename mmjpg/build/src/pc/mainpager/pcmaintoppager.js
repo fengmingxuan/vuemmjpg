@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(256)
 	var __weex_script__ = __webpack_require__(257)
 
-	__weex_define__('@weex-component/c94a5bff27caeb77607ed704b44c10fb', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/4db43008633f16d88ea9d11a4b57e63a', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/c94a5bff27caeb77607ed704b44c10fb',undefined,undefined)
+	__weex_bootstrap__('@weex-component/4db43008633f16d88ea9d11a4b57e63a',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2512,6 +2512,7 @@
 	__webpack_require__(251);
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        interval: 1000,
@@ -2530,13 +2531,34 @@
 	                console.log('json===' + json);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var stockitem = json.list[i];
-	                            self.sliderPages.push(stockitem);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.url,
+	                            typename: "pcmaintoppage"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.url,
+	                            typename: "pcmaintoppage"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var stockitem = json.list[i];
+	                self.sliderPages.push(stockitem);
+	            }
 	        },
 	        autoRefresh: function autoRefresh() {
 	            this.refresh();

@@ -2787,6 +2787,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        tags: [],
@@ -2815,13 +2816,34 @@
 	                self.tags.splice(0, self.tags.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.tags.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: self.href,
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.tags.push(tag);
+	            }
 	        }
 	    },
 	    created: function created() {
@@ -3045,6 +3067,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        deviceHeight: 0,
@@ -3067,38 +3090,59 @@
 	                self.tabItems.splice(0, self.tabItems.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
-	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
-	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
-	                                src: mmjpg.getPathUrl('pc/main/pc_main.js', false),
-	                                visibility: 'visible',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tab.visibility = 'visible';
-	                            } else {
-	                                tab.visibility = 'hidden';
-	                            }
-	                            if (i == 0) {
-	                                tab.src = mmjpg.getPathUrl('pc/menu/pcslideoutmenu-pager.js', false);
-	                            } else if (i == 1) {
-	                                tab.src = mmjpg.getPathUrl('pc/hot/pchot-head-foot.js', false);
-	                            } else if (i == 2) {
-	                                tab.src = mmjpg.getPathUrl('pc/top/pc_top_head_foot_nobar.js', false);
-	                            } else if (i == 3) {
-	                                tab.src = mmjpg.getPathUrl('pc/more/pc_more_head_foot_nobar.js', false);
-	                            }
-	                            self.tabItems.push(tab);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg(),
+	                            typename: "pcmainnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg(),
+	                            typename: "pcmainnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tab = {
+	                    index: i,
+	                    title: tag.alt,
+	                    titleColor: '#000000',
+	                    icon: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                    image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
+	                    selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
+	                    src: mmjpg.getPathUrl('pc/main/pc_main.js', false),
+	                    visibility: 'visible',
+	                    taghref: tag.href
+	                };
+	                if (i == 0) {
+	                    tab.visibility = 'visible';
+	                } else {
+	                    tab.visibility = 'hidden';
+	                }
+	                if (i == 0) {
+	                    tab.src = mmjpg.getPathUrl('pc/menu/pcslideoutmenu-pager.js', false);
+	                } else if (i == 1) {
+	                    tab.src = mmjpg.getPathUrl('pc/hot/pchot-head-foot.js', false);
+	                } else if (i == 2) {
+	                    tab.src = mmjpg.getPathUrl('pc/top/pc_top_head_foot_nobar.js', false);
+	                } else if (i == 3) {
+	                    tab.src = mmjpg.getPathUrl('pc/more/pc_more_head_foot_nobar.js', false);
+	                }
+	                self.tabItems.push(tab);
+	            }
 	        },
 	        ready: function ready(e) {
 	            var vm = this;

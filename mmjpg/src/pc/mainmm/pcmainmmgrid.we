@@ -20,6 +20,7 @@
     var mmjpg = require('../../mmjpg');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
     var storage = require('@weex-module/storage');
+    var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
         data: {
             tags: [],
@@ -51,27 +52,51 @@
                     self.tags.splice(0, self.tags.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
-                                var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                if(tag2==undefined){
-                                    tag2 = tag;
-                                }
-                                var tagg={
-                                    href:tag.href,
-                                    src:tag.src,
-                                    alt:tag.alt,
-                                    href2:tag2.href,
-                                    src2:tag2.src,
-                                    alt2:tag2.alt,
-                                };
-                                self.tags.push(tagg);
-                            }
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:self.href,
+                                typename: "pcmainmmlist"
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else {
+                            //异常
+                            console.log('异常====');
+                            //获取缓存
+                            var paramsCache = {
+                                url:self.href,
+                                typename: "pcmainmmlist"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
                         }
                     }
 
 
                 });
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i+=2) {
+                    var tag = json.list[i];
+                    var tag2 = json.list[i+1];
+                    if(tag2==undefined){
+                        tag2 = tag;
+                    }
+                    var tagg={
+                        href:tag.href,
+                        src:tag.src,
+                        alt:tag.alt,
+                        href2:tag2.href,
+                        src2:tag2.src,
+                        alt2:tag2.alt,
+                    };
+                    self.tags.push(tagg);
+                }
             }
         },
         created: function () {

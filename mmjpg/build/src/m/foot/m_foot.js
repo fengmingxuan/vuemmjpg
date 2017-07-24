@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(199)
 	var __weex_script__ = __webpack_require__(200)
 
-	__weex_define__('@weex-component/74ba4dfdef1d94515fa539651e6afef0', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/21a3bbba78de139b267ad716e6c1ba1a', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/74ba4dfdef1d94515fa539651e6afef0',undefined,undefined)
+	__weex_bootstrap__('@weex-component/21a3bbba78de139b267ad716e6c1ba1a',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3561,7 +3561,6 @@
 	module.exports = {
 	    created: function created() {
 	        this.platform = this.$getConfig().env.platform;
-	        console.log(this.stockitem.picture);
 	    },
 	    data: function () {return {
 	        is_ios_text: 0,
@@ -3791,6 +3790,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3856,36 +3856,56 @@
 	                self.refresh_display = 'hide';
 	                self.showLoading = 'hide';
 	                self.refreshing = "false";
-	                var json;
-	                json = eval('(' + e + ')');
-	                console.log('json===' + json);
+	                var json = JSON.parse(e);
+	                console.log('e===' + e);
 	                self.stockArray.splice(0, self.stockArray.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = tag;
-	                            }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mother"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                src: tag.src,
-
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                src2: tag2.src
-
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mother"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
-	        }
+	        },
 
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = tag;
+	                }
+
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src
+
+	                };
+	                self.stockArray.push(item);
+	            }
+	        }
 	    }
 
 	};}

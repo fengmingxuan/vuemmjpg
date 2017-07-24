@@ -49,7 +49,7 @@
 	var __weex_style__ = __webpack_require__(210)
 	var __weex_script__ = __webpack_require__(211)
 
-	__weex_define__('@weex-component/e7397732a1cdc5e26a1640a1926ba465', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/92291fa0bed92d6599b59017b67b3e7f', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/e7397732a1cdc5e26a1640a1926ba465',undefined,undefined)
+	__weex_bootstrap__('@weex-component/92291fa0bed92d6599b59017b67b3e7f',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3600,6 +3600,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3668,13 +3669,34 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mhotlist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mhotlist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -4199,24 +4221,45 @@
 	                self.buttomData.splice(0, self.buttomData.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg_m_hot(),
+	                            typename: "mhotnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            var tab = {
-	                                index: i,
-	                                itemName: tag.alt,
-	                                itemNameColor: "item_text-select-0",
-	                                itemLineColor: "select_line_color-0",
-	                                id: "point_sub" + i,
-	                                isFirst: 1,
-	                                href: mmjpg.getm_mmjpg_m_hot()
-	                            };
-	                            console.log('tab===' + (0, _stringify2.default)(tab));
-	                            self.buttomData.push(tab);
-	                        }
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg_m_hot(),
+	                            typename: "mhotnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+
+	                var tab = {
+	                    index: i,
+	                    itemName: tag.alt,
+	                    itemNameColor: "item_text-select-0",
+	                    itemLineColor: "select_line_color-0",
+	                    id: "point_sub" + i,
+	                    isFirst: 1,
+	                    href: mmjpg.getm_mmjpg_m_hot()
+	                };
+	                console.log('tab===' + (0, _stringify2.default)(tab));
+	                self.buttomData.push(tab);
+	            }
 	        },
 	        onchange: function onchange(params) {
 	            var index = params.index;

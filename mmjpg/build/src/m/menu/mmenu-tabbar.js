@@ -47,7 +47,7 @@
 	var __weex_template__ = __webpack_require__(224)
 	var __weex_script__ = __webpack_require__(225)
 
-	__weex_define__('@weex-component/3c612bdab9c8d3a5d313d862df82de81', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/7d7e4e71a0aec2359d48aab53314fca4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -58,7 +58,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/3c612bdab9c8d3a5d313d862df82de81',undefined,undefined)
+	__weex_bootstrap__('@weex-component/7d7e4e71a0aec2359d48aab53314fca4',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -2356,8 +2356,7 @@
 	module.exports = {
 	  "type": "div",
 	  "style": {
-	    "flexDirection": "column",
-	    "height": function () {return this.deviceHeight}
+	    "flexDirection": "column"
 	  },
 	  "children": [
 	    {
@@ -2385,6 +2384,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        deviceHeight: 0,
@@ -2398,6 +2398,39 @@
 	        self.refresh();
 	    },
 	    methods: {
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tab = {
+	                    index: i,
+	                    title: tag.alt,
+	                    titleColor: '#000000',
+	                    icon: mmjpg.getImageUrl('./images/zoom.png'),
+	                    image: mmjpg.getImageUrl('./images/zoom.png'),
+	                    selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
+	                    src: mmjpg.getPathUrl('m/main/m_main.js', false),
+	                    visibility: 'visible',
+	                    taghref: tag.href
+	                };
+	                if (i == 0) {
+	                    tab.visibility = 'visible';
+	                } else {
+	                    tab.visibility = 'hidden';
+	                }
+
+	                if (i == 0) {
+	                    tab.src = mmjpg.getPathUrl('m/main/m_main.js', false);
+	                } else if (i == 1) {
+	                    tab.src = mmjpg.getPathUrl('m/hot/mhotnav-pager.js', false);
+	                } else if (i == 2) {
+	                    tab.src = mmjpg.getPathUrl('m/main/m_main.js', false);
+	                } else if (i == 3) {
+	                    tab.src = mmjpg.getPathUrl('m/more/m_more.js', false);
+	                }
+	                self.tabItems.push(tab);
+	            }
+	        },
 	        refresh: function refresh() {
 	            var self = this;
 	            weexJsoupModule.mmenu(mmjpg.getm_mmjpg_m(), function (e) {
@@ -2407,36 +2440,24 @@
 	                self.tabItems.splice(0, self.tabItems.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('m/main/m_main.js', false),
-	                                visibility: 'visible',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tab.visibility = 'visible';
-	                            } else {
-	                                tab.visibility = 'hidden';
-	                            }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg_m(),
+	                            typename: "mmenu"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            if (i == 0) {
-	                                tab.src = mmjpg.getPathUrl('m/main/m_main.js', false);
-	                            } else if (i == 1) {
-	                                tab.src = mmjpg.getPathUrl('m/hot/mhotnav-pager.js', false);
-	                            } else if (i == 2) {
-	                                tab.src = mmjpg.getPathUrl('m/main/m_main.js', false);
-	                            } else if (i == 3) {
-	                                tab.src = mmjpg.getPathUrl('m/more/m_more.js', false);
-	                            }
-	                            self.tabItems.push(tab);
-	                        }
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg_m(),
+	                            typename: "mmenu"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });

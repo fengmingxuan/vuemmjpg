@@ -48,7 +48,7 @@
 	var __weex_template__ = __webpack_require__(400)
 	var __weex_script__ = __webpack_require__(401)
 
-	__weex_define__('@weex-component/32594531bb80e26cdb8d135489ac54d4', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/ba9b7aa4bdc8e4c1fbfcd03b357d0cf7', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -59,7 +59,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/32594531bb80e26cdb8d135489ac54d4',undefined,undefined)
+	__weex_bootstrap__('@weex-component/ba9b7aa4bdc8e4c1fbfcd03b357d0cf7',undefined,undefined)
 
 /***/ }),
 
@@ -2335,6 +2335,7 @@
 	var mmjpg = __webpack_require__(142);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 	    data: function () {return {
 	        deviceHeight: 0,
@@ -2357,29 +2358,50 @@
 	                self.tabItems.splice(0, self.tabItems.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: mmjpg.getImageUrl('./images/zoom.png'),
-	                                image: mmjpg.getImageUrl('./images/zoom.png'),
-	                                selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-	                                src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
-	                                visibility: 'visible',
-	                                taghref: tag.href
-	                            };
-	                            if (i == 0) {
-	                                tab.visibility = 'visible';
-	                            } else {
-	                                tab.visibility = 'hidden';
-	                            }
-	                            self.tabItems.push(tab);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg(),
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: mmjpg.getm_mmjpg(),
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tab = {
+	                    index: i,
+	                    title: tag.alt,
+	                    titleColor: '#000000',
+	                    icon: mmjpg.getImageUrl('./images/zoom.png'),
+	                    image: mmjpg.getImageUrl('./images/zoom.png'),
+	                    selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
+	                    src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
+	                    visibility: 'visible',
+	                    taghref: tag.href
+	                };
+	                if (i == 0) {
+	                    tab.visibility = 'visible';
+	                } else {
+	                    tab.visibility = 'hidden';
+	                }
+	                self.tabItems.push(tab);
+	            }
 	        },
 	        ready: function ready(e) {
 	            var vm = this;

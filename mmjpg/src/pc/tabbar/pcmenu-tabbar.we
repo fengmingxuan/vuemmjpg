@@ -9,6 +9,7 @@
     var mmjpg = require('../../mmjpg');
     var weexJsoupModule = require('@weex-module/weexJsoupModule');
     var storage = require('@weex-module/storage');
+    var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
         data: {
             deviceHeight:0,
@@ -43,29 +44,53 @@
                     self.tabItems.splice(0, self.tabItems.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var  tag = json.list[i];
-                                var tab = {
-                                    index: i,
-                                    title: tag.alt,
-                                    titleColor: '#000000',
-                                    icon: mmjpg.getImageUrl('./images/zoom.png'),
-                                    image: mmjpg.getImageUrl('./images/zoom.png'),
-                                    selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
-                                    src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
-                                    visibility: 'visible',
-                                    taghref:tag.href
-                                };
-                                if(i==0){
-                                    tab.visibility = 'visible';
-                                }else{
-                                    tab.visibility = 'hidden';
-                                }
-                                self.tabItems.push(tab);
-                            }
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:mmjpg.getm_mmjpg(),
+                                typename: "pcsubnav"
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else {
+                            //异常
+                            console.log('异常====');
+                            //获取缓存
+                            var paramsCache = {
+                                url:mmjpg.getm_mmjpg(),
+                                typename: "pcsubnav"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
                         }
                     }
                 });
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var  tag = json.list[i];
+                    var tab = {
+                        index: i,
+                        title: tag.alt,
+                        titleColor: '#000000',
+                        icon: mmjpg.getImageUrl('./images/zoom.png'),
+                        image: mmjpg.getImageUrl('./images/zoom.png'),
+                        selectedImage: mmjpg.getImageUrl('./images/zoom.png'),
+                        src: mmjpg.getPathUrl('pc/main/pc_main_head_foot.js', false),
+                        visibility: 'visible',
+                        taghref:tag.href
+                    };
+                    if(i==0){
+                        tab.visibility = 'visible';
+                    }else{
+                        tab.visibility = 'hidden';
+                    }
+                    self.tabItems.push(tab);
+                }
             },
             ready: function (e) {
                 var vm = this;

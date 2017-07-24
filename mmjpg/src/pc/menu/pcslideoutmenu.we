@@ -20,6 +20,7 @@
     require('../main/pc_main_head_foot.we')
     require('weex-components');
     var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
+    var weexEventModule = require('@weex-module/weexEventModule');
     module.exports = {
         data: {
             srcmenu: mmjpg.getUrl('html/images/menu.png'),
