@@ -44,12 +44,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(292)
-	var __weex_template__ = __webpack_require__(296)
-	var __weex_style__ = __webpack_require__(297)
-	var __weex_script__ = __webpack_require__(298)
+	__webpack_require__(294)
+	var __weex_template__ = __webpack_require__(298)
+	var __weex_style__ = __webpack_require__(299)
+	var __weex_script__ = __webpack_require__(300)
 
-	__weex_define__('@weex-component/1fdf65f4565e95fd041a622c002188fe', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/5971b3e2dfe6ad54c8c80b49d1a33d00', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/1fdf65f4565e95fd041a622c002188fe',undefined,undefined)
+	__weex_bootstrap__('@weex-component/5971b3e2dfe6ad54c8c80b49d1a33d00',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3484,12 +3484,14 @@
 /* 289 */,
 /* 290 */,
 /* 291 */,
-/* 292 */
+/* 292 */,
+/* 293 */,
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(293)
-	var __weex_style__ = __webpack_require__(294)
-	var __weex_script__ = __webpack_require__(295)
+	var __weex_template__ = __webpack_require__(295)
+	var __weex_style__ = __webpack_require__(296)
+	var __weex_script__ = __webpack_require__(297)
 
 	__weex_define__('@weex-component/mzhuanti-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3506,7 +3508,7 @@
 
 
 /***/ }),
-/* 293 */
+/* 295 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3557,7 +3559,7 @@
 	}
 
 /***/ }),
-/* 294 */
+/* 296 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3627,7 +3629,7 @@
 	}
 
 /***/ }),
-/* 295 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3662,7 +3664,7 @@
 
 
 /***/ }),
-/* 296 */
+/* 298 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3734,7 +3736,7 @@
 	}
 
 /***/ }),
-/* 297 */
+/* 299 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3840,19 +3842,20 @@
 	}
 
 /***/ }),
-/* 298 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(292);
+	__webpack_require__(294);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3923,20 +3926,41 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mzhuanti"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mzhuanti"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }

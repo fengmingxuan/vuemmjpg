@@ -44,12 +44,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(162)
-	var __weex_template__ = __webpack_require__(166)
-	var __weex_style__ = __webpack_require__(167)
-	var __weex_script__ = __webpack_require__(168)
+	__webpack_require__(166)
+	var __weex_template__ = __webpack_require__(185)
+	var __weex_style__ = __webpack_require__(186)
+	var __weex_script__ = __webpack_require__(187)
 
-	__weex_define__('@weex-component/840fb32071ecc15fbff27a40ebf13de9', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/e1e353630f8de976f99d8ac8c80d1dd2', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/840fb32071ecc15fbff27a40ebf13de9',undefined,undefined)
+	__weex_bootstrap__('@weex-component/e1e353630f8de976f99d8ac8c80d1dd2',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3354,12 +3354,16 @@
 /* 159 */,
 /* 160 */,
 /* 161 */,
-/* 162 */
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(163)
-	var __weex_style__ = __webpack_require__(164)
-	var __weex_script__ = __webpack_require__(165)
+	var __weex_template__ = __webpack_require__(167)
+	var __weex_style__ = __webpack_require__(168)
+	var __weex_script__ = __webpack_require__(169)
 
 	__weex_define__('@weex-component/pctags-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3376,7 +3380,7 @@
 
 
 /***/ }),
-/* 163 */
+/* 167 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3409,7 +3413,7 @@
 	}
 
 /***/ }),
-/* 164 */
+/* 168 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3478,7 +3482,7 @@
 	}
 
 /***/ }),
-/* 165 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3511,7 +3515,22 @@
 
 
 /***/ }),
-/* 166 */
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3574,7 +3593,7 @@
 	}
 
 /***/ }),
-/* 167 */
+/* 186 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3679,19 +3698,20 @@
 	}
 
 /***/ }),
-/* 168 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(162);
+	__webpack_require__(166);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3757,13 +3777,34 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmaintags"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmaintags"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }

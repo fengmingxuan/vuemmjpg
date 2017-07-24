@@ -44,11 +44,11 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(272)
-	var __weex_style__ = __webpack_require__(273)
-	var __weex_script__ = __webpack_require__(274)
+	var __weex_template__ = __webpack_require__(277)
+	var __weex_style__ = __webpack_require__(278)
+	var __weex_script__ = __webpack_require__(279)
 
-	__weex_define__('@weex-component/3fb095f99a5831376a7062c4da1275b9', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/c5ee7a97d0ff2ee958ec797a7ce24edb', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -61,7 +61,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/3fb095f99a5831376a7062c4da1275b9',undefined,undefined)
+	__weex_bootstrap__('@weex-component/c5ee7a97d0ff2ee958ec797a7ce24edb',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3727,6 +3727,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3792,23 +3793,44 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                src: tag.src,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                src2: tag2.src,
-	                                alt2: tag2.alt
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcwidgetstop"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcwidgetstop"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    src: tag.src,
+	                    alt: tag.alt,
+	                    href2: tag2.href,
+	                    src2: tag2.src,
+	                    alt2: tag2.alt
+
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
@@ -4180,6 +4202,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -4245,13 +4268,34 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcwidgetslike"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcwidgetslike"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -4334,13 +4378,18 @@
 /* 224 */,
 /* 225 */,
 /* 226 */,
-/* 227 */
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(228), __esModule: true };
+	module.exports = { "default": __webpack_require__(233), __esModule: true };
 
 /***/ }),
-/* 228 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var core  = __webpack_require__(34)
@@ -4350,11 +4399,6 @@
 	};
 
 /***/ }),
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
 /* 234 */,
 /* 235 */,
 /* 236 */,
@@ -4370,12 +4414,17 @@
 /* 246 */,
 /* 247 */,
 /* 248 */,
-/* 249 */
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(250)
-	var __weex_style__ = __webpack_require__(251)
-	var __weex_script__ = __webpack_require__(252)
+	var __weex_template__ = __webpack_require__(255)
+	var __weex_style__ = __webpack_require__(256)
+	var __weex_script__ = __webpack_require__(257)
 
 	__weex_define__('@weex-component/pcpost-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -4392,7 +4441,7 @@
 
 
 /***/ }),
-/* 250 */
+/* 255 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4434,7 +4483,7 @@
 	}
 
 /***/ }),
-/* 251 */
+/* 256 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4501,7 +4550,7 @@
 	}
 
 /***/ }),
-/* 252 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -4537,10 +4586,10 @@
 
 
 /***/ }),
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4652,7 +4701,7 @@
 	}
 
 /***/ }),
-/* 257 */
+/* 262 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -4757,14 +4806,14 @@
 	}
 
 /***/ }),
-/* 258 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(249);
+	__webpack_require__(254);
 	__webpack_require__(138);
 	__webpack_require__(146);
 	var mzitu = __webpack_require__(86);
@@ -4772,6 +4821,7 @@
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -4846,13 +4896,34 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpostlist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
+
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpostlist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -4862,11 +4933,6 @@
 
 
 /***/ }),
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
 /* 264 */,
 /* 265 */,
 /* 266 */,
@@ -4875,7 +4941,12 @@
 /* 269 */,
 /* 270 */,
 /* 271 */,
-/* 272 */
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5008,7 +5079,7 @@
 	}
 
 /***/ }),
-/* 273 */
+/* 278 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5135,20 +5206,20 @@
 	}
 
 /***/ }),
-/* 274 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(227);
+	var _stringify = __webpack_require__(232);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(99);
-	__webpack_require__(275);
-	__webpack_require__(276);
+	__webpack_require__(280);
+	__webpack_require__(281);
 	var mzitu = __webpack_require__(86);
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
@@ -5193,24 +5264,45 @@
 	                self.buttomData.splice(0, self.buttomData.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: mzitu.getmzitu_pc(),
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            var tab = {
-	                                index: i,
-	                                itemName: tag.alt,
-	                                itemNameColor: "item_text-select-0",
-	                                itemLineColor: "select_line_color-0",
-	                                id: "point_sub" + i,
-	                                href: tag.href,
-	                                isFirst: 1
-	                            };
-	                            console.log('tab===' + (0, _stringify2.default)(tab));
-	                            self.buttomData.push(tab);
-	                        }
+	                        var paramsCache = {
+	                            url: mzitu.getmzitu_pc(),
+	                            typename: "pcsubnav"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+
+	                var tab = {
+	                    index: i,
+	                    itemName: tag.alt,
+	                    itemNameColor: "item_text-select-0",
+	                    itemLineColor: "select_line_color-0",
+	                    id: "point_sub" + i,
+	                    href: tag.href,
+	                    isFirst: 1
+	                };
+	                console.log('tab===' + (0, _stringify2.default)(tab));
+	                self.buttomData.push(tab);
+	            }
 	        },
 	        onchange: function onchange(params) {
 	            var index = params.index;
@@ -5247,13 +5339,13 @@
 
 
 /***/ }),
-/* 275 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(249)
-	var __weex_template__ = __webpack_require__(256)
-	var __weex_style__ = __webpack_require__(257)
-	var __weex_script__ = __webpack_require__(258)
+	__webpack_require__(254)
+	var __weex_template__ = __webpack_require__(261)
+	var __weex_style__ = __webpack_require__(262)
+	var __weex_script__ = __webpack_require__(263)
 
 	__weex_define__('@weex-component/pcpost-notitlebar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -5270,13 +5362,13 @@
 
 
 /***/ }),
-/* 276 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(277)
-	var __weex_template__ = __webpack_require__(281)
-	var __weex_style__ = __webpack_require__(282)
-	var __weex_script__ = __webpack_require__(283)
+	__webpack_require__(282)
+	var __weex_template__ = __webpack_require__(286)
+	var __weex_style__ = __webpack_require__(287)
+	var __weex_script__ = __webpack_require__(288)
 
 	__weex_define__('@weex-component/pczhuanti', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -5293,12 +5385,12 @@
 
 
 /***/ }),
-/* 277 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(278)
-	var __weex_style__ = __webpack_require__(279)
-	var __weex_script__ = __webpack_require__(280)
+	var __weex_template__ = __webpack_require__(283)
+	var __weex_style__ = __webpack_require__(284)
+	var __weex_script__ = __webpack_require__(285)
 
 	__weex_define__('@weex-component/pczhuanti-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -5315,7 +5407,7 @@
 
 
 /***/ }),
-/* 278 */
+/* 283 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5384,7 +5476,7 @@
 	}
 
 /***/ }),
-/* 279 */
+/* 284 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5453,7 +5545,7 @@
 	}
 
 /***/ }),
-/* 280 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -5490,7 +5582,7 @@
 
 
 /***/ }),
-/* 281 */
+/* 286 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5550,7 +5642,7 @@
 	}
 
 /***/ }),
-/* 282 */
+/* 287 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -5655,19 +5747,20 @@
 	}
 
 /***/ }),
-/* 283 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(277);
+	__webpack_require__(282);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -5738,23 +5831,44 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                src: tag.src,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                src2: tag2.src,
-	                                alt2: tag2.alt
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pczhuanti"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pczhuanti"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    src: tag.src,
+	                    alt: tag.alt,
+	                    href2: tag2.href,
+	                    src2: tag2.src,
+	                    alt2: tag2.alt
+
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }

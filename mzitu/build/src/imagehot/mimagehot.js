@@ -44,12 +44,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(170)
-	var __weex_template__ = __webpack_require__(180)
-	var __weex_style__ = __webpack_require__(181)
-	var __weex_script__ = __webpack_require__(182)
+	__webpack_require__(174)
+	var __weex_template__ = __webpack_require__(178)
+	var __weex_style__ = __webpack_require__(179)
+	var __weex_script__ = __webpack_require__(180)
 
-	__weex_define__('@weex-component/01a3d975b6eaac1019352fcc3a19f798', [], function(__weex_require__, __weex_exports__, __weex_module__) {
+	__weex_define__('@weex-component/9e15454ffe928ae6f1e3ec20659fb9c7', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
 	    if (__weex_exports__.__esModule && __weex_exports__.default) {
@@ -62,7 +62,7 @@
 
 	})
 
-	__weex_bootstrap__('@weex-component/01a3d975b6eaac1019352fcc3a19f798',undefined,undefined)
+	__weex_bootstrap__('@weex-component/9e15454ffe928ae6f1e3ec20659fb9c7',undefined,undefined)
 
 /***/ }),
 /* 1 */,
@@ -3362,12 +3362,16 @@
 /* 167 */,
 /* 168 */,
 /* 169 */,
-/* 170 */
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(171)
-	var __weex_style__ = __webpack_require__(172)
-	var __weex_script__ = __webpack_require__(173)
+	var __weex_template__ = __webpack_require__(175)
+	var __weex_style__ = __webpack_require__(176)
+	var __weex_script__ = __webpack_require__(177)
 
 	__weex_define__('@weex-component/pcimagehot-item', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -3384,7 +3388,7 @@
 
 
 /***/ }),
-/* 171 */
+/* 175 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3453,7 +3457,7 @@
 	}
 
 /***/ }),
-/* 172 */
+/* 176 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3522,7 +3526,7 @@
 	}
 
 /***/ }),
-/* 173 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -3559,13 +3563,7 @@
 
 
 /***/ }),
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */
+/* 178 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3625,7 +3623,7 @@
 	}
 
 /***/ }),
-/* 181 */
+/* 179 */
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -3730,19 +3728,20 @@
 	}
 
 /***/ }),
-/* 182 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
 	__webpack_require__(99);
 	__webpack_require__(4);
-	__webpack_require__(170);
+	__webpack_require__(174);
 	var mzitu = __webpack_require__(86);
 	var stream = __weex_require__('@weex-module/stream');
 	var modal = __weex_require__('@weex-module/modal');
 	var weexMzituJsoupModule = __weex_require__('@weex-module/weexMzituJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
+	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
 	module.exports = {
 
 	    data: function () {return {
@@ -3808,23 +3807,44 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                src: tag.src,
-	                                other: tag.alt,
-	                                href2: tag2.href,
-	                                src2: tag2.src,
-	                                other2: tag2.alt
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mimagehot"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常====');
 
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "mimagehot"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    src: tag.src,
+	                    other: tag.alt,
+	                    href2: tag2.href,
+	                    src2: tag2.src,
+	                    other2: tag2.alt
+
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
