@@ -36,6 +36,7 @@
     var meizitu = require('../meizitu');
     var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
     var img1 = '//gw.alicdn.com/tps/i1/TB1M3sQMpXXXXakXXXXApNeJVXX-360-360.png';
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             pcflink,
@@ -134,24 +135,51 @@
                     self.buttomData.splice(0, self.buttomData.length);
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i++) {
-                                var tag = json.list[i];
-                                var tab = {
-                                    index: i,
-                                    itemName: tag.alt,
-                                    itemNameColor: "item_text-select-0",
-                                    itemLineColor:"select_line_color-0",
-                                    item_text_select:"#555555",
-                                    id:"point_sub"+i,
-                                    href:tag.href,
-                                    isFirst:1,
-                                    indextab: 'tab'+i,
-                                    indexline: 'line'+i,
-                                    pageNo:i+''
-                                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-                                };
-                                console.log('tab==='+JSON.stringify(tab));
-                                self.buttomData.push(tab);
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcflinkTag"
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else {
+                            //异常
+                            console.log('异常====');
+                            //获取缓存
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcflinkTag"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
+                        }
+                    }
+                });
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var tag = json.list[i];
+                    var tab = {
+                        index: i,
+                        itemName: tag.alt,
+                        itemNameColor: "item_text-select-0",
+                        itemLineColor:"select_line_color-0",
+                        item_text_select:"#555555",
+                        id:"point_sub"+i,
+                        href:tag.href,
+                        isFirst:1,
+                        indextab: 'tab'+i,
+                        indexline: 'line'+i,
+                        pageNo:i+''
+                        // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+                    };
+                    console.log('tab==='+JSON.stringify(tab));
+                    self.buttomData.push(tab);
 //                                if(i==0){
 //                                    var pageNo = tab.pageNo;
 //                                    console.log("pageNo==="+pageNo)
@@ -159,11 +187,7 @@
 //                                        console.log('set [pageNo]:'+JSON.stringify(s));
 //                                    });
 //                                }
-                            }
-
-                        }
-                    }
-                });
+                }
             },
             onchange: function (params) {
                 var index = params.index;

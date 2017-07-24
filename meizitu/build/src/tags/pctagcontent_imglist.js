@@ -902,14 +902,36 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pclastest"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pclastest"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                tag.id = i + 1;
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -1143,13 +1165,35 @@
 	                self.imageList.splice(0, self.imageList.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.imageList.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpicnew"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpicnew"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.imageList.push(tag);
+	            }
 	        }
 
 	    }
@@ -1328,6 +1372,7 @@
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(86);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctagcontent_imglist_item: _pctagcontent_imglist_item2.default,
@@ -1442,33 +1487,55 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = {
-	                                    title: "",
-	                                    alt: "",
-	                                    href: "",
-	                                    src: ""
-	                                };
-	                            }
-	                            var item = {
-	                                title: tag.title,
-	                                alt: tag.alt,
-	                                href: tag.href,
-	                                src: tag.src,
-	                                title2: tag2.title,
-	                                alt2: tag2.alt,
-	                                href2: tag2.href,
-	                                src2: tag2.src
-	                            };
-	                            self.pagenumbers = tag.pagenumbers;
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctagimglist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctagimglist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {
+	                        title: "",
+	                        alt: "",
+	                        href: "",
+	                        src: ""
+	                    };
+	                }
+	                var item = {
+	                    title: tag.title,
+	                    alt: tag.alt,
+	                    href: tag.href,
+	                    src: tag.src,
+	                    title2: tag2.title,
+	                    alt2: tag2.alt,
+	                    href2: tag2.href,
+	                    src2: tag2.src
+	                };
+	                self.pagenumbers = tag.pagenumbers;
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }

@@ -899,14 +899,36 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pclastest"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pclastest"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                tag.id = i + 1;
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -1197,25 +1219,47 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 2) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                src: tag.src,
-	                                other: tag.other,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                src2: tag2.src,
-	                                other2: tag2.other
-	                            };
-	                            //                                self.pagenumbers = tag.pagenumbers;
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pchotpic"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pchotpic"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other
+	                };
+	                //                                self.pagenumbers = tag.pagenumbers;
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
@@ -1522,6 +1566,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcflink_item: _pcflink_item2.default,
@@ -1629,14 +1674,36 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcflink"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcflink"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                tag.id = i + 1;
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -2016,6 +2083,7 @@
 	var meizitu = __webpack_require__(6);
 	var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
 	var img1 = '//gw.alicdn.com/tps/i1/TB1M3sQMpXXXXakXXXXApNeJVXX-360-360.png';
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcflink: _pcflink2.default,
@@ -2114,35 +2182,57 @@
 	                self.buttomData.splice(0, self.buttomData.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                itemName: tag.alt,
-	                                itemNameColor: "item_text-select-0",
-	                                itemLineColor: "select_line_color-0",
-	                                item_text_select: "#555555",
-	                                id: "point_sub" + i,
-	                                href: tag.href,
-	                                isFirst: 1,
-	                                indextab: 'tab' + i,
-	                                indexline: 'line' + i,
-	                                pageNo: i + ''
-	                                // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-	                            };
-	                            console.log('tab===' + JSON.stringify(tab));
-	                            self.buttomData.push(tab);
-	                            //                                if(i==0){
-	                            //                                    var pageNo = tab.pageNo;
-	                            //                                    console.log("pageNo==="+pageNo)
-	                            //                                    storage.setItem('pageNo',pageNo,function(s){
-	                            //                                        console.log('set [pageNo]:'+JSON.stringify(s));
-	                            //                                    });
-	                            //                                }
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcflinkTag"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcflinkTag"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tab = {
+	                    index: i,
+	                    itemName: tag.alt,
+	                    itemNameColor: "item_text-select-0",
+	                    itemLineColor: "select_line_color-0",
+	                    item_text_select: "#555555",
+	                    id: "point_sub" + i,
+	                    href: tag.href,
+	                    isFirst: 1,
+	                    indextab: 'tab' + i,
+	                    indexline: 'line' + i,
+	                    pageNo: i + ''
+	                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                };
+	                console.log('tab===' + JSON.stringify(tab));
+	                self.buttomData.push(tab);
+	                //                                if(i==0){
+	                //                                    var pageNo = tab.pageNo;
+	                //                                    console.log("pageNo==="+pageNo)
+	                //                                    storage.setItem('pageNo',pageNo,function(s){
+	                //                                        console.log('set [pageNo]:'+JSON.stringify(s));
+	                //                                    });
+	                //                                }
+	            }
 	        },
 	        onchange: function onchange(params) {
 	            var index = params.index;
@@ -2467,6 +2557,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcmaincontent_imglist_item: _pcmaincontent_imglist_item2.default,
@@ -2585,14 +2676,36 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.pagenumbers = tag.pagenumbers;
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmaincontent" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcmaincontent" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.pagenumbers = tag.pagenumbers;
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -2932,13 +3045,35 @@
 	                self.imageList.splice(0, self.imageList.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.imageList.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpicnew"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcpicnew"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.imageList.push(tag);
+	            }
 	        }
 
 	    }
@@ -3190,6 +3325,7 @@
 	var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
 	var meizitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctags_item: _pctags_item2.default,
@@ -3287,14 +3423,36 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            tag.id = i + 1;
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctags"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctags"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                tag.id = i + 1;
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }

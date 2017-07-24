@@ -29,6 +29,7 @@
     var weexMeizituJsoupModule = weex.requireModule('weexMeizituJsoupModule');
     var meizitu = require('../meizitu');
     var storage = weex.requireModule('storage');
+    var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
             mtuijian_imglist_item,
@@ -137,33 +138,58 @@
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
-                            for (var i = 0; i < json.list.length; i+=2) {
-                                var tag = json.list[i];
-                                var tag2 = json.list[i+1];
-                                if(tag2==undefined){
-                                    tag2={
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:url,
+                                typename: "mmainlist"
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                                    };
-                                }
-                                var item={
-                                    href:tag.href,
-                                    alt:tag.alt,
-                                    src:tag.src,
-                                    other:tag.other,
-                                    href2:tag2.href,
-                                    alt2:tag2.alt,
-                                    src2:tag2.src,
-                                    other2:tag2.other,
-                                };
-//                                self.pagenumbers = tag.pagenumbers;
-                                self.stockArray.push(item);
-                            }
+                            });
+                        }else {
+                            //异常
+                            console.log('异常====');
+                            //获取缓存
+                            var paramsCache = {
+                                url:url,
+                                typename: "mmainlist"
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
                         }
                     }
 
 
                 });
-            }
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i+=2) {
+                    var tag = json.list[i];
+                    var tag2 = json.list[i+1];
+                    if(tag2==undefined){
+                        tag2={
+
+                        };
+                    }
+                    var item={
+                        href:tag.href,
+                        alt:tag.alt,
+                        src:tag.src,
+                        other:tag.other,
+                        href2:tag2.href,
+                        alt2:tag2.alt,
+                        src2:tag2.src,
+                        other2:tag2.other,
+                    };
+//                                self.pagenumbers = tag.pagenumbers;
+                    self.stockArray.push(item);
+                }
+            },
+
 
         }
 
