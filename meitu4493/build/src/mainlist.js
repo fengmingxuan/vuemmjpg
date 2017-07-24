@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(89)
+	__vue_styles__.push(__webpack_require__(92)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(90)
+	__vue_exports__ = __webpack_require__(93)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(91)
+	var __vue_template__ = __webpack_require__(94)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -299,7 +299,7 @@
 
 /***/ }),
 
-/***/ 89:
+/***/ 92:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -327,7 +327,7 @@
 
 /***/ }),
 
-/***/ 90:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -360,6 +360,8 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('umengpush/pc_push_main_slider');
+	        this.rows.push('main/pcmain_slider');
 	        this.rows.push('starmain/pcstar_main_spnews_imglist');
 	        this.rows.push('starmain/pcstar_maintype_imglist');
 	        this.rows.push('starmain/pcstar_main_slider');
@@ -420,7 +422,7 @@
 
 /***/ }),
 
-/***/ 91:
+/***/ 94:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
