@@ -645,7 +645,7 @@
 	var modal = weex.requireModule('modal');
 	var weexZjitoJsoupModule = weex.requireModule('weexZjitoJsoupModule');
 	var zjito = __webpack_require__(6);
-
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pccatgrid_item_v: _pccatgrid_item_v2.default,
@@ -728,45 +728,67 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 4) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = {
-	                                    href: "",
-	                                    alt: ""
-	                                };
-	                            }
-	                            var tag3 = json.list[i + 2];
-	                            if (tag3 == undefined) {
-	                                tag3 = {
-	                                    href: "",
-	                                    alt: ""
-	                                };
-	                            }
-	                            var tag4 = json.list[i + 3];
-	                            if (tag4 == undefined) {
-	                                tag4 = {
-	                                    href: "",
-	                                    alt: ""
-	                                };
-	                            }
-	                            self.title = tag.title;
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                href3: tag3.href,
-	                                alt3: tag3.alt,
-	                                href4: tag4.href,
-	                                alt4: tag4.alt
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pccatlist"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pccatlist"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 4) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {
+	                        href: "",
+	                        alt: ""
+	                    };
+	                }
+	                var tag3 = json.list[i + 2];
+	                if (tag3 == undefined) {
+	                    tag3 = {
+	                        href: "",
+	                        alt: ""
+	                    };
+	                }
+	                var tag4 = json.list[i + 3];
+	                if (tag4 == undefined) {
+	                    tag4 = {
+	                        href: "",
+	                        alt: ""
+	                    };
+	                }
+	                self.title = tag.title;
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    href3: tag3.href,
+	                    alt3: tag3.alt,
+	                    href4: tag4.href,
+	                    alt4: tag4.alt
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
