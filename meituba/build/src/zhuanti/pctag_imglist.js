@@ -936,6 +936,7 @@
 	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctaglist_item: _pctaglist_item2.default,
@@ -1055,43 +1056,65 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 4) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = {};
-	                            }
-	                            var tag3 = json.list[i + 2];
-	                            if (tag3 == undefined) {
-	                                tag3 = {};
-	                            }
-	                            var tag4 = json.list[i + 3];
-	                            if (tag4 == undefined) {
-	                                tag4 = {};
-	                            }
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                id: i,
-	                                backgroundColor: '#f60',
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                id2: i + 1,
-	                                backgroundColor2: '#09f',
-	                                href3: tag3.href,
-	                                alt3: tag3.alt,
-	                                id3: i + 2,
-	                                backgroundColor3: '#7a7a7a',
-	                                href4: tag4.href,
-	                                alt4: tag4.alt,
-	                                id4: i + 3,
-	                                backgroundColor4: '#393'
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctaglists"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctaglists"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 4) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {};
+	                }
+	                var tag3 = json.list[i + 2];
+	                if (tag3 == undefined) {
+	                    tag3 = {};
+	                }
+	                var tag4 = json.list[i + 3];
+	                if (tag4 == undefined) {
+	                    tag4 = {};
+	                }
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    id: i,
+	                    backgroundColor: '#f60',
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    id2: i + 1,
+	                    backgroundColor2: '#09f',
+	                    href3: tag3.href,
+	                    alt3: tag3.alt,
+	                    id3: i + 2,
+	                    backgroundColor3: '#7a7a7a',
+	                    href4: tag4.href,
+	                    alt4: tag4.alt,
+	                    id4: i + 3,
+	                    backgroundColor4: '#393'
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
@@ -1263,6 +1286,7 @@
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(15);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctag_imglist_item: _pctag_imglist_item2.default,
@@ -1372,13 +1396,35 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctaglist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pctaglist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }

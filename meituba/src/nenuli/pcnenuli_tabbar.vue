@@ -10,7 +10,7 @@
     var modal = weex.requireModule('modal');
     var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
     var meituba = require('../meituba');
-
+    var weexEventModule = weex.requireModule('weexEventModule');
   module.exports = {
     data: function () {
       return {
@@ -78,48 +78,72 @@
 //                    }
                 if (json.list) {
                     if (json.list && json.list.length > 0) {
-                        for (var i = 0; i < json.list.length; i++) {
-                            var tag = json.list[i];
-                            var tabitem ={
-                                index: i,
-                                title: tag.alt,
-                                titleColor: '#000000',
-                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-                                image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-                                src: meituba.getPathUrl('channelimg/pcchannel_imglist.js'),
-                                visibility: 'hidden',
-                                taghref:tag.href
-                            };
-                            console.log('pageNo=='+self.pageNo);
-                            if(self.pageNo==7){
-                                if(i==0){
-                                    tabitem.visibility = 'visible';
-                                    tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_main.js');
-                                }else{
-                                    tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_imglist.js');
-                                }
-                            }else{
-                                if(i==0){
-                                    tabitem.visibility = 'visible';
-                                    tabitem.src= meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
-                                }else{
-                                    tabitem.src= meituba.getPathUrl('channelimg/pcchannel_imglist.js');
-                                }
-                            }
+                        self.parseJSON(json);
+                        var paramsCache = {
+                            url:url,
+                            typename: "pcnenuli"
+                        };
+                        weexEventModule.saveCache(paramsCache,json,function(ee){
 
-                            self.tabItems.push(tabitem);
-                        }
-                        var taghref = self.tabItems[0].taghref;
-                        storage.setItem('taghref',taghref,function(s){
-                            console.log('set [taghref]:'+JSON.stringify(s));
+                        });
+                    }else {
+                        //异常
+                        console.log('异常====');
+                        //获取缓存
+                        var paramsCache = {
+                            url:url,
+                            typename: "pcnenuli"
+                        };
+                        weexEventModule.queryCache(paramsCache,function(e){
+                            console.log('queryCache=='+e);
+                            var json = JSON.parse(e);
+                            self.parseJSON(json);
                         });
                     }
                 }
 
 
             });
-        }
+        },
+        parseJSON:function (json) {
+            var self = this;
+            for (var i = 0; i < json.list.length; i++) {
+                var tag = json.list[i];
+                var tabitem ={
+                    index: i,
+                    title: tag.alt,
+                    titleColor: '#000000',
+                    icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+                    image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+                    selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
+                    src: meituba.getPathUrl('channelimg/pcchannel_imglist.js'),
+                    visibility: 'hidden',
+                    taghref:tag.href
+                };
+                console.log('pageNo=='+self.pageNo);
+                if(self.pageNo==7){
+                    if(i==0){
+                        tabitem.visibility = 'visible';
+                        tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_main.js');
+                    }else{
+                        tabitem.src= meituba.getPathUrl('channelother/pcchannel_other_imglist.js');
+                    }
+                }else{
+                    if(i==0){
+                        tabitem.visibility = 'visible';
+                        tabitem.src= meituba.getPathUrl('mainnenu/pcmainnenu_imglist.js');
+                    }else{
+                        tabitem.src= meituba.getPathUrl('channelimg/pcchannel_imglist.js');
+                    }
+                }
+
+                self.tabItems.push(tabitem);
+            }
+            var taghref = self.tabItems[0].taghref;
+            storage.setItem('taghref',taghref,function(s){
+                console.log('set [taghref]:'+JSON.stringify(s));
+            });
+        },
     }
   }
 </script>

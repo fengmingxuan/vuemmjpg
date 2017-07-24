@@ -340,7 +340,7 @@
 	var modal = weex.requireModule('modal');
 	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
 	var meituba = __webpack_require__(6);
-
+	var weexEventModule = weex.requireModule('weexEventModule');
 	module.exports = {
 	    data: function data() {
 	        return {
@@ -404,29 +404,52 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tabitem = {
-	                                index: i,
-	                                title: tag.alt,
-	                                titleColor: '#000000',
-	                                icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-	                                image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
-	                                selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-	                                src: meituba.getPathUrl('article/pcarticle_channelupdate.js'),
-	                                visibility: 'hidden',
-	                                taghref: tag.href,
-	                                pageNo: i + ''
-	                            };
-	                            if (i == 0) {
-	                                tabitem.visibility = 'visible';
-	                            } else {}
-	                            self.tabItems.push(tabitem);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleschannel"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleschannel"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tabitem = {
+	                    index: i,
+	                    title: tag.alt,
+	                    titleColor: '#000000',
+	                    icon: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+	                    image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
+	                    selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
+	                    src: meituba.getPathUrl('article/pcarticle_channelupdate.js'),
+	                    visibility: 'hidden',
+	                    taghref: tag.href,
+	                    pageNo: i + ''
+	                };
+	                if (i == 0) {
+	                    tabitem.visibility = 'visible';
+	                } else {}
+	                self.tabItems.push(tabitem);
+	            }
 	        }
+
 	    }
 	};
 

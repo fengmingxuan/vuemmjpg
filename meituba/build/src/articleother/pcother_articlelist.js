@@ -277,6 +277,7 @@
 	var meituba = __webpack_require__(6);
 	var img0 = '//gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg';
 	var img1 = '//gw.alicdn.com/tps/i1/TB1M3sQMpXXXXakXXXXApNeJVXX-360-360.png';
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcarticle_channelupdate_notitlebar: _pcarticle_channelupdate_notitlebar2.default,
@@ -373,28 +374,50 @@
 	                self.buttomData.splice(0, self.buttomData.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            var tab = {
-	                                index: i,
-	                                itemName: tag.alt,
-	                                itemNameColor: "item_text-select-0",
-	                                itemLineColor: "select_line_color-0",
-	                                item_text_select: "#555555",
-	                                id: "point_sub" + i,
-	                                href: tag.href,
-	                                isFirst: 1,
-	                                indextab: 'tab' + i,
-	                                indexline: 'line' + i,
-	                                pageNo: i + ''
-	                                // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
-	                            };
-	                            console.log('tab===' + JSON.stringify(tab));
-	                            self.buttomData.push(tab);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleschannel"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleschannel"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                var tab = {
+	                    index: i,
+	                    itemName: tag.alt,
+	                    itemNameColor: "item_text-select-0",
+	                    itemLineColor: "select_line_color-0",
+	                    item_text_select: "#555555",
+	                    id: "point_sub" + i,
+	                    href: tag.href,
+	                    isFirst: 1,
+	                    indextab: 'tab' + i,
+	                    indexline: 'line' + i,
+	                    pageNo: i + ''
+	                    // UrlUnSelect:"http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png"
+	                };
+	                console.log('tab===' + JSON.stringify(tab));
+	                self.buttomData.push(tab);
+	            }
 	        },
 	        onchange: function onchange(params) {
 	            var index = params.index;
@@ -1137,6 +1160,7 @@
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(15);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcarticle_channelupdate_item: _pcarticle_channelupdate_item2.default,
@@ -1255,13 +1279,35 @@
 	                //                    }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlesupdate"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlesupdate"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -1669,6 +1715,7 @@
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(15);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcarticle_foot_item: _pcarticle_foot_item2.default,
@@ -1780,13 +1827,35 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlefoot"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlefoot"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -2058,6 +2127,7 @@
 	var weexMeitubaJsoupModule = weex.requireModule('weexMeitubaJsoupModule');
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pctaglist_item: _pctaglist_item2.default,
@@ -2157,43 +2227,65 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i += 4) {
-	                            var tag = json.list[i];
-	                            var tag2 = json.list[i + 1];
-	                            if (tag2 == undefined) {
-	                                tag2 = {};
-	                            }
-	                            var tag3 = json.list[i + 2];
-	                            if (tag3 == undefined) {
-	                                tag3 = {};
-	                            }
-	                            var tag4 = json.list[i + 3];
-	                            if (tag4 == undefined) {
-	                                tag4 = {};
-	                            }
-	                            var item = {
-	                                href: tag.href,
-	                                alt: tag.alt,
-	                                id: i,
-	                                backgroundColor: '#f60',
-	                                href2: tag2.href,
-	                                alt2: tag2.alt,
-	                                id2: i + 1,
-	                                backgroundColor2: '#09f',
-	                                href3: tag3.href,
-	                                alt3: tag3.alt,
-	                                id3: i + 2,
-	                                backgroundColor3: '#7a7a7a',
-	                                href4: tag4.href,
-	                                alt4: tag4.alt,
-	                                id4: i + 3,
-	                                backgroundColor4: '#393'
-	                            };
-	                            self.stockArray.push(item);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleshowtag"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticleshowtag"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i += 4) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {};
+	                }
+	                var tag3 = json.list[i + 2];
+	                if (tag3 == undefined) {
+	                    tag3 = {};
+	                }
+	                var tag4 = json.list[i + 3];
+	                if (tag4 == undefined) {
+	                    tag4 = {};
+	                }
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    id: i,
+	                    backgroundColor: '#f60',
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    id2: i + 1,
+	                    backgroundColor2: '#09f',
+	                    href3: tag3.href,
+	                    alt3: tag3.alt,
+	                    id3: i + 2,
+	                    backgroundColor3: '#7a7a7a',
+	                    href4: tag4.href,
+	                    alt4: tag4.alt,
+	                    id4: i + 3,
+	                    backgroundColor4: '#393'
+	                };
+	                self.stockArray.push(item);
+	            }
 	        }
 
 	    }
@@ -2760,13 +2852,35 @@
 	                self.imageList.splice(0, self.imageList.length);
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.imageList.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlenew"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlenew"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.imageList.push(tag);
+	            }
 	        }
 
 	    }
@@ -3063,6 +3177,7 @@
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(15);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcarticlenew_item: _pcarticlenew_item2.default,
@@ -3174,13 +3289,35 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlenewlike"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcarticlenewlike"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
@@ -3483,6 +3620,7 @@
 	var meituba = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(15);
+	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
 	        pcarticlelist_item: _pcarticlelist_item2.default,
@@ -3597,13 +3735,35 @@
 	                }
 	                if (json.list) {
 	                    if (json.list && json.list.length > 0) {
-	                        for (var i = 0; i < json.list.length; i++) {
-	                            var tag = json.list[i];
-	                            self.stockArray.push(tag);
-	                        }
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcotherarticlelist"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcotherarticlelist"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
 	                    }
 	                }
 	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
 	        }
 
 	    }
