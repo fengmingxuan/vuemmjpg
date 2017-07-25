@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(356)
+	__vue_styles__.push(__webpack_require__(381)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(357)
+	__vue_exports__ = __webpack_require__(382)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(358)
+	var __vue_template__ = __webpack_require__(383)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -380,9 +380,21 @@
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
 	    pc_star_main:"https://www.4493.com/star/",
-	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
+	    m_meitu:"https://m.4493.com/",
+	    m_xingganmote:"https://m.4493.com/xingganmote/"
 
 
+	};
+	exports.getm_xingganmote = function () {
+	    var url = MEITU.m_xingganmote;
+	    console.log('m_xingganmote==' + url);
+	    return url;
+	};
+	exports.getm_meitu = function () {
+	    var url = MEITU.m_meitu;
+	    console.log('m_meitu==' + url);
+	    return url;
 	};
 	exports.getpc_home_jingxuan = function () {
 	    var url = MEITU.pc_home_jingxuan;
@@ -608,7 +620,7 @@
 
 /***/ }),
 
-/***/ 356:
+/***/ 381:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -629,7 +641,7 @@
 
 /***/ }),
 
-/***/ 357:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -803,7 +815,7 @@
 
 /***/ }),
 
-/***/ 358:
+/***/ 383:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

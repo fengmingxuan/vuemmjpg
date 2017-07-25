@@ -45,7 +45,7 @@
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
-                title:"明星",
+                title:"主页",
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
@@ -186,6 +186,7 @@
                 var self = this;
                 for (var i = 0; i < json.list.length; i++) {
                     var tag = json.list[i];
+                    tag.id = i+1;
                     self.tpicNArray.push(tag);
                 }
             },

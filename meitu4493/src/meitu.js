@@ -24,9 +24,21 @@ var MEITU = {
     pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
     pc_mingxing_section:"https://www.4493.com/star/section",
     pc_star_main:"https://www.4493.com/star/",
-    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
+    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
+    m_meitu:"https://m.4493.com/",
+    m_xingganmote:"https://m.4493.com/xingganmote/"
 
 
+};
+exports.getm_xingganmote = function () {
+    var url = MEITU.m_xingganmote;
+    console.log('m_xingganmote==' + url);
+    return url;
+};
+exports.getm_meitu = function () {
+    var url = MEITU.m_meitu;
+    console.log('m_meitu==' + url);
+    return url;
 };
 exports.getpc_home_jingxuan = function () {
     var url = MEITU.pc_home_jingxuan;

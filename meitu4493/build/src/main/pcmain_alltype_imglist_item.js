@@ -120,9 +120,21 @@
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
 	    pc_star_main:"https://www.4493.com/star/",
-	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
+	    m_meitu:"https://m.4493.com/",
+	    m_xingganmote:"https://m.4493.com/xingganmote/"
 
 
+	};
+	exports.getm_xingganmote = function () {
+	    var url = MEITU.m_xingganmote;
+	    console.log('m_xingganmote==' + url);
+	    return url;
+	};
+	exports.getm_meitu = function () {
+	    var url = MEITU.m_meitu;
+	    console.log('m_meitu==' + url);
+	    return url;
 	};
 	exports.getpc_home_jingxuan = function () {
 	    var url = MEITU.pc_home_jingxuan;
@@ -305,21 +317,173 @@
 
 /***/ }),
 
-/***/ 22:
+/***/ 92:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
+	  },
+	  "img": {
+	    "height": 440,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 35,
+	    "padding": 5,
+	    "flex": 1,
+	    "color": "#cc3399",
+	    "fontSize:active": 22,
+	    "flex:active": 1,
+	    "padding:active": 5,
+	    "color:active": "#d42591"
+	  },
+	  "txt2": {
+	    "fontSize": 22,
+	    "flex": 1
+	  },
+	  "icon": {
+	    "width": 30,
+	    "height": 30
+	  }
+	}
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _pcmain_alltype_imglist_subitem = __webpack_require__(94);
+
+	var _pcmain_alltype_imglist_subitem2 = _interopRequireDefault(_pcmain_alltype_imglist_subitem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var weexEventModule = weex.requireModule('weexEventModule'); //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meitu = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+	    components: {
+	        pcmain_alltype_imglist_subitem: _pcmain_alltype_imglist_subitem2.default
+	    },
+	    props: {
+	        tpicNitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        toitem: function toitem(json) {
+	            var stockArray = [];
+	            if (json.list) {
+	                if (json.list && json.list.length > 0) {
+	                    for (var i = 0; i < json.list.length; i += 2) {
+	                        var tag = json.list[i];
+	                        var tag2 = json.list[i + 1];
+	                        if (tag2 == undefined) {
+	                            tag2 = {
+	                                href: "",
+	                                alt: "",
+	                                src: "",
+	                                other: "",
+	                                title: ""
+	                            };
+	                        }
+
+	                        var item = {
+	                            id: json.id,
+	                            href: tag.href,
+	                            alt: tag.title,
+	                            src: tag.src,
+	                            other: tag.other,
+	                            title: tag.title,
+	                            showimg: true,
+	                            href2: tag2.href,
+	                            alt2: tag2.title,
+	                            src2: tag2.src,
+	                            other2: tag2.other,
+	                            title2: tag2.title,
+	                            showimg2: true,
+	                            id2: json.id
+	                        };
+	                        if (tag.src == undefined || tag.src == '') {
+	                            item.showimg = false;
+	                        } else {
+	                            item.showimg = true;
+	                        }
+
+	                        if (tag2.src == undefined || tag2.src == '') {
+	                            item.showimg2 = false;
+	                        } else {
+	                            item.showimg2 = true;
+	                        }
+	                        stockArray.push(item);
+	                    }
+	                }
+	            }
+	            return stockArray;
+	        },
+
+	        getImgUrl: function getImgUrl(url) {
+	            return meitu.getImageUrl(url);
+	        },
+	        todetail: function todetail(e, alt) {
+	            console.log('main list===' + e);
+	            var name = "mingxing/pcmingxing_imglist";
+	            var params = {
+	                url: meitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(23)
+	__vue_styles__.push(__webpack_require__(95)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(24)
+	__vue_exports__ = __webpack_require__(96)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(25)
+	var __vue_template__ = __webpack_require__(97)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -331,10 +495,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/childnav/pcpic_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/main/pcmain_alltype_imglist_subitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0ceda106"
+	__vue_options__._scopeId = "data-v-50b7cfd9"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -350,7 +514,7 @@
 
 /***/ }),
 
-/***/ 23:
+/***/ 95:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -389,7 +553,7 @@
 
 /***/ }),
 
-/***/ 24:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -439,9 +603,45 @@
 	        getImgUrl: function getImgUrl(url) {
 	            return meitu.getImageUrl(url);
 	        },
-	        todetail: function todetail(e, alt) {
-	            console.log('main list===' + e);
-	            if (e.indexOf('http://www.ys8.com') != -1) {
+	        todetail: function todetail(id, e, alt) {
+	            console.log('main list===' + e + "id==" + id);
+	            //bizhi.4493.com
+	            if (id == 2) {
+	                if (e.indexOf('.htm') != -1) {
+	                    var name = "image/pcimage_main_imglist";
+	                    var params = {
+	                        url: meitu.getDefaultUrl(name),
+	                        animated: "true",
+	                        options: {
+	                            taghref: e,
+	                            title: alt
+	                        }
+	                    };
+
+	                    weexNavigatorModule.push(params, function (event) {
+	                        // modal.toast({ message: 'callback: ' + event })
+	                    });
+	                } else if (e.indexOf('star') != -1) {
+	                    var name = "mingxing/pcmingxing_imglist";
+	                    var params = {
+	                        url: meitu.getDefaultUrl(name),
+	                        animated: "true",
+	                        options: {
+	                            taghref: e,
+	                            title: alt
+	                        }
+	                    };
+
+	                    weexNavigatorModule.push(params, function (event) {
+	                        // modal.toast({ message: 'callback: ' + event })
+	                    });
+	                } else {
+	                    weexEventModule.startWebViewActivity(e);
+	                }
+
+	                return;
+	            }
+	            if (e.indexOf('http://www.ys8.com') != -1 || e.indexOf('bizhi.4493.com') != -1) {
 	                weexEventModule.startWebViewActivity(e);
 	            } else {
 	                var name = "image/pcimage_main_imglist";
@@ -464,7 +664,7 @@
 
 /***/ }),
 
-/***/ 25:
+/***/ 97:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -478,17 +678,22 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.title)
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.title)
 	      }
 	    }
-	  }, [_c('image', {
+	  }, [(_vm.stockitem.showimg) ? _c('image', {
 	    staticClass: ["img"],
 	    attrs: {
 	      "src": _vm.stockitem.src
 	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('div', {
+	  }) : _vm._e(), _c('text', {
+	    staticClass: ["txt"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.id, _vm.stockitem.href, _vm.stockitem.title)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), (_vm.stockitem.showimg) ? _c('div', {
 	    staticStyle: {
 	      flexDirection: "row",
 	      flex: "1"
@@ -507,7 +712,7 @@
 	    }
 	  }), _c('text', {
 	    staticClass: ["txt2"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])]), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.stockitem.other))])]) : _vm._e()]), _c('div', {
 	    staticStyle: {
 	      width: "5px"
 	    }
@@ -515,17 +720,22 @@
 	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.title2)
+	        _vm.todetail(_vm.stockitem.id2, _vm.stockitem.href2, _vm.stockitem.title2)
 	      }
 	    }
-	  }, [_c('image', {
+	  }, [(_vm.stockitem.showimg2) ? _c('image', {
 	    staticClass: ["img"],
 	    attrs: {
 	      "src": _vm.stockitem.src2
 	    }
-	  }), _c('text', {
-	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.title2))]), _c('div', {
+	  }) : _vm._e(), _c('text', {
+	    staticClass: ["txt"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.id2, _vm.stockitem.href2, _vm.stockitem.title2)
+	      }
+	    }
+	  }, [_vm._v(_vm._s(_vm.stockitem.title2))]), (_vm.stockitem.showimg2) ? _c('div', {
 	    staticStyle: {
 	      flexDirection: "row",
 	      flex: "1"
@@ -544,145 +754,9 @@
 	    }
 	  }), _c('text', {
 	    staticClass: ["txt2"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])]) : _vm._e()])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column",
-	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
-	  },
-	  "img": {
-	    "height": 440,
-	    "borderRadius": 5
-	  },
-	  "txt": {
-	    "fontSize": 35,
-	    "padding": 5,
-	    "flex": 1,
-	    "color": "#cc3399",
-	    "fontSize:active": 22,
-	    "flex:active": 1,
-	    "padding:active": 5,
-	    "color:active": "#d42591"
-	  },
-	  "txt2": {
-	    "fontSize": 22,
-	    "flex": 1
-	  },
-	  "icon": {
-	    "width": 30,
-	    "height": 30
-	  }
-	}
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _pcpic_imglist_item = __webpack_require__(22);
-
-	var _pcpic_imglist_item2 = _interopRequireDefault(_pcpic_imglist_item);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var weexEventModule = weex.requireModule('weexEventModule'); //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meitu = __webpack_require__(6);
-	module.exports = {
-	    created: function created() {},
-	    components: {
-	        pcpic_imglist_item: _pcpic_imglist_item2.default
-	    },
-	    props: {
-	        tpicNitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        toitem: function toitem(json) {
-	            var stockArray = [];
-	            if (json.list) {
-	                if (json.list && json.list.length > 0) {
-	                    for (var i = 0; i < json.list.length; i += 2) {
-	                        var tag = json.list[i];
-	                        var tag2 = json.list[i + 1];
-	                        if (tag2 == undefined) {
-	                            tag2 = {
-	                                href: "",
-	                                alt: "",
-	                                src: "",
-	                                other: "",
-	                                title: ""
-	                            };
-	                        }
-	                        var item = {
-	                            href: tag.href,
-	                            alt: tag.title,
-	                            src: tag.src,
-	                            other: tag.other,
-	                            title: tag.title,
-	                            href2: tag2.href,
-	                            alt2: tag2.title,
-	                            src2: tag2.src,
-	                            other2: tag2.other,
-	                            title2: tag2.title
-	                        };
-	                        stockArray.push(item);
-	                    }
-	                }
-	            }
-	            return stockArray;
-	        },
-
-	        getImgUrl: function getImgUrl(url) {
-	            return meitu.getImageUrl(url);
-	        },
-	        todetail: function todetail(e, alt) {
-	            console.log('main list===' + e);
-	            var name = "mingxing/pcmingxing_imglist";
-	            var params = {
-	                url: meitu.getDefaultUrl(name),
-	                animated: "true",
-	                options: {
-	                    taghref: e,
-	                    title: alt
-	                }
-	            };
-
-	            weexNavigatorModule.push(params, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
-	        }
-	    }
-	};
 
 /***/ }),
 
@@ -706,7 +780,7 @@
 	  }, [_c('text', {
 	    staticClass: ["txt"]
 	  }, [_vm._v(_vm._s(_vm.tpicNitem.title))]), _vm._l((_vm.toitem(_vm.tpicNitem)), function(stockitem) {
-	    return _c('div', [_c('pcpic_imglist_item', {
+	    return _c('div', [_c('pcmain_alltype_imglist_subitem', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }

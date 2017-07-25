@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(348)
+	__vue_styles__.push(__webpack_require__(373)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(349)
+	__vue_exports__ = __webpack_require__(374)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(354)
+	var __vue_template__ = __webpack_require__(379)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -120,9 +120,21 @@
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
 	    pc_star_main:"https://www.4493.com/star/",
-	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
+	    m_meitu:"https://m.4493.com/",
+	    m_xingganmote:"https://m.4493.com/xingganmote/"
 
 
+	};
+	exports.getm_xingganmote = function () {
+	    var url = MEITU.m_xingganmote;
+	    console.log('m_xingganmote==' + url);
+	    return url;
+	};
+	exports.getm_meitu = function () {
+	    var url = MEITU.m_meitu;
+	    console.log('m_meitu==' + url);
+	    return url;
 	};
 	exports.getpc_home_jingxuan = function () {
 	    var url = MEITU.pc_home_jingxuan;
@@ -305,7 +317,7 @@
 
 /***/ }),
 
-/***/ 348:
+/***/ 373:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -328,12 +340,12 @@
 
 /***/ }),
 
-/***/ 349:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _pctopnav_alllist_subitem = __webpack_require__(350);
+	var _pctopnav_alllist_subitem = __webpack_require__(375);
 
 	var _pctopnav_alllist_subitem2 = _interopRequireDefault(_pctopnav_alllist_subitem);
 
@@ -426,21 +438,21 @@
 
 /***/ }),
 
-/***/ 350:
+/***/ 375:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(351)
+	__vue_styles__.push(__webpack_require__(376)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(352)
+	__vue_exports__ = __webpack_require__(377)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(353)
+	var __vue_template__ = __webpack_require__(378)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -471,7 +483,7 @@
 
 /***/ }),
 
-/***/ 351:
+/***/ 376:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -494,7 +506,7 @@
 
 /***/ }),
 
-/***/ 352:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -554,7 +566,7 @@
 
 /***/ }),
 
-/***/ 353:
+/***/ 378:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -587,7 +599,7 @@
 
 /***/ }),
 
-/***/ 354:
+/***/ 379:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

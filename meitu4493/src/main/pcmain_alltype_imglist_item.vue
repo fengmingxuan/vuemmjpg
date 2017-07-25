@@ -3,7 +3,7 @@
         <div class="news-content" @click="todetail(tpicNitem.href,tpicNitem.title)">
             <text class="txt">{{tpicNitem.title}}</text>
             <div v-for="stockitem in toitem(tpicNitem)">
-                <pcpic_imglist_item :stockitem="stockitem"></pcpic_imglist_item>
+                <pcmain_alltype_imglist_subitem :stockitem="stockitem"></pcmain_alltype_imglist_subitem>
             </div>
         </div>
 
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import  pcpic_imglist_item from '../childnav/pcpic_imglist_item.vue'
+    import  pcmain_alltype_imglist_subitem from '../main/pcmain_alltype_imglist_subitem.vue'
     var weexEventModule = weex.requireModule('weexEventModule');
     var weexNavigatorModule = weex.requireModule('weexNavigatorModule')
     var meitu = require('../meitu');
@@ -19,7 +19,7 @@
         created:function(){
         },
         components: {
-            pcpic_imglist_item,
+            pcmain_alltype_imglist_subitem,
         },
         props: {
             tpicNitem: {
@@ -44,18 +44,34 @@
                                     title:"",
                                 };
                             }
+
                             var item={
+                                id:json.id,
                                 href:tag.href,
                                 alt:tag.title,
                                 src:tag.src,
                                 other:tag.other,
                                 title:tag.title,
+                                showimg:true,
                                 href2:tag2.href,
                                 alt2:tag2.title,
                                 src2:tag2.src,
                                 other2:tag2.other,
                                 title2:tag2.title,
+                                showimg2:true,
+                                id2:json.id,
                             };
+                            if(tag.src==undefined || tag.src==''){
+                                item.showimg = false;
+                            }else{
+                                item.showimg = true;
+                            }
+
+                            if(tag2.src==undefined || tag2.src==''){
+                                item.showimg2 = false;
+                            }else{
+                                item.showimg2 = true;
+                            }
                             stockArray.push(item);
                         }
                     }

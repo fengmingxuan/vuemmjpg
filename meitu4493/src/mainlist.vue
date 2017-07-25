@@ -23,6 +23,9 @@
             }
         },
         created () {
+            this.rows.push('mxingganmote/mmote_imglist')
+            this.rows.push('main/pcmain_links')
+            this.rows.push('main/pcmain_foot_imglist')
             this.rows.push('main/pcmain_alltype_imglist')
             this.rows.push('main/pcmain_jingxuan_xilie_imglist')
             this.rows.push('umengpush/pc_push_main_slider')

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(362)
+	__vue_styles__.push(__webpack_require__(387)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(363)
+	__vue_exports__ = __webpack_require__(388)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(364)
+	var __vue_template__ = __webpack_require__(389)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -380,9 +380,21 @@
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
 	    pc_star_main:"https://www.4493.com/star/",
-	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
+	    m_meitu:"https://m.4493.com/",
+	    m_xingganmote:"https://m.4493.com/xingganmote/"
 
 
+	};
+	exports.getm_xingganmote = function () {
+	    var url = MEITU.m_xingganmote;
+	    console.log('m_xingganmote==' + url);
+	    return url;
+	};
+	exports.getm_meitu = function () {
+	    var url = MEITU.m_meitu;
+	    console.log('m_meitu==' + url);
+	    return url;
 	};
 	exports.getpc_home_jingxuan = function () {
 	    var url = MEITU.pc_home_jingxuan;
@@ -657,21 +669,21 @@
 
 /***/ }),
 
-/***/ 102:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(103)
+	__vue_styles__.push(__webpack_require__(110)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(104)
+	__vue_exports__ = __webpack_require__(111)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(105)
+	var __vue_template__ = __webpack_require__(112)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -702,7 +714,7 @@
 
 /***/ }),
 
-/***/ 103:
+/***/ 110:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -741,7 +753,7 @@
 
 /***/ }),
 
-/***/ 104:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -812,7 +824,7 @@
 
 /***/ }),
 
-/***/ 105:
+/***/ 112:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -898,21 +910,21 @@
 
 /***/ }),
 
-/***/ 106:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(107)
+	__vue_styles__.push(__webpack_require__(114)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(108)
+	__vue_exports__ = __webpack_require__(115)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(109)
+	var __vue_template__ = __webpack_require__(116)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -943,7 +955,7 @@
 
 /***/ }),
 
-/***/ 107:
+/***/ 114:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -981,7 +993,7 @@
 
 /***/ }),
 
-/***/ 108:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -994,7 +1006,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcxilie_imglist_item = __webpack_require__(102);
+	var _pcxilie_imglist_item = __webpack_require__(109);
 
 	var _pcxilie_imglist_item2 = _interopRequireDefault(_pcxilie_imglist_item);
 
@@ -1227,7 +1239,7 @@
 
 /***/ }),
 
-/***/ 109:
+/***/ 116:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1286,7 +1298,7 @@
 
 /***/ }),
 
-/***/ 362:
+/***/ 387:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1314,7 +1326,7 @@
 
 /***/ }),
 
-/***/ 363:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1327,11 +1339,11 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcxilie_imglist_item = __webpack_require__(102);
+	var _pcxilie_imglist_item = __webpack_require__(109);
 
 	var _pcxilie_imglist_item2 = _interopRequireDefault(_pcxilie_imglist_item);
 
-	var _pcxilie_big_imglist = __webpack_require__(106);
+	var _pcxilie_big_imglist = __webpack_require__(113);
 
 	var _pcxilie_big_imglist2 = _interopRequireDefault(_pcxilie_big_imglist);
 
@@ -1533,7 +1545,7 @@
 
 /***/ }),
 
-/***/ 364:
+/***/ 389:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
