@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(136)
+	__vue_styles__.push(__webpack_require__(100)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(137)
+	__vue_exports__ = __webpack_require__(101)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(142)
+	var __vue_template__ = __webpack_require__(110)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mingxing/pcmingxing_section_hot_imglist.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/main/pcmain_jingxuan_xilie_imglist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-2b7fcdc6"
+	__vue_options__._scopeId = "data-v-8c4a8db8"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -657,15 +657,10 @@
 
 /***/ }),
 
-/***/ 136:
+/***/ 100:
 /***/ (function(module, exports) {
 
 	module.exports = {
-	  "imagepager": {
-	    "width": 750,
-	    "margin": 1,
-	    "height": 350
-	  },
 	  "refresh-view": {
 	    "height": 100,
 	    "width": 750,
@@ -690,7 +685,7 @@
 
 /***/ }),
 
-/***/ 137:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -703,15 +698,17 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcmingxing_section_hot_imglist_item = __webpack_require__(138);
+	var _pcxilie_imglist_item = __webpack_require__(102);
 
-	var _pcmingxing_section_hot_imglist_item2 = _interopRequireDefault(_pcmingxing_section_hot_imglist_item);
+	var _pcxilie_imglist_item2 = _interopRequireDefault(_pcxilie_imglist_item);
+
+	var _pcxilie_big_imglist = __webpack_require__(106);
+
+	var _pcxilie_big_imglist2 = _interopRequireDefault(_pcxilie_big_imglist);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
+	var stream = weex.requireModule('stream'); //
 	//
 	//
 	//
@@ -735,33 +732,34 @@
 	//
 	//
 
-	var stream = weex.requireModule('stream');
 	var modal = weex.requireModule('modal');
 	var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
 	var meitu = __webpack_require__(6);
 	var storage = weex.requireModule('storage');
 	var utils = __webpack_require__(34);
 	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	exports.default = {
 	    components: {
-	        pcmingxing_section_hot_imglist_item: _pcmingxing_section_hot_imglist_item2.default,
-	        navbar_v: _navbar_v2.default
+	        pcxilie_imglist_item: _pcxilie_imglist_item2.default,
+	        navbar_v: _navbar_v2.default,
+	        pcxilie_big_imglist: _pcxilie_big_imglist2.default
+
 	    },
 	    props: ['taghref'],
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: meitu.getpc_mingxing_section(),
+	            taghref: meitu.getpc_home_jingxuan(),
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
-	            title: "明星热点榜",
+	            title: "系列",
 	            isFirst: 1,
 	            shown: false,
 	            leftsrc: './images/back.png',
-	            pagersrc: "",
-	            pageralt: ""
-
+	            moretitle: "",
+	            morehref: ""
 	        };
 	    },
 
@@ -794,10 +792,23 @@
 	        var self = this;
 	    },
 	    methods: {
-	        todetail: function todetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	        nativetitle: function nativetitle(e, alt) {
+	            var name = "xilie/pcxilie_imglist";
+	            var params = {
+	                url: meitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	        },
-	        autoRefresh: function autoRefresh(event) {
+	        autoRefresh: function autoRefresh() {
+	            console.log('autoRefresh');
 	            var self = this;
 	            storage.getItem('taghref', function (s) {
 	                console.log('get taghref result:' + JSON.stringify(s));
@@ -836,20 +847,26 @@
 	            var self = this;
 	            self.isFirst = 0;
 	            if (self.taghref == undefined) {
-	                self.taghref = meitu.getpc_mingxing_section();
+	                self.taghref = meitu.getpc_home_jingxuan();
 	            }
 	            var url = self.taghref;
 	            //                if(self.pageNo==1){
+	            //                    //https://www.4493.com/tag/%C4%DA%D2%C2/
 	            //                    url = self.taghref;
 	            //                }else{
-	            //                    url = self.taghref.replaceAllStr("1.htm","")+self.pageNo+".htm";
+	            //                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+	            //                    //https://www.4493.com/tag/2/%C4%DA%D2%C2
+	            //
+	            //                    var newurl = meitu.getpc_meitu()+"tag/";
+	            //                    var key = self.taghref.replaceAllStr(newurl,"").replaceAllStr("/","");
+	            //                    url = newurl+self.pageNo+"/"+key;
 	            //                }
 	            console.log('url===' + url);
 	            var params = {
 	                url: url,
 	                pageNo: self.pageNo
 	            };
-	            weexMeiu4493JsoupModule.pcmingxingsectionhot(params, function (e) {
+	            weexMeiu4493JsoupModule.pcmainjingxuan(params, function (e) {
 	                var json = JSON.parse(e);
 	                if (self.pageNo == 1) {
 	                    self.stockArray.splice(0, self.stockArray.length);
@@ -859,7 +876,7 @@
 	                        self.parseJSON(json);
 	                        var paramsCache = {
 	                            url: url,
-	                            typename: "pcmingxingsectionhot"
+	                            typename: "pcmainjingxuan"
 	                        };
 	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
 	                    } else {
@@ -867,7 +884,7 @@
 	                        //获取缓存
 	                        var paramsCache = {
 	                            url: url,
-	                            typename: "pcmingxingsectionhot"
+	                            typename: "pcmainjingxuan"
 	                        };
 	                        weexEventModule.queryCache(paramsCache, function (e) {
 	                            console.log('queryCache==' + e);
@@ -880,9 +897,26 @@
 	        },
 	        parseJSON: function parseJSON(json) {
 	            var self = this;
-	            for (var i = 0; i < json.list.length; i++) {
+	            for (var i = 0; i < json.list.length; i += 2) {
 	                var tag = json.list[i];
-	                self.stockArray.push(tag);
+	                var tag2 = json.list[i + 1];
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+	                    title: tag.title,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other,
+	                    title2: tag2.title
+	                };
+	                self.stockArray.push(item);
+	                if (i == 0) {
+	                    self.moretitle = tag.alt2;
+	                    self.morehref = tag.href2;
+	                }
 	            }
 	        }
 
@@ -892,21 +926,21 @@
 
 /***/ }),
 
-/***/ 138:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(139)
+	__vue_styles__.push(__webpack_require__(103)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(140)
+	__vue_exports__ = __webpack_require__(104)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(141)
+	var __vue_template__ = __webpack_require__(105)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -918,10 +952,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mingxing/pcmingxing_section_hot_imglist_item.vue"
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/xilie/pcxilie_imglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-443e8225"
+	__vue_options__._scopeId = "data-v-355e83e2"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -937,7 +971,7 @@
 
 /***/ }),
 
-/***/ 139:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -947,18 +981,19 @@
 	    "flexDirection": "column",
 	    "flex": 1,
 	    "padding": 5,
+	    "backgroundColor": "#ffffff",
 	    "borderRadius": 5
 	  },
 	  "img": {
-	    "height": 100,
-	    "width": 100,
-	    "borderRadius": 10
+	    "width": 350,
+	    "height": 440,
+	    "borderRadius": 5
 	  },
 	  "txt": {
-	    "fontSize": 28,
+	    "fontSize": 22,
 	    "padding": 5,
 	    "flex": 1,
-	    "fontSize:active": 28,
+	    "fontSize:active": 22,
 	    "flex:active": 1,
 	    "padding:active": 5,
 	    "color:active": "#d42591"
@@ -975,7 +1010,7 @@
 
 /***/ }),
 
-/***/ 140:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -992,11 +1027,26 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
 	var meitu = __webpack_require__(6);
-	var utils = __webpack_require__(34);
 	module.exports = {
 	    created: function created() {},
 
@@ -1011,11 +1061,8 @@
 	            return meitu.getImageUrl(url);
 	        },
 	        todetail: function todetail(e, alt) {
-	            //https://www.4493.com/xingganmote/126139/1.htm
-	            //https://www.4493.com/xingganmote/126139/1.htm
-	            //https://www.4493.com/xingganmote/126139.htm
-	            //                weexEventModule.startWebViewActivity(e);
-	            var name = "mingxing/pcmingxing_imglist";
+	            console.log('main list===' + e);
+	            var name = "star/pcstar_hot_pager";
 	            var params = {
 	                url: meitu.getDefaultUrl(name),
 	                animated: "true",
@@ -1034,7 +1081,7 @@
 
 /***/ }),
 
-/***/ 141:
+/***/ 105:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1042,37 +1089,473 @@
 	    staticStyle: {
 	      flexDirection: "row",
 	      flex: "1",
-	      margin: "5px",
-	      padding: "10",
-	      backgroundColor: "#fff"
-	    },
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.alt)
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.title)
 	      }
 	    }
-	  }, [_c('text', {
-	    staticStyle: {
-	      width: "100"
-	    }
-	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('image', {
+	  }, [_c('image', {
 	    staticClass: ["img"],
 	    attrs: {
 	      "src": _vm.stockitem.src
 	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.title))]), _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1"
+	    }
+	  }, [_c('image', {
+	    staticClass: ["icon"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/time.png')
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('image', {
+	    staticClass: ["icon"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/love.png')
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt2"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])]), _c('div', {
+	    staticStyle: {
+	      width: "5px"
+	    }
 	  }), _c('div', {
-	    staticClass: ["news-content"]
-	  }, [_c('text', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.title2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  }), _c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.alt))]), _c('text', {
+	  }, [_vm._v(_vm._s(_vm.stockitem.title2))]), _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1"
+	    }
+	  }, [_c('image', {
+	    staticClass: ["icon"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/time.png')
+	    }
+	  }), _c('text', {
 	    staticClass: ["txt"]
-	  }, [_vm._v(_vm._s(_vm.stockitem.other))])])])
+	  }, [_vm._v(_vm._s(_vm.stockitem.alt2))]), _c('image', {
+	    staticClass: ["icon"],
+	    attrs: {
+	      "src": _vm.getImgUrl('./images/love.png')
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt2"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.other2))])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 142:
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(107)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(108)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(109)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/xilie/pcxilie_big_imglist.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-78213d98"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 107:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "img": {
+	    "width": 750,
+	    "height": 440,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 22,
+	    "padding": 5,
+	    "flex": 1
+	  },
+	  "refresh-view": {
+	    "height": 100,
+	    "width": 750,
+	    "alignItems": "center"
+	  },
+	  "indicator": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "textAlign": "center"
+	  },
+	  "loading": {
+	    "justifyContent": "center"
+	  },
+	  "indicator_loading": {
+	    "color": "#888888",
+	    "fontSize": 42,
+	    "paddingTop": 20,
+	    "paddingBottom": 20,
+	    "textAlign": "center"
+	  }
+	}
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _navbar_v = __webpack_require__(3);
+
+	var _navbar_v2 = _interopRequireDefault(_navbar_v);
+
+	var _pcxilie_imglist_item = __webpack_require__(102);
+
+	var _pcxilie_imglist_item2 = _interopRequireDefault(_pcxilie_imglist_item);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var stream = weex.requireModule('stream');
+	var modal = weex.requireModule('modal');
+	var weexMeiu4493JsoupModule = weex.requireModule('weexMeiu4493JsoupModule');
+	var meitu = __webpack_require__(6);
+	var storage = weex.requireModule('storage');
+	var utils = __webpack_require__(34);
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	exports.default = {
+	    components: {
+	        pcxilie_imglist_item: _pcxilie_imglist_item2.default,
+	        navbar_v: _navbar_v2.default
+
+	    },
+	    //        props: ['taghref'],
+	    data: function data() {
+	        return {
+	            stockArray: [],
+	            taghref: meitu.getpc_xilie_top(),
+	            pageNo: 1,
+	            refreshing: false,
+	            showLoading: 'hide',
+	            title: "系列",
+	            isFirst: 1,
+	            shown: false,
+	            leftsrc: './images/back.png',
+	            bigsrc: "",
+	            bigtitle: "",
+	            bighref: ""
+	        };
+	    },
+
+	    created: function created() {
+	        var self = this;
+	        var ctaghref = self.$getConfig().taghref;
+	        if (ctaghref != undefined) {
+	            self.taghref = ctaghref;
+	        }
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+	        //
+	        self.refresh();
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var staghref = s.data;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+self.taghref);
+	        //
+	        //                self.refresh();
+	        //
+	        //            });
+	    },
+	    mounted: function mounted() {
+	        var self = this;
+	    },
+	    methods: {
+	        todetail: function todetail(e, alt) {
+	            console.log('main list===' + e);
+	            var name = "star/pcstar_hot_pager";
+	            var params = {
+	                url: meitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	        },
+	        autoRefresh: function autoRefresh() {
+	            console.log('autoRefresh');
+	            var self = this;
+	            storage.getItem('taghref', function (s) {
+	                console.log('get taghref result:' + JSON.stringify(s));
+	                var staghref = s.data;
+	                if (staghref != undefined) {
+	                    self.taghref = staghref;
+	                }
+	                console.log('taghref==' + self.taghref);
+	                self.refresh();
+	            });
+	        },
+	        onloading: function onloading(event) {
+	            var _this = this;
+
+	            this.showLoading = 'show';
+	            this.pageNo = this.pageNo + 1;
+	            //                this.pageNo = this.pageNo+1;
+	            setTimeout(function () {
+	                _this.showLoading = 'hide';
+	            }, 2000);
+	            this.refresh();
+	        },
+	        onpullingdown: function onpullingdown(event) {},
+	        onrefresh: function onrefresh(event) {
+	            var _this2 = this;
+
+	            this.refreshing = true;
+	            this.pageNo = 1;
+	            setTimeout(function () {
+	                _this2.refreshing = false;
+	            }, 2000);
+	            this.refresh();
+	        },
+
+	        refresh: function refresh() {
+	            var self = this;
+	            self.isFirst = 0;
+	            if (self.taghref == undefined) {
+	                self.taghref = meitu.getpc_xilie_top();
+	            }
+	            var url = self.taghref;
+	            //                if(self.pageNo==1){
+	            //                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+	            //                    url = self.taghref;
+	            //                }else{
+	            //                    //https://www.4493.com/tag/%C4%DA%D2%C2/
+	            //                    //https://www.4493.com/tag/2/%C4%DA%D2%C2
+	            //
+	            //                    var newurl = meitu.getpc_meitu()+"tag/";
+	            //                    var key = self.taghref.replaceAllStr(newurl,"").replaceAllStr("/","");
+	            //                    url = newurl+self.pageNo+"/"+key;
+	            //                }
+	            console.log('url===' + url);
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo
+	            };
+	            weexMeiu4493JsoupModule.pcxlimg(params, function (e) {
+	                var json = JSON.parse(e);
+	                if (self.pageNo == 1) {
+	                    self.stockArray.splice(0, self.stockArray.length);
+	                }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcxlimg"
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        console.log('异常==获取缓存==');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcxlimg"
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
+	                    }
+	                }
+	            });
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            var bigtag = json.list[0];
+	            self.bigsrc = bigtag.src;
+	            self.bigtitle = bigtag.title;
+	            self.bighref = bigtag.href;
+
+	            for (var i = 1; i < json.list.length; i += 2) {
+	                var tag = json.list[i];
+	                var tag2 = json.list[i + 1];
+	                if (tag2 == undefined) {
+	                    tag2 = {};
+	                }
+	                var item = {
+	                    href: tag.href,
+	                    alt: tag.alt,
+	                    src: tag.src,
+	                    other: tag.other,
+	                    title: tag.title,
+	                    href2: tag2.href,
+	                    alt2: tag2.alt,
+	                    src2: tag2.src,
+	                    other2: tag2.other,
+	                    title2: tag2.title
+	                };
+	                self.stockArray.push(item);
+	            }
+	        }
+
+	    }
+
+	};
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      backgroundColor: "rgba(0, 0, 0, .25)"
+	    }
+	  }, [_c('list', {
+	    staticClass: ["list"],
+	    attrs: {
+	      "loadmoreoffset": "10"
+	    }
+	  }, [_c('refresh', {
+	    staticClass: ["refresh"],
+	    attrs: {
+	      "display": _vm.refreshing ? 'show' : 'hide'
+	    },
+	    on: {
+	      "refresh": _vm.onrefresh,
+	      "pullingdown": _vm.onpullingdown
+	    }
+	  }, [_c('text', {
+	    staticClass: ["indicator"]
+	  }, [_vm._v("下拉刷新...")])]), _c('cell', {
+	    appendAsTree: true,
+	    attrs: {
+	      "append": "tree"
+	    }
+	  }, [_c('div', {
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.bighref, _vm.bigtitle)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.bigsrc
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.bigtitle))])])]), _vm._l((_vm.stockArray), function(stockitem) {
+	    return _c('cell', {
+	      appendAsTree: true,
+	      attrs: {
+	        "append": "tree"
+	      }
+	    }, [_c('pcxilie_imglist_item', {
+	      attrs: {
+	        "stockitem": stockitem
+	      }
+	    })], 1)
+	  })], 2)])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 110:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1082,9 +1565,14 @@
 	    }
 	  }, [_c('navbar_v', {
 	    attrs: {
-	      "title": _vm.title,
+	      "title": _vm.moretitle,
 	      "shown": _vm.shown,
 	      "leftsrc": _vm.leftsrc
+	    },
+	    on: {
+	      "nativetitle": function($event) {
+	        _vm.nativetitle(_vm.morehref, _vm.moretitle)
+	      }
 	    }
 	  }), _c('list', {
 	    staticClass: ["list"],
@@ -1108,7 +1596,7 @@
 	      attrs: {
 	        "append": "tree"
 	      }
-	    }, [_c('pcmingxing_section_hot_imglist_item', {
+	    }, [_c('pcxilie_imglist_item', {
 	      attrs: {
 	        "stockitem": stockitem
 	      }

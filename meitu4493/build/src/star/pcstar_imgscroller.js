@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(159)
+	__vue_styles__.push(__webpack_require__(173)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(160)
+	__vue_exports__ = __webpack_require__(174)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(161)
+	var __vue_template__ = __webpack_require__(175)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -379,9 +379,15 @@
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
-	    pc_star_main:"https://www.4493.com/star/"
+	    pc_star_main:"https://www.4493.com/star/",
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
 
 
+	};
+	exports.getpc_home_jingxuan = function () {
+	    var url = MEITU.pc_home_jingxuan;
+	    console.log('pc_home_jingxuan==' + url);
+	    return url;
 	};
 	exports.getpc_star_main = function () {
 	    var url = MEITU.pc_star_main;
@@ -1365,7 +1371,7 @@
 
 /***/ }),
 
-/***/ 159:
+/***/ 173:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1393,7 +1399,7 @@
 
 /***/ }),
 
-/***/ 160:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1618,7 +1624,7 @@
 
 /***/ }),
 
-/***/ 161:
+/***/ 175:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

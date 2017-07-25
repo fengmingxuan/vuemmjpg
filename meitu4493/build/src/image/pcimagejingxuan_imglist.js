@@ -379,9 +379,15 @@
 	    pc_mingxing:"https://www.4493.com/star/liuyan/",
 	    pc_mingxing_tag:"https://www.4493.com/mingxingxiezhen/",
 	    pc_mingxing_section:"https://www.4493.com/star/section",
-	    pc_star_main:"https://www.4493.com/star/"
+	    pc_star_main:"https://www.4493.com/star/",
+	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js"
 
 
+	};
+	exports.getpc_home_jingxuan = function () {
+	    var url = MEITU.pc_home_jingxuan;
+	    console.log('pc_home_jingxuan==' + url);
+	    return url;
 	};
 	exports.getpc_star_main = function () {
 	    var url = MEITU.pc_star_main;
