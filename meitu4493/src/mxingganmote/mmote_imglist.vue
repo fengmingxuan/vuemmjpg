@@ -51,6 +51,7 @@
                 isFirst:1,
                 shown:false,
                 leftsrc:'./images/back.png',
+                category:'nav1'
 //                pagenumbers:''
 
                  
@@ -65,6 +66,10 @@
             var ctitle = self.$getConfig().title;
             if(ctitle!=undefined){
                 self.title = ctitle;
+            }
+            var ccategory = self.$getConfig().category;
+            if(ccategory!=undefined){
+                self.category = ccategory;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 //
@@ -124,11 +129,12 @@
                     self.taghref = meitu.getm_xingganmote();
                 }
                 var url = self.taghref;
+                var cate = self.category.replaceAllStr("nav","");
                 //https://m.4493.com/akcms_ajax3.php?cate=1&page=2&pagenum=16&pagesize=16
                 if(self.pageNo==1){
                     url = self.taghref;
                 }else{
-                    url = "https://m.4493.com/akcms_ajax3.php?cate=1&page="+self.pageNo+"&pagenum=16&pagesize=16";
+                    url = "https://m.4493.com/akcms_ajax3.php?cate="+cate+"&page="+self.pageNo+"&pagenum=16&pagesize=16";
 
 //                    "id":"126815",
 //                        "category":"1",

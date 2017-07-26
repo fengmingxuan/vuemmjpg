@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(170)
+	__vue_styles__.push(__webpack_require__(227)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(171)
+	__vue_exports__ = __webpack_require__(228)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(176)
+	var __vue_template__ = __webpack_require__(229)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -358,6 +358,8 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    //http://git.oschina.net/fengmengchang/weex-mmjpg
+	    //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
 	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
@@ -382,9 +384,46 @@
 	    pc_star_main:"https://www.4493.com/star/",
 	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
 	    m_meitu:"https://m.4493.com/",
-	    m_xingganmote:"https://m.4493.com/xingganmote/"
+	    m_xingganmote:"https://m.4493.com/xingganmote/",
+	    m_star:"https://m.4493.com/star/",
+	    m_image:"https://m.4493.com/xingganmote/126940.html",
+	    m_hot:"https://gg.dsxdn.com/4493/m_hot.js",
+	    m_xilie:"https://m.4493.com/star/sunennvshen/",
+	    m_xilie_list:"https://m.4493.com/xilie/",
+	    m_star_list:"https://m.4493.com/star/zhaoyufei/",
 
 
+	};
+	exports.getm_star_list = function () {
+	    var url = MEITU.m_star_list;
+	    console.log('m_star_list==' + url);
+	    return url;
+	};
+
+	exports.getm_xilie_list = function () {
+	    var url = MEITU.m_xilie_list;
+	    console.log('m_xilie_list==' + url);
+	    return url;
+	};
+	exports.getm_xilie = function () {
+	    var url = MEITU.m_xilie;
+	    console.log('m_xilie==' + url);
+	    return url;
+	};
+	exports.getm_hot = function () {
+	    var url = MEITU.m_hot;
+	    console.log('m_hot==' + url);
+	    return url;
+	};
+	exports.getm_image = function () {
+	    var url = MEITU.m_image;
+	    console.log('m_image==' + url);
+	    return url;
+	};
+	exports.getm_star = function () {
+	    var url = MEITU.m_star;
+	    console.log('m_star==' + url);
+	    return url;
 	};
 	exports.getm_xingganmote = function () {
 	    var url = MEITU.m_xingganmote;
@@ -1138,7 +1177,211 @@
 
 /***/ }),
 
-/***/ 170:
+/***/ 140:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(141)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(142)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(143)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mxingganmote/mmote_imglist_item.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-3c0af114"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 141:
+/***/ (function(module, exports) {
+
+	module.exports = {
+	  "news-content": {
+	    "marginLeft": 1,
+	    "marginRight": 1,
+	    "flexDirection": "column",
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
+	  },
+	  "img": {
+	    "width": 350,
+	    "height": 440,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 22,
+	    "padding": 5,
+	    "flex": 1,
+	    "fontSize:active": 22,
+	    "flex:active": 1,
+	    "padding:active": 5,
+	    "color:active": "#d42591"
+	  },
+	  "txt2": {
+	    "fontSize": 22,
+	    "flex": 1
+	  },
+	  "icon": {
+	    "width": 30,
+	    "height": 30
+	  }
+	}
+
+/***/ }),
+
+/***/ 142:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var weexEventModule = weex.requireModule('weexEventModule');
+	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
+	var meitu = __webpack_require__(6);
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
+	    },
+
+	    methods: {
+	        getImgUrl: function getImgUrl(url) {
+	            return meitu.getImageUrl(url);
+	        },
+	        todetail: function todetail(e, alt) {
+	            console.log('main list===' + e);
+	            //                weexEventModule.startWebViewActivity(e);
+	            //                if(e.indexOf('http://www.ys8.com')!=-1){
+	            //
+	            //                }else{
+	            var name = "mimage/mimage_main_imgalllist";
+	            var params = {
+	                url: meitu.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	            //                }
+	        }
+	    }
+	};
+
+/***/ }),
+
+/***/ 143:
+/***/ (function(module, exports) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.title)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src
+	    }
+	  })]), _c('div', {
+	    staticStyle: {
+	      width: "5px"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.title2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  })])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 227:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1166,7 +1409,7 @@
 
 /***/ }),
 
-/***/ 171:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1179,7 +1422,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _mmote_imglist_item = __webpack_require__(172);
+	var _mmote_imglist_item = __webpack_require__(140);
 
 	var _mmote_imglist_item2 = _interopRequireDefault(_mmote_imglist_item);
 
@@ -1237,7 +1480,8 @@
 	            title: "性感美女",
 	            isFirst: 1,
 	            shown: false,
-	            leftsrc: './images/back.png'
+	            leftsrc: './images/back.png',
+	            category: 'nav1'
 	            //                pagenumbers:''
 
 
@@ -1253,6 +1497,10 @@
 	        var ctitle = self.$getConfig().title;
 	        if (ctitle != undefined) {
 	            self.title = ctitle;
+	        }
+	        var ccategory = self.$getConfig().category;
+	        if (ccategory != undefined) {
+	            self.category = ccategory;
 	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
@@ -1315,11 +1563,12 @@
 	                self.taghref = meitu.getm_xingganmote();
 	            }
 	            var url = self.taghref;
+	            var cate = self.category.replaceAllStr("nav", "");
 	            //https://m.4493.com/akcms_ajax3.php?cate=1&page=2&pagenum=16&pagesize=16
 	            if (self.pageNo == 1) {
 	                url = self.taghref;
 	            } else {
-	                url = "https://m.4493.com/akcms_ajax3.php?cate=1&page=" + self.pageNo + "&pagenum=16&pagesize=16";
+	                url = "https://m.4493.com/akcms_ajax3.php?cate=" + cate + "&page=" + self.pageNo + "&pagenum=16&pagesize=16";
 
 	                //                    "id":"126815",
 	                //                        "category":"1",
@@ -1413,211 +1662,7 @@
 
 /***/ }),
 
-/***/ 172:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(173)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(174)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(175)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/meitu4493/src/mxingganmote/mmote_imglist_item.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-3c0af114"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 173:
-/***/ (function(module, exports) {
-
-	module.exports = {
-	  "news-content": {
-	    "marginLeft": 1,
-	    "marginRight": 1,
-	    "flexDirection": "column",
-	    "flex": 1,
-	    "padding": 5,
-	    "backgroundColor": "#ffffff",
-	    "borderRadius": 5
-	  },
-	  "img": {
-	    "width": 350,
-	    "height": 440,
-	    "borderRadius": 5
-	  },
-	  "txt": {
-	    "fontSize": 22,
-	    "padding": 5,
-	    "flex": 1,
-	    "fontSize:active": 22,
-	    "flex:active": 1,
-	    "padding:active": 5,
-	    "color:active": "#d42591"
-	  },
-	  "txt2": {
-	    "fontSize": 22,
-	    "flex": 1
-	  },
-	  "icon": {
-	    "width": 30,
-	    "height": 30
-	  }
-	}
-
-/***/ }),
-
-/***/ 174:
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	var weexEventModule = weex.requireModule('weexEventModule');
-	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var meitu = __webpack_require__(6);
-	module.exports = {
-	    created: function created() {},
-
-	    props: {
-	        stockitem: {
-	            type: Object
-	        }
-	    },
-
-	    methods: {
-	        getImgUrl: function getImgUrl(url) {
-	            return meitu.getImageUrl(url);
-	        },
-	        todetail: function todetail(e, alt) {
-	            console.log('main list===' + e);
-	            weexEventModule.startWebViewActivity(e);
-	            //                if(e.indexOf('http://www.ys8.com')!=-1){
-	            //
-	            //                }else{
-	            //                    var name = "image/pcimage_main_imgalllist";
-	            //                    var params={
-	            //                        url: meitu.getDefaultUrl(name),
-	            //                        animated: "true",
-	            //                        options:{
-	            //                            taghref: e,
-	            //                            title:alt
-	            //                        }
-	            //                    };
-	            //
-	            //                    weexNavigatorModule.push(params, event => {
-	            //                        // modal.toast({ message: 'callback: ' + event })
-	            //                    });
-	            //                }
-	        }
-	    }
-	};
-
-/***/ }),
-
-/***/ 175:
-/***/ (function(module, exports) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticStyle: {
-	      flexDirection: "row",
-	      flex: "1",
-	      margin: "5px"
-	    }
-	  }, [_c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href, _vm.stockitem.title)
-	      }
-	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src
-	    }
-	  })]), _c('div', {
-	    staticStyle: {
-	      width: "5px"
-	    }
-	  }), _c('div', {
-	    staticClass: ["news-content"],
-	    on: {
-	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.href2, _vm.stockitem.title2)
-	      }
-	    }
-	  }, [_c('image', {
-	    staticClass: ["img"],
-	    attrs: {
-	      "src": _vm.stockitem.src2
-	    }
-	  })])])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 176:
+/***/ 229:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

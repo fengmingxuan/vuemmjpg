@@ -23,6 +23,18 @@
             }
         },
         created () {
+            this.rows.push('mmenu/mslideoutmenu')
+            this.rows.push('mmain/mmain_news_imglist')
+            this.rows.push('mmain/mmain_tuijian_imglist')
+            this.rows.push('mmain/mmain_slider')
+            this.rows.push('mstar/mstar_imglist')
+            this.rows.push('mxilie/mxilie_main_imglist')
+            this.rows.push('mxilie/mxilie_imglist')
+            this.rows.push('mimage/mimage_main_imgalllist')
+            this.rows.push('mimage/mimage_xilie_imglist')
+            this.rows.push('mimage/mimage_tuijian_imglist')
+            this.rows.push('mxingganmote/mstar_imglist')
+            this.rows.push('mmenu/mmenu')
             this.rows.push('mxingganmote/mmote_imglist')
             this.rows.push('main/pcmain_links')
             this.rows.push('main/pcmain_foot_imglist')

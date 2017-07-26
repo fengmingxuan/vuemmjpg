@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(207)
+	__vue_styles__.push(__webpack_require__(267)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(208)
+	__vue_exports__ = __webpack_require__(268)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(209)
+	var __vue_template__ = __webpack_require__(269)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -358,6 +358,8 @@
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
 	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
+	    //http://git.oschina.net/fengmengchang/weex-mmjpg
+	    //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
 	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
@@ -382,9 +384,46 @@
 	    pc_star_main:"https://www.4493.com/star/",
 	    pc_home_jingxuan:"https://gg.dsxdn.com/4493/home_jingxuan.js",
 	    m_meitu:"https://m.4493.com/",
-	    m_xingganmote:"https://m.4493.com/xingganmote/"
+	    m_xingganmote:"https://m.4493.com/xingganmote/",
+	    m_star:"https://m.4493.com/star/",
+	    m_image:"https://m.4493.com/xingganmote/126940.html",
+	    m_hot:"https://gg.dsxdn.com/4493/m_hot.js",
+	    m_xilie:"https://m.4493.com/star/sunennvshen/",
+	    m_xilie_list:"https://m.4493.com/xilie/",
+	    m_star_list:"https://m.4493.com/star/zhaoyufei/",
 
 
+	};
+	exports.getm_star_list = function () {
+	    var url = MEITU.m_star_list;
+	    console.log('m_star_list==' + url);
+	    return url;
+	};
+
+	exports.getm_xilie_list = function () {
+	    var url = MEITU.m_xilie_list;
+	    console.log('m_xilie_list==' + url);
+	    return url;
+	};
+	exports.getm_xilie = function () {
+	    var url = MEITU.m_xilie;
+	    console.log('m_xilie==' + url);
+	    return url;
+	};
+	exports.getm_hot = function () {
+	    var url = MEITU.m_hot;
+	    console.log('m_hot==' + url);
+	    return url;
+	};
+	exports.getm_image = function () {
+	    var url = MEITU.m_image;
+	    console.log('m_image==' + url);
+	    return url;
+	};
+	exports.getm_star = function () {
+	    var url = MEITU.m_star;
+	    console.log('m_star==' + url);
+	    return url;
 	};
 	exports.getm_xingganmote = function () {
 	    var url = MEITU.m_xingganmote;
@@ -669,21 +708,21 @@
 
 /***/ }),
 
-/***/ 159:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(160)
+	__vue_styles__.push(__webpack_require__(183)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(161)
+	__vue_exports__ = __webpack_require__(184)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(162)
+	var __vue_template__ = __webpack_require__(185)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -714,7 +753,7 @@
 
 /***/ }),
 
-/***/ 160:
+/***/ 183:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -752,7 +791,7 @@
 
 /***/ }),
 
-/***/ 161:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -809,7 +848,7 @@
 
 /***/ }),
 
-/***/ 162:
+/***/ 185:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -841,7 +880,7 @@
 
 /***/ }),
 
-/***/ 207:
+/***/ 267:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -874,7 +913,7 @@
 
 /***/ }),
 
-/***/ 208:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -887,7 +926,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pcmingxing_section_news_imglist_item = __webpack_require__(159);
+	var _pcmingxing_section_news_imglist_item = __webpack_require__(182);
 
 	var _pcmingxing_section_news_imglist_item2 = _interopRequireDefault(_pcmingxing_section_news_imglist_item);
 
@@ -1076,7 +1115,7 @@
 
 /***/ }),
 
-/***/ 209:
+/***/ 269:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
