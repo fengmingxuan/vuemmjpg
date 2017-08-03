@@ -650,7 +650,7 @@
 	                label: "妹子图web"
 	            };
 	            weexEventModule.onEvent(paramsEvent, function (event) {});
-	            weexEventModule.startWebViewActivity(e);
+	            //                weexEventModule.startWebViewActivity(e);
 	            //                var name = "img/pcimage_imglist";
 	            ////                if(e.indexOf('m.meituba.com')!=-1){
 	            ////                    name = "marticle/marticlelist";

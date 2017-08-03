@@ -153,9 +153,11 @@
             parseJSON:function (json) {
                 var self = this;
                 for (var i = 0; i < json.list.length; i++) {
-                    var tag = json.list[i];
-                    tag.id = i+1;
-                    self.tpicNArray.push(tag);
+                    if(i<4){
+                        var tag = json.list[i];
+                        tag.id = i+1;
+                        self.tpicNArray.push(tag);
+                    }
                 }
             },
 

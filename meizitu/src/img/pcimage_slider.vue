@@ -83,7 +83,7 @@
                 weexEventModule.onEvent(paramsEvent,event => {
 
                 });
-                weexEventModule.startWebViewActivity(e);
+//                weexEventModule.startWebViewActivity(e);
 //                var name = "img/pcimage_imglist";
 ////                if(e.indexOf('m.meituba.com')!=-1){
 ////                    name = "marticle/marticlelist";
