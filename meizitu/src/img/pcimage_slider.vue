@@ -5,12 +5,23 @@
             <div class="frame" v-for="img in imageList">
                 <image class="image" resize="cover" :src="img.src" @click="todetail(img.href,img.alt)"></image>
                 <text class="txt">{{img.alt}}</text>
+                <div class="save" @click="saveimage(img.src)" >
+                    <text style="color: #fff;padding: 25">保存</text>
+                </div>
             </div>
         </slider>
     </div>
 </template>
 
 <style scoped>
+    .save{
+        position: absolute;
+        width: 100;
+        height: 80;
+        top: 20;
+        left: 600;
+        background-color: rgb(40, 96, 144);
+    }
     .image {
         width: 750px;
         margin:1;
@@ -75,6 +86,14 @@
             });
         },
         methods:{
+            saveimage:function (src) {
+                var params={
+                    imgurl:src
+                };
+                weexEventModule.saveImage(params,event => {
+
+                });
+            },
             todetail:function (e,alt) {
                 var paramsEvent={
                     event:"9000",
