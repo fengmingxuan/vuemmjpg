@@ -87,6 +87,7 @@
         },
         methods:{
             saveimage:function (src) {
+                console.log('saveimage==='+src);
                 var params={
                     imgurl:src
                 };

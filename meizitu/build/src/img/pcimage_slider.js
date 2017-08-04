@@ -664,6 +664,7 @@
 	    },
 	    methods: {
 	        saveimage: function saveimage(src) {
+	            console.log('saveimage===' + src);
 	            var params = {
 	                imgurl: src
 	            };

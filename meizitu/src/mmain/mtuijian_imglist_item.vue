@@ -30,7 +30,6 @@
 
         methods:{
             todetail:function (e,alt) {
-//                weexEventModule.startWebViewActivity(e);
                 var name = "img/pcimage_imglist";
 //                if(e.indexOf('m.meituba.com')!=-1){
 //                    name = "marticle/marticlelist";
@@ -48,6 +47,10 @@
 
                 weexNavigatorModule.push(params, event => {
                     // modal.toast({ message: 'callback: ' + event })
+                });
+
+                weexEventModule.patchLog(params,event => {
+
                 });
             }
         }

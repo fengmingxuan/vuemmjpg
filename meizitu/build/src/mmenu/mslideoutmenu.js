@@ -997,7 +997,6 @@
 
 	    methods: {
 	        todetail: function todetail(e, alt) {
-	            //                weexEventModule.startWebViewActivity(e);
 	            var name = "img/pcimage_imglist";
 	            //                if(e.indexOf('m.meituba.com')!=-1){
 	            //                    name = "marticle/marticlelist";
@@ -1016,6 +1015,8 @@
 	            weexNavigatorModule.push(params, function (event) {
 	                // modal.toast({ message: 'callback: ' + event })
 	            });
+
+	            weexEventModule.patchLog(params, function (event) {});
 	        }
 	    }
 	};
