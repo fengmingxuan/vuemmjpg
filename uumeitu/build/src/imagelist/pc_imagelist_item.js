@@ -101,7 +101,7 @@
 	    //http://git.oschina.net/fengmengchang/weex-mmjpg
 	    //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
 	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master
-	    IP: 'https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
 
 	};
