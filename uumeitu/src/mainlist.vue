@@ -23,6 +23,8 @@
             }
         },
         created () {
+            this.rows.push('menu/pcslideoutmenu')
+            this.rows.push('imagelist/pc_imagelist')
             this.rows.push('menu/pcmenu_list')
             this.rows.push('top/pcnav_topgrid')
             this.rows.push('articlelist/pcnav_articlelist')

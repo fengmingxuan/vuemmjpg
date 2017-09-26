@@ -1,29 +1,38 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <!--<cell>-->
-                <!--<pcinterest_hlist :taghref="taghref"></pcinterest_hlist>-->
-            <!--</cell>-->
+
             <cell v-for="stockitem in stockArray">
-                <pcnav_topgrid_item :stockitem="stockitem"></pcnav_topgrid_item>
+                <pc_imagelist_item :stockitem="stockitem"></pc_imagelist_item>
             </cell>
-            <!--<cell>-->
-                <!--<pcrecommend :taghref="taghref"></pcrecommend>-->
-            <!--</cell>-->
-            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
-                <!--<text class="indicator_loading">加载更多...</text>-->
-            <!--</loading>-->
+            <cell>
+                <pcnav_topgrid :taghref="taghref" :pageNo="0"></pcnav_topgrid>
+            </cell>
+            <cell>
+                <pcnav_topgrid :taghref="taghref" :pageNo="1"></pcnav_topgrid>
+            </cell>
+            <cell>
+                <pc_hot_articlelist :taghref="taghref" :pageNo="0"></pc_hot_articlelist>
+            </cell>
+            <cell>
+                <pc_hot_articlelist :taghref="taghref" :pageNo="1"></pc_hot_articlelist>
+            </cell>
+            <loading class="loading" @loading="onloading" :display="showLoading">
+                <text class="indicator_loading">加载更多...</text>
+            </loading>
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcnav_topgrid_item from './pcnav_topgrid_item.vue'
+    import  pc_imagelist_item from './pc_imagelist_item.vue'
+    import  pcnav_topgrid from '../top/pcnav_topgrid.vue'
+    import  pc_hot_articlelist from '../articlelist/pc_hot_articlelist.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexUUMeiuJsoupModule = weex.requireModule('weexUUMeiuJsoupModule');
@@ -33,16 +42,18 @@
     var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
-            pcnav_topgrid_item,
+            pc_imagelist_item,
             navbar_v,
+            pcnav_topgrid,
+            pc_hot_articlelist
 
         },
-        props: ['taghref','pageNo'],
+        props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:uumeitu.getpc_qingchun(),
-                pageNo: 0,
+                taghref:uumeitu.getpc_image(),
+                pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
                 title:"清纯美女",
@@ -56,27 +67,49 @@
         },
         created: function(){
             var self = this;
-            if(self.pageNo==undefined){
-                self.pageNo = 0;
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
             }
-            if(self.pageNo==1){
-                setTimeout(() => {
-                        self.refresh();
-                }, 2000);
-            }else{
-                setTimeout(() => {
-                    self.refresh();
-                 }, 1000);
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
             }
-
+            console.log('title=='+self.title+';taghref=='+self.taghref)
+//
+            self.refresh();
+//            storage.getItem('taghref',function(s){
+//                console.log('get taghref result:'+JSON.stringify(s));
+//                var staghref = s.data;
+//                if(staghref!=undefined){
+//                    self.taghref = staghref;
+//                }
+//                console.log('taghref=='+self.taghref);
+//
+//                self.refresh();
+//
+//            });
         },
         mounted: function() {
             var self = this;
         },
         methods:{
-
+            autoRefresh(event){
+                var self = this;
+                storage.getItem('taghref',function(s){
+                    console.log('get taghref result:'+JSON.stringify(s));
+                    var staghref = s.data;
+                    if(staghref!=undefined){
+                        self.taghref = staghref;
+                    }
+                    console.log('taghref=='+self.taghref);
+                    self.refresh();
+                });
+            },
             onloading (event) {
                 this.showLoading = 'show'
+                 this.pageNo = this.pageNo+1;
+//                this.pageNo = this.pageNo+1;
                 setTimeout(() => {
                     this.showLoading = 'hide'
                 }, 2000)
@@ -87,6 +120,7 @@
             },
             onrefresh (event) {
                 this.refreshing = true;
+                this.pageNo = 1;
                 setTimeout(() => {
                     this.refreshing = false
                 }, 2000)
@@ -94,29 +128,34 @@
             },
             refresh:function(){
                 var self = this;
+                self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = uumeitu.getpc_qingchun();
-                }
-                if(self.pageNo==undefined){
-                    self.pageNo = 0;
+                    self.taghref = uumeitu.getpc_image();
                 }
                 var url = self.taghref;
+                if(self.pageNo==1){
+                    url = self.taghref;
+                }else{
+                    url =  self.pagenumbers;
+                }
                 console.log('url==='+url);
                 var params = {
                     className:"com.open.mmjpg.jsoup.pc.UUMeituJsoupService",
-                    methodName:"pcnavtopw1000",
+                    methodName:"pcimagelist",
                     parameterTypes:['String','int'],
                     args:[url,self.pageNo]
                 };
                 weexUUMeiuJsoupModule.jsoupModule(params,function(e){
                     var json = JSON.parse(e);
-                    self.stockArray.splice(0, self.stockArray.length);
+                    if(self.pageNo==1){
+                        self.stockArray.splice(0, self.stockArray.length);
+                    }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
                             self.parseJSON(json);
                             var paramsCache = {
                                 url:url,
-                                typename: "pcnavtopw1000"+self.pageNo,
+                                typename: "pcimagelist"+self.pageNo,
                             };
                             weexEventModule.saveCache(paramsCache,json,function(ee){
 
@@ -127,7 +166,7 @@
                             //获取缓存
                             var paramsCache = {
                                 url:url,
-                                typename: "pcnavtopw1000"+self.pageNo
+                                typename: "pcimagelist"+self.pageNo
                             };
                             weexEventModule.queryCache(paramsCache,function(e){
                                 console.log('queryCache=='+e);
@@ -142,45 +181,15 @@
             },
             parseJSON:function (json) {
                 var self = this;
-                for (var i = 0; i < json.list.length; i+=3) {
-                    self.pagenumbers = json.list[0].pagenumbers;
+                for (var i = 0; i < json.list.length; i++) {
+                    self.pagenumbers = json.list[0].href;
                     var tag = json.list[i];
-                    tag.show = true;
-                    var tag2 = json.list[i+1];
-                    if(tag2==undefined){
-                        tag2={
-                            show :false
-                        };
-                    }else {
-                        tag2.show = true;
-                    }
-                    var tag3 = json.list[i+2];
-                    if(tag3==undefined){
-                        tag3={
-                            show :false
-                        };
-                    }else{
-                        tag3.show = true;
-                    }
                     var item={
                         href:tag.href,
                         alt:tag.alt,
                         src:tag.src,
                         other:tag.other,
                         title:tag.title,
-                        show:tag.show,
-                        href2:tag2.href,
-                        alt2:tag2.alt,
-                        src2:tag2.src,
-                        other2:tag2.other,
-                        title2:tag2.title,
-                        show2:tag2.show,
-                        href3:tag3.href,
-                        alt3:tag3.alt,
-                        src3:tag3.src,
-                        other3:tag3.other,
-                        title3:tag3.title,
-                        show3:tag3.show,
                     };
                     self.stockArray.push(item);
                 }

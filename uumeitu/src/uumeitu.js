@@ -4,16 +4,23 @@ var BASE_URL = {
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
     //http://git.oschina.net/fengmengchang/weex-mmjpg
     //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
-    IP: '192.168.1.15:8080',
-    HTTP: 'http://',//https:// http://
+    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master
+    IP: 'https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 
 };
 
 var UUMEITU = {
     pc_uumeitu:"http://www.uumeitu.com/",
-    pc_qingchun:"http://www.uumeitu.com/qingchun/"
+    pc_qingchun:"http://www.uumeitu.com/qingchun/",
+    pc_image:"http://www.uumeitu.com/qingchun/19708.html"
 };
 
+exports.getpc_image = function () {
+    var url = UUMEITU.pc_image;
+    console.log('pc_image==' + url);
+    return url;
+};
 exports.getpc_qingchun = function () {
     var url = UUMEITU.pc_qingchun;
     console.log('pc_qingchun==' + url);

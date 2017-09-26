@@ -43,21 +43,21 @@
             todetail:function (e,alt) {
                 console.log('main list==='+e)
 //                if(e.indexOf('http://www.ys8.com')!=-1){
-                    weexEventModule.startWebViewActivity(e);
+//                    weexEventModule.startWebViewActivity(e);
 //                }else{
-//                    var name = "image/pcimage_main_imglist";
-//                    var params={
-//                        url: meitu.getDefaultUrl(name),
-//                        animated: "true",
-//                        options:{
-//                            taghref: e,
-//                            title:alt
-//                        }
-//                    };
-//
-//                    weexNavigatorModule.push(params, event => {
-//                        // modal.toast({ message: 'callback: ' + event })
-//                    });
+                    var name = "imagelist/pc_imagelist";
+                    var params={
+                        url: uumeitu.getDefaultUrl(name),
+                        animated: "true",
+                        options:{
+                            taghref: e,
+                            title:alt
+                        }
+                    };
+
+                    weexNavigatorModule.push(params, event => {
+                        // modal.toast({ message: 'callback: ' + event })
+                    });
 //                }
             }
         }
