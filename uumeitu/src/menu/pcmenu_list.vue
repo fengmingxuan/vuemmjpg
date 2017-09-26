@@ -5,26 +5,21 @@
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
             </refresh>
-            <cell>
-                <pcnav_topgrid :taghref="taghref" :pageNo="0"></pcnav_topgrid>
-            </cell>
+
             <cell v-for="stockitem in stockArray">
-                <pcnav_articlelist_item :stockitem="stockitem"></pcnav_articlelist_item>
+                <pcmenu_list_item :stockitem="stockitem"></pcmenu_list_item>
             </cell>
-            <cell>
-                <pcnav_topgrid :taghref="taghref" :pageNo="1"></pcnav_topgrid>
-            </cell>
-            <loading class="loading" @loading="onloading" :display="showLoading">
-                <text class="indicator_loading">加载更多...</text>
-            </loading>
+
+            <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
+                <!--<text class="indicator_loading">加载更多...</text>-->
+            <!--</loading>-->
         </list>
     </div>
 </template>
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pcnav_articlelist_item from './pcnav_articlelist_item.vue'
-    import  pcnav_topgrid from '../top/pcnav_topgrid.vue'
+    import  pcmenu_list_item from './pcmenu_list_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexUUMeiuJsoupModule = weex.requireModule('weexUUMeiuJsoupModule');
@@ -34,9 +29,8 @@
     var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
-            pcnav_articlelist_item,
+            pcmenu_list_item,
             navbar_v,
-            pcnav_topgrid,
 
         },
         props: ['taghref'],
@@ -132,7 +126,7 @@
                 console.log('url==='+url);
                 var params = {
                     className:"com.open.mmjpg.jsoup.pc.UUMeituJsoupService",
-                    methodName:"pcnavarticlelist",
+                    methodName:"pcmenuw100099",
                     parameterTypes:['String','int'],
                     args:[url,self.pageNo]
                 };
@@ -146,7 +140,7 @@
                             self.parseJSON(json);
                             var paramsCache = {
                                 url:url,
-                                typename: "pcnavarticlelist"+self.pageNo,
+                                typename: "pcmenuw100099"+self.pageNo,
                             };
                             weexEventModule.saveCache(paramsCache,json,function(ee){
 
@@ -157,7 +151,7 @@
                             //获取缓存
                             var paramsCache = {
                                 url:url,
-                                typename: "pcnavarticlelist"+self.pageNo
+                                typename: "pcmenuw100099"+self.pageNo
                             };
                             weexEventModule.queryCache(paramsCache,function(e){
                                 console.log('queryCache=='+e);
@@ -172,21 +166,15 @@
             },
             parseJSON:function (json) {
                 var self = this;
-                for (var i = 0; i < json.list.length; i+=2) {
-                    self.pagenumbers = json.list[0].pagenumbers;
+                for (var i = 0; i < json.list.length; i++) {
+//                    self.pagenumbers = json.list[0].pagenumbers;
                     var tag = json.list[i];
-                    var tag2 = json.list[i+1];
                     var item={
                         href:tag.href,
                         alt:tag.alt,
                         src:tag.src,
                         other:tag.other,
                         title:tag.title,
-                        href2:tag2.href,
-                        alt2:tag2.alt,
-                        src2:tag2.src,
-                        other2:tag2.other,
-                        title2:tag2.title,
                     };
                     self.stockArray.push(item);
                 }

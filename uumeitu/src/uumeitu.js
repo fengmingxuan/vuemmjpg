@@ -4,8 +4,8 @@ var BASE_URL = {
     //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
     //http://git.oschina.net/fengmengchang/weex-mmjpg
     //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
-    IP: 'https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
+    IP: '192.168.1.15:8080',
+    HTTP: 'http://',//https:// http://
 
 };
 
