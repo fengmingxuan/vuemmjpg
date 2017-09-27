@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(28)
+	__vue_styles__.push(__webpack_require__(47)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(29)
+	__vue_exports__ = __webpack_require__(48)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(34)
+	var __vue_template__ = __webpack_require__(53)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,9 +90,8 @@
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */
+
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
@@ -135,7 +135,8 @@
 
 
 /***/ },
-/* 4 */
+
+/***/ 4:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -241,7 +242,8 @@
 	}
 
 /***/ },
-/* 5 */
+
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -348,7 +350,8 @@
 	};
 
 /***/ },
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	var BASE_URL = {
@@ -364,7 +367,19 @@
 	};
 
 	var DUODUO = {
-	    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+	    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+	    pc_duotoo:"http://www.duotoo.com/",
+	    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+	};
+	exports.getpc_image = function () {
+	    var url = DUODUO.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
+	};
+	exports.getpc_duotoo = function () {
+	    var url = DUODUO.pc_duotoo;
+	    console.log('pc_duotoo==' + url);
+	    return url;
 	};
 
 	exports.getpc_weimeitupian = function () {
@@ -466,7 +481,8 @@
 
 
 /***/ },
-/* 7 */
+
+/***/ 7:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -508,18 +524,8 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */
+
+/***/ 19:
 /***/ function(module, exports) {
 
 	exports.ubball = function ubball(strContent) {
@@ -567,15 +573,8 @@
 	}
 
 /***/ },
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */
+
+/***/ 47:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -602,7 +601,8 @@
 	}
 
 /***/ },
-/* 29 */
+
+/***/ 48:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -615,7 +615,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pc_navdd_item = __webpack_require__(30);
+	var _pc_navdd_item = __webpack_require__(49);
 
 	var _pc_navdd_item2 = _interopRequireDefault(_pc_navdd_item);
 
@@ -802,21 +802,22 @@
 	};
 
 /***/ },
-/* 30 */
+
+/***/ 49:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(31)
+	__vue_styles__.push(__webpack_require__(50)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(32)
+	__vue_exports__ = __webpack_require__(51)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(33)
+	var __vue_template__ = __webpack_require__(52)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -846,7 +847,8 @@
 
 
 /***/ },
-/* 31 */
+
+/***/ 50:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -869,7 +871,8 @@
 	}
 
 /***/ },
-/* 32 */
+
+/***/ 51:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -923,7 +926,8 @@
 	};
 
 /***/ },
-/* 33 */
+
+/***/ 52:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -947,7 +951,8 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 34 */
+
+/***/ 53:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -993,4 +998,5 @@
 	module.exports.render._withStripped = true
 
 /***/ }
-/******/ ]);
+
+/******/ });

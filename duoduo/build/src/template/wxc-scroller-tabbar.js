@@ -45,10 +45,10 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(41)
-	var __weex_template__ = __webpack_require__(45)
-	var __weex_style__ = __webpack_require__(46)
-	var __weex_script__ = __webpack_require__(47)
+	__webpack_require__(60)
+	var __weex_template__ = __webpack_require__(64)
+	var __weex_style__ = __webpack_require__(65)
+	var __weex_script__ = __webpack_require__(66)
 
 	__weex_define__('@weex-component/b5fc93c73f55bce87970dd774d9d4de9', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -67,12 +67,12 @@
 
 /***/ },
 
-/***/ 41:
+/***/ 60:
 /***/ function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(42)
-	var __weex_style__ = __webpack_require__(43)
-	var __weex_script__ = __webpack_require__(44)
+	var __weex_template__ = __webpack_require__(61)
+	var __weex_style__ = __webpack_require__(62)
+	var __weex_script__ = __webpack_require__(63)
 
 	__weex_define__('@weex-component/wxc-scroller-tabitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -90,7 +90,7 @@
 
 /***/ },
 
-/***/ 42:
+/***/ 61:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -140,7 +140,7 @@
 
 /***/ },
 
-/***/ 43:
+/***/ 62:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -172,7 +172,7 @@
 
 /***/ },
 
-/***/ 44:
+/***/ 63:
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -200,7 +200,7 @@
 
 /***/ },
 
-/***/ 45:
+/***/ 64:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -257,7 +257,7 @@
 
 /***/ },
 
-/***/ 46:
+/***/ 65:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -304,12 +304,12 @@
 
 /***/ },
 
-/***/ 47:
+/***/ 66:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(41);
+	__webpack_require__(60);
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [],

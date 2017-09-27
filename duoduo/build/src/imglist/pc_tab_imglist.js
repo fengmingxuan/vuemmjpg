@@ -50,14 +50,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(22)
+	__vue_styles__.push(__webpack_require__(41)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(23)
+	__vue_exports__ = __webpack_require__(42)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(24)
+	var __vue_template__ = __webpack_require__(43)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -364,7 +364,19 @@
 	};
 
 	var DUODUO = {
-	    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+	    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+	    pc_duotoo:"http://www.duotoo.com/",
+	    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+	};
+	exports.getpc_image = function () {
+	    var url = DUODUO.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
+	};
+	exports.getpc_duotoo = function () {
+	    var url = DUODUO.pc_duotoo;
+	    console.log('pc_duotoo==' + url);
+	    return url;
 	};
 
 	exports.getpc_weimeitupian = function () {
@@ -508,21 +520,28 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 8 */
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(9)
+	__vue_styles__.push(__webpack_require__(16)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(10)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(11)
+	var __vue_template__ = __webpack_require__(18)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -552,7 +571,7 @@
 
 
 /***/ },
-/* 9 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -590,7 +609,7 @@
 	}
 
 /***/ },
-/* 10 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -641,28 +660,28 @@
 	        todetail: function todetail(e, alt) {
 	            console.log('main list===' + e);
 	            //                if(e.indexOf('http://www.ys8.com')!=-1){
-	            weexEventModule.startWebViewActivity(e);
+	            //                    weexEventModule.startWebViewActivity(e);
 	            //                }else{
-	            //                    var name = "imagelist/pc_imagelist";
-	            //                    var params={
-	            //                        url: duoduo.getDefaultUrl(name),
-	            //                        animated: "true",
-	            //                        options:{
-	            //                            taghref: e,
-	            //                            title:alt
-	            //                        }
-	            //                    };
-	            //
-	            //                    weexNavigatorModule.push(params, event => {
-	            //                        // modal.toast({ message: 'callback: ' + event })
-	            //                    });
+	            var name = "imagelist/pc_imagelist";
+	            var params = {
+	                url: duoduo.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	            //                }
 	        }
 	    }
 	};
 
 /***/ },
-/* 11 */
+/* 18 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -741,21 +760,81 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 12 */
+/* 19 */
+/***/ function(module, exports) {
+
+	exports.ubball = function ubball(strContent) {
+	    if(strContent ==null){
+	        return;
+	    }
+	    strContent = strContent.replace(/\[gguba\](.+?)\[\/gguba\]/ig,function($1){
+	        $1 = $1.replace("[gguba]","");
+	        $1 = $1.replace("[/gguba]","");
+	        return $1;
+	    });
+	    strContent = strContent.replace(/\[gubar\](.+?)\[\/gubar\]/ig,function($1){
+	        $1 = $1.replace("[gubar]","");
+	        $1 = $1.replace("[/gubar]","");
+	        return $1;});
+	    strContent = strContent.replace(/\[tag\](.+?)\[\/tag\]/ig,function($1){
+	        $1 = $1.replace("[tag]","");
+	        $1 = $1.replace("[/tag]","");
+	        return $1;});
+	    return strContent;
+	}
+
+	//refContent =  utils.replaceAll(refContent,/\[gubar\](.+?)\[\/gubar\]/ig,'','[gubar]','[/gubar]');
+	exports.replaceAll = function replaceAll(sourcestr,regExp,replacestr,tagstr,tagstr2) {
+	    if(sourcestr ==null){
+	        return;
+	    }
+	    sourcestr = sourcestr.replace(regExp,function($1){
+	        if(replacestr==null){
+	            replacestr='';
+	        }
+	        $1 = $1.replace(tagstr,replacestr);
+	        if(tagstr2!=null){
+	            $1 = $1.replace(tagstr2,replacestr);
+	        }
+	        return $1;
+	    });
+
+	    return sourcestr;
+	}
+
+	String.prototype.replaceAllStr = function (FindText, RepText) {
+	    var regExp = new RegExp(FindText, "gm");
+	    return this.replace(regExp, RepText);
+	}
+
+/***/ },
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(13)
+	__vue_styles__.push(__webpack_require__(33)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(14)
+	__vue_exports__ = __webpack_require__(34)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(20)
+	var __vue_template__ = __webpack_require__(39)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -785,7 +864,7 @@
 
 
 /***/ },
-/* 13 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -812,7 +891,7 @@
 	}
 
 /***/ },
-/* 14 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -825,7 +904,7 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pc_tagbox_item = __webpack_require__(15);
+	var _pc_tagbox_item = __webpack_require__(35);
 
 	var _pc_tagbox_item2 = _interopRequireDefault(_pc_tagbox_item);
 
@@ -897,6 +976,9 @@
 	        }
 	        console.log('title==' + self.title + ';taghref==' + self.taghref);
 	        //
+	        //            setTimeout(() => {
+	        //                self.refresh();
+	        //            }, 2000)
 	        self.refresh();
 	        //            storage.getItem('taghref',function(s){
 	        //                console.log('get taghref result:'+JSON.stringify(s));
@@ -1028,21 +1110,21 @@
 	};
 
 /***/ },
-/* 15 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(16)
+	__vue_styles__.push(__webpack_require__(36)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(17)
+	__vue_exports__ = __webpack_require__(37)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(18)
+	var __vue_template__ = __webpack_require__(38)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1072,7 +1154,7 @@
 
 
 /***/ },
-/* 16 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1095,7 +1177,7 @@
 	}
 
 /***/ },
-/* 17 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1163,7 +1245,7 @@
 	};
 
 /***/ },
-/* 18 */
+/* 38 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1221,55 +1303,7 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 19 */
-/***/ function(module, exports) {
-
-	exports.ubball = function ubball(strContent) {
-	    if(strContent ==null){
-	        return;
-	    }
-	    strContent = strContent.replace(/\[gguba\](.+?)\[\/gguba\]/ig,function($1){
-	        $1 = $1.replace("[gguba]","");
-	        $1 = $1.replace("[/gguba]","");
-	        return $1;
-	    });
-	    strContent = strContent.replace(/\[gubar\](.+?)\[\/gubar\]/ig,function($1){
-	        $1 = $1.replace("[gubar]","");
-	        $1 = $1.replace("[/gubar]","");
-	        return $1;});
-	    strContent = strContent.replace(/\[tag\](.+?)\[\/tag\]/ig,function($1){
-	        $1 = $1.replace("[tag]","");
-	        $1 = $1.replace("[/tag]","");
-	        return $1;});
-	    return strContent;
-	}
-
-	//refContent =  utils.replaceAll(refContent,/\[gubar\](.+?)\[\/gubar\]/ig,'','[gubar]','[/gubar]');
-	exports.replaceAll = function replaceAll(sourcestr,regExp,replacestr,tagstr,tagstr2) {
-	    if(sourcestr ==null){
-	        return;
-	    }
-	    sourcestr = sourcestr.replace(regExp,function($1){
-	        if(replacestr==null){
-	            replacestr='';
-	        }
-	        $1 = $1.replace(tagstr,replacestr);
-	        if(tagstr2!=null){
-	            $1 = $1.replace(tagstr2,replacestr);
-	        }
-	        return $1;
-	    });
-
-	    return sourcestr;
-	}
-
-	String.prototype.replaceAllStr = function (FindText, RepText) {
-	    var regExp = new RegExp(FindText, "gm");
-	    return this.replace(regExp, RepText);
-	}
-
-/***/ },
-/* 20 */
+/* 39 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1309,8 +1343,8 @@
 	module.exports.render._withStripped = true
 
 /***/ },
-/* 21 */,
-/* 22 */
+/* 40 */,
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1337,7 +1371,7 @@
 	}
 
 /***/ },
-/* 23 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1350,11 +1384,11 @@
 
 	var _navbar_v2 = _interopRequireDefault(_navbar_v);
 
-	var _pc_imglist_item = __webpack_require__(8);
+	var _pc_imglist_item = __webpack_require__(15);
 
 	var _pc_imglist_item2 = _interopRequireDefault(_pc_imglist_item);
 
-	var _pc_tagbox = __webpack_require__(12);
+	var _pc_tagbox = __webpack_require__(32);
 
 	var _pc_tagbox2 = _interopRequireDefault(_pc_tagbox);
 
@@ -1558,7 +1592,7 @@
 	};
 
 /***/ },
-/* 24 */
+/* 43 */
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

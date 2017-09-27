@@ -3,23 +3,12 @@
         <div class="news-content" @click="todetail(stockitem.href,stockitem.title)">
             <image class="img" :src="stockitem.src" ></image>
             <text class="txt">{{stockitem.title}}</text>
-            <div style="flex-direction: row;flex: 1">
-                <text class="txt" @click="todetail(stockitem.category,stockitem.other)">{{stockitem.other}}</text>
-                <text class="txt"></text>
-                <text class="txt">{{stockitem.alt}}</text>
-            </div>
         </div>
         <div style="width: 5px">
-
         </div>
         <div class="news-content" @click="todetail(stockitem.href2,stockitem.title2)">
             <image class="img" :src="stockitem.src2"></image>
             <text class="txt">{{stockitem.title2}}</text>
-            <div style="flex-direction: row;flex: 1">
-                <text class="txt" @click="todetail(stockitem.category2,stockitem.other2)">{{stockitem.other2}}</text>
-                <text class="txt"></text>
-                <text class="txt">{{stockitem.alt2}}</text>
-            </div>
         </div>
     </div>
 </template>
@@ -47,19 +36,19 @@
 //                if(e.indexOf('http://www.ys8.com')!=-1){
 //                    weexEventModule.startWebViewActivity(e);
 //                }else{
-                    var name = "imagelist/pc_imagelist";
-                    var params={
-                        url: duoduo.getDefaultUrl(name),
-                        animated: "true",
-                        options:{
-                            taghref: e,
-                            title:alt
-                        }
-                    };
+                var name = "imglist/pc_imglist";
+                var params={
+                    url: duoduo.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
 
-                    weexNavigatorModule.push(params, event => {
-                        // modal.toast({ message: 'callback: ' + event })
-                    });
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                });
 //                }
             }
         }
@@ -86,18 +75,5 @@
         padding: 5;
         flex: 1;
     }
-    .txt:active{
-        font-size:22;
-        flex: 1;
-        padding: 5;
-        color: #d42591;
-    }
-    .txt2{
-        font-size:22;
-        flex: 1;
-    }
-    .icon{
-        width: 30;
-        height: 30;
-    }
+
 </style>

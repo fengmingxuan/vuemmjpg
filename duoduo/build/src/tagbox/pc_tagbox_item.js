@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(16)
+	__vue_styles__.push(__webpack_require__(36)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(17)
+	__vue_exports__ = __webpack_require__(37)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(18)
+	var __vue_template__ = __webpack_require__(38)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,7 +107,19 @@
 	};
 
 	var DUODUO = {
-	    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+	    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+	    pc_duotoo:"http://www.duotoo.com/",
+	    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+	};
+	exports.getpc_image = function () {
+	    var url = DUODUO.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
+	};
+	exports.getpc_duotoo = function () {
+	    var url = DUODUO.pc_duotoo;
+	    console.log('pc_duotoo==' + url);
+	    return url;
 	};
 
 	exports.getpc_weimeitupian = function () {
@@ -210,7 +222,7 @@
 
 /***/ },
 
-/***/ 16:
+/***/ 36:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -234,7 +246,7 @@
 
 /***/ },
 
-/***/ 17:
+/***/ 37:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -303,7 +315,7 @@
 
 /***/ },
 
-/***/ 18:
+/***/ 38:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

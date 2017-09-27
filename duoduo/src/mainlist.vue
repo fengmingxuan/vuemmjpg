@@ -23,6 +23,12 @@
             }
         },
         created () {
+            this.rows.push('imglist/pc_image_hot_list')
+            this.rows.push('imglist/pc_image_newest_list')
+            this.rows.push('imagelist/pc_imagelist')
+            this.rows.push('sitenav/pc_sitenav')
+            this.rows.push('navmenu/pcslideoutmenu')
+            this.rows.push('navmenu/pc_navmenu')
             this.rows.push('navdd/pcnavdd-scroller-tabbar')
             this.rows.push('navdd/pc_navdd')
             this.rows.push('tagbox/pc_tagbox')

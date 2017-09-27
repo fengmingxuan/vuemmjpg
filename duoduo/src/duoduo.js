@@ -11,7 +11,19 @@ var BASE_URL = {
 };
 
 var DUODUO = {
-    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+    pc_duotoo:"http://www.duotoo.com/",
+    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+};
+exports.getpc_image = function () {
+    var url = DUODUO.pc_image;
+    console.log('pc_image==' + url);
+    return url;
+};
+exports.getpc_duotoo = function () {
+    var url = DUODUO.pc_duotoo;
+    console.log('pc_duotoo==' + url);
+    return url;
 };
 
 exports.getpc_weimeitupian = function () {

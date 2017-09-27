@@ -42,22 +42,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(9)
+	__vue_styles__.push(__webpack_require__(16)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(10)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(11)
+	var __vue_template__ = __webpack_require__(18)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -89,12 +90,8 @@
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	var BASE_URL = {
@@ -110,7 +107,19 @@
 	};
 
 	var DUODUO = {
-	    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+	    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+	    pc_duotoo:"http://www.duotoo.com/",
+	    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+	};
+	exports.getpc_image = function () {
+	    var url = DUODUO.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
+	};
+	exports.getpc_duotoo = function () {
+	    var url = DUODUO.pc_duotoo;
+	    console.log('pc_duotoo==' + url);
+	    return url;
 	};
 
 	exports.getpc_weimeitupian = function () {
@@ -212,9 +221,8 @@
 
 
 /***/ },
-/* 7 */,
-/* 8 */,
-/* 9 */
+
+/***/ 16:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -252,7 +260,8 @@
 	}
 
 /***/ },
-/* 10 */
+
+/***/ 17:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -303,28 +312,29 @@
 	        todetail: function todetail(e, alt) {
 	            console.log('main list===' + e);
 	            //                if(e.indexOf('http://www.ys8.com')!=-1){
-	            weexEventModule.startWebViewActivity(e);
+	            //                    weexEventModule.startWebViewActivity(e);
 	            //                }else{
-	            //                    var name = "imagelist/pc_imagelist";
-	            //                    var params={
-	            //                        url: duoduo.getDefaultUrl(name),
-	            //                        animated: "true",
-	            //                        options:{
-	            //                            taghref: e,
-	            //                            title:alt
-	            //                        }
-	            //                    };
-	            //
-	            //                    weexNavigatorModule.push(params, event => {
-	            //                        // modal.toast({ message: 'callback: ' + event })
-	            //                    });
+	            var name = "imagelist/pc_imagelist";
+	            var params = {
+	                url: duoduo.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
 	            //                }
 	        }
 	    }
 	};
 
 /***/ },
-/* 11 */
+
+/***/ 18:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -403,4 +413,5 @@
 	module.exports.render._withStripped = true
 
 /***/ }
-/******/ ]);
+
+/******/ });

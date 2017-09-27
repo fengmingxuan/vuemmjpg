@@ -1,6 +1,6 @@
 <template>
     <div style="background-color:rgba(0, 0, 0, .25) ">
-        <!--<navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>-->
+        <navbar_v :title="title" :shown="shown" :leftsrc="leftsrc"></navbar_v>
         <list class="list"  loadmoreoffset="10">
             <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
                 <text class="indicator">下拉刷新...</text>
@@ -8,8 +8,8 @@
             <!--<cell>-->
                 <!--<pcnav_topgrid :taghref="taghref" :pageNo="0"></pcnav_topgrid>-->
             <!--</cell>-->
-            <cell v-for="stockitem in stockArray">
-                <pc_tagbox_item :stockitem="stockitem"></pc_tagbox_item>
+            <cell v-for="menuitem in menuArray">
+                <pc_navmenu_child :menuitem="menuitem"></pc_navmenu_child>
             </cell>
             <!--<cell>-->
                 <!--<pcnav_topgrid :taghref="taghref" :pageNo="1"></pcnav_topgrid>-->
@@ -23,7 +23,7 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pc_tagbox_item from './pc_tagbox_item.vue'
+    import  pc_navmenu_child from './pc_navmenu_child.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexDuoduoJsoupModule = weex.requireModule('weexDuoduoJsoupModule');
@@ -33,15 +33,15 @@
     var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
-            pc_tagbox_item,
+            pc_navmenu_child,
             navbar_v,
 
         },
         props: ['taghref'],
         data(){
             return{
-                stockArray:[],
-                taghref:duoduo.getpc_weimeitupian(),
+                menuArray:[],
+                taghref:duoduo.getpc_duotoo(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -66,9 +66,6 @@
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
 //
-//            setTimeout(() => {
-//                self.refresh();
-//            }, 2000)
             self.refresh();
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
@@ -122,7 +119,7 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = duoduo.getpc_weimeitupian();
+                    self.taghref = duoduo.getpc_duotoo();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
@@ -133,21 +130,21 @@
                 console.log('url==='+url);
                 var params = {
                     className:"com.open.mmjpg.jsoup.pc.DuoduoJsoupService",
-                    methodName:"pcSideTagBox",
+                    methodName:"pcnavmenu",
                     parameterTypes:['String','int'],
                     args:[url,self.pageNo]
                 };
-                weexDuoduoJsoupModule.jsoupModule(params,function(e){
+                weexDuoduoJsoupModule.jsoupMultModule(params,function(e){
                     var json = JSON.parse(e);
                     if(self.pageNo==1){
-                        self.stockArray.splice(0, self.stockArray.length);
+                        self.menuArray.splice(0, self.menuArray.length);
                     }
                     if (json.list) {
                         if (json.list && json.list.length > 0) {
                             self.parseJSON(json);
                             var paramsCache = {
                                 url:url,
-                                typename: "pcSideTagBox"+self.pageNo,
+                                typename: "pcnavmenu"+self.pageNo,
                             };
                             weexEventModule.saveCache(paramsCache,json,function(ee){
 
@@ -158,7 +155,7 @@
                             //获取缓存
                             var paramsCache = {
                                 url:url,
-                                typename: "pcSideTagBox"+self.pageNo
+                                typename: "pcnavmenu"+self.pageNo
                             };
                             weexEventModule.queryCache(paramsCache,function(e){
                                 console.log('queryCache=='+e);
@@ -173,26 +170,10 @@
             },
             parseJSON:function (json) {
                 var self = this;
-                for (var i = 0; i < json.list.length; i+=3) {
+                for (var i = 0; i < json.list.length; i++) {
 //                    self.pagenumbers = json.list[0].pagenumbers;
                     var tag = json.list[i];
-                    var tag2 = json.list[i+1];
-                    if(tag2==undefined){
-                        tag2={};
-                    }
-                    var tag3 = json.list[i+2];
-                    if(tag3==undefined){
-                        tag3={};
-                    }
-                    var item={
-                        href:tag.href,
-                        title:tag.title,
-                        href2:tag2.href,
-                        title2:tag2.title,
-                        href3:tag3.href,
-                        title3:tag3.title,
-                    };
-                    self.stockArray.push(item);
+                    self.menuArray.push(tag);
                 }
             },
 

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(25)
+	__vue_styles__.push(__webpack_require__(44)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(26)
+	__vue_exports__ = __webpack_require__(45)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(27)
+	var __vue_template__ = __webpack_require__(46)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -107,7 +107,19 @@
 	};
 
 	var DUODUO = {
-	    pc_weimeitupian:"http://www.duotoo.com/weimeitupian/",
+	    pc_weimeitupian:"http://www.duotoo.com/xingganmeinv/",
+	    pc_duotoo:"http://www.duotoo.com/",
+	    pc_image:"http://www.duotoo.com/xingganmeinv/56030.html"
+	};
+	exports.getpc_image = function () {
+	    var url = DUODUO.pc_image;
+	    console.log('pc_image==' + url);
+	    return url;
+	};
+	exports.getpc_duotoo = function () {
+	    var url = DUODUO.pc_duotoo;
+	    console.log('pc_duotoo==' + url);
+	    return url;
 	};
 
 	exports.getpc_weimeitupian = function () {
@@ -210,7 +222,7 @@
 
 /***/ },
 
-/***/ 25:
+/***/ 44:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -238,7 +250,7 @@
 
 /***/ },
 
-/***/ 26:
+/***/ 45:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -271,6 +283,12 @@
 	        };
 	    },
 	    created: function created() {
+	        this.rows.push('imglist/pc_image_hot_list');
+	        this.rows.push('imglist/pc_image_newest_list');
+	        this.rows.push('imagelist/pc_imagelist');
+	        this.rows.push('sitenav/pc_sitenav');
+	        this.rows.push('navmenu/pcslideoutmenu');
+	        this.rows.push('navmenu/pc_navmenu');
 	        this.rows.push('navdd/pcnavdd-scroller-tabbar');
 	        this.rows.push('navdd/pc_navdd');
 	        this.rows.push('tagbox/pc_tagbox');
@@ -303,7 +321,7 @@
 
 /***/ },
 
-/***/ 27:
+/***/ 46:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

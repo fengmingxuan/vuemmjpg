@@ -9,10 +9,10 @@
                 <!--<pcnav_topgrid :taghref="taghref" :pageNo="0"></pcnav_topgrid>-->
             <!--</cell>-->
             <cell v-for="stockitem in stockArray">
-                <pc_tagbox_item :stockitem="stockitem"></pc_tagbox_item>
+                <pc_imglist_item :stockitem="stockitem"></pc_imglist_item>
             </cell>
             <!--<cell>-->
-                <!--<pcnav_topgrid :taghref="taghref" :pageNo="1"></pcnav_topgrid>-->
+                <!--<pc_tagbox :taghref="taghref"></pc_tagbox>-->
             <!--</cell>-->
             <!--<loading class="loading" @loading="onloading" :display="showLoading">-->
                 <!--<text class="indicator_loading">加载更多...</text>-->
@@ -23,7 +23,7 @@
 
 <script>
     import  navbar_v from '../template/navbar_v.vue'
-    import  pc_tagbox_item from './pc_tagbox_item.vue'
+    import  pc_imglist_item from './pc_imglist_item.vue'
     var stream = weex.requireModule('stream');
     var modal = weex.requireModule('modal');
     var weexDuoduoJsoupModule = weex.requireModule('weexDuoduoJsoupModule');
@@ -33,15 +33,14 @@
     var weexEventModule = weex.requireModule('weexEventModule');
     export default{
         components: {
-            pc_tagbox_item,
+            pc_imglist_item,
             navbar_v,
-
         },
         props: ['taghref'],
         data(){
             return{
                 stockArray:[],
-                taghref:duoduo.getpc_weimeitupian(),
+                taghref:duoduo.getpc_image(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -65,11 +64,8 @@
                 self.title = ctitle;
             }
             console.log('title=='+self.title+';taghref=='+self.taghref)
-//
-//            setTimeout(() => {
-//                self.refresh();
-//            }, 2000)
             self.refresh();
+
 //            storage.getItem('taghref',function(s){
 //                console.log('get taghref result:'+JSON.stringify(s));
 //                var staghref = s.data;
@@ -122,7 +118,7 @@
                 var self = this;
                 self.isFirst=0;
                 if(self.taghref==undefined){
-                    self.taghref = duoduo.getpc_weimeitupian();
+                    self.taghref = duoduo.getpc_image();
                 }
                 var url = self.taghref;
                 if(self.pageNo==1){
@@ -133,7 +129,7 @@
                 console.log('url==='+url);
                 var params = {
                     className:"com.open.mmjpg.jsoup.pc.DuoduoJsoupService",
-                    methodName:"pcSideTagBox",
+                    methodName:"pcimagehot",
                     parameterTypes:['String','int'],
                     args:[url,self.pageNo]
                 };
@@ -147,7 +143,7 @@
                             self.parseJSON(json);
                             var paramsCache = {
                                 url:url,
-                                typename: "pcSideTagBox"+self.pageNo,
+                                typename: "pcimagehot"+self.pageNo,
                             };
                             weexEventModule.saveCache(paramsCache,json,function(ee){
 
@@ -158,7 +154,7 @@
                             //获取缓存
                             var paramsCache = {
                                 url:url,
-                                typename: "pcSideTagBox"+self.pageNo
+                                typename: "pcimagehot"+self.pageNo
                             };
                             weexEventModule.queryCache(paramsCache,function(e){
                                 console.log('queryCache=='+e);
@@ -173,24 +169,26 @@
             },
             parseJSON:function (json) {
                 var self = this;
-                for (var i = 0; i < json.list.length; i+=3) {
+                for (var i = 0; i < json.list.length; i+=2) {
 //                    self.pagenumbers = json.list[0].pagenumbers;
                     var tag = json.list[i];
                     var tag2 = json.list[i+1];
                     if(tag2==undefined){
                         tag2={};
                     }
-                    var tag3 = json.list[i+2];
-                    if(tag3==undefined){
-                        tag3={};
-                    }
                     var item={
                         href:tag.href,
+                        alt:tag.alt,
+                        src:tag.src,
+                        other:tag.other,
                         title:tag.title,
+                        category:tag.category,
                         href2:tag2.href,
+                        alt2:tag2.alt,
+                        src2:tag2.src,
+                        other2:tag2.other,
                         title2:tag2.title,
-                        href3:tag3.href,
-                        title3:tag3.title,
+                        category2:tag2.category,
                     };
                     self.stockArray.push(item);
                 }
