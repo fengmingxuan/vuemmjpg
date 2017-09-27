@@ -4,7 +4,7 @@
             <image class="img" :src="stockitem.src" ></image>
             <text class="txt">{{stockitem.title}}</text>
             <div style="flex-direction: row;flex: 1">
-                <text class="txt" @click="todetail(stockitem.category,stockitem.other)">{{stockitem.other}}</text>
+                <text class="txt" @click="todetail2(stockitem.category,stockitem.other)">{{stockitem.other}}</text>
                 <text class="txt"></text>
                 <text class="txt">{{stockitem.alt}}</text>
             </div>
@@ -16,7 +16,7 @@
             <image class="img" :src="stockitem.src2"></image>
             <text class="txt">{{stockitem.title2}}</text>
             <div style="flex-direction: row;flex: 1">
-                <text class="txt" @click="todetail(stockitem.category2,stockitem.other2)">{{stockitem.other2}}</text>
+                <text class="txt" @click="todetail2(stockitem.category2,stockitem.other2)">{{stockitem.other2}}</text>
                 <text class="txt"></text>
                 <text class="txt">{{stockitem.alt2}}</text>
             </div>
@@ -60,6 +60,26 @@
                     weexNavigatorModule.push(params, event => {
                         // modal.toast({ message: 'callback: ' + event })
                     });
+//                }
+            },
+            todetail2:function (e,alt) {
+                console.log('main list==='+e)
+//                if(e.indexOf('http://www.ys8.com')!=-1){
+//                    weexEventModule.startWebViewActivity(e);
+//                }else{
+                var name = "imglist/pc_imglist";
+                var params={
+                    url: duoduo.getDefaultUrl(name),
+                    animated: "true",
+                    options:{
+                        taghref: e,
+                        title:alt
+                    }
+                };
+
+                weexNavigatorModule.push(params, event => {
+                    // modal.toast({ message: 'callback: ' + event })
+                });
 //                }
             }
         }

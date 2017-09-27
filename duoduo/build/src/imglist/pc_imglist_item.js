@@ -328,6 +328,26 @@
 	                // modal.toast({ message: 'callback: ' + event })
 	            });
 	            //                }
+	        },
+	        todetail2: function todetail2(e, alt) {
+	            console.log('main list===' + e);
+	            //                if(e.indexOf('http://www.ys8.com')!=-1){
+	            //                    weexEventModule.startWebViewActivity(e);
+	            //                }else{
+	            var name = "imglist/pc_imglist";
+	            var params = {
+	                url: duoduo.getDefaultUrl(name),
+	                animated: "true",
+	                options: {
+	                    taghref: e,
+	                    title: alt
+	                }
+	            };
+
+	            weexNavigatorModule.push(params, function (event) {
+	                // modal.toast({ message: 'callback: ' + event })
+	            });
+	            //                }
 	        }
 	    }
 	};
@@ -367,7 +387,7 @@
 	    staticClass: ["txt"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.category, _vm.stockitem.other)
+	        _vm.todetail2(_vm.stockitem.category, _vm.stockitem.other)
 	      }
 	    }
 	  }, [_vm._v(_vm._s(_vm.stockitem.other))]), _c('text', {
@@ -401,7 +421,7 @@
 	    staticClass: ["txt"],
 	    on: {
 	      "click": function($event) {
-	        _vm.todetail(_vm.stockitem.category2, _vm.stockitem.other2)
+	        _vm.todetail2(_vm.stockitem.category2, _vm.stockitem.other2)
 	      }
 	    }
 	  }, [_vm._v(_vm._s(_vm.stockitem.other2))]), _c('text', {
