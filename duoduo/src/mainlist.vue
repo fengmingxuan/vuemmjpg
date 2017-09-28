@@ -23,6 +23,7 @@
             }
         },
         created () {
+            this.rows.push('saveImage/pc_saveimglist')
             this.rows.push('imglist/pc_image_hot_list')
             this.rows.push('imglist/pc_image_newest_list')
             this.rows.push('imagelist/pc_imagelist')

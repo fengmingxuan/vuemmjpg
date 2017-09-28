@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(44)
+	__vue_styles__.push(__webpack_require__(86)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(45)
+	__vue_exports__ = __webpack_require__(87)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(46)
+	var __vue_template__ = __webpack_require__(88)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/mainlist.vue"
+	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/saveImage/pc_saveimglist_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-5a913de7"
+	__vue_options__._scopeId = "data-v-3afa22e9"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -222,42 +222,54 @@
 
 /***/ },
 
-/***/ 44:
+/***/ 86:
 /***/ function(module, exports) {
 
 	module.exports = {
-	  "scroller": {
-	    "borderWidth": 3,
-	    "borderStyle": "solid",
-	    "borderColor": "rgb(162,217,192)",
+	  "news-content": {
 	    "marginLeft": 1,
-	    "marginRight": 1
-	  },
-	  "row": {
-	    "height": 150,
+	    "marginRight": 1,
 	    "flexDirection": "column",
-	    "justifyContent": "center",
-	    "paddingLeft": 30,
-	    "borderBottomWidth": 2,
-	    "borderBottomStyle": "solid",
-	    "borderBottomColor": "#DDDDDD"
+	    "flex": 1,
+	    "padding": 5,
+	    "backgroundColor": "#ffffff",
+	    "borderRadius": 5
 	  },
-	  "text": {
-	    "fontSize": 45,
-	    "color": "#666666"
+	  "img": {
+	    "width": 350,
+	    "height": 440,
+	    "borderRadius": 5
+	  },
+	  "txt": {
+	    "fontSize": 22,
+	    "padding": 5,
+	    "flex": 1,
+	    "fontSize:active": 22,
+	    "flex:active": 1,
+	    "padding:active": 5,
+	    "color:active": "#d42591"
+	  },
+	  "txt2": {
+	    "fontSize": 22,
+	    "flex": 1
+	  },
+	  "icon": {
+	    "width": 30,
+	    "height": 30
 	  }
 	}
 
 /***/ },
 
-/***/ 45:
+/***/ 87:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -270,80 +282,90 @@
 	//
 	//
 
-	var navigator = weex.requireModule('navigator');
+	var weexEventModule = weex.requireModule('weexEventModule');
 	var weexNavigatorModule = weex.requireModule('weexNavigatorModule');
-	var weexModule = weex.requireModule('weexModule');
-	var dom = weex.requireModule('dom');
-	var modal = weex.requireModule('modal');
 	var duoduo = __webpack_require__(6);
-	exports.default = {
-	    data: function data() {
-	        return {
-	            rows: []
-	        };
-	    },
-	    created: function created() {
-	        this.rows.push('saveImage/pc_saveimglist');
-	        this.rows.push('imglist/pc_image_hot_list');
-	        this.rows.push('imglist/pc_image_newest_list');
-	        this.rows.push('imagelist/pc_imagelist');
-	        this.rows.push('sitenav/pc_sitenav');
-	        this.rows.push('navmenu/pcslideoutmenu');
-	        this.rows.push('navmenu/pc_navmenu');
-	        this.rows.push('navdd/pcnavdd-scroller-tabbar');
-	        this.rows.push('navdd/pc_navdd');
-	        this.rows.push('tagbox/pc_tagbox');
-	        this.rows.push('imglist/pc_imglist');
-	        this.rows.push('webnews');
-	        this.rows.push('template/navbar_v');
+	module.exports = {
+	    created: function created() {},
+
+	    props: {
+	        stockitem: {
+	            type: Object
+	        }
 	    },
 
 	    methods: {
-	        openitem: function openitem(event) {
-
-	            //callJS tasks:[{"data":"14","type":2},{"data":"[{\"args\":[\"150\",\"click\",{\"position\":{\"height\":52.77778,\"width\":713.19446,\"x\":33.333332,\"y\":191.66667}},null],\"method\":\"fireEvent\"}]","type":3}]
-	            // tasks:[{"module":"modal","method":"toast","args":[{"message":{"position":{"height":52.77778,"width":713.19446,"x":33.333332,"y":191.66667},"type":"click",
-	            // "target":{"ref":"186","type":"text","attr":{"value":"a"},"style":{"fontSize":45,"color":"#666666"},"event":["click"]},"timestamp":1488878471697}}]}]
-	            var name = event.target.attr.value;
-	            //                modal.toast({ message:  name.toString()})
-	            //http://localhost:8080/index.html?page=./mmjpg/build/mainlilst.js
-	            //                 weexModule.openUrl('http://192.168.1.15:8080/dist/'+name+'.weex.js', function(err){
-	            //                   console.log(err);
-	            //                  });
-	            weexNavigatorModule.push({
-	                url: duoduo.getDefaultUrl(name),
-	                animated: "true"
-	            }, function (event) {
-	                // modal.toast({ message: 'callback: ' + event })
-	            });
+	        getImgUrl: function getImgUrl(url) {
+	            return duoduo.getImageUrl(url);
+	        },
+	        todetail: function todetail(e, alt) {
+	            console.log('main list===' + e);
+	            //                if(e.indexOf('http://www.ys8.com')!=-1){
+	            weexEventModule.startWebViewActivity(e);
+	            //                }else{
+	            //                    var name = "imagelist/pc_imagelist";
+	            //                    var params={
+	            //                        url: duoduo.getDefaultUrl(name),
+	            //                        animated: "true",
+	            //                        options:{
+	            //                            taghref: e,
+	            //                            title:alt
+	            //                        }
+	            //                    };
+	            //
+	            //                    weexNavigatorModule.push(params, event => {
+	            //                        // modal.toast({ message: 'callback: ' + event })
+	            //                    });
+	            //                }
 	        }
 	    }
 	};
 
 /***/ },
 
-/***/ 46:
+/***/ 88:
 /***/ function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: ["wrapper"]
-	  }, [_c('scroller', {
-	    staticClass: ["scroller"]
-	  }, _vm._l((_vm.rows), function(name, index) {
-	    return _c('div', {
-	      ref: 'item' + index,
-	      refInFor: true,
-	      staticClass: ["row"]
-	    }, [_c('text', {
-	      ref: 'text' + index,
-	      refInFor: true,
-	      staticClass: ["text"],
-	      on: {
-	        "click": _vm.openitem
+	    staticStyle: {
+	      flexDirection: "row",
+	      flex: "1",
+	      margin: "5px"
+	    }
+	  }, [_c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.src, _vm.stockitem.title)
 	      }
-	    }, [_vm._v(_vm._s(name))])])
-	  }))])
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.title))])]), _c('div', {
+	    staticStyle: {
+	      width: "5px"
+	    }
+	  }), _c('div', {
+	    staticClass: ["news-content"],
+	    on: {
+	      "click": function($event) {
+	        _vm.todetail(_vm.stockitem.src2, _vm.stockitem.title2)
+	      }
+	    }
+	  }, [_c('image', {
+	    staticClass: ["img"],
+	    attrs: {
+	      "src": _vm.stockitem.src2
+	    }
+	  }), _c('text', {
+	    staticClass: ["txt"]
+	  }, [_vm._v(_vm._s(_vm.stockitem.title2))])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
