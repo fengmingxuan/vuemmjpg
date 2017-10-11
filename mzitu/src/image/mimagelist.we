@@ -70,6 +70,10 @@
         created: function () {
             var self = this;
             this.platform = this.$getConfig().env.platform;
+            var ctaghref = self.$getConfig().taghref;
+            if(ctaghref!=undefined){
+                self.taghref = ctaghref;
+            }
             self.url = self.taghref;
             self.refresh();
 

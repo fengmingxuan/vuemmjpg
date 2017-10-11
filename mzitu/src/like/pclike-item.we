@@ -34,22 +34,22 @@ var weexNavigatorModule = require('@weex-module/weexNavigatorModule')
 //                };
 //                console.log(JSON.stringify(optionJson));
 //               weexEventModule.startNativeActivity("com.open.mm.activity.m.MImagePullListActivity",JSON.stringify(optionJson));
-             weexEventModule.startWebViewActivity(e);
+//             weexEventModule.startWebViewActivity(e);
 
-//            var self = this;
-//                var name = "image/m_image_list";
-//                var url = yoka.getDefaultUrl(name);
-//                var taghref = self.stockitem.href;
-//                weexNavigatorModule.push({
-//                    url:url,
-//                    animated: "true",
-//                    options:{
-//                        href: taghref,
-//                        title:self.stockitem.alt,
-//                    }
-//                }, event => {
-//
-//                });
+                var self = this;
+                var name = "image/mimagelist";
+                var url = mzitu.getDefaultUrl(name);
+                var taghref = self.stockitem.href;
+                weexNavigatorModule.push({
+                    url:url,
+                    animated: "true",
+                    options:{
+                        taghref: taghref,
+                        title:self.stockitem.alt,
+                    }
+                }, event => {
+
+                });
             },
         }
     }
