@@ -1,10 +1,6 @@
 var BASE_URL = {
-    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
-    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-    HTTP: 'https://',//https:// http://
-
+    IP: 'code.taobao.org/svn',
+    HTTP: 'http://',//https:// http://
 };
 
 var MMJPG = {
@@ -105,7 +101,12 @@ exports.getImageUrl = function (path) {
     if (typeof window === 'object') {
         url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
     } else {
-        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+        if(BASE_URL.IP.indexOf('code.taobao.org')!=-1){
+            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg/trunk' + path.substring(1, path.length);
+        }else{
+            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+        }
+
 
     }
     console.log('getImageUrl=='+url);
@@ -152,7 +153,12 @@ function getBaseUrl(bundleUrl, isnav) {
         if (typeof window === 'object') {
             nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
         } else {
-            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+            if(host.indexOf('code.taobao.org')!=-1){
+                nativeBase = BASE_URL.HTTP + host + '/mmjpg/trunk/build/src/';
+            }else{
+                nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+            }
+
             //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
             // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
         }
