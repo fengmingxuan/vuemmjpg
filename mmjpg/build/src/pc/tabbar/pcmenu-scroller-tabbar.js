@@ -45,8 +45,8 @@
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(389)
-	var __weex_script__ = __webpack_require__(390)
+	var __weex_template__ = __webpack_require__(388)
+	var __weex_script__ = __webpack_require__(389)
 
 	__weex_define__('@weex-component/4b2e1054665fa62688444c2cd975de88', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -66,21 +66,18 @@
 /***/ 83:
 /***/ (function(module, exports) {
 
-	var core = module.exports = {version: '2.4.0'};
-	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+	var core = module.exports = { version: '2.5.7' };
+	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
 
 /***/ }),
 
-/***/ 142:
+/***/ 143:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
 	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
-
 	};
 
 	var MMJPG = {
@@ -181,7 +178,12 @@
 	    if (typeof window === 'object') {
 	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        if(BASE_URL.IP.indexOf('code.taobao.org')!=-1){
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg/trunk' + path.substring(1, path.length);
+	        }else{
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        }
+
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -228,7 +230,12 @@
 	        if (typeof window === 'object') {
 	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
 	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            if(host.indexOf('code.taobao.org')!=-1){
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/trunk/build/src/';
+	            }else{
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            }
+
 	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
 	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
 	        }
@@ -247,25 +254,26 @@
 
 /***/ }),
 
+/***/ 211:
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(212), __esModule: true };
+
+/***/ }),
+
 /***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(213), __esModule: true };
-
-/***/ }),
-
-/***/ 213:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(83)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	var core = __webpack_require__(83);
+	var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+	module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 	  return $JSON.stringify.apply($JSON, arguments);
 	};
 
+
 /***/ }),
 
-/***/ 389:
+/***/ 388:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -286,19 +294,19 @@
 
 /***/ }),
 
-/***/ 390:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	var _stringify = __webpack_require__(212);
+	var _stringify = __webpack_require__(211);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(391);
-	var mmjpg = __webpack_require__(142);
+	__webpack_require__(390);
+	var mmjpg = __webpack_require__(143);
 	var weexJsoupModule = __weex_require__('@weex-module/weexJsoupModule');
 	var storage = __weex_require__('@weex-module/storage');
 	var weexEventModule = __weex_require__('@weex-module/weexEventModule');
@@ -388,13 +396,13 @@
 
 /***/ }),
 
-/***/ 391:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(392)
-	var __weex_template__ = __webpack_require__(396)
-	var __weex_style__ = __webpack_require__(397)
-	var __weex_script__ = __webpack_require__(398)
+	__webpack_require__(391)
+	var __weex_template__ = __webpack_require__(395)
+	var __weex_style__ = __webpack_require__(396)
+	var __weex_script__ = __webpack_require__(397)
 
 	__weex_define__('@weex-component/wxc-scroller-tabbar', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -412,12 +420,12 @@
 
 /***/ }),
 
-/***/ 392:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __weex_template__ = __webpack_require__(393)
-	var __weex_style__ = __webpack_require__(394)
-	var __weex_script__ = __webpack_require__(395)
+	var __weex_template__ = __webpack_require__(392)
+	var __weex_style__ = __webpack_require__(393)
+	var __weex_script__ = __webpack_require__(394)
 
 	__weex_define__('@weex-component/wxc-scroller-tabitem', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
@@ -435,7 +443,7 @@
 
 /***/ }),
 
-/***/ 393:
+/***/ 392:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -485,7 +493,7 @@
 
 /***/ }),
 
-/***/ 394:
+/***/ 393:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -517,7 +525,7 @@
 
 /***/ }),
 
-/***/ 395:
+/***/ 394:
 /***/ (function(module, exports) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
@@ -545,7 +553,7 @@
 
 /***/ }),
 
-/***/ 396:
+/***/ 395:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -602,7 +610,7 @@
 
 /***/ }),
 
-/***/ 397:
+/***/ 396:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -649,12 +657,12 @@
 
 /***/ }),
 
-/***/ 398:
+/***/ 397:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, __weex_require__){'use strict';
 
-	__webpack_require__(392);
+	__webpack_require__(391);
 	module.exports = {
 	    data: function () {return {
 	        tabItems: [],

@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(350)
+	__vue_styles__.push(__webpack_require__(349)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(351)
+	__vue_exports__ = __webpack_require__(350)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(352)
+	var __vue_template__ = __webpack_require__(351)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainmm/pcmainmmlist_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainmm/pcmainmmlist_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-68991d11"
+	__vue_options__._scopeId = "data-v-378ce494"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -91,16 +91,12 @@
 
 /***/ }),
 
-/***/ 142:
+/***/ 143:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
 	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
-
 	};
 
 	var MMJPG = {
@@ -201,7 +197,12 @@
 	    if (typeof window === 'object') {
 	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        if(BASE_URL.IP.indexOf('code.taobao.org')!=-1){
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg/trunk' + path.substring(1, path.length);
+	        }else{
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        }
+
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -248,7 +249,12 @@
 	        if (typeof window === 'object') {
 	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
 	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            if(host.indexOf('code.taobao.org')!=-1){
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/trunk/build/src/';
+	            }else{
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            }
+
 	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
 	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
 	        }
@@ -267,21 +273,21 @@
 
 /***/ }),
 
-/***/ 344:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(345)
+	__vue_styles__.push(__webpack_require__(344)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(346)
+	__vue_exports__ = __webpack_require__(345)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(347)
+	var __vue_template__ = __webpack_require__(346)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -293,10 +299,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelistitem_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelistitem_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-76458544"
+	__vue_options__._scopeId = "data-v-5adcfe2e"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -312,7 +318,7 @@
 
 /***/ }),
 
-/***/ 345:
+/***/ 344:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -337,7 +343,7 @@
 
 /***/ }),
 
-/***/ 346:
+/***/ 345:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -372,7 +378,7 @@
 
 /***/ }),
 
-/***/ 347:
+/***/ 346:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -396,7 +402,7 @@
 
 /***/ }),
 
-/***/ 350:
+/***/ 349:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -414,7 +420,7 @@
 
 /***/ }),
 
-/***/ 351:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -423,7 +429,7 @@
 	    value: true
 	});
 
-	var _pcmainlikelistitem_v = __webpack_require__(344);
+	var _pcmainlikelistitem_v = __webpack_require__(343);
 
 	var _pcmainlikelistitem_v2 = _interopRequireDefault(_pcmainlikelistitem_v);
 
@@ -445,7 +451,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -529,7 +535,7 @@
 
 /***/ }),
 
-/***/ 352:
+/***/ 351:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

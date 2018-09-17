@@ -51,14 +51,14 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(330)
+	__vue_styles__.push(__webpack_require__(329)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(331)
+	__vue_exports__ = __webpack_require__(330)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(353)
+	var __vue_template__ = __webpack_require__(352)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_load_refresh_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/main/pc_main_load_refresh_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6b6ad203"
+	__vue_options__._scopeId = "data-v-fd491a30"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -91,16 +91,12 @@
 
 /***/ }),
 
-/***/ 142:
+/***/ 143:
 /***/ (function(module, exports) {
 
 	var BASE_URL = {
-	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
-	    //raw.githubusercontent.com/fengmnegchang/vuemmjpg/master 192.168.1.15:8080 192.168.1.9:8080
-	    //https://raw.githubusercontent.com/fengmingxuan/vuemmjpg/master/mmjpg/build/src/mainlist.js
 	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
 	    HTTP: 'https://',//https:// http://
-
 	};
 
 	var MMJPG = {
@@ -201,7 +197,12 @@
 	    if (typeof window === 'object') {
 	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
 	    } else {
-	        url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        if(BASE_URL.IP.indexOf('code.taobao.org')!=-1){
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg/trunk' + path.substring(1, path.length);
+	        }else{
+	            url = BASE_URL.HTTP + BASE_URL.IP + '/mmjpg' + path.substring(1, path.length);
+	        }
+
 
 	    }
 	    console.log('getImageUrl=='+url);
@@ -248,7 +249,12 @@
 	        if (typeof window === 'object') {
 	            nativeBase = isnav ? BASE_URL.HTTP + host + '/index.html?page=./mmjpg/build/src/' : BASE_URL.HTTP + host + '/mmjpg/build/src/';
 	        } else {
-	            nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            if(host.indexOf('code.taobao.org')!=-1){
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/trunk/build/src/';
+	            }else{
+	                nativeBase = BASE_URL.HTTP + host + '/mmjpg/build/src/';
+	            }
+
 	            //放在官方仓库 'incubator-weex/examples/TGB_WEEX' 文件夹下编译的话，路径用这个
 	            // nativeBase = 'http://' + host.replace("8080","12580") + '/examples/build/TGB_WEEX/storm/src/';
 	        }
@@ -267,21 +273,21 @@
 
 /***/ }),
 
-/***/ 298:
+/***/ 297:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(299)
+	__vue_styles__.push(__webpack_require__(298)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(300)
+	__vue_exports__ = __webpack_require__(299)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(301)
+	var __vue_template__ = __webpack_require__(300)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -293,10 +299,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlistitem_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlistitem_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-78a91aa8"
+	__vue_options__._scopeId = "data-v-e2cc88e6"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -312,7 +318,7 @@
 
 /***/ }),
 
-/***/ 299:
+/***/ 298:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -338,7 +344,7 @@
 
 /***/ }),
 
-/***/ 300:
+/***/ 299:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -373,7 +379,7 @@
 
 /***/ }),
 
-/***/ 301:
+/***/ 300:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -394,7 +400,7 @@
 
 /***/ }),
 
-/***/ 327:
+/***/ 326:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -440,7 +446,7 @@
 
 /***/ }),
 
-/***/ 328:
+/***/ 327:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -477,7 +483,7 @@
 
 /***/ }),
 
-/***/ 329:
+/***/ 328:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -503,7 +509,7 @@
 
 /***/ }),
 
-/***/ 330:
+/***/ 329:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -531,7 +537,7 @@
 
 /***/ }),
 
-/***/ 331:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -540,23 +546,23 @@
 	    value: true
 	});
 
-	var _pc_main_item_v = __webpack_require__(332);
+	var _pc_main_item_v = __webpack_require__(331);
 
 	var _pc_main_item_v2 = _interopRequireDefault(_pc_main_item_v);
 
-	var _pcmaintopslider = __webpack_require__(333);
+	var _pcmaintopslider = __webpack_require__(332);
 
 	var _pcmaintopslider2 = _interopRequireDefault(_pcmaintopslider);
 
-	var _pcmainhotlist_v = __webpack_require__(337);
+	var _pcmainhotlist_v = __webpack_require__(336);
 
 	var _pcmainhotlist_v2 = _interopRequireDefault(_pcmainhotlist_v);
 
-	var _pcmainlikelist_v = __webpack_require__(341);
+	var _pcmainlikelist_v = __webpack_require__(340);
 
 	var _pcmainlikelist_v2 = _interopRequireDefault(_pcmainlikelist_v);
 
-	var _pcmainmmlist_v = __webpack_require__(349);
+	var _pcmainmmlist_v = __webpack_require__(348);
 
 	var _pcmainmmlist_v2 = _interopRequireDefault(_pcmainmmlist_v);
 
@@ -593,7 +599,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -702,21 +708,21 @@
 
 /***/ }),
 
-/***/ 332:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(327)
+	__vue_styles__.push(__webpack_require__(326)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(328)
+	__vue_exports__ = __webpack_require__(327)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(329)
+	var __vue_template__ = __webpack_require__(328)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -728,10 +734,55 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/main/pc_main_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-10f49458"
+	__vue_options__._scopeId = "data-v-71640bb9"
+	__vue_options__.style = __vue_options__.style || {}
+	__vue_styles__.forEach(function (module) {
+	  for (var name in module) {
+	    __vue_options__.style[name] = module[name]
+	  }
+	})
+	if (typeof __register_static_styles__ === "function") {
+	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+	}
+
+	module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = []
+
+	/* styles */
+	__vue_styles__.push(__webpack_require__(333)
+	)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(334)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(335)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainpager/pcmaintopslider.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-3e0e1bf8"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -748,51 +799,6 @@
 /***/ }),
 
 /***/ 333:
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = []
-
-	/* styles */
-	__vue_styles__.push(__webpack_require__(334)
-	)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(335)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(336)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainpager/pcmaintopslider.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-01fb5bdf"
-	__vue_options__.style = __vue_options__.style || {}
-	__vue_styles__.forEach(function (module) {
-	  for (var name in module) {
-	    __vue_options__.style[name] = module[name]
-	  }
-	})
-	if (typeof __register_static_styles__ === "function") {
-	  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-	}
-
-	module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 334:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -813,7 +819,7 @@
 
 /***/ }),
 
-/***/ 335:
+/***/ 334:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -822,7 +828,7 @@
 	    value: true
 	});
 
-	var _pc_main_item_v = __webpack_require__(332);
+	var _pc_main_item_v = __webpack_require__(331);
 
 	var _pc_main_item_v2 = _interopRequireDefault(_pc_main_item_v);
 
@@ -857,7 +863,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    data: function data() {
@@ -919,7 +925,7 @@
 
 /***/ }),
 
-/***/ 336:
+/***/ 335:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -950,21 +956,21 @@
 
 /***/ }),
 
-/***/ 337:
+/***/ 336:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(338)
+	__vue_styles__.push(__webpack_require__(337)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(339)
+	__vue_exports__ = __webpack_require__(338)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(340)
+	var __vue_template__ = __webpack_require__(339)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -976,10 +982,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlist_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainhot/pcmainhotlist_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-449bccd5"
+	__vue_options__._scopeId = "data-v-59e2a83a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -995,7 +1001,7 @@
 
 /***/ }),
 
-/***/ 338:
+/***/ 337:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1013,7 +1019,7 @@
 
 /***/ }),
 
-/***/ 339:
+/***/ 338:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1022,7 +1028,7 @@
 	    value: true
 	});
 
-	var _pcmainhotlistitem_v = __webpack_require__(298);
+	var _pcmainhotlistitem_v = __webpack_require__(297);
 
 	var _pcmainhotlistitem_v2 = _interopRequireDefault(_pcmainhotlistitem_v);
 
@@ -1044,7 +1050,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -1128,7 +1134,7 @@
 
 /***/ }),
 
-/***/ 340:
+/***/ 339:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1168,21 +1174,21 @@
 
 /***/ }),
 
-/***/ 341:
+/***/ 340:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(342)
+	__vue_styles__.push(__webpack_require__(341)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(343)
+	__vue_exports__ = __webpack_require__(342)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(348)
+	var __vue_template__ = __webpack_require__(347)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1194,10 +1200,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelist_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelist_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-206de571"
+	__vue_options__._scopeId = "data-v-012908d4"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1213,7 +1219,7 @@
 
 /***/ }),
 
-/***/ 342:
+/***/ 341:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1231,7 +1237,7 @@
 
 /***/ }),
 
-/***/ 343:
+/***/ 342:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1240,7 +1246,7 @@
 	    value: true
 	});
 
-	var _pcmainlikelistitem_v = __webpack_require__(344);
+	var _pcmainlikelistitem_v = __webpack_require__(343);
 
 	var _pcmainlikelistitem_v2 = _interopRequireDefault(_pcmainlikelistitem_v);
 
@@ -1262,7 +1268,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -1346,21 +1352,21 @@
 
 /***/ }),
 
-/***/ 344:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(345)
+	__vue_styles__.push(__webpack_require__(344)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(346)
+	__vue_exports__ = __webpack_require__(345)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(347)
+	var __vue_template__ = __webpack_require__(346)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1372,10 +1378,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelistitem_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainlike/pcmainlikelistitem_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-76458544"
+	__vue_options__._scopeId = "data-v-5adcfe2e"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1391,7 +1397,7 @@
 
 /***/ }),
 
-/***/ 345:
+/***/ 344:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1416,7 +1422,7 @@
 
 /***/ }),
 
-/***/ 346:
+/***/ 345:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1451,7 +1457,7 @@
 
 /***/ }),
 
-/***/ 347:
+/***/ 346:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1475,7 +1481,7 @@
 
 /***/ }),
 
-/***/ 348:
+/***/ 347:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1515,21 +1521,21 @@
 
 /***/ }),
 
-/***/ 349:
+/***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(350)
+	__vue_styles__.push(__webpack_require__(349)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(351)
+	__vue_exports__ = __webpack_require__(350)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(352)
+	var __vue_template__ = __webpack_require__(351)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -1541,10 +1547,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/mmjpg/src/pc/mainmm/pcmainmmlist_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mmjpg/src/pc/mainmm/pcmainmmlist_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-68991d11"
+	__vue_options__._scopeId = "data-v-378ce494"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1560,7 +1566,7 @@
 
 /***/ }),
 
-/***/ 350:
+/***/ 349:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -1578,7 +1584,7 @@
 
 /***/ }),
 
-/***/ 351:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1587,7 +1593,7 @@
 	    value: true
 	});
 
-	var _pcmainlikelistitem_v = __webpack_require__(344);
+	var _pcmainlikelistitem_v = __webpack_require__(343);
 
 	var _pcmainlikelistitem_v2 = _interopRequireDefault(_pcmainlikelistitem_v);
 
@@ -1609,7 +1615,7 @@
 
 	var modal = weex.requireModule('modal');
 	var weexJsoupModule = weex.requireModule('weexJsoupModule');
-	var mmjpg = __webpack_require__(142);
+	var mmjpg = __webpack_require__(143);
 	var weexEventModule = weex.requireModule('weexEventModule');
 	exports.default = {
 	    components: {
@@ -1693,7 +1699,7 @@
 
 /***/ }),
 
-/***/ 352:
+/***/ 351:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1733,7 +1739,7 @@
 
 /***/ }),
 
-/***/ 353:
+/***/ 352:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

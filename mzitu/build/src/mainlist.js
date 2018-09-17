@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(192)
+	__vue_styles__.push(__webpack_require__(191)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(193)
+	__vue_exports__ = __webpack_require__(192)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(194)
+	var __vue_template__ = __webpack_require__(193)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/mzitu/src/mainlist.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mzitu/src/mainlist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-3e457bae"
+	__vue_options__._scopeId = "data-v-764177f6"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
-/***/ 86:
-/***/ function(module, exports) {
+/***/ 87:
+/***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
@@ -264,10 +264,10 @@
 	}
 
 
-/***/ },
+/***/ }),
 
-/***/ 192:
-/***/ function(module, exports) {
+/***/ 191:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "scroller": {
@@ -292,10 +292,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 193:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 192:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -321,7 +321,7 @@
 	var weexModule = weex.requireModule('weexModule');
 	var dom = weex.requireModule('dom');
 	var modal = weex.requireModule('modal');
-	var mzitu = __webpack_require__(86);
+	var mzitu = __webpack_require__(87);
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -379,10 +379,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 194:
-/***/ function(module, exports) {
+/***/ 193:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -406,6 +406,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

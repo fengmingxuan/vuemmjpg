@@ -45,20 +45,20 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(216)
+	__vue_styles__.push(__webpack_require__(215)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(217)
+	__vue_exports__ = __webpack_require__(216)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(222)
+	var __vue_template__ = __webpack_require__(221)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/template/tabbar.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/duoduo/src/template/tabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-23729cb3"
+	__vue_options__._scopeId = "data-v-40f1d0fb"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
-/***/ 216:
-/***/ function(module, exports) {
+/***/ 215:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "wrapper": {
@@ -126,10 +126,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 217:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 216:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -205,7 +205,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(218)
+	    tabitem: __webpack_require__(217)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -233,23 +233,23 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 218:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 217:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(219)
+	__vue_styles__.push(__webpack_require__(218)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(220)
+	__vue_exports__ = __webpack_require__(219)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(221)
+	var __vue_template__ = __webpack_require__(220)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -261,10 +261,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/template/tabitem.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/duoduo/src/template/tabitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-0770a4ba"
+	__vue_options__._scopeId = "data-v-e2a1fb4a"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -278,10 +278,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
-/***/ 219:
-/***/ function(module, exports) {
+/***/ 218:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "container": {
@@ -310,10 +310,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 220:
-/***/ function(module, exports) {
+/***/ 219:
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -381,10 +381,10 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 221:
-/***/ function(module, exports) {
+/***/ 220:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -414,10 +414,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
-/***/ 222:
-/***/ function(module, exports) {
+/***/ 221:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -457,6 +457,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

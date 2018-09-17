@@ -45,16 +45,16 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* script */
-	__vue_exports__ = __webpack_require__(195)
+	__vue_exports__ = __webpack_require__(194)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(204)
+	var __vue_template__ = __webpack_require__(203)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -66,7 +66,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/mzitu/src/maintabbar.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mzitu/src/maintabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	__vue_options__.style = __vue_options__.style || {}
@@ -84,10 +84,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
-/***/ 86:
-/***/ function(module, exports) {
+/***/ 87:
+/***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
@@ -259,10 +259,10 @@
 	}
 
 
-/***/ },
+/***/ }),
 
-/***/ 195:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 194:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -273,7 +273,7 @@
 	//
 	//
 
-	var mzitu = __webpack_require__(86);
+	var mzitu = __webpack_require__(87);
 	module.exports = {
 	  data: function data() {
 	    return {
@@ -308,7 +308,7 @@
 	    };
 	  },
 	  components: {
-	    tabbar: __webpack_require__(196)
+	    tabbar: __webpack_require__(195)
 	  },
 	  created: function created() {},
 	  methods: {
@@ -318,23 +318,23 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 196:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 195:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(197)
+	__vue_styles__.push(__webpack_require__(196)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(198)
+	__vue_exports__ = __webpack_require__(197)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(203)
+	var __vue_template__ = __webpack_require__(202)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -346,10 +346,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/mzitu/src/template/tabbar.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mzitu/src/template/tabbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-560cbde8"
+	__vue_options__._scopeId = "data-v-c7c27878"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -363,10 +363,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
-/***/ 197:
-/***/ function(module, exports) {
+/***/ 196:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "wrapper": {
@@ -396,10 +396,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 198:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 197:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -468,7 +468,7 @@
 	    };
 	  },
 	  components: {
-	    tabitem: __webpack_require__(199)
+	    tabitem: __webpack_require__(198)
 	  },
 	  created: function created() {
 	    this.select(this.selectedIndex);
@@ -496,23 +496,23 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 199:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 198:
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(200)
+	__vue_styles__.push(__webpack_require__(199)
 	)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(201)
+	__vue_exports__ = __webpack_require__(200)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(202)
+	var __vue_template__ = __webpack_require__(201)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -524,10 +524,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/mzitu/src/template/tabitem.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/mzitu/src/template/tabitem.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7ba1346a"
+	__vue_options__._scopeId = "data-v-cdbf2e9c"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -541,10 +541,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
-/***/ 200:
-/***/ function(module, exports) {
+/***/ 199:
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "container": {
@@ -573,10 +573,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
-/***/ 201:
-/***/ function(module, exports) {
+/***/ 200:
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -643,10 +643,10 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 
-/***/ 202:
-/***/ function(module, exports) {
+/***/ 201:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -676,10 +676,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
-/***/ 203:
-/***/ function(module, exports) {
+/***/ 202:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -719,10 +719,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
-/***/ 204:
-/***/ function(module, exports) {
+/***/ 203:
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -740,6 +740,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

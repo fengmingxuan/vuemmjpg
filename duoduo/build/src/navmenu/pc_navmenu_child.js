@@ -45,7 +45,7 @@
 /******/ ({
 
 /***/ 0:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/navmenu/pc_navmenu_child.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/duoduo/src/navmenu/pc_navmenu_child.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-bcdda160"
+	__vue_options__._scopeId = "data-v-3ad767f0"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -89,10 +89,10 @@
 	new Vue(module.exports)
 
 
-/***/ },
+/***/ }),
 
 /***/ 6:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	var BASE_URL = {
 	    //win 执行start npm run build:native  npm run build:browser  npm run serve &  npm run dev:mmjpg
@@ -101,8 +101,8 @@
 	    //http://git.oschina.net/fengmengchang/weex-mmjpg
 	    //http://git.oschina.net/fengmengchang/weex-mmjpg/raw/master/meitu4493/build/src/mainlist.js
 	    //raw.githubusercontent.com/fengmingxuan/vuemmjpg/master
-	    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
-	    HTTP: 'https://',//https:// http://
+	    IP: '192.168.12.97:8080',
+	    HTTP: 'http://',//https:// http://
 
 	};
 
@@ -220,10 +220,10 @@
 	}
 
 
-/***/ },
+/***/ }),
 
 /***/ 70:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
@@ -244,10 +244,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
 /***/ 71:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -307,10 +307,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
 /***/ 72:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = []
@@ -335,10 +335,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitme/vuemmjpg/duoduo/src/navmenu/pc_navmenu_item.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/duoduo/src/navmenu/pc_navmenu_item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-a2c659e2"
+	__vue_options__._scopeId = "data-v-76e73f57"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -352,10 +352,10 @@
 	module.exports = __vue_exports__
 
 
-/***/ },
+/***/ }),
 
 /***/ 73:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = {
 	  "news-content": {
@@ -376,10 +376,10 @@
 	  }
 	}
 
-/***/ },
+/***/ }),
 
 /***/ 74:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -431,10 +431,10 @@
 	    }
 	};
 
-/***/ },
+/***/ }),
 
 /***/ 75:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -454,10 +454,10 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ },
+/***/ }),
 
 /***/ 76:
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -486,6 +486,6 @@
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 
-/***/ }
+/***/ })
 
 /******/ });

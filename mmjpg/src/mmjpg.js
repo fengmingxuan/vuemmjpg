@@ -1,6 +1,6 @@
 var BASE_URL = {
-    IP: 'code.taobao.org/svn',
-    HTTP: 'http://',//https:// http://
+    IP: 'raw.githubusercontent.com/fengmingxuan/vuemmjpg/master',
+    HTTP: 'https://',//https:// http://
 };
 
 var MMJPG = {
