@@ -352,11 +352,11 @@
 	var ZJITO = {
 	    pc_search:"http://www.msgao.com/meinv/",
 	    pc_search_meinv:"http://www.msgao.com/e/search/result/?searchid=349",
-	    pc_content:"http://www.msgao.com/dqfl/rb/544214.shtml",
+	    pc_content:"http://www.msgao.com/mxmn/15219.html",
 	    pc_cat:"http://www.msgao.com/dqfl/",
 	    pc_zjito:"http://www.msgao.com/",
 	    m_tab_img:"http://m.msgao.com/dqfl/zgnd/",
-	    m_content:"http://m.msgao.com/dqfl/rb/544214.shtml",
+	    m_content:"http://m.msgao.com/mxmn/15219.html",
 	    m_zjito:"http://m.msgao.com/",
 	    pc_tupian:"http://www.msgao.com/tpfl/",
 	    pc_mingzhan:"http://www.msgao.com/mzxz/",

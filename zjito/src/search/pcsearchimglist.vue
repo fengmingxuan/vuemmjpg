@@ -98,18 +98,44 @@
                     url = self.taghref+"index_"+self.pageNo+".shtml";
                 }
                 console.log('url==='+url);
-                //show=title%2Csmalltext&tempid=0&keyboard=11
+                //show=title,smalltext&tempid=0&keyboard=11
                 var params = {
                     url:url,
                     pageNo: self.pageNo,
-                    show:"title%2Csmalltext",
+                    show:"title,smalltext",
                     tempid:0,
                     keyboard:self.title
                 };
                 weexZjitoJsoupModule.pcsearchindex(params,function(e){
                     var json = JSON.parse(e);
-                    console.log('location===' + json.location);
-                    search('http://www.msgao.com/e/search/'+json.location);
+                    if(self.pageNo==1){
+                        self.stockArray.splice(0, self.stockArray.length);
+                    }
+                    if (json.list) {
+                        if (json.list && json.list.length > 0) {
+                            self.parseJSON(json);
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcsearchimglist"+self.pageNo
+                            };
+                            weexEventModule.saveCache(paramsCache,json,function(ee){
+
+                            });
+                        }else {
+                            //异常
+                            console.log('异常====');
+                            //获取缓存
+                            var paramsCache = {
+                                url:url,
+                                typename: "pcsearchimglist"+self.pageNo
+                            };
+                            weexEventModule.queryCache(paramsCache,function(e){
+                                console.log('queryCache=='+e);
+                                var json = JSON.parse(e);
+                                self.parseJSON(json);
+                            });
+                        }
+                    }
                 });
 //
             },
@@ -157,8 +183,6 @@
                             });
                         }
                     }
-
-
                 });
             }
 

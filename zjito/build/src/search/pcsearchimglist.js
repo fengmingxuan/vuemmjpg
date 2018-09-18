@@ -355,11 +355,11 @@
 	var ZJITO = {
 	    pc_search:"http://www.msgao.com/meinv/",
 	    pc_search_meinv:"http://www.msgao.com/e/search/result/?searchid=349",
-	    pc_content:"http://www.msgao.com/dqfl/rb/544214.shtml",
+	    pc_content:"http://www.msgao.com/mxmn/15219.html",
 	    pc_cat:"http://www.msgao.com/dqfl/",
 	    pc_zjito:"http://www.msgao.com/",
 	    m_tab_img:"http://m.msgao.com/dqfl/zgnd/",
-	    m_content:"http://m.msgao.com/dqfl/rb/544214.shtml",
+	    m_content:"http://m.msgao.com/mxmn/15219.html",
 	    m_zjito:"http://m.msgao.com/",
 	    pc_tupian:"http://www.msgao.com/tpfl/",
 	    pc_mingzhan:"http://www.msgao.com/mzxz/",
@@ -725,18 +725,42 @@
 	                url = self.taghref + "index_" + self.pageNo + ".shtml";
 	            }
 	            console.log('url===' + url);
-	            //show=title%2Csmalltext&tempid=0&keyboard=11
+	            //show=title,smalltext&tempid=0&keyboard=11
 	            var params = {
 	                url: url,
 	                pageNo: self.pageNo,
-	                show: "title%2Csmalltext",
+	                show: "title,smalltext",
 	                tempid: 0,
 	                keyboard: self.title
 	            };
 	            weexZjitoJsoupModule.pcsearchindex(params, function (e) {
 	                var json = JSON.parse(e);
-	                console.log('location===' + json.location);
-	                search('http://www.msgao.com/e/search/' + json.location);
+	                if (self.pageNo == 1) {
+	                    self.stockArray.splice(0, self.stockArray.length);
+	                }
+	                if (json.list) {
+	                    if (json.list && json.list.length > 0) {
+	                        self.parseJSON(json);
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcsearchimglist" + self.pageNo
+	                        };
+	                        weexEventModule.saveCache(paramsCache, json, function (ee) {});
+	                    } else {
+	                        //异常
+	                        console.log('异常====');
+	                        //获取缓存
+	                        var paramsCache = {
+	                            url: url,
+	                            typename: "pcsearchimglist" + self.pageNo
+	                        };
+	                        weexEventModule.queryCache(paramsCache, function (e) {
+	                            console.log('queryCache==' + e);
+	                            var json = JSON.parse(e);
+	                            self.parseJSON(json);
+	                        });
+	                    }
+	                }
 	            });
 	            //
 	        },
