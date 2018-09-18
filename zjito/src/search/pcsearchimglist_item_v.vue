@@ -7,6 +7,7 @@
 
 <script>
     var weexEventModule = weex.requireModule('weexEventModule');
+    var zjito = require('../zjito');
     module.exports = {
         created:function(){
             console.log('news');
@@ -20,7 +21,8 @@
 
         methods:{
             todetail:function (e) {
-                weexEventModule.startWebViewActivity(e);
+                var  href = zjito.getm_zjito()+e;
+                weexEventModule.startWebViewActivity(href);
             }
         }
     }

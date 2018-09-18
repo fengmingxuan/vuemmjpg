@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/mtabimg/mtabimglist.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/mtabimg/mtabimglist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1d0a7bdc"
+	__vue_options__._scopeId = "data-v-2605be4d"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -311,10 +311,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/template/navbar_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-4dab9549"
+	__vue_options__._scopeId = "data-v-10a33778"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -547,20 +547,28 @@
 	};
 
 	var ZJITO = {
-	    pc_search:"http://www.zjito.com/search/result?Query=",
-	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
-	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/",
-	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
-	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
-	    m_zjito:"http://m.zjito.com/",
-	    pc_tupian:"http://www.zjito.com/tpfl/",
-	    pc_mingzhan:"http://www.zjito.com/mzxz/",
-	    pc_taotu:"http://www.zjito.com/rbtt/",
-	    m_hot:"http://m.zjito.com/hot/",
-	    pc_hot:"http://www.zjito.com/hot/"
+	    pc_search:"http://www.msgao.com/meinv/",
+	    pc_search_meinv:"http://www.msgao.com/e/search/result/?searchid=349",
+	    pc_content:"http://www.msgao.com/dqfl/rb/544214.shtml",
+	    pc_cat:"http://www.msgao.com/dqfl/",
+	    pc_zjito:"http://www.msgao.com/",
+	    m_tab_img:"http://m.msgao.com/dqfl/zgnd/",
+	    m_content:"http://m.msgao.com/dqfl/rb/544214.shtml",
+	    m_zjito:"http://m.msgao.com/",
+	    pc_tupian:"http://www.msgao.com/tpfl/",
+	    pc_mingzhan:"http://www.msgao.com/mzxz/",
+	    pc_taotu:"http://www.msgao.com/rbtt/",
+	    m_hot:"http://m.msgao.com/meinv/",
+	    pc_hot:"http://www.msgao.com/meinv/",
+	    pc_search_index:"http://www.msgao.com/e/search/index.php"
 
+
+
+	};
+	exports.getpc_search_index = function () {
+	    var url = ZJITO.pc_search_index;
+	    console.log('pc_search_index==' + url);
+	    return url;
 	};
 	exports.getpc_hot = function () {
 	    var url = ZJITO.pc_hot;
@@ -788,10 +796,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags_item_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/cat/mtabtags_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-07ae107c"
+	__vue_options__._scopeId = "data-v-3c390cb7"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -966,10 +974,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/mtabtags.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/cat/mtabtags.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-e318d006"
+	__vue_options__._scopeId = "data-v-9437cfbc"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1011,10 +1019,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/mtabimg/mtabimglist_item_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/mtabimg/mtabimglist_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-14c75672"
+	__vue_options__._scopeId = "data-v-0ae3302c"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {

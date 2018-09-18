@@ -36,7 +36,7 @@
         data(){
             return{
                 stockArray:[],
-                taghref:zjito.getpc_search_meinv(),
+                taghref:zjito.getpc_search_index(),
                 pageNo: 1,
                 refreshing: false,
                 showLoading: 'hide',
@@ -49,21 +49,21 @@
 //            if(ctaghref!=undefined){
 //                self.taghref = ctaghref;
 //            }
-//            var ctitle = self.$getConfig().title;
-//            if(ctitle!=undefined){
-//                self.title = ctitle;
-//            }
-//            console.log('title=='+self.title+';taghref=='+self.taghref)
-            storage.getItem('taghref',function(s){
-                console.log('get taghref result:'+JSON.stringify(s));
-                var staghref = s.data;
-                if(staghref!=undefined){
-                    self.taghref = staghref;
-                }
-                console.log('taghref=='+self.taghref);
-                self.refresh();
-            });
-//            self.refresh();
+            var ctitle = self.$getConfig().title;
+            if(ctitle!=undefined){
+                self.title = ctitle;
+            }
+            console.log('title=='+self.title+';taghref=='+self.taghref)
+//            storage.getItem('taghref',function(s){
+//                console.log('get taghref result:'+JSON.stringify(s));
+//                var staghref = s.data;
+//                if(staghref!=undefined){
+//                    self.taghref = staghref;
+//                }
+//                console.log('taghref=='+self.taghref);
+//                self.refresh();
+//            });
+            self.refresh();
 
         },
         methods:{
@@ -98,9 +98,34 @@
                     url = self.taghref+"index_"+self.pageNo+".shtml";
                 }
                 console.log('url==='+url);
+                //show=title%2Csmalltext&tempid=0&keyboard=11
                 var params = {
                     url:url,
-                    pageNo: self.pageNo
+                    pageNo: self.pageNo,
+                    show:"title%2Csmalltext",
+                    tempid:0,
+                    keyboard:self.title
+                };
+                weexZjitoJsoupModule.pcsearchindex(params,function(e){
+                    var json = JSON.parse(e);
+                    console.log('location===' + json.location);
+                    search('http://www.msgao.com/e/search/'+json.location);
+                });
+//
+            },
+            parseJSON:function (json) {
+                var self = this;
+                for (var i = 0; i < json.list.length; i++) {
+                    var tag = json.list[i];
+                    self.stockArray.push(tag);
+                }
+            },
+
+            search:function (url) {
+                var self = this;
+                var params = {
+                    url:url,
+                    pageNo: self.pageNo,
                 };
                 weexZjitoJsoupModule.pcsearchimglist(params,function(e){
                     var json = JSON.parse(e);
@@ -135,14 +160,7 @@
 
 
                 });
-            },
-            parseJSON:function (json) {
-                var self = this;
-                for (var i = 0; i < json.list.length; i++) {
-                    var tag = json.list[i];
-                    self.stockArray.push(tag);
-                }
-            },
+            }
 
 
         }

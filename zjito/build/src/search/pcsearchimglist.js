@@ -70,10 +70,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcsearchimglist.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/search/pcsearchimglist.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-340ba842"
+	__vue_options__._scopeId = "data-v-a42c03b2"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -117,10 +117,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/template/navbar_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-4dab9549"
+	__vue_options__._scopeId = "data-v-10a33778"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -353,20 +353,28 @@
 	};
 
 	var ZJITO = {
-	    pc_search:"http://www.zjito.com/search/result?Query=",
-	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
-	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/",
-	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
-	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
-	    m_zjito:"http://m.zjito.com/",
-	    pc_tupian:"http://www.zjito.com/tpfl/",
-	    pc_mingzhan:"http://www.zjito.com/mzxz/",
-	    pc_taotu:"http://www.zjito.com/rbtt/",
-	    m_hot:"http://m.zjito.com/hot/",
-	    pc_hot:"http://www.zjito.com/hot/"
+	    pc_search:"http://www.msgao.com/meinv/",
+	    pc_search_meinv:"http://www.msgao.com/e/search/result/?searchid=349",
+	    pc_content:"http://www.msgao.com/dqfl/rb/544214.shtml",
+	    pc_cat:"http://www.msgao.com/dqfl/",
+	    pc_zjito:"http://www.msgao.com/",
+	    m_tab_img:"http://m.msgao.com/dqfl/zgnd/",
+	    m_content:"http://m.msgao.com/dqfl/rb/544214.shtml",
+	    m_zjito:"http://m.msgao.com/",
+	    pc_tupian:"http://www.msgao.com/tpfl/",
+	    pc_mingzhan:"http://www.msgao.com/mzxz/",
+	    pc_taotu:"http://www.msgao.com/rbtt/",
+	    m_hot:"http://m.msgao.com/meinv/",
+	    pc_hot:"http://www.msgao.com/meinv/",
+	    pc_search_index:"http://www.msgao.com/e/search/index.php"
 
+
+
+	};
+	exports.getpc_search_index = function () {
+	    var url = ZJITO.pc_search_index;
+	    console.log('pc_search_index==' + url);
+	    return url;
 	};
 	exports.getpc_hot = function () {
 	    var url = ZJITO.pc_hot;
@@ -651,7 +659,7 @@
 	    data: function data() {
 	        return {
 	            stockArray: [],
-	            taghref: zjito.getpc_search_meinv(),
+	            taghref: zjito.getpc_search_index(),
 	            pageNo: 1,
 	            refreshing: false,
 	            showLoading: 'hide',
@@ -665,21 +673,21 @@
 	        //            if(ctaghref!=undefined){
 	        //                self.taghref = ctaghref;
 	        //            }
-	        //            var ctitle = self.$getConfig().title;
-	        //            if(ctitle!=undefined){
-	        //                self.title = ctitle;
-	        //            }
-	        //            console.log('title=='+self.title+';taghref=='+self.taghref)
-	        storage.getItem('taghref', function (s) {
-	            console.log('get taghref result:' + JSON.stringify(s));
-	            var staghref = s.data;
-	            if (staghref != undefined) {
-	                self.taghref = staghref;
-	            }
-	            console.log('taghref==' + self.taghref);
-	            self.refresh();
-	        });
-	        //            self.refresh();
+	        var ctitle = self.$getConfig().title;
+	        if (ctitle != undefined) {
+	            self.title = ctitle;
+	        }
+	        console.log('title==' + self.title + ';taghref==' + self.taghref);
+	        //            storage.getItem('taghref',function(s){
+	        //                console.log('get taghref result:'+JSON.stringify(s));
+	        //                var staghref = s.data;
+	        //                if(staghref!=undefined){
+	        //                    self.taghref = staghref;
+	        //                }
+	        //                console.log('taghref=='+self.taghref);
+	        //                self.refresh();
+	        //            });
+	        self.refresh();
 	    },
 	    methods: {
 	        onloading: function onloading(event) {
@@ -717,6 +725,31 @@
 	                url = self.taghref + "index_" + self.pageNo + ".shtml";
 	            }
 	            console.log('url===' + url);
+	            //show=title%2Csmalltext&tempid=0&keyboard=11
+	            var params = {
+	                url: url,
+	                pageNo: self.pageNo,
+	                show: "title%2Csmalltext",
+	                tempid: 0,
+	                keyboard: self.title
+	            };
+	            weexZjitoJsoupModule.pcsearchindex(params, function (e) {
+	                var json = JSON.parse(e);
+	                console.log('location===' + json.location);
+	                search('http://www.msgao.com/e/search/' + json.location);
+	            });
+	            //
+	        },
+	        parseJSON: function parseJSON(json) {
+	            var self = this;
+	            for (var i = 0; i < json.list.length; i++) {
+	                var tag = json.list[i];
+	                self.stockArray.push(tag);
+	            }
+	        },
+
+	        search: function search(url) {
+	            var self = this;
 	            var params = {
 	                url: url,
 	                pageNo: self.pageNo
@@ -750,13 +783,6 @@
 	                    }
 	                }
 	            });
-	        },
-	        parseJSON: function parseJSON(json) {
-	            var self = this;
-	            for (var i = 0; i < json.list.length; i++) {
-	                var tag = json.list[i];
-	                self.stockArray.push(tag);
-	            }
 	        }
 
 	    }
@@ -791,10 +817,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/search/pcsearchimglist_item_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/search/pcsearchimglist_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-79951897"
+	__vue_options__._scopeId = "data-v-7a4a4712"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -832,7 +858,7 @@
 /***/ }),
 
 /***/ 148:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -845,6 +871,7 @@
 	//
 
 	var weexEventModule = weex.requireModule('weexEventModule');
+	var zjito = __webpack_require__(6);
 	module.exports = {
 	    created: function created() {
 	        console.log('news');
@@ -858,7 +885,8 @@
 
 	    methods: {
 	        todetail: function todetail(e) {
-	            weexEventModule.startWebViewActivity(e);
+	            var href = zjito.getm_zjito() + e;
+	            weexEventModule.startWebViewActivity(href);
 	        }
 	    }
 	};

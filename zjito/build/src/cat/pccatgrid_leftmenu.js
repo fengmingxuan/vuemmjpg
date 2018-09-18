@@ -69,10 +69,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/pccatgrid_leftmenu.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/cat/pccatgrid_leftmenu.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-ec5a7810"
+	__vue_options__._scopeId = "data-v-03b119dd"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -117,10 +117,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/template/navbar_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/template/navbar_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-4dab9549"
+	__vue_options__._scopeId = "data-v-10a33778"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -350,20 +350,28 @@
 	};
 
 	var ZJITO = {
-	    pc_search:"http://www.zjito.com/search/result?Query=",
-	    pc_search_meinv:"http://www.zjito.com/search/result?Query=%E7%BE%8E%E5%A5%B3",
-	    pc_content:"http://www.zjito.com/dqfl/rb/544214.shtml",
-	    pc_cat:"http://www.zjito.com/dqfl/",
-	    pc_zjito:"http://www.zjito.com/",
-	    m_tab_img:"http://m.zjito.com/dqfl/zgnd/",
-	    m_content:"http://m.zjito.com/dqfl/rb/544214.shtml",
-	    m_zjito:"http://m.zjito.com/",
-	    pc_tupian:"http://www.zjito.com/tpfl/",
-	    pc_mingzhan:"http://www.zjito.com/mzxz/",
-	    pc_taotu:"http://www.zjito.com/rbtt/",
-	    m_hot:"http://m.zjito.com/hot/",
-	    pc_hot:"http://www.zjito.com/hot/"
+	    pc_search:"http://www.msgao.com/meinv/",
+	    pc_search_meinv:"http://www.msgao.com/e/search/result/?searchid=349",
+	    pc_content:"http://www.msgao.com/dqfl/rb/544214.shtml",
+	    pc_cat:"http://www.msgao.com/dqfl/",
+	    pc_zjito:"http://www.msgao.com/",
+	    m_tab_img:"http://m.msgao.com/dqfl/zgnd/",
+	    m_content:"http://m.msgao.com/dqfl/rb/544214.shtml",
+	    m_zjito:"http://m.msgao.com/",
+	    pc_tupian:"http://www.msgao.com/tpfl/",
+	    pc_mingzhan:"http://www.msgao.com/mzxz/",
+	    pc_taotu:"http://www.msgao.com/rbtt/",
+	    m_hot:"http://m.msgao.com/meinv/",
+	    pc_hot:"http://www.msgao.com/meinv/",
+	    pc_search_index:"http://www.msgao.com/e/search/index.php"
 
+
+
+	};
+	exports.getpc_search_index = function () {
+	    var url = ZJITO.pc_search_index;
+	    console.log('pc_search_index==' + url);
+	    return url;
 	};
 	exports.getpc_hot = function () {
 	    var url = ZJITO.pc_hot;
@@ -822,10 +830,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/pccatgrid_item_v.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/cat/pccatgrid_item_v.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-878e0648"
+	__vue_options__._scopeId = "data-v-190d8801"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -1147,10 +1155,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/cat/pccatgrid.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/cat/pccatgrid.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-652fd79d"
+	__vue_options__._scopeId = "data-v-2bcf5c18"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {

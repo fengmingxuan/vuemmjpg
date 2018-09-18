@@ -51,11 +51,11 @@
 	var __vue_styles__ = []
 
 	/* styles */
-	__vue_styles__.push(__webpack_require__(278)
+	__vue_styles__.push(__webpack_require__(277)
 	)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(279)
+	var __vue_template__ = __webpack_require__(278)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -67,10 +67,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/master/gitweexvue/vuemmjpg/zjito/src/text.vue"
+	__vue_options__.__file = "/Users/guangjing.feng/git/vuemmjpg/zjito/src/text.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-6408f870"
+	__vue_options__._scopeId = "data-v-37da6d95"
 	__vue_options__.style = __vue_options__.style || {}
 	__vue_styles__.forEach(function (module) {
 	  for (var name in module) {
@@ -88,7 +88,7 @@
 
 /***/ }),
 
-/***/ 278:
+/***/ 277:
 /***/ (function(module, exports) {
 
 	module.exports = {
@@ -117,7 +117,7 @@
 
 /***/ }),
 
-/***/ 279:
+/***/ 278:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -65,8 +65,8 @@
                     url: zjito.getDefaultUrl(name),
                     animated: "true",
                     options:{
-                        taghref: zjito.getpc_search()+encodeURIComponent(this.key),
-                        title:this.key,
+                        taghref: zjito.getpc_search_meinv(),
+                        title:this.key,//+encodeURIComponent(this.key)
                     }
                 };
 
